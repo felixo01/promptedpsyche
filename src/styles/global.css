@@ -261,7 +261,7 @@ p {
 
 .area-grid {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   margin: 2rem 0 0;
   padding: 0;
@@ -271,17 +271,35 @@ p {
 }
 
 .area-grid li {
-  min-height: 11rem;
-  display: flex;
-  align-items: end;
+  min-height: 11.5rem;
+  display: grid;
+  align-content: space-between;
+  gap: 1.25rem;
   background: color-mix(in srgb, var(--surface) 88%, var(--bg));
-  padding: 1rem;
+  padding: 1.1rem;
+  color: var(--text);
+}
+
+.area-grid span {
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+}
+
+.area-grid strong {
+  display: block;
   color: var(--text);
   font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 1.18rem;
+  font-size: 1.45rem;
+  font-weight: 520;
   line-height: 1.15;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
+}
+
+.area-grid p {
+  color: var(--text-soft);
+  font-size: 0.94rem;
+  line-height: 1.5;
 }
 
 .publication-system {
@@ -667,13 +685,11 @@ p {
   }
 
   .area-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .area-grid li {
-    min-height: 5.5rem;
-    writing-mode: horizontal-tb;
-    transform: none;
+    min-height: auto;
   }
 
   .system-grid {
