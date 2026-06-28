@@ -161,9 +161,15 @@ img {
 }
 
 .prelaunch h1,
+.prelaunch .masthead-context,
 .prelaunch .prelaunch-tagline,
 .prelaunch .lede {
   grid-column: 1;
+}
+
+.masthead-context {
+  display: grid;
+  gap: 0.22rem;
 }
 
 .prelaunch .status-note {

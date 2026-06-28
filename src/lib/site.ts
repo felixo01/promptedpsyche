@@ -2,7 +2,7 @@ export const site = {
   name: 'Prompted Psyche',
   tagline: 'AI, cyberpsychology and Human-AI Interaction.',
   description:
-    'A research-driven project by Feliks Mamczur on how artificial intelligence shapes thought, emotion, trust, communication, relationships and work.',
+    'A research-driven publication by Feliks Mamczur on how artificial intelligence shapes thought, emotion, trust, communication, relationships, creativity and work.',
   url: 'https://promptedpsyche.com',
   author: 'Feliks Mamczur',
   email: 'hello@promptedpsyche.com',
