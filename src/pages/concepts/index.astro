@@ -2,9 +2,9 @@
 import { getCollection } from 'astro:content';
 import EntryList from '../../components/EntryList.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { sortByDateDesc } from '../../lib/content';
+import { onlyPublicEntries, sortByDateDesc } from '../../lib/content';
 
-const concepts = sortByDateDesc(await getCollection('concepts'));
+const concepts = sortByDateDesc(onlyPublicEntries(await getCollection('concepts')));
 ---
 
 <BaseLayout

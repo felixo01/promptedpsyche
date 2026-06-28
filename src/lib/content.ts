@@ -4,6 +4,16 @@ type DatedEntry = {
   };
 };
 
+type DraftableEntry = {
+  data: {
+    draft?: boolean;
+  };
+};
+
+export function onlyPublicEntries<T extends DraftableEntry>(entries: T[]) {
+  return entries.filter((entry) => !entry.data.draft);
+}
+
 export function sortByDateDesc<T extends DatedEntry>(entries: T[]) {
   return [...entries].sort(
     (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()

@@ -1,11 +1,12 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import type { APIContext } from 'astro';
+import { onlyPublicEntries } from '../lib/content';
 import { site } from '../lib/site';
 
 export async function GET(context: APIContext) {
-  const articles = await getCollection('articles');
-  const notes = await getCollection('notes');
+  const articles = onlyPublicEntries(await getCollection('articles'));
+  const notes = onlyPublicEntries(await getCollection('notes'));
 
   const items = [
     ...articles.map((entry) => ({ entry, collection: 'articles' })),

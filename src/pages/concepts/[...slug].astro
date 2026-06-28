@@ -1,9 +1,10 @@
 ---
 import { getCollection, render } from 'astro:content';
 import EntryLayout from '../../layouts/EntryLayout.astro';
+import { onlyPublicEntries } from '../../lib/content';
 
 export async function getStaticPaths() {
-  const concepts = await getCollection('concepts');
+  const concepts = onlyPublicEntries(await getCollection('concepts'));
 
   return concepts.map((entry) => ({
     params: { slug: entry.id },

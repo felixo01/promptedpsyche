@@ -279,6 +279,12 @@ p {
   border: 1px solid var(--line);
 }
 
+.empty-state {
+  border: 1px solid var(--line);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  color: var(--text-soft);
+}
+
 .entry-item {
   background: var(--bg);
   padding: clamp(1.25rem, 3vw, 2rem);
@@ -368,6 +374,22 @@ p {
   width: min(calc(100% - 2.5rem), var(--content-width));
   margin-inline: auto;
   padding: clamp(3.5rem, 8vw, 7rem) 0;
+}
+
+.prelaunch {
+  min-height: calc(100svh - 12rem);
+  display: grid;
+  align-content: center;
+  gap: 1.2rem;
+}
+
+.prelaunch-tagline {
+  color: var(--text-soft);
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+}
+
+.prelaunch .lede {
+  margin-top: 0.2rem;
 }
 
 .content-header {
