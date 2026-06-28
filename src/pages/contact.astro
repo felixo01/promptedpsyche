@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../lib/site';
+
+const contactEmail = site.email?.trim();
 ---
 
 <BaseLayout
@@ -10,21 +12,23 @@ import { site } from '../lib/site';
   <section class="page-shell two-column">
     <div>
       <p class="eyebrow">Contact</p>
-      <h1>For early consulting, speaking or research inquiries.</h1>
+      <h1>For consulting, talks, workshops or research conversations.</h1>
     </div>
 
     <div class="prose">
       <p>
-        Prompted Psyche is still in pre-launch. A simple contact path is available for
-        early conversations about AI literacy, Human-AI Interaction and the psychology of
-        working with AI.
+        For consulting, talks, workshops or research conversations, send a concise note
+        with context, timeline and the kind of support you are looking for.
       </p>
-      <p>
-        Email: <a href={`mailto:${site.email}`}>{site.email}</a>
-      </p>
-      <p>
-        Include a short note about the context, format and timeline.
-      </p>
+      {
+        contactEmail ? (
+          <p>
+            Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+          </p>
+        ) : (
+          <p>Contact details will be added soon.</p>
+        )
+      }
     </div>
   </section>
 </BaseLayout>
