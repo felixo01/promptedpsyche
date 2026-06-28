@@ -6,7 +6,7 @@ import { site } from '../lib/site';
 <BaseLayout>
   <div class="home-shell">
     <section class="prelaunch" aria-labelledby="home-title">
-      <p class="eyebrow">Research editorial</p>
+      <p class="eyebrow">Pre-launch research editorial</p>
       <h1 id="home-title">Prompted Psyche</h1>
       <p class="prelaunch-tagline">{site.tagline}</p>
       <p class="lede">
@@ -27,11 +27,34 @@ import { site } from '../lib/site';
       <ul class="area-grid" aria-label="Research areas">
         <li>Trust</li>
         <li>Emotion</li>
+        <li>Attachment</li>
         <li>Work</li>
-        <li>Relationships</li>
         <li>Decision-making</li>
+        <li>Creativity</li>
         <li>Culture</li>
       </ul>
+    </section>
+
+    <section class="publication-system" aria-labelledby="system-title">
+      <p class="section-kicker">Publication system</p>
+      <h2 id="system-title">Three ways into the project</h2>
+      <div class="system-grid">
+        <a href="/articles/">
+          <span>01</span>
+          <strong>Articles</strong>
+          <p>Long-form essays and developed arguments.</p>
+        </a>
+        <a href="/notes/">
+          <span>02</span>
+          <strong>Notes</strong>
+          <p>Short observations, fragments and working thoughts.</p>
+        </a>
+        <a href="/concepts/">
+          <span>03</span>
+          <strong>Concepts</strong>
+          <p>A glossary for the human side of AI.</p>
+        </a>
+      </div>
     </section>
 
     <section class="contact-band" aria-labelledby="consulting-title">
