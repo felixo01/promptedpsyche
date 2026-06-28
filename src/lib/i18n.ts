@@ -1,5 +1,11 @@
 export type Locale = 'en' | 'pl';
 
+export type AlternateLinks = {
+  en: string;
+  pl: string;
+  xDefault?: string;
+};
+
 type RoutePair = {
   en: string;
   pl: string;
@@ -95,7 +101,7 @@ export function getAlternatePath(pathname: string, locale: Locale) {
   return findRoutePair(pathname)[locale];
 }
 
-export function getAlternateLinks(pathname: string) {
+export function getAlternateLinks(pathname: string): Required<AlternateLinks> {
   const routePair = findRoutePair(pathname);
 
   return {

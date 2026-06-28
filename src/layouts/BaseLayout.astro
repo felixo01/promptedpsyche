@@ -1,7 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { getAlternateLinks, getLangFromPath, type Locale } from '../lib/i18n';
+import { getAlternateLinks, getLangFromPath, type AlternateLinks, type Locale } from '../lib/i18n';
 import { site } from '../lib/site';
 import '../styles/global.css';
 
@@ -11,6 +11,7 @@ interface Props {
   image?: string;
   type?: 'website' | 'article';
   lang?: Locale;
+  alternateLinks?: AlternateLinks;
 }
 
 const {
@@ -18,14 +19,20 @@ const {
   description = site.description,
   image = '/images/prompted-psyche-editorial.png',
   type = 'website',
-  lang = getLangFromPath(Astro.url.pathname)
+  lang = getLangFromPath(Astro.url.pathname),
+  alternateLinks: providedAlternateLinks
 } = Astro.props;
 
 const pageTitle = title === site.name ? `${site.name} | ${site.tagline}` : `${title} | ${site.name}`;
 const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();
 const imageUrl = new URL(image, site.url).toString();
 const rssUrl = new URL('/rss.xml', site.url).toString();
-const alternateLinks = getAlternateLinks(Astro.url.pathname);
+const fallbackAlternateLinks = getAlternateLinks(Astro.url.pathname);
+const alternateLinks = {
+  en: providedAlternateLinks?.en ?? fallbackAlternateLinks.en,
+  pl: providedAlternateLinks?.pl ?? fallbackAlternateLinks.pl,
+  xDefault: providedAlternateLinks?.xDefault ?? providedAlternateLinks?.en ?? fallbackAlternateLinks.xDefault
+};
 const skipLinkLabel = lang === 'pl' ? 'Przejdź do treści' : 'Skip to content';
 ---
 
@@ -59,7 +66,7 @@ const skipLinkLabel = lang === 'pl' ? 'Przejdź do treści' : 'Skip to content';
   </head>
   <body>
     <a class="skip-link" href="#main">{skipLinkLabel}</a>
-    <Header lang={lang} />
+    <Header lang={lang} alternateLinks={alternateLinks} />
     <main id="main">
       <slot />
     </main>

@@ -1,5 +1,6 @@
 ---
 import { formatDate } from '../lib/content';
+import type { Locale } from '../lib/i18n';
 
 interface EntryListItem {
   id: string;
@@ -16,19 +17,29 @@ interface Props {
   entries: EntryListItem[];
   basePath: string;
   label: string;
+  dateLocale?: Locale;
+  emptyLabel?: string;
+  emptyMessage?: string;
+  emptyNote?: string;
 }
 
-const { entries, basePath, label } = Astro.props;
+const {
+  entries,
+  basePath,
+  label,
+  dateLocale = 'en',
+  emptyLabel = `${label} archive`,
+  emptyMessage = 'Public writing is being prepared.',
+  emptyNote = 'Essays, notes and concepts are being edited before they are published here.'
+} = Astro.props;
 ---
 
 {
   entries.length === 0 ? (
     <div class="empty-state">
-      <p class="small-label">{label} archive</p>
-      <p>Public writing is being prepared.</p>
-      <p class="empty-state-note">
-        Essays, notes and concepts are being edited before they are published here.
-      </p>
+      <p class="small-label">{emptyLabel}</p>
+      <p>{emptyMessage}</p>
+      {emptyNote && <p class="empty-state-note">{emptyNote}</p>}
     </div>
   ) : (
     <div class="entry-list">
@@ -40,7 +51,7 @@ const { entries, basePath, label } = Astro.props;
             <div class="entry-meta">
               <span>{label}</span>
               <time datetime={entry.data.publishedAt.toISOString()}>
-                {formatDate(entry.data.publishedAt)}
+                {formatDate(entry.data.publishedAt, dateLocale)}
               </time>
             </div>
             <h2>

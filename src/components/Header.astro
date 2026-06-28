@@ -4,20 +4,23 @@ import {
   getLangFromPath,
   getNavItems,
   normalizePath,
+  type AlternateLinks,
   type Locale
 } from '../lib/i18n';
 import { site } from '../lib/site';
 
 interface Props {
   lang?: Locale;
+  alternateLinks?: AlternateLinks;
 }
 
 const activeLang = Astro.props.lang ?? getLangFromPath(Astro.url.pathname);
+const providedAlternateLinks = Astro.props.alternateLinks;
 const currentPath = Astro.url.pathname;
 const normalizedCurrentPath = normalizePath(currentPath);
 const navItems = getNavItems(activeLang);
-const enPath = getAlternatePath(currentPath, 'en');
-const plPath = getAlternatePath(currentPath, 'pl');
+const enPath = providedAlternateLinks?.en ?? getAlternatePath(currentPath, 'en');
+const plPath = providedAlternateLinks?.pl ?? getAlternatePath(currentPath, 'pl');
 const homePath = activeLang === 'pl' ? '/pl/' : '/';
 const homeLabel = activeLang === 'pl' ? `${site.name} - strona główna` : `${site.name} home`;
 

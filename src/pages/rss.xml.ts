@@ -1,8 +1,16 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import type { APIContext } from 'astro';
-import { onlyPublicEntries } from '../lib/content';
+import { getEntryLang, onlyPublicEntries } from '../lib/content';
 import { site } from '../lib/site';
+
+function getEntryLink(entry: any, collection: string) {
+  if (collection === 'articles' && getEntryLang(entry) === 'pl') {
+    return `/pl/articles/${entry.id}/`;
+  }
+
+  return `/${collection}/${entry.id}/`;
+}
 
 export async function GET(context: APIContext) {
   const articles = onlyPublicEntries(await getCollection('articles'));
@@ -23,7 +31,7 @@ export async function GET(context: APIContext) {
       title: entry.data.title,
       description: entry.data.description,
       pubDate: entry.data.publishedAt,
-      link: `/${collection}/${entry.id}/`,
+      link: getEntryLink(entry, collection),
       categories: entry.data.tags
     }))
   });

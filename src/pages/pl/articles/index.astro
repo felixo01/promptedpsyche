@@ -1,5 +1,10 @@
 ---
+import { getCollection } from 'astro:content';
+import EntryList from '../../../components/EntryList.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { onlyPublicEntriesByLang, sortByDateDesc } from '../../../lib/content';
+
+const articles = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('articles'), 'pl'));
 ---
 
 <BaseLayout
@@ -18,9 +23,14 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       </p>
     </header>
 
-    <div class="empty-state">
-      <p class="small-label">Artykuły</p>
-      <p>Publiczne artykuły są przygotowywane.</p>
-    </div>
+    <EntryList
+      entries={articles}
+      basePath="/pl/articles"
+      label="Artykuł"
+      dateLocale="pl"
+      emptyLabel="Artykuły"
+      emptyMessage="Publiczne artykuły są przygotowywane."
+      emptyNote=""
+    />
   </section>
 </BaseLayout>
