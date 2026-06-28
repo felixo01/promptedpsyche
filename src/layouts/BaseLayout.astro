@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import { getAlternateLinks, getLangFromPath, type Locale } from '../lib/i18n';
 import { site } from '../lib/site';
 import '../styles/global.css';
 
@@ -9,23 +10,27 @@ interface Props {
   description?: string;
   image?: string;
   type?: 'website' | 'article';
+  lang?: Locale;
 }
 
 const {
   title = site.name,
   description = site.description,
   image = '/images/prompted-psyche-editorial.png',
-  type = 'website'
+  type = 'website',
+  lang = getLangFromPath(Astro.url.pathname)
 } = Astro.props;
 
 const pageTitle = title === site.name ? `${site.name} | ${site.tagline}` : `${title} | ${site.name}`;
 const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();
 const imageUrl = new URL(image, site.url).toString();
 const rssUrl = new URL('/rss.xml', site.url).toString();
+const alternateLinks = getAlternateLinks(Astro.url.pathname);
+const skipLinkLabel = lang === 'pl' ? 'Przejdź do treści' : 'Skip to content';
 ---
 
 <!doctype html>
-<html lang={site.locale}>
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,6 +40,9 @@ const rssUrl = new URL('/rss.xml', site.url).toString();
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
     <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet" />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={new URL(alternateLinks.en, site.url).toString()} />
+    <link rel="alternate" hreflang="pl" href={new URL(alternateLinks.pl, site.url).toString()} />
+    <link rel="alternate" hreflang="x-default" href={new URL(alternateLinks.xDefault, site.url).toString()} />
     <link rel="alternate" type="application/rss+xml" title={`${site.name} RSS`} href={rssUrl} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
@@ -50,11 +58,11 @@ const rssUrl = new URL('/rss.xml', site.url).toString();
     <meta name="twitter:image" content={imageUrl} />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <Header />
+    <a class="skip-link" href="#main">{skipLinkLabel}</a>
+    <Header lang={lang} />
     <main id="main">
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>

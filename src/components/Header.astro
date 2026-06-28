@@ -1,24 +1,60 @@
 ---
-import { navItems, site } from '../lib/site';
+import {
+  getAlternatePath,
+  getLangFromPath,
+  getNavItems,
+  normalizePath,
+  type Locale
+} from '../lib/i18n';
+import { site } from '../lib/site';
 
+interface Props {
+  lang?: Locale;
+}
+
+const activeLang = Astro.props.lang ?? getLangFromPath(Astro.url.pathname);
 const currentPath = Astro.url.pathname;
+const normalizedCurrentPath = normalizePath(currentPath);
+const navItems = getNavItems(activeLang);
+const enPath = getAlternatePath(currentPath, 'en');
+const plPath = getAlternatePath(currentPath, 'pl');
+const homePath = activeLang === 'pl' ? '/pl/' : '/';
+const homeLabel = activeLang === 'pl' ? `${site.name} - strona główna` : `${site.name} home`;
+
+function isCurrentPath(href: string) {
+  const normalizedHref = normalizePath(href);
+
+  if (normalizedHref === '/' || normalizedHref === '/pl') {
+    return normalizedCurrentPath === normalizedHref;
+  }
+
+  return normalizedCurrentPath === normalizedHref || normalizedCurrentPath.startsWith(`${normalizedHref}/`);
+}
 ---
 
 <header class="site-header">
-  <a class="wordmark" href="/" aria-label={`${site.name} home`}>
+  <a class="wordmark" href={homePath} aria-label={homeLabel}>
     <span>{site.name}</span>
   </a>
 
-  <nav class="site-nav" aria-label="Primary navigation">
-    {
-      navItems.map((item) => (
-        <a
-          href={item.href}
-          aria-current={currentPath.startsWith(item.href) ? 'page' : undefined}
-        >
-          {item.label}
-        </a>
-      ))
-    }
-  </nav>
+  <div class="header-actions">
+    <nav class="site-nav" aria-label={activeLang === 'pl' ? 'Nawigacja główna' : 'Primary navigation'}>
+      {
+        navItems.map((item) => (
+          <a href={item.href} aria-current={isCurrentPath(item.href) ? 'page' : undefined}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <nav
+      class="language-switcher"
+      aria-label={activeLang === 'pl' ? 'Przełącznik języka' : 'Language switcher'}
+    >
+      <a href={enPath} aria-current={activeLang === 'en' ? 'page' : undefined}>EN</a>
+      <span aria-hidden="true">/</span>
+      <a href={plPath} aria-current={activeLang === 'pl' ? 'page' : undefined}>PL</a>
+    </nav>
+  </div>
 </header>

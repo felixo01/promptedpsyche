@@ -1,20 +1,29 @@
 ---
-import { navItems, site } from '../lib/site';
+import { footerCopy, getLangFromPath, getNavItems, type Locale } from '../lib/i18n';
+import { site } from '../lib/site';
+
+interface Props {
+  lang?: Locale;
+}
+
+const activeLang = Astro.props.lang ?? getLangFromPath(Astro.url.pathname);
+const navItems = getNavItems(activeLang);
+const copy = footerCopy[activeLang];
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
   <div>
     <p class="footer-title">{site.name}</p>
-    <p>{site.tagline}</p>
+    <p>{copy.tagline}</p>
   </div>
 
-  <nav class="footer-nav" aria-label="Footer navigation">
+  <nav class="footer-nav" aria-label={activeLang === 'pl' ? 'Nawigacja w stopce' : 'Footer navigation'}>
     {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
     <a href="/rss.xml">RSS</a>
   </nav>
 
   <p class="footer-meta">
-    Copyright {year} {site.author}. This pre-launch site is intentionally not indexed yet.
+    Copyright {year} {site.author}. {copy.meta}
   </p>
 </footer>

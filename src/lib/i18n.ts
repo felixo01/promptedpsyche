@@ -1,0 +1,106 @@
+export type Locale = 'en' | 'pl';
+
+type RoutePair = {
+  en: string;
+  pl: string;
+};
+
+const routePairs: RoutePair[] = [
+  { en: '/', pl: '/pl/' },
+  { en: '/about/', pl: '/pl/about/' },
+  { en: '/consulting/', pl: '/pl/consulting/' },
+  { en: '/contact/', pl: '/pl/contact/' },
+  { en: '/articles/', pl: '/pl/articles/' },
+  { en: '/notes/', pl: '/pl/notes/' },
+  { en: '/concepts/', pl: '/pl/concepts/' }
+];
+
+export const navItemsByLocale: Record<Locale, Array<{ label: string; href: string }>> = {
+  en: [
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about/' },
+    { label: 'Consulting', href: '/consulting/' },
+    { label: 'Contact', href: '/contact/' },
+    { label: 'Articles', href: '/articles/' },
+    { label: 'Notes', href: '/notes/' },
+    { label: 'Concepts', href: '/concepts/' }
+  ],
+  pl: [
+    { label: 'Start', href: '/pl/' },
+    { label: 'O projekcie', href: '/pl/about/' },
+    { label: 'Konsulting', href: '/pl/consulting/' },
+    { label: 'Kontakt', href: '/pl/contact/' },
+    { label: 'Artykuły', href: '/pl/articles/' },
+    { label: 'Notatki', href: '/pl/notes/' },
+    { label: 'Pojęcia', href: '/pl/concepts/' }
+  ]
+};
+
+export const footerCopy: Record<Locale, { tagline: string; meta: string }> = {
+  en: {
+    tagline: 'AI, cyberpsychology and Human-AI Interaction.',
+    meta: 'This pre-launch site is intentionally not indexed yet.'
+  },
+  pl: {
+    tagline: 'AI, cyberpsychologia i Human-AI Interaction.',
+    meta: 'Ta strona w trybie pre-launch celowo nie jest jeszcze indeksowana.'
+  }
+};
+
+export function normalizePath(pathname: string) {
+  const path = pathname.split(/[?#]/)[0] || '/';
+  const withLeadingSlash = path.startsWith('/') ? path : `/${path}`;
+
+  if (withLeadingSlash === '/') {
+    return '/';
+  }
+
+  return withLeadingSlash.replace(/\/+$/, '');
+}
+
+export function getLangFromPath(pathname: string): Locale {
+  const path = normalizePath(pathname);
+
+  return path === '/pl' || path.startsWith('/pl/') ? 'pl' : 'en';
+}
+
+export function getNavItems(locale: Locale) {
+  return navItemsByLocale[locale];
+}
+
+function findRoutePair(pathname: string): RoutePair {
+  const path = normalizePath(pathname);
+  const exactPair = routePairs.find((pair) => path === normalizePath(pair.en) || path === normalizePath(pair.pl));
+
+  if (exactPair) {
+    return exactPair;
+  }
+
+  if (path.startsWith('/pl/articles/') || path.startsWith('/articles/')) {
+    return routePairs.find((pair) => pair.en === '/articles/') ?? routePairs[0];
+  }
+
+  if (path.startsWith('/pl/notes/') || path.startsWith('/notes/')) {
+    return routePairs.find((pair) => pair.en === '/notes/') ?? routePairs[0];
+  }
+
+  if (path.startsWith('/pl/concepts/') || path.startsWith('/concepts/')) {
+    return routePairs.find((pair) => pair.en === '/concepts/') ?? routePairs[0];
+  }
+
+  return routePairs[0];
+}
+
+export function getAlternatePath(pathname: string, locale: Locale) {
+  return findRoutePair(pathname)[locale];
+}
+
+export function getAlternateLinks(pathname: string) {
+  const routePair = findRoutePair(pathname);
+
+  return {
+    en: routePair.en,
+    pl: routePair.pl,
+    xDefault: routePair.en
+  };
+}
