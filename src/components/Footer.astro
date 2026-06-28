@@ -1,0 +1,20 @@
+---
+import { navItems, site } from '../lib/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div>
+    <p class="footer-title">{site.name}</p>
+    <p>{site.tagline}</p>
+  </div>
+
+  <nav class="footer-nav" aria-label="Footer navigation">
+    {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    <a href="/rss.xml">RSS</a>
+  </nav>
+
+  <p class="footer-meta">
+    © {year} {site.author}. English first. Polish structure reserved under /pl.
+  </p>
+</footer>

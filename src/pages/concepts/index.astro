@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import EntryList from '../../components/EntryList.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortByDateDesc } from '../../lib/content';
+
+const concepts = sortByDateDesc(await getCollection('concepts'));
+---
+
+<BaseLayout
+  title="Concepts"
+  description="A field guide to core concepts in AI, cyberpsychology and Human-AI Interaction."
+>
+  <section class="page-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Concepts</p>
+        <h1>A field guide for Human-AI Interaction</h1>
+      </div>
+      <p>
+        Clear definitions and working models for readers, teams and organizations trying to
+        reason about AI as a psychological and social technology.
+      </p>
+    </header>
+
+    <EntryList entries={concepts} basePath="/concepts" label="Concept" />
+  </section>
+</BaseLayout>

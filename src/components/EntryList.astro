@@ -1,0 +1,53 @@
+---
+import { formatDate } from '../lib/content';
+
+interface EntryListItem {
+  id: string;
+  data: {
+    title: string;
+    description: string;
+    publishedAt: Date;
+    draft?: boolean;
+    tags?: string[];
+  };
+}
+
+interface Props {
+  entries: EntryListItem[];
+  basePath: string;
+  label: string;
+}
+
+const { entries, basePath, label } = Astro.props;
+---
+
+<div class="entry-list">
+  {
+    entries.map((entry) => {
+      const tags = entry.data.tags ?? [];
+
+      return (
+        <article class="entry-item">
+          <div class="entry-meta">
+            <span>{label}</span>
+            <time datetime={entry.data.publishedAt.toISOString()}>
+              {formatDate(entry.data.publishedAt)}
+            </time>
+            {entry.data.draft && <span>Draft</span>}
+          </div>
+          <h2>
+            <a href={`${basePath}/${entry.id}/`}>{entry.data.title}</a>
+          </h2>
+          <p>{entry.data.description}</p>
+          {tags.length > 0 && (
+            <ul class="tag-list" aria-label="Topics">
+              {tags.map((tag) => (
+                <li>{tag}</li>
+              ))}
+            </ul>
+          )}
+        </article>
+      );
+    })
+  }
+</div>

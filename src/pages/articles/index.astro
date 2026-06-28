@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import EntryList from '../../components/EntryList.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortByDateDesc } from '../../lib/content';
+
+const articles = sortByDateDesc(await getCollection('articles'));
+---
+
+<BaseLayout
+  title="Articles"
+  description="Research-driven essays on AI, cyberpsychology and Human-AI Interaction."
+>
+  <section class="page-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Articles</p>
+        <h1>Essays on AI and the psyche</h1>
+      </div>
+      <p>
+        Longer pieces on how artificial intelligence changes behavior, judgment,
+        relationships, creativity and work.
+      </p>
+    </header>
+
+    <EntryList entries={articles} basePath="/articles" label="Article" />
+  </section>
+</BaseLayout>

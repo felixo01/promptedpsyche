@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../lib/site';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contact Feliks Mamczur about Prompted Psyche, consulting, writing or research."
+>
+  <section class="page-shell two-column">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h1>For consulting, writing and research conversations.</h1>
+    </div>
+
+    <div class="prose">
+      <p>
+        For inquiries about Human-AI Interaction, AI literacy, cyberpsychology-informed
+        research or organizational advisory work, send a concise note.
+      </p>
+      <p>
+        Email: <a href={`mailto:${site.email}`}>{site.email}</a>
+      </p>
+      <p>
+        Include the context, timeline and what kind of contribution would be useful:
+        briefing, workshop, advisory, article, research synthesis or review.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

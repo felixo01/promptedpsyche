@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content';
+import EntryList from '../components/EntryList.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sortByDateDesc } from '../lib/content';
+import { site } from '../lib/site';
+
+const articles = sortByDateDesc(await getCollection('articles')).slice(0, 3);
+const notes = sortByDateDesc(await getCollection('notes')).slice(0, 2);
+const concepts = sortByDateDesc(await getCollection('concepts')).slice(0, 3);
+---
+
+<BaseLayout>
+  <section class="hero" aria-labelledby="home-title">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">{site.tagline}</p>
+        <h1 id="home-title">Prompted Psyche</h1>
+        <p class="lede">
+          We prompt machines. Machines prompt us back.
+        </p>
+        <p class="lede">
+          A research-driven project by Feliks Mamczur on how artificial intelligence shapes
+          thought, emotion, trust, communication, relationships and work.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="/articles/">Read the essays</a>
+          <a class="button-secondary" href="/consulting/">Consulting</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="latest-title">
+    <div class="section-header">
+      <div>
+        <p class="eyebrow">Publication</p>
+        <h2 id="latest-title">Latest essays</h2>
+      </div>
+      <p>
+        Long-form writing on AI literacy, trust, behavior, communication and the human
+        consequences of intelligent systems.
+      </p>
+    </div>
+    <EntryList entries={articles} basePath="/articles" label="Article" />
+    <div class="section-actions">
+      <a class="button-secondary" href="/articles/">All articles</a>
+    </div>
+  </section>
+
+  <section class="section two-column" aria-labelledby="notes-title">
+    <div>
+      <p class="eyebrow">Notebook</p>
+      <h2 id="notes-title">Short observations</h2>
+      <p class="lede">
+        Notes are shorter arguments, fragments and research signals that may later become essays.
+      </p>
+      <div class="section-actions">
+        <a class="button-secondary" href="/notes/">All notes</a>
+      </div>
+    </div>
+    <EntryList entries={notes} basePath="/notes" label="Note" />
+  </section>
+
+  <section class="section" aria-labelledby="concepts-title">
+    <div class="section-header">
+      <div>
+        <p class="eyebrow">Field guide</p>
+        <h2 id="concepts-title">Concepts</h2>
+      </div>
+      <p>
+        Definitions and working models for cyberpsychology, Human-AI Interaction and
+        trust in AI-mediated environments.
+      </p>
+    </div>
+    <EntryList entries={concepts} basePath="/concepts" label="Concept" />
+  </section>
+</BaseLayout>

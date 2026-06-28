@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import EntryList from '../../components/EntryList.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortByDateDesc } from '../../lib/content';
+
+const notes = sortByDateDesc(await getCollection('notes'));
+---
+
+<BaseLayout
+  title="Notes"
+  description="Short observations and research notes from Prompted Psyche."
+>
+  <section class="page-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Notes</p>
+        <h1>Working notes</h1>
+      </div>
+      <p>
+        Concise observations, questions and fragments on the changing relationship between
+        people and intelligent systems.
+      </p>
+    </header>
+
+    <EntryList entries={notes} basePath="/notes" label="Note" />
+  </section>
+</BaseLayout>
