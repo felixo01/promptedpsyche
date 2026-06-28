@@ -23,7 +23,10 @@ const { entries, basePath, label } = Astro.props;
 
 {
   entries.length === 0 ? (
-    <p class="empty-state">Public writing is being prepared.</p>
+    <div class="empty-state">
+      <p class="small-label">Pre-launch archive</p>
+      <p>Public writing is being prepared.</p>
+    </div>
   ) : (
     <div class="entry-list">
       {entries.map((entry) => {

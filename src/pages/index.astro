@@ -4,13 +4,43 @@ import { site } from '../lib/site';
 ---
 
 <BaseLayout>
-  <section class="page-shell prelaunch" aria-labelledby="home-title">
-    <h1 id="home-title">Prompted Psyche</h1>
-    <p class="prelaunch-tagline">{site.tagline}</p>
-    <p class="lede">
-      A research-driven project by Feliks Mamczur on how artificial intelligence shapes
-      thought, emotion, trust, communication, relationships and work.
-    </p>
-    <p class="quiet">This site is currently being developed.</p>
-  </section>
+  <div class="home-shell">
+    <section class="prelaunch" aria-labelledby="home-title">
+      <p class="eyebrow">Research editorial</p>
+      <h1 id="home-title">Prompted Psyche</h1>
+      <p class="prelaunch-tagline">{site.tagline}</p>
+      <p class="lede">
+        A research-driven project by Feliks Mamczur on how artificial intelligence shapes
+        thought, emotion, trust, communication, relationships and work.
+      </p>
+      <p class="status-note">This site is currently being developed.</p>
+    </section>
+
+    <section class="home-section" aria-labelledby="areas-title">
+      <div class="section-kicker">Human-AI observatory</div>
+      <div class="section-header">
+        <h2 id="areas-title">Areas of attention</h2>
+        <p>
+          A working map for future essays, notes and concepts about the human side of AI.
+        </p>
+      </div>
+      <ul class="area-grid" aria-label="Research areas">
+        <li>Trust</li>
+        <li>Emotion</li>
+        <li>Work</li>
+        <li>Relationships</li>
+        <li>Decision-making</li>
+        <li>Culture</li>
+      </ul>
+    </section>
+
+    <section class="contact-band" aria-labelledby="consulting-title">
+      <p class="small-label" id="consulting-title">Consulting and talks</p>
+      <p>
+        Consulting and talks are being shaped around AI literacy, Human-AI Interaction and
+        the psychology of working with AI.
+      </p>
+      <a href="/contact/">Contact</a>
+    </section>
+  </div>
 </BaseLayout>
