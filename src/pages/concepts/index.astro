@@ -15,13 +15,20 @@ const concepts = sortByDateDesc(onlyPublicEntries(await getCollection('concepts'
     <header class="page-header">
       <div>
         <p class="eyebrow">Concepts</p>
-        <h1>A glossary for the human side of AI</h1>
+        <h1>A living glossary for the human side of AI</h1>
       </div>
       <p>
-        A growing glossary of concepts for understanding the human side of AI.
+        A living glossary for the human side of AI.
       </p>
     </header>
 
-    <EntryList entries={concepts} basePath="/concepts" label="Concept" />
+    <EntryList
+      entries={concepts}
+      basePath="/concepts"
+      label="Concept"
+      emptyLabel="Concepts"
+      emptyMessage="Concept explainers are being prepared."
+      emptyNote="They will define terms such as AI literacy, calibrated trust, cognitive offloading, AI companions, Human-AI Interaction and automation bias."
+    />
   </section>
 </BaseLayout>

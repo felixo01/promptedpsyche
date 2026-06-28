@@ -18,10 +18,17 @@ const notes = sortByDateDesc(onlyPublicEntries(await getCollection('notes')));
         <h1>Research notes</h1>
       </div>
       <p>
-        Short research notes, observations and working thoughts.
+        Shorter observations, fragments and working thoughts.
       </p>
     </header>
 
-    <EntryList entries={notes} basePath="/notes" label="Note" />
+    <EntryList
+      entries={notes}
+      basePath="/notes"
+      label="Note"
+      emptyLabel="Notes"
+      emptyMessage="Public notes are being prepared."
+      emptyNote="They will collect shorter observations on AI use, human behavior, trust, work, creativity and digital culture."
+    />
   </section>
 </BaseLayout>

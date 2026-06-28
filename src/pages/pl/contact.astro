@@ -8,32 +8,47 @@ const contactEmail = site.email?.trim();
 <BaseLayout
   lang="pl"
   title="Kontakt"
-  description="Kontakt w sprawie konsultingu, wystąpień, warsztatów lub rozmów badawczych."
+  description="Kontakt w sprawie konsultingu, warsztatów, wystąpień, komentarzy medialnych albo rozmów badawczych."
 >
   <section class="page-shell two-column">
     <div>
       <p class="eyebrow">Kontakt</p>
-      <h1>W sprawie konsultingu, wystąpień, warsztatów lub rozmów badawczych.</h1>
+      <h1>W sprawie konsultingu, warsztatów, wystąpień albo rozmów badawczych.</h1>
     </div>
 
-    <div class="prose">
-      <p>
-        W sprawach konsultingu, wystąpień, warsztatów lub rozmów badawczych wyślij
-        krótką wiadomość z kontekstem, terminem i rodzajem wsparcia, którego szukasz.
-      </p>
-      <p>
-        Prompted Psyche jest obecnie w trybie pre-launch, więc publiczne dane kontaktowe
-        i ścieżki odpowiedzi mogą się jeszcze zmienić.
-      </p>
-      {
-        contactEmail ? (
-          <p>
-            Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
-          </p>
-        ) : (
-          <p>Dane kontaktowe zostaną dodane wkrótce.</p>
-        )
-      }
+    <div>
+      <div class="prose">
+        <p>
+          W sprawach konsultingu, warsztatów, wystąpień, komentarzy medialnych albo
+          rozmów badawczych przygotuj krótką wiadomość z kontekstem, terminem i rodzajem
+          wsparcia, którego szukasz.
+        </p>
+        <p>
+          Prompted Psyche jest obecnie w trybie pre-launch, więc publiczne dane kontaktowe
+          i ścieżki odpowiedzi mogą się jeszcze zmienić.
+        </p>
+        {
+          contactEmail ? (
+            <p>
+              Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+            </p>
+          ) : (
+            <p>Dane kontaktowe zostaną dodane wkrótce.</p>
+          )
+        }
+      </div>
+
+      <div class="panel">
+        <h2>W jakich sprawach</h2>
+        <ul class="plain-list">
+          <li>konsulting</li>
+          <li>warsztaty</li>
+          <li>wystąpienia</li>
+          <li>rozmowy badawcze</li>
+          <li>komentarze medialne</li>
+          <li>współpraca</li>
+        </ul>
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -7,32 +7,46 @@ const contactEmail = site.email?.trim();
 
 <BaseLayout
   title="Contact"
-  description="Contact Feliks Mamczur about Prompted Psyche, consulting, writing or research."
+  description="Contact Feliks Mamczur about consulting, talks, workshops, media, collaboration or research conversations."
 >
   <section class="page-shell two-column">
     <div>
       <p class="eyebrow">Contact</p>
-      <h1>For consulting, talks, workshops or research conversations.</h1>
+      <h1>For consulting, talks, workshops, media or research conversations.</h1>
     </div>
 
-    <div class="prose">
-      <p>
-        For consulting, talks, workshops or research conversations, send a concise note
-        with context, timeline and the kind of support you are looking for.
-      </p>
-      <p>
-        Prompted Psyche is currently in pre-launch, so response paths and public contact
-        details may still change.
-      </p>
-      {
-        contactEmail ? (
-          <p>
-            Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
-          </p>
-        ) : (
-          <p>Contact details will be added soon.</p>
-        )
-      }
+    <div>
+      <div class="prose">
+        <p>
+          For consulting, talks, workshops, media or research conversations, send a concise
+          note with context, timeline and the kind of support you are looking for.
+        </p>
+        <p>
+          Prompted Psyche is currently in pre-launch, so response paths and public contact
+          details may still change.
+        </p>
+        {
+          contactEmail ? (
+            <p>
+              Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+            </p>
+          ) : (
+            <p>Contact details will be added soon.</p>
+          )
+        }
+      </div>
+
+      <div class="panel">
+        <h2>Relevant inquiries</h2>
+        <ul class="plain-list">
+          <li>Consulting</li>
+          <li>Talks</li>
+          <li>Workshops</li>
+          <li>Research conversations</li>
+          <li>Media / commentary</li>
+          <li>Collaboration</li>
+        </ul>
+      </div>
     </div>
   </section>
 </BaseLayout>

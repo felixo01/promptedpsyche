@@ -345,6 +345,11 @@ p {
   font-size: 2rem;
 }
 
+.publication-system > .quiet {
+  max-width: var(--content-width);
+  margin-top: 0.8rem;
+}
+
 .system-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
