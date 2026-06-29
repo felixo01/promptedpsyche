@@ -102,6 +102,11 @@ img {
   text-decoration: none;
 }
 
+.brand-lockup:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
 .brand-symbol {
   display: grid;
   place-items: center;
@@ -638,6 +643,13 @@ p {
   background: color-mix(in srgb, var(--surface) 88%, var(--accent-soft));
   padding: 2rem;
   color: var(--text-soft);
+}
+
+.empty-state .line-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: 0.2rem;
+  color: color-mix(in srgb, var(--accent) 82%, var(--muted));
 }
 
 .empty-state-note {
