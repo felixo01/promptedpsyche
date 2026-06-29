@@ -51,29 +51,30 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         Prompted Psyche jest tworzone dla organizacji, czytelników i rozmów o ludzkiej stronie AI.
       </SectionHeader>
       <div class="path-grid">
-        <IconCard icon="work" title="Dla organizacji" href="/pl/consulting/" linkLabel="Zobacz consulting" number="01">
+        <IconCard icon="work" title="Dla organizacji" href="/pl/consulting/" linkLabel="Zobacz consulting">
           Analiza używania AI, mapowanie procesów, zasady pracy człowiek-AI, warsztaty i wystąpienia.
         </IconCard>
-        <IconCard icon="article" title="Do czytania" href="/pl/articles/" linkLabel="Czytaj teksty" number="02">
+        <IconCard icon="article" title="Do czytania" href="/pl/articles/" linkLabel="Czytaj teksty">
           Artykuły i notatki o AI, psychologii, zaufaniu, emocjach, pracy i kulturze.
         </IconCard>
-        <IconCard icon="dialogue" title="Do rozmowy" href="/pl/contact/" linkLabel="Napisz" number="03">
+        <IconCard icon="dialogue" title="Do rozmowy" href="/pl/contact/" linkLabel="Napisz">
           Wystąpienia, komentarze medialne, rozmowy badawcze i współpraca przy treściach.
         </IconCard>
       </div>
     </section>
 
     <section class="home-section" aria-labelledby="areas-title">
-      <SectionHeader kicker="Human-AI Observatory" title="Obszary tematyczne" id="areas-title">
+      <SectionHeader kicker="Human-AI Observatory" title="Obszary" id="areas-title">
         Mapa tematów dla artykułów, notatek, pojęć i konsultingu o ludzkiej stronie AI.
       </SectionHeader>
-      <div class="topic-grid" aria-label="Obszary tematyczne">
+      <div class="topic-map" aria-label="Obszary tematyczne">
         <IconCard icon="trust" title="Zaufanie">Kiedy odpowiedź AI zaczyna wydawać się wiarygodna.</IconCard>
-        <IconCard icon="decision" title="Decyzje">Jak AI wpływa na osąd, odpowiedzialność i sprawdzanie informacji.</IconCard>
-        <IconCard icon="work" title="Praca">Jak zespoły używają AI w codziennych procesach.</IconCard>
-        <IconCard icon="emotion" title="Emocje">Jak rozmowa z systemem wpływa na komfort, lęk i poczucie zrozumienia.</IconCard>
-        <IconCard icon="spark" title="Twórczość">Co dzieje się z autorstwem, stylem i kontrolą.</IconCard>
-        <IconCard icon="culture" title="Kultura">Jak AI zmienia język, obrazy, narracje i komunikację publiczną.</IconCard>
+        <IconCard icon="emotion" title="Emocje">Jak systemy konwersacyjne wpływają na komfort, lęk i poczucie bycia zrozumianym.</IconCard>
+        <IconCard icon="dialogue" title="Przywiązanie">Dlaczego system może sprawiać wrażenie bliskiego, bezpiecznego albo zawsze dostępnego.</IconCard>
+        <IconCard icon="work" title="Praca">Jak AI zmienia sposób pisania, sprawdzania, decydowania i brania odpowiedzialności.</IconCard>
+        <IconCard icon="decision" title="Decyzje">Kiedy AI wspiera osąd, a kiedy zaczyna go zastępować.</IconCard>
+        <IconCard icon="spark" title="Twórczość">Co dzieje się z autorstwem, stylem i kontrolą, gdy AI wchodzi do procesu twórczego.</IconCard>
+        <IconCard icon="culture" title="Kultura">Co AI pokazuje o języku, mediach, tożsamości i władzy.</IconCard>
       </div>
     </section>
 
@@ -87,12 +88,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </p>
       </div>
       <div class="teaser-panel">
-        <ul class="check-list">
-          <li><Icon name="check" />analiza używania AI w organizacji</li>
-          <li><Icon name="check" />mapowanie procesów pracy</li>
-          <li><Icon name="check" />modelowanie przepływów człowiek-AI</li>
-          <li><Icon name="check" />zasady korzystania z AI</li>
-          <li><Icon name="check" />warsztaty i wystąpienia</li>
+        <ul class="teaser-chips" aria-label="Obszary konsultingu">
+          <li><Icon name="check" />analiza używania AI</li>
+          <li><Icon name="check" />mapowanie procesów</li>
+          <li><Icon name="check" />model pracy człowiek-AI</li>
+          <li><Icon name="check" />zasady dla zespołu</li>
         </ul>
         <a href="/pl/consulting/">Zobacz consulting</a>
       </div>
@@ -103,13 +103,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         Artykuły, notatki i pojęcia powstają jako spokojny, oparty na źródłach system redakcyjny.
       </SectionHeader>
       <div class="system-grid">
-        <IconCard icon="article" title="Artykuły" href="/pl/articles/" linkLabel="Otwórz artykuły" number="01">
+        <IconCard icon="article" title="Artykuły" href="/pl/articles/" linkLabel="Otwórz artykuły">
           Dłuższe teksty o AI, cyberpsychologii i Human-AI Interaction.
         </IconCard>
-        <IconCard icon="note" title="Notatki" href="/pl/notes/" linkLabel="Otwórz notatki" number="02">
+        <IconCard icon="note" title="Notatki" href="/pl/notes/" linkLabel="Otwórz notatki">
           Krótsze obserwacje, definicje i kierunki dalszego researchu.
         </IconCard>
-        <IconCard icon="concept" title="Pojęcia" href="/pl/concepts/" linkLabel="Otwórz pojęcia" number="03">
+        <IconCard icon="concept" title="Pojęcia" href="/pl/concepts/" linkLabel="Otwórz pojęcia">
           Słownik pojęć o ludzkiej stronie sztucznej inteligencji.
         </IconCard>
       </div>

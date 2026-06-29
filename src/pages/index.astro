@@ -48,29 +48,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         human side of AI.
       </SectionHeader>
       <div class="path-grid">
-        <IconCard icon="work" title="For organizations" href="/consulting/" linkLabel="See consulting" number="01">
+        <IconCard icon="work" title="For organizations" href="/consulting/" linkLabel="See consulting">
           AI use analysis, process mapping, human-AI work principles, workshops and talks.
         </IconCard>
-        <IconCard icon="article" title="For readers" href="/articles/" linkLabel="Read essays" number="02">
+        <IconCard icon="article" title="For readers" href="/articles/" linkLabel="Read essays">
           Essays and notes on AI, psychology, trust, emotion, work and culture.
         </IconCard>
-        <IconCard icon="dialogue" title="For conversations" href="/contact/" linkLabel="Get in touch" number="03">
+        <IconCard icon="dialogue" title="For conversations" href="/contact/" linkLabel="Get in touch">
           Talks, media commentary, research conversations and content collaboration.
         </IconCard>
       </div>
     </section>
 
     <section class="home-section" aria-labelledby="areas-title">
-      <SectionHeader kicker="Human-AI observatory" title="Areas of attention" id="areas-title">
+      <SectionHeader kicker="Human-AI observatory" title="Areas of focus" id="areas-title">
         A working map for essays, notes, concepts and consulting around the human side of AI.
       </SectionHeader>
-      <div class="topic-grid" aria-label="Research areas">
-        <IconCard icon="trust" title="Trust">When AI output begins to feel credible.</IconCard>
-        <IconCard icon="decision" title="Decisions">How AI shapes judgment, responsibility and verification.</IconCard>
-        <IconCard icon="work" title="Work">How teams use AI in everyday processes.</IconCard>
-        <IconCard icon="emotion" title="Emotion">How conversational systems affect comfort, anxiety and feeling understood.</IconCard>
-        <IconCard icon="spark" title="Creativity">What happens to authorship, style and control.</IconCard>
-        <IconCard icon="culture" title="Culture">How AI changes language, images, narratives and public communication.</IconCard>
+      <div class="topic-map" aria-label="Research areas">
+        <IconCard icon="trust" title="Trust">How people decide when AI feels credible.</IconCard>
+        <IconCard icon="emotion" title="Emotion">How conversational systems shape comfort, anxiety and validation.</IconCard>
+        <IconCard icon="dialogue" title="Attachment">Why AI can feel close, safe or emotionally available.</IconCard>
+        <IconCard icon="work" title="Work">How AI changes habits, workflow and responsibility.</IconCard>
+        <IconCard icon="decision" title="Decisions">Where human judgment is supported, weakened or outsourced.</IconCard>
+        <IconCard icon="spark" title="Creativity">How AI changes authorship, style and creative confidence.</IconCard>
+        <IconCard icon="culture" title="Culture">What AI reveals about language, media, identity and power.</IconCard>
       </div>
     </section>
 
@@ -84,12 +85,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
       </div>
       <div class="teaser-panel">
-        <ul class="check-list">
+        <ul class="teaser-chips" aria-label="Consulting focus areas">
           <li><Icon name="check" />AI use analysis</li>
-          <li><Icon name="check" />work process mapping</li>
-          <li><Icon name="check" />human-AI workflow modeling</li>
-          <li><Icon name="check" />AI use principles</li>
-          <li><Icon name="check" />workshops and talks</li>
+          <li><Icon name="check" />process mapping</li>
+          <li><Icon name="check" />human-AI workflow</li>
+          <li><Icon name="check" />team principles</li>
         </ul>
         <a href="/consulting/">See consulting</a>
       </div>
@@ -100,13 +100,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Articles, notes and concepts are being prepared as a source-based editorial system.
       </SectionHeader>
       <div class="system-grid">
-        <IconCard icon="article" title="Articles" href="/articles/" linkLabel="Open archive" number="01">
+        <IconCard icon="article" title="Articles" href="/articles/" linkLabel="Open archive">
           Long-form essays on AI, cyberpsychology and Human-AI Interaction.
         </IconCard>
-        <IconCard icon="note" title="Notes" href="/notes/" linkLabel="Open notes" number="02">
+        <IconCard icon="note" title="Notes" href="/notes/" linkLabel="Open notes">
           Short observations, definitions and research directions.
         </IconCard>
-        <IconCard icon="concept" title="Concepts" href="/concepts/" linkLabel="Open concepts" number="03">
+        <IconCard icon="concept" title="Concepts" href="/concepts/" linkLabel="Open concepts">
           A growing vocabulary for the human side of AI.
         </IconCard>
       </div>
