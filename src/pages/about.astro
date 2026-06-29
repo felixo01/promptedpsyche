@@ -1,4 +1,5 @@
 ---
+import Icon from '../components/Icon.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
@@ -6,13 +7,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="About"
   description="About Feliks Mamczur and Prompted Psyche, a research-informed project on AI, cyberpsychology and Human-AI Interaction."
 >
-  <section class="page-shell two-column">
-    <div>
-      <p class="eyebrow">About</p>
-      <h1>AI, cyberpsychology and Human-AI Interaction.</h1>
-    </div>
+  <section class="page-shell about-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">About</p>
+        <h1>AI, cyberpsychology and Human-AI Interaction.</h1>
+      </div>
+      <p>
+        Prompted Psyche is the public research and consulting home of Feliks Mamczur:
+        writing, talks and advisory work on the human side of artificial intelligence.
+      </p>
+    </header>
 
-    <div>
+    <div class="about-layout">
       <div class="prose">
         <p>
           Feliks Mamczur writes and consults on AI, cyberpsychology and Human-AI
@@ -31,39 +38,48 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
       </div>
 
-      <div class="panel">
-        <h2>Perspective</h2>
-        <div class="prose">
-          <p>
-            Feliks approaches AI through psychology, communication and creative practice.
-            His background in film, editing and post-production shapes how he thinks
-            about AI: through narrative, attention, image, emotion and the way
-            technologies reorganize creative and communicative work.
-          </p>
-        </div>
-      </div>
-
-      <div class="panel">
-        <h2>Research profile</h2>
-        <div class="prose">
-          <p>
-            Feliks is developing registered research projects in progress on the
-            psychological and creative dimensions of Human-AI Interaction, including AI
-            chatbot use, anxiety, authorship, authenticity and creative control in
-            AI-assisted practice.
-          </p>
-          <p>
-            These projects are ongoing and form part of the research background behind
-            Prompted Psyche.
-          </p>
-          <p>
-            ORCID:{' '}
-            <a href="https://orcid.org/0009-0001-0715-0517" rel="me noopener">
-              https://orcid.org/0009-0001-0715-0517
-            </a>
-          </p>
-        </div>
-      </div>
+      <aside class="soft-panel about-aside" aria-label="About Prompted Psyche">
+        <p class="small-label">Project lens</p>
+        <p>
+          A calm, source-based view of how AI changes judgment, language, creative work
+          and relationships between people and systems.
+        </p>
+      </aside>
     </div>
+
+    <div class="icon-grid about-perspective" aria-label="Perspective">
+      <article class="icon-card">
+        <Icon name="concept" />
+        <h2>AI, cyberpsychology and HAI</h2>
+        <p>Core concepts for understanding how people relate to AI systems.</p>
+      </article>
+      <article class="icon-card">
+        <Icon name="dialogue" />
+        <h2>Psychology and communication</h2>
+        <p>Attention to trust, emotion, language, validation and decision-making.</p>
+      </article>
+      <article class="icon-card">
+        <Icon name="spark" />
+        <h2>Creative practice</h2>
+        <p>Film, editing and post-production sharpen the view of narrative, image and workflow.</p>
+      </article>
+      <article class="icon-card">
+        <Icon name="article" />
+        <h2>Research profile</h2>
+        <p>
+          Ongoing research work informs the background of Prompted Psyche.
+          <a href="https://orcid.org/0009-0001-0715-0517" rel="me noopener">ORCID</a>
+        </p>
+      </article>
+    </div>
+
+    <section class="panel about-note" aria-labelledby="not-portfolio-title">
+      <h2 id="not-portfolio-title">Not a film portfolio</h2>
+      <p>
+        Film experience matters here as a way of seeing narrative, attention, image,
+        emotion and creative workflows. The primary focus of this site remains AI,
+        cyberpsychology and Human-AI Interaction.
+      </p>
+    </section>
   </section>
 </BaseLayout>

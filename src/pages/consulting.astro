@@ -23,7 +23,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </header>
 
     <div class="consulting-stack">
-      <div class="consulting-intro prose">
+      <div class="consulting-intro hero-panel">
         <p>
           I help organizations analyze where AI can meaningfully support everyday work -
           in communication, decision-making, information flow, creative processes and
@@ -34,6 +34,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           actually use AI: when they trust it, when they stop checking, what they put
           into tools, who signs off on the result and how AI changes the way a team works.
         </p>
+      </div>
+
+      <div class="icon-grid consulting-focus" aria-label="Consulting focus">
+        <article class="icon-card">
+          <Icon name="decision" />
+          <h2>Analyze AI use</h2>
+          <p>Understand where generative tools already appear in daily work.</p>
+        </article>
+        <article class="icon-card">
+          <Icon name="concept" />
+          <h2>Map human-AI flows</h2>
+          <p>Connect AI support with decisions, handoffs, checks and responsibility.</p>
+        </article>
+        <article class="icon-card">
+          <Icon name="trust" />
+          <h2>Set shared principles</h2>
+          <p>Build practical rules for trust, verification, data awareness and use.</p>
+        </article>
       </div>
 
       <section class="consulting-section" aria-labelledby="help-title">
@@ -47,17 +65,49 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             preparing shared principles for generative tools.
           </p>
         </div>
-        <ul class="service-grid">
-          <li><Icon name="check" /><span>analyzing current AI use in the organization</span></li>
-          <li><Icon name="check" /><span>mapping work processes for AI support</span></li>
-          <li><Icon name="check" /><span>modeling human-AI work processes</span></li>
-          <li><Icon name="check" /><span>identifying where AI can support people and where it requires control</span></li>
-          <li><Icon name="check" /><span>reviewing current practices around generative AI tools</span></li>
-          <li><Icon name="check" /><span>creating practical principles for AI use in everyday team work</span></li>
-          <li><Icon name="check" /><span>AI literacy for organizations</span></li>
-          <li><Icon name="check" /><span>workshops on trust, verification and responsibility</span></li>
-          <li><Icon name="check" /><span>helping leaders discuss AI, decisions and accountability</span></li>
-          <li><Icon name="check" /><span>AI in communication, education, culture and creative work</span></li>
+        <ul class="service-grid service-grid-detailed">
+          <li>
+            <Icon name="work" />
+            <span>
+              <strong>AI use analysis</strong>
+              <small>Review how teams use AI today and where support is realistic.</small>
+            </span>
+          </li>
+          <li>
+            <Icon name="concept" />
+            <span>
+              <strong>Process mapping</strong>
+              <small>Map work processes, information flow and human-AI handoffs.</small>
+            </span>
+          </li>
+          <li>
+            <Icon name="decision" />
+            <span>
+              <strong>Decision and verification habits</strong>
+              <small>Clarify what must be checked, owned, escalated or left human-led.</small>
+            </span>
+          </li>
+          <li>
+            <Icon name="trust" />
+            <span>
+              <strong>AI literacy for organizations</strong>
+              <small>Build shared language around trust, data, responsibility and limits.</small>
+            </span>
+          </li>
+          <li>
+            <Icon name="dialogue" />
+            <span>
+              <strong>Workshops and briefings</strong>
+              <small>Help leaders and teams discuss AI use without hype or tool worship.</small>
+            </span>
+          </li>
+          <li>
+            <Icon name="spark" />
+            <span>
+              <strong>Communication and creative work</strong>
+              <small>Use AI more deliberately in writing, education, culture and content.</small>
+            </span>
+          </li>
         </ul>
       </section>
 
@@ -157,7 +207,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
       </section>
 
-      <section class="contact-band consulting-cta" aria-labelledby="consulting-contact-title">
+      <section class="contact-band consulting-cta cta-panel" aria-labelledby="consulting-contact-title">
         <p class="small-label" id="consulting-contact-title">Contact</p>
         <p>Contact for consulting, workshops or talks.</p>
         <a href="/contact/">Contact</a>

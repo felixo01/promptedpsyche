@@ -10,18 +10,20 @@ const contactEmail = site.email?.trim();
   title="Contact"
   description="Contact Feliks Mamczur about consulting, talks, workshops, media, collaboration or research conversations."
 >
-  <section class="page-shell two-column">
-    <div>
-      <p class="eyebrow">Contact</p>
-      <h1>For consulting, talks, workshops, media or research conversations.</h1>
-    </div>
+  <section class="page-shell contact-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h1>For consulting, talks, workshops, media or research conversations.</h1>
+      </div>
+      <p>
+        Send a concise note with context, timeline and the kind of support you are looking
+        for.
+      </p>
+    </header>
 
-    <div>
+    <div class="hero-panel contact-intro">
       <div class="prose">
-        <p>
-          For consulting, talks, workshops, media or research conversations, send a concise
-          note with context, timeline and the kind of support you are looking for.
-        </p>
         <p>
           Prompted Psyche is currently in pre-launch, so response paths and public contact
           details may still change.
@@ -36,18 +38,39 @@ const contactEmail = site.email?.trim();
           )
         }
       </div>
-
-      <div class="panel">
-        <h2>Relevant inquiries</h2>
-        <ul class="plain-list icon-list">
-          <li><Icon name="dialogue" /><span>Consulting</span></li>
-          <li><Icon name="spark" /><span>Talks</span></li>
-          <li><Icon name="work" /><span>Workshops</span></li>
-          <li><Icon name="concept" /><span>Research conversations</span></li>
-          <li><Icon name="article" /><span>Media / commentary</span></li>
-          <li><Icon name="trust" /><span>Collaboration</span></li>
-        </ul>
-      </div>
     </div>
+
+    <section aria-labelledby="contact-categories-title">
+      <div class="compact-section-header">
+        <p class="section-kicker">Relevant inquiries</p>
+        <h2 id="contact-categories-title">What to write about</h2>
+      </div>
+      <div class="contact-grid">
+        <article class="icon-card">
+          <Icon name="dialogue" />
+          <h2>Organizational consulting</h2>
+        </article>
+        <article class="icon-card">
+          <Icon name="work" />
+          <h2>Workshops and briefings</h2>
+        </article>
+        <article class="icon-card">
+          <Icon name="spark" />
+          <h2>Talks and lectures</h2>
+        </article>
+        <article class="icon-card">
+          <Icon name="article" />
+          <h2>Media commentary</h2>
+        </article>
+        <article class="icon-card">
+          <Icon name="concept" />
+          <h2>Research conversations</h2>
+        </article>
+        <article class="icon-card">
+          <Icon name="trust" />
+          <h2>Content and project collaboration</h2>
+        </article>
+      </div>
+    </section>
   </section>
 </BaseLayout>

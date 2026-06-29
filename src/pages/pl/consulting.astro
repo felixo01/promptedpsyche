@@ -25,7 +25,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </header>
 
     <div class="consulting-stack">
-      <div class="consulting-intro prose">
+      <div class="consulting-intro hero-panel">
         <p>
           Pomagam firmom analizować, gdzie AI może realnie wspierać codzienną pracę -
           w komunikacji, decyzjach, przepływie informacji, procesach twórczych i
@@ -36,6 +36,24 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           naprawdę używają AI: kiedy jej ufają, kiedy przestają sprawdzać, co wpisują do
           narzędzi, kto podpisuje się pod wynikiem i jak AI zmienia sposób pracy zespołu.
         </p>
+      </div>
+
+      <div class="icon-grid consulting-focus" aria-label="Zakres konsultingu">
+        <article class="icon-card">
+          <Icon name="decision" />
+          <h2>Analiza użycia AI</h2>
+          <p>Porządkuję, gdzie narzędzia generatywne już pojawiają się w codziennej pracy.</p>
+        </article>
+        <article class="icon-card">
+          <Icon name="concept" />
+          <h2>Przepływy człowiek-AI</h2>
+          <p>Łączę wsparcie AI z decyzjami, odpowiedzialnością, weryfikacją i obiegiem pracy.</p>
+        </article>
+        <article class="icon-card">
+          <Icon name="trust" />
+          <h2>Wspólne zasady</h2>
+          <p>Pomagam tworzyć praktyczne zasady zaufania, kontroli, danych i odpowiedzialności.</p>
+        </article>
       </div>
 
       <section class="consulting-section" aria-labelledby="help-title">
@@ -49,17 +67,49 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             generatywnych bez sprowadzania AI literacy do listy promptów.
           </p>
         </div>
-        <ul class="service-grid">
-          <li><Icon name="check" /><span>analiza sposobu używania AI w organizacji</span></li>
-          <li><Icon name="check" /><span>mapowanie procesów pracy pod kątem AI</span></li>
-          <li><Icon name="check" /><span>modelowanie prostych przepływów człowiek-AI</span></li>
-          <li><Icon name="check" /><span>identyfikacja miejsc, gdzie AI może wspierać ludzi, a gdzie wymaga kontroli</span></li>
-          <li><Icon name="check" /><span>przegląd obecnych praktyk używania narzędzi generatywnych</span></li>
-          <li><Icon name="check" /><span>przygotowanie zasad korzystania z AI w codziennej pracy zespołu</span></li>
-          <li><Icon name="check" /><span>AI literacy dla organizacji</span></li>
-          <li><Icon name="check" /><span>warsztaty o zaufaniu, weryfikacji i odpowiedzialności</span></li>
-          <li><Icon name="check" /><span>wsparcie liderów w rozmowie o AI, decyzjach i odpowiedzialności</span></li>
-          <li><Icon name="check" /><span>AI w komunikacji, edukacji, kulturze i pracy twórczej</span></li>
+        <ul class="service-grid service-grid-detailed">
+          <li>
+            <Icon name="work" />
+            <span>
+              <strong>Analiza użycia AI</strong>
+              <small>Sprawdzenie, jak zespół korzysta z AI i gdzie wsparcie jest realne.</small>
+            </span>
+          </li>
+          <li>
+            <Icon name="concept" />
+            <span>
+              <strong>Mapowanie procesów</strong>
+              <small>Opis pracy, przepływu informacji i miejsc kontaktu człowieka z AI.</small>
+            </span>
+          </li>
+          <li>
+            <Icon name="decision" />
+            <span>
+              <strong>Decyzje i weryfikacja</strong>
+              <small>Ustalenie, co trzeba sprawdzać, kontrolować, eskalować albo zostawić człowiekowi.</small>
+            </span>
+          </li>
+          <li>
+            <Icon name="trust" />
+            <span>
+              <strong>AI literacy dla organizacji</strong>
+              <small>Wspólny język o zaufaniu, danych, odpowiedzialności i ograniczeniach AI.</small>
+            </span>
+          </li>
+          <li>
+            <Icon name="dialogue" />
+            <span>
+              <strong>Warsztaty i briefingi</strong>
+              <small>Rozmowa o używaniu AI bez hype'u, presji i listy magicznych promptów.</small>
+            </span>
+          </li>
+          <li>
+            <Icon name="spark" />
+            <span>
+              <strong>Komunikacja i praca twórcza</strong>
+              <small>Świadome używanie AI w pisaniu, edukacji, kulturze i pracy z treścią.</small>
+            </span>
+          </li>
         </ul>
       </section>
 
@@ -145,7 +195,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </li>
           <li>
             <strong>Zasady i następne kroki</strong>
-            <p>co wdrożyć, przetestować albo doprecyzować</p>
+            <p>co przetestować, opisać albo doprecyzować</p>
           </li>
         </ol>
       </section>
@@ -159,7 +209,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </p>
       </section>
 
-      <section class="contact-band consulting-cta" aria-labelledby="consulting-contact-title">
+      <section class="contact-band consulting-cta cta-panel" aria-labelledby="consulting-contact-title">
         <p class="small-label" id="consulting-contact-title">Kontakt</p>
         <p>Skontaktuj się w sprawie konsultingu, warsztatu albo wystąpienia.</p>
         <a href="/pl/contact/">Kontakt</a>

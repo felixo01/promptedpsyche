@@ -11,19 +11,20 @@ const contactEmail = site.email?.trim();
   title="Kontakt"
   description="Kontakt w sprawie konsultingu, warsztatów, wystąpień, komentarzy medialnych albo rozmów badawczych."
 >
-  <section class="page-shell two-column">
-    <div>
-      <p class="eyebrow">Kontakt</p>
-      <h1>Kontakt w sprawie konsultingu, warsztatów, wystąpień albo rozmów badawczych.</h1>
-    </div>
+  <section class="page-shell contact-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Kontakt</p>
+        <h1>Kontakt w sprawie konsultingu, warsztatów, wystąpień albo rozmów badawczych.</h1>
+      </div>
+      <p>
+        Przygotuj krótką wiadomość z kontekstem, terminem i rodzajem wsparcia, którego
+        szukasz.
+      </p>
+    </header>
 
-    <div>
+    <div class="hero-panel contact-intro">
       <div class="prose">
-        <p>
-          W sprawach konsultingu, warsztatów, wystąpień, komentarzy medialnych albo
-          rozmów badawczych przygotuj krótką wiadomość z kontekstem, terminem i rodzajem
-          wsparcia, którego szukasz.
-        </p>
         <p>
           Prompted Psyche jest obecnie w trybie pre-launch, więc publiczne dane
           kontaktowe mogą się jeszcze zmienić.
@@ -38,18 +39,39 @@ const contactEmail = site.email?.trim();
           )
         }
       </div>
-
-      <div class="panel">
-        <h2>Możesz napisać szczególnie w sprawach</h2>
-        <ul class="plain-list icon-list">
-          <li><Icon name="dialogue" /><span>konsultingu dla organizacji</span></li>
-          <li><Icon name="work" /><span>warsztatów i briefingów</span></li>
-          <li><Icon name="spark" /><span>wystąpień i wykładów</span></li>
-          <li><Icon name="article" /><span>komentarzy medialnych</span></li>
-          <li><Icon name="concept" /><span>rozmów badawczych</span></li>
-          <li><Icon name="trust" /><span>współpracy przy treściach lub projektach związanych z AI i cyberpsychologią</span></li>
-        </ul>
-      </div>
     </div>
+
+    <section aria-labelledby="contact-categories-title">
+      <div class="compact-section-header">
+        <p class="section-kicker">Tematy kontaktu</p>
+        <h2 id="contact-categories-title">W jakich sprawach możesz napisać</h2>
+      </div>
+      <div class="contact-grid">
+        <article class="icon-card">
+          <Icon name="dialogue" />
+          <h2>Konsulting dla organizacji</h2>
+        </article>
+        <article class="icon-card">
+          <Icon name="work" />
+          <h2>Warsztaty i briefingi</h2>
+        </article>
+        <article class="icon-card">
+          <Icon name="spark" />
+          <h2>Wystąpienia i wykłady</h2>
+        </article>
+        <article class="icon-card">
+          <Icon name="article" />
+          <h2>Komentarze medialne</h2>
+        </article>
+        <article class="icon-card">
+          <Icon name="concept" />
+          <h2>Rozmowy badawcze</h2>
+        </article>
+        <article class="icon-card">
+          <Icon name="trust" />
+          <h2>Współpraca przy treściach</h2>
+        </article>
+      </div>
+    </section>
   </section>
 </BaseLayout>
