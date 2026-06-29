@@ -1,4 +1,5 @@
 ---
+import Icon from '../../components/Icon.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { site } from '../../lib/site';
 
@@ -40,13 +41,13 @@ const contactEmail = site.email?.trim();
 
       <div class="panel">
         <h2>Możesz napisać szczególnie w sprawach</h2>
-        <ul class="plain-list">
-          <li>konsultingu dla organizacji</li>
-          <li>warsztatów i briefingów</li>
-          <li>wystąpień i wykładów</li>
-          <li>komentarzy medialnych</li>
-          <li>rozmów badawczych</li>
-          <li>współpracy przy treściach lub projektach związanych z AI i cyberpsychologią</li>
+        <ul class="plain-list icon-list">
+          <li><Icon name="dialogue" /><span>konsultingu dla organizacji</span></li>
+          <li><Icon name="work" /><span>warsztatów i briefingów</span></li>
+          <li><Icon name="spark" /><span>wystąpień i wykładów</span></li>
+          <li><Icon name="article" /><span>komentarzy medialnych</span></li>
+          <li><Icon name="concept" /><span>rozmów badawczych</span></li>
+          <li><Icon name="trust" /><span>współpracy przy treściach lub projektach związanych z AI i cyberpsychologią</span></li>
         </ul>
       </div>
     </div>

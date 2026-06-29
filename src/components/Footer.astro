@@ -1,4 +1,5 @@
 ---
+import BrandMark from './BrandMark.astro';
 import { footerCopy, getLangFromPath, getNavItems, type Locale } from '../lib/i18n';
 import { site } from '../lib/site';
 
@@ -14,8 +15,7 @@ const year = new Date().getFullYear();
 
 <footer class="site-footer">
   <div>
-    <p class="footer-title">{site.name}</p>
-    <p>{copy.tagline}</p>
+    <BrandMark line={copy.tagline} />
   </div>
 
   <nav class="footer-nav" aria-label={activeLang === 'pl' ? 'Nawigacja w stopce' : 'Footer navigation'}>

@@ -1,4 +1,5 @@
 ---
+import Icon from '../../components/Icon.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
@@ -19,10 +20,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         Prompted Psyche to mój projekt o tym, jak sztuczna inteligencja wpływa na
         myślenie, emocje, zaufanie, komunikację, twórczość i pracę.
       </p>
-      <p class="status-note">
-        Piszę i konsultuję na styku AI, cyberpsychologii i Human-AI Interaction.
-        Strona jest w trybie pre-launch, a publiczne teksty są przygotowywane.
-      </p>
+      <div class="project-card">
+        <p class="small-label">Czym jest Prompted Psyche?</p>
+        <p>
+          To mój projekt o ludzkiej stronie sztucznej inteligencji - o tym, jak AI wpływa
+          na myślenie, emocje, zaufanie, komunikację, twórczość i pracę.
+        </p>
+        <p class="status-note">
+          Strona jest w trybie pre-launch, a publiczne teksty są przygotowywane.
+        </p>
+      </div>
     </section>
 
     <section class="home-section" aria-labelledby="about-project-title">
@@ -69,37 +76,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
       <ul class="area-grid" aria-label="Obszary badawcze">
         <li>
-          <span>01</span>
+          <span class="area-head"><span>01</span><Icon name="trust" /></span>
           <strong>Zaufanie</strong>
           <p>Kiedy odpowiedź AI zaczyna wydawać się wiarygodna.</p>
         </li>
         <li>
-          <span>02</span>
+          <span class="area-head"><span>02</span><Icon name="emotion" /></span>
           <strong>Emocje</strong>
           <p>Jak systemy konwersacyjne wpływają na komfort, lęk i poczucie bycia zrozumianym.</p>
         </li>
         <li>
-          <span>03</span>
+          <span class="area-head"><span>03</span><Icon name="attachment" /></span>
           <strong>Przywiązanie</strong>
           <p>Dlaczego system może sprawiać wrażenie bliskiego, bezpiecznego albo zawsze dostępnego.</p>
         </li>
         <li>
-          <span>04</span>
+          <span class="area-head"><span>04</span><Icon name="work" /></span>
           <strong>Praca</strong>
           <p>Jak AI zmienia sposób pisania, sprawdzania, decydowania i brania odpowiedzialności.</p>
         </li>
         <li>
-          <span>05</span>
+          <span class="area-head"><span>05</span><Icon name="decision" /></span>
           <strong>Decyzje</strong>
           <p>Kiedy AI wspiera osąd, a kiedy zaczyna go zastępować.</p>
         </li>
         <li>
-          <span>06</span>
+          <span class="area-head"><span>06</span><Icon name="spark" /></span>
           <strong>Twórczość</strong>
           <p>Co dzieje się z autorstwem, stylem i kontrolą, gdy AI wchodzi do procesu twórczego.</p>
         </li>
         <li>
-          <span>07</span>
+          <span class="area-head"><span>07</span><Icon name="culture" /></span>
           <strong>Kultura</strong>
           <p>Co AI pokazuje o języku, mediach, tożsamości i władzy.</p>
         </li>
@@ -126,16 +133,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </p>
       <div class="system-grid">
         <a href="/pl/articles/">
+          <Icon name="article" />
           <span>01</span>
           <strong>Artykuły</strong>
           <p>Eseje o AI, cyberpsychologii i Human-AI Interaction.</p>
         </a>
         <a href="/pl/notes/">
+          <Icon name="note" />
           <span>02</span>
           <strong>Notatki</strong>
           <p>Krótsze obserwacje i tropy do dalszej pracy.</p>
         </a>
         <a href="/pl/concepts/">
+          <Icon name="concept" />
           <span>03</span>
           <strong>Pojęcia</strong>
           <p>Słownik najważniejszych pojęć o ludzkiej stronie AI.</p>
