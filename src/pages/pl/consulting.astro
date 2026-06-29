@@ -5,60 +5,80 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <BaseLayout
   lang="pl"
   title="Konsulting"
-  description="Konsulting, warsztaty i wystąpienia o AI literacy, Human-AI Interaction i psychologii pracy z AI."
+  description="Konsulting, warsztaty i wystąpienia o sensownym używaniu AI w firmach."
 >
   <section class="page-shell">
     <header class="page-header">
       <div>
         <p class="eyebrow">Konsulting</p>
         <h1>
-          Prowadzę konsultacje, warsztaty i wystąpienia o AI literacy,
-          Human-AI Interaction i psychologii pracy z AI.
+          Konsulting, warsztaty i wystąpienia o sensownym używaniu AI w firmach.
         </h1>
       </div>
       <p>
-        Pomagam organizacjom, zespołom i instytucjom zrozumieć ludzką stronę
-        wdrażania AI.
+        Pomagam organizacjom i zespołom lepiej rozumieć, jak korzystać z AI
+        w codziennej pracy - nie tylko przez lepsze prompty, ale przez jasne zasady,
+        weryfikację odpowiedzi, odpowiedzialność, ochronę danych i świadome projektowanie
+        pracy człowiek-AI.
       </p>
     </header>
 
-    <div class="two-column">
-      <div class="prose">
+    <div class="consulting-stack">
+      <div class="consulting-intro prose">
         <p>
           To nie są szkolenia z listy trików do ChatGPT. Chodzi o to, jak ludzie i zespoły
           naprawdę używają AI: kiedy jej ufają, kiedy przestają sprawdzać, co wpisują do
-          narzędzi, kto podpisuje się pod wynikiem i jak AI zmienia codzienny sposób pracy.
+          narzędzi, kto podpisuje się pod wynikiem i jak AI zmienia sposób pracy zespołu.
         </p>
-        <p>
-          Pomagam uporządkować język, granice odpowiedzialności i praktyczne zasady
-          korzystania z narzędzi generatywnych w konkretnym zespole.
-        </p>
-
-        <div class="panel">
-          <h2>Czym to nie jest</h2>
-          <p>
-            To nie jest porada prawna, kliniczna ani demonstracja narzędzi oparta
-            wyłącznie na promptach. Skupiam się na ludzkiej stronie używania AI:
-            osądzie, zaufaniu, komunikacji, odpowiedzialności i pracy.
-          </p>
-        </div>
       </div>
 
-      <div>
-        <div class="panel">
-          <h3>W czym pomagam</h3>
-          <ul class="plain-list">
-            <li>uporządkowanie sposobu używania AI w zespole</li>
-            <li>AI literacy dla organizacji</li>
-            <li>zaufanie i podejmowanie decyzji z AI</li>
-            <li>odpowiedzialne używanie narzędzi generatywnych</li>
-            <li>AI w komunikacji, edukacji, kulturze i pracy twórczej</li>
-            <li>przygotowanie zasad korzystania z AI w praktyce zespołu</li>
-          </ul>
+      <section class="consulting-section" aria-labelledby="help-title">
+        <div class="section-header compact-section-header">
+          <div>
+            <p class="section-kicker">Oferta</p>
+            <h2 id="help-title">Z czym mogę pomóc</h2>
+          </div>
+          <p>
+            Pracuję z zespołami, które chcą uporządkować codzienne używanie narzędzi
+            generatywnych bez sprowadzania AI literacy do listy promptów.
+          </p>
         </div>
+        <ul class="service-grid">
+          <li>uporządkowanie zasad korzystania z AI w zespole</li>
+          <li>AI literacy dla organizacji</li>
+          <li>warsztaty o zaufaniu, weryfikacji i odpowiedzialności</li>
+          <li>przegląd sposobu, w jaki zespół używa narzędzi generatywnych</li>
+          <li>tworzenie prostych zasad: co wolno, czego nie wolno, co trzeba sprawdzać</li>
+          <li>wsparcie liderów w rozmowie o AI, decyzjach i odpowiedzialności</li>
+          <li>AI w komunikacji, edukacji, kulturze i pracy twórczej</li>
+        </ul>
+      </section>
 
-        <div class="panel">
-          <h3>Dla kogo</h3>
+      <section class="consulting-section" aria-labelledby="situations-title">
+        <div class="section-header compact-section-header">
+          <div>
+            <p class="section-kicker">Typowe sytuacje</p>
+            <h2 id="situations-title">Typowe sytuacje w firmach</h2>
+          </div>
+          <p>
+            Najczęściej problemem nie jest brak promptów, tylko brak wspólnego języka,
+            zasad, odpowiedzialności i nawyków sprawdzania odpowiedzi.
+          </p>
+        </div>
+        <ul class="scenario-list">
+          <li>Zespół używa AI, ale każdy robi to po swojemu.</li>
+          <li>Firma chce korzystać z AI, ale nie ma wspólnych zasad.</li>
+          <li>Liderzy nie wiedzą, które zadania można bezpiecznie wspierać AI.</li>
+          <li>Pracownicy wpisują do narzędzi dane, których nie powinni tam wklejać.</li>
+          <li>AI przyspiesza pisanie, ale nikt nie wie, kto odpowiada za finalny tekst.</li>
+          <li>Zespół potrzebuje szkolenia, które nie jest listą promptów, tylko porządkuje realną pracę.</li>
+          <li>Organizacja chce przygotować wewnętrzne zasady używania AI.</li>
+        </ul>
+      </section>
+
+      <div class="consulting-columns">
+        <section class="panel" aria-labelledby="best-fit-title">
+          <h2 id="best-fit-title">Dla kogo</h2>
           <ul class="plain-list">
             <li>liderzy i zespoły zarządzające</li>
             <li>komunikacja, marketing, content</li>
@@ -67,39 +87,70 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <li>zespoły kreatywne</li>
             <li>organizacje przygotowujące wewnętrzne zasady używania AI</li>
           </ul>
-        </div>
+        </section>
 
-        <div class="panel">
-          <h3>Formaty</h3>
+        <section class="panel" aria-labelledby="formats-title">
+          <h2 id="formats-title">Formaty</h2>
           <ul class="plain-list">
             <li>briefing ekspercki</li>
             <li>warsztat</li>
             <li>sesja doradcza</li>
             <li>wystąpienie / wykład</li>
-            <li>review oparty na źródłach</li>
+            <li>przegląd sposobu pracy z AI</li>
             <li>sesja zasad używania AI w zespole</li>
           </ul>
-        </div>
-
-        <div class="panel">
-          <h3>Jak może wyglądać współpraca</h3>
-          <ol class="plain-list">
-            <li>Kontekst</li>
-            <li>Przypadki użycia i ryzyka</li>
-            <li>Sposób pracy człowiek-AI</li>
-            <li>Praktyczne zasady</li>
-            <li>Następne kroki</li>
-          </ol>
-        </div>
+        </section>
       </div>
-    </div>
 
-    <section class="contact-band" aria-labelledby="consulting-contact-title">
-      <p class="small-label" id="consulting-contact-title">Kontakt</p>
-      <p>
-        Skontaktuj się w sprawie konsultingu, warsztatu albo wystąpienia.
-      </p>
-      <a href="/pl/contact/">Kontakt</a>
-    </section>
+      <section class="consulting-section" aria-labelledby="session-title">
+        <div class="section-header compact-section-header">
+          <div>
+            <p class="section-kicker">Proces</p>
+            <h2 id="session-title">Jak może wyglądać współpraca</h2>
+          </div>
+          <p>
+            Forma może być krótka i praktyczna, ale powinna odnosić się do realnych
+            zadań, danych, decyzji i ryzyk w pracy zespołu.
+          </p>
+        </div>
+        <ol class="process-list">
+          <li>
+            <strong>Kontekst</strong>
+            <p>rozpoznanie tego, jak zespół dziś używa AI</p>
+          </li>
+          <li>
+            <strong>Przypadki użycia i ryzyka</strong>
+            <p>co jest pomocne, co wymaga ostrożności</p>
+          </li>
+          <li>
+            <strong>Sposób pracy człowiek-AI</strong>
+            <p>gdzie AI wchodzi do procesu</p>
+          </li>
+          <li>
+            <strong>Praktyczne zasady</strong>
+            <p>co wolno, czego nie wolno, co trzeba sprawdzać</p>
+          </li>
+          <li>
+            <strong>Następne kroki</strong>
+            <p>jak utrzymać sensowne używanie AI po warsztacie albo konsultacji</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="panel consulting-note" aria-labelledby="not-title">
+        <h2 id="not-title">Czym to nie jest</h2>
+        <p>
+          To nie jest porada prawna, kliniczna ani demonstracja narzędzi oparta wyłącznie
+          na promptach. Skupiam się na ludzkiej stronie używania AI: osądzie, zaufaniu,
+          komunikacji, odpowiedzialności i codziennej pracy zespołu.
+        </p>
+      </section>
+
+      <section class="contact-band consulting-cta" aria-labelledby="consulting-contact-title">
+        <p class="small-label" id="consulting-contact-title">Kontakt</p>
+        <p>Skontaktuj się w sprawie konsultingu, warsztatu albo wystąpienia.</p>
+        <a href="/pl/contact/">Kontakt</a>
+      </section>
+    </div>
   </section>
 </BaseLayout>
