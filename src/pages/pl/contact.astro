@@ -1,5 +1,5 @@
 ---
-import Icon from '../../components/Icon.astro';
+import IconCard from '../../components/IconCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { site } from '../../lib/site';
 
@@ -15,63 +15,49 @@ const contactEmail = site.email?.trim();
     <header class="page-header">
       <div>
         <p class="eyebrow">Kontakt</p>
-        <h1>Kontakt w sprawie konsultingu, warsztatów, wystąpień albo rozmów badawczych.</h1>
+        <h1>W jakiej sprawie chcesz porozmawiać?</h1>
       </div>
       <p>
-        Przygotuj krótką wiadomość z kontekstem, terminem i rodzajem wsparcia, którego
-        szukasz.
+        Napisz krótko, czego dotyczy sprawa, jaki jest kontekst i jaki termin Cię
+        interesuje.
       </p>
     </header>
 
-    <div class="hero-panel contact-intro">
-      <div class="prose">
-        <p>
-          Prompted Psyche jest obecnie w trybie pre-launch, więc publiczne dane
-          kontaktowe mogą się jeszcze zmienić.
-        </p>
-        {
-          contactEmail ? (
-            <p>
-              Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
-            </p>
-          ) : (
-            <p>Dane kontaktowe zostaną dodane wkrótce.</p>
-          )
-        }
-      </div>
+    <div class="contact-grid">
+      <IconCard icon="dialogue" title="Konsulting dla organizacji">
+        Analiza używania AI, zasady, mapowanie procesów i przepływy człowiek-AI.
+      </IconCard>
+      <IconCard icon="work" title="Warsztaty i briefingi">
+        Praktyczne spotkania dla zespołów, liderów i instytucji.
+      </IconCard>
+      <IconCard icon="spark" title="Wystąpienia i wykłady">
+        Publiczne lub wewnętrzne wystąpienia o AI, cyberpsychologii i Human-AI Interaction.
+      </IconCard>
+      <IconCard icon="article" title="Komentarze medialne">
+        Komentarze o ludzkiej, psychologicznej i kulturowej stronie AI.
+      </IconCard>
+      <IconCard icon="concept" title="Rozmowy badawcze">
+        Rozmowy wokół pojęć, pytań i rozwijających się kierunków researchu.
+      </IconCard>
+      <IconCard icon="trust" title="Współpraca przy treściach">
+        Treści oparte na źródłach, recenzje i współpraca wokół AI oraz cyberpsychologii.
+      </IconCard>
     </div>
 
-    <section aria-labelledby="contact-categories-title">
-      <div class="compact-section-header">
-        <p class="section-kicker">Tematy kontaktu</p>
-        <h2 id="contact-categories-title">W jakich sprawach możesz napisać</h2>
-      </div>
-      <div class="contact-grid">
-        <article class="icon-card">
-          <Icon name="dialogue" />
-          <h2>Konsulting dla organizacji</h2>
-        </article>
-        <article class="icon-card">
-          <Icon name="work" />
-          <h2>Warsztaty i briefingi</h2>
-        </article>
-        <article class="icon-card">
-          <Icon name="spark" />
-          <h2>Wystąpienia i wykłady</h2>
-        </article>
-        <article class="icon-card">
-          <Icon name="article" />
-          <h2>Komentarze medialne</h2>
-        </article>
-        <article class="icon-card">
-          <Icon name="concept" />
-          <h2>Rozmowy badawcze</h2>
-        </article>
-        <article class="icon-card">
-          <Icon name="trust" />
-          <h2>Współpraca przy treściach</h2>
-        </article>
-      </div>
+    <section class="hero-panel contact-intro" aria-label="Dane kontaktowe">
+      {
+        contactEmail ? (
+          <p>
+            Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+          </p>
+        ) : (
+          <p>Dane kontaktowe zostaną dodane wkrótce.</p>
+        )
+      }
+      <p>
+        Prompted Psyche jest obecnie w trybie pre-launch, więc publiczne dane kontaktowe
+        mogą się jeszcze zmienić.
+      </p>
     </section>
   </section>
 </BaseLayout>

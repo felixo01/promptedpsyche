@@ -1,160 +1,133 @@
 ---
+import CtaPanel from '../components/CtaPanel.astro';
 import Icon from '../components/Icon.astro';
+import IconCard from '../components/IconCard.astro';
+import SectionHeader from '../components/SectionHeader.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site } from '../lib/site';
 ---
 
 <BaseLayout>
-  <div class="home-shell">
-    <section class="prelaunch" aria-labelledby="home-title">
-      <p class="eyebrow masthead-context">
-        <span>Prompted Psyche</span>
-        <span>by Feliks Mamczur</span>
-      </p>
-      <h1 id="home-title">The human side of artificial intelligence.</h1>
-      <p class="prelaunch-tagline">{site.tagline}</p>
-      <p class="lede">
-        A research-informed publication and consulting platform by Feliks Mamczur on how
-        artificial intelligence shapes thought, emotion, trust, communication, creativity
-        and work.
-      </p>
-      <div class="hero-actions" aria-label="Next steps">
-        <a href="/consulting/">Consulting</a>
-        <a href="/about/">About the project</a>
+  <div class="home-shell home-layout">
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="home-hero-copy">
+        <p class="eyebrow">AI - Cyberpsychology - Human-AI Interaction</p>
+        <h1 id="home-title">The human side of artificial intelligence.</h1>
+        <p class="lede">
+          I write and consult on how AI shapes thought, emotion, trust, communication,
+          creativity and work.
+        </p>
+        <div class="hero-actions" aria-label="Main actions">
+          <a href="/consulting/">Consulting for organizations</a>
+          <a href="/articles/">Read essays</a>
+        </div>
       </div>
-      <div class="project-card identity-panel">
+
+      <aside class="identity-panel dossier-panel" aria-label="What is Prompted Psyche?">
+        <span class="dossier-stamp" aria-hidden="true">PP</span>
         <p class="small-label">What is Prompted Psyche?</p>
         <p>
           A research-informed expert platform by Feliks Mamczur on AI, cyberpsychology and
           Human-AI Interaction.
         </p>
-        <ul class="identity-list" aria-label="Project focus">
+        <ul class="identity-list" aria-label="Project topics">
           <li>AI literacy</li>
-          <li>Cyberpsychology</li>
-          <li>Human-AI Interaction</li>
+          <li>trust</li>
+          <li>decisions</li>
+          <li>work</li>
+          <li>human-AI relations</li>
+          <li>creativity</li>
+          <li>culture</li>
         </ul>
         <p class="status-note">This site is in pre-launch. Public writing is being prepared.</p>
-      </div>
+      </aside>
     </section>
 
-    <section class="home-section" aria-labelledby="about-project-title">
-      <div class="section-kicker">Project</div>
-      <div class="section-header">
-        <h2 id="about-project-title">What this project is about</h2>
-        <p>
-          AI is not only a tool. It is becoming part of how people think, decide, write,
-          trust and work together.
-        </p>
-      </div>
-      <div class="two-column">
-        <div class="prose">
-          <p>
-            Prompted Psyche looks at AI not only as a tool, but as a psychological,
-            cultural and communicative technology. It focuses on what happens when
-            artificial intelligence enters everyday work, decision-making, relationships,
-            creativity and public language.
-          </p>
-          <p>
-            The project connects AI literacy, cyberpsychology and Human-AI Interaction
-            with practical questions about judgment, responsibility, emotion, communication
-            and creative practice.
-          </p>
-        </div>
-        <div class="panel">
-          <h3>Research-informed, not hype-driven</h3>
-          <p>
-            Public writing is being prepared through a source-based editorial system:
-            claims, concepts and examples are reviewed before publication.
-          </p>
-        </div>
+    <section class="home-section" aria-labelledby="entry-title">
+      <SectionHeader kicker="Ways in" title="Three entry points" id="entry-title">
+        Prompted Psyche is built for organizations, readers and conversations around the
+        human side of AI.
+      </SectionHeader>
+      <div class="path-grid">
+        <IconCard icon="work" title="For organizations" href="/consulting/" linkLabel="See consulting" number="01">
+          AI use analysis, process mapping, human-AI work principles, workshops and talks.
+        </IconCard>
+        <IconCard icon="article" title="For readers" href="/articles/" linkLabel="Read essays" number="02">
+          Essays and notes on AI, psychology, trust, emotion, work and culture.
+        </IconCard>
+        <IconCard icon="dialogue" title="For conversations" href="/contact/" linkLabel="Get in touch" number="03">
+          Talks, media commentary, research conversations and content collaboration.
+        </IconCard>
       </div>
     </section>
 
     <section class="home-section" aria-labelledby="areas-title">
-      <div class="section-kicker">Human-AI observatory</div>
-      <div class="section-header">
-        <h2 id="areas-title">Areas of attention</h2>
-        <p>
-          A working map for future essays, notes and concepts about the human side of AI.
+      <SectionHeader kicker="Human-AI observatory" title="Areas of attention" id="areas-title">
+        A working map for essays, notes, concepts and consulting around the human side of AI.
+      </SectionHeader>
+      <div class="topic-grid" aria-label="Research areas">
+        <IconCard icon="trust" title="Trust">When AI output begins to feel credible.</IconCard>
+        <IconCard icon="decision" title="Decisions">How AI shapes judgment, responsibility and verification.</IconCard>
+        <IconCard icon="work" title="Work">How teams use AI in everyday processes.</IconCard>
+        <IconCard icon="emotion" title="Emotion">How conversational systems affect comfort, anxiety and feeling understood.</IconCard>
+        <IconCard icon="spark" title="Creativity">What happens to authorship, style and control.</IconCard>
+        <IconCard icon="culture" title="Culture">How AI changes language, images, narratives and public communication.</IconCard>
+      </div>
+    </section>
+
+    <section class="home-section consulting-teaser" aria-labelledby="consulting-title">
+      <div>
+        <p class="section-kicker">Consulting studio</p>
+        <h2 id="consulting-title">Consulting for organizations</h2>
+        <p class="section-lead">
+          I help organizations understand where AI can meaningfully support work and where
+          it requires principles, verification and caution.
         </p>
       </div>
-      <ul class="area-grid" aria-label="Research areas">
-        <li>
-          <span class="area-head"><span>01</span><Icon name="trust" /></span>
-          <strong>Trust</strong>
-          <p>How people decide when AI feels credible.</p>
-        </li>
-        <li>
-          <span class="area-head"><span>02</span><Icon name="emotion" /></span>
-          <strong>Emotion</strong>
-          <p>How conversational systems shape comfort, anxiety and validation.</p>
-        </li>
-        <li>
-          <span class="area-head"><span>03</span><Icon name="attachment" /></span>
-          <strong>Attachment</strong>
-          <p>Why AI can feel close, safe or emotionally available.</p>
-        </li>
-        <li>
-          <span class="area-head"><span>04</span><Icon name="work" /></span>
-          <strong>Work</strong>
-          <p>How AI changes habits, workflow and responsibility.</p>
-        </li>
-        <li>
-          <span class="area-head"><span>05</span><Icon name="decision" /></span>
-          <strong>Decisions</strong>
-          <p>Where human judgment is supported, weakened or outsourced.</p>
-        </li>
-        <li>
-          <span class="area-head"><span>06</span><Icon name="spark" /></span>
-          <strong>Creativity</strong>
-          <p>How AI changes authorship, style and creative confidence.</p>
-        </li>
-        <li>
-          <span class="area-head"><span>07</span><Icon name="culture" /></span>
-          <strong>Culture</strong>
-          <p>What AI reveals about language, media, identity and power.</p>
-        </li>
-      </ul>
-    </section>
-
-    <section class="contact-band" aria-labelledby="consulting-title">
-      <p class="small-label" id="consulting-title">Consulting, workshops and talks</p>
-      <p>
-        Feliks works with organizations, teams and institutions that need to understand the
-        human side of AI adoption: AI literacy, trust, decision-making, communication,
-        creative workflows and responsible use of generative tools.
-      </p>
-      <a href="/consulting/">Explore consulting</a>
-    </section>
-
-    <section class="publication-system" aria-labelledby="system-title">
-      <p class="section-kicker">Writing and research notes</p>
-      <h2 id="system-title">A source-based publication system is being prepared</h2>
-      <p class="quiet">
-        Articles, notes and concepts are being prepared as part of a source-based
-        editorial system. Public writing will include long-form essays, shorter
-        observations and concept explainers.
-      </p>
-      <div class="system-grid">
-        <a href="/articles/">
-          <Icon name="article" />
-          <span>01</span>
-          <strong>Articles</strong>
-          <p>Long-form essays on AI, cyberpsychology and Human-AI Interaction.</p>
-        </a>
-        <a href="/notes/">
-          <Icon name="note" />
-          <span>02</span>
-          <strong>Notes</strong>
-          <p>Short observations, fragments and working thoughts.</p>
-        </a>
-        <a href="/concepts/">
-          <Icon name="concept" />
-          <span>03</span>
-          <strong>Concepts</strong>
-          <p>A living glossary for the human side of AI.</p>
-        </a>
+      <div class="teaser-panel">
+        <ul class="check-list">
+          <li><Icon name="check" />AI use analysis</li>
+          <li><Icon name="check" />work process mapping</li>
+          <li><Icon name="check" />human-AI workflow modeling</li>
+          <li><Icon name="check" />AI use principles</li>
+          <li><Icon name="check" />workshops and talks</li>
+        </ul>
+        <a href="/consulting/">See consulting</a>
       </div>
     </section>
+
+    <section class="home-section" aria-labelledby="writing-title">
+      <SectionHeader kicker="Research notebook" title="A publication system is being prepared" id="writing-title">
+        Articles, notes and concepts are being prepared as a source-based editorial system.
+      </SectionHeader>
+      <div class="system-grid">
+        <IconCard icon="article" title="Articles" href="/articles/" linkLabel="Open archive" number="01">
+          Long-form essays on AI, cyberpsychology and Human-AI Interaction.
+        </IconCard>
+        <IconCard icon="note" title="Notes" href="/notes/" linkLabel="Open notes" number="02">
+          Short observations, definitions and research directions.
+        </IconCard>
+        <IconCard icon="concept" title="Concepts" href="/concepts/" linkLabel="Open concepts" number="03">
+          A growing vocabulary for the human side of AI.
+        </IconCard>
+      </div>
+    </section>
+
+    <section class="home-section about-teaser" aria-labelledby="about-title">
+      <div>
+        <p class="section-kicker">Expert profile</p>
+        <h2 id="about-title">Feliks Mamczur</h2>
+      </div>
+      <p>
+        I write and consult at the intersection of AI, cyberpsychology and Human-AI
+        Interaction. My background in film, editing and post-production shapes how I think
+        about AI: through narrative, attention, image, emotion and the way technologies
+        reorganize creative and communicative work.
+      </p>
+    </section>
+
+    <CtaPanel kicker="Contact" title="Let's talk about AI in your organization." href="/contact/" linkLabel="Contact">
+      Consulting, workshops, talks and research-informed conversations about the human
+      side of AI adoption.
+    </CtaPanel>
   </div>
 </BaseLayout>

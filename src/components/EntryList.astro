@@ -39,7 +39,8 @@ const {
 
 {
   entries.length === 0 ? (
-    <div class="empty-state">
+    <div class="empty-state publication-empty">
+      <span class="dossier-stamp" aria-hidden="true">PP</span>
       {emptyIcon && <Icon name={emptyIcon} />}
       <p class="small-label">{emptyLabel}</p>
       <p>{emptyMessage}</p>

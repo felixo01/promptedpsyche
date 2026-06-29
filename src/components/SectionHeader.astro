@@ -1,0 +1,19 @@
+---
+interface Props {
+  kicker?: string;
+  title: string;
+  id?: string;
+}
+
+const { kicker, title, id } = Astro.props;
+---
+
+<div class="section-header">
+  <div>
+    {kicker && <p class="section-kicker">{kicker}</p>}
+    <h2 id={id}>{title}</h2>
+  </div>
+  <p>
+    <slot />
+  </p>
+</div>

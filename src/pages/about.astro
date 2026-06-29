@@ -1,5 +1,6 @@
 ---
-import Icon from '../components/Icon.astro';
+import IconCard from '../components/IconCard.astro';
+import SectionHeader from '../components/SectionHeader.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
@@ -19,59 +20,53 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
     </header>
 
-    <div class="about-layout">
+    <section class="about-layout" aria-labelledby="who-title">
       <div class="prose">
+        <p class="section-kicker" id="who-title">Who I am</p>
         <p>
           Feliks Mamczur writes and consults on AI, cyberpsychology and Human-AI
           Interaction.
         </p>
         <p>
-          Prompted Psyche is a research-informed publication and consulting platform on the
-          human side of artificial intelligence: how AI shapes thought, emotion, trust,
-          communication, creativity and work.
+          Prompted Psyche is a research-informed publication and consulting platform on
+          how AI shapes thought, emotion, trust, communication, creativity and work.
         </p>
         <p>
-          The project is interested in AI as a lived, social and psychological technology,
-          not only as software. It asks what changes when people begin to think with AI,
-          trust AI, delegate work to AI, create with AI and communicate through AI-shaped
-          systems.
+          The project looks at AI as a lived, social and psychological technology. It asks
+          what changes when people begin to think with AI, trust AI, delegate work to AI,
+          create with AI and communicate through AI-shaped systems.
         </p>
       </div>
 
-      <aside class="soft-panel about-aside" aria-label="About Prompted Psyche">
-        <p class="small-label">Project lens</p>
+      <aside class="soft-panel about-aside" aria-label="Project lens">
+        <p class="small-label">What Prompted Psyche is</p>
         <p>
-          A calm, source-based view of how AI changes judgment, language, creative work
-          and relationships between people and systems.
+          A personal expert platform that combines research notebook, editorial magazine,
+          consulting studio and public profile.
         </p>
       </aside>
-    </div>
+    </section>
 
-    <div class="icon-grid about-perspective" aria-label="Perspective">
-      <article class="icon-card">
-        <Icon name="concept" />
-        <h2>AI, cyberpsychology and HAI</h2>
-        <p>Core concepts for understanding how people relate to AI systems.</p>
-      </article>
-      <article class="icon-card">
-        <Icon name="dialogue" />
-        <h2>Psychology and communication</h2>
-        <p>Attention to trust, emotion, language, validation and decision-making.</p>
-      </article>
-      <article class="icon-card">
-        <Icon name="spark" />
-        <h2>Creative practice</h2>
-        <p>Film, editing and post-production shape attention to narrative, image, emotion and workflow.</p>
-      </article>
-      <article class="icon-card">
-        <Icon name="article" />
-        <h2>Research profile</h2>
-        <p>
+    <section aria-labelledby="perspective-title">
+      <SectionHeader kicker="Perspective" title="AI, psychology, communication and creative practice" id="perspective-title">
+        Prompted Psyche connects the psychology of AI use with practical questions about
+        work, trust, culture and responsibility.
+      </SectionHeader>
+      <div class="icon-grid about-perspective" aria-label="Perspective areas">
+        <IconCard icon="concept" title="AI, cyberpsychology and HAI">
+          Concepts for understanding how people relate to AI systems.
+        </IconCard>
+        <IconCard icon="dialogue" title="Psychology and communication">
+          Attention to trust, emotion, language, validation and decision-making.
+        </IconCard>
+        <IconCard icon="spark" title="Film as interpretive advantage">
+          Narrative, attention, image and emotion as tools for reading human-AI change.
+        </IconCard>
+        <IconCard icon="article" title="Research profile">
           Ongoing research work informs the background of Prompted Psyche.
-          <a href="https://orcid.org/0009-0001-0715-0517" rel="me noopener">ORCID</a>
-        </p>
-      </article>
-    </div>
+        </IconCard>
+      </div>
+    </section>
 
     <section class="panel about-note" aria-labelledby="film-perspective-title">
       <h2 id="film-perspective-title">Film, attention and AI</h2>
@@ -79,6 +74,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         My background in film, editing and post-production shapes how I think about AI:
         through narrative, attention, image, emotion and the way technologies reorganize
         creative and communicative work.
+      </p>
+    </section>
+
+    <section class="panel about-note" aria-labelledby="research-profile-title">
+      <h2 id="research-profile-title">Research profile</h2>
+      <p>
+        ORCID:{' '}
+        <a href="https://orcid.org/0009-0001-0715-0517" rel="me noopener">
+          https://orcid.org/0009-0001-0715-0517
+        </a>
       </p>
     </section>
   </section>

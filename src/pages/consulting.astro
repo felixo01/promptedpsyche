@@ -1,217 +1,111 @@
 ---
-import Icon from '../components/Icon.astro';
+import CtaPanel from '../components/CtaPanel.astro';
+import IconCard from '../components/IconCard.astro';
+import SectionHeader from '../components/SectionHeader.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
   title="Consulting"
-  description="Consulting, workshops and talks on deliberate AI use, AI literacy and Human-AI Interaction in organizations."
+  description="Consulting, workshops and AI use analysis for organizations."
 >
-  <section class="page-shell">
-    <header class="page-header">
+  <section class="page-shell service-shell">
+    <header class="page-header service-hero">
       <div>
         <p class="eyebrow">Consulting</p>
-        <h1>
-          Consulting, workshops and talks on using AI more deliberately in organizations.
-        </h1>
+        <h1>Consulting, workshops and AI use analysis for organizations.</h1>
       </div>
       <p>
-        I help organizations and teams understand how to use AI in everyday work - not
-        only through better prompts, but through clearer principles, verification habits,
-        responsibility, data awareness and human-AI workflows.
+        I help organizations analyze where AI can meaningfully support everyday work - in
+        communication, decision-making, information flow, creative processes and team
+        practices.
       </p>
     </header>
 
-    <div class="consulting-stack">
-      <div class="consulting-intro hero-panel">
-        <p>
-          I help organizations analyze where AI can meaningfully support everyday work -
-          in communication, decision-making, information flow, creative processes and
-          team practices.
-        </p>
-        <p>
-          This is not a tool demo or a list of ChatGPT tricks. The focus is how people
-          actually use AI: when they trust it, when they stop checking, what they put
-          into tools, who signs off on the result and how AI changes the way a team works.
-        </p>
+    <section aria-labelledby="services-title">
+      <SectionHeader kicker="Services" title="What I help with" id="services-title">
+        Practical, research-informed support for teams that need shared principles,
+        verification habits and clearer human-AI workflows.
+      </SectionHeader>
+      <div class="service-card-grid">
+        <IconCard icon="decision" title="AI use analysis">
+          Review how teams already use AI and where support is realistic.
+        </IconCard>
+        <IconCard icon="concept" title="Process mapping">
+          Map tasks, information flow, handoffs and points where AI enters work.
+        </IconCard>
+        <IconCard icon="work" title="Human-AI work model">
+          Design practical flows for what AI supports and what people own.
+        </IconCard>
+        <IconCard icon="trust" title="Team principles">
+          Create shared rules for trust, verification, data awareness and responsibility.
+        </IconCard>
+        <IconCard icon="article" title="AI literacy">
+          Build a common language for using generative tools without hype.
+        </IconCard>
+        <IconCard icon="dialogue" title="Workshops and talks">
+          Briefings, workshops and lectures on AI, cyberpsychology and Human-AI Interaction.
+        </IconCard>
       </div>
+    </section>
 
-      <div class="icon-grid consulting-focus" aria-label="Consulting focus">
-        <article class="icon-card">
-          <Icon name="decision" />
-          <h2>Analyze AI use</h2>
-          <p>Understand where generative tools already appear in daily work.</p>
-        </article>
-        <article class="icon-card">
-          <Icon name="concept" />
-          <h2>Map human-AI flows</h2>
-          <p>Connect AI support with decisions, handoffs, checks and responsibility.</p>
-        </article>
-        <article class="icon-card">
-          <Icon name="trust" />
-          <h2>Set shared principles</h2>
-          <p>Build practical rules for trust, verification, data awareness and use.</p>
-        </article>
-      </div>
+    <section aria-labelledby="situations-title">
+      <SectionHeader kicker="Typical situations" title="When this work is useful" id="situations-title">
+        The problem is often not a lack of prompts. It is unclear judgment, unclear
+        responsibility and inconsistent use across a team.
+      </SectionHeader>
+      <ul class="scenario-list scenario-grid">
+        <li>A team uses AI, but everyone uses it differently.</li>
+        <li>The organization wants to use AI, but has no shared principles.</li>
+        <li>People paste sensitive information into tools without thinking through the risk.</li>
+        <li>AI speeds up writing, but responsibility for the final output is unclear.</li>
+        <li>Leaders do not know which tasks can be supported by AI.</li>
+        <li>The organization wants practical internal AI use principles.</li>
+      </ul>
+    </section>
 
-      <section class="consulting-section" aria-labelledby="help-title">
-        <div class="section-header compact-section-header">
-          <div>
-            <p class="section-kicker">Offer</p>
-            <h2 id="help-title">What I help with</h2>
-          </div>
-          <p>
-            Practical, research-informed support for teams that already use AI or are
-            preparing shared principles for generative tools.
-          </p>
-        </div>
-        <ul class="service-grid service-grid-detailed">
-          <li>
-            <Icon name="work" />
-            <span>
-              <strong>AI use analysis</strong>
-              <small>Review how teams use AI today and where support is realistic.</small>
-            </span>
-          </li>
-          <li>
-            <Icon name="concept" />
-            <span>
-              <strong>Process mapping</strong>
-              <small>Map work processes, information flow and human-AI handoffs.</small>
-            </span>
-          </li>
-          <li>
-            <Icon name="decision" />
-            <span>
-              <strong>Decision and verification habits</strong>
-              <small>Clarify what must be checked, owned, escalated or left human-led.</small>
-            </span>
-          </li>
-          <li>
-            <Icon name="trust" />
-            <span>
-              <strong>AI literacy for organizations</strong>
-              <small>Build shared language around trust, data, responsibility and limits.</small>
-            </span>
-          </li>
-          <li>
-            <Icon name="dialogue" />
-            <span>
-              <strong>Workshops and briefings</strong>
-              <small>Help leaders and teams discuss AI use without hype or tool worship.</small>
-            </span>
-          </li>
-          <li>
-            <Icon name="spark" />
-            <span>
-              <strong>Communication and creative work</strong>
-              <small>Use AI more deliberately in writing, education, culture and content.</small>
-            </span>
-          </li>
-        </ul>
-      </section>
+    <section aria-labelledby="process-title">
+      <SectionHeader kicker="Process" title="How the collaboration can work" id="process-title">
+        The format can stay compact, but it should connect AI literacy with real tasks,
+        risks and decision points.
+      </SectionHeader>
+      <ol class="process-list process-steps">
+        <li>
+          <strong>Discovery</strong>
+          <p>where AI appears now and what the team needs to clarify</p>
+        </li>
+        <li>
+          <strong>Process map</strong>
+          <p>which stages can be supported by AI and where handoffs happen</p>
+        </li>
+        <li>
+          <strong>Risks and responsibility</strong>
+          <p>what requires verification, data awareness, control or another person</p>
+        </li>
+        <li>
+          <strong>Human-AI work model</strong>
+          <p>what a sensible flow can look like in everyday work</p>
+        </li>
+        <li>
+          <strong>Principles and next steps</strong>
+          <p>what to test, describe or clarify next</p>
+        </li>
+      </ol>
+    </section>
 
-      <section class="consulting-section" aria-labelledby="situations-title">
-        <div class="section-header compact-section-header">
-          <div>
-            <p class="section-kicker">Typical situations</p>
-            <h2 id="situations-title">When this work is useful</h2>
-          </div>
-          <p>
-            The most common problem is not a lack of prompts. It is unclear judgment,
-            unclear responsibility and inconsistent use across a team.
-          </p>
-        </div>
-        <ul class="scenario-list">
-          <li>The organization wants to see where AI can actually help and where it creates risk.</li>
-          <li>A team uses AI, but everyone uses it differently.</li>
-          <li>The organization wants to use AI, but has no shared rules.</li>
-          <li>A team uses AI for writing, analysis or presentations, but has no shared way to verify outputs.</li>
-          <li>Leaders are not sure which tasks can safely be supported by AI.</li>
-          <li>Leaders want to understand how AI changes work, decisions and responsibility.</li>
-          <li>People paste sensitive information into tools without understanding the risk.</li>
-          <li>AI speeds up writing, but nobody knows who is responsible for the final text.</li>
-          <li>The team needs training that is not just a list of prompts.</li>
-          <li>The organization wants simple principles for what can be supported by AI, what must be checked and what should remain human-led.</li>
-          <li>The organization wants internal principles for using generative AI.</li>
-        </ul>
-      </section>
+    <section class="panel consulting-note" aria-labelledby="not-title">
+      <h2 id="not-title">What this is not</h2>
+      <ul class="plain-list">
+        <li>not legal advice</li>
+        <li>not clinical advice</li>
+        <li>not a guarantee of ROI</li>
+        <li>not end-to-end IT implementation</li>
+        <li>not a list of prompt tricks</li>
+      </ul>
+    </section>
 
-      <div class="consulting-columns">
-        <section class="panel" aria-labelledby="best-fit-title">
-          <h2 id="best-fit-title">Best fit</h2>
-          <ul class="plain-list">
-            <li>leadership teams</li>
-            <li>communication / marketing / content teams</li>
-            <li>HR / L&amp;D</li>
-            <li>education and cultural institutions</li>
-            <li>creative teams</li>
-            <li>organizations preparing internal AI guidelines</li>
-          </ul>
-        </section>
-
-        <section class="panel" aria-labelledby="formats-title">
-          <h2 id="formats-title">Formats</h2>
-          <ul class="plain-list">
-            <li>expert briefing</li>
-            <li>workshop</li>
-            <li>advisory session</li>
-            <li>talk / lecture</li>
-            <li>review of current AI use</li>
-            <li>internal AI use principles session</li>
-          </ul>
-        </section>
-      </div>
-
-      <section class="consulting-section" aria-labelledby="session-title">
-        <div class="section-header compact-section-header">
-          <div>
-            <p class="section-kicker">Process</p>
-            <h2 id="session-title">How a session can work</h2>
-          </div>
-          <p>
-            The format can stay compact, but it should connect AI literacy with the real
-            tasks, risks and decision points of the team.
-          </p>
-        </div>
-        <ol class="process-list">
-          <li>
-            <strong>Context</strong>
-            <p>how work happens now and where AI already appears</p>
-          </li>
-          <li>
-            <strong>Process map</strong>
-            <p>which stages can be supported by AI</p>
-          </li>
-          <li>
-            <strong>Risks and responsibility</strong>
-            <p>what requires verification, data awareness, control or another person</p>
-          </li>
-          <li>
-            <strong>Human-AI work model</strong>
-            <p>what a sensible flow can look like</p>
-          </li>
-          <li>
-            <strong>Principles and next steps</strong>
-            <p>what to test, implement or clarify</p>
-          </li>
-        </ol>
-      </section>
-
-      <section class="panel consulting-note" aria-labelledby="not-title">
-        <h2 id="not-title">What this is not</h2>
-        <p>
-          This is not legal advice, clinical advice or a tool demo focused only on prompts.
-          The focus is the human side of AI use: judgment, trust, communication,
-          responsibility and the way teams actually work.
-        </p>
-      </section>
-
-      <section class="contact-band consulting-cta cta-panel" aria-labelledby="consulting-contact-title">
-        <p class="small-label" id="consulting-contact-title">Contact</p>
-        <p>Contact for consulting, workshops or talks.</p>
-        <a href="/contact/">Contact</a>
-      </section>
-    </div>
+    <CtaPanel kicker="Contact" title="Talk about AI use in your organization." href="/contact/" linkLabel="Contact">
+      Send a short note about the team, the current AI use and the kind of support you are looking for.
+    </CtaPanel>
   </section>
 </BaseLayout>
