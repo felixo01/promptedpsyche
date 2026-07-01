@@ -23,6 +23,9 @@ interface Props {
 const { entry, label, lang = 'en', alternateLinks, showPublishedAt = true } = Astro.props;
 const tags: string[] = entry.data.tags ?? [];
 const readingTime = entry.data.readingTime;
+const isConceptEntry = !showPublishedAt;
+const conceptBackHref = lang === 'pl' ? '/pl/concepts/' : '/concepts/';
+const conceptBackLabel = lang === 'pl' ? 'Wróć do pojęć' : 'Back to concepts';
 // Tags are informational for now. Add tag routes or filtering before making them interactive.
 const asideLabels = lang === 'pl'
   ? {
@@ -46,18 +49,31 @@ const asideLabels = lang === 'pl'
 >
   <article class="article-shell">
     <header class="content-header">
-      <p class="eyebrow">{label}</p>
+      {
+        isConceptEntry ? (
+          <div class="content-topline">
+            <a href={conceptBackHref}>{conceptBackLabel}</a>
+            <span>{label}</span>
+          </div>
+        ) : (
+          <p class="eyebrow">{label}</p>
+        )
+      }
       <h1>{entry.data.title}</h1>
       <p class="lede">{entry.data.description}</p>
-      <div class="content-meta">
-        <span>{entry.data.author}</span>
-        {showPublishedAt && (
-          <time datetime={entry.data.publishedAt.toISOString()}>
-            {formatDate(entry.data.publishedAt, lang)}
-          </time>
-        )}
-        {readingTime && <span>{readingTime}</span>}
-      </div>
+      {
+        (!isConceptEntry || readingTime) && (
+          <div class="content-meta">
+            {!isConceptEntry && <span>{entry.data.author}</span>}
+            {showPublishedAt && (
+              <time datetime={entry.data.publishedAt.toISOString()}>
+                {formatDate(entry.data.publishedAt, lang)}
+              </time>
+            )}
+            {readingTime && <span>{readingTime}</span>}
+          </div>
+        )
+      }
       {tags.length > 0 && (
         <ul class="tag-list content-tags" aria-label="Topics">
           {tags.map((tag) => (
