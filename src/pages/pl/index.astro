@@ -3,6 +3,7 @@ import CtaPanel from '../../components/CtaPanel.astro';
 import Icon from '../../components/Icon.astro';
 import IconCard from '../../components/IconCard.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
+import VisualPlate from '../../components/VisualPlate.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
@@ -35,6 +36,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           to, co AI potrafi zrobić, ale to, co dzieje się z człowiekiem, gdy zaczyna jej
           ufać.
         </p>
+        <VisualPlate variant="field-map" lang="pl" class="hero-visual" />
         <ul class="identity-list" aria-label="Tematy projektu">
           <li>kompetencje pracy z AI</li>
           <li>zaufanie</li>
@@ -69,6 +71,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <SectionHeader kicker="Mapa projektu" title="Obszary" id="areas-title">
         Mapa tematów dla artykułów, notatek, pojęć i konsultingu o ludzkiej stronie AI.
       </SectionHeader>
+      <VisualPlate variant="concept-map" lang="pl" class="section-visual section-visual-compact" />
       <div class="topic-map" aria-label="Obszary tematyczne">
         <IconCard icon="trust" title="Zaufanie">Kiedy odpowiedź AI zaczyna wydawać się wiarygodna.</IconCard>
         <IconCard icon="emotion" title="Emocje">Jak systemy konwersacyjne wpływają na komfort, lęk i poczucie bycia zrozumianym.</IconCard>
@@ -91,6 +94,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </p>
       </div>
       <div class="teaser-panel">
+        <VisualPlate variant="process-flow" lang="pl" class="section-visual teaser-visual" />
         <ul class="teaser-chips" aria-label="Obszary konsultingu">
           <li><Icon name="check" />analiza używania AI</li>
           <li><Icon name="check" />mapowanie procesów</li>

@@ -1,5 +1,6 @@
 ---
 import IconCard from '../../components/IconCard.astro';
+import VisualPlate from '../../components/VisualPlate.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { site } from '../../lib/site';
 
@@ -45,6 +46,7 @@ const contactEmail = site.email?.trim();
     </div>
 
     <section class="hero-panel contact-intro" aria-label="Dane kontaktowe">
+      <VisualPlate variant="note-stack" lang="pl" class="panel-visual contact-visual" />
       <p>
         Możesz napisać w sprawie konsultingu, warsztatów, wystąpień, komentarza
         medialnego, rozmowy badawczej albo współpracy przy treściach.

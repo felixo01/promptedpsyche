@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import EntryList from '../../components/EntryList.astro';
+import VisualPlate from '../../components/VisualPlate.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { onlyPublicEntries, sortByDateDesc } from '../../lib/content';
 
@@ -35,6 +36,7 @@ const concepts = sortByDateDesc(onlyPublicEntries(await getCollection('concepts'
 
     {concepts.length === 0 && (
       <section class="empty-followup" aria-labelledby="concepts-followup-title">
+        <VisualPlate variant="concept-map" class="empty-state-visual" />
         <h2 id="concepts-followup-title">Concept language</h2>
         <p>
           Concepts will organize the vocabulary of Prompted Psyche: AI literacy,

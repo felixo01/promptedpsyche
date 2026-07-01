@@ -3,6 +3,7 @@ import CtaPanel from '../components/CtaPanel.astro';
 import Icon from '../components/Icon.astro';
 import IconCard from '../components/IconCard.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import VisualPlate from '../components/VisualPlate.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
@@ -31,6 +32,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           work. I am interested not only in what AI can do, but in what happens to
           people when they start to trust it.
         </p>
+        <VisualPlate variant="field-map" class="hero-visual" />
         <ul class="identity-list" aria-label="Project topics">
           <li>AI literacy</li>
           <li>trust</li>
@@ -66,6 +68,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <SectionHeader kicker="Project map" title="Areas of focus" id="areas-title">
         A working map for essays, notes, concepts and consulting around the human side of AI.
       </SectionHeader>
+      <VisualPlate variant="concept-map" class="section-visual section-visual-compact" />
       <div class="topic-map" aria-label="Research areas">
         <IconCard icon="trust" title="Trust">How people decide when AI feels credible.</IconCard>
         <IconCard icon="emotion" title="Emotion">How conversational systems shape comfort, anxiety and validation.</IconCard>
@@ -88,6 +91,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
       </div>
       <div class="teaser-panel">
+        <VisualPlate variant="process-flow" class="section-visual teaser-visual" />
         <ul class="teaser-chips" aria-label="Consulting focus areas">
           <li><Icon name="check" />AI use analysis</li>
           <li><Icon name="check" />process mapping</li>

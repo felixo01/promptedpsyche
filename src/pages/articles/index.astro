@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import EntryList from '../../components/EntryList.astro';
+import VisualPlate from '../../components/VisualPlate.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { onlyPublicEntriesByLang, sortByDateDesc } from '../../lib/content';
 
@@ -35,6 +36,7 @@ const articles = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('art
 
     {articles.length === 0 && (
       <section class="empty-followup" aria-labelledby="first-directions-title">
+        <VisualPlate variant="note-stack" class="empty-state-visual" />
         <h2 id="first-directions-title">First directions</h2>
         <ul>
           <li>AI literacy</li>
