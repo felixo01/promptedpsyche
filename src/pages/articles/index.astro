@@ -32,5 +32,17 @@ const articles = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('art
       emptyNote="They will focus on AI literacy, trust, decision-making, model outputs in team work and the psychological consequences of using generative tools."
       emptyIcon="article"
     />
+
+    {articles.length === 0 && (
+      <section class="empty-followup" aria-labelledby="first-directions-title">
+        <h2 id="first-directions-title">First directions</h2>
+        <ul>
+          <li>AI literacy</li>
+          <li>trust in model outputs</li>
+          <li>decision-making and responsibility with AI</li>
+          <li>psychological consequences of using generative tools</li>
+        </ul>
+      </section>
+    )}
   </section>
 </BaseLayout>

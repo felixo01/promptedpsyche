@@ -33,5 +33,17 @@ const articles = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('art
       emptyMessage="Artykuły są w przygotowaniu."
       emptyNote="Pierwsze teksty będą dotyczyć kompetencji pracy z AI, zaufania, decyzji, odpowiedzi modeli w pracy zespołów i psychologicznych konsekwencji używania narzędzi generatywnych."
     />
+
+    {articles.length === 0 && (
+      <section class="empty-followup" aria-labelledby="first-directions-title">
+        <h2 id="first-directions-title">Pierwsze kierunki</h2>
+        <ul>
+          <li>kompetencje pracy z AI</li>
+          <li>zaufanie do odpowiedzi modeli</li>
+          <li>decyzje i odpowiedzialność w pracy z AI</li>
+          <li>psychologiczne skutki używania narzędzi generatywnych</li>
+        </ul>
+      </section>
+    )}
   </section>
 </BaseLayout>

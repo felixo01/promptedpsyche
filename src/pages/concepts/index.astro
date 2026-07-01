@@ -32,5 +32,16 @@ const concepts = sortByDateDesc(onlyPublicEntries(await getCollection('concepts'
       emptyNote="It will organize terms such as AI literacy, calibrated trust, cognitive offloading, AI companions, Human-AI Interaction and automation bias."
       emptyIcon="concept"
     />
+
+    {concepts.length === 0 && (
+      <section class="empty-followup" aria-labelledby="concepts-followup-title">
+        <h2 id="concepts-followup-title">Concept language</h2>
+        <p>
+          Concepts will organize the vocabulary of Prompted Psyche: AI literacy,
+          calibrated trust, cognitive offloading, AI companions, Human-AI Interaction
+          and automation bias.
+        </p>
+      </section>
+    )}
   </section>
 </BaseLayout>

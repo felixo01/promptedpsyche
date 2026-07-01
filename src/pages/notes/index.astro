@@ -32,5 +32,15 @@ const notes = sortByDateDesc(onlyPublicEntries(await getCollection('notes')));
       emptyNote="They will collect shorter observations on AI, human behavior, trust, work, creativity and digital culture."
       emptyIcon="note"
     />
+
+    {notes.length === 0 && (
+      <section class="empty-followup" aria-labelledby="notes-followup-title">
+        <h2 id="notes-followup-title">What notes will collect</h2>
+        <p>
+          Shorter observations, definitions and leads for future essays on AI,
+          cyberpsychology and Human-AI Interaction.
+        </p>
+      </section>
+    )}
   </section>
 </BaseLayout>
