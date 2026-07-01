@@ -46,7 +46,7 @@ const {
         const itemNumber = String(index + 1).padStart(2, '0');
 
         return (
-          <article class="concept-card">
+          <article class="concept-card" data-qa="concept-card">
             <p class="concept-kicker">
               <span>{itemNumber}</span>
               {label}
@@ -58,11 +58,11 @@ const {
             {tags.length > 0 && (
               <ul class="concept-tag-list" aria-label="Topics">
                 {tags.map((tag) => (
-                  <li>{tag}</li>
+                  <li data-qa="concept-tag">{tag}</li>
                 ))}
               </ul>
             )}
-            <a class="concept-card-link" href={href}>{linkLabel}</a>
+            <a class="concept-card-link" data-qa="concept-read-more" href={href}>{linkLabel}</a>
           </article>
         );
       })}

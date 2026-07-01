@@ -3,238 +3,124 @@ import VisualPlate from '../components/VisualPlate.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Articles and notes on the human side of AI"
+  description="Prompted Psyche is Feliks Mamczur's project on the psychological, communicative and cultural consequences of AI use."
+>
   <div>
-    <section class="home-hero" aria-labelledby="home-title">
-      <div class="home-hero-copy">
+    <section class="home-hero home-hero-publication" aria-labelledby="home-title">
+      <div class="home-hero-copy" data-qa="hero-copy">
         <p class="eyebrow">AI - Cyberpsychology - Human-AI Interaction</p>
-        <h1 id="home-title">The human side of artificial intelligence.</h1>
+        <h1 id="home-title" data-qa="hero-title">Articles and notes on the human side of AI.</h1>
         <p class="lede">
-          I develop Prompted Psyche as a research-informed project on the human side
-          of AI: how it shapes thought, emotion, trust, communication, creativity and
-          work.
+          I write about how AI changes thought, trust, communication, creativity and work.
+        </p>
+        <p class="hero-subnote">
+          Prompted Psyche is Feliks Mamczur's project on the psychological,
+          communicative and cultural consequences of AI use.
         </p>
         <div class="hero-actions" aria-label="Main actions">
-          <a href="/about/">About the project</a>
-          <a href="/consulting/">Consulting</a>
+          <a href="/articles/">Articles</a>
+          <a href="/about/">About</a>
         </div>
       </div>
 
-      <aside class="identity-panel dossier-panel" aria-label="What is Prompted Psyche?">
-        <div class="dossier-topline">
-          <span class="dossier-stamp" aria-hidden="true">PP</span>
-          <span class="dossier-number" aria-hidden="true">01</span>
-        </div>
-        <div class="dossier-copy">
+      <aside class="hero-sidecar" data-qa="hero-sidecar" aria-label="What is Prompted Psyche?">
+        <VisualPlate variant="field-map" class="hero-visual hero-visual-large" />
+        <div class="hero-note">
           <p class="small-label">What is Prompted Psyche?</p>
           <p>
-            A research-informed expert project by Feliks Mamczur on AI,
-            cyberpsychology and Human-AI Interaction, with essays, notes, concepts and
-            consulting on the human side of artificial intelligence.
+            An independent publication platform about what happens when people begin to
+            use AI, trust its outputs and fold it into their work.
           </p>
+          <ul class="identity-list" aria-label="Publication formats">
+            <li>Articles</li>
+            <li>Notes</li>
+            <li>Concepts</li>
+          </ul>
         </div>
-        <VisualPlate variant="field-map" class="hero-visual" />
-        <ul class="identity-list" aria-label="Project topics">
-          <li>AI literacy</li>
-          <li>trust</li>
-          <li>decisions</li>
-          <li>work</li>
-          <li>human-AI relations</li>
-          <li>creativity</li>
-          <li>culture</li>
-        </ul>
-        <p class="status-note">Pre-launch site. Public writing is being prepared.</p>
       </aside>
     </section>
 
-    <section class="home-section" aria-labelledby="entry-title">
+    <section class="home-section home-writing" aria-labelledby="writing-title">
       <div class="editorial-section-header">
         <div>
-          <p class="section-kicker">Ways in</p>
-          <h2 id="entry-title">Who Prompted Psyche is for</h2>
+          <p class="section-kicker">Writing</p>
+          <h2 id="writing-title">Articles and notes</h2>
         </div>
         <p>
-          A place for organizations, readers and conversations about the human side of AI
-          without hype or oversimplification.
+          The first texts are in preparation. This is where longer articles and
+          shorter notes on AI work, trust, decisions, communication and responsibility
+          will appear.
         </p>
       </div>
 
-      <div class="entry-paths">
-        <article class="entry-path">
-          <p class="entry-index">I</p>
-          <h3>Essays and concepts</h3>
-          <p>Articles, notes and a concept library on AI, psychology, trust, emotion, work and culture.</p>
-          <a class="text-link" href="#writing-title">Explore publications</a>
+      <div class="home-writing-grid" aria-label="Publication sections">
+        <article class="writing-card" data-qa="writing-card">
+          <p class="entry-index">Articles</p>
+          <h3>Long-form essays</h3>
+          <p>
+            Source-based essays on AI, cyberpsychology and Human-AI Interaction.
+          </p>
+          <a class="text-link" href="/articles/">Articles</a>
         </article>
-        <article class="entry-path">
-          <p class="entry-index">II</p>
-          <h3>For organizations</h3>
-          <p>AI use analysis, process mapping, human-AI work principles, workshops and talks.</p>
-          <a class="text-link" href="/consulting/">See consulting</a>
-        </article>
-        <article class="entry-path">
-          <p class="entry-index">III</p>
-          <h3>Talks and collaboration</h3>
-          <p>Media commentary, lectures, research conversations and content collaboration on the human side of AI.</p>
-          <a class="text-link" href="/contact/">Get in touch</a>
+        <article class="writing-card" data-qa="writing-card">
+          <p class="entry-index">Notes</p>
+          <h3>Shorter observations</h3>
+          <p>
+            Notes for definitions, research directions and questions that may become
+            essays.
+          </p>
+          <a class="text-link" href="/notes/">Notes</a>
         </article>
       </div>
     </section>
 
-    <section class="home-section topic-section" aria-labelledby="areas-title">
-      <div class="editorial-section-header">
-        <div>
-          <p class="section-kicker">Project map</p>
-          <h2 id="areas-title">Areas of focus</h2>
-        </div>
-        <p>
-          A working map for essays, notes, concepts and consulting around the human
-          side of AI.
-        </p>
-      </div>
-
-      <div class="topic-index" aria-label="Research areas">
-        <div class="topic-column">
-          <article class="topic-row">
-            <span>01</span>
-            <div>
-              <h3>Trust</h3>
-              <p>Verification vs. reliance</p>
-            </div>
-          </article>
-          <article class="topic-row">
-            <span>02</span>
-            <div>
-              <h3>Emotion</h3>
-              <p>How systems seem to understand</p>
-            </div>
-          </article>
-          <article class="topic-row">
-            <span>03</span>
-            <div>
-              <h3>Attachment</h3>
-              <p>Relations with non-relational partners</p>
-            </div>
-          </article>
-          <article class="topic-row">
-            <span>04</span>
-            <div>
-              <h3>Work</h3>
-              <p>Who is accountable when AI is fast</p>
-            </div>
-          </article>
-        </div>
-        <div class="topic-column">
-          <article class="topic-row">
-            <span>05</span>
-            <div>
-              <h3>Decisions</h3>
-              <p>What we outsource, and why</p>
-            </div>
-          </article>
-          <article class="topic-row">
-            <span>06</span>
-            <div>
-              <h3>Creativity</h3>
-              <p>Selection as authorship</p>
-            </div>
-          </article>
-          <article class="topic-row">
-            <span>07</span>
-            <div>
-              <h3>Culture</h3>
-              <p>Language shaped by the tool</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-section process-teaser" aria-labelledby="consulting-title">
-      <div class="editorial-section-header">
-        <div>
-          <p class="section-kicker">Practical application</p>
-          <h2 id="consulting-title">Applying this perspective in organizations</h2>
-        </div>
-        <p>
-          I help teams analyze AI use, map processes, design practical principles and
-          discuss trust, responsibility and verification.
-        </p>
-      </div>
-      <ol class="process-line" aria-label="Consulting process">
-        <li><small>01</small><span>AI use</span></li>
-        <li><small>02</small><span>Map</span></li>
-        <li><small>03</small><span>Verify</span></li>
-        <li><small>04</small><span>Responsibility</span></li>
-        <li><small>05</small><span>Principles</span></li>
-      </ol>
-      <a class="text-link process-link" href="/consulting/">See consulting</a>
-    </section>
-
-    <section class="home-section" aria-labelledby="writing-title">
-      <div class="editorial-section-header">
-        <div>
-          <p class="section-kicker">Essays and notes</p>
-          <h2 id="writing-title">Writing is being prepared</h2>
-        </div>
-        <p>Articles, notes and concepts will open as a source-based editorial archive.</p>
-      </div>
-
-      <div class="archive-index" aria-label="Publication archive">
-        <a class="archive-entry" href="/articles/">
-          <span>Archive</span>
-          <strong>Articles</strong>
-          <p>Long-form essays on AI, cyberpsychology and Human-AI Interaction.</p>
-        </a>
-        <a class="archive-entry" href="/notes/">
-          <span>Notebook</span>
-          <strong>Notes</strong>
-          <p>Short observations, definitions and research directions.</p>
-        </a>
-        <a class="archive-entry" href="/concepts/">
-          <span>Library</span>
-          <strong>Concepts</strong>
-          <p>A growing vocabulary for the human side of AI.</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="home-section author-strip" aria-labelledby="about-title">
+    <section class="home-section home-compact-feature home-concepts" aria-labelledby="concepts-title">
       <div>
-        <p class="section-kicker">Author perspective</p>
+        <p class="section-kicker">Concepts</p>
+        <h2 id="concepts-title">The project vocabulary</h2>
+      </div>
+      <div class="compact-feature-copy">
+        <p>
+          The concept library organizes the language of Prompted Psyche: AI literacy,
+          trust, model output, anthropomorphism and AI-mediated communication.
+        </p>
+        <a class="text-link" href="/concepts/">Explore concepts</a>
+      </div>
+    </section>
+
+    <section class="home-section author-strip home-bio" aria-labelledby="about-title">
+      <div>
+        <p class="section-kicker">Author</p>
         <h2 id="about-title">Feliks Mamczur</h2>
-        <a class="orcid-link" href="https://orcid.org/0009-0001-0715-0517" rel="me noopener">
-          ORCID 0009-0001-0715-0517
-        </a>
       </div>
       <div class="author-note">
         <p>
-          I write and consult at the intersection of AI, cyberpsychology and Human-AI
-          Interaction. My background in film, editing and post-production shapes how I
-          think about AI: through narrative, attention, image, emotion and the way
-          technologies reorganize creative and communicative work.
+          Feliks Mamczur writes about the human side of AI, combining cyberpsychology,
+          communication and creative practice. He develops Prompted Psyche as an
+          independent publication and expert platform.
         </p>
-        <blockquote>
-          We prompt machines. Machines prompt us back.
-        </blockquote>
-        <a class="text-link" href="/about/">Read about the project</a>
+        <a class="text-link" href="/about/">About</a>
       </div>
     </section>
 
-    <section class="home-section home-final" aria-labelledby="final-title">
+    <section
+      class="home-section home-compact-feature home-consulting"
+      data-qa="consulting-teaser"
+      aria-labelledby="consulting-title"
+    >
       <div>
-        <p class="section-kicker">Contact</p>
-        <h2 id="final-title">Where to go next</h2>
-        <p>
-          Start with the vocabulary, see how this perspective can support organizations
-          or get in touch about a conversation.
-        </p>
+        <p class="section-kicker">Consulting</p>
+        <h2 id="consulting-title">Applied in organizations</h2>
       </div>
-      <nav class="final-link-list" aria-label="Next links">
-        <a class="text-link" href="/concepts/">Concepts</a>
+      <div class="compact-feature-copy">
+        <p>
+          I help teams make AI use more deliberate: where it supports work, and where
+          it requires principles, verification and responsibility.
+        </p>
         <a class="text-link" href="/consulting/">Consulting</a>
-        <a class="text-link" href="/contact/">Contact</a>
-      </nav>
+      </div>
     </section>
   </div>
 </BaseLayout>
