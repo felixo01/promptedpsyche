@@ -1,15 +1,15 @@
 ---
-title: "Skalibrowane zaufanie"
+title: "Calibrated trust"
 description: "Zaufanie do AI dopasowane do tego, co system może wiarygodnie zrobić w konkretnym kontekście."
 publishedAt: 2026-07-01
 draft: false
 lang: "pl"
 translationKey: "calibrated-trust"
-routeSlug: "skalibrowane-zaufanie"
+routeSlug: "calibrated-trust"
 tags: ["zaufanie", "decyzje", "ryzyko AI"]
 ---
 
-Skalibrowane zaufanie to zaufanie do systemu AI dopasowane do tego, co system może wiarygodnie zrobić w konkretnym kontekście. Jest pomiędzy bezkrytycznym przyjmowaniem odpowiedzi a całkowitym odrzuceniem narzędzia. Celem nie jest większe zaufanie za wszelką cenę, ale lepsze dopasowanie pewności, dowodów, zastosowania i ludzkiej odpowiedzialności.
+Calibrated trust oznacza zaufanie do systemu AI dopasowane do tego, co system może wiarygodnie zrobić w konkretnym kontekście. Jest pomiędzy bezkrytycznym przyjmowaniem odpowiedzi a całkowitym odrzuceniem narzędzia. Celem nie jest większe zaufanie za wszelką cenę, ale lepsze dopasowanie pewności, dowodów, zastosowania i ludzkiej odpowiedzialności.
 
 ## Dlaczego to ważne
 
@@ -23,6 +23,6 @@ Zaufanie nie jest tylko nastawieniem albo emocją. Kształtuje je zadanie, stawk
 
 ## Źródła i kontekst
 
-- John D. Lee i Katrina A. See. [Trust in automation: designing for appropriate reliance](https://journals.sagepub.com/doi/10.1518/hfes.46.1.50_30392).
-- Raja Parasuraman i Victor Riley. [Humans and automation: use, misuse, disuse, abuse](https://journals.sagepub.com/doi/10.1518/001872097778543886).
-- NIST. [AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework).
+- Lee, J. D., & See, K. A. (2004). Trust in automation: Designing for appropriate reliance. *Human Factors, 46*(1), 50-80. https://doi.org/10.1518/hfes.46.1.50_30392
+- National Institute of Standards and Technology. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. U.S. Department of Commerce. https://www.nist.gov/itl/ai-risk-management-framework
+- Parasuraman, R., & Riley, V. (1997). Humans and automation: Use, misuse, disuse, abuse. *Human Factors, 39*(2), 230-253. https://doi.org/10.1518/001872097778543886

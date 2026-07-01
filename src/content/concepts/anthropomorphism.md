@@ -23,6 +23,6 @@ Anthropomorphism is not proof that a system is conscious or relational in a huma
 
 ## Sources and context
 
-- Nicholas Epley, Adam Waytz and John T. Cacioppo. [On seeing human: a three-factor theory of anthropomorphism](https://pubmed.ncbi.nlm.nih.gov/17907867/).
-- Clifford Nass, Jonathan Steuer and Ellen R. Tauber. [Computers are social actors](https://dl.acm.org/doi/10.1145/191666.191703).
-- Byron Reeves and Clifford Nass. [The Media Equation](https://dl.acm.org/doi/book/10.5555/236605).
+- Epley, N., Waytz, A., & Cacioppo, J. T. (2007). On seeing human: A three-factor theory of anthropomorphism. *Psychological Review, 114*(4), 864-886. https://doi.org/10.1037/0033-295X.114.4.864
+- Nass, C., Steuer, J., & Tauber, E. R. (1994). Computers are social actors. In *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems* (pp. 72-78). Association for Computing Machinery. https://doi.org/10.1145/191666.191703
+- Reeves, B., & Nass, C. (1996). *The media equation: How people treat computers, television, and new media like real people and places*. Cambridge University Press. https://dl.acm.org/doi/book/10.5555/236605

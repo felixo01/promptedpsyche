@@ -23,7 +23,7 @@ AI literacy is not a checklist, a prompt formula or fluency with the newest tool
 
 ## Sources and context
 
-- European Union. [Regulation (EU) 2024/1689, the AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng).
-- European Commission. [AI literacy: questions and answers](https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers).
-- UNESCO. [AI competency framework for students](https://www.unesco.org/en/articles/ai-competency-framework-students).
-- NIST. [AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework).
+- European Parliament and Council of the European Union. (2024). *Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence*. *Official Journal of the European Union*. https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng
+- European Commission. (n.d.). *AI literacy: Questions and answers*. Retrieved July 1, 2026, from https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers
+- National Institute of Standards and Technology. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. U.S. Department of Commerce. https://www.nist.gov/itl/ai-risk-management-framework
+- UNESCO. (2024). *AI competency framework for students*. https://www.unesco.org/en/articles/ai-competency-framework-students

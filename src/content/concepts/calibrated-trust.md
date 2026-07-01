@@ -23,6 +23,6 @@ Trust is not only an attitude or a feeling. It is shaped by task, stakes, feedba
 
 ## Sources and context
 
-- John D. Lee and Katrina A. See. [Trust in automation: designing for appropriate reliance](https://journals.sagepub.com/doi/10.1518/hfes.46.1.50_30392).
-- Raja Parasuraman and Victor Riley. [Humans and automation: use, misuse, disuse, abuse](https://journals.sagepub.com/doi/10.1518/001872097778543886).
-- NIST. [AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework).
+- Lee, J. D., & See, K. A. (2004). Trust in automation: Designing for appropriate reliance. *Human Factors, 46*(1), 50-80. https://doi.org/10.1518/hfes.46.1.50_30392
+- National Institute of Standards and Technology. (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. U.S. Department of Commerce. https://www.nist.gov/itl/ai-risk-management-framework
+- Parasuraman, R., & Riley, V. (1997). Humans and automation: Use, misuse, disuse, abuse. *Human Factors, 39*(2), 230-253. https://doi.org/10.1518/001872097778543886

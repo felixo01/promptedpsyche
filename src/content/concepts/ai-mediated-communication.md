@@ -23,6 +23,6 @@ This is not only about chatbots. Often the conversation is still person-to-perso
 
 ## Sources and context
 
-- Jeffrey T. Hancock, Mor Naaman and Karen Levy. [AI-mediated communication: definition, research agenda, and ethical considerations](https://academic.oup.com/jcmc/article/25/1/89/5714020).
-- Stanford Social Media Lab. [AI-mediated communication](https://sml.stanford.edu/publications/2020/ai-mediated-communication-definition-research-agenda-and-ethical-considerations).
-- Max Planck Institute for Human Development. [AI-mediated communication](https://www.mpib-berlin.mpg.de/1666343/03-ai-mediated-communication).
+- Hancock, J. T., Naaman, M., & Levy, K. (2020). AI-mediated communication: Definition, research agenda, and ethical considerations. *Journal of Computer-Mediated Communication, 25*(1), 89-100. https://doi.org/10.1093/jcmc/zmz022
+- Max Planck Institute for Human Development. (n.d.). *AI-mediated communication*. Retrieved July 1, 2026, from https://www.mpib-berlin.mpg.de/1666343/03-ai-mediated-communication
+- Stanford Social Media Lab. (2020). *AI-mediated communication: Definition, research agenda, and ethical considerations*. https://sml.stanford.edu/publications/2020/ai-mediated-communication-definition-research-agenda-and-ethical-considerations

@@ -2,11 +2,10 @@
 import { getCollection } from 'astro:content';
 import ConceptList from '../../../components/ConceptList.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { sortConceptsForIndex } from '../../../lib/conceptOrder';
 import { onlyPublicEntriesByLang } from '../../../lib/content';
 
-const concepts = onlyPublicEntriesByLang(await getCollection('concepts'), 'pl').sort((a, b) =>
-  a.data.title.localeCompare(b.data.title, 'pl')
-);
+const concepts = sortConceptsForIndex(onlyPublicEntriesByLang(await getCollection('concepts'), 'pl'));
 ---
 
 <BaseLayout

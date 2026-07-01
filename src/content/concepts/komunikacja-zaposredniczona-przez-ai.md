@@ -1,15 +1,15 @@
 ---
-title: "Komunikacja zapośredniczona przez AI"
+title: "AI-mediated communication"
 description: "Komunikacja między ludźmi, która jest generowana, kształtowana, filtrowana albo wspierana przez systemy AI."
 publishedAt: 2026-07-01
 draft: false
 lang: "pl"
 translationKey: "ai-mediated-communication"
-routeSlug: "komunikacja-zaposredniczona-przez-ai"
+routeSlug: "ai-mediated-communication"
 tags: ["komunikacja", "język", "kultura"]
 ---
 
-Komunikacja zapośredniczona przez AI opisuje komunikację między ludźmi, która jest generowana, kształtowana, filtrowana albo wspierana przez systemy AI. Obejmuje sytuacje, w których AI szkicuje wiadomość, zmienia ton, proponuje odpowiedź, tłumaczy język albo wpływa na to, co jedna osoba widzi od drugiej.
+AI-mediated communication oznacza komunikację między ludźmi, która jest generowana, kształtowana, filtrowana albo wspierana przez systemy AI. Obejmuje sytuacje, w których AI szkicuje wiadomość, zmienia ton, proponuje odpowiedź, tłumaczy język albo wpływa na to, co jedna osoba widzi od drugiej.
 
 ## Dlaczego to ważne
 
@@ -23,6 +23,6 @@ To nie jest tylko temat chatbotów. Często rozmowa nadal odbywa się między lu
 
 ## Źródła i kontekst
 
-- Jeffrey T. Hancock, Mor Naaman i Karen Levy. [AI-mediated communication: definition, research agenda, and ethical considerations](https://academic.oup.com/jcmc/article/25/1/89/5714020).
-- Stanford Social Media Lab. [AI-mediated communication](https://sml.stanford.edu/publications/2020/ai-mediated-communication-definition-research-agenda-and-ethical-considerations).
-- Max Planck Institute for Human Development. [AI-mediated communication](https://www.mpib-berlin.mpg.de/1666343/03-ai-mediated-communication).
+- Hancock, J. T., Naaman, M., & Levy, K. (2020). AI-mediated communication: Definition, research agenda, and ethical considerations. *Journal of Computer-Mediated Communication, 25*(1), 89-100. https://doi.org/10.1093/jcmc/zmz022
+- Max Planck Institute for Human Development. (n.d.). *AI-mediated communication*. Retrieved July 1, 2026, from https://www.mpib-berlin.mpg.de/1666343/03-ai-mediated-communication
+- Stanford Social Media Lab. (2020). *AI-mediated communication: Definition, research agenda, and ethical considerations*. https://sml.stanford.edu/publications/2020/ai-mediated-communication-definition-research-agenda-and-ethical-considerations
