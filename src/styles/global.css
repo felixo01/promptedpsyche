@@ -1303,7 +1303,9 @@ p {
   background: color-mix(in srgb, var(--accent-soft) 38%, var(--surface));
   padding: 0.18rem 0.6rem;
   color: var(--text-soft);
+  cursor: default;
   font-size: 0.76rem;
+  text-decoration: none;
 }
 
 .concept-list {
@@ -1377,8 +1379,10 @@ p {
   background: color-mix(in srgb, var(--surface) 86%, var(--accent-soft));
   padding: 0.18rem 0.55rem;
   color: var(--muted);
+  cursor: default;
   font-size: 0.74rem;
   line-height: 1.2;
+  text-decoration: none;
   white-space: normal;
 }
 

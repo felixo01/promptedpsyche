@@ -23,6 +23,7 @@ interface Props {
 const { entry, label, lang = 'en', alternateLinks, showPublishedAt = true } = Astro.props;
 const tags: string[] = entry.data.tags ?? [];
 const readingTime = entry.data.readingTime;
+// Tags are informational for now. Add tag routes or filtering before making them interactive.
 const asideLabels = lang === 'pl'
   ? {
       aria: 'Struktura wpisu',
