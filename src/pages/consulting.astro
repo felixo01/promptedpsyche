@@ -1,6 +1,5 @@
 ---
 import CtaPanel from '../components/CtaPanel.astro';
-import IconCard from '../components/IconCard.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import VisualPlate from '../components/VisualPlate.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -27,26 +26,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         I offer practical, research-informed support for teams that need shared
         principles, verification habits and clearer human-AI workflows.
       </SectionHeader>
-      <div class="service-card-grid">
-        <IconCard icon="decision" title="AI use analysis">
-          I help map how teams currently use AI and where support is realistic.
-        </IconCard>
-        <IconCard icon="concept" title="Process mapping">
-          I map tasks, information flow, handoffs and points where AI enters work.
-        </IconCard>
-        <IconCard icon="work" title="Human-AI work model">
-          I help design practical flows for what AI supports and what people own.
-        </IconCard>
-        <IconCard icon="trust" title="Team principles">
-          I help teams create simple rules for trust, verification, data awareness and responsibility.
-        </IconCard>
-        <IconCard icon="article" title="AI literacy">
-          I build a common language for using generative tools without hype.
-        </IconCard>
-        <IconCard icon="dialogue" title="Workshops and talks">
-          I run briefings, workshops and lectures on AI, cyberpsychology and Human-AI Interaction.
-        </IconCard>
-      </div>
+      <ol class="service-index" aria-label="Consulting services">
+        <li class="service-index-item">
+          <span>01</span>
+          <div>
+            <h3>AI use analysis</h3>
+            <p>I help map how teams currently use AI and where support is realistic.</p>
+          </div>
+        </li>
+        <li class="service-index-item">
+          <span>02</span>
+          <div>
+            <h3>Process mapping</h3>
+            <p>I map tasks, information flow, handoffs and points where AI enters work.</p>
+          </div>
+        </li>
+        <li class="service-index-item">
+          <span>03</span>
+          <div>
+            <h3>Human-AI work model</h3>
+            <p>I help design practical flows for what AI supports and what people own.</p>
+          </div>
+        </li>
+        <li class="service-index-item">
+          <span>04</span>
+          <div>
+            <h3>Team principles</h3>
+            <p>I help teams create simple rules for trust, verification, data awareness and responsibility.</p>
+          </div>
+        </li>
+        <li class="service-index-item">
+          <span>05</span>
+          <div>
+            <h3>AI literacy</h3>
+            <p>I build a common language for using generative tools without hype.</p>
+          </div>
+        </li>
+        <li class="service-index-item">
+          <span>06</span>
+          <div>
+            <h3>Workshops and talks</h3>
+            <p>I run briefings, workshops and lectures on AI, cyberpsychology and Human-AI Interaction.</p>
+          </div>
+        </li>
+      </ol>
     </section>
 
     <section aria-labelledby="situations-title">
@@ -54,14 +77,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         The problem is often not a lack of prompts. It is unclear judgment, unclear
         responsibility and inconsistent use across a team.
       </SectionHeader>
-      <ul class="scenario-list scenario-grid">
+      <ol class="scenario-list scenario-numbered">
         <li>A team uses AI, but everyone uses it differently.</li>
         <li>The organization wants to use AI, but has no shared principles.</li>
         <li>People paste sensitive information into tools without thinking through the risk.</li>
         <li>AI speeds up writing, but responsibility for the final output is unclear.</li>
         <li>Leaders do not know which tasks can be supported by AI.</li>
         <li>The organization wants practical internal AI use principles.</li>
-      </ul>
+      </ol>
     </section>
 
     <section class="consulting-process" aria-labelledby="process-title">

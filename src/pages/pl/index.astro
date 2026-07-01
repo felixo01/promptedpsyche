@@ -1,8 +1,4 @@
 ---
-import CtaPanel from '../../components/CtaPanel.astro';
-import Icon from '../../components/Icon.astro';
-import IconCard from '../../components/IconCard.astro';
-import SectionHeader from '../../components/SectionHeader.astro';
 import VisualPlate from '../../components/VisualPlate.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
@@ -31,10 +27,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="dossier-stamp" aria-hidden="true">PP</span>
         <p class="small-label">Czym jest Prompted Psyche?</p>
         <p>
-          Prompted Psyche to mój projekt o ludzkiej stronie sztucznej inteligencji -
-          rozwijany przez teksty, pojęcia i notatki badawcze. Interesuje mnie nie tylko
-          to, co AI potrafi zrobić, ale to, co dzieje się z człowiekiem, gdy zaczyna jej
-          ufać.
+          Prompted Psyche to projekt ekspercki Feliksa Mamczura o AI, cyberpsychologii
+          i Human-AI Interaction. Porządkuje teksty, notatki, pojęcia i konsulting wokół
+          ludzkiej strony sztucznej inteligencji.
         </p>
         <VisualPlate variant="field-map" lang="pl" class="hero-visual" />
         <ul class="identity-list" aria-label="Tematy projektu">
@@ -51,78 +46,157 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </section>
 
     <section class="home-section" aria-labelledby="entry-title">
-      <SectionHeader kicker="Ścieżki wejścia" title="Dla kogo jest Prompted Psyche" id="entry-title">
-        To miejsce dla organizacji, czytelników i osób, które chcą rozmawiać o ludzkiej stronie AI bez hype'u i uproszczeń.
-      </SectionHeader>
-      <div class="path-grid">
-        <IconCard icon="article" title="Teksty i pojęcia" href="#writing-title" linkLabel="Zobacz publikacje">
-          Artykuły, notatki i słownik pojęć o AI, psychologii, zaufaniu, emocjach, pracy i kulturze.
-        </IconCard>
-        <IconCard icon="work" title="Dla organizacji" href="/pl/consulting/" linkLabel="Zobacz consulting">
-          Analiza używania AI, mapowanie procesów, zasady pracy człowiek-AI, warsztaty i wystąpienia.
-        </IconCard>
-        <IconCard icon="dialogue" title="Wystąpienia i współpraca" href="/pl/contact/" linkLabel="Napisz">
-          Komentarze medialne, wykłady, rozmowy badawcze i współpraca przy treściach o ludzkiej stronie AI.
-        </IconCard>
+      <div class="editorial-section-header">
+        <div>
+          <p class="section-kicker">Ścieżki wejścia</p>
+          <h2 id="entry-title">Dla kogo jest Prompted Psyche</h2>
+        </div>
+        <p>
+          To miejsce dla organizacji, czytelników i osób, które chcą rozmawiać o
+          ludzkiej stronie AI bez hype'u i uproszczeń.
+        </p>
+      </div>
+
+      <div class="entry-paths">
+        <article class="entry-path">
+          <p class="entry-index">I</p>
+          <h3>Teksty i pojęcia</h3>
+          <p>Artykuły, notatki i słownik pojęć o AI, psychologii, zaufaniu, emocjach, pracy i kulturze.</p>
+          <a class="text-link" href="#writing-title">Zobacz publikacje</a>
+        </article>
+        <article class="entry-path">
+          <p class="entry-index">II</p>
+          <h3>Dla organizacji</h3>
+          <p>Analiza używania AI, mapowanie procesów, zasady pracy człowiek-AI, warsztaty i wystąpienia.</p>
+          <a class="text-link" href="/pl/consulting/">Zobacz consulting</a>
+        </article>
+        <article class="entry-path">
+          <p class="entry-index">III</p>
+          <h3>Wystąpienia i współpraca</h3>
+          <p>Komentarze medialne, wykłady, rozmowy badawcze i współpraca przy treściach o ludzkiej stronie AI.</p>
+          <a class="text-link" href="/pl/contact/">Napisz</a>
+        </article>
       </div>
     </section>
 
     <section class="home-section" aria-labelledby="areas-title">
-      <SectionHeader kicker="Mapa projektu" title="Obszary" id="areas-title">
-        Mapa tematów dla artykułów, notatek, pojęć i konsultingu o ludzkiej stronie AI.
-      </SectionHeader>
-      <VisualPlate variant="concept-map" lang="pl" class="section-visual section-visual-compact" />
-      <div class="topic-map" aria-label="Obszary tematyczne">
-        <IconCard icon="trust" title="Zaufanie">Kiedy odpowiedź AI zaczyna wydawać się wiarygodna.</IconCard>
-        <IconCard icon="emotion" title="Emocje">Jak systemy konwersacyjne wpływają na komfort, lęk i poczucie bycia zrozumianym.</IconCard>
-        <IconCard icon="dialogue" title="Przywiązanie">Dlaczego system może sprawiać wrażenie bliskiego, bezpiecznego albo zawsze dostępnego.</IconCard>
-        <IconCard icon="work" title="Praca">Jak AI zmienia sposób pisania, sprawdzania, decydowania i brania odpowiedzialności.</IconCard>
-        <IconCard icon="decision" title="Decyzje">Kiedy AI wspiera osąd, a kiedy zaczyna go zastępować.</IconCard>
-        <IconCard icon="spark" title="Twórczość">Co dzieje się z autorstwem, stylem i kontrolą, gdy AI wchodzi do procesu twórczego.</IconCard>
-        <IconCard icon="culture" title="Kultura">Co AI pokazuje o języku, mediach, tożsamości i władzy.</IconCard>
+      <div class="editorial-section-header">
+        <div>
+          <p class="section-kicker">Mapa projektu</p>
+          <h2 id="areas-title">Obszary</h2>
+        </div>
+        <p>
+          Mapa tematów dla artykułów, notatek, pojęć i konsultingu o ludzkiej stronie AI.
+        </p>
+      </div>
+
+      <div class="topic-index" aria-label="Obszary tematyczne">
+        <div class="topic-column">
+          <article class="topic-row">
+            <span>01</span>
+            <div>
+              <h3>Zaufanie</h3>
+              <p>Kiedy odpowiedź AI zaczyna wydawać się wiarygodna.</p>
+            </div>
+          </article>
+          <article class="topic-row">
+            <span>02</span>
+            <div>
+              <h3>Emocje</h3>
+              <p>Jak systemy konwersacyjne wpływają na komfort, lęk i poczucie bycia zrozumianym.</p>
+            </div>
+          </article>
+          <article class="topic-row">
+            <span>03</span>
+            <div>
+              <h3>Przywiązanie</h3>
+              <p>Dlaczego system może sprawiać wrażenie bliskiego, bezpiecznego albo zawsze dostępnego.</p>
+            </div>
+          </article>
+          <article class="topic-row">
+            <span>04</span>
+            <div>
+              <h3>Praca</h3>
+              <p>Jak AI zmienia sposób pisania, sprawdzania, decydowania i brania odpowiedzialności.</p>
+            </div>
+          </article>
+        </div>
+        <div class="topic-column">
+          <article class="topic-row">
+            <span>05</span>
+            <div>
+              <h3>Decyzje</h3>
+              <p>Kiedy AI wspiera osąd, a kiedy zaczyna go zastępować.</p>
+            </div>
+          </article>
+          <article class="topic-row">
+            <span>06</span>
+            <div>
+              <h3>Twórczość</h3>
+              <p>Co dzieje się z autorstwem, stylem i kontrolą, gdy AI wchodzi do procesu twórczego.</p>
+            </div>
+          </article>
+          <article class="topic-row">
+            <span>07</span>
+            <div>
+              <h3>Kultura</h3>
+              <p>Co AI pokazuje o języku, mediach, tożsamości i władzy.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="home-section consulting-teaser" aria-labelledby="consulting-title">
-      <div>
-        <p class="section-kicker">Praktyczne zastosowanie projektu</p>
-        <h2 id="consulting-title">Zastosowanie w organizacjach</h2>
-        <p class="section-lead">
-          Jeśli chcesz przełożyć tę perspektywę na pracę zespołu, pomagam analizować
-          używanie AI, mapować procesy, projektować zasady i rozmawiać o zaufaniu,
-          odpowiedzialności oraz weryfikacji.
+    <section class="home-section process-teaser" aria-labelledby="consulting-title">
+      <div class="editorial-section-header">
+        <div>
+          <p class="section-kicker">Praktyczne zastosowanie projektu</p>
+          <h2 id="consulting-title">Zastosowanie w organizacjach</h2>
+        </div>
+        <p>
+          Pomagam analizować używanie AI, mapować procesy, projektować zasady i
+          rozmawiać o zaufaniu, odpowiedzialności oraz weryfikacji.
         </p>
       </div>
-      <div class="teaser-panel">
-        <VisualPlate variant="process-flow" lang="pl" class="section-visual teaser-visual" />
-        <ul class="teaser-chips" aria-label="Obszary konsultingu">
-          <li><Icon name="check" />analiza używania AI</li>
-          <li><Icon name="check" />mapowanie procesów</li>
-          <li><Icon name="check" />model pracy człowiek-AI</li>
-          <li><Icon name="check" />zasady dla zespołu</li>
-        </ul>
-        <a href="/pl/consulting/">Zobacz consulting</a>
-      </div>
+      <ol class="process-line" aria-label="Proces konsultingu">
+        <li><span>Używanie AI</span></li>
+        <li><span>Mapa</span></li>
+        <li><span>Weryfikacja</span></li>
+        <li><span>Odpowiedzialność</span></li>
+        <li><span>Zasady</span></li>
+      </ol>
+      <a class="text-link process-link" href="/pl/consulting/">Zobacz consulting</a>
     </section>
 
     <section class="home-section" aria-labelledby="writing-title">
-      <SectionHeader kicker="Teksty i notatki" title="Publikacje są w przygotowaniu" id="writing-title">
-        Artykuły, notatki i pojęcia otworzą spokojne, oparte na źródłach archiwum redakcyjne.
-      </SectionHeader>
-      <div class="system-grid">
-        <IconCard icon="article" title="Artykuły" href="/pl/articles/" linkLabel="Otwórz artykuły">
-          Dłuższe teksty o AI, cyberpsychologii i Human-AI Interaction.
-        </IconCard>
-        <IconCard icon="note" title="Notatki" href="/pl/notes/" linkLabel="Otwórz notatki">
-          Krótsze obserwacje, definicje i kierunki dalszych badań.
-        </IconCard>
-        <IconCard icon="concept" title="Pojęcia" href="/pl/concepts/" linkLabel="Otwórz pojęcia">
-          Słownik pojęć o ludzkiej stronie sztucznej inteligencji.
-        </IconCard>
+      <div class="editorial-section-header">
+        <div>
+          <p class="section-kicker">Teksty i notatki</p>
+          <h2 id="writing-title">Publikacje są w przygotowaniu</h2>
+        </div>
+        <p>Artykuły, notatki i pojęcia otworzą spokojne, oparte na źródłach archiwum redakcyjne.</p>
+      </div>
+
+      <div class="archive-index" aria-label="Archiwum publikacji">
+        <a class="archive-entry" href="/pl/articles/">
+          <span>Archiwum</span>
+          <strong>Artykuły</strong>
+          <p>Dłuższe teksty o AI, cyberpsychologii i Human-AI Interaction.</p>
+        </a>
+        <a class="archive-entry" href="/pl/notes/">
+          <span>Notatnik</span>
+          <strong>Notatki</strong>
+          <p>Krótsze obserwacje, definicje i kierunki dalszych badań.</p>
+        </a>
+        <a class="archive-entry" href="/pl/concepts/">
+          <span>Słownik</span>
+          <strong>Pojęcia</strong>
+          <p>Słownik pojęć o ludzkiej stronie sztucznej inteligencji.</p>
+        </a>
       </div>
     </section>
 
-    <section class="home-section about-teaser" aria-labelledby="about-title">
+    <section class="home-section author-strip" aria-labelledby="about-title">
       <div>
         <p class="section-kicker">Perspektywa autora</p>
         <h2 id="about-title">Feliks Mamczur</h2>
@@ -135,8 +209,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </p>
     </section>
 
-    <CtaPanel kicker="Kontakt" title="Porozmawiajmy o AI w Twojej organizacji." href="/pl/contact/" linkLabel="Kontakt">
-      Konsulting, warsztaty, wystąpienia i rozmowy o ludzkiej stronie adopcji AI.
-    </CtaPanel>
+    <section class="home-section home-final" aria-labelledby="final-title">
+      <div>
+        <p class="section-kicker">Kontakt</p>
+        <h2 id="final-title">Porozmawiajmy o AI w Twojej organizacji.</h2>
+        <p>
+          Konsulting, warsztaty, wystąpienia i rozmowy o ludzkiej stronie adopcji AI.
+        </p>
+      </div>
+      <a class="text-link" href="/pl/contact/">Kontakt</a>
+    </section>
   </div>
 </BaseLayout>

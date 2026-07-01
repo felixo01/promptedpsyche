@@ -1,6 +1,5 @@
 ---
 import CtaPanel from '../../components/CtaPanel.astro';
-import IconCard from '../../components/IconCard.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 import VisualPlate from '../../components/VisualPlate.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -28,26 +27,50 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         Praktyczne, oparte na źródłach wsparcie dla zespołów, które potrzebują zasad,
         nawyków weryfikacji i czytelniejszych przepływów człowiek-AI.
       </SectionHeader>
-      <div class="service-card-grid">
-        <IconCard icon="decision" title="Analiza używania AI">
-          Sprawdzenie, jak zespół już korzysta z AI i gdzie wsparcie jest realne.
-        </IconCard>
-        <IconCard icon="concept" title="Mapowanie procesów">
-          Opis zadań, przepływu informacji, przekazań i miejsc, w których AI wchodzi do pracy.
-        </IconCard>
-        <IconCard icon="work" title="Model pracy człowiek-AI">
-          Projektowanie praktycznych przepływów: co wspiera AI, a za co odpowiada człowiek.
-        </IconCard>
-        <IconCard icon="trust" title="Zasady dla zespołu">
-          Wspólne reguły zaufania, weryfikacji, świadomości danych i odpowiedzialności.
-        </IconCard>
-        <IconCard icon="article" title="Kompetencje pracy z AI">
-          Wspólny język pracy z narzędziami generatywnymi bez hype'u i listy trików.
-        </IconCard>
-        <IconCard icon="dialogue" title="Warsztaty i wystąpienia">
-          Briefingi, warsztaty i wykłady o AI, cyberpsychologii i Human-AI Interaction.
-        </IconCard>
-      </div>
+      <ol class="service-index" aria-label="Usługi konsultingowe">
+        <li class="service-index-item">
+          <span>01</span>
+          <div>
+            <h3>Analiza używania AI</h3>
+            <p>Sprawdzenie, jak zespół już korzysta z AI i gdzie wsparcie jest realne.</p>
+          </div>
+        </li>
+        <li class="service-index-item">
+          <span>02</span>
+          <div>
+            <h3>Mapowanie procesów</h3>
+            <p>Opis zadań, przepływu informacji, przekazań i miejsc, w których AI wchodzi do pracy.</p>
+          </div>
+        </li>
+        <li class="service-index-item">
+          <span>03</span>
+          <div>
+            <h3>Model pracy człowiek-AI</h3>
+            <p>Projektowanie praktycznych przepływów: co wspiera AI, a za co odpowiada człowiek.</p>
+          </div>
+        </li>
+        <li class="service-index-item">
+          <span>04</span>
+          <div>
+            <h3>Zasady dla zespołu</h3>
+            <p>Wspólne reguły zaufania, weryfikacji, świadomości danych i odpowiedzialności.</p>
+          </div>
+        </li>
+        <li class="service-index-item">
+          <span>05</span>
+          <div>
+            <h3>Kompetencje pracy z AI</h3>
+            <p>Wspólny język pracy z narzędziami generatywnymi bez hype'u i listy trików.</p>
+          </div>
+        </li>
+        <li class="service-index-item">
+          <span>06</span>
+          <div>
+            <h3>Warsztaty i wystąpienia</h3>
+            <p>Briefingi, warsztaty i wykłady o AI, cyberpsychologii i Human-AI Interaction.</p>
+          </div>
+        </li>
+      </ol>
     </section>
 
     <section aria-labelledby="situations-title">
@@ -55,14 +78,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         Często problemem nie jest brak promptów, tylko niejasny osąd, odpowiedzialność
         i niespójne używanie AI w zespole.
       </SectionHeader>
-      <ul class="scenario-list scenario-grid">
+      <ol class="scenario-list scenario-numbered">
         <li>Zespół używa AI, ale każdy robi to inaczej.</li>
         <li>Firma chce wprowadzić AI, ale nie ma zasad.</li>
         <li>Ludzie wklejają dane do narzędzi bez refleksji.</li>
         <li>AI przyspiesza pisanie, ale nie wiadomo, kto odpowiada za wynik.</li>
         <li>Liderzy nie wiedzą, które zadania można wspierać AI.</li>
         <li>Organizacja chce przygotować proste zasady używania AI.</li>
-      </ul>
+      </ol>
     </section>
 
     <section class="consulting-process" aria-labelledby="process-title">

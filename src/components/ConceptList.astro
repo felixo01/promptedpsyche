@@ -39,14 +39,18 @@ const {
     </div>
   ) : (
     <div class="concept-list">
-      {entries.map((entry) => {
+      {entries.map((entry, index) => {
         const tags = entry.data.tags ?? [];
         const entrySlug = entry.data.routeSlug ?? entry.id;
         const href = `${basePath}/${entrySlug}/`;
+        const itemNumber = String(index + 1).padStart(2, '0');
 
         return (
           <article class="concept-card">
-            <p class="concept-kicker">{label}</p>
+            <p class="concept-kicker">
+              <span>{itemNumber}</span>
+              {label}
+            </p>
             <h2>
               <a href={href}>{entry.data.title}</a>
             </h2>

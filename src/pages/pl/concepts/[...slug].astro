@@ -2,22 +2,49 @@
 import { getCollection, render } from 'astro:content';
 import EntryLayout from '../../../layouts/EntryLayout.astro';
 import { getConceptAlternates, getConceptSlug } from '../../../lib/conceptRoutes';
+import { sortConceptsForIndex } from '../../../lib/conceptOrder';
 import { onlyPublicEntries, onlyPublicEntriesByLang } from '../../../lib/content';
 
 export async function getStaticPaths() {
   const publicConcepts = onlyPublicEntries(await getCollection('concepts'));
   const concepts = onlyPublicEntriesByLang(publicConcepts, 'pl');
 
-  return concepts.map((entry) => ({
-    params: { slug: getConceptSlug(entry) },
-    props: { entry, alternateLinks: getConceptAlternates(entry, publicConcepts) }
-  }));
+  return concepts.map((entry) => {
+    const tags = entry.data.tags ?? [];
+    const relatedConcepts = sortConceptsForIndex(
+      concepts.filter((candidate) => {
+        if (candidate.id === entry.id) return false;
+        return (candidate.data.tags ?? []).some((tag) => tags.includes(tag));
+      })
+    ).slice(0, 3);
+
+    return {
+      params: { slug: getConceptSlug(entry) },
+      props: { entry, alternateLinks: getConceptAlternates(entry, publicConcepts), relatedConcepts }
+    };
+  });
 }
 
-const { entry, alternateLinks } = Astro.props;
+const { entry, alternateLinks, relatedConcepts } = Astro.props;
 const { Content } = await render(entry);
 ---
 
 <EntryLayout entry={entry} label="Pojęcie" lang="pl" alternateLinks={alternateLinks} showPublishedAt={false}>
   <Content />
+  {
+    relatedConcepts.length > 0 && (
+      <section class="related-concepts" aria-labelledby="related-concepts-title">
+        <p class="small-label">Powiązane pojęcia</p>
+        <h2 id="related-concepts-title">Czytaj dalej w słowniku</h2>
+        <ul>
+          {relatedConcepts.map((concept) => (
+            <li>
+              <a href={`/pl/concepts/${getConceptSlug(concept)}/`}>{concept.data.title}</a>
+              <span>{concept.data.description}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
 </EntryLayout>

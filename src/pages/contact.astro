@@ -1,6 +1,4 @@
 ---
-import IconCard from '../components/IconCard.astro';
-import VisualPlate from '../components/VisualPlate.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../lib/site';
 
@@ -18,52 +16,78 @@ const contactEmail = site.email?.trim();
         <h1>Let's talk about the human side of AI</h1>
       </div>
       <p>
-        Send a short note with the context, the type of support you are looking for and
-        any relevant timing.
+        For consulting, talks, workshops or research conversations, send a concise
+        note with context, timeline and the kind of support you are looking for.
       </p>
     </header>
 
-    <div class="contact-grid">
-      <IconCard icon="dialogue" title="Organizational consulting">
-        AI use analysis, principles, process mapping and human-AI workflows.
-      </IconCard>
-      <IconCard icon="work" title="Workshops and briefings">
-        Practical sessions for teams, leaders and institutions.
-      </IconCard>
-      <IconCard icon="spark" title="Talks and lectures">
-        Public or internal talks on AI, cyberpsychology and Human-AI Interaction.
-      </IconCard>
-      <IconCard icon="article" title="Media commentary">
-        Commentary on the human, psychological and cultural side of AI.
-      </IconCard>
-      <IconCard icon="concept" title="Research conversations">
-        Conversations around concepts, questions and emerging research directions.
-      </IconCard>
-      <IconCard icon="trust" title="Content and project collaboration">
-        Source-informed content, reviews and collaboration around AI and cyberpsychology.
-      </IconCard>
-    </div>
+    <div class="contact-layout">
+      <section aria-labelledby="contact-reasons-title">
+        <p class="section-kicker">Reasons to write</p>
+        <h2 id="contact-reasons-title">What you can get in touch about</h2>
+        <ol class="contact-reason-list">
+          <li>
+            <span>01</span>
+            <div>
+              <h3>Organizational consulting</h3>
+              <p>AI use analysis, principles, process mapping and human-AI workflows.</p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <h3>Workshops and briefings</h3>
+              <p>Practical sessions for teams, leaders and institutions.</p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <h3>Talks and lectures</h3>
+              <p>Public or internal talks on AI, cyberpsychology and Human-AI Interaction.</p>
+            </div>
+          </li>
+          <li>
+            <span>04</span>
+            <div>
+              <h3>Media commentary</h3>
+              <p>Commentary on the human, psychological and cultural side of AI.</p>
+            </div>
+          </li>
+          <li>
+            <span>05</span>
+            <div>
+              <h3>Research conversations</h3>
+              <p>Conversations around concepts, questions and emerging research directions.</p>
+            </div>
+          </li>
+          <li>
+            <span>06</span>
+            <div>
+              <h3>Content and project collaboration</h3>
+              <p>Source-informed content, reviews and collaboration around AI and cyberpsychology.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
 
-    <section class="hero-panel contact-intro" aria-label="Contact details">
-      <VisualPlate variant="note-stack" class="panel-visual contact-visual" />
-      <p>
-        You can get in touch about consulting, workshops and briefings, talks and
-        lectures, media commentary, research conversations or content and project
-        collaboration.
-      </p>
-      {
-        contactEmail ? (
-          <p>
-            Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
-          </p>
-        ) : (
-          <p>Contact details will be added soon.</p>
-        )
-      }
-      <p>
-        Prompted Psyche is currently in pre-launch, so response paths and public contact
-        details may still change.
-      </p>
-    </section>
+      <aside class="contact-email-panel" aria-label="Contact details">
+        <span class="dossier-stamp" aria-hidden="true">PP</span>
+        <p class="small-label">Contact details</p>
+        {
+          contactEmail ? (
+            <p class="contact-email">
+              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+            </p>
+          ) : (
+            <p>Contact details will be added soon.</p>
+          )
+        }
+        <p>
+          Prompted Psyche is currently in pre-launch, so response paths and public
+          contact details may still change.
+        </p>
+      </aside>
+    </div>
   </section>
 </BaseLayout>
