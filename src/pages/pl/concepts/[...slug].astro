@@ -1,12 +1,12 @@
 ---
 import { getCollection, render } from 'astro:content';
-import EntryLayout from '../../layouts/EntryLayout.astro';
-import { getConceptAlternates, getConceptSlug } from '../../lib/conceptRoutes';
-import { onlyPublicEntries, onlyPublicEntriesByLang } from '../../lib/content';
+import EntryLayout from '../../../layouts/EntryLayout.astro';
+import { getConceptAlternates, getConceptSlug } from '../../../lib/conceptRoutes';
+import { onlyPublicEntries, onlyPublicEntriesByLang } from '../../../lib/content';
 
 export async function getStaticPaths() {
   const publicConcepts = onlyPublicEntries(await getCollection('concepts'));
-  const concepts = onlyPublicEntriesByLang(publicConcepts, 'en');
+  const concepts = onlyPublicEntriesByLang(publicConcepts, 'pl');
 
   return concepts.map((entry) => ({
     params: { slug: getConceptSlug(entry) },
@@ -18,6 +18,6 @@ const { entry, alternateLinks } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<EntryLayout entry={entry} label="Concept" lang="en" alternateLinks={alternateLinks}>
+<EntryLayout entry={entry} label="Pojęcie" lang="pl" alternateLinks={alternateLinks}>
   <Content />
 </EntryLayout>

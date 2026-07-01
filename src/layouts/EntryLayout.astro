@@ -24,14 +24,14 @@ const tags: string[] = entry.data.tags ?? [];
 const readingTime = entry.data.readingTime;
 const asideLabels = lang === 'pl'
   ? {
-      aria: 'Struktura artykuĹ‚u',
+      aria: 'Struktura wpisu',
       preparedFor: 'Przygotowane pod',
-      items: ['ĹşrĂłdĹ‚a', 'dalsza lektura', 'powiÄ…zane notatki']
+      items: ['źródła', 'kontekst', 'powiązane pojęcia']
     }
   : {
-      aria: 'Article structure',
+      aria: 'Entry structure',
       preparedFor: 'Prepared for',
-      items: ['sources', 'further reading', 'related notes']
+      items: ['sources', 'context', 'related concepts']
     };
 ---
 

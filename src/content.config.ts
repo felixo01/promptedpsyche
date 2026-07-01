@@ -31,7 +31,10 @@ const notes = defineCollection({
 const concepts = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/concepts' }),
   schema: baseSchema.extend({
-    area: z.string().optional()
+    area: z.string().optional(),
+    lang: z.enum(['en', 'pl']).default('en'),
+    translationKey: z.string().optional(),
+    routeSlug: z.string().optional()
   })
 });
 
