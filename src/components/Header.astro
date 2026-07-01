@@ -20,8 +20,8 @@ const providedAlternateLinks = Astro.props.alternateLinks;
 const currentPath = Astro.url.pathname;
 const normalizedCurrentPath = normalizePath(currentPath);
 const headerOrder = activeLang === 'pl'
-  ? ['/pl/concepts/', '/pl/consulting/', '/pl/about/', '/pl/contact/']
-  : ['/concepts/', '/consulting/', '/about/', '/contact/'];
+  ? ['/pl/', '/pl/concepts/', '/pl/consulting/', '/pl/about/', '/pl/contact/']
+  : ['/', '/concepts/', '/consulting/', '/about/', '/contact/'];
 const navItems = headerOrder
   .map((href) => getNavItems(activeLang).find((item) => item.href === href))
   .filter((item): item is { label: string; href: string } => Boolean(item));
