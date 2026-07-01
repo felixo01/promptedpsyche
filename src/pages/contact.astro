@@ -9,85 +9,92 @@ const contactEmail = site.email?.trim();
   title="Contact"
   description="Contact Feliks Mamczur about consulting, talks, workshops, media, collaboration or research conversations."
 >
-  <section class="page-shell contact-shell">
-    <header class="page-header">
-      <div>
-        <p class="eyebrow">Contact</p>
-        <h1>Let's talk about the human side of AI</h1>
+  <div class="lovable-page contact-page">
+    <header class="lovable-page-hero">
+      <div class="lovable-container">
+        <div class="lovable-heading-narrow">
+          <p class="eyebrow">Contact</p>
+          <h1>Let's talk about the human side of AI</h1>
+          <p class="lede">
+            For consulting, talks, workshops or research conversations, send a concise
+            note with context, timeline and the kind of support you are looking for.
+          </p>
+          <p class="prelaunch-note">
+            Prompted Psyche is currently in pre-launch, so response paths and public
+            contact details may still change.
+          </p>
+        </div>
       </div>
-      <p>
-        For consulting, talks, workshops or research conversations, send a concise
-        note with context, timeline and the kind of support you are looking for.
-      </p>
     </header>
 
-    <div class="contact-layout">
-      <section aria-labelledby="contact-reasons-title">
-        <p class="section-kicker">Reasons to write</p>
-        <h2 id="contact-reasons-title">What you can get in touch about</h2>
-        <ol class="contact-reason-list">
+    <section class="lovable-section" aria-labelledby="contact-reasons-title">
+      <div class="lovable-container">
+        <div class="compact-heading">
+          <p class="eyebrow">Reasons to write</p>
+          <h2 id="contact-reasons-title">What you can get in touch about</h2>
+        </div>
+        <ol class="lovable-service-list contact-reasons">
           <li>
             <span>01</span>
-            <div>
-              <h3>Organizational consulting</h3>
-              <p>AI use analysis, principles, process mapping and human-AI workflows.</p>
-            </div>
+            <h3>Organizational consulting</h3>
+            <p>AI use analysis, principles, process mapping and human-AI workflows.</p>
           </li>
           <li>
             <span>02</span>
-            <div>
-              <h3>Workshops and briefings</h3>
-              <p>Practical sessions for teams, leaders and institutions.</p>
-            </div>
+            <h3>Workshops and briefings</h3>
+            <p>Practical sessions for teams, leaders and institutions.</p>
           </li>
           <li>
             <span>03</span>
-            <div>
-              <h3>Talks and lectures</h3>
-              <p>Public or internal talks on AI, cyberpsychology and Human-AI Interaction.</p>
-            </div>
+            <h3>Talks and lectures</h3>
+            <p>Public or internal talks on AI, cyberpsychology and Human-AI Interaction.</p>
           </li>
           <li>
             <span>04</span>
-            <div>
-              <h3>Media commentary</h3>
-              <p>Commentary on the human, psychological and cultural side of AI.</p>
-            </div>
+            <h3>Media commentary</h3>
+            <p>Commentary on the human, psychological and cultural side of AI.</p>
           </li>
           <li>
             <span>05</span>
-            <div>
-              <h3>Research conversations</h3>
-              <p>Conversations around concepts, questions and emerging research directions.</p>
-            </div>
+            <h3>Research conversations</h3>
+            <p>Conversations around concepts, questions and emerging research directions.</p>
           </li>
           <li>
             <span>06</span>
-            <div>
-              <h3>Content and project collaboration</h3>
-              <p>Source-informed content, reviews and collaboration around AI and cyberpsychology.</p>
-            </div>
+            <h3>Content and project collaboration</h3>
+            <p>Source-informed content, reviews and collaboration around AI and cyberpsychology.</p>
           </li>
         </ol>
-      </section>
+      </div>
+    </section>
 
-      <aside class="contact-email-panel" aria-label="Contact details">
-        <span class="dossier-stamp" aria-hidden="true">PP</span>
-        <p class="small-label">Contact details</p>
-        {
-          contactEmail ? (
-            <p class="contact-email">
-              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+    <section class="lovable-section contact-email-section">
+      <div class="lovable-container">
+        <div class="lovable-email-panel">
+          <div>
+            <p class="eyebrow">Email</p>
+            {
+              contactEmail ? (
+                <a href={`mailto:${contactEmail}`} class="email-link">{contactEmail}</a>
+              ) : (
+                <p class="email-link">Contact details will be added soon.</p>
+              )
+            }
+            <p>
+              A short note with the context, timeline and expected format is enough to
+              start the conversation.
             </p>
-          ) : (
-            <p>Contact details will be added soon.</p>
-          )
-        }
-        <p>
-          Prompted Psyche is currently in pre-launch, so response paths and public
-          contact details may still change.
-        </p>
-      </aside>
-    </div>
-  </section>
+          </div>
+          <aside>
+            <p class="small-label">Helpful context</p>
+            <ul>
+              <li>organization or publication</li>
+              <li>topic and timeline</li>
+              <li>format: consulting, workshop, talk or comment</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </div>
 </BaseLayout>

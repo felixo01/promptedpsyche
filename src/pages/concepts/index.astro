@@ -6,40 +6,47 @@ import { sortConceptsForIndex } from '../../lib/conceptOrder';
 import { onlyPublicEntriesByLang } from '../../lib/content';
 
 const concepts = sortConceptsForIndex(onlyPublicEntriesByLang(await getCollection('concepts'), 'en'));
+const tags = Array.from(new Set(concepts.flatMap((concept) => concept.data.tags ?? []))).slice(0, 7);
 ---
 
 <BaseLayout
   title="Concepts"
   description="A field guide to core concepts in AI, cyberpsychology and Human-AI Interaction."
 >
-  <section class="page-shell">
-    <header class="page-header">
-      <div>
-        <p class="eyebrow">Concepts</p>
-        <h1>Concepts</h1>
+  <div class="lovable-page concepts-page">
+    <header class="lovable-page-hero">
+      <div class="lovable-container">
+        <div class="lovable-heading-narrow">
+          <p class="eyebrow">Concepts</p>
+          <h1>Concepts</h1>
+          <p class="lede">
+            The Prompted Psyche concept library organizes terms for thinking about the
+            human side of AI: trust, decisions, communication, work and human-AI
+            relations.
+          </p>
+        </div>
+        <div class="concept-filter-row" aria-label="Concept topics">
+          <span>Filter</span>
+          {tags.map((tag) => <span>{tag}</span>)}
+        </div>
       </div>
-      <p>
-        The Prompted Psyche concept library organizes terms for thinking about the
-        human side of AI: trust, decisions, communication, work and human-AI
-        relations.
-      </p>
     </header>
 
-    <ConceptList
-      entries={concepts}
-      basePath="/concepts"
-      label="Concept"
-      linkLabel="Read more"
-      emptyLabel="Concepts"
-      emptyMessage="The concept library is in preparation."
-    />
-
-    <section class="concept-library-note" aria-labelledby="concepts-followup-title">
-      <h2 id="concepts-followup-title">A working vocabulary</h2>
-      <p>
-        This is a small public MVP of the library. It will grow carefully as new
-        essays, notes and concepts are prepared.
-      </p>
+    <section class="lovable-section">
+      <div class="lovable-container">
+        <div class="concept-index-heading">
+          <h2>A working vocabulary</h2>
+          <span>{concepts.length} entries</span>
+        </div>
+        <ConceptList
+          entries={concepts}
+          basePath="/concepts"
+          label="Concept"
+          linkLabel="Read more"
+          emptyLabel="Concepts"
+          emptyMessage="The concept library is in preparation."
+        />
+      </div>
     </section>
-  </section>
+  </div>
 </BaseLayout>

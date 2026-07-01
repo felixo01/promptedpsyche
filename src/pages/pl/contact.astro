@@ -10,85 +10,92 @@ const contactEmail = site.email?.trim();
   title="Kontakt"
   description="Kontakt w sprawie konsultingu, warsztatów, wystąpień, komentarzy medialnych albo rozmów badawczych."
 >
-  <section class="page-shell contact-shell">
-    <header class="page-header">
-      <div>
-        <p class="eyebrow">Kontakt</p>
-        <h1>Porozmawiajmy o ludzkiej stronie AI</h1>
+  <div class="lovable-page contact-page">
+    <header class="lovable-page-hero">
+      <div class="lovable-container">
+        <div class="lovable-heading-narrow">
+          <p class="eyebrow">Kontakt</p>
+          <h1>Porozmawiajmy o ludzkiej stronie AI</h1>
+          <p class="lede">
+            W sprawie konsultingu, wystąpień, warsztatów albo rozmów badawczych napisz
+            krótko o kontekście, terminie i rodzaju wsparcia, którego szukasz.
+          </p>
+          <p class="prelaunch-note">
+            Prompted Psyche jest obecnie w trybie pre-launch, więc publiczne dane
+            kontaktowe mogą się jeszcze zmienić.
+          </p>
+        </div>
       </div>
-      <p>
-        W sprawie konsultingu, wystąpień, warsztatów albo rozmów badawczych napisz
-        krótko o kontekście, terminie i rodzaju wsparcia, którego szukasz.
-      </p>
     </header>
 
-    <div class="contact-layout">
-      <section aria-labelledby="contact-reasons-title">
-        <p class="section-kicker">Powody kontaktu</p>
-        <h2 id="contact-reasons-title">W jakich sprawach możesz napisać</h2>
-        <ol class="contact-reason-list">
+    <section class="lovable-section" aria-labelledby="contact-reasons-title">
+      <div class="lovable-container">
+        <div class="compact-heading">
+          <p class="eyebrow">Powody kontaktu</p>
+          <h2 id="contact-reasons-title">W jakich sprawach możesz napisać</h2>
+        </div>
+        <ol class="lovable-service-list contact-reasons">
           <li>
             <span>01</span>
-            <div>
-              <h3>Konsulting dla organizacji</h3>
-              <p>Analiza używania AI, zasady, mapowanie procesów i przepływy człowiek-AI.</p>
-            </div>
+            <h3>Konsulting dla organizacji</h3>
+            <p>Analiza używania AI, zasady, mapowanie procesów i przepływy człowiek-AI.</p>
           </li>
           <li>
             <span>02</span>
-            <div>
-              <h3>Warsztaty i briefingi</h3>
-              <p>Praktyczne spotkania dla zespołów, liderów i instytucji.</p>
-            </div>
+            <h3>Warsztaty i briefingi</h3>
+            <p>Praktyczne spotkania dla zespołów, liderów i instytucji.</p>
           </li>
           <li>
             <span>03</span>
-            <div>
-              <h3>Wystąpienia i wykłady</h3>
-              <p>Publiczne lub wewnętrzne wystąpienia o AI, cyberpsychologii i Human-AI Interaction.</p>
-            </div>
+            <h3>Wystąpienia i wykłady</h3>
+            <p>Publiczne lub wewnętrzne wystąpienia o AI, cyberpsychologii i Human-AI Interaction.</p>
           </li>
           <li>
             <span>04</span>
-            <div>
-              <h3>Komentarze medialne</h3>
-              <p>Komentarze o ludzkiej, psychologicznej i kulturowej stronie AI.</p>
-            </div>
+            <h3>Komentarze medialne</h3>
+            <p>Komentarze o ludzkiej, psychologicznej i kulturowej stronie AI.</p>
           </li>
           <li>
             <span>05</span>
-            <div>
-              <h3>Rozmowy badawcze</h3>
-              <p>Rozmowy wokół pojęć, pytań i rozwijających się kierunków badań.</p>
-            </div>
+            <h3>Rozmowy badawcze</h3>
+            <p>Rozmowy wokół pojęć, pytań i rozwijających się kierunków badań.</p>
           </li>
           <li>
             <span>06</span>
-            <div>
-              <h3>Współpraca przy treściach</h3>
-              <p>Treści oparte na źródłach, recenzje i współpraca wokół AI oraz cyberpsychologii.</p>
-            </div>
+            <h3>Współpraca przy treściach</h3>
+            <p>Treści oparte na źródłach, recenzje i współpraca wokół AI oraz cyberpsychologii.</p>
           </li>
         </ol>
-      </section>
+      </div>
+    </section>
 
-      <aside class="contact-email-panel" aria-label="Dane kontaktowe">
-        <span class="dossier-stamp" aria-hidden="true">PP</span>
-        <p class="small-label">Dane kontaktowe</p>
-        {
-          contactEmail ? (
-            <p class="contact-email">
-              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+    <section class="lovable-section contact-email-section">
+      <div class="lovable-container">
+        <div class="lovable-email-panel">
+          <div>
+            <p class="eyebrow">Email</p>
+            {
+              contactEmail ? (
+                <a href={`mailto:${contactEmail}`} class="email-link">{contactEmail}</a>
+              ) : (
+                <p class="email-link">Dane kontaktowe zostaną dodane wkrótce.</p>
+              )
+            }
+            <p>
+              Wystarczy krótka wiadomość z kontekstem, terminem i oczekiwaną formą
+              rozmowy albo współpracy.
             </p>
-          ) : (
-            <p>Dane kontaktowe zostaną dodane wkrótce.</p>
-          )
-        }
-        <p>
-          Prompted Psyche jest obecnie w trybie pre-launch, więc publiczne dane
-          kontaktowe mogą się jeszcze zmienić.
-        </p>
-      </aside>
-    </div>
-  </section>
+          </div>
+          <aside>
+            <p class="small-label">Pomocny kontekst</p>
+            <ul>
+              <li>organizacja albo redakcja</li>
+              <li>temat i termin</li>
+              <li>forma: konsulting, warsztat, wystąpienie albo komentarz</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </div>
 </BaseLayout>

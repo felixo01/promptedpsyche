@@ -1,6 +1,5 @@
 ---
-import BrandMark from './BrandMark.astro';
-import { footerCopy, getLangFromPath, getNavItems, type Locale } from '../lib/i18n';
+import { getLangFromPath, type Locale } from '../lib/i18n';
 import { site } from '../lib/site';
 
 interface Props {
@@ -8,22 +7,58 @@ interface Props {
 }
 
 const activeLang = Astro.props.lang ?? getLangFromPath(Astro.url.pathname);
-const navItems = getNavItems(activeLang);
-const copy = footerCopy[activeLang];
 const year = new Date().getFullYear();
+const isPl = activeLang === 'pl';
+const prefix = isPl ? '/pl' : '';
 ---
 
 <footer class="site-footer">
-  <div>
-    <BrandMark line={copy.tagline} />
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-intro">
+        <h2>
+          {isPl
+            ? 'Projekt o tym, jak AI zmienia myślenie, emocje, zaufanie, komunikację i pracę.'
+            : 'A project on how AI changes thought, emotion, trust, communication and work.'}
+        </h2>
+        <div class="footer-author">
+          <span aria-hidden="true">FM</span>
+          <div>
+            <p>Feliks Mamczur</p>
+            <a href="https://orcid.org/0009-0001-0715-0517" rel="me noopener">
+              ORCID · 0009-0001-0715-0517
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-inquiries">
+        <div>
+          <h3>{isPl ? 'Zapytania' : 'Inquiries'}</h3>
+          <ul>
+            <li><a href={`${prefix}/consulting/`}>{isPl ? 'Konsulting dla organizacji' : 'Organizational consulting'}</a></li>
+            <li><a href={`${prefix}/consulting/`}>{isPl ? 'Warsztaty i wystąpienia' : 'Workshops and talks'}</a></li>
+            <li><a href={`${prefix}/contact/`}>{isPl ? 'Komentarz medialny' : 'Media commentary'}</a></li>
+            <li><a href={`${prefix}/contact/`}>{isPl ? 'Rozmowy badawcze' : 'Research conversations'}</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>{isPl ? 'Kontakt' : 'Contact'}</h3>
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        <span aria-hidden="true">PP</span>
+        <p>Copyright {year} Prompted Psyche</p>
+      </div>
+      <nav aria-label={isPl ? 'Linki w stopce' : 'Footer links'}>
+        <a href={`${prefix}/concepts/`}>{isPl ? 'Pojęcia' : 'Concepts'}</a>
+        <a href={`${prefix}/about/`}>{isPl ? 'O projekcie' : 'About'}</a>
+        <a href="/rss.xml">RSS</a>
+      </nav>
+    </div>
   </div>
-
-  <nav class="footer-nav" aria-label={activeLang === 'pl' ? 'Nawigacja w stopce' : 'Footer navigation'}>
-    {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
-    <a href="/rss.xml">RSS</a>
-  </nav>
-
-  <p class="footer-meta">
-    Copyright {year} {site.author}. {copy.meta}
-  </p>
 </footer>

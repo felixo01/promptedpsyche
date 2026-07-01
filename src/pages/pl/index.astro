@@ -24,7 +24,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
 
       <aside class="identity-panel dossier-panel" aria-label="Czym jest Prompted Psyche?">
-        <span class="dossier-stamp" aria-hidden="true">PP</span>
+        <div class="dossier-topline">
+          <span class="dossier-stamp" aria-hidden="true">PP</span>
+          <span class="dossier-number" aria-hidden="true">01</span>
+        </div>
         <p class="small-label">Czym jest Prompted Psyche?</p>
         <p>
           Prompted Psyche to projekt ekspercki Feliksa Mamczura o AI, cyberpsychologii
@@ -79,7 +82,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
     </section>
 
-    <section class="home-section" aria-labelledby="areas-title">
+    <section class="home-section topic-section" aria-labelledby="areas-title">
       <div class="editorial-section-header">
         <div>
           <p class="section-kicker">Mapa projektu</p>
@@ -96,28 +99,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <span>01</span>
             <div>
               <h3>Zaufanie</h3>
-              <p>Kiedy odpowiedź AI zaczyna wydawać się wiarygodna.</p>
+              <p>Weryfikacja zamiast samego polegania</p>
             </div>
           </article>
           <article class="topic-row">
             <span>02</span>
             <div>
               <h3>Emocje</h3>
-              <p>Jak systemy konwersacyjne wpływają na komfort, lęk i poczucie bycia zrozumianym.</p>
+              <p>Gdy system sprawia wrażenie zrozumienia</p>
             </div>
           </article>
           <article class="topic-row">
             <span>03</span>
             <div>
               <h3>Przywiązanie</h3>
-              <p>Dlaczego system może sprawiać wrażenie bliskiego, bezpiecznego albo zawsze dostępnego.</p>
+              <p>Relacje z nieludzkim partnerem rozmowy</p>
             </div>
           </article>
           <article class="topic-row">
             <span>04</span>
             <div>
               <h3>Praca</h3>
-              <p>Jak AI zmienia sposób pisania, sprawdzania, decydowania i brania odpowiedzialności.</p>
+              <p>Kto odpowiada, gdy AI przyspiesza proces</p>
             </div>
           </article>
         </div>
@@ -126,21 +129,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <span>05</span>
             <div>
               <h3>Decyzje</h3>
-              <p>Kiedy AI wspiera osąd, a kiedy zaczyna go zastępować.</p>
+              <p>Co delegujemy i dlaczego</p>
             </div>
           </article>
           <article class="topic-row">
             <span>06</span>
             <div>
               <h3>Twórczość</h3>
-              <p>Co dzieje się z autorstwem, stylem i kontrolą, gdy AI wchodzi do procesu twórczego.</p>
+              <p>Wybór jako część autorstwa</p>
             </div>
           </article>
           <article class="topic-row">
             <span>07</span>
             <div>
               <h3>Kultura</h3>
-              <p>Co AI pokazuje o języku, mediach, tożsamości i władzy.</p>
+              <p>Język kształtowany przez narzędzie</p>
             </div>
           </article>
         </div>
@@ -159,11 +162,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </p>
       </div>
       <ol class="process-line" aria-label="Proces konsultingu">
-        <li><span>Używanie AI</span></li>
-        <li><span>Mapa</span></li>
-        <li><span>Weryfikacja</span></li>
-        <li><span>Odpowiedzialność</span></li>
-        <li><span>Zasady</span></li>
+        <li><small>01</small><span>Używanie AI</span></li>
+        <li><small>02</small><span>Mapa</span></li>
+        <li><small>03</small><span>Weryfikacja</span></li>
+        <li><small>04</small><span>Odpowiedzialność</span></li>
+        <li><small>05</small><span>Zasady</span></li>
       </ol>
       <a class="text-link process-link" href="/pl/consulting/">Zobacz consulting</a>
     </section>
@@ -200,24 +203,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <div>
         <p class="section-kicker">Perspektywa autora</p>
         <h2 id="about-title">Feliks Mamczur</h2>
+        <a class="orcid-link" href="https://orcid.org/0009-0001-0715-0517" rel="me noopener">
+          ORCID 0009-0001-0715-0517
+        </a>
       </div>
-      <p>
-        Piszę i konsultuję na styku AI, cyberpsychologii i Human-AI Interaction. Z filmu
-        biorę uważność na narrację, obraz, emocje i rytm komunikacji. W Prompted Psyche
-        wykorzystuję tę perspektywę do opisywania tego, jak AI zmienia pracę, twórczość,
-        decyzje i relacje między ludźmi.
-      </p>
+      <div class="author-note">
+        <p>
+          Piszę i konsultuję na styku AI, cyberpsychologii i Human-AI Interaction.
+          Z filmu biorę uważność na narrację, obraz, emocje i rytm komunikacji.
+          W Prompted Psyche wykorzystuję tę perspektywę do opisywania tego, jak AI
+          zmienia pracę, twórczość, decyzje i relacje między ludźmi.
+        </p>
+        <blockquote>
+          We prompt machines. Machines prompt us back.
+        </blockquote>
+      </div>
     </section>
 
     <section class="home-section home-final" aria-labelledby="final-title">
       <div>
         <p class="section-kicker">Kontakt</p>
-        <h2 id="final-title">Porozmawiajmy o AI w Twojej organizacji.</h2>
+        <h2 id="final-title">Dokąd przejść dalej</h2>
         <p>
-          Konsulting, warsztaty, wystąpienia i rozmowy o ludzkiej stronie adopcji AI.
+          Zacznij od pojęć, zobacz zastosowanie projektu w organizacjach albo napisz
+          w sprawie rozmowy.
         </p>
       </div>
-      <a class="text-link" href="/pl/contact/">Kontakt</a>
+      <nav class="final-link-list" aria-label="Kolejne linki">
+        <a class="text-link" href="/pl/concepts/">Pojęcia</a>
+        <a class="text-link" href="/pl/consulting/">Konsulting</a>
+        <a class="text-link" href="/pl/contact/">Kontakt</a>
+      </nav>
     </section>
   </div>
 </BaseLayout>

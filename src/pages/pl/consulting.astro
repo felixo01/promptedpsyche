@@ -1,7 +1,4 @@
 ---
-import CtaPanel from '../../components/CtaPanel.astro';
-import SectionHeader from '../../components/SectionHeader.astro';
-import VisualPlate from '../../components/VisualPlate.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
@@ -10,162 +7,136 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   title="Konsulting"
   description="Konsulting, warsztaty i analizy używania AI w organizacjach."
 >
-  <section class="page-shell service-shell">
-    <header class="page-header service-hero">
-      <div>
-        <p class="eyebrow">Konsulting</p>
-        <h1>Analiza używania AI w organizacjach</h1>
+  <div class="lovable-page">
+    <header class="lovable-page-hero consulting-hero">
+      <div class="lovable-container">
+        <div class="consulting-hero-grid">
+          <div>
+            <p class="eyebrow">Konsulting</p>
+            <h1>Analiza używania AI w organizacjach</h1>
+            <p class="lede">
+              Konsulting, warsztaty i zasady pracy człowiek-AI dla zespołów, które chcą
+              korzystać z AI świadomie.
+            </p>
+          </div>
+          <aside class="consulting-side-note">
+            <p class="small-label">Najlepsze dopasowanie</p>
+            <p>
+              Organizacje, które zaczynają porządkować używanie AI, zespoły pracujące
+              z treścią, komunikacją, edukacją albo procesami twórczymi oraz liderzy,
+              którzy chcą zrozumieć ludzką stronę adopcji AI.
+            </p>
+          </aside>
+        </div>
       </div>
-      <p>
-        Konsulting, warsztaty i zasady pracy człowiek-AI dla zespołów, które chcą
-        korzystać z AI świadomie.
-      </p>
     </header>
 
-    <section aria-labelledby="services-title">
-      <SectionHeader kicker="Usługi" title="Z czym mogę pomóc" id="services-title">
-        Praktyczne, oparte na źródłach wsparcie dla zespołów, które potrzebują zasad,
-        nawyków weryfikacji i czytelniejszych przepływów człowiek-AI.
-      </SectionHeader>
-      <ol class="service-index" aria-label="Usługi konsultingowe">
-        <li class="service-index-item">
-          <span>01</span>
-          <div>
+    <section class="lovable-section" aria-labelledby="services-title">
+      <div class="lovable-container">
+        <div class="lovable-section-header">
+          <h2 id="services-title">Z czym mogę pomóc</h2>
+          <p>
+            Praktyczne, oparte na źródłach wsparcie dla zespołów, które potrzebują zasad,
+            nawyków weryfikacji i czytelniejszych przepływów człowiek-AI.
+          </p>
+        </div>
+        <ol class="lovable-service-list">
+          <li>
+            <span>01</span>
             <h3>Analiza używania AI</h3>
             <p>Sprawdzenie, jak zespół już korzysta z AI i gdzie wsparcie jest realne.</p>
-          </div>
-        </li>
-        <li class="service-index-item">
-          <span>02</span>
-          <div>
+          </li>
+          <li>
+            <span>02</span>
             <h3>Mapowanie procesów</h3>
             <p>Opis zadań, przepływu informacji, przekazań i miejsc, w których AI wchodzi do pracy.</p>
-          </div>
-        </li>
-        <li class="service-index-item">
-          <span>03</span>
-          <div>
+          </li>
+          <li>
+            <span>03</span>
             <h3>Model pracy człowiek-AI</h3>
             <p>Projektowanie praktycznych przepływów: co wspiera AI, a za co odpowiada człowiek.</p>
-          </div>
-        </li>
-        <li class="service-index-item">
-          <span>04</span>
-          <div>
+          </li>
+          <li>
+            <span>04</span>
             <h3>Zasady dla zespołu</h3>
             <p>Wspólne reguły zaufania, weryfikacji, świadomości danych i odpowiedzialności.</p>
-          </div>
-        </li>
-        <li class="service-index-item">
-          <span>05</span>
-          <div>
+          </li>
+          <li>
+            <span>05</span>
             <h3>Kompetencje pracy z AI</h3>
             <p>Wspólny język pracy z narzędziami generatywnymi bez hype'u i listy trików.</p>
-          </div>
-        </li>
-        <li class="service-index-item">
-          <span>06</span>
-          <div>
+          </li>
+          <li>
+            <span>06</span>
             <h3>Warsztaty i wystąpienia</h3>
             <p>Briefingi, warsztaty i wykłady o AI, cyberpsychologii i Human-AI Interaction.</p>
-          </div>
-        </li>
-      </ol>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <section aria-labelledby="situations-title">
-      <SectionHeader kicker="Typowe sytuacje" title="Kiedy ta praca jest potrzebna" id="situations-title">
-        Często problemem nie jest brak promptów, tylko niejasny osąd, odpowiedzialność
-        i niespójne używanie AI w zespole.
-      </SectionHeader>
-      <ol class="scenario-list scenario-numbered">
-        <li>Zespół używa AI, ale każdy robi to inaczej.</li>
-        <li>Firma chce wprowadzić AI, ale nie ma zasad.</li>
-        <li>Ludzie wklejają dane do narzędzi bez refleksji.</li>
-        <li>AI przyspiesza pisanie, ale nie wiadomo, kto odpowiada za wynik.</li>
-        <li>Liderzy nie wiedzą, które zadania można wspierać AI.</li>
-        <li>Organizacja chce przygotować proste zasady używania AI.</li>
-      </ol>
-    </section>
-
-    <section class="consulting-process" aria-labelledby="process-title">
-      <div class="consulting-section-header consulting-process-header">
-        <div>
-          <p class="section-kicker">Proces</p>
-          <h2 id="process-title">Jak może wyglądać współpraca</h2>
+    <section class="lovable-section tinted-section" aria-labelledby="situations-title">
+      <div class="lovable-container">
+        <div class="compact-heading">
+          <p class="eyebrow">Typowe sytuacje</p>
+          <h2 id="situations-title">Kiedy ta praca jest potrzebna</h2>
         </div>
-        <div class="consulting-header-copy">
+        <ol class="lovable-numbered-list">
+          <li>Zespół używa AI, ale każdy robi to inaczej.</li>
+          <li>Firma chce wprowadzić AI, ale nie ma zasad.</li>
+          <li>Ludzie wklejają dane do narzędzi bez refleksji.</li>
+          <li>AI przyspiesza pisanie, ale nie wiadomo, kto odpowiada za wynik.</li>
+          <li>Liderzy nie wiedzą, które zadania można wspierać AI.</li>
+          <li>Organizacja chce przygotować proste zasady używania AI.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="lovable-section process-section" aria-labelledby="process-title">
+      <div class="lovable-container">
+        <div class="compact-heading">
+          <p class="eyebrow">Proces</p>
+          <h2 id="process-title">Jak może wyglądać współpraca</h2>
           <p>
             Forma może być kompaktowa, ale powinna odnosić się do realnych zadań,
             ryzyk i punktów decyzyjnych.
           </p>
-          <VisualPlate variant="process-flow" lang="pl" class="visual-plate--inline process-visual-inline" />
         </div>
+        <ol class="process-line process-line-detailed" aria-label="Proces konsultingu">
+          <li><small>01</small><strong>Rozpoznanie</strong><span>gdzie AI pojawia się dziś i co trzeba uporządkować</span></li>
+          <li><small>02</small><strong>Mapa procesów</strong><span>które etapy można wspierać AI i gdzie są przekazania</span></li>
+          <li><small>03</small><strong>Ryzyka i odpowiedzialność</strong><span>co wymaga weryfikacji, świadomości danych, kontroli albo drugiej osoby</span></li>
+          <li><small>04</small><strong>Model pracy człowiek-AI</strong><span>jak może wyglądać sensowny przepływ w codziennej pracy</span></li>
+          <li><small>05</small><strong>Zasady i następne kroki</strong><span>co przetestować, opisać albo doprecyzować</span></li>
+        </ol>
       </div>
-      <ol class="process-list process-steps">
-        <li>
-          <span class="process-step-number">01</span>
-          <strong>Rozpoznanie</strong>
-          <p>gdzie AI pojawia się dziś i co trzeba uporządkować</p>
-        </li>
-        <li>
-          <span class="process-step-number">02</span>
-          <strong>Mapa procesów</strong>
-          <p>które etapy można wspierać AI i gdzie są przekazania</p>
-        </li>
-        <li>
-          <span class="process-step-number">03</span>
-          <strong>Ryzyka i odpowiedzialność</strong>
-          <p>co wymaga weryfikacji, świadomości danych, kontroli albo drugiej osoby</p>
-        </li>
-        <li>
-          <span class="process-step-number">04</span>
-          <strong>Model pracy człowiek-AI</strong>
-          <p>jak może wyglądać sensowny przepływ w codziennej pracy</p>
-        </li>
-        <li>
-          <span class="process-step-number">05</span>
-          <strong>Zasady i następne kroki</strong>
-          <p>co przetestować, opisać albo doprecyzować</p>
-        </li>
-      </ol>
     </section>
 
-    <section class="consulting-outcome" aria-labelledby="outcome-title">
-      <div class="consulting-outcome-header">
+    <section class="lovable-section outcome-section" aria-labelledby="outcome-title">
+      <div class="lovable-container outcome-grid">
         <div>
-          <p class="section-kicker">Rezultat</p>
+          <p class="eyebrow">Rezultat</p>
           <h2 id="outcome-title">Co może zostać po współpracy</h2>
-          <p>
-            W zależności od formatu współpraca może zostawić zespołowi wspólny język
-            i praktyczny materiał do codziennego używania AI.
-          </p>
         </div>
-        <VisualPlate variant="note-stack" lang="pl" class="visual-plate--compact outcome-visual" />
+        <ul class="outcome-list">
+          <li>mapa obecnego używania AI w zespole</li>
+          <li>lista procesów, w których AI może wspierać pracę</li>
+          <li>miejsca wymagające kontroli, źródeł albo drugiej osoby</li>
+          <li>proste zasady korzystania z AI</li>
+          <li>rekomendacje dotyczące weryfikacji odpowiedzi modeli</li>
+          <li>materiał po warsztacie dla zespołu lub liderów</li>
+        </ul>
       </div>
-      <ul class="outcome-list">
-        <li>mapa obecnego używania AI w zespole</li>
-        <li>lista procesów, w których AI może wspierać pracę</li>
-        <li>miejsca wymagające kontroli, źródeł albo drugiej osoby</li>
-        <li>proste zasady korzystania z AI</li>
-        <li>rekomendacje dotyczące weryfikacji odpowiedzi modeli</li>
-        <li>materiał po warsztacie dla zespołu lub liderów</li>
-      </ul>
+      <div class="lovable-container">
+        <p class="disclaimer-line">
+          Nie porada prawna. Nie porada kliniczna. Nie gwarancja efektów biznesowych.
+          Nie pełne wdrożenie techniczne. Nie szkolenie z promptowych trików.
+        </p>
+        <div class="consulting-actions">
+          <a class="hero-button hero-button-primary" href="/pl/contact/"><span aria-hidden="true"></span>Kontakt</a>
+          <a class="hero-button hero-button-secondary" href="/pl/concepts/">Czytaj pojęcia</a>
+        </div>
+      </div>
     </section>
-
-    <section class="consulting-note" aria-labelledby="not-title">
-      <h2 id="not-title">Czym to nie jest</h2>
-      <ul class="consulting-disclaimer-list">
-        <li>nie porada prawna</li>
-        <li>nie porada kliniczna</li>
-        <li>nie gwarancja efektów biznesowych</li>
-        <li>nie pełne wdrożenie techniczne</li>
-        <li>nie szkolenie z promptowych trików</li>
-      </ul>
-    </section>
-
-    <CtaPanel kicker="Kontakt" title="Porozmawiajmy o używaniu AI w Twojej organizacji." href="/pl/contact/" linkLabel="Kontakt">
-      Napisz krótko o zespole, obecnym używaniu AI i rodzaju wsparcia, którego szukasz.
-    </CtaPanel>
-  </section>
+  </div>
 </BaseLayout>

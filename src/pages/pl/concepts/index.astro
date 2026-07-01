@@ -6,6 +6,7 @@ import { sortConceptsForIndex } from '../../../lib/conceptOrder';
 import { onlyPublicEntriesByLang } from '../../../lib/content';
 
 const concepts = sortConceptsForIndex(onlyPublicEntriesByLang(await getCollection('concepts'), 'pl'));
+const tags = Array.from(new Set(concepts.flatMap((concept) => concept.data.tags ?? []))).slice(0, 7);
 ---
 
 <BaseLayout
@@ -13,33 +14,39 @@ const concepts = sortConceptsForIndex(onlyPublicEntriesByLang(await getCollectio
   title="Pojęcia"
   description="Słownik pojęć Prompted Psyche o ludzkiej stronie AI."
 >
-  <section class="page-shell">
-    <header class="page-header">
-      <div>
-        <p class="eyebrow">Pojęcia</p>
-        <h1>Pojęcia</h1>
+  <div class="lovable-page concepts-page">
+    <header class="lovable-page-hero">
+      <div class="lovable-container">
+        <div class="lovable-heading-narrow">
+          <p class="eyebrow">Pojęcia</p>
+          <h1>Pojęcia</h1>
+          <p class="lede">
+            Słownik Prompted Psyche porządkuje pojęcia potrzebne do rozmowy o ludzkiej
+            stronie AI: zaufaniu, decyzjach, komunikacji, pracy i relacji człowiek-AI.
+          </p>
+        </div>
+        <div class="concept-filter-row" aria-label="Tematy pojęć">
+          <span>Filtr</span>
+          {tags.map((tag) => <span>{tag}</span>)}
+        </div>
       </div>
-      <p>
-        Słownik Prompted Psyche porządkuje pojęcia potrzebne do rozmowy o ludzkiej
-        stronie AI: zaufaniu, decyzjach, komunikacji, pracy i relacji człowiek-AI.
-      </p>
     </header>
 
-    <ConceptList
-      entries={concepts}
-      basePath="/pl/concepts"
-      label="Pojęcie"
-      linkLabel="Czytaj dalej"
-      emptyLabel="Pojęcia"
-      emptyMessage="Słownik pojęć jest w przygotowaniu."
-    />
-
-    <section class="concept-library-note" aria-labelledby="concepts-followup-title">
-      <h2 id="concepts-followup-title">Roboczy język pojęć</h2>
-      <p>
-        To małe publiczne MVP słownika. Będzie rozwijane ostrożnie wraz z kolejnymi
-        tekstami, notatkami i pojęciami.
-      </p>
+    <section class="lovable-section">
+      <div class="lovable-container">
+        <div class="concept-index-heading">
+          <h2>Roboczy język pojęć</h2>
+          <span>{concepts.length} haseł</span>
+        </div>
+        <ConceptList
+          entries={concepts}
+          basePath="/pl/concepts"
+          label="Pojęcie"
+          linkLabel="Czytaj dalej"
+          emptyLabel="Pojęcia"
+          emptyMessage="Słownik pojęć jest w przygotowaniu."
+        />
+      </div>
     </section>
-  </section>
+  </div>
 </BaseLayout>

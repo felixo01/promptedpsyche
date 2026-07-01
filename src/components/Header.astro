@@ -19,7 +19,12 @@ const activeLang = Astro.props.lang ?? getLangFromPath(Astro.url.pathname);
 const providedAlternateLinks = Astro.props.alternateLinks;
 const currentPath = Astro.url.pathname;
 const normalizedCurrentPath = normalizePath(currentPath);
-const navItems = getNavItems(activeLang);
+const headerOrder = activeLang === 'pl'
+  ? ['/pl/concepts/', '/pl/consulting/', '/pl/about/', '/pl/contact/']
+  : ['/concepts/', '/consulting/', '/about/', '/contact/'];
+const navItems = headerOrder
+  .map((href) => getNavItems(activeLang).find((item) => item.href === href))
+  .filter((item): item is { label: string; href: string } => Boolean(item));
 const enPath = providedAlternateLinks?.en ?? getAlternatePath(currentPath, 'en');
 const plPath = providedAlternateLinks?.pl ?? getAlternatePath(currentPath, 'pl');
 const homePath = activeLang === 'pl' ? '/pl/' : '/';
