@@ -208,12 +208,12 @@ img {
 }
 
 .home-shell {
-  padding: 4.2rem 0 4rem;
+  padding: 3.7rem 0 4rem;
 }
 
 .home-layout {
   display: grid;
-  gap: 3.8rem;
+  gap: 3.1rem;
 }
 
 .home-hero {
@@ -464,13 +464,18 @@ p {
 
 .home-section,
 .page-shell {
-  padding: 3.9rem 0;
+  padding: 3.45rem 0;
 }
 
 .home-section,
 .contact-band,
 .publication-system {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+}
+
+.home-hero + .home-section {
+  border-top: 0;
+  padding-top: 2.35rem;
 }
 
 .section-lead {
@@ -660,11 +665,38 @@ p {
 }
 
 .path-grid .icon-card {
+  position: relative;
+  overflow: hidden;
   min-height: 10.5rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: color-mix(in srgb, var(--surface) 94%, var(--bg));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface) 96%, var(--accent-soft)), var(--surface)),
+    var(--surface);
+  padding: 1.25rem;
   box-shadow: 0 12px 32px rgba(17, 19, 23, 0.035);
+}
+
+.path-grid .icon-card::before {
+  content: "";
+  display: block;
+  width: 2.2rem;
+  border-top: 1px solid var(--accent);
+}
+
+.path-grid .line-icon {
+  width: 1.55rem;
+  height: 1.55rem;
+}
+
+.path-grid .icon-card h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.28rem;
+  font-weight: 520;
+}
+
+.path-grid .card-link-label {
+  letter-spacing: 0;
 }
 
 .service-card-grid .icon-card {
