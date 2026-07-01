@@ -65,41 +65,62 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </ul>
     </section>
 
-    <section aria-labelledby="process-title">
-      <SectionHeader kicker="Proces" title="Jak może wyglądać współpraca" id="process-title">
-        Forma może być kompaktowa, ale powinna odnosić się do realnych zadań, ryzyk
-        i punktów decyzyjnych.
-      </SectionHeader>
-      <VisualPlate variant="process-flow" lang="pl" class="section-visual process-visual" />
+    <section class="consulting-process" aria-labelledby="process-title">
+      <div class="consulting-section-header consulting-process-header">
+        <div>
+          <p class="section-kicker">Proces</p>
+          <h2 id="process-title">Jak może wyglądać współpraca</h2>
+        </div>
+        <div class="consulting-header-copy">
+          <p>
+            Forma może być kompaktowa, ale powinna odnosić się do realnych zadań,
+            ryzyk i punktów decyzyjnych.
+          </p>
+          <VisualPlate variant="process-flow" lang="pl" class="visual-plate--inline process-visual-inline" />
+        </div>
+      </div>
       <ol class="process-list process-steps">
         <li>
+          <span class="process-step-number">01</span>
           <strong>Rozpoznanie</strong>
           <p>gdzie AI pojawia się dziś i co trzeba uporządkować</p>
         </li>
         <li>
+          <span class="process-step-number">02</span>
           <strong>Mapa procesów</strong>
           <p>które etapy można wspierać AI i gdzie są przekazania</p>
         </li>
         <li>
+          <span class="process-step-number">03</span>
           <strong>Ryzyka i odpowiedzialność</strong>
           <p>co wymaga weryfikacji, świadomości danych, kontroli albo drugiej osoby</p>
         </li>
         <li>
+          <span class="process-step-number">04</span>
           <strong>Model pracy człowiek-AI</strong>
           <p>jak może wyglądać sensowny przepływ w codziennej pracy</p>
         </li>
         <li>
+          <span class="process-step-number">05</span>
           <strong>Zasady i następne kroki</strong>
           <p>co przetestować, opisać albo doprecyzować</p>
         </li>
       </ol>
     </section>
 
-    <section class="panel consulting-outcome" aria-labelledby="outcome-title">
-      <p class="section-kicker">Rezultat</p>
-      <h2 id="outcome-title">Co może zostać po współpracy</h2>
-      <VisualPlate variant="note-stack" lang="pl" class="panel-visual outcome-visual" />
-      <ul class="plain-list">
+    <section class="consulting-outcome" aria-labelledby="outcome-title">
+      <div class="consulting-outcome-header">
+        <div>
+          <p class="section-kicker">Rezultat</p>
+          <h2 id="outcome-title">Co może zostać po współpracy</h2>
+          <p>
+            W zależności od formatu współpraca może zostawić zespołowi wspólny język
+            i praktyczny materiał do codziennego używania AI.
+          </p>
+        </div>
+        <VisualPlate variant="note-stack" lang="pl" class="visual-plate--compact outcome-visual" />
+      </div>
+      <ul class="outcome-list">
         <li>mapa obecnego używania AI w zespole</li>
         <li>lista procesów, w których AI może wspierać pracę</li>
         <li>miejsca wymagające kontroli, źródeł albo drugiej osoby</li>
@@ -109,14 +130,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </ul>
     </section>
 
-    <section class="panel consulting-note" aria-labelledby="not-title">
+    <section class="consulting-note" aria-labelledby="not-title">
       <h2 id="not-title">Czym to nie jest</h2>
-      <ul class="plain-list">
+      <ul class="consulting-disclaimer-list">
         <li>nie porada prawna</li>
         <li>nie porada kliniczna</li>
-        <li>nie obietnica wyników biznesowych</li>
-        <li>nie pełna realizacja IT od początku do końca</li>
-        <li>nie lista promptowych trików</li>
+        <li>nie gwarancja efektów biznesowych</li>
+        <li>nie pełne wdrożenie techniczne</li>
+        <li>nie szkolenie z promptowych trików</li>
       </ul>
     </section>
 

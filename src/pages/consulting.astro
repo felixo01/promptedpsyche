@@ -64,41 +64,62 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </ul>
     </section>
 
-    <section aria-labelledby="process-title">
-      <SectionHeader kicker="Process" title="How the collaboration can work" id="process-title">
-        The format can stay compact, but I connect AI literacy with real tasks,
-        risks and decision points.
-      </SectionHeader>
-      <VisualPlate variant="process-flow" class="section-visual process-visual" />
+    <section class="consulting-process" aria-labelledby="process-title">
+      <div class="consulting-section-header consulting-process-header">
+        <div>
+          <p class="section-kicker">Process</p>
+          <h2 id="process-title">How the collaboration can work</h2>
+        </div>
+        <div class="consulting-header-copy">
+          <p>
+            The format can stay compact, but I connect AI literacy with real tasks,
+            risks and decision points.
+          </p>
+          <VisualPlate variant="process-flow" class="visual-plate--inline process-visual-inline" />
+        </div>
+      </div>
       <ol class="process-list process-steps">
         <li>
+          <span class="process-step-number">01</span>
           <strong>Discovery</strong>
           <p>where AI appears now and what the team needs to clarify</p>
         </li>
         <li>
+          <span class="process-step-number">02</span>
           <strong>Process map</strong>
           <p>which stages can be supported by AI and where handoffs happen</p>
         </li>
         <li>
+          <span class="process-step-number">03</span>
           <strong>Risks and responsibility</strong>
           <p>what requires verification, data awareness, control or another person</p>
         </li>
         <li>
+          <span class="process-step-number">04</span>
           <strong>Human-AI work model</strong>
           <p>what a sensible flow can look like in everyday work</p>
         </li>
         <li>
+          <span class="process-step-number">05</span>
           <strong>Principles and next steps</strong>
           <p>what to test, describe or clarify next</p>
         </li>
       </ol>
     </section>
 
-    <section class="panel consulting-outcome" aria-labelledby="outcome-title">
-      <p class="section-kicker">Outcome</p>
-      <h2 id="outcome-title">What you can leave with</h2>
-      <VisualPlate variant="note-stack" class="panel-visual outcome-visual" />
-      <ul class="plain-list">
+    <section class="consulting-outcome" aria-labelledby="outcome-title">
+      <div class="consulting-outcome-header">
+        <div>
+          <p class="section-kicker">Outcome</p>
+          <h2 id="outcome-title">What you can leave with</h2>
+          <p>
+            Depending on the format, the work can leave the team with a clearer
+            shared language and practical material for everyday AI use.
+          </p>
+        </div>
+        <VisualPlate variant="note-stack" class="visual-plate--compact outcome-visual" />
+      </div>
+      <ul class="outcome-list">
         <li>a map of current AI use in the team</li>
         <li>a list of processes where AI can support work</li>
         <li>areas that require caution, sources or another person</li>
@@ -108,9 +129,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </ul>
     </section>
 
-    <section class="panel consulting-note" aria-labelledby="not-title">
+    <section class="consulting-note" aria-labelledby="not-title">
       <h2 id="not-title">What this is not</h2>
-      <ul class="plain-list">
+      <ul class="consulting-disclaimer-list">
         <li>not legal advice</li>
         <li>not clinical advice</li>
         <li>not a promise of business outcomes</li>
