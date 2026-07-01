@@ -688,6 +688,10 @@ p {
   background: transparent;
 }
 
+.topic-map .icon-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .topic-map .card-topline {
   grid-row: span 2;
   justify-content: center;
@@ -1597,6 +1601,10 @@ p {
     grid-template-columns: 2.65rem minmax(0, 1fr);
     gap: 0.35rem 0.85rem;
     padding: 1rem 0;
+  }
+
+  .topic-map .icon-card:last-child:nth-child(odd) {
+    grid-column: auto;
   }
 
   .topic-map .card-topline {
