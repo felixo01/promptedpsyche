@@ -1,6 +1,6 @@
 ---
 title: "AI literacy"
-description: "Kompetencje w zakresie AI: praktyczna umiejętność rozumienia, sprawdzania i odpowiedzialnego używania systemów AI."
+description: "Kompetencje pracy z AI: praktyczna umiejętność rozumienia, sprawdzania i odpowiedzialnego używania systemów AI."
 publishedAt: 2026-07-01
 draft: false
 lang: "pl"
@@ -9,7 +9,7 @@ routeSlug: "ai-literacy"
 tags: ["AI literacy", "kompetencje", "odpowiedzialność"]
 ---
 
-AI literacy to kompetencje w zakresie AI: praktyczna umiejętność rozumienia, co systemy AI potrafią, czego nie potrafią i jak odpowiedzialnie korzystać z ich odpowiedzi. To nie jest to samo co prompt engineering. Chodzi o wystarczające rozumienie danych, ograniczeń modeli, oceny wyników, ryzyka i roli ludzkiego osądu.
+AI literacy to kompetencje pracy z AI, określane w kontekście AI Act także jako kompetencje w zakresie AI: praktyczna umiejętność rozumienia, co systemy AI potrafią, czego nie potrafią i jak odpowiedzialnie korzystać z ich odpowiedzi. To nie jest to samo co prompt engineering. Chodzi o wystarczające rozumienie danych, ograniczeń modeli, oceny wyników, ryzyka i roli ludzkiego osądu.
 
 ## Dlaczego to ważne
 

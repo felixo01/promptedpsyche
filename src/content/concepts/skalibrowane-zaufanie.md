@@ -1,6 +1,6 @@
 ---
 title: "Calibrated trust"
-description: "Zaufanie do AI dopasowane do tego, co system może wiarygodnie zrobić w konkretnym kontekście."
+description: "Zaufanie do AI dopasowane do sytuacji, ryzyka zadania i możliwości weryfikacji."
 publishedAt: 2026-07-01
 draft: false
 lang: "pl"
@@ -9,7 +9,7 @@ routeSlug: "calibrated-trust"
 tags: ["zaufanie", "decyzje", "ryzyko AI"]
 ---
 
-Calibrated trust oznacza zaufanie do systemu AI dopasowane do tego, co system może wiarygodnie zrobić w konkretnym kontekście. Jest pomiędzy bezkrytycznym przyjmowaniem odpowiedzi a całkowitym odrzuceniem narzędzia. Celem nie jest większe zaufanie za wszelką cenę, ale lepsze dopasowanie pewności, dowodów, zastosowania i ludzkiej odpowiedzialności.
+Calibrated trust oznacza zaufanie do systemu AI dopasowane do sytuacji, ryzyka zadania i możliwości weryfikacji. Jest pomiędzy bezkrytycznym przyjmowaniem odpowiedzi a całkowitym odrzuceniem narzędzia. Celem nie jest większe zaufanie za wszelką cenę, ale lepsze dopasowanie pewności, dowodów, zastosowania i ludzkiej odpowiedzialności.
 
 ## Dlaczego to ważne
 

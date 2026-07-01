@@ -1,6 +1,6 @@
 ---
 title: "Nadzór ze strony człowieka"
-description: "Rola człowieka w sprawdzaniu, interpretowaniu, ograniczaniu albo zatrzymywaniu działania systemu AI."
+description: "Nadzór człowieka nad działaniem systemu AI: sprawdzanie, interpretowanie, ograniczanie albo zatrzymywanie działania systemu."
 publishedAt: 2026-07-01
 draft: false
 lang: "pl"

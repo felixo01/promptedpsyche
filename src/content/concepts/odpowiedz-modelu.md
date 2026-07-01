@@ -1,6 +1,6 @@
 ---
 title: "Model output"
-description: "Tekst, obraz, kod, klasyfikacja albo rekomendacja wytworzona przez system AI w reakcji na dane wejściowe."
+description: "Dane wyjściowe modelu: tekst, obraz, kod, klasyfikacja albo rekomendacja wytworzona przez system AI w reakcji na dane wejściowe."
 publishedAt: 2026-07-01
 draft: false
 lang: "pl"
@@ -9,7 +9,7 @@ routeSlug: "model-output"
 tags: ["systemy AI", "ocena odpowiedzi", "decyzje"]
 ---
 
-Model output to odpowiedź modelu: tekst, obraz, kod, klasyfikacja, rekomendacja albo inny wynik wytworzony przez system AI w reakcji na dane wejściowe. Nie jest tym samym co wiedza, prawda albo osąd. Jest artefaktem powstałym w określonych warunkach: modelu, danych, instrukcji, interfejsu i kontekstu użycia.
+Model output oznacza dane wyjściowe modelu: tekst, obraz, kod, klasyfikację, rekomendację albo inny wynik wytworzony przez system AI w reakcji na dane wejściowe. Nie jest tym samym co wiedza, prawda albo osąd. Jest artefaktem powstałym w określonych warunkach: modelu, danych, instrukcji, interfejsu i kontekstu użycia.
 
 ## Dlaczego to ważne
 

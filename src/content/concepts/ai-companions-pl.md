@@ -1,6 +1,6 @@
 ---
 title: "AI companions"
-description: "Systemy konwersacyjne projektowane albo używane jako źródło rozmowy, wsparcia, bliskości, rutyny lub poczucia dostępności."
+description: "Systemy konwersacyjne używane jako źródło rozmowy, wsparcia, bliskości, rutyny albo poczucia dostępności."
 publishedAt: 2026-07-01
 draft: false
 lang: "pl"
@@ -9,7 +9,7 @@ routeSlug: "ai-companions"
 tags: ["relacje", "chatboty", "emocje"]
 ---
 
-AI companion nie jest tym samym co terapeuta, przyjaciel ani osoba. To system, który może wywoływać poczucie obecności, zrozumienia albo stałej dostępności, ale jego działanie opiera się na modelu, interfejsie i projekcie produktu.
+AI companions to systemy konwersacyjne używane jako źródło rozmowy, wsparcia, bliskości, rutyny albo poczucia dostępności. Nie są tym samym co terapeuta, przyjaciel ani osoba. Mogą wywoływać poczucie obecności, zrozumienia albo stałej dostępności, ale ich działanie opiera się na modelu, interfejsie i projekcie produktu.
 
 ## Dlaczego to ważne
 

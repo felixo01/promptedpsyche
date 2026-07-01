@@ -1,6 +1,6 @@
 ---
 title: "AI-mediated communication"
-description: "Komunikacja między ludźmi, która jest generowana, kształtowana, filtrowana albo wspierana przez systemy AI."
+description: "Komunikacja między ludźmi współtworzona, filtrowana albo przekształcana przez systemy AI."
 publishedAt: 2026-07-01
 draft: false
 lang: "pl"
@@ -9,7 +9,7 @@ routeSlug: "ai-mediated-communication"
 tags: ["komunikacja", "język", "kultura"]
 ---
 
-AI-mediated communication oznacza komunikację między ludźmi, która jest generowana, kształtowana, filtrowana albo wspierana przez systemy AI. Obejmuje sytuacje, w których AI szkicuje wiadomość, zmienia ton, proponuje odpowiedź, tłumaczy język albo wpływa na to, co jedna osoba widzi od drugiej.
+AI-mediated communication oznacza komunikację między ludźmi współtworzoną, filtrowaną albo przekształcaną przez systemy AI. Obejmuje sytuacje, w których AI szkicuje wiadomość, zmienia ton, proponuje odpowiedź, tłumaczy język albo wpływa na to, co jedna osoba widzi od drugiej.
 
 ## Dlaczego to ważne
 
