@@ -1,10 +1,10 @@
-# Publication-first homepage
+# Publication-first Homepage
 
 This reset changes Prompted Psyche from a project-explanation homepage to a publication-first entry point.
 
 ## Navigation
 
-The main menu now starts with publication sections:
+The main menu starts with publication sections:
 
 - Articles
 - Notes
@@ -26,12 +26,12 @@ BrandMark remains the homepage link, so Home and Start are not repeated in the m
 
 ## Homepage Structure
 
-The homepage now uses five modules before the footer:
+The homepage uses five modules before the footer:
 
 - Hero
 - Writing
+- Author note
 - Concepts teaser
-- Short bio
 - Consulting teaser
 
 Removed from the homepage:
@@ -43,6 +43,20 @@ Removed from the homepage:
 - repeated project-definition copy
 
 The removed ideas remain available through About, Concepts and Consulting instead of competing with publication discovery on the homepage.
+
+## Author Context
+
+After the first publication-first reset, the homepage was clearer but too anonymous. This follow-up adds a stronger author context without returning to a large personal profile or a consulting landing page.
+
+The author note starts with Feliks Mamczur's perspective on AI, cyberpsychology, Human-AI Interaction and communication. His film, editing and post-production background is presented as an interpretive lens: a way to think about attention, narrative, image, emotion, decisions and communication.
+
+This keeps the homepage publication-first, but not faceless. The reader can quickly understand who is writing, why the perspective matters and why the publication exists.
+
+## Role Of Consulting
+
+Consulting remains an extension of the editorial and expert perspective. It is not the main axis of the homepage.
+
+The consulting teaser stays short and points to the consulting page for details. The process line remains only on Consulting pages.
 
 ## Typography
 
@@ -57,7 +71,7 @@ The global type scale was reduced by introducing shared tokens:
 - `--fs-home-h1`
 - `--fs-home-h1-pl`
 
-Polish pages use separate H1 scaling because Polish headings and labels are often longer.
+Polish pages use separate H1 scaling because Polish headings and labels are often longer. The homepage H1 was reduced again after the author-context pass so that typography supports the explanation instead of replacing it.
 
 ## Playwright QA
 
