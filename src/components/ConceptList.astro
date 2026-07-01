@@ -1,0 +1,65 @@
+---
+interface ConceptListItem {
+  id: string;
+  data: {
+    title: string;
+    description: string;
+    tags?: string[];
+    routeSlug?: string;
+  };
+}
+
+interface Props {
+  entries: ConceptListItem[];
+  basePath: string;
+  label: string;
+  linkLabel: string;
+  emptyLabel?: string;
+  emptyMessage?: string;
+}
+
+const {
+  entries,
+  basePath,
+  label,
+  linkLabel,
+  emptyLabel = label,
+  emptyMessage = 'Public writing is being prepared.'
+} = Astro.props;
+---
+
+{
+  entries.length === 0 ? (
+    <div class="empty-state publication-empty">
+      <span class="dossier-stamp" aria-hidden="true">PP</span>
+      <p class="small-label">{emptyLabel}</p>
+      <p>{emptyMessage}</p>
+    </div>
+  ) : (
+    <div class="concept-list">
+      {entries.map((entry) => {
+        const tags = entry.data.tags ?? [];
+        const entrySlug = entry.data.routeSlug ?? entry.id;
+        const href = `${basePath}/${entrySlug}/`;
+
+        return (
+          <article class="concept-card">
+            <p class="concept-kicker">{label}</p>
+            <h2>
+              <a href={href}>{entry.data.title}</a>
+            </h2>
+            <p>{entry.data.description}</p>
+            {tags.length > 0 && (
+              <ul class="concept-tag-list" aria-label="Topics">
+                {tags.map((tag) => (
+                  <li>{tag}</li>
+                ))}
+              </ul>
+            )}
+            <a class="concept-card-link" href={href}>{linkLabel}</a>
+          </article>
+        );
+      })}
+    </div>
+  )
+}

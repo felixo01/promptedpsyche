@@ -1,11 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
-import EntryList from '../../../components/EntryList.astro';
-import VisualPlate from '../../../components/VisualPlate.astro';
+import ConceptList from '../../../components/ConceptList.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { onlyPublicEntriesByLang, sortByDateDesc } from '../../../lib/content';
+import { onlyPublicEntriesByLang } from '../../../lib/content';
 
-const concepts = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('concepts'), 'pl'));
+const concepts = onlyPublicEntriesByLang(await getCollection('concepts'), 'pl').sort((a, b) =>
+  a.data.title.localeCompare(b.data.title, 'pl')
+);
 ---
 
 <BaseLayout
@@ -25,19 +26,16 @@ const concepts = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('con
       </p>
     </header>
 
-    <EntryList
+    <ConceptList
       entries={concepts}
       basePath="/pl/concepts"
       label="Pojęcie"
-      dateLocale="pl"
+      linkLabel="Czytaj pojęcie"
       emptyLabel="Pojęcia"
       emptyMessage="Słownik pojęć jest w przygotowaniu."
-      emptyNote="Będzie porządkował pojęcia potrzebne do rozmowy o ludzkiej stronie AI."
-      emptyIcon="concept"
     />
 
-    <section class="empty-followup" aria-labelledby="concepts-followup-title">
-      <VisualPlate variant="concept-map" lang="pl" class="empty-state-visual" />
+    <section class="concept-library-note" aria-labelledby="concepts-followup-title">
       <h2 id="concepts-followup-title">Roboczy język pojęć</h2>
       <p>
         To małe publiczne MVP słownika. Będzie rozwijane ostrożnie wraz z kolejnymi

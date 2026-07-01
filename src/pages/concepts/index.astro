@@ -1,11 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
-import EntryList from '../../components/EntryList.astro';
-import VisualPlate from '../../components/VisualPlate.astro';
+import ConceptList from '../../components/ConceptList.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { onlyPublicEntriesByLang, sortByDateDesc } from '../../lib/content';
+import { onlyPublicEntriesByLang } from '../../lib/content';
 
-const concepts = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('concepts'), 'en'));
+const concepts = onlyPublicEntriesByLang(await getCollection('concepts'), 'en').sort((a, b) =>
+  a.data.title.localeCompare(b.data.title, 'en')
+);
 ---
 
 <BaseLayout
@@ -25,18 +26,16 @@ const concepts = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('con
       </p>
     </header>
 
-    <EntryList
+    <ConceptList
       entries={concepts}
       basePath="/concepts"
       label="Concept"
+      linkLabel="Read concept"
       emptyLabel="Concepts"
       emptyMessage="The concept library is in preparation."
-      emptyNote="It will organize terms for thinking about trust, decisions, communication, work and human-AI relations."
-      emptyIcon="concept"
     />
 
-    <section class="empty-followup" aria-labelledby="concepts-followup-title">
-      <VisualPlate variant="concept-map" class="empty-state-visual" />
+    <section class="concept-library-note" aria-labelledby="concepts-followup-title">
       <h2 id="concepts-followup-title">A working vocabulary</h2>
       <p>
         This is a small public MVP of the library. It will grow carefully as new

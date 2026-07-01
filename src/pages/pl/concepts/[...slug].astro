@@ -18,6 +18,6 @@ const { entry, alternateLinks } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<EntryLayout entry={entry} label="Pojęcie" lang="pl" alternateLinks={alternateLinks}>
+<EntryLayout entry={entry} label="Pojęcie" lang="pl" alternateLinks={alternateLinks} showPublishedAt={false}>
   <Content />
 </EntryLayout>

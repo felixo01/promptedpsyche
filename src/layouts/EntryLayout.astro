@@ -17,9 +17,10 @@ interface Props {
   label: string;
   lang?: Locale;
   alternateLinks?: AlternateLinks;
+  showPublishedAt?: boolean;
 }
 
-const { entry, label, lang = 'en', alternateLinks } = Astro.props;
+const { entry, label, lang = 'en', alternateLinks, showPublishedAt = true } = Astro.props;
 const tags: string[] = entry.data.tags ?? [];
 const readingTime = entry.data.readingTime;
 const asideLabels = lang === 'pl'
@@ -49,9 +50,11 @@ const asideLabels = lang === 'pl'
       <p class="lede">{entry.data.description}</p>
       <div class="content-meta">
         <span>{entry.data.author}</span>
-        <time datetime={entry.data.publishedAt.toISOString()}>
-          {formatDate(entry.data.publishedAt, lang)}
-        </time>
+        {showPublishedAt && (
+          <time datetime={entry.data.publishedAt.toISOString()}>
+            {formatDate(entry.data.publishedAt, lang)}
+          </time>
+        )}
         {readingTime && <span>{readingTime}</span>}
       </div>
       {tags.length > 0 && (
