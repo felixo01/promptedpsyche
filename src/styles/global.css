@@ -448,7 +448,10 @@ p {
 .section-header > *,
 .page-header > *,
 .two-column > *,
-.about-layout > *,
+.about-section-heading > *,
+.about-film-grid > *,
+.about-research-section > *,
+.about-next-steps > *,
 .icon-card,
 .panel,
 .hero-panel,
@@ -1142,25 +1145,214 @@ p {
   white-space: nowrap;
 }
 
-.about-shell,
+.about-editorial,
 .contact-shell {
   display: grid;
   gap: 2.6rem;
 }
 
-.about-layout {
+.about-editorial {
+  gap: 3.25rem;
+}
+
+.about-hero {
+  margin-bottom: 0;
+}
+
+.about-intro {
+  max-width: 900px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 1.45rem 0;
+}
+
+.about-intro p {
+  margin: 0;
+  color: var(--text);
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(1.28rem, 2vw, 1.7rem);
+  line-height: 1.58;
+}
+
+.about-section {
   display: grid;
-  grid-template-columns: minmax(0, 0.72fr) minmax(260px, 0.38fr);
-  gap: 2.5rem 4rem;
+  gap: 1.45rem;
+  border-top: 1px solid var(--line);
+  padding-top: 2.2rem;
+}
+
+.about-section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.5fr) minmax(260px, 0.62fr);
+  gap: 1.5rem 4rem;
+  align-items: end;
+}
+
+.about-section-heading h2 {
+  font-size: clamp(1.85rem, 3vw, 2.55rem);
+  line-height: 1.08;
+}
+
+.about-section-heading p:not(.section-kicker) {
+  max-width: 620px;
+  color: var(--text-soft);
+  font-size: 1.04rem;
+  line-height: 1.65;
+}
+
+.about-perspective-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 2rem;
+  margin-top: 0.25rem;
+}
+
+.about-perspective-item {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  gap: 1rem;
+  border-top: 1px solid var(--line);
+  padding: 1.25rem 0;
+}
+
+.about-perspective-item-wide {
+  grid-column: 1 / -1;
+  max-width: 760px;
+}
+
+.about-perspective-item span {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+}
+
+.about-perspective-item h3 {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.25;
+}
+
+.about-perspective-item p {
+  margin: 0.45rem 0 0;
+  color: var(--text-soft);
+  line-height: 1.62;
+}
+
+.about-film-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.76fr) minmax(260px, 0.44fr);
+  gap: 1.5rem 4rem;
+  align-items: center;
+}
+
+.about-section-copy {
+  max-width: 760px;
+}
+
+.about-section-copy p,
+.about-research-copy p,
+.about-next-steps p {
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.68;
+}
+
+.about-section-copy p + p,
+.about-research-copy p + p {
+  margin-top: 0.85rem;
+}
+
+.about-attention-visual {
+  max-width: 440px;
+  justify-self: end;
+  padding: 0.65rem;
+}
+
+.about-attention-visual svg {
+  height: 8.6rem;
+}
+
+.about-research-section {
+  grid-template-columns: minmax(0, 0.5fr) minmax(260px, 0.62fr);
+  gap: 1.5rem 4rem;
   align-items: start;
+  border-left: 3px solid var(--accent);
+  padding-left: 1.25rem;
 }
 
-.about-perspective {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+.about-research-copy {
+  max-width: 720px;
 }
 
-.about-note {
-  max-width: 860px;
+.about-orcid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.8rem;
+  align-items: baseline;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+}
+
+.about-orcid span {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-orcid a {
+  overflow-wrap: anywhere;
+}
+
+.about-orcid-link {
+  font-size: 0.9rem;
+  font-weight: 720;
+}
+
+.about-next-steps {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.25rem 2rem;
+  align-items: end;
+  border-top: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--surface) 90%, var(--bg));
+  padding: 1.35rem 0 0;
+}
+
+.about-next-steps h2 {
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
+}
+
+.about-next-steps p {
+  max-width: 660px;
+  margin-top: 0.55rem;
+}
+
+.about-next-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.about-next-links a {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 0.72rem 0.95rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 760;
+  text-decoration: none;
+}
+
+.about-next-links a:hover {
+  border-color: color-mix(in srgb, var(--accent) 70%, var(--line));
+  color: var(--accent);
 }
 
 .contact-intro {
@@ -1648,6 +1840,10 @@ p {
   .section-header,
   .page-header,
   .two-column,
+  .about-section-heading,
+  .about-film-grid,
+  .about-research-section,
+  .about-next-steps,
   .consulting-teaser,
   .about-teaser,
   .cta-panel-large,
@@ -1722,6 +1918,7 @@ p {
 
   .section-visual,
   .process-visual,
+  .about-attention-visual,
   .panel-visual,
   .empty-state-visual {
     max-width: 100%;
@@ -1742,8 +1939,41 @@ p {
   .icon-grid,
   .contact-grid,
   .about-layout,
-  .about-perspective {
+  .about-perspective,
+  .about-perspective-list {
     grid-template-columns: 1fr;
+  }
+
+  .about-editorial {
+    gap: 2.35rem;
+  }
+
+  .about-intro {
+    padding: 1.15rem 0;
+  }
+
+  .about-section {
+    padding-top: 1.65rem;
+  }
+
+  .about-perspective-item-wide {
+    max-width: none;
+  }
+
+  .about-attention-visual {
+    justify-self: stretch;
+  }
+
+  .about-attention-visual svg {
+    height: 6.4rem;
+  }
+
+  .about-research-section {
+    padding-left: 1rem;
+  }
+
+  .about-next-links {
+    justify-content: flex-start;
   }
 
   .process-list {

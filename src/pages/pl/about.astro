@@ -1,6 +1,4 @@
 ---
-import IconCard from '../../components/IconCard.astro';
-import SectionHeader from '../../components/SectionHeader.astro';
 import VisualPlate from '../../components/VisualPlate.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
@@ -10,84 +8,136 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   title="O projekcie"
   description="O Prompted Psyche, moim projekcie o AI, cyberpsychologii i Human-AI Interaction."
 >
-  <section class="page-shell about-shell">
-    <header class="page-header">
+  <section class="page-shell about-editorial">
+    <header class="page-header about-hero">
       <div>
         <p class="eyebrow">O projekcie</p>
         <h1>O Prompted Psyche</h1>
       </div>
       <p>
-        To mój projekt o ludzkiej stronie sztucznej inteligencji: teksty, pojęcia,
-        wystąpienia i konsulting o tym, jak AI zmienia myślenie, zaufanie, komunikację,
-        twórczość i pracę.
+        Prompted Psyche to mój projekt o ludzkiej stronie sztucznej inteligencji:
+        teksty, pojęcia, wystąpienia i konsulting o tym, jak AI zmienia myślenie,
+        zaufanie, komunikację, twórczość i pracę.
       </p>
     </header>
 
-    <section class="about-layout" aria-labelledby="who-title">
-      <div class="prose">
-        <p class="section-kicker" id="who-title">Kim jestem</p>
+    <section class="about-intro" aria-label="Wprowadzenie do projektu">
+      <p>
+        Interesuje mnie nie tylko to, co AI potrafi zrobić, ale to, co dzieje się
+        z człowiekiem, gdy zaczyna z niej korzystać: ufać odpowiedziom, delegować
+        zadania, tworzyć z pomocą modeli i komunikować się przez systemy kształtowane
+        przez AI.
+      </p>
+    </section>
+
+    <section class="about-section about-perspective-section" aria-labelledby="perspective-title">
+      <div class="about-section-heading">
+        <p class="section-kicker">Perspektywa</p>
+        <h2 id="perspective-title">Jak patrzę na AI</h2>
         <p>
-          Piszę i konsultuję o AI, cyberpsychologii i Human-AI Interaction.
-        </p>
-        <p>
-          Prompted Psyche to mój projekt o tym, jak AI zmienia myślenie, emocje,
-          zaufanie, komunikację, twórczość i pracę.
-        </p>
-        <p>
-          Interesuje mnie AI jako technologia przeżywana społecznie i psychologicznie.
-          Najważniejsze pytania pojawiają się wtedy, gdy ludzie zaczynają myśleć z AI,
-          ufać AI, delegować jej pracę, tworzyć z jej pomocą i komunikować się przez
-          systemy kształtowane przez modele.
+          Łączę psychologię używania AI z pytaniami o komunikację, pracę,
+          odpowiedzialność, twórczość i kulturę.
         </p>
       </div>
 
-      <aside class="soft-panel about-aside" aria-label="Czym jest Prompted Psyche">
-        <p class="small-label">Czym jest Prompted Psyche</p>
-        <p>
-          To miejsce, w którym łączę teksty, pojęcia, notatki badawcze i konsulting.
-        </p>
-      </aside>
-    </section>
-
-    <section aria-labelledby="perspective-title">
-      <SectionHeader kicker="Perspektywa" title="AI, psychologia, komunikacja i praktyka twórcza" id="perspective-title">
-        Prompted Psyche łączy psychologię używania AI z praktycznymi pytaniami o pracę,
-        zaufanie, kulturę i odpowiedzialność.
-      </SectionHeader>
-      <div class="icon-grid about-perspective" aria-label="Obszary perspektywy">
-        <IconCard icon="concept" title="AI, cyberpsychologia i HAI">
-          Pojęcia potrzebne do rozumienia relacji człowieka z systemami AI.
-        </IconCard>
-        <IconCard icon="dialogue" title="Psychologia i komunikacja">
-          Uważność na zaufanie, emocje, język, walidację i podejmowanie decyzji.
-        </IconCard>
-        <IconCard icon="spark" title="Film jako przewaga interpretacyjna">
-          Narracja, uwaga, obraz i emocje jako narzędzia czytania zmian człowiek-AI.
-        </IconCard>
-        <IconCard icon="article" title="Profil badawczy">
-          Prace badawcze w toku tworzą część zaplecza Prompted Psyche.
-        </IconCard>
+      <div class="about-perspective-list" aria-label="Obszary perspektywy">
+        <article class="about-perspective-item">
+          <span aria-hidden="true">01</span>
+          <div>
+            <h3>Zaufanie i decyzje</h3>
+            <p>
+              Interesuje mnie, kiedy odpowiedź AI zaczyna wydawać się wiarygodna,
+              jak wpływa na osąd i gdzie człowiek nadal musi sprawdzać, interpretować
+              i brać odpowiedzialność.
+            </p>
+          </div>
+        </article>
+        <article class="about-perspective-item">
+          <span aria-hidden="true">02</span>
+          <div>
+            <h3>Komunikacja i emocje</h3>
+            <p>
+              Patrzę na AI jako technologię, która zmienia język, poczucie zrozumienia,
+              walidację, rytm rozmowy i relacje między ludźmi.
+            </p>
+          </div>
+        </article>
+        <article class="about-perspective-item about-perspective-item-wide">
+          <span aria-hidden="true">03</span>
+          <div>
+            <h3>Praca i twórczość</h3>
+            <p>
+              Analizuję, jak AI wchodzi do procesów pracy, pisania, decyzji,
+              researchu, obrazu i twórczego autorstwa.
+            </p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="panel about-note" aria-labelledby="film-perspective-title">
-      <h2 id="film-perspective-title">Film, uwaga i AI</h2>
-      <p>
-        Z filmu biorę uważność na narrację, obraz, emocje i rytm komunikacji. W Prompted
-        Psyche wykorzystuję tę perspektywę do opisywania tego, jak AI zmienia pracę,
-        twórczość, decyzje i relacje między ludźmi.
-      </p>
-      <VisualPlate variant="attention-frame" lang="pl" class="panel-visual" />
+    <section class="about-section about-film-section" aria-labelledby="film-perspective-title">
+      <div class="about-section-heading">
+        <p class="section-kicker">Perspektywa interpretacyjna</p>
+        <h2 id="film-perspective-title">Film, uwaga i AI</h2>
+      </div>
+      <div class="about-film-grid">
+        <div class="about-section-copy">
+          <p>
+            Z filmu biorę uważność na narrację, obraz, emocje i rytm komunikacji.
+            W Prompted Psyche wykorzystuję tę perspektywę do opisywania tego, jak
+            AI zmienia pracę, twórczość, decyzje i relacje między ludźmi.
+          </p>
+          <p>
+            To doświadczenie nie jest osobnym szyldem projektu, ale sposobem patrzenia:
+            na uwagę, napięcie, obraz, kontekst i to, jak technologia wpływa na
+            ludzkie decyzje oraz komunikację.
+          </p>
+        </div>
+        <VisualPlate variant="attention-frame" lang="pl" class="about-attention-visual" />
+      </div>
     </section>
 
-    <section class="panel about-note" aria-labelledby="research-profile-title">
-      <h2 id="research-profile-title">Research profile / ORCID</h2>
-      <p>
-        ORCID:{' '}
-        <a href="https://orcid.org/0009-0001-0715-0517" rel="me noopener">
-          https://orcid.org/0009-0001-0715-0517
-        </a>
-      </p>
+    <section class="about-section about-research-section" aria-labelledby="research-background-title">
+      <div class="about-section-heading">
+        <p class="section-kicker">Zaplecze badawcze</p>
+        <h2 id="research-background-title">Zaplecze badawcze</h2>
+      </div>
+      <div class="about-research-copy">
+        <p>
+          Rozwijam zarejestrowane projekty badawcze w toku dotyczące psychologicznych
+          i twórczych aspektów relacji człowiek-AI, używania chatbotów AI, autorstwa,
+          autentyczności i kontroli twórczej w praktyce wspieranej przez AI.
+        </p>
+        <p>
+          To prace w toku i część zaplecza merytorycznego Prompted Psyche. Publiczne
+          teksty i pojęcia mają być oparte na źródłach, ale nie udają gotowych
+          publikacji naukowych.
+        </p>
+        <p class="about-orcid">
+          <span>ORCID:</span>
+          <a href="https://orcid.org/0009-0001-0715-0517" rel="me noopener">
+            https://orcid.org/0009-0001-0715-0517
+          </a>
+          <a class="about-orcid-link" href="https://orcid.org/0009-0001-0715-0517" rel="me noopener">
+            Zobacz profil ORCID
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <section class="about-next-steps" aria-labelledby="about-next-title">
+      <div>
+        <p class="section-kicker">Następny krok</p>
+        <h2 id="about-next-title">Dokąd przejść dalej</h2>
+        <p>
+          Jeśli chcesz zobaczyć język projektu, zacznij od pojęć. Jeśli chcesz
+          przełożyć tę perspektywę na pracę organizacji, przejdź do consultingu.
+        </p>
+      </div>
+      <div class="about-next-links" aria-label="Kolejne linki">
+        <a href="/pl/concepts/">Zobacz pojęcia</a>
+        <a href="/pl/consulting/">Zobacz consulting</a>
+      </div>
     </section>
   </section>
 </BaseLayout>
