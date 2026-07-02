@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 const polishArticleRoute = '/pl/articles/nie-chodzi-tylko-o-prompt/';
+const secondPolishArticleRoute = '/pl/articles/model-nie-pamieta-model-ma-kontekst/';
 const englishArticleRoute = '/articles/it-is-not-just-about-the-prompt/';
 
 test.describe('published articles', () => {
@@ -42,10 +43,30 @@ test.describe('published articles', () => {
     await expect(ctaLink).toBeFocused();
   });
 
+  test('shows the second Polish article on the Polish articles index', async ({ page }) => {
+    await page.goto('/pl/articles/');
+
+    await expect(page.locator('.entry-list')).toContainText(
+      'Model nie pamięta. Model ma kontekst.'
+    );
+    const titleLink = page.getByRole('link', {
+      name: 'Model nie pamięta. Model ma kontekst.',
+      exact: true
+    });
+    const ctaLink = page.getByRole('link', {
+      name: 'Czytaj artykuł: Model nie pamięta. Model ma kontekst.'
+    });
+
+    await expect(titleLink).toHaveAttribute('href', secondPolishArticleRoute);
+    await expect(ctaLink).toHaveAttribute('href', secondPolishArticleRoute);
+    await expect(ctaLink).toBeVisible();
+  });
+
   test('does not show the Polish article on the English articles index', async ({ page }) => {
     await page.goto('/articles/');
 
     await expect(page.locator('body')).not.toContainText('Nie chodzi tylko o prompt');
+    await expect(page.locator('body')).not.toContainText('Model nie pamięta. Model ma kontekst.');
   });
 
   test('does not show the English article on the Polish articles index', async ({ page }) => {
@@ -112,6 +133,33 @@ test.describe('published articles', () => {
     await expect(conceptLinks).toHaveCount(11);
     await expect(page.locator('.prose a[href="/pl/concepts/context-window/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/epistemic-vigilance/"]')).toBeVisible();
+  });
+
+  test('renders the second Polish article detail page with byline, citation, rights notice and concept links', async ({ page }) => {
+    await page.goto(secondPolishArticleRoute);
+
+    await expect(page.locator('.content-header h1')).toHaveText(
+      'Model nie pamięta. Model ma kontekst.'
+    );
+    await expect(page.locator('[data-qa="article-byline"]')).toContainText('Autor: Feliks Mamczur');
+    await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+      'Mamczur, F. (2026). Model nie pamięta. Model ma kontekst. Prompted Psyche. https://promptedpsyche.com/pl/articles/model-nie-pamieta-model-ma-kontekst/'
+    );
+    await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'Wszystkie prawa zastrzeżone'
+    );
+
+    const conceptLinks = page.locator('.prose a[href^="/pl/concepts/"]');
+    await expect(conceptLinks).toHaveCount(10);
+    await expect(page.locator('.prose a[href="/pl/concepts/context-window/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/token/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/mental-model/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/cognitive-load/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/epistemic-vigilance/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/human-ai-interaction/"]')).toBeVisible();
   });
 
   test('keeps other article drafts hidden', async ({ page, request }) => {

@@ -1,10 +1,10 @@
 ---
 import { getCollection, render } from 'astro:content';
-import EntryLayout from '../../layouts/EntryLayout.astro';
-import { onlyPublicEntriesByLang } from '../../lib/content';
+import EntryLayout from '../../../layouts/EntryLayout.astro';
+import { onlyPublicEntriesByLang } from '../../../lib/content';
 
 export async function getStaticPaths() {
-  const notes = onlyPublicEntriesByLang(await getCollection('notes'), 'en');
+  const notes = onlyPublicEntriesByLang(await getCollection('notes'), 'pl');
 
   return notes.map((entry) => ({
     params: { slug: entry.id },
@@ -16,6 +16,6 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<EntryLayout entry={entry} label="Note" lang="en">
+<EntryLayout entry={entry} label="Notatka" lang="pl">
   <Content />
 </EntryLayout>

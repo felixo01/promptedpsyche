@@ -1,7 +1,11 @@
 ---
-import Icon from '../../../components/Icon.astro';
+import { getCollection } from 'astro:content';
+import EntryList from '../../../components/EntryList.astro';
 import VisualPlate from '../../../components/VisualPlate.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { onlyPublicEntriesByLang, sortByDateDesc } from '../../../lib/content';
+
+const notes = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('notes'), 'pl'));
 ---
 
 <BaseLayout
@@ -21,22 +25,26 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       </p>
     </header>
 
-    <div class="empty-state publication-empty">
-      <span class="dossier-stamp" aria-hidden="true">PP</span>
-      <Icon name="note" />
-      <p class="small-label">Notatki</p>
-      <p>Notatki są w przygotowaniu.</p>
-      <p class="empty-state-note">
-        Będą zbierać krótsze obserwacje, definicje i tropy do przyszłych artykułów.
-      </p>
-    </div>
+    <EntryList
+      entries={notes}
+      basePath="/pl/notes"
+      label="Notatka"
+      dateLocale="pl"
+      emptyLabel="Notatki"
+      emptyMessage="Notatki są w przygotowaniu."
+      emptyNote="Będą zbierać krótsze obserwacje, definicje i tropy do przyszłych artykułów."
+      emptyIcon="note"
+      ctaLabel="Czytaj notatkę"
+    />
 
-    <section class="empty-followup" aria-labelledby="notes-followup-title">
-      <VisualPlate variant="note-stack" lang="pl" class="empty-state-visual" />
-      <h2 id="notes-followup-title">Po co są notatki</h2>
-      <p>
-        Notatki pozwolą zatrzymać mniejsze pytania, zanim staną się dłuższymi tekstami.
-      </p>
-    </section>
+    {notes.length === 0 && (
+      <section class="empty-followup" aria-labelledby="notes-followup-title">
+        <VisualPlate variant="note-stack" lang="pl" class="empty-state-visual" />
+        <h2 id="notes-followup-title">Po co są notatki</h2>
+        <p>
+          Notatki pozwolą zatrzymać mniejsze pytania, zanim staną się dłuższymi tekstami.
+        </p>
+      </section>
+    )}
   </section>
 </BaseLayout>

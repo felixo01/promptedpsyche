@@ -5,8 +5,8 @@ import { getEntryLang, onlyPublicEntries } from '../lib/content';
 import { site } from '../lib/site';
 
 function getEntryLink(entry: any, collection: string) {
-  if (collection === 'articles' && getEntryLang(entry) === 'pl') {
-    return `/pl/articles/${entry.id}/`;
+  if (getEntryLang(entry) === 'pl') {
+    return `/pl/${collection}/${entry.id}/`;
   }
 
   return `/${collection}/${entry.id}/`;

@@ -35,6 +35,41 @@ The articles link the public article layer with Concepts Wave 02. They use the c
 
 The first article is a programmatic essay, not a manifesto, sales page or prompt tutorial.
 
+## Article 02 PL
+
+The second Polish article published in pre-launch mode is:
+
+- `Model nie pamięta. Model ma kontekst.`
+- URL: `/pl/articles/model-nie-pamieta-model-ma-kontekst/`
+- Source file: `src/content/articles/model-nie-pamieta-model-ma-kontekst.md`
+- Status: public PL article, `draft: false`
+
+This article deepens the vocabulary around:
+
+- Context window
+- Token
+- Mental model
+- Cognitive load
+- Metacognition
+- Epistemic vigilance
+- AI literacy
+- Model output
+- Calibrated trust
+- Human-AI Interaction
+
+The article explains context as a practical condition of AI work. It should not present Feliks Mamczur's work as peer-reviewed research and should not add unregistered DOI identifiers.
+
+## Note 01 PL
+
+The first Polish note published in pre-launch mode is:
+
+- `Brzmi dobrze nie znaczy, że jest prawdziwe`
+- URL: `/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/`
+- Source file: `src/content/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe.md`
+- Status: public PL note, `draft: false`
+
+The note supports the concepts of epistemic vigilance, calibrated trust, model output and AI literacy. Notes should remain short working essays, not social posts or promotional updates.
+
 ## Translation Status
 
 The English counterpart is now public in pre-launch mode:
@@ -42,6 +77,20 @@ The English counterpart is now public in pre-launch mode:
 - `src/content/articles/it-is-not-just-about-the-prompt.md`
 
 The EN version is an editorial adaptation, not a literal translation. The next step is live review of both article versions before any public launch or indexing decision.
+
+EN adaptations of article 02 and note 01 are later editorial work. No public EN draft was added in this pass.
+
+## Article Graphics
+
+Article graphics style is documented in:
+
+- `docs/article-graphics-style.md`
+
+The first article currently uses:
+
+- `public/images/articles/prompt-context-loop.png`
+
+Future article graphics should follow the same quiet diagrammatic direction: light paper texture, charcoal linework, muted teal accents, system relationships and clear alt text.
 
 ## DOI and citation policy
 

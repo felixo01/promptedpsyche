@@ -13,7 +13,9 @@ interface Props {
 const { lang, title, author, year, siteName, canonicalUrl } = Astro.props;
 const label = lang === 'pl' ? 'Jak cytować' : 'Suggested citation';
 const authorCitation = author === 'Feliks Mamczur' ? 'Mamczur, F.' : author;
-const citation = `${authorCitation} (${year}). ${title}. ${siteName}. ${canonicalUrl}`;
+const titleText = title.trim();
+const titleWithStop = /[.!?]$/.test(titleText) ? titleText : `${titleText}.`;
+const citation = `${authorCitation} (${year}). ${titleWithStop} ${siteName}. ${canonicalUrl}`;
 ---
 
 <section class="suggested-citation" data-qa="suggested-citation" aria-labelledby="suggested-citation-title">

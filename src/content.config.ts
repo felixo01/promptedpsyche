@@ -24,7 +24,9 @@ const articles = defineCollection({
 const notes = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/notes' }),
   schema: baseSchema.extend({
-    context: z.string().optional()
+    context: z.string().optional(),
+    lang: z.enum(['en', 'pl']).default('en'),
+    translationKey: z.string().optional()
   })
 });
 
