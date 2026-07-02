@@ -12,6 +12,7 @@ interface EntryListItem {
     draft?: boolean;
     tags?: string[];
     routeSlug?: string;
+    readingTime?: string;
   };
 }
 
@@ -24,6 +25,7 @@ interface Props {
   emptyMessage?: string;
   emptyNote?: string;
   emptyIcon?: 'article' | 'note' | 'concept';
+  ctaLabel?: string;
 }
 
 const {
@@ -34,7 +36,8 @@ const {
   emptyLabel = `${label} archive`,
   emptyMessage = 'Public writing is being prepared.',
   emptyNote = 'Essays, notes and concepts are being edited before they are published here.',
-  emptyIcon
+  emptyIcon,
+  ctaLabel
 } = Astro.props;
 ---
 
@@ -52,26 +55,36 @@ const {
       {entries.map((entry) => {
         const tags = entry.data.tags ?? [];
         const entrySlug = entry.data.routeSlug ?? entry.id;
+        const href = `${basePath}/${entrySlug}/`;
 
         return (
-          <article class="entry-item">
+          <article class:list={['entry-item', ctaLabel && 'entry-item--actionable']}>
             <div class="entry-meta">
               <span>{label}</span>
               <time datetime={entry.data.publishedAt.toISOString()}>
                 {formatDate(entry.data.publishedAt, dateLocale)}
               </time>
+              {entry.data.readingTime && <span>{entry.data.readingTime}</span>}
             </div>
-            <h2>
-              <a href={`${basePath}/${entrySlug}/`}>{entry.data.title}</a>
-            </h2>
-            <p>{entry.data.description}</p>
-            {tags.length > 0 && (
-              <ul class="tag-list" aria-label="Topics">
-                {tags.map((tag) => (
-                  <li>{tag}</li>
-                ))}
-              </ul>
-            )}
+            <div class="entry-body">
+              <h2>
+                <a class="entry-title-link" href={href}>{entry.data.title}</a>
+              </h2>
+              <p>{entry.data.description}</p>
+              {ctaLabel && (
+                <a class="entry-cta" href={href} aria-label={`${ctaLabel}: ${entry.data.title}`}>
+                  <span>{ctaLabel}</span>
+                  <span aria-hidden="true">-&gt;</span>
+                </a>
+              )}
+              {tags.length > 0 && (
+                <ul class="tag-list" aria-label="Topics">
+                  {tags.map((tag) => (
+                    <li>{tag}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </article>
         );
       })}

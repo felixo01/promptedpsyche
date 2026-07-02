@@ -1538,6 +1538,21 @@ html[lang='pl'] .page-header h1 {
   padding-block: 2rem;
 }
 
+.entry-item--actionable {
+  position: relative;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    padding-left 180ms ease;
+}
+
+.entry-item--actionable:hover,
+.entry-item--actionable:focus-within {
+  border-bottom-color: var(--line-strong);
+  background: rgba(61, 90, 92, 0.035);
+  padding-left: 0.75rem;
+}
+
 .entry-meta {
   display: grid;
   align-content: start;
@@ -1548,14 +1563,37 @@ html[lang='pl'] .page-header h1 {
   text-transform: uppercase;
 }
 
+.entry-body {
+  min-width: 0;
+}
+
 .entry-item h2 {
   color: var(--ink);
   font-size: clamp(1.6rem, 3vw, 2.35rem);
   line-height: 1.1;
 }
 
-.entry-item h2 a {
+.entry-title-link {
   text-decoration: none;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition:
+    color 180ms ease,
+    text-decoration-color 180ms ease;
+}
+
+.entry-title-link:hover,
+.entry-title-link:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+.entry-title-link:focus-visible,
+.entry-cta:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 0.22rem;
 }
 
 .entry-item p {
@@ -1563,6 +1601,30 @@ html[lang='pl'] .page-header h1 {
   color: rgba(28, 25, 23, 0.65);
   font-size: 0.98rem;
   line-height: 1.65;
+}
+
+.entry-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.entry-cta span[aria-hidden='true'] {
+  transition: transform 180ms ease;
+}
+
+.entry-item--actionable:hover .entry-cta span[aria-hidden='true'],
+.entry-cta:focus-visible span[aria-hidden='true'] {
+  transform: translateX(0.18rem);
 }
 
 .empty-state {
@@ -2220,6 +2282,11 @@ html[lang='pl'] .content-header h1 {
   .entry-item {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .entry-item--actionable:hover,
+  .entry-item--actionable:focus-within {
+    padding-left: 0;
   }
 
   .prose h2 {

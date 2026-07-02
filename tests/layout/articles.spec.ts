@@ -8,14 +8,38 @@ test.describe('published articles', () => {
     await page.goto('/articles/');
 
     await expect(page.locator('.entry-list')).toContainText('It is not just about the prompt');
-    await expect(page.locator(`a[href="${englishArticleRoute}"]`)).toBeVisible();
+    const titleLink = page.getByRole('link', {
+      name: 'It is not just about the prompt',
+      exact: true
+    });
+    const ctaLink = page.getByRole('link', {
+      name: 'Read article: It is not just about the prompt'
+    });
+
+    await expect(titleLink).toHaveAttribute('href', englishArticleRoute);
+    await expect(ctaLink).toHaveAttribute('href', englishArticleRoute);
+    await expect(ctaLink).toBeVisible();
+    await ctaLink.focus();
+    await expect(ctaLink).toBeFocused();
   });
 
   test('shows the Polish article on the Polish articles index', async ({ page }) => {
     await page.goto('/pl/articles/');
 
     await expect(page.locator('.entry-list')).toContainText('Nie chodzi tylko o prompt');
-    await expect(page.locator(`a[href="${polishArticleRoute}"]`)).toBeVisible();
+    const titleLink = page.getByRole('link', {
+      name: 'Nie chodzi tylko o prompt',
+      exact: true
+    });
+    const ctaLink = page.getByRole('link', {
+      name: 'Czytaj artykuł: Nie chodzi tylko o prompt'
+    });
+
+    await expect(titleLink).toHaveAttribute('href', polishArticleRoute);
+    await expect(ctaLink).toHaveAttribute('href', polishArticleRoute);
+    await expect(ctaLink).toBeVisible();
+    await ctaLink.focus();
+    await expect(ctaLink).toBeFocused();
   });
 
   test('does not show the Polish article on the English articles index', async ({ page }) => {

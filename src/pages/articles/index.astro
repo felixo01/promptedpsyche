@@ -32,6 +32,7 @@ const articles = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('art
       emptyMessage="Articles are in preparation."
       emptyNote="The first essays will focus on AI literacy, trust, decision-making, communication and responsibility with generative tools."
       emptyIcon="article"
+      ctaLabel="Read article"
     />
 
     {articles.length === 0 && (
