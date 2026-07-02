@@ -1,5 +1,5 @@
 ---
-title: "AI does not read people. It helps read context."
+title: "AI does not read people. It helps make sense of the situation."
 description: "A case-study based essay on how AI can help organize difficult communication: tensions, missing information, possible readings and response risks."
 publishedAt: 2026-07-02
 draft: false
@@ -30,7 +30,7 @@ AI does not know what someone really thinks. It does not know the whole relation
 
 A better question is different: what is visible in this communication, what is missing, what are possible readings, what is fact, what is interpretation and what should be checked before replying?
 
-That shift is small, but it changes the whole practice. It moves the model away from the role of relationship judge and toward the role of second reader. The point is not to make the system tell us the truth about a person. The point is to help organize context before a human being makes a decision.
+That shift is small, but it changes the whole practice. It moves the model away from the role of relationship judge and toward the role of second reader. The point is not to make the system tell us the truth about a person. The point is to help make sense of the situation before a human being makes a decision.
 
 ## Case study: the email that looked like a personal problem
 
@@ -167,7 +167,7 @@ It is also part of [AI literacy](/concepts/ai-literacy/). Competence with AI is 
 
 In practice, this creates boundaries. Do not use AI to diagnose people from emails. Do not ask the model to tell you who is manipulating whom. Do not treat a fluent interpretation as evidence. Do not send a reply only because it sounds professional. Return to the text, the facts, the missing information and your own responsibility.
 
-AI does not read people. It reads text and works with the context we give it. Its greatest value in difficult communication is not that it can tell us what someone "really" thinks. It is that it can help us see what we have not yet named.
+AI does not read people. It reads text and works with the context we give it. Its greatest value in difficult communication is not that it can tell us what someone "really" thinks. It is that it can help us make sense of the situation and see what we have not yet named.
 
 ## Sources and further reading
 

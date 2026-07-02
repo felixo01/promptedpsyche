@@ -1,5 +1,5 @@
 ---
-title: "AI nie czyta ludzi. Pomaga czytać kontekst."
+title: "AI nie czyta ludzi. Pomaga uporządkować sytuację."
 description: "Case study o tym, jak AI może pomóc uporządkować trudną komunikację: napięcia, brakujące informacje, możliwe interpretacje i ryzyka odpowiedzi."
 publishedAt: 2026-07-02
 draft: false
@@ -26,7 +26,7 @@ Problem polega na tym, że to jest złe pytanie.
 
 AI nie wie, co ktoś naprawdę myśli. Nie zna całej relacji, historii projektu, rozmów poza tekstem, presji w zespole, zależności organizacyjnych ani emocji drugiej osoby. Może pracować tylko na tym, co dostanie. Dlatego lepsze pytanie brzmi inaczej: co w tej komunikacji widać, czego nie widać, jakie są możliwe interpretacje, co jest faktem, co jest hipotezą i co trzeba sprawdzić przed odpowiedzią?
 
-Ta zmiana jest niewielka, ale zmienia całą praktykę pracy z AI. Przesuwa model z roli sędziego relacji do roli drugiego czytelnika. Nie chodzi o to, żeby system powiedział nam prawdę o człowieku. Chodzi o to, żeby pomógł uporządkować kontekst, zanim człowiek podejmie decyzję.
+Ta zmiana jest niewielka, ale zmienia całą praktykę pracy z AI. Przesuwa model z roli sędziego relacji do roli drugiego czytelnika. Nie chodzi o to, żeby system powiedział nam prawdę o człowieku. Chodzi o to, żeby pomógł uporządkować sytuację, zanim człowiek podejmie decyzję.
 
 ## Case study: mail, który wyglądał jak problem osobisty
 
@@ -159,7 +159,7 @@ To także ważny element [AI literacy](/pl/concepts/ai-literacy/). Kompetencja p
 
 W praktyce oznacza to kilka granic. Nie warto używać AI do diagnozowania ludzi na podstawie maili. Nie warto prosić modelu, żeby powiedział, kto manipuluje. Nie warto traktować płynnej interpretacji jako dowodu. Nie warto wysyłać odpowiedzi tylko dlatego, że brzmi profesjonalnie. Trzeba wrócić do tekstu, do faktów, do brakujących informacji i do własnej odpowiedzialności.
 
-AI nie czyta ludzi. Czyta tekst i pracuje na kontekście, który mu podamy. Dlatego jego największa wartość w trudnej komunikacji nie polega na tym, że powie nam, co ktoś "naprawdę" myśli. Polega na tym, że może pomóc zobaczyć, czego sami jeszcze nie nazwaliśmy.
+AI nie czyta ludzi. Czyta tekst i pracuje na kontekście, który mu podamy. Dlatego jego największa wartość w trudnej komunikacji nie polega na tym, że powie nam, co ktoś "naprawdę" myśli. Polega na tym, że może pomóc uporządkować sytuację i zobaczyć, czego sami jeszcze nie nazwaliśmy.
 
 ## Źródła i dalsza lektura
 

@@ -18,7 +18,7 @@ Use this checklist before publishing English versions of Polish articles or note
 
 - Public EN articles and notes were reviewed as adaptations during the editorial and usability audit.
 - EN article and note indexes keep publication links clear and do not expose PL entries.
-- Article 03 EN was adapted and published as `AI does not read people. It helps read context.`
+- Article 03 EN was adapted and published as `AI does not read people. It helps make sense of the situation.`
 - The EN article 03 adaptation keeps the composite/anonymized case framing and does not diagnose people or imply access to hidden intentions.
 - The EN note `Fluent does not mean true` remains public and reviewed as the counterpart of the PL note.
 - The communication notes series has EN adaptations published for all three PL notes.

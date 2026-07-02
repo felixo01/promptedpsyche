@@ -71,14 +71,14 @@ The article explains context as a practical condition of AI work. It should not 
 
 The third Polish article published in pre-launch mode is:
 
-- `AI nie czyta ludzi. Pomaga czytać kontekst.`
-- URL: `/pl/articles/ai-nie-czyta-ludzi-pomaga-czytac-kontekst/`
-- Source file: `src/content/articles/ai-nie-czyta-ludzi-pomaga-czytac-kontekst.md`
+- `AI nie czyta ludzi. Pomaga uporządkować sytuację.`
+- URL: `/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/`
+- Source file: `src/content/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje.md`
 - Date: `2026-07-02`
 - Status: public PL article, `draft: false`
-- `AI does not read people. It helps read context.`
-- URL: `/articles/ai-does-not-read-people-it-helps-read-context/`
-- Source file: `src/content/articles/ai-does-not-read-people-it-helps-read-context.md`
+- `AI does not read people. It helps make sense of the situation.`
+- URL: `/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation/`
+- Source file: `src/content/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation.md`
 - Date: `2026-07-02`
 - Status: public EN article, `draft: false`
 
@@ -87,6 +87,8 @@ The article is a case-study based essay about AI, correspondence, communicative 
 The case-study layer is explicitly composite and anonymized. It does not describe one real correspondence, does not quote real messages and does not include identifiable names, clients, companies, countries or projects.
 
 The EN version is an editorial adaptation, not a literal translation. It preserves the thesis, composite/anonymized case structure, responsibility framing and concept links while using English rhythm and phrasing.
+
+The article 03 title and slug were clarified in pre-launch/noindex mode to avoid repetition with article 02 and to make the Polish title more natural. Old PL title: `AI nie czyta ludzi. Pomaga czytać kontekst.` New PL title: `AI nie czyta ludzi. Pomaga uporządkować sytuację.` Old URLs are no longer treated as canonical because no redirect system exists in the site.
 
 The public article includes byline, suggested citation and rights notice through the standard article layout. No DOI was added. The original article chronology is now:
 
@@ -156,7 +158,7 @@ English adaptations now public:
 
 - Article 01: `It is not just about the prompt`
 - Article 02: `The model does not remember. It works with context.`
-- Article 03: `AI does not read people. It helps read context.`
+- Article 03: `AI does not read people. It helps make sense of the situation.`
 - Note 01: `Fluent does not mean true`
 
 PL/EN publication parity is restored for the current public article and note layer: 3 public PL articles, 3 public EN articles, 4 public PL notes and 4 public EN notes.

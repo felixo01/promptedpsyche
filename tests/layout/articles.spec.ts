@@ -2,12 +2,14 @@ import { expect, test } from '@playwright/test';
 
 const polishArticleRoute = '/pl/articles/nie-chodzi-tylko-o-prompt/';
 const secondPolishArticleRoute = '/pl/articles/model-nie-pamieta-model-ma-kontekst/';
-const thirdPolishArticleRoute = '/pl/articles/ai-nie-czyta-ludzi-pomaga-czytac-kontekst/';
+const thirdPolishArticleRoute = '/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/';
 const englishArticleRoute = '/articles/it-is-not-just-about-the-prompt/';
 const secondEnglishArticleRoute = '/articles/the-model-does-not-remember-it-works-with-context/';
-const thirdEnglishArticleRoute = '/articles/ai-does-not-read-people-it-helps-read-context/';
-const thirdEnglishArticleTitle = 'AI does not read people. It helps read context.';
-const thirdPolishArticleTitle = 'AI nie czyta ludzi. Pomaga czytać kontekst.';
+const thirdEnglishArticleRoute =
+  '/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation/';
+const thirdEnglishArticleTitle =
+  'AI does not read people. It helps make sense of the situation.';
+const thirdPolishArticleTitle = 'AI nie czyta ludzi. Pomaga uporządkować sytuację.';
 
 test.describe('published articles', () => {
   test('shows the English article on the English articles index', async ({ page }) => {
@@ -19,6 +21,9 @@ test.describe('published articles', () => {
       'The model does not remember. It works with context.'
     );
     await expect(page.locator('.entry-list')).toContainText(thirdEnglishArticleTitle);
+    await expect(page.locator('.entry-list')).not.toContainText(
+      'AI does not read people. It helps read context.'
+    );
     const titles = await page.locator('.entry-title-link').allTextContents();
     expect(titles.slice(0, 3)).toEqual([
       thirdEnglishArticleTitle,
@@ -97,6 +102,9 @@ test.describe('published articles', () => {
       'Model nie pamięta. Model ma kontekst.',
       'Nie chodzi tylko o prompt'
     ]);
+    await expect(page.locator('.entry-list')).not.toContainText(
+      'AI nie czyta ludzi. Pomaga czytać kontekst.'
+    );
 
     const titleLink = page.getByRole('link', {
       name: thirdPolishArticleTitle,
@@ -146,7 +154,7 @@ test.describe('published articles', () => {
       'The model does not remember. It works with context.'
     );
     await expect(page.locator('body')).not.toContainText(
-      'AI does not read people. It helps read context.'
+      thirdEnglishArticleTitle
     );
   });
 
@@ -260,7 +268,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      `${thirdPolishArticleTitle} Prompted Psyche. https://promptedpsyche.com/pl/articles/ai-nie-czyta-ludzi-pomaga-czytac-kontekst/`
+      `${thirdPolishArticleTitle} Prompted Psyche. https://promptedpsyche.com/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/`
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('body')).not.toContainText(/DOI/i);
@@ -281,7 +289,9 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose a[href="/pl/concepts/nadzor-ze-strony-czlowieka/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/ai-literacy/"]')).toBeVisible();
     await expect(
-      page.locator('.language-switcher a[href="/articles/ai-does-not-read-people-it-helps-read-context/"]')
+      page.locator(
+        '.language-switcher a[href="/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation/"]'
+      )
     ).toBeVisible();
   });
 
@@ -299,7 +309,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). AI does not read people. It helps read context. Prompted Psyche. https://promptedpsyche.com/articles/ai-does-not-read-people-it-helps-read-context/'
+      'Mamczur, F. (2026). AI does not read people. It helps make sense of the situation. Prompted Psyche. https://promptedpsyche.com/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('body')).not.toContainText(/DOI/i);
@@ -320,7 +330,9 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose a[href="/concepts/human-oversight/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/ai-literacy/"]')).toBeVisible();
     await expect(
-      page.locator('.language-switcher a[href="/pl/articles/ai-nie-czyta-ludzi-pomaga-czytac-kontekst/"]')
+      page.locator(
+        '.language-switcher a[href="/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/"]'
+      )
     ).toBeVisible();
   });
 
