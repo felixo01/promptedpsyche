@@ -117,7 +117,7 @@ The Polish title was editorially refined after publication to sound more natural
 
 Three additional note pairs were published in pre-launch mode:
 
-- `Model widzi tekst, nie całą relację`
+- `Model widzi tekst, a nie całą relację`
 - URL: `/pl/notes/model-widzi-tekst-nie-cala-relacje/`
 - `The model sees text, not the whole relationship`
 - URL: `/notes/the-model-sees-text-not-the-whole-relationship/`
@@ -125,12 +125,14 @@ Three additional note pairs were published in pre-launch mode:
 - URL: `/pl/notes/nie-diagnozuj-ludzi-z-maili/`
 - `Do not diagnose people from emails`
 - URL: `/notes/do-not-diagnose-people-from-emails/`
-- `Dobre streszczenie nie jest dobrą decyzją`
-- URL: `/pl/notes/dobre-streszczenie-nie-jest-dobra-decyzja/`
-- `A good summary is not a good decision`
-- URL: `/notes/a-good-summary-is-not-a-good-decision/`
+- `Dobre streszczenie to jeszcze nie dobra decyzja`
+- URL: `/pl/notes/dobre-streszczenie-to-jeszcze-nie-dobra-decyzja/`
+- `A good summary is not the same as a good decision`
+- URL: `/notes/a-good-summary-is-not-the-same-as-a-good-decision/`
 
 The series supports the current article line around prompts, context, communication and responsibility. The notes focus on three distinctions: the model sees text rather than the whole relationship, correspondence should not be used to diagnose people, and a good summary is not the same as a responsible decision.
+
+The fourth note title was changed from `Dobre streszczenie nie jest dobrą decyzją` to `Dobre streszczenie to jeszcze nie dobra decyzja` because the new title sounds more natural in Polish while preserving the argument. The EN title was adjusted accordingly to `A good summary is not the same as a good decision`. The slug changed in pre-launch/noindex mode, and the public notes copy polish pass is complete.
 
 The EN versions are adaptations, not literal translations. No DOI was added. Pre-launch safety remains unchanged: `noindex`, Vercel `X-Robots-Tag` and draft filtering stay active.
 

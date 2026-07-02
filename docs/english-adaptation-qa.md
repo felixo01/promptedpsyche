@@ -22,6 +22,7 @@ Use this checklist before publishing English versions of Polish articles or note
 - The EN article 03 adaptation keeps the composite/anonymized case framing and does not diagnose people or imply access to hidden intentions.
 - The EN note `Fluent does not mean true` remains public and reviewed as the counterpart of the PL note.
 - The communication notes series has EN adaptations published for all three PL notes.
+- The EN note title was adjusted to `A good summary is not the same as a good decision`.
 - Notes EN adaptation QA is done for the current public notes layer.
 - EN language is adaptation, not direct translation.
 - Concept links in EN entries point to EN Concepts.

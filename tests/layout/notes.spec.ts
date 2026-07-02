@@ -20,7 +20,7 @@ const notePairs = [
     ]
   },
   {
-    plTitle: 'Model widzi tekst, nie całą relację',
+    plTitle: 'Model widzi tekst, a nie całą relację',
     enTitle: 'The model sees text, not the whole relationship',
     plRoute: '/pl/notes/model-widzi-tekst-nie-cala-relacje/',
     enRoute: '/notes/the-model-sees-text-not-the-whole-relationship/',
@@ -56,10 +56,10 @@ const notePairs = [
     ]
   },
   {
-    plTitle: 'Dobre streszczenie nie jest dobrą decyzją',
-    enTitle: 'A good summary is not a good decision',
-    plRoute: '/pl/notes/dobre-streszczenie-nie-jest-dobra-decyzja/',
-    enRoute: '/notes/a-good-summary-is-not-a-good-decision/',
+    plTitle: 'Dobre streszczenie to jeszcze nie dobra decyzja',
+    enTitle: 'A good summary is not the same as a good decision',
+    plRoute: '/pl/notes/dobre-streszczenie-to-jeszcze-nie-dobra-decyzja/',
+    enRoute: '/notes/a-good-summary-is-not-the-same-as-a-good-decision/',
     plConcepts: [
       '/pl/concepts/cognitive-load/',
       '/pl/concepts/ai-literacy/',
@@ -85,6 +85,7 @@ test.describe('published notes', () => {
 
     await expect(page.locator('.entry-list article')).toHaveCount(notePairs.length);
     await expect(page.locator('body')).not.toContainText('Notes are in preparation.');
+    await expect(page.locator('body')).not.toContainText('A good summary is not a good decision');
 
     for (const note of notePairs) {
       await expect(page.locator('.entry-list')).toContainText(note.enTitle);
@@ -105,6 +106,7 @@ test.describe('published notes', () => {
 
     await expect(page.locator('.entry-list article')).toHaveCount(notePairs.length);
     await expect(page.locator('body')).not.toContainText('Notatki są w przygotowaniu.');
+    await expect(page.locator('body')).not.toContainText('Dobre streszczenie nie jest dobrą decyzją');
 
     for (const note of notePairs) {
       await expect(page.locator('.entry-list')).toContainText(note.plTitle);

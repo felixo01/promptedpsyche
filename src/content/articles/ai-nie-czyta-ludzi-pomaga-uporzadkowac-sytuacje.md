@@ -48,7 +48,7 @@ Po takim uporządkowaniu okazało się, że mail nie musi być przede wszystkim 
 
 To ważna różnica. AI nie rozpoznała intencji ludzi. Pomogła nazwać elementy sytuacji, które wcześniej mieszały się w jedną emocjonalną reakcję.
 
-## Model widzi tekst, nie całą relację
+## Model widzi tekst, a nie całą relację
 
 Wiadomość nigdy nie jest całą sytuacją. Mail, komentarz w dokumencie, krótka odpowiedź na czacie albo oficjalny komunikat są tylko fragmentem większego układu. Za nimi mogą stać wcześniejsze rozmowy, niejasne ustalenia, hierarchie, terminy, różnice kulturowe, zmęczenie, presja budżetu albo zwykła nieprecyzyjność.
 

@@ -1,6 +1,6 @@
 ---
-title: "Dobre streszczenie nie jest dobrą decyzją"
-description: "AI może świetnie uporządkować informacje, ale decyzja wymaga kryteriów, odpowiedzialności i rozumienia konsekwencji."
+title: "Dobre streszczenie to jeszcze nie dobra decyzja"
+description: "AI może dobrze uporządkować informacje, ale decyzja wymaga kryteriów, odpowiedzialności i rozumienia konsekwencji."
 publishedAt: 2026-07-02
 draft: false
 tags:
@@ -18,7 +18,7 @@ AI potrafi bardzo szybko streścić dokument, mail, spotkanie, raport albo dług
 
 To naprawdę pomaga. Szczególnie wtedy, gdy człowiek jest zmęczony, ma za dużo informacji i próbuje odzyskać orientację. Dobre streszczenie zmniejsza obciążenie. Ułatwia zobaczenie struktury. Pozwala szybciej wrócić do sprawy.
 
-Ale streszczenie nie jest decyzją.
+Ale dobre streszczenie to jeszcze nie dobra decyzja.
 
 ## Porządek to jeszcze nie wybór
 

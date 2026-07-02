@@ -1,6 +1,6 @@
 ---
-title: "A good summary is not a good decision"
-description: "AI can organize information very well, but a decision still requires criteria, responsibility and an understanding of consequences."
+title: "A good summary is not the same as a good decision"
+description: "AI can organize information well, but decisions require criteria, responsibility and an understanding of consequences."
 publishedAt: 2026-07-02
 draft: false
 tags:
