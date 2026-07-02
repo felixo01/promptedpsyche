@@ -6,7 +6,21 @@ import { sortConceptsForIndex } from '../../../lib/conceptOrder';
 import { onlyPublicEntriesByLang } from '../../../lib/content';
 
 const concepts = sortConceptsForIndex(onlyPublicEntriesByLang(await getCollection('concepts'), 'pl'));
-const tags = Array.from(new Set(concepts.flatMap((concept) => concept.data.tags ?? []))).slice(0, 7);
+const tags = Array.from(new Set(concepts.flatMap((concept) => concept.data.tags ?? [])));
+const selectedTag = Astro.url.searchParams.get('tag')?.trim() ?? '';
+const normalizeTag = (tag: string) => tag.trim().toLocaleLowerCase();
+const selectedTagNormalized = normalizeTag(selectedTag);
+const filteredConcepts = selectedTag
+  ? concepts.filter((concept) =>
+      (concept.data.tags ?? []).some((tag) => normalizeTag(tag) === selectedTagNormalized)
+    )
+  : concepts;
+const activeTagLabel =
+  tags.find((tag) => normalizeTag(tag) === selectedTagNormalized) ?? selectedTag;
+const conceptCountLabel = `${filteredConcepts.length} ${
+  filteredConcepts.length === 1 ? 'hasło' : 'haseł'
+}`;
+const getTagHref = (tag: string) => `/pl/concepts/?${new URLSearchParams({ tag }).toString()}`;
 ---
 
 <BaseLayout
@@ -14,39 +28,120 @@ const tags = Array.from(new Set(concepts.flatMap((concept) => concept.data.tags 
   title="Pojęcia"
   description="Słownik pojęć Prompted Psyche o ludzkiej stronie AI."
 >
-  <div class="lovable-page concepts-page">
+  <div
+    class="lovable-page concepts-page"
+    data-concept-filter-root
+    data-count-singular="hasło"
+    data-count-plural="haseł"
+  >
     <header class="lovable-page-hero">
       <div class="lovable-container">
         <div class="lovable-heading-narrow">
           <p class="eyebrow">Pojęcia</p>
           <h1>Pojęcia</h1>
           <p class="lede">
-            Słownik Prompted Psyche porządkuje pojęcia potrzebne do rozmowy o ludzkiej
-            stronie AI: zaufaniu, decyzjach, komunikacji, pracy i relacji człowiek-AI.
+            Pojęcia, które pomagają porządkować rozmowę o AI, poznaniu, zaufaniu,
+            komunikacji i pracy.
           </p>
         </div>
-        <div class="concept-filter-row" aria-label="Tematy pojęć">
+        <nav class="concept-filter-list" aria-label="Tematy pojęć" data-concept-filter-list>
           <span>Filtr</span>
-          {tags.map((tag) => <span>{tag}</span>)}
-        </div>
+          <a
+            class="concept-filter"
+            href="/pl/concepts/"
+            data-filter-value=""
+            aria-current={!selectedTag ? 'true' : undefined}
+          >
+            Wszystkie pojęcia
+          </a>
+          {tags.map((tag) => (
+            <a
+              class="concept-filter"
+              href={getTagHref(tag)}
+              data-filter-value={tag}
+              aria-current={normalizeTag(tag) === selectedTagNormalized ? 'true' : undefined}
+            >
+              {tag}
+            </a>
+          ))}
+        </nav>
       </div>
     </header>
 
     <section class="lovable-section">
       <div class="lovable-container">
         <div class="concept-index-heading">
-          <h2>Roboczy język pojęć</h2>
-          <span>{concepts.length} haseł</span>
+          <h2>Słownik Prompted Psyche</h2>
+          <span data-concept-count>{conceptCountLabel}</span>
         </div>
+        <p class="active-filter-note" data-active-filter hidden={!selectedTag}>
+          Aktywny filtr: <strong>{activeTagLabel}</strong>. <a href="/pl/concepts/">Wszystkie pojęcia</a>
+        </p>
         <ConceptList
-          entries={concepts}
+          entries={filteredConcepts}
           basePath="/pl/concepts"
           label="Pojęcie"
           linkLabel="Czytaj dalej"
+          tagFilterLabel="Filtruj pojęcia według tematu"
           emptyLabel="Pojęcia"
-          emptyMessage="Słownik pojęć jest w przygotowaniu."
+          emptyMessage={selectedTag ? 'Brak pojęć dla tego filtra.' : 'Słownik pojęć jest w przygotowaniu.'}
         />
+        <div class="empty-state publication-empty concept-filter-empty" data-concept-filter-empty hidden>
+          <span class="dossier-stamp" aria-hidden="true">PP</span>
+          <p class="small-label">Pojęcia</p>
+          <p>Brak pojęć dla tego filtra.</p>
+        </div>
       </div>
     </section>
   </div>
 </BaseLayout>
+
+<script>
+  const normalizeConceptFilter = (value: string) => value.trim().toLocaleLowerCase();
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-concept-filter-root]')) {
+    const activeTag = new URLSearchParams(window.location.search).get('tag') ?? '';
+    const activeTagNormalized = normalizeConceptFilter(activeTag);
+    const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-qa="concept-card"]'));
+    let visibleCount = 0;
+
+    for (const card of cards) {
+      const tagValues = (card.dataset.conceptTags ?? '').split('|').map(normalizeConceptFilter);
+      const matches = !activeTagNormalized || tagValues.includes(activeTagNormalized);
+      card.hidden = !matches;
+      if (matches) visibleCount += 1;
+    }
+
+    for (const link of root.querySelectorAll<HTMLElement>('[data-filter-value]')) {
+      const value = normalizeConceptFilter(link.dataset.filterValue ?? '');
+      if (value === activeTagNormalized || (!value && !activeTagNormalized)) {
+        link.setAttribute('aria-current', 'true');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    }
+
+    const count = root.querySelector<HTMLElement>('[data-concept-count]');
+    if (count) {
+      const suffix = visibleCount === 1 ? root.dataset.countSingular : root.dataset.countPlural;
+      count.textContent = `${visibleCount} ${suffix}`;
+    }
+
+    const list = root.querySelector<HTMLElement>('.concept-list');
+    if (list) {
+      list.hidden = Boolean(activeTagNormalized && visibleCount === 0);
+    }
+
+    const emptyState = root.querySelector<HTMLElement>('[data-concept-filter-empty]');
+    if (emptyState) {
+      emptyState.hidden = !activeTagNormalized || visibleCount > 0;
+    }
+
+    const activeFilter = root.querySelector<HTMLElement>('[data-active-filter]');
+    if (activeFilter) {
+      activeFilter.hidden = !activeTagNormalized;
+      const strong = activeFilter.querySelector('strong');
+      if (strong) strong.textContent = activeTag;
+    }
+  }
+</script>

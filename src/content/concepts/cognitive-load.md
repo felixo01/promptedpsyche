@@ -27,11 +27,11 @@ Good AI use can reduce unnecessary friction while keeping judgment visible. Poor
 
 ## Related concepts
 
-- Cognitive offloading
-- AI literacy
-- Model output
-- Calibrated trust
-- Metacognition
+- [Cognitive offloading](/concepts/cognitive-offloading/)
+- [AI literacy](/concepts/ai-literacy/)
+- [Model output](/concepts/model-output/)
+- [Calibrated trust](/concepts/calibrated-trust/)
+- [Metacognition](/concepts/metacognition/)
 
 ## Sources and context
 

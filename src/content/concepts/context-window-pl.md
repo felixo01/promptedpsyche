@@ -27,11 +27,11 @@ Zadaniem człowieka nie jest tylko promptowanie. Ważne jest też decydowanie, j
 
 ## Powiązane pojęcia
 
-- Token
-- Model output
-- AI literacy
-- Cognitive offloading
-- Mental model
+- [Token](/pl/concepts/token/)
+- [Model output](/pl/concepts/model-output/)
+- [AI literacy](/pl/concepts/ai-literacy/)
+- [Cognitive offloading](/pl/concepts/cognitive-offloading/)
+- [Mental model](/pl/concepts/mental-model/)
 
 ## Źródła i kontekst
 

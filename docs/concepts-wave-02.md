@@ -36,7 +36,8 @@ Both require revision before a later public wave. The public definitions need to
 
 - Existing 10 Concepts remain in place.
 - Existing concept slugs are unchanged.
-- Concept tags remain informational and noninteractive.
+- Concept tags are now interactive filters on `/concepts/` and `/pl/concepts/`.
+- Related concept labels link to real detail pages in the same language.
 - Concepts remain a project vocabulary, not a generic AI dictionary.
 - Article drafts remain drafts.
 - Site-wide noindex and the Vercel X-Robots-Tag remain unchanged.

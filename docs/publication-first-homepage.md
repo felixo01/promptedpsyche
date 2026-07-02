@@ -122,7 +122,7 @@ Layout QA covers:
 - horizontal overflow on core public routes
 - overlap checks for homepage and navigation elements
 - H1 and H2 scale thresholds
-- noninteractive concept tags
+- interactive concept filters
 - working concept card links
 
 Run:
@@ -150,7 +150,7 @@ The intended file is `public/images/author/feliks-mamczur.jpg`, with `feliks-mam
 - Draft filters stay in `src/lib/content.ts`.
 - Article drafts remain drafts.
 - Concept slugs and terminology are unchanged.
-- Concept tags remain informational and noninteractive.
+- Concept tags act as glossary filters and must not point to missing tag routes.
 - `BaseLayout.astro` keeps site-wide `noindex`.
 - `vercel.json` keeps `X-Robots-Tag`.
 - RSS and sitemap must not expose draft articles.

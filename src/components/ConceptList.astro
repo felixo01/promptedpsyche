@@ -14,6 +14,7 @@ interface Props {
   basePath: string;
   label: string;
   linkLabel: string;
+  tagFilterLabel?: string;
   emptyLabel?: string;
   emptyMessage?: string;
 }
@@ -23,11 +24,14 @@ const {
   basePath,
   label,
   linkLabel,
+  tagFilterLabel = 'Filter by topic',
   emptyLabel = label,
   emptyMessage = 'Public writing is being prepared.'
 } = Astro.props;
 
-// Tags are informational for now. Add tag routes or filtering before making them interactive.
+function getTagHref(tag: string) {
+  return `${basePath}/?${new URLSearchParams({ tag }).toString()}`;
+}
 ---
 
 {
@@ -46,7 +50,7 @@ const {
         const itemNumber = String(index + 1).padStart(2, '0');
 
         return (
-          <article class="concept-card" data-qa="concept-card">
+          <article class="concept-card" data-qa="concept-card" data-concept-tags={tags.join('|')}>
             <p class="concept-kicker">
               <span>{itemNumber}</span>
               {label}
@@ -58,7 +62,15 @@ const {
             {tags.length > 0 && (
               <ul class="concept-tag-list" aria-label="Topics">
                 {tags.map((tag) => (
-                  <li data-qa="concept-tag">{tag}</li>
+                  <li data-qa="concept-tag">
+                    <a
+                      href={getTagHref(tag)}
+                      aria-label={`${tagFilterLabel}: ${tag}`}
+                      data-concept-tag-link
+                    >
+                      {tag}
+                    </a>
+                  </li>
                 ))}
               </ul>
             )}

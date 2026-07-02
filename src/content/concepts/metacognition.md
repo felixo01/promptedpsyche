@@ -27,11 +27,11 @@ Metacognition does not solve AI risk on its own. It supports better questions: W
 
 ## Related concepts
 
-- AI literacy
-- Calibrated trust
-- Cognitive load
-- Cognitive offloading
-- Epistemic vigilance
+- [AI literacy](/concepts/ai-literacy/)
+- [Calibrated trust](/concepts/calibrated-trust/)
+- [Cognitive load](/concepts/cognitive-load/)
+- [Cognitive offloading](/concepts/cognitive-offloading/)
+- [Epistemic vigilance](/concepts/epistemic-vigilance/)
 
 ## Sources and context
 

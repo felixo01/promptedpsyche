@@ -27,11 +27,11 @@ Czujność epistemiczna pomaga utrzymać weryfikację wewnątrz procesu komunika
 
 ## Powiązane pojęcia
 
-- AI literacy
-- Calibrated trust
-- Model output
-- Automation bias
-- Metacognition
+- [AI literacy](/pl/concepts/ai-literacy/)
+- [Calibrated trust](/pl/concepts/calibrated-trust/)
+- [Model output](/pl/concepts/model-output/)
+- [Automation bias](/pl/concepts/blad-automatyzacji/)
+- [Metacognition](/pl/concepts/metacognition/)
 
 ## Źródła i kontekst
 

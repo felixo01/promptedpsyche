@@ -27,11 +27,11 @@ Metapoznanie nie rozwiązuje samo problemów ryzyka AI. Pomaga zadawać lepsze p
 
 ## Powiązane pojęcia
 
-- AI literacy
-- Calibrated trust
-- Cognitive load
-- Cognitive offloading
-- Epistemic vigilance
+- [AI literacy](/pl/concepts/ai-literacy/)
+- [Calibrated trust](/pl/concepts/calibrated-trust/)
+- [Cognitive load](/pl/concepts/cognitive-load/)
+- [Cognitive offloading](/pl/concepts/cognitive-offloading/)
+- [Epistemic vigilance](/pl/concepts/epistemic-vigilance/)
 
 ## Źródła i kontekst
 

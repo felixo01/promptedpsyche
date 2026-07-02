@@ -27,10 +27,10 @@ Dla Prompted Psyche token jest pojęciem podstawowym, bo pomaga mówić o kontek
 
 ## Powiązane pojęcia
 
-- AI literacy
-- Context window
-- Model output
-- Human-AI Interaction
+- [AI literacy](/pl/concepts/ai-literacy/)
+- [Context window](/pl/concepts/context-window/)
+- [Model output](/pl/concepts/model-output/)
+- [Human-AI Interaction](/pl/concepts/human-ai-interaction/)
 
 ## Źródła i kontekst
 

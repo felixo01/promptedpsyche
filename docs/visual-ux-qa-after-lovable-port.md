@@ -56,7 +56,7 @@ The audit used the local Astro dev server and browser measurements for scroll wi
 - Archive, Author and Final CTA sections stayed project-first and did not expose draft articles.
 - Consulting content was understandable, but the process line needed stronger responsive behavior to avoid becoming decorative or cramped.
 - Concepts index behaved like a glossary rather than a blog list. There were 10 concept cards in EN and 10 in PL.
-- Concept tags were informational and non-clickable.
+- Concept tags were later changed into interactive filters on the Concepts index.
 - Concept detail APA references and related concepts remained readable after the mobile overflow fix.
 - Contact pages had visible contact structure and did not look like an empty form.
 

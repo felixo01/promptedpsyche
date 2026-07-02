@@ -27,11 +27,11 @@ Epistemic vigilance helps keep verification inside the communication process. Th
 
 ## Related concepts
 
-- AI literacy
-- Calibrated trust
-- Model output
-- Automation bias
-- Metacognition
+- [AI literacy](/concepts/ai-literacy/)
+- [Calibrated trust](/concepts/calibrated-trust/)
+- [Model output](/concepts/model-output/)
+- [Automation bias](/concepts/automation-bias/)
+- [Metacognition](/concepts/metacognition/)
 
 ## Sources and context
 

@@ -134,7 +134,7 @@ Lovable uses a page hero, calm reasons list and email panel. Astro had this stru
 - Add a concept-detail top line to `EntryLayout` for closer Lovable parity.
 - Add subtle pre-launch status notes inside the homepage dossier panels.
 - Add About links in the homepage author modules.
-- Keep tags informational and non-clickable.
+- Superseded: concept tags are now interactive filters on the Concepts index.
 
 ## Not transferred from Lovable
 
@@ -160,7 +160,7 @@ Lovable uses a page hero, calm reasons list and email panel. Astro had this stru
 - Who section uses the staggered 12-column editorial layout.
 - Areas uses the two-column editorial topic index.
 - Consulting teaser and consulting page use process-line and service-index patterns rather than heavy cards.
-- Concepts index reads as an editorial concept library with non-clickable tags.
+- Concepts index reads as an editorial concept library with tag filters.
 - Concept detail pages now include a Lovable-style top line and retain APA references.
 - Contact uses a calm reasons list and restrained email panel.
 - Footer follows the Lovable two-column rhythm.

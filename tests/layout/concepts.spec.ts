@@ -1,8 +1,26 @@
 import { expect, test } from '@playwright/test';
 
 const conceptIndexRoutes = [
-  { route: '/concepts/', readMore: 'Read more' },
-  { route: '/pl/concepts/', readMore: 'Czytaj dalej' }
+  {
+    route: '/concepts/',
+    readMore: 'Read more',
+    filterTag: 'cognition',
+    allLabel: 'All concepts',
+    activeLabel: 'Active filter',
+    expectedCopy: 'A working vocabulary',
+    absentCopy: 'Roboczy język pojęć',
+    emptyFilterMessage: 'No concepts for this filter.'
+  },
+  {
+    route: '/pl/concepts/',
+    readMore: 'Czytaj dalej',
+    filterTag: 'poznanie',
+    allLabel: 'Wszystkie pojęcia',
+    activeLabel: 'Aktywny filtr',
+    expectedCopy: 'Słownik Prompted Psyche',
+    absentCopy: 'Roboczy język pojęć',
+    emptyFilterMessage: 'Brak pojęć dla tego filtra.'
+  }
 ];
 
 const waveTwoDetailRoutes = [
@@ -29,44 +47,63 @@ const conceptDetailRoutes = [
 ];
 
 test.describe('concept cards and tags', () => {
-  for (const { route, readMore } of conceptIndexRoutes) {
+  for (const {
+    route,
+    readMore,
+    filterTag,
+    allLabel,
+    activeLabel,
+    expectedCopy,
+    absentCopy,
+    emptyFilterMessage
+  } of conceptIndexRoutes) {
     test(`shows at least 16 public concept cards on ${route}`, async ({ page }) => {
       await page.goto(route);
 
       const cardCount = await page.locator('[data-qa="concept-card"]').count();
       expect(cardCount).toBeGreaterThanOrEqual(16);
+      await expect(page.locator('body')).toContainText(expectedCopy);
+      await expect(page.locator('body')).not.toContainText(absentCopy);
     });
 
-    test(`keeps concept tags informational on ${route}`, async ({ page }) => {
+    test(`filters concept cards by tag on ${route}`, async ({ page }) => {
       await page.goto(route);
 
-      const tags = page.locator('[data-qa="concept-tag"]');
-      await expect(tags.first()).toBeVisible();
+      const allCards = page.locator('[data-qa="concept-card"]');
+      const initialCount = await allCards.count();
+      expect(initialCount).toBeGreaterThanOrEqual(16);
 
-      const tagStates = await tags.evaluateAll((items) =>
-        items.map((item) => {
-          const style = window.getComputedStyle(item);
-          return {
-            tagName: item.tagName.toLowerCase(),
-            hasHref: item.hasAttribute('href'),
-            closestLink: Boolean(item.closest('a')),
-            cursor: style.cursor,
-            textDecorationLine: style.textDecorationLine
-          };
-        })
-      );
+      const tagLink = page.locator(`[data-concept-tag-link][href*="tag=${encodeURIComponent(filterTag)}"]`).first();
+      await expect(tagLink).toBeVisible();
+      await expect(tagLink).toHaveAttribute('href', new RegExp(`\\?tag=${encodeURIComponent(filterTag)}`));
+      await tagLink.click();
 
-      for (const state of tagStates) {
-        expect(state.tagName).not.toBe('a');
-        expect(state.hasHref).toBe(false);
-        expect(state.closestLink).toBe(false);
-        expect(state.cursor).not.toBe('pointer');
-        expect(state.textDecorationLine).not.toContain('underline');
-      }
+      await expect(page).toHaveURL(new RegExp(`\\?tag=${encodeURIComponent(filterTag)}`));
+      await expect(page.locator('[data-active-filter]')).toContainText(activeLabel);
+      await expect(page.locator('.concept-filter[aria-current="true"]')).toContainText(filterTag);
 
-      const readMoreLinks = page.locator('[data-qa="concept-read-more"]');
+      const filteredCount = await page.locator('[data-qa="concept-card"]:visible').count();
+      expect(filteredCount).toBeGreaterThan(0);
+      expect(filteredCount).toBeLessThanOrEqual(initialCount);
+
+      const readMoreLinks = page.locator('[data-qa="concept-read-more"]:visible');
       await expect(readMoreLinks.first()).toBeVisible();
       await expect(readMoreLinks).toContainText([readMore]);
+
+      await page
+        .locator('[data-concept-filter-list]')
+        .getByRole('link', { name: allLabel, exact: true })
+        .click();
+      await expect(page).toHaveURL(new RegExp(`${route.replace(/\//g, '\\/')}$`));
+      await expect(page.locator('[data-qa="concept-card"]')).toHaveCount(initialCount);
+    });
+
+    test(`shows an empty state for an unknown concept tag on ${route}`, async ({ page }) => {
+      await page.goto(`${route}?tag=not-a-real-topic`);
+
+      await expect(page.locator('body')).toContainText(emptyFilterMessage);
+      await expect(page.locator('[data-active-filter]')).toBeVisible();
+      await expect(page.locator('[data-qa="concept-card"]:visible')).toHaveCount(0);
     });
 
     test(`links concept cards to real pages on ${route}`, async ({ page, request }) => {
@@ -103,6 +140,34 @@ test.describe('concept cards and tags', () => {
         expect(state.hasHref).toBe(false);
         expect(state.closestLink).toBe(false);
         expect(state.cursor).not.toBe('pointer');
+      }
+    });
+  }
+
+  for (const route of ['/concepts/context-window/', '/pl/concepts/context-window/']) {
+    test(`links related concepts to real pages on ${route}`, async ({ page, request }) => {
+      await page.goto(route);
+
+      const section = page.locator('.related-concepts');
+      await expect(section).toBeVisible();
+
+      const links = section.locator('[data-qa="related-concept-link"]');
+      const count = await links.count();
+      expect(count).toBeGreaterThan(0);
+
+      const hrefs = await links.evaluateAll((items) =>
+        items.map((item) => (item as HTMLAnchorElement).href)
+      );
+
+      for (const href of hrefs) {
+        if (route.startsWith('/pl/')) {
+          expect(new URL(href).pathname).toMatch(/^\/pl\/concepts\//);
+        } else {
+          expect(new URL(href).pathname).toMatch(/^\/concepts\//);
+        }
+
+        const response = await request.get(href);
+        expect(response.ok(), href).toBe(true);
       }
     });
   }

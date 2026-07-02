@@ -39,7 +39,13 @@ const { Content } = await render(entry);
         <ul>
           {relatedConcepts.map((concept) => (
             <li>
-              <a href={`/concepts/${getConceptSlug(concept)}/`}>{concept.data.title}</a>
+              <a
+                class="related-concept-link"
+                data-qa="related-concept-link"
+                href={`/concepts/${getConceptSlug(concept)}/`}
+              >
+                {concept.data.title}
+              </a>
               <span>{concept.data.description}</span>
             </li>
           ))}

@@ -27,11 +27,11 @@ Dobre użycie AI może zmniejszać zbędne tarcie, ale zostawiać osąd widoczny
 
 ## Powiązane pojęcia
 
-- Cognitive offloading
-- AI literacy
-- Model output
-- Calibrated trust
-- Metacognition
+- [Cognitive offloading](/pl/concepts/cognitive-offloading/)
+- [AI literacy](/pl/concepts/ai-literacy/)
+- [Model output](/pl/concepts/model-output/)
+- [Calibrated trust](/pl/concepts/calibrated-trust/)
+- [Metacognition](/pl/concepts/metacognition/)
 
 ## Źródła i kontekst
 

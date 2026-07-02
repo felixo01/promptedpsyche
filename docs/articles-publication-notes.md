@@ -114,6 +114,6 @@ A DOI does not mean quality, review or peer-reviewed status by itself. It must n
 - The Polish and English first article pair is public in pre-launch mode.
 - Other article drafts remain drafts.
 - Concepts remain unchanged.
-- Concept tags remain informational and noninteractive.
+- Concept tags are interactive filters on the Concepts index.
 - RSS and sitemap should include only public content according to the existing filters.
 - No private strategy, source-check notes or operational planning material was copied into the public article.

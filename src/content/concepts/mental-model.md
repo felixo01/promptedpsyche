@@ -27,11 +27,11 @@ In organizations, the shared mental model matters too. Teams need a practical la
 
 ## Related concepts
 
-- AI literacy
-- Calibrated trust
-- Anthropomorphism
-- Context window
-- Model output
+- [AI literacy](/concepts/ai-literacy/)
+- [Calibrated trust](/concepts/calibrated-trust/)
+- [Anthropomorphism](/concepts/anthropomorphism/)
+- [Context window](/concepts/context-window/)
+- [Model output](/concepts/model-output/)
 
 ## Sources and context
 
