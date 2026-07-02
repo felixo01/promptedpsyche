@@ -65,6 +65,12 @@ Film, editing and post-production are presented as an interpretive lens for thin
 
 Cognitive psychology is used as a perspective and vocabulary. It is not presented as a formal professional title.
 
+## Polish Author Copy
+
+The Polish `Kim jestem` page was edited for a more natural public voice. The heading `Skąd doświadczenie filmowe` was changed to `Doświadczenie filmowe`, defensive or stiff phrasing was removed and film experience is described as a way of looking at communication, attention, image and emotion.
+
+The Polish homepage author note was also tightened. The homepage remains publication-first.
+
 ## Cognitive Framing
 
 Cognitive science and cognitive psychology are used as a perspective, not as a formal title for the author.
