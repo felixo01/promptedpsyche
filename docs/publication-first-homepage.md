@@ -52,6 +52,14 @@ The author note starts with Feliks Mamczur's perspective on AI, cyberpsychology,
 
 This keeps the homepage publication-first, but not faceless. The reader can quickly understand who is writing, why the perspective matters and why the publication exists.
 
+## Cognitive Framing
+
+Cognitive science and cognitive psychology are used as a perspective, not as a formal title for the author.
+
+Public copy may talk about cognition, attention, decisions, trust, language, emotion and working with information. It should not present cognitive science as a formal credential or professional title.
+
+Film experience remains an interpretive lens, not the main label of the project. Articles and notes remain the center of the homepage.
+
 ## Role Of Consulting
 
 Consulting remains an extension of the editorial and expert perspective. It is not the main axis of the homepage.
