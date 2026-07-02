@@ -5,239 +5,132 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout
   lang="pl"
-  title="Ludzka strona sztucznej inteligencji"
-  description="Prompted Psyche to projekt o tym, jak sztuczna inteligencja wpływa na myślenie, emocje, zaufanie, komunikację, twórczość i pracę."
+  title="Artykuły o ludzkiej stronie AI"
+  description="Prompted Psyche to autorski projekt Feliksa Mamczura o tym, jak sztuczna inteligencja wpływa na poznanie, zaufanie, komunikację, twórczość i pracę."
 >
   <div>
-    <section class="home-hero" aria-labelledby="home-title">
-      <div class="home-hero-copy">
-        <p class="eyebrow">AI - Cyberpsychologia - Human-AI Interaction</p>
-        <h1 id="home-title">Ludzka strona sztucznej inteligencji.</h1>
+    <section class="home-hero home-hero-publication" aria-labelledby="home-title">
+      <div class="home-hero-copy" data-qa="hero-copy">
+        <p class="eyebrow">AI - Psychologia poznawcza - Human-AI Interaction</p>
+        <h1 id="home-title" data-qa="hero-title">Artykuły o ludzkiej stronie AI.</h1>
         <p class="lede">
-          Rozwijam Prompted Psyche jako projekt o ludzkiej stronie AI: o tym, jak
-          sztuczna inteligencja wpływa na myślenie, emocje, zaufanie, komunikację,
-          twórczość i pracę.
+          Prompted Psyche to autorski projekt Feliksa Mamczura o tym, jak sztuczna
+          inteligencja wpływa na poznanie, zaufanie, komunikację, twórczość i pracę.
+        </p>
+        <p class="hero-subnote">
+          Piszę tu o AI nie jako o zestawie narzędzi, ale jako o technologii, która
+          zmienia uwagę, decyzje, język, emocje i odpowiedzialność.
         </p>
         <div class="hero-actions" aria-label="Główne działania">
-          <a href="/pl/about/">O projekcie</a>
-          <a href="/pl/consulting/">Konsulting</a>
+          <a href="/pl/articles/">Artykuły</a>
+          <a href="/pl/about/">Kim jestem</a>
         </div>
       </div>
 
-      <aside class="identity-panel dossier-panel" aria-label="Czym jest Prompted Psyche?">
-        <div class="dossier-topline">
-          <span class="dossier-stamp" aria-hidden="true">PP</span>
-          <span class="dossier-number" aria-hidden="true">01</span>
-        </div>
-        <div class="dossier-copy">
+      <aside class="hero-sidecar" data-qa="hero-sidecar" aria-label="Czym jest Prompted Psyche?">
+        <VisualPlate variant="field-map" lang="pl" class="hero-visual hero-visual-large" />
+        <div class="hero-note">
           <p class="small-label">Czym jest Prompted Psyche?</p>
           <p>
-            Prompted Psyche to projekt o ludzkiej stronie sztucznej inteligencji:
-            teksty, pojęcia i notatki o tym, co dzieje się z człowiekiem, gdy zaczyna
-            korzystać z AI, ufać jej odpowiedziom i włączać ją do pracy.
+            Niezależna platforma publikacyjna o ludzkiej stronie AI: teksty, notatki
+            i pojęcia o tym, co dzieje się z człowiekiem, gdy zaczyna korzystać z AI,
+            ufać jej odpowiedziom i włączać ją do myślenia oraz pracy.
           </p>
+          <ul class="identity-list" aria-label="Formaty publikacji">
+            <li>Artykuły</li>
+            <li>Notatki</li>
+            <li>Pojęcia</li>
+          </ul>
         </div>
-        <VisualPlate variant="field-map" lang="pl" class="hero-visual" />
-        <ul class="identity-list" aria-label="Tematy projektu">
-          <li>kompetencje pracy z AI</li>
-          <li>zaufanie</li>
-          <li>decyzje</li>
-          <li>praca</li>
-          <li>relacje człowiek-AI</li>
-          <li>twórczość</li>
-          <li>kultura</li>
-        </ul>
-        <p class="status-note">Strona jest w trybie pre-launch. Publiczne teksty są przygotowywane.</p>
       </aside>
     </section>
 
-    <section class="home-section" aria-labelledby="entry-title">
+    <section class="home-section home-writing" aria-labelledby="writing-title">
       <div class="editorial-section-header">
         <div>
-          <p class="section-kicker">Ścieżki wejścia</p>
-          <h2 id="entry-title">Dla kogo jest Prompted Psyche</h2>
+          <p class="section-kicker">Publikacje</p>
+          <h2 id="writing-title">Teksty, które porządkują pracę z AI</h2>
         </div>
         <p>
-          To miejsce dla organizacji, czytelników i osób, które chcą rozmawiać o
-          ludzkiej stronie AI bez hype'u i uproszczeń.
+          Pierwsze artykuły są w przygotowaniu. Będą dotyczyć kompetencji pracy z
+          AI, zaufania do odpowiedzi modeli, uwagi, decyzji, komunikacji i
+          odpowiedzialności.
         </p>
       </div>
 
-      <div class="entry-paths">
-        <article class="entry-path">
-          <p class="entry-index">I</p>
-          <h3>Teksty i pojęcia</h3>
-          <p>Artykuły, notatki i słownik pojęć o AI, psychologii, zaufaniu, emocjach, pracy i kulturze.</p>
-          <a class="text-link" href="#writing-title">Zobacz publikacje</a>
+      <div class="home-writing-grid" aria-label="Sekcje publikacyjne">
+        <article class="writing-card" data-qa="writing-card">
+          <p class="entry-index">Artykuły</p>
+          <h3>Artykuły</h3>
+          <p>
+            Dłuższe eseje i analizy o psychologicznych, komunikacyjnych i kulturowych
+            skutkach używania AI.
+          </p>
+          <a class="text-link" href="/pl/articles/">Przejdź do artykułów</a>
         </article>
-        <article class="entry-path">
-          <p class="entry-index">II</p>
-          <h3>Dla organizacji</h3>
-          <p>Analiza używania AI, mapowanie procesów, zasady pracy człowiek-AI, warsztaty i wystąpienia.</p>
-          <a class="text-link" href="/pl/consulting/">Zobacz consulting</a>
-        </article>
-        <article class="entry-path">
-          <p class="entry-index">III</p>
-          <h3>Wystąpienia i współpraca</h3>
-          <p>Komentarze medialne, wykłady, rozmowy badawcze i współpraca przy treściach o ludzkiej stronie AI.</p>
-          <a class="text-link" href="/pl/contact/">Napisz</a>
+        <article class="writing-card" data-qa="writing-card">
+          <p class="entry-index">Notatki</p>
+          <h3>Notatki</h3>
+          <p>
+            Krótsze obserwacje, definicje i tropy do dalszych tekstów.
+          </p>
+          <a class="text-link" href="/pl/notes/">Przejdź do notatek</a>
         </article>
       </div>
     </section>
 
-    <section class="home-section topic-section" aria-labelledby="areas-title">
-      <div class="editorial-section-header">
-        <div>
-          <p class="section-kicker">Mapa projektu</p>
-          <h2 id="areas-title">Obszary</h2>
-        </div>
-        <p>
-          Mapa tematów dla artykułów, notatek, pojęć i konsultingu o ludzkiej stronie AI.
-        </p>
-      </div>
-
-      <div class="topic-index" aria-label="Obszary tematyczne">
-        <div class="topic-column">
-          <article class="topic-row">
-            <span>01</span>
-            <div>
-              <h3>Zaufanie</h3>
-              <p>Weryfikacja zamiast samego polegania</p>
-            </div>
-          </article>
-          <article class="topic-row">
-            <span>02</span>
-            <div>
-              <h3>Emocje</h3>
-              <p>Gdy system sprawia wrażenie zrozumienia</p>
-            </div>
-          </article>
-          <article class="topic-row">
-            <span>03</span>
-            <div>
-              <h3>Przywiązanie</h3>
-              <p>Relacje z nieludzkim partnerem rozmowy</p>
-            </div>
-          </article>
-          <article class="topic-row">
-            <span>04</span>
-            <div>
-              <h3>Praca</h3>
-              <p>Kto odpowiada, gdy AI przyspiesza proces</p>
-            </div>
-          </article>
-        </div>
-        <div class="topic-column">
-          <article class="topic-row">
-            <span>05</span>
-            <div>
-              <h3>Decyzje</h3>
-              <p>Co delegujemy i dlaczego</p>
-            </div>
-          </article>
-          <article class="topic-row">
-            <span>06</span>
-            <div>
-              <h3>Twórczość</h3>
-              <p>Wybór jako część autorstwa</p>
-            </div>
-          </article>
-          <article class="topic-row">
-            <span>07</span>
-            <div>
-              <h3>Kultura</h3>
-              <p>Język kształtowany przez narzędzie</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-section process-teaser" aria-labelledby="consulting-title">
-      <div class="editorial-section-header">
-        <div>
-          <p class="section-kicker">Praktyczne zastosowanie projektu</p>
-          <h2 id="consulting-title">Zastosowanie w organizacjach</h2>
-        </div>
-        <p>
-          Pomagam analizować używanie AI, mapować procesy, projektować zasady i
-          rozmawiać o zaufaniu, odpowiedzialności oraz weryfikacji.
-        </p>
-      </div>
-      <ol class="process-line" aria-label="Proces konsultingu">
-        <li><small>01</small><span>Używanie AI</span></li>
-        <li><small>02</small><span>Mapa</span></li>
-        <li><small>03</small><span>Weryfikacja</span></li>
-        <li><small>04</small><span>Odpowiedzialność</span></li>
-        <li><small>05</small><span>Zasady</span></li>
-      </ol>
-      <a class="text-link process-link" href="/pl/consulting/">Zobacz consulting</a>
-    </section>
-
-    <section class="home-section" aria-labelledby="writing-title">
-      <div class="editorial-section-header">
-        <div>
-          <p class="section-kicker">Teksty i notatki</p>
-          <h2 id="writing-title">Publikacje są w przygotowaniu</h2>
-        </div>
-        <p>Artykuły, notatki i pojęcia otworzą spokojne, oparte na źródłach archiwum redakcyjne.</p>
-      </div>
-
-      <div class="archive-index" aria-label="Archiwum publikacji">
-        <a class="archive-entry" href="/pl/articles/">
-          <span>Archiwum</span>
-          <strong>Artykuły</strong>
-          <p>Dłuższe teksty o AI, cyberpsychologii i Human-AI Interaction.</p>
-        </a>
-        <a class="archive-entry" href="/pl/notes/">
-          <span>Notatnik</span>
-          <strong>Notatki</strong>
-          <p>Krótsze obserwacje, definicje i kierunki dalszych badań.</p>
-        </a>
-        <a class="archive-entry" href="/pl/concepts/">
-          <span>Słownik</span>
-          <strong>Pojęcia</strong>
-          <p>Słownik pojęć o ludzkiej stronie sztucznej inteligencji.</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="home-section author-strip" aria-labelledby="about-title">
+    <section class="home-section author-strip home-bio" aria-labelledby="about-title">
       <div>
-        <p class="section-kicker">Perspektywa autora</p>
+        <p class="section-kicker">Autor</p>
         <h2 id="about-title">Feliks Mamczur</h2>
-        <a class="orcid-link" href="https://orcid.org/0009-0001-0715-0517" rel="me noopener">
-          ORCID 0009-0001-0715-0517
-        </a>
       </div>
       <div class="author-note">
         <p>
-          Piszę i konsultuję na styku AI, cyberpsychologii i Human-AI Interaction.
-          Z filmu biorę uważność na narrację, obraz, emocje i rytm komunikacji.
-          W Prompted Psyche wykorzystuję tę perspektywę do opisywania tego, jak AI
-          zmienia pracę, twórczość, decyzje i relacje między ludźmi.
+          Feliks Mamczur pisze o ludzkiej stronie AI, korzystając z perspektywy
+          psychologii poznawczej, cyberpsychologii, Human-AI Interaction,
+          komunikacji i praktyki twórczej. Interesuje go to, jak modele językowe
+          wpływają na uwagę, decyzje, zaufanie, emocje i sposób pracy z informacją.
         </p>
-        <blockquote>
-          We prompt machines. Machines prompt us back.
-        </blockquote>
-        <a class="text-link" href="/pl/about/">Czytaj o projekcie</a>
+        <p>
+          Doświadczenie filmowe jest tu perspektywą: pomaga myśleć o narracji,
+          obrazie, rytmie, emocjach i sposobie, w jaki technologia zmienia ludzką
+          komunikację.
+        </p>
+        <a class="text-link" href="/pl/about/">Więcej o mnie</a>
       </div>
     </section>
 
-    <section class="home-section home-final" aria-labelledby="final-title">
+    <section class="home-section home-compact-feature home-concepts" aria-labelledby="concepts-title">
       <div>
-        <p class="section-kicker">Kontakt</p>
-        <h2 id="final-title">Dokąd przejść dalej</h2>
-        <p>
-          Zacznij od pojęć, zobacz zastosowanie projektu w organizacjach albo napisz
-          w sprawie rozmowy.
-        </p>
+        <p class="section-kicker">Pojęcia</p>
+        <h2 id="concepts-title">Słownik projektu</h2>
       </div>
-      <nav class="final-link-list" aria-label="Kolejne linki">
-        <a class="text-link" href="/pl/concepts/">Pojęcia</a>
+      <div class="compact-feature-copy">
+        <p>
+          Słownik pomaga porządkować język Prompted Psyche: AI literacy, poznanie,
+          zaufanie, odpowiedź modelu, antropomorfizację i komunikację
+          zapośredniczoną przez AI.
+        </p>
+        <a class="text-link" href="/pl/concepts/">Zobacz pojęcia</a>
+      </div>
+    </section>
+
+    <section
+      class="home-section home-compact-feature home-consulting"
+      data-qa="consulting-teaser"
+      aria-labelledby="consulting-title"
+    >
+      <div>
+        <p class="section-kicker">Konsulting</p>
+        <h2 id="consulting-title">Zastosowanie w organizacjach</h2>
+      </div>
+      <div class="compact-feature-copy">
+        <p>
+          Pomagam zespołom uporządkować używanie AI: gdzie wspiera pracę, a gdzie
+          wymaga zasad, weryfikacji i odpowiedzialności.
+        </p>
         <a class="text-link" href="/pl/consulting/">Konsulting</a>
-        <a class="text-link" href="/pl/contact/">Kontakt</a>
-      </nav>
+      </div>
     </section>
   </div>
 </BaseLayout>

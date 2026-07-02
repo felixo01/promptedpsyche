@@ -22,6 +22,20 @@
   --accent-soft: rgba(61, 90, 92, 0.1);
   --max-width: var(--container);
   --content-width: 62ch;
+  --fs-body: 1rem;
+  --lh-body: 1.68;
+  --fs-lede: clamp(1.05rem, 0.7vw + 0.92rem, 1.22rem);
+  --fs-h3: clamp(1.1rem, 0.7vw + 0.95rem, 1.35rem);
+  --fs-h2: clamp(1.72rem, 1.4vw + 1.2rem, 2.35rem);
+  --fs-page-h1: clamp(2.2rem, 2.5vw + 1.25rem, 3.15rem);
+  --fs-page-h1-pl: clamp(2.05rem, 2.2vw + 1.18rem, 2.95rem);
+  --fs-home-h1: clamp(2.55rem, 3.8vw + 0.75rem, 4.25rem);
+  --fs-home-h1-pl: clamp(2.35rem, 3.3vw + 0.7rem, 3.65rem);
+  --measure-text: 68ch;
+  --measure-lede: 40ch;
+  --space-section: clamp(2.9rem, 4.4vw, 4.1rem);
+  --space-hero-top: clamp(4.3rem, 6.5vw, 5.8rem);
+  --space-hero-bottom: clamp(3rem, 4.4vw, 4.2rem);
 }
 
 * {
@@ -42,8 +56,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: 18px;
-  line-height: 1.72;
+  font-size: 17px;
+  line-height: var(--lh-body);
 }
 
 ::selection {
@@ -174,10 +188,10 @@ h4,
 }
 
 .lede {
-  max-width: 52ch;
+  max-width: var(--measure-lede);
   color: rgba(28, 25, 23, 0.7);
-  font-size: clamp(1.18rem, 2vw, 1.45rem);
-  line-height: 1.72;
+  font-size: var(--fs-lede);
+  line-height: 1.6;
 }
 
 .quiet {
@@ -313,34 +327,42 @@ h4,
 
 .home-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 400px;
-  gap: 5rem;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: clamp(1.75rem, 4vw, 3.2rem);
   align-items: start;
   border-bottom: 1px solid var(--line-soft);
-  padding: 8rem 0 6rem;
+  padding: var(--space-hero-top) 0 var(--space-hero-bottom);
 }
 
 .home-hero-copy {
   display: grid;
-  gap: 2.5rem;
+  gap: 1.25rem;
   align-content: start;
 }
 
 .home-hero h1 {
-  max-width: 9.2em;
+  max-width: 11ch;
   color: var(--ink);
-  font-size: clamp(2.9rem, 5.6vw, 4.2rem);
+  font-size: var(--fs-home-h1);
   line-height: 1.02;
 }
 
 html[lang='pl'] .home-hero h1 {
-  font-size: clamp(2.8rem, 5.2vw, 4rem);
+  max-width: 12ch;
+  font-size: var(--fs-home-h1-pl);
 }
 
 .home-hero .lede {
-  max-width: 42ch;
-  font-size: clamp(1.15rem, 1.55vw, 1.35rem);
-  line-height: 1.625;
+  max-width: var(--measure-lede);
+  font-size: var(--fs-lede);
+  line-height: 1.55;
+}
+
+.hero-subnote {
+  max-width: var(--measure-lede);
+  color: rgba(28, 25, 23, 0.6);
+  font-size: 0.98rem;
+  line-height: 1.62;
 }
 
 .hero-actions,
@@ -393,6 +415,43 @@ html[lang='pl'] .home-hero h1 {
 .hero-button-primary:hover {
   background: var(--accent);
   color: var(--paper);
+}
+
+.hero-sidecar {
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+}
+
+.hero-sidecar .visual-plate {
+  height: clamp(10.25rem, 20vw, 13.75rem);
+}
+
+.hero-note {
+  display: grid;
+  gap: 0.75rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+}
+
+.hero-note .small-label {
+  color: var(--ink);
+  font-size: var(--fs-h3);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.hero-note p:not(.small-label) {
+  color: rgba(28, 25, 23, 0.62);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.hero-note .identity-list {
+  margin-left: 0;
+  border-left: 0;
+  padding: 0;
 }
 
 .identity-panel,
@@ -538,7 +597,7 @@ html[lang='pl'] .home-hero h1 {
 
 .home-section {
   border-bottom: 1px solid var(--line-soft);
-  padding-block: 6rem;
+  padding-block: var(--space-section);
 }
 
 .process-teaser {
@@ -559,7 +618,7 @@ html[lang='pl'] .home-hero h1 {
 .compact-heading h2 {
   max-width: 18ch;
   color: var(--ink);
-  font-size: clamp(1.95rem, 3.2vw, 2.8rem);
+  font-size: var(--fs-h2);
   line-height: 1.08;
 }
 
@@ -611,6 +670,57 @@ html[lang='pl'] .home-hero h1 {
   color: rgba(28, 25, 23, 0.6);
   font-size: 0.92rem;
   line-height: 1.65;
+}
+
+.home-writing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 2rem;
+}
+
+.writing-card {
+  min-width: 0;
+  border-top: 1px solid var(--line-strong);
+  padding: 1.25rem 0 0.25rem;
+}
+
+.writing-card h3 {
+  margin-top: 1.15rem;
+  color: var(--ink);
+  font-size: var(--fs-h3);
+  line-height: 1.15;
+}
+
+.writing-card p:not(.entry-index) {
+  max-width: 42ch;
+  margin-top: 0.85rem;
+  color: rgba(28, 25, 23, 0.62);
+  font-size: 0.94rem;
+  line-height: 1.62;
+}
+
+.home-compact-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(320px, 0.8fr);
+  gap: 2rem 5rem;
+  align-items: start;
+}
+
+.home-compact-feature h2 {
+  max-width: 16ch;
+  color: var(--ink);
+  font-size: var(--fs-h2);
+  line-height: 1.08;
+}
+
+.compact-feature-copy {
+  max-width: var(--measure-text);
+}
+
+.compact-feature-copy p {
+  color: rgba(28, 25, 23, 0.66);
+  font-size: 1rem;
+  line-height: 1.68;
 }
 
 .text-link,
@@ -824,7 +934,7 @@ html[lang='pl'] .home-hero h1 {
 .home-final p:not(.section-kicker) {
   color: rgba(28, 25, 23, 0.66);
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.68;
 }
 
 .author-note blockquote {
@@ -893,8 +1003,13 @@ html[lang='pl'] .home-hero h1 {
 .lovable-page-hero h1 {
   max-width: 14ch;
   color: var(--ink);
-  font-size: clamp(2.65rem, 4.8vw, 3.8rem);
+  font-size: var(--fs-page-h1);
   line-height: 1.05;
+}
+
+html[lang='pl'] .lovable-heading-narrow h1,
+html[lang='pl'] .lovable-page-hero h1 {
+  font-size: var(--fs-page-h1-pl);
 }
 
 .lovable-heading-narrow .lede,
@@ -1197,7 +1312,7 @@ html[lang='pl'] .home-hero h1 {
 
 .concept-index-heading h2 {
   color: var(--ink);
-  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-size: var(--fs-h2);
   font-style: italic;
   line-height: 1.1;
 }
@@ -1238,7 +1353,7 @@ html[lang='pl'] .home-hero h1 {
 .concept-card h2 {
   margin-top: 1.25rem;
   color: var(--ink);
-  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  font-size: clamp(1.55rem, 2.1vw, 2.2rem);
   line-height: 1.08;
 }
 
@@ -1350,8 +1465,12 @@ html[lang='pl'] .home-hero h1 {
 .page-header h1 {
   max-width: 14ch;
   color: var(--ink);
-  font-size: clamp(3.2rem, 6.4vw, 4.55rem);
+  font-size: var(--fs-page-h1);
   line-height: 1.05;
+}
+
+html[lang='pl'] .page-header h1 {
+  font-size: var(--fs-page-h1-pl);
 }
 
 .page-header p:not(.eyebrow) {
@@ -1437,7 +1556,7 @@ html[lang='pl'] .home-hero h1 {
 
 .empty-followup h2 {
   color: var(--ink);
-  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  font-size: var(--fs-h2);
 }
 
 .empty-followup p,
@@ -1483,8 +1602,12 @@ html[lang='pl'] .home-hero h1 {
 .content-header h1 {
   max-width: 16ch;
   color: var(--ink);
-  font-size: clamp(2.55rem, 4.8vw, 3.75rem);
+  font-size: var(--fs-page-h1);
   line-height: 1.05;
+}
+
+html[lang='pl'] .content-header h1 {
+  font-size: var(--fs-page-h1-pl);
 }
 
 .content-header .lede {
@@ -1588,7 +1711,7 @@ html[lang='pl'] .home-hero h1 {
 .related-concepts h2 {
   margin-top: 0.5rem;
   color: var(--ink);
-  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  font-size: var(--fs-h2);
 }
 
 .related-concepts ul {
@@ -1650,7 +1773,7 @@ html[lang='pl'] .home-hero h1 {
 .footer-intro h2 {
   max-width: 24ch;
   color: var(--ink);
-  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-size: var(--fs-h2);
   line-height: 1.1;
 }
 
@@ -1759,7 +1882,7 @@ html[lang='pl'] .home-hero h1 {
 
 @media (max-width: 1020px) {
   .home-hero {
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 360px);
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
     gap: 3rem;
   }
 
@@ -1809,7 +1932,7 @@ html[lang='pl'] .home-hero h1 {
   .home-hero {
     grid-template-columns: 1fr;
     gap: 2.25rem;
-    padding: 4rem 0;
+    padding: 4rem 0 3rem;
   }
 
   .home-hero-copy {
@@ -1818,11 +1941,11 @@ html[lang='pl'] .home-hero h1 {
 
   .home-hero h1 {
     max-width: 100%;
-    font-size: clamp(2.7rem, 12vw, 3.5rem);
+    font-size: var(--fs-home-h1);
   }
 
   html[lang='pl'] .home-hero h1 {
-    font-size: clamp(2.55rem, 11.2vw, 3.35rem);
+    font-size: var(--fs-home-h1-pl);
   }
 
   .dossier-panel {
@@ -1861,6 +1984,8 @@ html[lang='pl'] .home-hero h1 {
   }
 
   .entry-paths,
+  .home-writing-grid,
+  .home-compact-feature,
   .topic-index,
   .archive-index,
   .author-strip,

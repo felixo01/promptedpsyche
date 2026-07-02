@@ -7,7 +7,10 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test:layout": "playwright test",
+    "test:layout:headed": "playwright test --headed",
+    "test:layout:debug": "playwright test --debug"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.0",
@@ -17,6 +20,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@playwright/test": "^1.61.1",
     "typescript": "^6.0.3"
   }
 }

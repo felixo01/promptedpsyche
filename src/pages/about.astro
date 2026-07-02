@@ -1,22 +1,26 @@
 ---
-import VisualPlate from '../components/VisualPlate.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="About"
-  description="About Prompted Psyche, my research-informed project on AI, cyberpsychology and Human-AI Interaction."
+  title="About the author"
+  description="About Feliks Mamczur, author of Prompted Psyche, a publication and expert platform on AI, cyberpsychology and Human-AI Interaction."
 >
   <article class="lovable-page about-page">
     <header class="lovable-page-hero">
       <div class="lovable-container">
         <div class="lovable-heading-narrow">
-          <p class="eyebrow">About</p>
-          <h1>About Prompted Psyche</h1>
+          <p class="eyebrow">Author</p>
+          <h1>About the author</h1>
           <p class="lede">
-            Prompted Psyche is my project on the human side of artificial intelligence:
-            essays, concepts, talks and consulting on how AI changes thought, trust,
+            My name is Feliks Mamczur. I write about the human side of AI: how
+            language models and generative systems affect cognition, attention, trust,
             communication, creativity and work.
+          </p>
+          <p class="hero-subnote">
+            I develop Prompted Psyche as an independent publication and expert platform
+            at the intersection of AI, cognitive psychology, cyberpsychology and
+            Human-AI Interaction.
           </p>
         </div>
       </div>
@@ -26,19 +30,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="lovable-container editorial-split">
         <div>
           <p class="eyebrow">01</p>
-          <p class="meta-kicker">Project</p>
+          <p class="meta-kicker">Human side</p>
         </div>
         <div>
-          <h2>How I look at AI</h2>
+          <h2>Why I write about AI</h2>
           <div class="editorial-copy">
             <p>
-              I am interested not only in what AI can do, but in what happens to people
-              when they start to use it: trust model outputs, delegate tasks, create
-              with AI and communicate through AI-shaped systems.
+              AI is usually discussed as a tool, a market force or a technical
+              infrastructure. I am interested in another layer: what happens to people
+              when AI enters thinking, writing, decision-making, emotion and
+              communication.
             </p>
             <p>
-              I connect the psychology of AI use with questions about communication,
-              work, responsibility, creativity and culture.
+              Prompted Psyche is where I organize that perspective through essays,
+              notes and concepts. The project asks how people trust AI, how they
+              delegate judgment, how conversational systems shape emotion and how
+              generative tools reorganize creative and professional work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="editorial-block">
+      <div class="lovable-container editorial-split">
+        <div>
+          <p class="eyebrow">02</p>
+          <p class="meta-kicker">Perspective</p>
+        </div>
+        <div>
+          <h2>My perspective</h2>
+          <div class="editorial-copy">
+            <p>
+              I bring together several fields of interest: cognitive psychology,
+              cyberpsychology, Human-AI Interaction, communication and creative
+              practice. I do not present this as an institutional research program or
+              a formal academic title. It is an authorial, source-informed perspective
+              on how AI enters human thought, emotion, language and work.
             </p>
           </div>
         </div>
@@ -48,11 +76,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section class="editorial-block with-side-note">
       <div class="lovable-container editorial-split">
         <div>
-          <p class="eyebrow">02</p>
+          <p class="eyebrow">03</p>
           <p class="meta-kicker">Interpretive lens</p>
         </div>
         <div>
-          <h2>Film, attention and AI</h2>
+          <h2>Where film comes in</h2>
           <div class="editorial-copy">
             <p>
               My background in film, editing and post-production shapes how I think
@@ -60,8 +88,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               technologies reorganize creative and communicative work.
             </p>
             <p>
-              It gives me a way to read AI not only as a tool, but as something that
-              changes attention, context, authorship and the conditions of communication.
+              That experience helps me notice how interfaces guide attention, how
+              systems shape rhythm and how technologies change what people create,
+              believe and pass on to others.
             </p>
           </div>
         </div>
@@ -72,47 +101,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </aside>
     </section>
 
-    <section class="lovable-section" aria-labelledby="lenses-title">
+    <section class="lovable-section" aria-labelledby="read-title">
       <div class="lovable-container">
         <div class="compact-heading">
-          <p class="eyebrow">03</p>
-          <h2 id="lenses-title">Three lenses</h2>
+          <p class="eyebrow">04</p>
+          <h2 id="read-title">What to read here</h2>
         </div>
 
         <div class="lovable-lens-grid">
           <article class="lens-item">
-            <p>01</p>
-            <h3>Trust and decisions</h3>
+            <p>Articles</p>
+            <h3>Long-form essays</h3>
             <span>
-              When does an AI output begin to feel credible? How does it shape
-              judgment, verification and responsibility?
+              Developed arguments on AI, cyberpsychology, Human-AI Interaction,
+              trust, attention, work and culture.
             </span>
           </article>
           <article class="lens-item lens-item-offset">
-            <p>02</p>
-            <h3>Communication and emotion</h3>
+            <p>Notes</p>
+            <h3>Shorter observations</h3>
             <span>
-              How do AI systems change language, validation, perceived understanding
-              and the rhythm of interaction?
+              Compact reflections, working ideas and signals from the changing
+              relationship between people and AI systems.
             </span>
           </article>
           <article class="lens-item">
-            <p>03</p>
-            <h3>Work and creativity</h3>
+            <p>Concepts</p>
+            <h3>A shared vocabulary</h3>
             <span>
-              How does AI enter writing, research, decision-making, image-making and
-              creative authorship?
+              Terms that help name what happens when AI enters cognition,
+              communication, decision-making and creative practice.
             </span>
           </article>
-        </div>
-
-        <div class="quote-diagram">
-          <blockquote>
-            We prompt machines. Machines prompt us back.
-          </blockquote>
-          <div>
-            <VisualPlate variant="attention-frame" class="about-attention-visual" caption="Human-AI attention field" />
-          </div>
         </div>
       </div>
     </section>
@@ -120,27 +140,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section class="editorial-block">
       <div class="lovable-container editorial-split">
         <div>
-          <p class="eyebrow">04</p>
-          <p class="meta-kicker">Research background</p>
+          <p class="eyebrow">05</p>
+          <p class="meta-kicker">Consulting</p>
         </div>
         <div>
-          <h2>Research background</h2>
+          <h2>Consulting as an extension of the work</h2>
           <div class="editorial-copy">
             <p>
-              I am developing registered research projects in progress on psychological
-              and creative aspects of human-AI relations, including AI chatbot use,
-              authorship, authenticity and creative control in AI-supported practice.
+              Consulting, workshops and talks grow from the same perspective. I help
+              organizations think more clearly about AI literacy, Human-AI
+              Interaction, trust, decision-making and the psychology of working with
+              generative tools.
             </p>
             <p>
-              This work is ongoing and forms part of the background of Prompted Psyche.
-              Public essays and concepts are source-informed, but they should not be
-              presented as finished peer-reviewed research.
+              The consulting page explains the formats and the kinds of questions I
+              can help with.
             </p>
-            <p class="orcid-row">
-              <span>ORCID</span>
-              <a href="https://orcid.org/0009-0001-0715-0517" rel="me noopener">
-                0009-0001-0715-0517
-              </a>
+            <p>
+              <a class="text-link" href="/consulting/">See consulting</a>
             </p>
           </div>
         </div>
@@ -149,8 +166,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <section class="lovable-final-links">
       <div class="lovable-container final-link-grid">
-        <a href="/concepts/">Explore concepts <span aria-hidden="true">→</span></a>
-        <a href="/consulting/">See consulting <span aria-hidden="true">→</span></a>
+        <a href="/articles/">Read articles</a>
+        <a href="/concepts/">Explore concepts</a>
       </div>
     </section>
   </article>

@@ -10,7 +10,7 @@ const articles = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('art
 
 <BaseLayout
   title="Articles"
-  description="Research-informed essays on AI, cyberpsychology and Human-AI Interaction."
+  description="Long-form essays on AI, cyberpsychology and Human-AI Interaction."
 >
   <section class="page-shell">
     <header class="page-header">
@@ -19,8 +19,8 @@ const articles = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('art
         <h1>Articles</h1>
       </div>
       <p>
-        Long-form essays on AI literacy, trust, decision-making, model outputs in team
-        work and the psychological consequences of using generative tools.
+        Long-form essays on the human side of AI: literacy, trust, work,
+        responsibility and the social consequences of generative tools.
       </p>
     </header>
 
@@ -29,20 +29,20 @@ const articles = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('art
       basePath="/articles"
       label="Article"
       emptyLabel="Articles"
-      emptyMessage="Long-form essays are in preparation."
-      emptyNote="They will focus on AI literacy, trust, decision-making, model outputs in team work and the psychological consequences of using generative tools."
+      emptyMessage="Articles are in preparation."
+      emptyNote="The first essays will focus on AI literacy, trust, decision-making, communication and responsibility with generative tools."
       emptyIcon="article"
     />
 
     {articles.length === 0 && (
       <section class="empty-followup" aria-labelledby="first-directions-title">
         <VisualPlate variant="note-stack" class="empty-state-visual" />
-        <h2 id="first-directions-title">First directions</h2>
+        <h2 id="first-directions-title">First themes</h2>
         <ul>
           <li>AI literacy</li>
-          <li>trust in model outputs</li>
-          <li>decision-making and responsibility with AI</li>
-          <li>psychological consequences of using generative tools</li>
+          <li>trust and model outputs</li>
+          <li>decision-making with AI</li>
+          <li>responsibility in human-AI work</li>
         </ul>
       </section>
     )}

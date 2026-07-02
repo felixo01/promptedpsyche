@@ -19,8 +19,8 @@ const notes = sortByDateDesc(onlyPublicEntries(await getCollection('notes')));
         <h1>Notes</h1>
       </div>
       <p>
-        Short observations and research notes on AI use, human behavior, trust, work,
-        creativity and digital culture.
+        Short observations on AI use, human behavior, trust, work, communication and
+        digital culture.
       </p>
     </header>
 
@@ -30,17 +30,16 @@ const notes = sortByDateDesc(onlyPublicEntries(await getCollection('notes')));
       label="Note"
       emptyLabel="Notes"
       emptyMessage="Notes are in preparation."
-      emptyNote="They will collect shorter observations on AI, human behavior, trust, work, creativity and digital culture."
+      emptyNote="They will collect shorter observations, definitions and leads for future essays."
       emptyIcon="note"
     />
 
     {notes.length === 0 && (
       <section class="empty-followup" aria-labelledby="notes-followup-title">
         <VisualPlate variant="note-stack" class="empty-state-visual" />
-        <h2 id="notes-followup-title">What notes will collect</h2>
+        <h2 id="notes-followup-title">What notes will do</h2>
         <p>
-          Shorter observations, definitions and leads for future essays on AI,
-          cyberpsychology and Human-AI Interaction.
+          Notes will keep smaller questions visible before they become longer essays.
         </p>
       </section>
     )}

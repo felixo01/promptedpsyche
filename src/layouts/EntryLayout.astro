@@ -77,7 +77,7 @@ const asideLabels = lang === 'pl'
       {tags.length > 0 && (
         <ul class="tag-list content-tags" aria-label="Topics">
           {tags.map((tag) => (
-            <li>{tag}</li>
+            <li data-qa="concept-tag">{tag}</li>
           ))}
         </ul>
       )}

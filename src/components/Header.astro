@@ -20,8 +20,8 @@ const providedAlternateLinks = Astro.props.alternateLinks;
 const currentPath = Astro.url.pathname;
 const normalizedCurrentPath = normalizePath(currentPath);
 const headerOrder = activeLang === 'pl'
-  ? ['/pl/concepts/', '/pl/articles/', '/pl/notes/', '/pl/consulting/', '/pl/about/', '/pl/contact/']
-  : ['/concepts/', '/articles/', '/notes/', '/consulting/', '/about/', '/contact/'];
+  ? ['/pl/articles/', '/pl/notes/', '/pl/concepts/', '/pl/about/', '/pl/consulting/', '/pl/contact/']
+  : ['/articles/', '/notes/', '/concepts/', '/about/', '/consulting/', '/contact/'];
 const navItems = headerOrder
   .map((href) => getNavItems(activeLang).find((item) => item.href === href))
   .filter((item): item is { label: string; href: string } => Boolean(item));
@@ -45,7 +45,7 @@ function isCurrentPath(href: string) {
   <BrandMark href={homePath} label={homeLabel} compact />
 
   <div class="header-actions">
-    <nav class="site-nav" aria-label={activeLang === 'pl' ? 'Nawigacja główna' : 'Primary navigation'}>
+    <nav class="site-nav" data-qa="site-nav" aria-label={activeLang === 'pl' ? 'Nawigacja główna' : 'Primary navigation'}>
       {
         navItems.map((item) => (
           <a href={item.href} aria-current={isCurrentPath(item.href) ? 'page' : undefined}>
@@ -57,6 +57,7 @@ function isCurrentPath(href: string) {
 
     <nav
       class="language-switcher"
+      data-qa="language-switcher"
       aria-label={activeLang === 'pl' ? 'Przełącznik języka' : 'Language switcher'}
     >
       <a href={enPath} aria-current={activeLang === 'en' ? 'page' : undefined}>EN</a>

@@ -11,7 +11,7 @@ const articles = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('art
 <BaseLayout
   lang="pl"
   title="Artykuły"
-  description="Artykuły Prompted Psyche o AI, cyberpsychologii i Human-AI Interaction."
+  description="Dłuższe teksty Prompted Psyche o AI, cyberpsychologii i Human-AI Interaction."
 >
   <section class="page-shell">
     <header class="page-header">
@@ -20,7 +20,8 @@ const articles = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('art
         <h1>Artykuły</h1>
       </div>
       <p>
-        Dłuższe teksty o AI, cyberpsychologii i relacjach człowiek-AI.
+        Dłuższe teksty o ludzkiej stronie AI: kompetencjach, zaufaniu, pracy,
+        odpowiedzialności i społecznych skutkach narzędzi generatywnych.
       </p>
     </header>
 
@@ -32,18 +33,18 @@ const articles = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('art
       emptyIcon="article"
       emptyLabel="Artykuły"
       emptyMessage="Artykuły są w przygotowaniu."
-      emptyNote="Pierwsze teksty będą dotyczyć kompetencji pracy z AI, zaufania, decyzji, odpowiedzi modeli w pracy zespołów i psychologicznych konsekwencji używania narzędzi generatywnych."
+      emptyNote="Pierwsze teksty będą dotyczyć kompetencji pracy z AI, zaufania, decyzji, komunikacji i odpowiedzialności przy narzędziach generatywnych."
     />
 
     {articles.length === 0 && (
       <section class="empty-followup" aria-labelledby="first-directions-title">
         <VisualPlate variant="note-stack" lang="pl" class="empty-state-visual" />
-        <h2 id="first-directions-title">Pierwsze kierunki</h2>
+        <h2 id="first-directions-title">Pierwsze tematy</h2>
         <ul>
           <li>kompetencje pracy z AI</li>
           <li>zaufanie do odpowiedzi modeli</li>
-          <li>decyzje i odpowiedzialność w pracy z AI</li>
-          <li>psychologiczne skutki używania narzędzi generatywnych</li>
+          <li>decyzje z udziałem AI</li>
+          <li>odpowiedzialność w pracy człowiek-AI</li>
         </ul>
       </section>
     )}
