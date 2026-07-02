@@ -3,13 +3,13 @@ import { expect, test } from '@playwright/test';
 const navCases = [
   {
     route: '/',
-    labels: ['Articles', 'Notes', 'Concepts', 'Author', 'Consulting', 'Contact'],
-    hrefs: ['/articles/', '/notes/', '/concepts/', '/about/', '/consulting/', '/contact/']
+    labels: ['Articles', 'Notes', 'Concepts', 'Projects', 'Author', 'Consulting', 'Contact'],
+    hrefs: ['/articles/', '/notes/', '/concepts/', '/projects/', '/about/', '/consulting/', '/contact/']
   },
   {
     route: '/pl/',
-    labels: ['Artykuły', 'Notatki', 'Pojęcia', 'Kim jestem', 'Konsulting', 'Kontakt'],
-    hrefs: ['/pl/articles/', '/pl/notes/', '/pl/concepts/', '/pl/about/', '/pl/consulting/', '/pl/contact/']
+    labels: ['Artykuły', 'Notatki', 'Pojęcia', 'Projekty', 'Kim jestem', 'Konsulting', 'Kontakt'],
+    hrefs: ['/pl/articles/', '/pl/notes/', '/pl/concepts/', '/pl/projects/', '/pl/about/', '/pl/consulting/', '/pl/contact/']
   }
 ];
 

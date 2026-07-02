@@ -145,6 +145,15 @@ The notice is implemented through `RightsNotice.astro` so footer copy and articl
 
 The footer shows a small pre-launch site version from `site.version`.
 
+## Projects Page
+
+The public Projects page was added at `/projects/` and `/pl/projects/`.
+
+- The page presents research-informed and applied directions, not product promises.
+- Public project copy should describe areas of work, boundaries and responsibility.
+- Public copy must not reveal implementation details, architecture, prompts, roadmap, MVP details or private working names.
+- Projects were added to navigation after Concepts.
+
 ## Author Portrait
 
 The author portrait is prepared for `/about/` and `/pl/about/` through `AuthorPortrait.astro`. The component renders only when a local file exists in `public/images/author/`, so the site never shows a placeholder or broken image.

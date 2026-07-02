@@ -18,7 +18,8 @@ const routePairs: RoutePair[] = [
   { en: '/contact/', pl: '/pl/contact/' },
   { en: '/articles/', pl: '/pl/articles/' },
   { en: '/notes/', pl: '/pl/notes/' },
-  { en: '/concepts/', pl: '/pl/concepts/' }
+  { en: '/concepts/', pl: '/pl/concepts/' },
+  { en: '/projects/', pl: '/pl/projects/' }
 ];
 
 export const navItemsByLocale: Record<Locale, Array<{ label: string; href: string }>> = {
@@ -29,7 +30,8 @@ export const navItemsByLocale: Record<Locale, Array<{ label: string; href: strin
     { label: 'Contact', href: '/contact/' },
     { label: 'Articles', href: '/articles/' },
     { label: 'Notes', href: '/notes/' },
-    { label: 'Concepts', href: '/concepts/' }
+    { label: 'Concepts', href: '/concepts/' },
+    { label: 'Projects', href: '/projects/' }
   ],
   pl: [
     { label: 'Start', href: '/pl/' },
@@ -38,7 +40,8 @@ export const navItemsByLocale: Record<Locale, Array<{ label: string; href: strin
     { label: 'Kontakt', href: '/pl/contact/' },
     { label: 'Artykuły', href: '/pl/articles/' },
     { label: 'Notatki', href: '/pl/notes/' },
-    { label: 'Pojęcia', href: '/pl/concepts/' }
+    { label: 'Pojęcia', href: '/pl/concepts/' },
+    { label: 'Projekty', href: '/pl/projects/' }
   ]
 };
 

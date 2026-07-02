@@ -29,6 +29,8 @@ const routes = [
   '/pl/concepts/context-window/',
   '/tags/ai-literacy/',
   '/pl/tags/ai-literacy/',
+  '/projects/',
+  '/pl/projects/',
   '/about/',
   '/pl/about/',
   '/contact/',

@@ -29,3 +29,5 @@ Use this checklist before publishing English versions of Polish articles or note
 - EN/PL parity was checked for article and note indexes.
 - PL/EN article and note parity was checked after the publication consistency pass.
 - Tag pages were checked for language separation.
+- The Projects EN page was added as an adaptation, not a literal translation.
+- Safety language around diagnosis, therapy and specialist responsibility was checked on Projects pages.
