@@ -67,7 +67,7 @@ The article explains context as a practical condition of AI work. It should not 
 
 The first note pair published in pre-launch mode is:
 
-- `Brzmi dobrze nie znaczy, że jest prawdziwe`
+- `Brzmi dobrze, ale to nie znaczy, że jest prawdziwe`
 - URL: `/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/`
 - Source file: `src/content/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe.md`
 - Status: public PL note, `draft: false`
@@ -77,6 +77,8 @@ The first note pair published in pre-launch mode is:
 - Status: public EN note, `draft: false`
 
 The note supports the concepts of epistemic vigilance, calibrated trust, model output and AI literacy. Notes should remain short working essays, not social posts or promotional updates.
+
+The Polish title was editorially refined after publication to sound more natural in Polish. The original slug was preserved to avoid breaking links. The note also passed a Polish editorial QA pass focused on natural phrasing, concise sentences and clear explanation of epistemic vigilance.
 
 ## Translation Status
 

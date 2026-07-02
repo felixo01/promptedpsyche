@@ -2,6 +2,7 @@ import { expect, test } from '@playwright/test';
 
 const polishNoteRoute = '/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/';
 const englishNoteRoute = '/notes/fluent-does-not-mean-true/';
+const polishNoteTitle = 'Brzmi dobrze, ale to nie znaczy, że jest prawdziwe';
 
 test.describe('published notes', () => {
   test('shows the first English note on the English notes index', async ({ page }) => {
@@ -10,7 +11,7 @@ test.describe('published notes', () => {
     await expect(page.locator('.entry-list')).toContainText('Fluent does not mean true');
     await expect(page.locator('body')).not.toContainText('Notes are in preparation.');
     await expect(page.locator('body')).not.toContainText(
-      'Brzmi dobrze nie znaczy, że jest prawdziwe'
+      polishNoteTitle
     );
 
     const titleLink = page.getByRole('link', {
@@ -29,18 +30,16 @@ test.describe('published notes', () => {
   test('shows the first Polish note on the Polish notes index', async ({ page }) => {
     await page.goto('/pl/notes/');
 
-    await expect(page.locator('.entry-list')).toContainText(
-      'Brzmi dobrze nie znaczy, że jest prawdziwe'
-    );
+    await expect(page.locator('.entry-list')).toContainText(polishNoteTitle);
     await expect(page.locator('body')).not.toContainText('Notatki są w przygotowaniu.');
     await expect(page.locator('body')).not.toContainText('Fluent does not mean true');
 
     const titleLink = page.getByRole('link', {
-      name: 'Brzmi dobrze nie znaczy, że jest prawdziwe',
+      name: polishNoteTitle,
       exact: true
     });
     const ctaLink = page.getByRole('link', {
-      name: 'Czytaj notatkę: Brzmi dobrze nie znaczy, że jest prawdziwe'
+      name: `Czytaj notatkę: ${polishNoteTitle}`
     });
 
     await expect(titleLink).toHaveAttribute('href', polishNoteRoute);
@@ -80,14 +79,15 @@ test.describe('published notes', () => {
   test('renders the first Polish note detail page with byline, citation, rights notice and concept links', async ({ page }) => {
     await page.goto(polishNoteRoute);
 
-    await expect(page.locator('.content-header h1')).toHaveText(
+    await expect(page.locator('.content-header h1')).toHaveText(polishNoteTitle);
+    await expect(page.locator('.content-header h1')).not.toHaveText(
       'Brzmi dobrze nie znaczy, że jest prawdziwe'
     );
     await expect(page.locator('[data-qa="article-byline"]')).toContainText('Autor: Feliks Mamczur');
     await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). Brzmi dobrze nie znaczy, że jest prawdziwe. Prompted Psyche. https://promptedpsyche.com/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/'
+      `Mamczur, F. (2026). ${polishNoteTitle}. Prompted Psyche. https://promptedpsyche.com/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/`
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
