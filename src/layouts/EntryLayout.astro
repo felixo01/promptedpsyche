@@ -15,6 +15,9 @@ interface Props {
       publishedAt: Date;
       updatedAt?: Date;
       readingTime?: string;
+      image?: string;
+      imageAlt?: string;
+      imageCaption?: string;
       tags?: string[];
     };
   };
@@ -43,83 +46,113 @@ const authorLabel = lang === 'pl' ? 'Autor:' : 'By';
 const publishedLabel = lang === 'pl' ? 'Opublikowano:' : 'Published:';
 const updatedLabel = lang === 'pl' ? 'Aktualizacja:' : 'Updated:';
 const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();
-// Tags are informational for now. Add tag routes or filtering before making them interactive.
-const asideLabels = lang === 'pl'
-  ? {
-      aria: 'Struktura wpisu',
-      preparedFor: 'Przygotowane pod',
-      items: ['źródła', 'kontekst', 'powiązane pojęcia']
-    }
-  : {
-      aria: 'Entry structure',
-      preparedFor: 'Prepared for',
-      items: ['sources', 'context', 'related concepts']
-    };
+const heroImage = !isConceptEntry ? entry.data.image : undefined;
+const heroImageAlt = entry.data.imageAlt ?? entry.data.title;
+const heroImageCaption = entry.data.imageCaption;
+// Entry tags are informational unless a listing page implements filtering.
+const asideLabels = isConceptEntry
+  ? lang === 'pl'
+    ? {
+        aria: 'Informacje o haśle',
+        label: 'W haśle',
+        items: ['Definicja', 'Źródła', 'Powiązane pojęcia']
+      }
+    : {
+        aria: 'Entry information',
+        label: 'In this entry',
+        items: ['Definition', 'Sources', 'Related concepts']
+      }
+  : lang === 'pl'
+    ? {
+        aria: 'Informacje o tekście',
+        label: 'W tekście',
+        items: ['Kontekst', 'Źródła', 'Powiązane pojęcia']
+      }
+    : {
+        aria: 'Article information',
+        label: 'In this article',
+        items: ['Context', 'Sources', 'Related concepts']
+      };
 ---
 
 <BaseLayout
   title={entry.data.title}
   description={entry.data.description}
+  image={heroImage}
   type="article"
   lang={lang}
   alternateLinks={alternateLinks}
 >
   <article class="article-shell">
     <header class="content-header">
-      {
-        isConceptEntry ? (
-          <div class="content-topline">
-            <a href={conceptBackHref}>{conceptBackLabel}</a>
-            <span>{label}</span>
-          </div>
-        ) : (
-          <p class="eyebrow">{label}</p>
-        )
-      }
-      <h1>{entry.data.title}</h1>
-      {!isConceptEntry && (
-        <div class="article-byline" data-qa="article-byline">
-          <p>
-            <span>{authorLabel}</span>{' '}
-            <a href={aboutHref}>{entry.data.author}</a>
-          </p>
-          <p>{site.name}</p>
-          <p>
-            <span>{publishedLabel}</span>{' '}
-            <time datetime={entry.data.publishedAt.toISOString()}>
-              {formatDate(entry.data.publishedAt, lang)}
-            </time>
-          </p>
-          {entry.data.updatedAt && (
+      <div class="content-header-inner">
+        {
+          isConceptEntry ? (
+            <div class="content-topline">
+              <a href={conceptBackHref}>{conceptBackLabel}</a>
+              <span>{label}</span>
+            </div>
+          ) : (
+            <p class="eyebrow">{label}</p>
+          )
+        }
+        <h1>{entry.data.title}</h1>
+        <p class="lede">{entry.data.description}</p>
+        {!isConceptEntry && (
+          <div class="article-byline" data-qa="article-byline">
             <p>
-              <span>{updatedLabel}</span>{' '}
-              <time datetime={entry.data.updatedAt.toISOString()}>
-                {formatDate(entry.data.updatedAt, lang)}
+              <span>{authorLabel}</span>{' '}
+              <a href={aboutHref}>{entry.data.author}</a>
+            </p>
+            <p>{site.name}</p>
+            <p>
+              <span>{publishedLabel}</span>{' '}
+              <time datetime={entry.data.publishedAt.toISOString()}>
+                {formatDate(entry.data.publishedAt, lang)}
               </time>
             </p>
-          )}
-        </div>
-      )}
-      <p class="lede">{entry.data.description}</p>
-      {
-        readingTime && (
+            {entry.data.updatedAt && (
+              <p>
+                <span>{updatedLabel}</span>{' '}
+                <time datetime={entry.data.updatedAt.toISOString()}>
+                  {formatDate(entry.data.updatedAt, lang)}
+                </time>
+              </p>
+            )}
+            {readingTime && <p>{readingTime}</p>}
+          </div>
+        )}
+        {isConceptEntry && readingTime && (
           <div class="content-meta">
             <span>{readingTime}</span>
           </div>
-        )
-      }
-      {tags.length > 0 && (
-        <ul class="tag-list content-tags" aria-label="Topics">
-          {tags.map((tag) => (
-            <li data-qa="concept-tag">{tag}</li>
-          ))}
-        </ul>
-      )}
+        )}
+        {tags.length > 0 && (
+          <ul class="tag-list content-tags" aria-label="Topics">
+            {tags.map((tag) => (
+              <li data-qa="concept-tag">{tag}</li>
+            ))}
+          </ul>
+        )}
+      </div>
     </header>
+
+    {heroImage && (
+      <figure class="article-hero-figure" data-qa="article-hero-figure">
+        <img
+          src={heroImage}
+          alt={heroImageAlt}
+          loading="eager"
+          decoding="async"
+          data-qa="article-hero-image"
+        />
+        {heroImageCaption && <figcaption>{heroImageCaption}</figcaption>}
+      </figure>
+    )}
 
     <div class="article-grid">
       <aside class="article-aside" aria-label={asideLabels.aria}>
-        <p class="small-label">{asideLabels.preparedFor}</p>
+        <p class="small-label" data-qa="article-aside-label">{asideLabels.label}</p>
         <ul>
           {asideLabels.items.map((item) => <li>{item}</li>)}
         </ul>

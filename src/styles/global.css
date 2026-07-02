@@ -320,6 +320,7 @@ h4,
 .home-section,
 .page-shell,
 .article-grid,
+.article-hero-figure,
 .footer-inner {
   width: min(calc(100% - 3rem), var(--container));
   margin-inline: auto;
@@ -1859,8 +1860,11 @@ html[lang='pl'] .page-header h1 {
 }
 
 .content-header {
-  border-bottom: 1px solid var(--line-soft);
-  padding: clamp(5rem, 8vw, 7rem) max(1.5rem, calc((100vw - var(--container)) / 2));
+  padding: clamp(3.5rem, 6vw, 5rem) max(1.5rem, calc((100vw - var(--container)) / 2)) clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.content-header-inner {
+  max-width: min(100%, 58rem);
 }
 
 .content-topline {
@@ -1884,7 +1888,7 @@ html[lang='pl'] .page-header h1 {
 }
 
 .content-header h1 {
-  max-width: 16ch;
+  max-width: 24ch;
   color: var(--ink);
   font-size: var(--fs-page-h1);
   line-height: 1.05;
@@ -1895,13 +1899,16 @@ html[lang='pl'] .content-header h1 {
 }
 
 .content-header .lede {
-  margin-top: 2rem;
+  max-width: 48rem;
+  margin-top: 1.25rem;
 }
 
 .article-byline {
-  display: grid;
-  gap: 0.35rem;
-  margin-top: 1.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  align-items: center;
+  margin-top: 1.25rem;
   color: rgba(28, 25, 23, 0.62);
   font-size: 0.92rem;
   line-height: 1.55;
@@ -1909,6 +1916,12 @@ html[lang='pl'] .content-header h1 {
 
 .article-byline p {
   margin: 0;
+}
+
+.article-byline p + p::before {
+  content: "/";
+  margin-right: 0.9rem;
+  color: rgba(28, 25, 23, 0.28);
 }
 
 .article-byline span {
@@ -1933,14 +1946,36 @@ html[lang='pl'] .content-header h1 {
 }
 
 .content-tags {
-  margin-top: 2rem;
+  margin-top: 1.35rem;
+}
+
+.article-hero-figure {
+  margin-top: 0;
+  border: 1px solid var(--rule);
+  background: rgba(28, 25, 23, 0.018);
+  padding: clamp(0.55rem, 1.2vw, 0.85rem);
+}
+
+.article-hero-figure img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.article-hero-figure figcaption {
+  max-width: 68ch;
+  margin-top: 0.85rem;
+  color: rgba(28, 25, 23, 0.55);
+  font-size: 0.82rem;
+  line-height: 1.55;
 }
 
 .article-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.38fr) minmax(320px, 0.78fr);
-  gap: 3rem 5rem;
-  padding-top: 4rem;
+  grid-template-columns: minmax(8rem, 0.28fr) minmax(0, 68ch);
+  gap: 2.5rem clamp(2.5rem, 5vw, 4rem);
+  align-items: start;
+  padding-top: clamp(2.5rem, 4vw, 3.4rem);
 }
 
 .article-aside {

@@ -11,6 +11,9 @@ tags:
   - AI work
 author: "Feliks Mamczur"
 readingTime: "9 min read"
+image: /images/articles/human-ai-workflow-judgment.webp
+imageAlt: "Diagram showing that the prompt is only one part of AI work, alongside context, attention, trust, verification, cognitive load and responsibility."
+imageCaption: "A prompt is only one point in a wider loop of context, attention, output, trust, verification and responsibility."
 lang: "en"
 translationKey: "ai-literacy-after-the-prompt"
 ---
@@ -22,11 +25,6 @@ The prompt matters. A better question can clarify intention, expose missing cont
 At that point, the question is no longer only "Was the prompt good?" It becomes: what exactly did we receive, what was missing, what must be checked, how much should we trust it and who takes responsibility for using it?
 
 This is why [AI literacy](/concepts/ai-literacy/) cannot be reduced to prompt engineering. It includes the ability to build context, understand model limits, notice one's own confidence, verify information and decide what role an AI-generated answer should have in human work.
-
-<figure class="article-figure">
-  <img src="/images/articles/prompt-context-loop.png" alt="Illustrated map of an AI work process connecting prompt, context, attention, output, cognitive load, trust, verification and responsibility." loading="lazy" />
-  <figcaption>A prompt is only one point in a wider loop of context, attention, output, trust, verification and responsibility.</figcaption>
-</figure>
 
 ## The prompt is an interface, not the competence
 

@@ -16,6 +16,9 @@ const articles = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/articles' }),
   schema: baseSchema.extend({
     readingTime: z.string().optional(),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    imageCaption: z.string().optional(),
     lang: z.enum(['en', 'pl']).default('en'),
     translationKey: z.string().optional()
   })

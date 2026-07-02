@@ -91,13 +91,19 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'All rights reserved'
     );
-    await expect(page.locator('.article-figure img')).toHaveAttribute(
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
       'src',
-      '/images/articles/prompt-context-loop.png'
+      '/images/articles/human-ai-workflow-judgment.webp'
     );
-    await expect(page.locator('.article-figure figcaption')).toContainText(
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+      'alt',
+      'Diagram showing that the prompt is only one part of AI work, alongside context, attention, trust, verification, cognitive load and responsibility.'
+    );
+    await expect(page.locator('.article-hero-figure figcaption')).toContainText(
       'A prompt is only one point'
     );
+    await expect(page.locator('body')).not.toContainText(/PRZYGOTOWANE POD/i);
+    await expect(page.locator('[data-qa="article-aside-label"]')).toHaveText('In this article');
 
     const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
     await expect(conceptLinks).toHaveCount(11);
@@ -121,13 +127,19 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'Wszystkie prawa zastrzeżone'
     );
-    await expect(page.locator('.article-figure img')).toHaveAttribute(
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
       'src',
-      '/images/articles/prompt-context-loop.png'
+      '/images/articles/human-ai-workflow-judgment.webp'
     );
-    await expect(page.locator('.article-figure figcaption')).toContainText(
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+      'alt',
+      'Diagram pokazujący, że prompt jest tylko częścią pracy z AI: obok kontekstu, uwagi, zaufania, weryfikacji, obciążenia poznawczego i odpowiedzialności.'
+    );
+    await expect(page.locator('.article-hero-figure figcaption')).toContainText(
       'Prompt jest tylko jednym punktem'
     );
+    await expect(page.locator('body')).not.toContainText(/PRZYGOTOWANE POD/i);
+    await expect(page.locator('[data-qa="article-aside-label"]')).toHaveText('W tekście');
 
     const conceptLinks = page.locator('.prose a[href^="/pl/concepts/"]');
     await expect(conceptLinks).toHaveCount(11);

@@ -88,7 +88,7 @@ Article graphics style is documented in:
 
 The first article currently uses:
 
-- `public/images/articles/prompt-context-loop.png`
+- `public/images/articles/human-ai-workflow-judgment.webp`
 
 Future article graphics should follow the same quiet diagrammatic direction: light paper texture, charcoal linework, muted teal accents, system relationships and clear alt text.
 

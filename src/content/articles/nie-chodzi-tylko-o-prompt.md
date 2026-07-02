@@ -11,6 +11,9 @@ tags:
   - praca z AI
 author: "Feliks Mamczur"
 readingTime: "10 min czytania"
+image: /images/articles/human-ai-workflow-judgment.webp
+imageAlt: "Diagram pokazujący, że prompt jest tylko częścią pracy z AI: obok kontekstu, uwagi, zaufania, weryfikacji, obciążenia poznawczego i odpowiedzialności."
+imageCaption: "Prompt jest tylko jednym punktem w szerszej pętli: kontekstu, uwagi, wyniku, zaufania, weryfikacji i odpowiedzialności."
 lang: "pl"
 translationKey: "ai-literacy-after-the-prompt"
 ---
@@ -24,11 +27,6 @@ Bo praca z AI nie kończy się w chwili, gdy model zwraca odpowiedź. W wielu sy
 Nie chodzi więc tylko o prompt. Prompt jest ważny, ale jest jedynie powierzchnią głębszej relacji: człowiek - model - kontekst - decyzja - odpowiedzialność. W tej relacji pojawiają się pytania o poznanie, zaufanie, interpretację, granice narzędzia i sposób, w jaki człowiek pracuje z własną pewnością.
 
 To szczególnie ważne w organizacjach, gdzie odpowiedź modelu rzadko zostaje prywatną notatką jednej osoby. Często trafia do obiegu: do dokumentu, prezentacji, briefu, rekomendacji, wiadomości do klienta albo roboczej decyzji zespołu. Wtedy nie wystarczy pytanie, czy prompt był dobry. Trzeba zapytać, czy wynik został właściwie zrozumiany, sprawdzony i oznaczony jako szkic, pomoc, argument albo materiał do dalszej pracy.
-
-<figure class="article-figure">
-  <img src="/images/articles/prompt-context-loop.png" alt="Ilustrowana mapa procesu pracy z AI łącząca prompt, kontekst, uwagę, wynik, obciążenie poznawcze, zaufanie, weryfikację i odpowiedzialność." loading="lazy" />
-  <figcaption>Prompt jest tylko jednym punktem w szerszej pętli: kontekstu, uwagi, wyniku, zaufania, weryfikacji i odpowiedzialności.</figcaption>
-</figure>
 
 ## Prompt jest interfejsem, nie kompetencją
 
