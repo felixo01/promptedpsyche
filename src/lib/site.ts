@@ -5,7 +5,7 @@ export const site = {
     'A research-informed expert project by Feliks Mamczur on how artificial intelligence shapes thought, emotion, trust, communication, relationships, creativity and work.',
   url: 'https://promptedpsyche.com',
   author: 'Feliks Mamczur',
-  email: 'hello@promptedpsyche.com',
+  email: 'humanai.lab.edu@gmail.com',
   locale: 'en',
   futureLocales: ['pl']
 };
