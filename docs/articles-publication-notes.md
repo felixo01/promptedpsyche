@@ -79,7 +79,9 @@ The third Polish article published in pre-launch mode is:
 - EN version: `src/content/articles/ai-does-not-read-people-it-helps-read-context.md`
 - EN status: draft/TODO, `draft: true`
 
-The article focuses on AI, correspondence, communicative context, trust, responsibility and Human-AI Interaction. It frames AI as a second reader that can help organize visible context, not as a tool for diagnosing people, reading hidden intentions or manipulating replies.
+The article is a case-study based essay about AI, correspondence, communicative context, trust, responsibility and Human-AI Interaction. It frames AI as a second reader that can help organize visible context, not as a tool for diagnosing people, reading hidden intentions or manipulating replies.
+
+The case-study layer is explicitly composite and anonymized. It does not describe one real correspondence, does not quote real messages and does not include identifiable names, clients, companies, countries or projects.
 
 The public article includes byline, suggested citation and rights notice through the standard article layout. No DOI was added. The original article chronology is now:
 

@@ -226,6 +226,9 @@ test.describe('published articles', () => {
     await page.goto(thirdPolishArticleRoute);
 
     await expect(page.locator('.content-header h1')).toHaveText(thirdPolishArticleTitle);
+    await expect(page.locator('.prose')).toContainText(
+      'Poniższy przykład jest kompozytowy i zanonimizowany'
+    );
     await expect(page.locator('[data-qa="article-byline"]')).toContainText('Autor: Feliks Mamczur');
     await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
@@ -233,6 +236,7 @@ test.describe('published articles', () => {
       `${thirdPolishArticleTitle} Prompted Psyche. https://promptedpsyche.com/pl/articles/ai-nie-czyta-ludzi-pomaga-czytac-kontekst/`
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
+    await expect(page.locator('body')).not.toContainText(/DOI/i);
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'Wszystkie prawa zastrzeżone'
     );
