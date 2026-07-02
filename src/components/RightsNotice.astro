@@ -1,0 +1,33 @@
+---
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  lang: Locale;
+  variant?: 'footer' | 'content';
+  title?: string;
+}
+
+const { lang, variant = 'content' } = Astro.props;
+const locale = lang === 'pl' ? 'pl' : 'en';
+const label = locale === 'pl' ? 'Prawa autorskie i uznanie autorstwa' : 'Rights and attribution';
+
+const notices = {
+  content: {
+    pl: '© 2026 Feliks Mamczur / Prompted Psyche. Wszystkie prawa zastrzeżone. Krótkie cytaty są dozwolone wyłącznie z podaniem autora, tytułu tekstu i linku do źródła.',
+    en: '© 2026 Feliks Mamczur / Prompted Psyche. All rights reserved. Short quotations are permitted only with attribution to the author, the title and a link to the source.'
+  },
+  footer: {
+    pl: '© 2026 Feliks Mamczur / Prompted Psyche. Wszystkie prawa zastrzeżone. Cytując treści, podaj autora, tytuł i link do źródła.',
+    en: '© 2026 Feliks Mamczur / Prompted Psyche. All rights reserved. When quoting, credit the author, title and source link.'
+  }
+} as const;
+---
+
+<p
+  class:list={['rights-notice', `rights-notice-${variant}`]}
+  data-qa="rights-notice"
+  data-variant={variant}
+  aria-label={label}
+>
+  {notices[variant][locale]}
+</p>

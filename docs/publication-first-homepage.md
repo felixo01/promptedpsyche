@@ -122,6 +122,12 @@ Run:
 npm run test:layout
 ```
 
+## Rights and Attribution
+
+The footer and public content detail layouts include a short rights notice in English and Polish. It states copyright, all rights reserved and the expected attribution for short quotations: author, title and source link.
+
+The notice is implemented through `RightsNotice.astro` so footer copy and article, note and concept detail pages stay consistent. It does not grant Creative Commons, free reuse or full-copy permission.
+
 ## Safety Checklist
 
 - Astro stack stays in place.

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import RightsNotice from '../components/RightsNotice.astro';
 import { formatDate } from '../lib/content';
 import type { AlternateLinks, Locale } from '../lib/i18n';
 
@@ -18,9 +19,17 @@ interface Props {
   lang?: Locale;
   alternateLinks?: AlternateLinks;
   showPublishedAt?: boolean;
+  showRightsNotice?: boolean;
 }
 
-const { entry, label, lang = 'en', alternateLinks, showPublishedAt = true } = Astro.props;
+const {
+  entry,
+  label,
+  lang = 'en',
+  alternateLinks,
+  showPublishedAt = true,
+  showRightsNotice = true
+} = Astro.props;
 const tags: string[] = entry.data.tags ?? [];
 const readingTime = entry.data.readingTime;
 const isConceptEntry = !showPublishedAt;
@@ -93,6 +102,7 @@ const asideLabels = lang === 'pl'
 
       <div class="prose">
         <slot />
+        {showRightsNotice && <RightsNotice lang={lang} variant="content" title={entry.data.title} />}
       </div>
     </div>
   </article>

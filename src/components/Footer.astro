@@ -1,6 +1,7 @@
 ---
 import { getLangFromPath, type Locale } from '../lib/i18n';
 import { site } from '../lib/site';
+import RightsNotice from './RightsNotice.astro';
 
 interface Props {
   lang?: Locale;
@@ -48,6 +49,8 @@ const prefix = isPl ? '/pl' : '';
         </div>
       </div>
     </div>
+
+    <RightsNotice lang={activeLang} variant="footer" />
 
     <div class="footer-bottom">
       <div>
