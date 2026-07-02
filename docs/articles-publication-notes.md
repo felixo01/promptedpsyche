@@ -106,6 +106,18 @@ The note supports the concepts of epistemic vigilance, calibrated trust, model o
 
 The Polish title was editorially refined after publication to sound more natural in Polish. The original slug was preserved to avoid breaking links. The note also passed a Polish editorial QA pass focused on natural phrasing, concise sentences and clear explanation of epistemic vigilance.
 
+## Editorial and usability audit
+
+The publication layer passed an editorial and usability audit after article 03 was finalized as a case-study based article.
+
+- PL articles and notes were checked for natural phrasing, rhythm, title consistency and careful claims.
+- EN articles and notes were checked as adaptations, not sentence-by-sentence translations.
+- Article and note indexes were checked for title links, visible CTA affordance and language separation.
+- Public detail pages were checked for byline, suggested citation, rights notice, dates, tags and concept links.
+- The first PL article section title was aligned with the current note title: `Brzmi dobrze, ale to nie znaczy, że jest prawdziwe`.
+- Author page spacing on `/about/` and `/pl/about/` was tightened with an author-page-specific layout modifier.
+- Pre-launch safety remains unchanged: site-wide `noindex`, Vercel `X-Robots-Tag` and draft filtering are still active.
+
 ## Translation Status
 
 The English counterpart for article 01 is public in pre-launch mode:

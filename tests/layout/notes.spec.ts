@@ -24,6 +24,8 @@ test.describe('published notes', () => {
 
     await expect(titleLink).toHaveAttribute('href', englishNoteRoute);
     await expect(ctaLink).toHaveAttribute('href', englishNoteRoute);
+    await expect(ctaLink).toContainText('Read note');
+    await expect(ctaLink.locator('span[aria-hidden="true"]')).toHaveText('->');
     await expect(ctaLink).toBeVisible();
   });
 
@@ -44,6 +46,8 @@ test.describe('published notes', () => {
 
     await expect(titleLink).toHaveAttribute('href', polishNoteRoute);
     await expect(ctaLink).toHaveAttribute('href', polishNoteRoute);
+    await expect(ctaLink).toContainText('Czytaj notatkę');
+    await expect(ctaLink.locator('span[aria-hidden="true"]')).toHaveText('->');
     await expect(ctaLink).toBeVisible();
   });
 

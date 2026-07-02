@@ -25,6 +25,8 @@ test.describe('published articles', () => {
 
     await expect(titleLink).toHaveAttribute('href', englishArticleRoute);
     await expect(ctaLink).toHaveAttribute('href', englishArticleRoute);
+    await expect(ctaLink).toContainText('Read article');
+    await expect(ctaLink.locator('span[aria-hidden="true"]')).toHaveText('->');
     await expect(ctaLink).toBeVisible();
     await ctaLink.focus();
     await expect(ctaLink).toBeFocused();
@@ -56,6 +58,8 @@ test.describe('published articles', () => {
 
     await expect(titleLink).toHaveAttribute('href', polishArticleRoute);
     await expect(ctaLink).toHaveAttribute('href', polishArticleRoute);
+    await expect(ctaLink).toContainText('Czytaj artykuł');
+    await expect(ctaLink.locator('span[aria-hidden="true"]')).toHaveText('->');
     await expect(ctaLink).toBeVisible();
     await ctaLink.focus();
     await expect(ctaLink).toBeFocused();

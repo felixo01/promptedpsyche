@@ -78,7 +78,7 @@ To nie znaczy, że każda interakcja z AI ma zamieniać się w ciężką procedu
 
 Tę chwilę zatrzymania można ćwiczyć. Nie przez mnożenie checklist dla każdego drobnego zadania, ale przez budowanie nawyku nazywania statusu odpowiedzi. To jest szkic. To jest wariant. To jest streszczenie wymagające sprawdzenia. To jest propozycja argumentu. To jest materiał, którego nie należy wysyłać bez drugiej osoby. Takie proste rozróżnienia zmieniają sposób, w jaki człowiek korzysta z modelu, bo przywracają widoczność własnej decyzji.
 
-## Brzmi dobrze nie znaczy, że jest prawdziwe
+## Brzmi dobrze, ale to nie znaczy, że jest prawdziwe
 
 Modele językowe potrafią produkować odpowiedzi płynne, spójne i przekonujące. Taki tekst łatwo czytać. Ma rytm, strukturę i ton pewności. To bywa bardzo użyteczne, ale tworzy też ryzyko: płynność może zostać odebrana jako wiarygodność.
 

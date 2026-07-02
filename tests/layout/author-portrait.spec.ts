@@ -3,11 +3,13 @@ import { expect, test } from '@playwright/test';
 const portraitCases = [
   {
     route: '/about/',
-    alt: 'Feliks Mamczur, author of Prompted Psyche'
+    alt: 'Feliks Mamczur, author of Prompted Psyche',
+    title: 'About the author'
   },
   {
     route: '/pl/about/',
-    alt: 'Feliks Mamczur, autor Prompted Psyche'
+    alt: 'Feliks Mamczur, autor Prompted Psyche',
+    title: 'Kim jestem'
   }
 ];
 
@@ -32,6 +34,37 @@ test.describe('author portrait', () => {
 
       const hasOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
       expect(hasOverflow).toBe(false);
+    });
+  }
+
+  for (const portraitCase of portraitCases) {
+    test(`keeps author page spacing compact on ${portraitCase.route}`, async ({ page }, testInfo) => {
+      await page.goto(portraitCase.route);
+
+      await expect(page.locator('h1')).toHaveText(portraitCase.title);
+
+      const metrics = await page.evaluate(() => {
+        const block = document.querySelector('.about-page .editorial-block');
+        const split = document.querySelector('.about-page .editorial-split');
+        if (!block || !split) {
+          return null;
+        }
+
+        const blockStyle = window.getComputedStyle(block);
+        const splitStyle = window.getComputedStyle(split);
+
+        return {
+          paddingTop: Number.parseFloat(blockStyle.paddingTop),
+          paddingBottom: Number.parseFloat(blockStyle.paddingBottom),
+          columnGap: Number.parseFloat(splitStyle.columnGap || splitStyle.gap)
+        };
+      });
+
+      expect(metrics).not.toBeNull();
+      const isNarrow = testInfo.project.name === 'mobile-390' || testInfo.project.name === 'tablet-768';
+      expect(metrics?.paddingTop).toBeLessThanOrEqual(isNarrow ? 58 : 92);
+      expect(metrics?.paddingBottom).toBeLessThanOrEqual(isNarrow ? 58 : 92);
+      expect(metrics?.columnGap).toBeLessThanOrEqual(isNarrow ? 24 : 58);
     });
   }
 });

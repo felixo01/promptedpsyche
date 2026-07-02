@@ -1074,6 +1074,33 @@ html[lang='pl'] .lovable-page-hero h1 {
   border-bottom: 0;
 }
 
+.about-page {
+  padding-bottom: clamp(4rem, 6vw, 5.75rem);
+}
+
+.about-page .lovable-page-hero {
+  padding-block: clamp(4.5rem, 6.5vw, 5.75rem);
+}
+
+.about-page .lovable-section,
+.about-page .editorial-block,
+.about-page .lovable-final-links {
+  padding-block: clamp(3.5rem, 5vw, 5.25rem);
+}
+
+.about-page .editorial-split {
+  gap: 2rem clamp(2rem, 4vw, 3.5rem);
+}
+
+.about-page .compact-heading {
+  margin-bottom: 2.75rem;
+}
+
+.about-page .editorial-copy {
+  gap: 1rem;
+  line-height: 1.72;
+}
+
 .compact-heading {
   max-width: 42rem;
   margin-bottom: 4rem;
@@ -2373,6 +2400,21 @@ html[lang='pl'] .content-header h1 {
   .editorial-block,
   .lovable-final-links {
     padding-block: 4rem;
+  }
+
+  .about-page .lovable-page-hero,
+  .about-page .lovable-section,
+  .about-page .editorial-block,
+  .about-page .lovable-final-links {
+    padding-block: 3rem;
+  }
+
+  .about-page .editorial-split {
+    gap: 1.25rem;
+  }
+
+  .about-page .compact-heading {
+    margin-bottom: 2rem;
   }
 
   .process-teaser {
