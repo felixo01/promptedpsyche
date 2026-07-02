@@ -70,6 +70,13 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'All rights reserved'
     );
+    await expect(page.locator('.article-figure img')).toHaveAttribute(
+      'src',
+      '/images/articles/prompt-context-loop.png'
+    );
+    await expect(page.locator('.article-figure figcaption')).toContainText(
+      'A prompt is only one point'
+    );
 
     const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
     await expect(conceptLinks).toHaveCount(11);
@@ -92,6 +99,13 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'Wszystkie prawa zastrzeżone'
+    );
+    await expect(page.locator('.article-figure img')).toHaveAttribute(
+      'src',
+      '/images/articles/prompt-context-loop.png'
+    );
+    await expect(page.locator('.article-figure figcaption')).toContainText(
+      'Prompt jest tylko jednym punktem'
     );
 
     const conceptLinks = page.locator('.prose a[href^="/pl/concepts/"]');

@@ -23,6 +23,11 @@ At that point, the question is no longer only "Was the prompt good?" It becomes:
 
 This is why [AI literacy](/concepts/ai-literacy/) cannot be reduced to prompt engineering. It includes the ability to build context, understand model limits, notice one's own confidence, verify information and decide what role an AI-generated answer should have in human work.
 
+<figure class="article-figure">
+  <img src="/images/articles/prompt-context-loop.png" alt="Illustrated map of an AI work process connecting prompt, context, attention, output, cognitive load, trust, verification and responsibility." loading="lazy" />
+  <figcaption>A prompt is only one point in a wider loop of context, attention, output, trust, verification and responsibility.</figcaption>
+</figure>
+
 ## The prompt is an interface, not the competence
 
 A prompt is an interface between human intention and a system that processes language. A good prompt can include a goal, context, constraints, expected format and tone. It can also force the user to name what they actually want.

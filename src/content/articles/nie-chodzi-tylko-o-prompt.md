@@ -25,6 +25,11 @@ Nie chodzi więc tylko o prompt. Prompt jest ważny, ale jest jedynie powierzchn
 
 To szczególnie ważne w organizacjach, gdzie odpowiedź modelu rzadko zostaje prywatną notatką jednej osoby. Często trafia do obiegu: do dokumentu, prezentacji, briefu, rekomendacji, wiadomości do klienta albo roboczej decyzji zespołu. Wtedy nie wystarczy pytanie, czy prompt był dobry. Trzeba zapytać, czy wynik został właściwie zrozumiany, sprawdzony i oznaczony jako szkic, pomoc, argument albo materiał do dalszej pracy.
 
+<figure class="article-figure">
+  <img src="/images/articles/prompt-context-loop.png" alt="Ilustrowana mapa procesu pracy z AI łącząca prompt, kontekst, uwagę, wynik, obciążenie poznawcze, zaufanie, weryfikację i odpowiedzialność." loading="lazy" />
+  <figcaption>Prompt jest tylko jednym punktem w szerszej pętli: kontekstu, uwagi, wyniku, zaufania, weryfikacji i odpowiedzialności.</figcaption>
+</figure>
+
 ## Prompt jest interfejsem, nie kompetencją
 
 Prompt jest sposobem wejścia w interakcję z modelem. To punkt kontaktu między intencją człowieka a systemem, który przetwarza język. Dobrze napisane polecenie może zawierać cel, kontekst, ograniczenia, odbiorcę i oczekiwany format odpowiedzi. Może też ujawnić, czy użytkownik sam rozumie, czego szuka.
