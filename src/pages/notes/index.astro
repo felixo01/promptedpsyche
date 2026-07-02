@@ -32,6 +32,7 @@ const notes = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('notes'
       emptyMessage="Notes are in preparation."
       emptyNote="They will collect shorter observations, definitions and leads for future essays."
       emptyIcon="note"
+      ctaLabel="Read note"
     />
 
     {notes.length === 0 && (

@@ -11,6 +11,7 @@ tags:
 author: "Feliks Mamczur"
 context: "Notatka"
 lang: "pl"
+translationKey: "fluent-does-not-mean-true"
 ---
 
 Odpowiedzi AI często brzmią płynnie, pewnie i logicznie. Mają porządek, rytm, akapity, przejścia i ton osoby, która wie, o czym mówi. To jedna z przyczyn, dla których modele językowe są tak użyteczne. Potrafią szybko zamienić chaos notatek w tekst, ułożyć argumenty, zaproponować wersję roboczą albo pomóc nazwać coś, co wcześniej było niejasne.

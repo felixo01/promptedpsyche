@@ -1,21 +1,23 @@
 ---
 import { getCollection, render } from 'astro:content';
 import EntryLayout from '../../layouts/EntryLayout.astro';
-import { onlyPublicEntriesByLang } from '../../lib/content';
+import { onlyPublicEntries, onlyPublicEntriesByLang } from '../../lib/content';
+import { getNoteAlternates } from '../../lib/noteRoutes';
 
 export async function getStaticPaths() {
-  const notes = onlyPublicEntriesByLang(await getCollection('notes'), 'en');
+  const publicNotes = onlyPublicEntries(await getCollection('notes'));
+  const notes = onlyPublicEntriesByLang(publicNotes, 'en');
 
   return notes.map((entry) => ({
     params: { slug: entry.id },
-    props: { entry }
+    props: { entry, alternateLinks: getNoteAlternates(entry, publicNotes) }
   }));
 }
 
-const { entry } = Astro.props;
+const { entry, alternateLinks } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<EntryLayout entry={entry} label="Note" lang="en">
+<EntryLayout entry={entry} label="Note" lang="en" alternateLinks={alternateLinks}>
   <Content />
 </EntryLayout>

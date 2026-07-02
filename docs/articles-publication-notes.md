@@ -35,14 +35,18 @@ The articles link the public article layer with Concepts Wave 02. They use the c
 
 The first article is a programmatic essay, not a manifesto, sales page or prompt tutorial.
 
-## Article 02 PL
+## Article 02
 
-The second Polish article published in pre-launch mode is:
+The second article pair published in pre-launch mode is:
 
 - `Model nie pamięta. Model ma kontekst.`
 - URL: `/pl/articles/model-nie-pamieta-model-ma-kontekst/`
 - Source file: `src/content/articles/model-nie-pamieta-model-ma-kontekst.md`
 - Status: public PL article, `draft: false`
+- `The model does not remember. It works with context.`
+- URL: `/articles/the-model-does-not-remember-it-works-with-context/`
+- Source file: `src/content/articles/the-model-does-not-remember-it-works-with-context.md`
+- Status: public EN article, `draft: false`
 
 This article deepens the vocabulary around:
 
@@ -59,26 +63,36 @@ This article deepens the vocabulary around:
 
 The article explains context as a practical condition of AI work. It should not present Feliks Mamczur's work as peer-reviewed research and should not add unregistered DOI identifiers.
 
-## Note 01 PL
+## Note 01
 
-The first Polish note published in pre-launch mode is:
+The first note pair published in pre-launch mode is:
 
 - `Brzmi dobrze nie znaczy, że jest prawdziwe`
 - URL: `/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/`
 - Source file: `src/content/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe.md`
 - Status: public PL note, `draft: false`
+- `Fluent does not mean true`
+- URL: `/notes/fluent-does-not-mean-true/`
+- Source file: `src/content/notes/fluent-does-not-mean-true.md`
+- Status: public EN note, `draft: false`
 
 The note supports the concepts of epistemic vigilance, calibrated trust, model output and AI literacy. Notes should remain short working essays, not social posts or promotional updates.
 
 ## Translation Status
 
-The English counterpart is now public in pre-launch mode:
+The English counterpart for article 01 is public in pre-launch mode:
 
 - `src/content/articles/it-is-not-just-about-the-prompt.md`
 
-The EN version is an editorial adaptation, not a literal translation. The next step is live review of both article versions before any public launch or indexing decision.
+The EN versions are editorial adaptations, not literal translations. They preserve the same thesis and concept links while allowing English rhythm, paragraph order and phrasing to differ from Polish.
 
-EN adaptations of article 02 and note 01 are later editorial work. No public EN draft was added in this pass.
+English adaptations now public:
+
+- Article 01: `It is not just about the prompt`
+- Article 02: `The model does not remember. It works with context.`
+- Note 01: `Fluent does not mean true`
+
+The site remains in pre-launch mode. Noindex and the Vercel X-Robots-Tag remain active. Suggested citation and rights notice remain standard for public articles and notes.
 
 ## Article Graphics
 
@@ -117,3 +131,4 @@ A DOI does not mean quality, review or peer-reviewed status by itself. It must n
 - Concept tags are interactive filters on the Concepts index.
 - RSS and sitemap should include only public content according to the existing filters.
 - No private strategy, source-check notes or operational planning material was copied into the public article.
+- DOI is still not used. Do not add placeholder DOI text.

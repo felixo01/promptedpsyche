@@ -13,6 +13,7 @@ tags:
 author: "Feliks Mamczur"
 readingTime: "9 min czytania"
 lang: "pl"
+translationKey: "model-context-not-memory"
 ---
 
 Ludzie szybko zaczęli mówić, że AI coś "pamięta", "wie, o co chodzi" albo "kojarzy poprzednie ustalenia". To wygodny skrót. W rozmowie z modelem naprawdę można odnieść wrażenie ciągłości: system odpowiada nawiązując do wcześniejszych zdań, zachowuje temat, potrafi streścić fragment rozmowy i czasem sprawia wrażenie, jakby rozumiał sytuację szerzej niż pojedyncze polecenie.

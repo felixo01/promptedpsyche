@@ -3,12 +3,16 @@ import { expect, test } from '@playwright/test';
 const polishArticleRoute = '/pl/articles/nie-chodzi-tylko-o-prompt/';
 const secondPolishArticleRoute = '/pl/articles/model-nie-pamieta-model-ma-kontekst/';
 const englishArticleRoute = '/articles/it-is-not-just-about-the-prompt/';
+const secondEnglishArticleRoute = '/articles/the-model-does-not-remember-it-works-with-context/';
 
 test.describe('published articles', () => {
   test('shows the English article on the English articles index', async ({ page }) => {
     await page.goto('/articles/');
 
     await expect(page.locator('.entry-list')).toContainText('It is not just about the prompt');
+    await expect(page.locator('.entry-list')).toContainText(
+      'The model does not remember. It works with context.'
+    );
     const titleLink = page.getByRole('link', {
       name: 'It is not just about the prompt',
       exact: true
@@ -22,6 +26,17 @@ test.describe('published articles', () => {
     await expect(ctaLink).toBeVisible();
     await ctaLink.focus();
     await expect(ctaLink).toBeFocused();
+
+    const secondTitleLink = page.getByRole('link', {
+      name: 'The model does not remember. It works with context.',
+      exact: true
+    });
+    const secondCtaLink = page.getByRole('link', {
+      name: 'Read article: The model does not remember. It works with context.'
+    });
+
+    await expect(secondTitleLink).toHaveAttribute('href', secondEnglishArticleRoute);
+    await expect(secondCtaLink).toHaveAttribute('href', secondEnglishArticleRoute);
   });
 
   test('shows the Polish article on the Polish articles index', async ({ page }) => {
@@ -73,6 +88,9 @@ test.describe('published articles', () => {
     await page.goto('/pl/articles/');
 
     await expect(page.locator('body')).not.toContainText('It is not just about the prompt');
+    await expect(page.locator('body')).not.toContainText(
+      'The model does not remember. It works with context.'
+    );
   });
 
   test('renders the English article detail page with byline, citation and rights notice', async ({ page }) => {
@@ -172,6 +190,33 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose a[href="/pl/concepts/cognitive-load/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/epistemic-vigilance/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/human-ai-interaction/"]')).toBeVisible();
+  });
+
+  test('renders the second English article detail page with byline, citation, rights notice and concept links', async ({ page }) => {
+    await page.goto(secondEnglishArticleRoute);
+
+    await expect(page.locator('.content-header h1')).toHaveText(
+      'The model does not remember. It works with context.'
+    );
+    await expect(page.locator('[data-qa="article-byline"]')).toContainText('By Feliks Mamczur');
+    await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+      'Mamczur, F. (2026). The model does not remember. It works with context. Prompted Psyche. https://promptedpsyche.com/articles/the-model-does-not-remember-it-works-with-context/'
+    );
+    await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'All rights reserved'
+    );
+
+    const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
+    await expect(conceptLinks).toHaveCount(10);
+    await expect(page.locator('.prose a[href="/concepts/context-window/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/token/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/mental-model/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/cognitive-load/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/epistemic-vigilance/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/human-ai-interaction/"]')).toBeVisible();
   });
 
   test('keeps other article drafts hidden', async ({ page, request }) => {

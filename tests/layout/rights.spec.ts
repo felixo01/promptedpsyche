@@ -17,12 +17,8 @@ test.describe('rights and attribution notices', () => {
     await expect(notice).toContainText('podaj autora, tytuł i link do źródła');
   });
 
-  test('shows content rights notice on a public note when available', async ({ page, request }) => {
-    const route = '/notes/we-prompt-machines-machines-prompt-us-back/';
-    const response = await request.get(route);
-    test.skip(!response.ok(), 'No public note detail page is currently available.');
-
-    await page.goto(route);
+  test('shows content rights notice on the first English note', async ({ page }) => {
+    await page.goto('/notes/fluent-does-not-mean-true/');
 
     const notice = page.locator('[data-qa="rights-notice"][data-variant="content"]');
     await expect(notice).toContainText('All rights reserved');

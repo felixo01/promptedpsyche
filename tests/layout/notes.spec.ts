@@ -1,8 +1,31 @@
 import { expect, test } from '@playwright/test';
 
 const polishNoteRoute = '/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/';
+const englishNoteRoute = '/notes/fluent-does-not-mean-true/';
 
 test.describe('published notes', () => {
+  test('shows the first English note on the English notes index', async ({ page }) => {
+    await page.goto('/notes/');
+
+    await expect(page.locator('.entry-list')).toContainText('Fluent does not mean true');
+    await expect(page.locator('body')).not.toContainText('Notes are in preparation.');
+    await expect(page.locator('body')).not.toContainText(
+      'Brzmi dobrze nie znaczy, że jest prawdziwe'
+    );
+
+    const titleLink = page.getByRole('link', {
+      name: 'Fluent does not mean true',
+      exact: true
+    });
+    const ctaLink = page.getByRole('link', {
+      name: 'Read note: Fluent does not mean true'
+    });
+
+    await expect(titleLink).toHaveAttribute('href', englishNoteRoute);
+    await expect(ctaLink).toHaveAttribute('href', englishNoteRoute);
+    await expect(ctaLink).toBeVisible();
+  });
+
   test('shows the first Polish note on the Polish notes index', async ({ page }) => {
     await page.goto('/pl/notes/');
 
@@ -10,6 +33,7 @@ test.describe('published notes', () => {
       'Brzmi dobrze nie znaczy, że jest prawdziwe'
     );
     await expect(page.locator('body')).not.toContainText('Notatki są w przygotowaniu.');
+    await expect(page.locator('body')).not.toContainText('Fluent does not mean true');
 
     const titleLink = page.getByRole('link', {
       name: 'Brzmi dobrze nie znaczy, że jest prawdziwe',
@@ -24,16 +48,33 @@ test.describe('published notes', () => {
     await expect(ctaLink).toBeVisible();
   });
 
-  test('keeps the English notes index empty and does not show the Polish note', async ({ page, request }) => {
-    await page.goto('/notes/');
+  test('does not expose the Polish note on the English route', async ({ request }) => {
+    const leakedRoute = await request.get('/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/');
 
-    await expect(page.locator('body')).toContainText('Notes are in preparation.');
-    await expect(page.locator('body')).not.toContainText(
-      'Brzmi dobrze nie znaczy, że jest prawdziwe'
+    expect(leakedRoute.ok()).toBe(false);
+  });
+
+  test('renders the first English note detail page with byline, citation, rights notice and concept links', async ({ page }) => {
+    await page.goto(englishNoteRoute);
+
+    await expect(page.locator('.content-header h1')).toHaveText('Fluent does not mean true');
+    await expect(page.locator('[data-qa="article-byline"]')).toContainText('By Feliks Mamczur');
+    await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+      'Mamczur, F. (2026). Fluent does not mean true. Prompted Psyche. https://promptedpsyche.com/notes/fluent-does-not-mean-true/'
+    );
+    await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'All rights reserved'
     );
 
-    const leakedRoute = await request.get('/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/');
-    expect(leakedRoute.ok()).toBe(false);
+    const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
+    await expect(conceptLinks).toHaveCount(4);
+    await expect(page.locator('.prose a[href="/concepts/model-output/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/calibrated-trust/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/epistemic-vigilance/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/ai-literacy/"]')).toBeVisible();
   });
 
   test('renders the first Polish note detail page with byline, citation, rights notice and concept links', async ({ page }) => {
