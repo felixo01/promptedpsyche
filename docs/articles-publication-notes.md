@@ -7,9 +7,11 @@ The first article pair published in pre-launch mode is:
 - `Nie chodzi tylko o prompt`
 - URL: `/pl/articles/nie-chodzi-tylko-o-prompt/`
 - Source file: `src/content/articles/nie-chodzi-tylko-o-prompt.md`
+- Date: `2026-05-23`
 - `It is not just about the prompt`
 - URL: `/articles/it-is-not-just-about-the-prompt/`
 - Source file: `src/content/articles/it-is-not-just-about-the-prompt.md`
+- Date: `2026-05-23`
 
 Both articles are public on the site, but the site remains in pre-launch mode:
 
@@ -42,10 +44,12 @@ The second article pair published in pre-launch mode is:
 - `Model nie pamięta. Model ma kontekst.`
 - URL: `/pl/articles/model-nie-pamieta-model-ma-kontekst/`
 - Source file: `src/content/articles/model-nie-pamieta-model-ma-kontekst.md`
+- Date: `2026-06-18`
 - Status: public PL article, `draft: false`
 - `The model does not remember. It works with context.`
 - URL: `/articles/the-model-does-not-remember-it-works-with-context/`
 - Source file: `src/content/articles/the-model-does-not-remember-it-works-with-context.md`
+- Date: `2026-06-18`
 - Status: public EN article, `draft: false`
 
 This article deepens the vocabulary around:
@@ -62,6 +66,26 @@ This article deepens the vocabulary around:
 - Human-AI Interaction
 
 The article explains context as a practical condition of AI work. It should not present Feliks Mamczur's work as peer-reviewed research and should not add unregistered DOI identifiers.
+
+## Article 03
+
+The third Polish article published in pre-launch mode is:
+
+- `AI nie czyta ludzi. Pomaga czytać kontekst.`
+- URL: `/pl/articles/ai-nie-czyta-ludzi-pomaga-czytac-kontekst/`
+- Source file: `src/content/articles/ai-nie-czyta-ludzi-pomaga-czytac-kontekst.md`
+- Date: `2026-07-02`
+- Status: public PL article, `draft: false`
+- EN version: `src/content/articles/ai-does-not-read-people-it-helps-read-context.md`
+- EN status: draft/TODO, `draft: true`
+
+The article focuses on AI, correspondence, communicative context, trust, responsibility and Human-AI Interaction. It frames AI as a second reader that can help organize visible context, not as a tool for diagnosing people, reading hidden intentions or manipulating replies.
+
+The public article includes byline, suggested citation and rights notice through the standard article layout. No DOI was added. The original article chronology is now:
+
+- Article 03: `2026-07-02`
+- Article 02: `2026-06-18`
+- Article 01: `2026-05-23`
 
 ## Note 01
 
@@ -93,6 +117,10 @@ English adaptations now public:
 - Article 01: `It is not just about the prompt`
 - Article 02: `The model does not remember. It works with context.`
 - Note 01: `Fluent does not mean true`
+
+English adaptation draft/TODO:
+
+- Article 03: `AI does not read people. It helps read context.`
 
 The site remains in pre-launch mode. Noindex and the Vercel X-Robots-Tag remain active. Suggested citation and rights notice remain standard for public articles and notes.
 

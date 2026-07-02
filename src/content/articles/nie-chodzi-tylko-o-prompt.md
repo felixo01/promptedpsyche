@@ -1,7 +1,7 @@
 ---
 title: "Nie chodzi tylko o prompt"
 description: "Prompt jest tylko widoczną częścią pracy z AI. Dojrzała kompetencja wymaga rozumienia kontekstu, ograniczeń modelu, własnego obciążenia poznawczego, zaufania i weryfikacji."
-publishedAt: 2026-07-02
+publishedAt: 2026-05-23
 draft: false
 tags:
   - AI literacy

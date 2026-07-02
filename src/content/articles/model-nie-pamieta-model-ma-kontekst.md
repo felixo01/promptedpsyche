@@ -1,7 +1,7 @@
 ---
 title: "Model nie pamięta. Model ma kontekst."
 description: "W pracy z AI łatwo pomylić okno kontekstu z pamięcią. To prowadzi do błędnych oczekiwań, zbyt dużego zaufania i złych decyzji."
-publishedAt: 2026-07-02
+publishedAt: 2026-06-18
 draft: false
 tags:
   - AI literacy
