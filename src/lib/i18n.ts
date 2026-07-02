@@ -24,7 +24,7 @@ const routePairs: RoutePair[] = [
 export const navItemsByLocale: Record<Locale, Array<{ label: string; href: string }>> = {
   en: [
     { label: 'Home', href: '/' },
-    { label: 'About', href: '/about/' },
+    { label: 'Author', href: '/about/' },
     { label: 'Consulting', href: '/consulting/' },
     { label: 'Contact', href: '/contact/' },
     { label: 'Articles', href: '/articles/' },
@@ -33,7 +33,7 @@ export const navItemsByLocale: Record<Locale, Array<{ label: string; href: strin
   ],
   pl: [
     { label: 'Start', href: '/pl/' },
-    { label: 'O projekcie', href: '/pl/about/' },
+    { label: 'Kim jestem', href: '/pl/about/' },
     { label: 'Konsulting', href: '/pl/consulting/' },
     { label: 'Kontakt', href: '/pl/contact/' },
     { label: 'Artykuły', href: '/pl/articles/' },

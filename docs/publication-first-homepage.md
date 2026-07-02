@@ -9,7 +9,7 @@ The main menu starts with publication sections:
 - Articles
 - Notes
 - Concepts
-- About
+- Author
 - Consulting
 - Contact
 
@@ -18,7 +18,7 @@ The Polish menu follows the same hierarchy:
 - Artykuły
 - Notatki
 - Pojęcia
-- O projekcie
+- Kim jestem
 - Konsulting
 - Kontakt
 
@@ -51,6 +51,19 @@ After the first publication-first reset, the homepage was clearer but too anonym
 The author note starts with Feliks Mamczur's perspective on AI, cyberpsychology, Human-AI Interaction and communication. His film, editing and post-production background is presented as an interpretive lens: a way to think about attention, narrative, image, emotion, decisions and communication.
 
 This keeps the homepage publication-first, but not faceless. The reader can quickly understand who is writing, why the perspective matters and why the publication exists.
+
+## Author Page
+
+The existing About routes now work as author pages:
+
+- `/about/` is titled `About the author`.
+- `/pl/about/` is titled `Kim jestem`.
+
+The homepage stays short and links to the author page for fuller context. The bio starts with Feliks Mamczur's work on the human side of AI, then explains the project, the fields that shape the perspective and the role of consulting.
+
+Film, editing and post-production are presented as an interpretive lens for thinking about narrative, attention, image, emotion and communication. They are not the main label of the project.
+
+Cognitive psychology is used as a perspective and vocabulary. It is not presented as a formal professional title.
 
 ## Cognitive Framing
 
