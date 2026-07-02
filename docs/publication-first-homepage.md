@@ -78,6 +78,8 @@ The author pages now use a tighter two-column hero with `W skrócie` on `/pl/abo
 
 Author framing was updated from defensive "not an academic institute" language to positive "independent research-informed publication project" language. Public copy should not claim formal institutional status, but it should leave room for future academic credibility and source-based authority.
 
+The author page now includes a mature AI stance as a starting point. Public copy should avoid childish fear or enthusiasm framing, avoid both promotional and catastrophic shortcuts, and focus on how AI changes people, cognition, communication, trust, responsibility and work.
+
 ## Polish Author Copy
 
 The Polish `Kim jestem` page was edited for a more natural public voice. Its communication experience section avoids defensive or stiff phrasing and presents film experience as part of a broader way of looking at communication, attention, image and emotion.

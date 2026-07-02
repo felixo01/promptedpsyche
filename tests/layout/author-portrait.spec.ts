@@ -6,6 +6,8 @@ const portraitCases = [
     alt: 'Feliks Mamczur, author of Prompted Psyche',
     title: 'About the author',
     summaryTitle: 'In brief',
+    stanceTitle: 'Starting point',
+    stanceText: 'whether AI is simply good or bad',
     communicationTitle: 'Experience in communication'
   },
   {
@@ -13,6 +15,8 @@ const portraitCases = [
     alt: 'Feliks Mamczur, autor Prompted Psyche',
     title: 'Kim jestem',
     summaryTitle: 'W skrócie',
+    stanceTitle: 'Punkt wyjścia',
+    stanceText: 'czy AI jest dobre czy złe',
     communicationTitle: 'Doświadczenie w komunikacji'
   }
 ];
@@ -47,6 +51,8 @@ test.describe('author portrait', () => {
 
       await expect(page.getByRole('heading', { level: 1, name: portraitCase.title })).toBeVisible();
       await expect(page.getByRole('heading', { level: 2, name: portraitCase.summaryTitle })).toBeVisible();
+      await expect(page.getByRole('heading', { level: 2, name: portraitCase.stanceTitle })).toBeVisible();
+      await expect(page.getByText(portraitCase.stanceText)).toBeVisible();
       await expect(page.getByRole('heading', { level: 2, name: portraitCase.communicationTitle })).toBeVisible();
 
       const metrics = await page.evaluate(() => {
