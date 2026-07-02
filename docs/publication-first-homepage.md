@@ -44,6 +44,15 @@ Removed from the homepage:
 
 The removed ideas remain available through About, Concepts and Consulting instead of competing with publication discovery on the homepage.
 
+## Hero Positioning
+
+The homepage hero uses the main positioning statement:
+
+- `The human side of AI.`
+- `Ludzka strona AI.`
+
+Articles and notes remain the center of the publication flow, but they should not replace the main positioning statement. The hero communicates the project. The Writing module communicates the publication formats.
+
 ## Author Context
 
 After the first publication-first reset, the homepage was clearer but too anonymous. This follow-up adds a stronger author context without returning to a large personal profile or a consulting landing page.
