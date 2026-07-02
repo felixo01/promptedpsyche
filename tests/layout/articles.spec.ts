@@ -5,16 +5,26 @@ const secondPolishArticleRoute = '/pl/articles/model-nie-pamieta-model-ma-kontek
 const thirdPolishArticleRoute = '/pl/articles/ai-nie-czyta-ludzi-pomaga-czytac-kontekst/';
 const englishArticleRoute = '/articles/it-is-not-just-about-the-prompt/';
 const secondEnglishArticleRoute = '/articles/the-model-does-not-remember-it-works-with-context/';
+const thirdEnglishArticleRoute = '/articles/ai-does-not-read-people-it-helps-read-context/';
+const thirdEnglishArticleTitle = 'AI does not read people. It helps read context.';
 const thirdPolishArticleTitle = 'AI nie czyta ludzi. Pomaga czytać kontekst.';
 
 test.describe('published articles', () => {
   test('shows the English article on the English articles index', async ({ page }) => {
     await page.goto('/articles/');
 
+    await expect(page.locator('.entry-list article')).toHaveCount(3);
     await expect(page.locator('.entry-list')).toContainText('It is not just about the prompt');
     await expect(page.locator('.entry-list')).toContainText(
       'The model does not remember. It works with context.'
     );
+    await expect(page.locator('.entry-list')).toContainText(thirdEnglishArticleTitle);
+    const titles = await page.locator('.entry-title-link').allTextContents();
+    expect(titles.slice(0, 3)).toEqual([
+      thirdEnglishArticleTitle,
+      'The model does not remember. It works with context.',
+      'It is not just about the prompt'
+    ]);
     const titleLink = page.getByRole('link', {
       name: 'It is not just about the prompt',
       exact: true
@@ -41,6 +51,19 @@ test.describe('published articles', () => {
 
     await expect(secondTitleLink).toHaveAttribute('href', secondEnglishArticleRoute);
     await expect(secondCtaLink).toHaveAttribute('href', secondEnglishArticleRoute);
+
+    const thirdTitleLink = page.getByRole('link', {
+      name: thirdEnglishArticleTitle,
+      exact: true
+    });
+    const thirdCtaLink = page.getByRole('link', {
+      name: `Read article: ${thirdEnglishArticleTitle}`
+    });
+
+    await expect(thirdTitleLink).toHaveAttribute('href', thirdEnglishArticleRoute);
+    await expect(thirdCtaLink).toHaveAttribute('href', thirdEnglishArticleRoute);
+    await expect(thirdCtaLink).toContainText('Read article');
+    await expect(thirdCtaLink.locator('span[aria-hidden="true"]')).toHaveText('->');
   });
 
   test('shows the Polish article on the Polish articles index', async ({ page }) => {
@@ -257,6 +280,48 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose a[href="/pl/concepts/cognitive-load/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/nadzor-ze-strony-czlowieka/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/ai-literacy/"]')).toBeVisible();
+    await expect(
+      page.locator('.language-switcher a[href="/articles/ai-does-not-read-people-it-helps-read-context/"]')
+    ).toBeVisible();
+  });
+
+  test('renders the third English article detail page with byline, citation, rights notice and concept links', async ({ page }) => {
+    await page.goto(thirdEnglishArticleRoute);
+
+    await expect(page.locator('.content-header h1')).toHaveText(thirdEnglishArticleTitle);
+    await expect(page.locator('.prose')).toContainText(
+      'The example below is composite and anonymized'
+    );
+    await expect(page.locator('.prose')).toContainText(
+      'AI did not solve the conflict. AI helped organize what was worth asking.'
+    );
+    await expect(page.locator('[data-qa="article-byline"]')).toContainText('By Feliks Mamczur');
+    await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+      'Mamczur, F. (2026). AI does not read people. It helps read context. Prompted Psyche. https://promptedpsyche.com/articles/ai-does-not-read-people-it-helps-read-context/'
+    );
+    await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
+    await expect(page.locator('body')).not.toContainText(/DOI/i);
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'All rights reserved'
+    );
+
+    const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
+    await expect(conceptLinks).toHaveCount(10);
+    await expect(page.locator('.prose a[href="/concepts/context-window/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/model-output/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/mental-model/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/epistemic-vigilance/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/ai-mediated-communication/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/calibrated-trust/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/metacognition/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/cognitive-load/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/human-oversight/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/ai-literacy/"]')).toBeVisible();
+    await expect(
+      page.locator('.language-switcher a[href="/pl/articles/ai-nie-czyta-ludzi-pomaga-czytac-kontekst/"]')
+    ).toBeVisible();
   });
 
   test('renders the second English article detail page with byline, citation, rights notice and concept links', async ({ page }) => {
@@ -291,14 +356,11 @@ test.describe('published articles', () => {
 
     await expect(page.locator('body')).not.toContainText('AI Literacy Is Not Prompt Engineering');
     await expect(page.locator('body')).not.toContainText("Why People Trust AI Even When They Shouldn't");
-    await expect(page.locator('body')).not.toContainText('AI does not read people. It helps read context.');
 
     const aiLiteracyDraft = await request.get('/articles/ai-literacy-is-not-prompt-engineering/');
     const trustDraft = await request.get('/articles/why-people-trust-ai-even-when-they-shouldnt/');
-    const thirdEnglishDraft = await request.get('/articles/ai-does-not-read-people-it-helps-read-context/');
 
     expect(aiLiteracyDraft.ok()).toBe(false);
     expect(trustDraft.ok()).toBe(false);
-    expect(thirdEnglishDraft.ok()).toBe(false);
   });
 });

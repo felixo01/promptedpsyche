@@ -8,6 +8,7 @@ test.describe('published notes', () => {
   test('shows the first English note on the English notes index', async ({ page }) => {
     await page.goto('/notes/');
 
+    await expect(page.locator('.entry-list article')).toHaveCount(1);
     await expect(page.locator('.entry-list')).toContainText('Fluent does not mean true');
     await expect(page.locator('body')).not.toContainText('Notes are in preparation.');
     await expect(page.locator('body')).not.toContainText(
@@ -32,6 +33,7 @@ test.describe('published notes', () => {
   test('shows the first Polish note on the Polish notes index', async ({ page }) => {
     await page.goto('/pl/notes/');
 
+    await expect(page.locator('.entry-list article')).toHaveCount(1);
     await expect(page.locator('.entry-list')).toContainText(polishNoteTitle);
     await expect(page.locator('body')).not.toContainText('Notatki są w przygotowaniu.');
     await expect(page.locator('body')).not.toContainText('Fluent does not mean true');
@@ -78,6 +80,9 @@ test.describe('published notes', () => {
     await expect(page.locator('.prose a[href="/concepts/calibrated-trust/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/epistemic-vigilance/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/ai-literacy/"]')).toBeVisible();
+    await expect(
+      page.locator('.language-switcher a[href="/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/"]')
+    ).toBeVisible();
   });
 
   test('renders the first Polish note detail page with byline, citation, rights notice and concept links', async ({ page }) => {
@@ -104,5 +109,6 @@ test.describe('published notes', () => {
     await expect(page.locator('.prose a[href="/pl/concepts/calibrated-trust/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/epistemic-vigilance/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/ai-literacy/"]')).toBeVisible();
+    await expect(page.locator('.language-switcher a[href="/notes/fluent-does-not-mean-true/"]')).toBeVisible();
   });
 });

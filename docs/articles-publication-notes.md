@@ -76,12 +76,17 @@ The third Polish article published in pre-launch mode is:
 - Source file: `src/content/articles/ai-nie-czyta-ludzi-pomaga-czytac-kontekst.md`
 - Date: `2026-07-02`
 - Status: public PL article, `draft: false`
-- EN version: `src/content/articles/ai-does-not-read-people-it-helps-read-context.md`
-- EN status: draft/TODO, `draft: true`
+- `AI does not read people. It helps read context.`
+- URL: `/articles/ai-does-not-read-people-it-helps-read-context/`
+- Source file: `src/content/articles/ai-does-not-read-people-it-helps-read-context.md`
+- Date: `2026-07-02`
+- Status: public EN article, `draft: false`
 
 The article is a case-study based essay about AI, correspondence, communicative context, trust, responsibility and Human-AI Interaction. It frames AI as a second reader that can help organize visible context, not as a tool for diagnosing people, reading hidden intentions or manipulating replies.
 
 The case-study layer is explicitly composite and anonymized. It does not describe one real correspondence, does not quote real messages and does not include identifiable names, clients, companies, countries or projects.
+
+The EN version is an editorial adaptation, not a literal translation. It preserves the thesis, composite/anonymized case structure, responsibility framing and concept links while using English rhythm and phrasing.
 
 The public article includes byline, suggested citation and rights notice through the standard article layout. No DOI was added. The original article chronology is now:
 
@@ -130,11 +135,10 @@ English adaptations now public:
 
 - Article 01: `It is not just about the prompt`
 - Article 02: `The model does not remember. It works with context.`
+- Article 03: `AI does not read people. It helps read context.`
 - Note 01: `Fluent does not mean true`
 
-English adaptation draft/TODO:
-
-- Article 03: `AI does not read people. It helps read context.`
+PL/EN publication parity is restored for the current public article and note layer: 3 public PL articles, 3 public EN articles, 1 public PL note and 1 public EN note.
 
 The site remains in pre-launch mode. Noindex and the Vercel X-Robots-Tag remain active. Suggested citation and rights notice remain standard for public articles and notes.
 

@@ -7,6 +7,7 @@ const routes = [
   '/pl/articles/',
   '/articles/it-is-not-just-about-the-prompt/',
   '/articles/the-model-does-not-remember-it-works-with-context/',
+  '/articles/ai-does-not-read-people-it-helps-read-context/',
   '/pl/articles/nie-chodzi-tylko-o-prompt/',
   '/pl/articles/model-nie-pamieta-model-ma-kontekst/',
   '/pl/articles/ai-nie-czyta-ludzi-pomaga-czytac-kontekst/',
