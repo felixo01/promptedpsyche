@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Communication situation map</title>
+  <desc id="desc">A calm editorial diagram mapping a message into facts, hypotheses, missing information, response risk and a clearer reply.</desc>
+  <defs>
+    <pattern id="paper" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#f7f3ea"/>
+      <path d="M0 20L20 0" stroke="#e6ded0" stroke-width="0.45" opacity="0.42"/>
+    </pattern>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10" fill="none" stroke="#22201c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#paper)"/>
+  <circle cx="195" cy="225" r="140" fill="#d7e1dc" opacity="0.62"/>
+  <circle cx="1325" cy="660" r="104" fill="#d7e1dc" opacity="0.58"/>
+  <g opacity="0.32" stroke="#8c9893" fill="none">
+    <circle cx="1325" cy="214" r="62"/>
+    <circle cx="1325" cy="214" r="88"/>
+    <circle cx="1325" cy="214" r="114"/>
+  </g>
+
+  <g fill="#fbfaf6" stroke="#22201c" stroke-width="2">
+    <rect x="605" y="284" width="390" height="220" rx="22"/>
+  </g>
+  <text x="800" y="340" text-anchor="middle" fill="#22201c" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="24" font-weight="700" letter-spacing="5">MESSAGE</text>
+  <g stroke="#536965" stroke-width="2" opacity="0.8">
+    <path d="M690 390 H910"/>
+    <path d="M690 430 H870"/>
+    <path d="M690 470 H930"/>
+  </g>
+
+  <g fill="#fbfaf6" stroke="#22201c" stroke-width="1.8">
+    <circle cx="370" cy="210" r="72"/>
+    <circle cx="370" cy="690" r="72"/>
+    <circle cx="1230" cy="210" r="72"/>
+    <circle cx="1230" cy="690" r="72"/>
+  </g>
+  <g fill="#22201c" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18" font-weight="700" letter-spacing="3">
+    <text x="370" y="206" text-anchor="middle">FACTS</text>
+    <text x="370" y="704" text-anchor="middle">MISSING</text>
+    <text x="1230" y="206" text-anchor="middle">HYPOTHESES</text>
+    <text x="1230" y="704" text-anchor="middle">RISK</text>
+  </g>
+
+  <g fill="none" stroke="#22201c" stroke-width="1.8" marker-end="url(#arrow)">
+    <path d="M605 350 C530 310 470 260 432 225"/>
+    <path d="M620 485 C535 535 470 610 428 662"/>
+    <path d="M995 350 C1072 306 1135 260 1178 226"/>
+    <path d="M980 486 C1065 544 1132 615 1178 662"/>
+  </g>
+  <g stroke="#8c9893" stroke-width="1.4" stroke-dasharray="6 9" fill="none">
+    <path d="M430 210 C635 145 965 145 1170 210"/>
+    <path d="M430 690 C635 764 965 764 1170 690"/>
+    <path d="M370 282 C370 398 370 512 370 618"/>
+    <path d="M1230 282 C1230 398 1230 512 1230 618"/>
+  </g>
+
+  <g fill="#536965">
+    <circle cx="532" cy="311" r="7"/>
+    <circle cx="533" cy="536" r="7"/>
+    <circle cx="1069" cy="310" r="7"/>
+    <circle cx="1069" cy="545" r="7"/>
+  </g>
+
+  <g fill="#fbfaf6" stroke="#536965" stroke-width="2">
+    <rect x="675" y="655" width="250" height="92" rx="18"/>
+  </g>
+  <text x="800" y="704" text-anchor="middle" fill="#536965" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="20" font-weight="700" letter-spacing="4">CLEARER REPLY</text>
+  <path d="M800 505 C800 560 800 605 800 650" fill="none" stroke="#22201c" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g opacity="0.45">
+    <circle cx="142" cy="705" r="3" fill="#22201c"/>
+    <circle cx="172" cy="705" r="3" fill="#22201c"/>
+    <circle cx="202" cy="705" r="3" fill="#22201c"/>
+    <circle cx="142" cy="735" r="3" fill="#22201c"/>
+    <circle cx="172" cy="735" r="3" fill="#22201c"/>
+    <circle cx="202" cy="735" r="3" fill="#22201c"/>
+  </g>
+</svg>
+

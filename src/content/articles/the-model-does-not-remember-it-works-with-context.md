@@ -12,6 +12,9 @@ tags:
   - AI work
 author: "Feliks Mamczur"
 readingTime: "9 min read"
+image: /images/articles/model-context-window-diagram.svg
+imageAlt: "Diagram showing the context window as a bounded set of material the model can use to generate an answer."
+imageCaption: "The model does not work with the whole history of a situation. It works with available context: the prompt, material, constraints and what fits into the interaction."
 lang: "en"
 translationKey: "model-context-not-memory"
 ---
@@ -39,6 +42,18 @@ An answer does not come from the prompt alone. The prompt is the visible entry p
 [Tokens](/concepts/token/) matter here because they are the units through which the model processes text. They affect length, cost, context limits and how much material can realistically be handled in a given interaction. When there is too much material, adding more text is not always a better solution. It can make the situation harder to read.
 
 It helps to think of context as working material, not as unlimited memory. The user decides what to show, what to leave out, what to summarize, what to quote directly and what to mark as important. Those choices shape the [model output](/concepts/model-output/) as much as the question itself.
+
+<aside class="editorial-aside editorial-aside--practice">
+  <p class="editorial-aside__label">In practice</p>
+  <p>Before giving material to the model, name:</p>
+  <ul>
+    <li>goal</li>
+    <li>material</li>
+    <li>constraints</li>
+    <li>criteria</li>
+    <li>what needs checking</li>
+  </ul>
+</aside>
 
 In organizations, this layer matters even more. A model may receive part of a brief but not the history of a client relationship. It may see a table but not the reason the data is incomplete. It may receive a task description without the social context between teams. The answer can sound coherent while resting on a thin picture of the situation.
 

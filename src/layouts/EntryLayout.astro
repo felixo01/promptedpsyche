@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import RightsNotice from '../components/RightsNotice.astro';
 import SuggestedCitation from '../components/SuggestedCitation.astro';
+import TagList from '../components/TagList.astro';
 import { formatDate } from '../lib/content';
 import type { AlternateLinks, Locale } from '../lib/i18n';
 import { site } from '../lib/site';
@@ -49,7 +50,6 @@ const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();
 const heroImage = !isConceptEntry ? entry.data.image : undefined;
 const heroImageAlt = entry.data.imageAlt ?? entry.data.title;
 const heroImageCaption = entry.data.imageCaption;
-// Entry tags are informational unless a listing page implements filtering.
 const asideLabels = isConceptEntry
   ? lang === 'pl'
     ? {
@@ -127,13 +127,13 @@ const asideLabels = isConceptEntry
             <span>{readingTime}</span>
           </div>
         )}
-        {tags.length > 0 && (
-          <ul class="tag-list content-tags" aria-label="Topics">
-            {tags.map((tag) => (
-              <li data-qa="concept-tag">{tag}</li>
-            ))}
-          </ul>
-        )}
+        <TagList
+          tags={tags}
+          lang={lang}
+          linked={!isConceptEntry}
+          className="content-tags"
+          dataQa={isConceptEntry ? 'concept-tag' : 'publication-tag'}
+        />
       </div>
     </header>
 

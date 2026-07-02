@@ -1,7 +1,7 @@
 ---
 title: "Do not diagnose people from emails"
 description: "AI can help organize difficult communication, but it should not be used to diagnose people, personalities or intentions from correspondence."
-publishedAt: 2026-07-02
+publishedAt: 2026-06-30
 draft: false
 tags:
   - communication

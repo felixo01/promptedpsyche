@@ -33,3 +33,11 @@ EN labels:
 ## Editorial Rule
 
 Prompt boxes show better questions, not magic formulas. They should make the reader more careful, not more mechanical.
+
+## Asides vs prompt boxes
+
+Editorial asides are for ordinary examples, boundaries, short practical checks and explanatory pauses.
+
+Prompt boxes are only for copyable AI questions or instructions.
+
+Use both sparingly. The site should not become a prompt library.

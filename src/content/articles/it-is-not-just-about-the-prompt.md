@@ -62,7 +62,15 @@ In teams, this load becomes social. If people do not share rules for marking AI-
 
 Working with AI is not only about what we ask the system. Sometimes the more important question is what we ask ourselves before using the answer.
 
-What am I trying to achieve? What do I not know? What might the model have missed? Why do I trust this answer? What should I check outside the model? Is this a draft, a summary, an argument, a translation, a hypothesis or a recommendation? What happens if it enters a document, a presentation or a client conversation?
+<aside class="editorial-aside editorial-aside--pause">
+  <p class="editorial-aside__label">Pause</p>
+  <ul>
+    <li>What am I trying to achieve?</li>
+    <li>What does the model not know?</li>
+    <li>What do I need to check outside the conversation?</li>
+    <li>Who is responsible for using this answer?</li>
+  </ul>
+</aside>
 
 These are metacognitive questions. [Metacognition](/concepts/metacognition/) means monitoring and regulating one's own thinking: what I know, what I do not know, how confident I am and when I should pause. In AI use, this matters because the model often gives us text that already looks ready.
 

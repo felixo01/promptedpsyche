@@ -1,7 +1,7 @@
 ---
 title: "Model widzi tekst, a nie całą relację"
 description: "AI może pomóc analizować komunikację, ale widzi tylko tekst i kontekst, który mu podamy. Nie zna całej historii relacji ani intencji ludzi."
-publishedAt: 2026-07-02
+publishedAt: 2026-06-26
 draft: false
 tags:
   - komunikacja

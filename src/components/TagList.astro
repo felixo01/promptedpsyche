@@ -1,0 +1,42 @@
+---
+import type { Locale } from '../lib/i18n';
+import { getTagPath } from '../lib/tags';
+
+interface Props {
+  tags?: string[];
+  lang?: Locale;
+  linked?: boolean;
+  className?: string;
+  dataQa?: string;
+  ariaLabel?: string;
+}
+
+const {
+  tags = [],
+  lang = 'en',
+  linked = true,
+  className,
+  dataQa,
+  ariaLabel = 'Topics'
+} = Astro.props;
+const tagLinkLabel = lang === 'pl' ? 'Publikacje oznaczone tagiem' : 'Publications tagged with';
+---
+
+{
+  tags.length > 0 && (
+    <ul class:list={['tag-list', className]} aria-label={ariaLabel}>
+      {tags.map((tag) => (
+        <li data-qa={dataQa}>
+          {linked ? (
+            <a href={getTagPath(tag, lang)} aria-label={`${tagLinkLabel}: ${tag}`}>
+              {tag}
+            </a>
+          ) : (
+            <span>{tag}</span>
+          )}
+        </li>
+      ))}
+    </ul>
+  )
+}
+

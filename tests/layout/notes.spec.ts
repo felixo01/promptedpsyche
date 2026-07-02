@@ -99,6 +99,11 @@ test.describe('published notes', () => {
       await expect(ctaLink).toContainText('Read note');
       await expect(ctaLink.locator('span[aria-hidden="true"]')).toHaveText('->');
     }
+
+    const dates = await page.locator('.entry-list time').evaluateAll((items) =>
+      items.map((item) => item.getAttribute('datetime'))
+    );
+    expect(new Set(dates).size).toBe(notePairs.length);
   });
 
   test('shows public Polish notes on the Polish notes index', async ({ page }) => {
@@ -119,6 +124,23 @@ test.describe('published notes', () => {
       await expect(ctaLink).toHaveAttribute('href', note.plRoute);
       await expect(ctaLink).toContainText('Czytaj notatkę');
       await expect(ctaLink.locator('span[aria-hidden="true"]')).toHaveText('->');
+    }
+
+    const dates = await page.locator('.entry-list time').evaluateAll((items) =>
+      items.map((item) => item.getAttribute('datetime'))
+    );
+    expect(new Set(dates).size).toBe(notePairs.length);
+  });
+
+  test('keeps matching publication dates for note counterparts', async ({ page }) => {
+    for (const note of notePairs) {
+      await page.goto(note.enRoute);
+      const enDate = await page.locator('[data-qa="article-byline"] time').getAttribute('datetime');
+
+      await page.goto(note.plRoute);
+      const plDate = await page.locator('[data-qa="article-byline"] time').getAttribute('datetime');
+
+      expect(enDate).toBe(plDate);
     }
   });
 

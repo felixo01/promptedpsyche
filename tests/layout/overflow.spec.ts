@@ -27,6 +27,8 @@ const routes = [
   '/pl/concepts/epistemic-vigilance/',
   '/concepts/context-window/',
   '/pl/concepts/context-window/',
+  '/tags/ai-literacy/',
+  '/pl/tags/ai-literacy/',
   '/about/',
   '/pl/about/',
   '/contact/',

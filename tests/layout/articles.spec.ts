@@ -185,6 +185,7 @@ test.describe('published articles', () => {
     await expect(page.locator('.article-hero-figure figcaption')).toContainText(
       'A prompt is only one point'
     );
+    await expect(page.locator('.editorial-aside')).toContainText('Pause');
     await expect(page.locator('body')).not.toContainText(/PRZYGOTOWANE POD/i);
     await expect(page.locator('[data-qa="article-aside-label"]')).toHaveText('In this article');
 
@@ -221,6 +222,7 @@ test.describe('published articles', () => {
     await expect(page.locator('.article-hero-figure figcaption')).toContainText(
       'Prompt jest tylko jednym punktem'
     );
+    await expect(page.locator('.editorial-aside')).toContainText('Zatrzymaj się');
     await expect(page.locator('body')).not.toContainText(/PRZYGOTOWANE POD/i);
     await expect(page.locator('[data-qa="article-aside-label"]')).toHaveText('W tekście');
 
@@ -246,6 +248,14 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'Wszystkie prawa zastrzeżone'
     );
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+      'src',
+      '/images/articles/model-context-window-diagram.svg'
+    );
+    await expect(page.locator('.article-hero-figure figcaption')).toContainText(
+      'dostępnym kontekście'
+    );
+    await expect(page.locator('.editorial-aside')).toContainText('W praktyce');
 
     const conceptLinks = page.locator('.prose a[href^="/pl/concepts/"]');
     await expect(conceptLinks).toHaveCount(10);
@@ -275,6 +285,14 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'Wszystkie prawa zastrzeżone'
     );
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+      'src',
+      '/images/articles/communication-situation-map.svg'
+    );
+    await expect(page.locator('.article-hero-figure figcaption')).toContainText(
+      'fakty, hipotezy'
+    );
+    await expect(page.locator('.editorial-aside')).toContainText('Granica');
 
     const conceptLinks = page.locator('.prose a[href^="/pl/concepts/"]');
     await expect(conceptLinks).toHaveCount(10);
@@ -345,6 +363,14 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'All rights reserved'
     );
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+      'src',
+      '/images/articles/communication-situation-map.svg'
+    );
+    await expect(page.locator('.article-hero-figure figcaption')).toContainText(
+      'facts, hypotheses'
+    );
+    await expect(page.locator('.editorial-aside')).toContainText('Boundary');
 
     const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
     await expect(conceptLinks).toHaveCount(10);
@@ -410,6 +436,14 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'All rights reserved'
     );
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+      'src',
+      '/images/articles/model-context-window-diagram.svg'
+    );
+    await expect(page.locator('.article-hero-figure figcaption')).toContainText(
+      'available context'
+    );
+    await expect(page.locator('.editorial-aside')).toContainText('In practice');
 
     const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
     await expect(conceptLinks).toHaveCount(10);

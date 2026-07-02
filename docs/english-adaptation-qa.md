@@ -27,3 +27,5 @@ Use this checklist before publishing English versions of Polish articles or note
 - EN language is adaptation, not direct translation.
 - Concept links in EN entries point to EN Concepts.
 - EN/PL parity was checked for article and note indexes.
+- PL/EN article and note parity was checked after the publication consistency pass.
+- Tag pages were checked for language separation.

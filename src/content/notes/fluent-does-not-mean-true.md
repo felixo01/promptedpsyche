@@ -1,7 +1,7 @@
 ---
 title: "Fluent does not mean true"
 description: "A short note on why a smooth and convincing AI answer should not automatically earn trust."
-publishedAt: 2026-07-02
+publishedAt: 2026-06-24
 draft: false
 tags:
   - trust

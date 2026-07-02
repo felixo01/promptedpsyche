@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { formatDate } from '../../../lib/content';
+import { getTagPages } from '../../../lib/tagPages';
+
+export async function getStaticPaths() {
+  const plPages = await getTagPages('pl');
+  const enSlugs = new Set((await getTagPages('en')).map((page) => page.slug));
+
+  return plPages.map((page) => ({
+    params: { slug: page.slug },
+    props: {
+      ...page,
+      alternateLinks: {
+        en: enSlugs.has(page.slug) ? `/tags/${page.slug}/` : '/articles/',
+        pl: `/pl/tags/${page.slug}/`,
+        xDefault: enSlugs.has(page.slug) ? `/tags/${page.slug}/` : '/articles/'
+      }
+    }
+  }));
+}
+
+const { tag, items, alternateLinks } = Astro.props;
+---
+
+<BaseLayout
+  lang="pl"
+  title={`Tag: ${tag}`}
+  description={`Publikacje oznaczone tagiem ${tag}.`}
+  alternateLinks={alternateLinks}
+>
+  <section class="page-shell tag-archive">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Archiwum tagu</p>
+        <h1>#{tag}</h1>
+      </div>
+      <p>Publikacje oznaczone tagiem {tag}.</p>
+    </header>
+
+    <div class="tag-archive-list">
+      {items.map((item) => (
+        <article class="entry-item entry-item--actionable" data-publication-type={item.collection}>
+          <div class="entry-meta">
+            <span>{item.kindLabel}</span>
+            <time datetime={item.entry.data.publishedAt.toISOString()}>
+              {formatDate(item.entry.data.publishedAt, 'pl')}
+            </time>
+          </div>
+          <div class="entry-body">
+            <h2>
+              <a class="entry-title-link" href={item.href}>{item.entry.data.title}</a>
+            </h2>
+            <p>{item.entry.data.description}</p>
+            <a class="entry-cta" href={item.href} aria-label={`Czytaj: ${item.entry.data.title}`}>
+              <span>Czytaj</span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <p class="tag-archive-back">
+      <a href="/pl/articles/">Wróć do publikacji</a>
+    </p>
+  </section>
+</BaseLayout>

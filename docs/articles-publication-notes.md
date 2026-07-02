@@ -136,6 +136,18 @@ The fourth note title was changed from `Dobre streszczenie nie jest dobrą decyz
 
 The EN versions are adaptations, not literal translations. No DOI was added. Pre-launch safety remains unchanged: `noindex`, Vercel `X-Robots-Tag` and draft filtering stay active.
 
+## Publication consistency pass
+
+All public articles now follow a shared article standard: title, description, date, reading time, tags, hero graphic, byline, suggested citation, rights notice and language alternates where a counterpart exists.
+
+All public articles have consistent hero graphics. Article graphics are original editorial diagrams stored in `public/images/articles/`, not stock images or AI cliché visuals.
+
+Notes remain lighter than articles. They keep title, description, date, tags, byline, suggested citation and rights notice through the standard entry layout, but they do not use hero graphics by default.
+
+Prompt examples use copyable boxes only where a concrete AI question or instruction clarifies the argument. Editorial asides are used for ordinary examples, boundaries and practical checks.
+
+Visible publication tags are clickable and lead to tag archive pages. PL tag pages live under `/pl/tags/[slug]/`; EN tag pages live under `/tags/[slug]/`. Draft content is excluded from tag archives, and PL/EN publication parity was checked.
+
 ## Prompt examples
 
 Prompt examples now use copyable multi-line boxes where a concrete question to AI clarifies the argument. They should remain sparse and support the editorial line, not turn articles or notes into prompt libraries.

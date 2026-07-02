@@ -1,7 +1,7 @@
 ---
 title: "The model sees text, not the whole relationship"
 description: "AI can help analyze communication, but it only sees the text and context we provide. It does not know the whole relationship or people's intentions."
-publishedAt: 2026-07-02
+publishedAt: 2026-06-26
 draft: false
 tags:
   - communication

@@ -1,7 +1,7 @@
 ---
 title: "Nie diagnozuj ludzi z maili"
 description: "AI może pomóc uporządkować trudną komunikację, ale nie powinna służyć do diagnozowania ludzi, ich osobowości ani intencji na podstawie korespondencji."
-publishedAt: 2026-07-02
+publishedAt: 2026-06-30
 draft: false
 tags:
   - komunikacja

@@ -25,6 +25,10 @@ Grafiki artykułowe mają wyjaśniać relacje między człowiekiem, AI, poznanie
 - małe podpisy tylko wtedy, gdy są czytelne
 - grafika ma wspierać artykuł, nie zastępować tekstu
 - preferowane pojęcia: context, attention, trust, verification, cognitive load, responsibility, output, prompt
+- każdy publiczny artykuł powinien mieć hero graphic albo cały system artykułów powinien świadomie nie mieć grafik
+- obecny standard: publiczne artykuły używają spokojnych diagramów editorialnych
+- diagramy powinny być możliwie neutralne językowo, aby działały w PL i EN
+- notatki domyślnie nie potrzebują grafik
 
 ## Format
 

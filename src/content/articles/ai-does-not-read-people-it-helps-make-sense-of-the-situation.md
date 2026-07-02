@@ -12,6 +12,9 @@ tags:
   - AI work
 author: "Feliks Mamczur"
 readingTime: "15 min read"
+image: /images/articles/communication-situation-map.svg
+imageAlt: "Diagram mapping a difficult message into facts, hypotheses, missing information, response risk and a clearer reply."
+imageCaption: "In difficult communication, AI can help organize layers of the situation: facts, hypotheses, missing information and response risk."
 lang: "en"
 translationKey: "ai-context-communication"
 ---
@@ -176,7 +179,15 @@ AI can help organize communication, but it does not carry responsibility for the
 
 It is also part of [AI literacy](/concepts/ai-literacy/). Competence with AI is not only the ability to generate quick responses. It also means understanding when a model answer is help, when it is a hypothesis, when it is a draft and when it is an overly confident narrative that should not be mistaken for truth.
 
-In practice, this creates boundaries. Do not use AI to diagnose people from emails. Do not ask the model to tell you who is manipulating whom. Do not treat a fluent interpretation as evidence. Do not send a reply only because it sounds professional. Return to the text, the facts, the missing information and your own responsibility.
+<aside class="editorial-aside editorial-aside--boundary">
+  <p class="editorial-aside__label">Boundary</p>
+  <ul>
+    <li>Do not use AI to diagnose people from emails.</li>
+    <li>Separate facts from hypotheses and possible readings.</li>
+    <li>Do not treat a fluent interpretation as evidence.</li>
+    <li>Keep the decision and responsibility with the human.</li>
+  </ul>
+</aside>
 
 AI does not read people. It reads text and works with the context we give it. Its greatest value in difficult communication is not that it can tell us what someone "really" thinks. It is that it can help us make sense of the situation and see what we have not yet named.
 

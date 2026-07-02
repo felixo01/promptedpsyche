@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro';
+import TagList from './TagList.astro';
 import { formatDate } from '../lib/content';
 import type { Locale } from '../lib/i18n';
 
@@ -77,13 +78,7 @@ const {
                   <span aria-hidden="true">-&gt;</span>
                 </a>
               )}
-              {tags.length > 0 && (
-                <ul class="tag-list" aria-label="Topics">
-                  {tags.map((tag) => (
-                    <li>{tag}</li>
-                  ))}
-                </ul>
-              )}
+              <TagList tags={tags} lang={dateLocale} dataQa="publication-tag" />
             </div>
           </article>
         );

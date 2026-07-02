@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate } from '../../lib/content';
+import { getTagPages } from '../../lib/tagPages';
+
+export async function getStaticPaths() {
+  const enPages = await getTagPages('en');
+  const plSlugs = new Set((await getTagPages('pl')).map((page) => page.slug));
+
+  return enPages.map((page) => ({
+    params: { slug: page.slug },
+    props: {
+      ...page,
+      alternateLinks: {
+        en: `/tags/${page.slug}/`,
+        pl: plSlugs.has(page.slug) ? `/pl/tags/${page.slug}/` : '/pl/articles/',
+        xDefault: `/tags/${page.slug}/`
+      }
+    }
+  }));
+}
+
+const { tag, items, alternateLinks } = Astro.props;
+---
+
+<BaseLayout
+  title={`Tag: ${tag}`}
+  description={`Publications tagged with ${tag}.`}
+  alternateLinks={alternateLinks}
+>
+  <section class="page-shell tag-archive">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Tag archive</p>
+        <h1>#{tag}</h1>
+      </div>
+      <p>Publications tagged with {tag}.</p>
+    </header>
+
+    <div class="tag-archive-list">
+      {items.map((item) => (
+        <article class="entry-item entry-item--actionable" data-publication-type={item.collection}>
+          <div class="entry-meta">
+            <span>{item.kindLabel}</span>
+            <time datetime={item.entry.data.publishedAt.toISOString()}>
+              {formatDate(item.entry.data.publishedAt, 'en')}
+            </time>
+          </div>
+          <div class="entry-body">
+            <h2>
+              <a class="entry-title-link" href={item.href}>{item.entry.data.title}</a>
+            </h2>
+            <p>{item.entry.data.description}</p>
+            <a class="entry-cta" href={item.href} aria-label={`Read: ${item.entry.data.title}`}>
+              <span>Read</span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <p class="tag-archive-back">
+      <a href="/articles/">Back to publications</a>
+    </p>
+  </section>
+</BaseLayout>

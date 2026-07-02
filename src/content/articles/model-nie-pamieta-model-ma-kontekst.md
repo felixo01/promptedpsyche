@@ -12,6 +12,9 @@ tags:
   - praca z AI
 author: "Feliks Mamczur"
 readingTime: "9 min czytania"
+image: /images/articles/model-context-window-diagram.svg
+imageAlt: "Diagram pokazujący okno kontekstu jako ograniczony zakres materiału, który model może wykorzystać do wygenerowania odpowiedzi."
+imageCaption: "Model nie pracuje na całej historii sytuacji. Pracuje na dostępnym kontekście: poleceniu, materiale, ograniczeniach i tym, co mieści się w danej interakcji."
 lang: "pl"
 translationKey: "model-context-not-memory"
 ---
@@ -41,6 +44,18 @@ Odpowiedź modelu nie bierze się z samego promptu. Prompt jest widocznym punkte
 Znaczenie mają też [tokeny](/pl/concepts/token/), czyli jednostki, na których model przetwarza tekst. Tokeny wpływają na długość wejścia, koszt, limit kontekstu i to, ile informacji da się realnie utrzymać w danej interakcji. Gdy tekstu jest dużo, samo dorzucanie kolejnych fragmentów nie rozwiązuje problemu. Może go nawet pogłębić.
 
 Warto więc myśleć o kontekście jak o materiale roboczym, nie jak o nieograniczonej pamięci. Użytkownik decyduje, co pokazuje modelowi, co pomija, co streszcza, co cytuje dosłownie i co przedstawia jako ważne. Te decyzje wpływają na odpowiedź tak samo realnie jak samo pytanie.
+
+<aside class="editorial-aside editorial-aside--practice">
+  <p class="editorial-aside__label">W praktyce</p>
+  <p>Przed przekazaniem materiału modelowi warto nazwać:</p>
+  <ul>
+    <li>cel</li>
+    <li>materiał</li>
+    <li>ograniczenia</li>
+    <li>kryteria</li>
+    <li>co trzeba sprawdzić</li>
+  </ul>
+</aside>
 
 W organizacjach ta warstwa jest szczególnie istotna. Model może dostać fragment briefu, ale nie dostać historii klienta. Może zobaczyć tabelę, ale nie znać powodów, dla których dane są niepełne. Może otrzymać opis zadania, ale nie rozumieć relacji między zespołami. Wtedy odpowiedź może brzmieć sensownie, a jednocześnie opierać się na zbyt ubogim obrazie sytuacji.
 

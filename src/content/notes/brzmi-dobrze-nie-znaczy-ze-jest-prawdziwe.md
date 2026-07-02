@@ -1,7 +1,7 @@
 ---
 title: "Brzmi dobrze, ale to nie znaczy, że jest prawdziwe"
 description: "Krótka notatka o tym, dlaczego płynna i przekonująca odpowiedź AI nie powinna automatycznie budzić zaufania."
-publishedAt: 2026-07-02
+publishedAt: 2026-06-24
 draft: false
 tags:
   - zaufanie

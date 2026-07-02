@@ -68,7 +68,15 @@ W środowisku pracy obciążenie poznawcze ma też wymiar zespołowy. Jeśli ka�
 
 W pracy z AI łatwo skupiać się na tym, co wpisać do systemu. Czasem ważniejsze jest jednak to, co użytkownik powinien zapytać sam siebie przed użyciem odpowiedzi.
 
-Co właściwie chcę uzyskać? Czego nie wiem? Co model może pominąć? Na czym opieram zaufanie? Co muszę sprawdzić poza modelem? Czy proszę o szkic, argument, interpretację, decyzję, czy tylko o wariant językowy? Co stanie się z tą odpowiedzią, jeśli trafi do maila, prezentacji, dokumentu albo rozmowy z klientem?
+<aside class="editorial-aside editorial-aside--pause">
+  <p class="editorial-aside__label">Zatrzymaj się</p>
+  <ul>
+    <li>Co właściwie chcę uzyskać?</li>
+    <li>Czego model nie wie?</li>
+    <li>Co muszę sprawdzić poza rozmową?</li>
+    <li>Kto bierze odpowiedzialność za użycie tej odpowiedzi?</li>
+  </ul>
+</aside>
 
 To są pytania metapoznawcze. [Metacognition](/pl/concepts/metacognition/) oznacza myślenie o własnym myśleniu: monitorowanie tego, co wiem, czego nie wiem, kiedy jestem pewny i kiedy powinienem zatrzymać się przed przyjęciem odpowiedzi. W kontekście AI metapoznanie jest jedną z najważniejszych warstw kompetencji, bo model często dostarcza tekst w formie, która wygląda na gotową.
 

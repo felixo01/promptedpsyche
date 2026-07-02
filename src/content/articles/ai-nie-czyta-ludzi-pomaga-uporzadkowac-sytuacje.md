@@ -12,6 +12,9 @@ tags:
   - praca z AI
 author: "Feliks Mamczur"
 readingTime: "16 min czytania"
+image: /images/articles/communication-situation-map.svg
+imageAlt: "Diagram pokazujący mapowanie trudnej wiadomości na fakty, hipotezy, brakujące informacje, ryzyko odpowiedzi i jaśniejszą odpowiedź."
+imageCaption: "W trudnej komunikacji AI może pomóc uporządkować warstwy sytuacji: fakty, hipotezy, braki informacji i ryzyko odpowiedzi."
 lang: "pl"
 translationKey: "ai-context-communication"
 ---
@@ -168,7 +171,15 @@ AI może pomóc uporządkować komunikację, ale nie ponosi odpowiedzialności z
 
 To także ważny element [AI literacy](/pl/concepts/ai-literacy/). Kompetencja pracy z AI nie polega tylko na szybkim generowaniu odpowiedzi. Polega też na rozumieniu, kiedy odpowiedź modelu jest pomocą, kiedy hipotezą, kiedy szkicem, a kiedy zbyt pewną narracją, której nie wolno pomylić z prawdą.
 
-W praktyce oznacza to kilka granic. Nie warto używać AI do diagnozowania ludzi na podstawie maili. Nie warto prosić modelu, żeby powiedział, kto manipuluje. Nie warto traktować płynnej interpretacji jako dowodu. Nie warto wysyłać odpowiedzi tylko dlatego, że brzmi profesjonalnie. Trzeba wrócić do tekstu, do faktów, do brakujących informacji i do własnej odpowiedzialności.
+<aside class="editorial-aside editorial-aside--boundary">
+  <p class="editorial-aside__label">Granica</p>
+  <ul>
+    <li>Nie używaj AI do diagnozowania ludzi na podstawie maili.</li>
+    <li>Oddziel fakty od hipotez i możliwych interpretacji.</li>
+    <li>Nie traktuj płynnej interpretacji jako dowodu.</li>
+    <li>Decyzję i odpowiedzialność zostaw po stronie człowieka.</li>
+  </ul>
+</aside>
 
 AI nie czyta ludzi. Czyta tekst i pracuje na kontekście, który mu podamy. Dlatego jego największa wartość w trudnej komunikacji nie polega na tym, że powie nam, co ktoś "naprawdę" myśli. Polega na tym, że może pomóc uporządkować sytuację i zobaczyć, czego sami jeszcze nie nazwaliśmy.
 
