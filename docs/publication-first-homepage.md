@@ -76,6 +76,8 @@ Cognitive psychology is used as a perspective and vocabulary. It is not presente
 
 The author pages now use a tighter two-column hero with `W skrócie` on `/pl/about/` and `In brief` on `/about/`. Section spacing is reduced only on the author pages, while the homepage remains publication-first.
 
+Author framing was updated from defensive "not an academic institute" language to positive "independent research-informed publication project" language. Public copy should not claim formal institutional status, but it should leave room for future academic credibility and source-based authority.
+
 ## Polish Author Copy
 
 The Polish `Kim jestem` page was edited for a more natural public voice. Its communication experience section avoids defensive or stiff phrasing and presents film experience as part of a broader way of looking at communication, attention, image and emotion.
