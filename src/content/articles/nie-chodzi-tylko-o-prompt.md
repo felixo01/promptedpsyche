@@ -1,148 +1,114 @@
 ---
 title: "Nie chodzi tylko o prompt"
-description: "Kompetencje pracy z AI nie kończą się na dobrym poleceniu. Kluczowe jest to, co dzieje się z odpowiedzią, gdy trafia do dokumentu, rekomendacji, decyzji albo pracy zespołu."
-publishedAt: 2026-06-28
-draft: true
+description: "Prompt jest tylko widoczną częścią pracy z AI. Dojrzała kompetencja wymaga rozumienia kontekstu, ograniczeń modelu, własnego obciążenia poznawczego, zaufania i weryfikacji."
+publishedAt: 2026-07-02
+draft: false
 tags:
   - AI literacy
   - Human-AI Interaction
+  - poznanie
   - zaufanie
-  - praca
-  - cyberpsychologia
+  - praca z AI
 author: "Feliks Mamczur"
-readingTime: "8 min czytania"
+readingTime: "10 min czytania"
 lang: "pl"
 translationKey: "ai-literacy-after-the-prompt"
 ---
 
-Najłatwiej sprowadzić pracę z AI do promptów. Prompt jest widoczny. Można go zapisać, poprawić, porównać, wkleić do prezentacji albo zamienić w listę kontrolną. Daje poczucie, że problem został uchwycony: jeśli precyzyjniej zapytamy, dostaniemy lepszą odpowiedź.
+Publiczna rozmowa o AI zbyt często zatrzymuje się na promptach. Uczymy się, jak lepiej sformułować polecenie, jak dopisać rolę, jak określić format odpowiedzi, jak wymusić styl albo strukturę. To zrozumiałe. Prompt jest widoczny. Można go zapisać, poprawić, porównać i przekazać dalej jako prostą instrukcję.
 
-To nie jest błędne. Dobrze sformułowane polecenie naprawdę pomaga. Porządkuje intencję, zmusza do opisania kontekstu, pozwala określić format i oczekiwany poziom szczegółowości. W wielu sytuacjach różnica między niejasnym a dobrym promptem jest natychmiast widoczna.
+Nie chcę udawać, że prompt nie ma znaczenia. Ma. Dobre pytanie potrafi uporządkować intencję, skrócić drogę do sensownej odpowiedzi i zmusić użytkownika do nazwania celu. Problem zaczyna się wtedy, gdy prompt staje się całą definicją kompetencji pracy z AI.
 
-Ale prompt jest tylko wygodnym fragmentem większej całości. Ważniejszy moment pojawia się później: kiedy odpowiedź wychodzi poza okno czatu i trafia do maila, raportu, notatki, prezentacji, rekomendacji albo pracy zespołu. Wtedy przestaje być tylko „wynikiem z AI”. Zaczyna działać wśród ludzi: ktoś ją czyta, podpisuje, przesyła dalej, opiera na niej decyzję albo traktuje jako punkt odniesienia.
+Bo praca z AI nie kończy się w chwili, gdy model zwraca odpowiedź. W wielu sytuacjach zaczyna się dopiero wtedy. Trzeba zrozumieć, co właściwie dostaliśmy, co zostało pominięte, czy odpowiedź ma podstawy, czy pasuje do celu i kto bierze odpowiedzialność za jej użycie.
 
-Dopóki odpowiedź zostaje w czacie, łatwo traktować ją jako próbę, wariant, szkic. Problem zaczyna się wtedy, gdy trafia do dokumentu albo do rozmowy z innymi ludźmi. Zmienia wtedy charakter. Nie wygląda już jak odpowiedź systemu, lecz jak czyjaś myśl, czyjś tekst, czyjś argument. W tym przejściu od tekstu wygenerowanego do tekstu użytego zaczyna się odpowiedzialność człowieka.
+Nie chodzi więc tylko o prompt. Prompt jest ważny, ale jest jedynie powierzchnią głębszej relacji: człowiek - model - kontekst - decyzja - odpowiedzialność. W tej relacji pojawiają się pytania o poznanie, zaufanie, interpretację, granice narzędzia i sposób, w jaki człowiek pracuje z własną pewnością.
 
-Właśnie dlatego rozmowa o kompetencjach pracy z AI nie powinna kończyć się na pytaniu, jak lepiej formułować polecenia. Istotniejsze jest to, jaką rolę nadajemy odpowiedzi, gdy już się pojawi.
+To szczególnie ważne w organizacjach, gdzie odpowiedź modelu rzadko zostaje prywatną notatką jednej osoby. Często trafia do obiegu: do dokumentu, prezentacji, briefu, rekomendacji, wiadomości do klienta albo roboczej decyzji zespołu. Wtedy nie wystarczy pytanie, czy prompt był dobry. Trzeba zapytać, czy wynik został właściwie zrozumiany, sprawdzony i oznaczony jako szkic, pomoc, argument albo materiał do dalszej pracy.
 
-## Prompt jest widoczny
+## Prompt jest interfejsem, nie kompetencją
 
-Prompt łatwo zamienić w temat szkolenia. Można pokazać przykład, poprawić go na żywo, porównać dwa wyniki i zbudować wokół tego prostą metodę. To porządkuje pierwszą warstwę pracy z modelem, ale może też zawężać wyobrażenie o tym, czym właściwie jest korzystanie z AI.
+Prompt jest sposobem wejścia w interakcję z modelem. To punkt kontaktu między intencją człowieka a systemem, który przetwarza język. Dobrze napisane polecenie może zawierać cel, kontekst, ograniczenia, odbiorcę i oczekiwany format odpowiedzi. Może też ujawnić, czy użytkownik sam rozumie, czego szuka.
 
-Bo samo polecenie nie mówi jeszcze, czy odpowiedź jest wiarygodna. Nie mówi, czy wprowadzone dane mogły trafić do narzędzia. Nie rozstrzyga, czy otrzymany tekst jest tylko szkicem, czy materiałem nadającym się do wysłania. Nie wyjaśnia, kto odpowiada za końcowy kształt dokumentu.
+Ale prompt nie gwarantuje jakości odpowiedzi. To, co model zwróci, zależy także od dostępnego kontekstu, jakości danych wejściowych, sposobu sformułowania zadania, ograniczeń systemu i dalszej interpretacji użytkownika. Samo zdanie wpisane w okno czatu nie rozwiązuje problemu oceny, zaufania ani odpowiedzialności.
 
-To, co technicznie wygląda jak rozmowa z modelem, bywa początkiem łańcucha decyzji. Człowiek pyta, system odpowiada, ktoś redaguje, ktoś akceptuje, ktoś przekazuje dalej. Im bardziej odpowiedź wygląda na gotową, tym łatwiej zapomnieć, że nadal trzeba ją osadzić: w źródłach, w celu, dla którego ma zostać użyta, i w odpowiedzialności osoby, która puszcza ją dalej.
+Warto pamiętać, że modele językowe pracują na jednostkach tekstu, które w uproszczeniu nazywamy [tokenami](/pl/concepts/token/). Token nie jest magicznym składnikiem inteligencji. Jest techniczną jednostką przetwarzania, która wpływa na długość wejścia, koszt, limit kontekstu i to, jak użytkownik myśli o "pamięci" modelu.
 
-## Kiedy odpowiedź trafia do obiegu
+Podobnie ważne jest [context window](/pl/concepts/context-window/), czyli limit informacji, który model może uwzględnić w danej interakcji. Jeśli w tym oknie nie ma potrzebnych danych, relacji, ograniczeń albo wcześniejszych ustaleń, model nie będzie ich stabilnie brał pod uwagę. Lepszy prompt pomaga, ale nie zastępuje zbudowania sensownego kontekstu.
 
-Odpowiedź modelu jest trudniejsza do oceny niż prompt, bo często przychodzi już w formie gotowej do użycia. Ma strukturę, płynność i ton profesjonalnej wypowiedzi. Nie sprawia wrażenia hipotezy. Przypomina raczej fragment dokumentu, który czeka na lekką redakcję.
+Dlatego kompetencja pracy z AI nie polega wyłącznie na formułowaniu poleceń. Polega także na przygotowaniu sytuacji, w której odpowiedź może być użyteczna, oraz na rozpoznaniu, kiedy użyteczna przestaje znaczyć wystarczająco dobra.
 
-To przesuwa uwagę. Zamiast pytać, czy model ma rację, zaczynamy poprawiać styl. Zamiast wracać do źródeł, skracamy akapit. Zamiast sprawdzać, czy wniosek jest uzasadniony, dopasowujemy ton do odbiorcy. Odpowiedź powoli traci charakter propozycji i staje się materiałem roboczym o niejasnym pochodzeniu.
+Prompt można łatwo skopiować. Kompetencji nie da się skopiować tak samo prosto. Dwie osoby mogą użyć podobnego polecenia, ale inaczej ocenić wynik, inaczej zauważyć brakujące założenia i inaczej zdecydować, co wolno z nim zrobić. Właśnie w tej różnicy zaczyna się dojrzała praca z AI.
 
-Profesjonalny język może w tym pomagać. Psychologia opisuje zjawiska związane z łatwością przetwarzania informacji: treści płynne, znajome i dobrze podane mogą wydawać się bardziej wiarygodne. To nie jest dowód specyficzny dla każdego użycia AI, ale ważne tło dla pracy z modelami językowymi. Ich odpowiedzi często nie stawiają oporu. Są składne, szybkie i wystarczająco podobne do tekstu, który mógłby napisać człowiek.
+## Model nie wie, czego nie powiedziałeś
 
-Model nie musi wprowadzać nikogo w błąd intencjonalnie, żeby użytkownik przestał sprawdzać. Wystarczy, że odpowiedź pojawia się w formie, która dobrze pasuje do naszych oczekiwań.
+To zdanie jest skrótem myślowym. Model nie "wie" w ludzkim sensie. Generuje odpowiedź na podstawie dostępnego wejścia, wzorców językowych i aktualnego kontekstu. Jeśli użytkownik nie poda istotnych informacji, model może odpowiedzieć płynnie, ale nadal poza właściwą sytuacją.
 
-## Czym właściwie jest ta odpowiedź
+W praktyce często zakładamy, że system rozumie więcej, niż dostał. Wpisujemy krótkie polecenie i oczekujemy, że model domyśli się kontekstu organizacyjnego, tonu relacji, ograniczeń prawnych, historii projektu albo tego, czego nie wolno powiedzieć odbiorcy. Czasem wynik wygląda tak, jakby system naprawdę uchwycił sytuację. To bywa złudne.
 
-Jedną z kluczowych umiejętności w pracy z AI jest rozpoznanie, czym właściwie jest otrzymany wynik. Czy to inspiracja, szkic, streszczenie, hipoteza, argument, punkt wyjścia do sprawdzania informacji, czy propozycja decyzji? Każda z tych ról wymaga innego rodzaju uwagi.
+Tutaj pojawia się znaczenie pojęcia [mental model](/pl/concepts/mental-model/). Każdy użytkownik ma jakieś wyobrażenie o tym, jak działa AI. Jeśli ten model mentalny jest zbyt ludzki, użytkownik może traktować odpowiedź jak efekt rozumienia. Jeśli jest zbyt techniczny, może nie zauważyć, jak mocno język odpowiedzi wpływa na jego ocenę.
 
-Ten sam model może pomóc znaleźć wariant tytułu i może zasugerować interpretację dokumentu. Może skrócić notatki i może przygotować tekst, który trafi do klienta. Interfejs pozostaje podobny, ale ciężar użycia jest zupełnie inny. Błąd w roboczej inspiracji ma inną wagę niż błąd w rekomendacji, pod którą podpisuje się konkretna osoba.
+Błędny model mentalny prowadzi do nadmiernego zaufania, źle ustawionych oczekiwań i zbyt szybkiej delegacji decyzji. Użytkownik myśli, że system "pamięta", "rozumie" albo "wie", choć w praktyce operuje w granicach dostarczonego kontekstu. To nie jest drobny problem terminologiczny. Od tego zależy, czy człowiek potraktuje odpowiedź jako szkic, hipotezę, streszczenie, rekomendację czy gotowy materiał do użycia.
 
-Dlatego zaufanie do AI nie powinno działać automatycznie. Nie chodzi o ogólną nieufność wobec technologii, ale o dopasowanie poziomu zaufania do sytuacji. Czasem wystarczy potraktować wynik jako materiał do dalszego myślenia. Czasem potrzebne jest sprawdzenie źródeł. Czasem druga osoba. Czasem decyzja, że tej odpowiedzi nie należy używać.
+## Dobra praca z AI zmniejsza i zwiększa obciążenie poznawcze
 
-W tym sensie kompetencje pracy z AI są mniej sprawą obsługi narzędzia, a bardziej praktyką oceny: co można z tą odpowiedzią zrobić, czego nie wiadomo i kto ponosi odpowiedzialność za jej dalsze życie.
+AI może realnie odciążać. Może pomóc uporządkować notatki, skrócić dokument, zaproponować strukturę, wygenerować pierwszą wersję tekstu albo pokazać kilka kierunków myślenia. Dla wielu osób to duża zmiana, bo część pracy, która wcześniej wymagała rozpoczęcia od pustej strony, zostaje przesunięta do rozmowy z modelem.
 
-## Weryfikacja jako część pracy
+Jednocześnie AI może zwiększać [cognitive load](/pl/concepts/cognitive-load/), czyli obciążenie poznawcze. Użytkownik dostaje szybciej więcej materiału, ale musi go ocenić, porównać, poprawić, sprawdzić i osadzić w kontekście. Czasem zamiast pisać od zera, zaczyna zarządzać wieloma wersjami odpowiedzi. Czasem zamiast szukać informacji, próbuje rozpoznać, które zdanie brzmi wiarygodnie tylko dlatego, że zostało dobrze podane.
 
-Sprawdzanie nie jest dodatkiem do pracy z AI. Jest jej częścią. Jeśli model pomaga szukać informacji, trzeba wiedzieć, gdzie kończy się wygodna synteza, a zaczyna potrzeba źródła. Jeśli streszcza dokument, trzeba zobaczyć, co pominął. Jeśli proponuje argument, warto sprawdzić, jakie założenia wprowadził po cichu.
+To przesuwa ciężar pracy. Model może zmniejszyć wysiłek generowania, ale zwiększyć wysiłek weryfikacji. Może ułatwić start, ale utrudnić zatrzymanie się. Może dać poczucie postępu, choć użytkownik nadal nie wie, czy wynik jest poprawny.
 
-To nie jest nowy problem w historii informacji. Od dawna wiemy, że czytanie wymaga oceny źródła, intencji autora i potwierdzenia w innych miejscach. AI zmienia jednak opakowanie. Zamiast listy wyników dostajemy odpowiedź, która wygląda jak gotowe opracowanie. To wygodne, ale może skrócić drogę między pytaniem a poczuciem, że wiemy wystarczająco dużo.
+Tu widać różnicę między użyciem AI a dojrzałą kompetencją pracy z AI. Nie chodzi tylko o uzyskanie odpowiedzi. Chodzi o wiedzę, kiedy odpowiedź wymaga kontroli, kiedy jest tylko materiałem roboczym, a kiedy zaczyna wpływać na decyzję, komunikację albo odpowiedzialność zespołu.
 
-W praktyce oznacza to zmianę nawyków. Nie chodzi o nieustanne podejrzewanie każdego zdania, ale o rozróżnienie sytuacji. Inaczej sprawdzamy pomysł na metaforę, inaczej dane liczbowe, inaczej interpretację badań, inaczej treść, która ma zostać wysłana poza organizację.
+W środowisku pracy obciążenie poznawcze ma też wymiar zespołowy. Jeśli każdy korzysta z AI inaczej, a nie ma wspólnych zasad oznaczania, sprawdzania i przekazywania wyników, część kosztu przenosi się na innych. Ktoś musi dociekać, skąd wzięło się zdanie w raporcie. Ktoś musi rozpoznać, czy fragment był napisany przez człowieka, wygenerowany, czy tylko poprawiony. Ktoś musi ustalić, czy informacja została sprawdzona. AI może przyspieszyć pracę jednej osoby, ale bez wspólnego języka może spowolnić zaufanie w zespole.
 
-## Co zostaje po stronie człowieka
+## Najważniejszy prompt jest czasem pytaniem do samego siebie
 
-AI może realnie odciążać. Może porządkować materiał, skracać teksty, proponować strukturę, pokazywać luki, pomagać przejść od notatek do pierwszej wersji. Nie ma powodu udawać, że to nie jest użyteczne.
+W pracy z AI łatwo skupiać się na tym, co wpisać do systemu. Czasem ważniejsze jest jednak to, co użytkownik powinien zapytać sam siebie przed użyciem odpowiedzi.
 
-Jednocześnie delegowanie zadania nie zawsze oznacza tylko przekazanie pracy. Czasem oznacza także przekazanie części selekcji, tonu, ramy interpretacyjnej albo hierarchii ważności. Gdy model streszcza długi tekst, wybiera, co uznać za istotne. Gdy proponuje odpowiedź do klienta, ustawia relację. Gdy przygotowuje rekomendację, może zawęzić pole widzenia do opcji, które sam wydobył.
+Co właściwie chcę uzyskać? Czego nie wiem? Co model może pominąć? Na czym opieram zaufanie? Co muszę sprawdzić poza modelem? Czy proszę o szkic, argument, interpretację, decyzję, czy tylko o wariant językowy? Co stanie się z tą odpowiedzią, jeśli trafi do maila, prezentacji, dokumentu albo rozmowy z klientem?
 
-Nie wynika z tego prosta teza, że AI osłabia myślenie. Bardziej precyzyjnie: AI zmienia podział pracy poznawczej. Część czynności zostaje przy człowieku, część przechodzi do systemu, a część zmienia się w szybki przegląd gotowego materiału. Pytanie brzmi, czy użytkownik nadal rozumie, co zostało przesunięte.
+To są pytania metapoznawcze. [Metacognition](/pl/concepts/metacognition/) oznacza myślenie o własnym myśleniu: monitorowanie tego, co wiem, czego nie wiem, kiedy jestem pewny i kiedy powinienem zatrzymać się przed przyjęciem odpowiedzi. W kontekście AI metapoznanie jest jedną z najważniejszych warstw kompetencji, bo model często dostarcza tekst w formie, która wygląda na gotową.
 
-## Człowiek w procesie
+Bez tej samoobserwacji użytkownik może pomylić płynność z trafnością, szybkość z jakością, a zgodność tonu z wiarygodnością. Może też nie zauważyć, że w praktyce deleguje nie tylko pisanie, ale część selekcji, interpretacji i hierarchii ważności.
 
-Wiele dyskusji o AI uspokaja się zdaniem, że „na końcu sprawdza człowiek”. Samo to zdanie nie mówi jednak jeszcze wiele. Znaczenie ma dopiero to, czy ten człowiek ma czas, wiedzę, odpowiedzialność i realną możliwość zakwestionowania wyniku.
+To nie znaczy, że każda interakcja z AI ma zamieniać się w ciężką procedurę. Oznacza raczej, że dobra praca z AI wymaga chwili zatrzymania. Nie tylko "co wpisać?", ale też "co ja zrobię z tym, co dostanę?".
 
-Jeśli człowiek tylko wygładza tekst, poprawia ton i klika dalej, jego rola jest ograniczona. Jeśli nie wie, jak ocenić odpowiedź, będzie traktował ją jako sugestię silniejszą, niż powinna być. Jeśli nie ma prawa zatrzymać procesu, jego obecność staje się raczej elementem formalnym niż realną kontrolą.
+Tę chwilę zatrzymania można ćwiczyć. Nie przez mnożenie checklist dla każdego drobnego zadania, ale przez budowanie nawyku nazywania statusu odpowiedzi. To jest szkic. To jest wariant. To jest streszczenie wymagające sprawdzenia. To jest propozycja argumentu. To jest materiał, którego nie należy wysyłać bez drugiej osoby. Takie proste rozróżnienia zmieniają sposób, w jaki człowiek korzysta z modelu, bo przywracają widoczność własnej decyzji.
 
-Trzeba przy tym oddzielić codzienną praktykę pracy z generatywną AI od prawnych wymogów dotyczących systemów wysokiego ryzyka. To nie są te same sytuacje. Łączy je jednak ogólniejsza intuicja: człowiek w procesie ma znaczenie dopiero wtedy, gdy może coś zrobić z wynikiem, a nie tylko nadać mu ludzką akceptację.
+## Brzmi dobrze nie znaczy, że jest prawdziwe
 
-## Wspólny sposób używania AI
+Modele językowe potrafią produkować odpowiedzi płynne, spójne i przekonujące. Taki tekst łatwo czytać. Ma rytm, strukturę i ton pewności. To bywa bardzo użyteczne, ale tworzy też ryzyko: płynność może zostać odebrana jako wiarygodność.
 
-W firmach problemem nie jest wyłącznie brak dobrych promptów. Częściej jest nim brak wspólnego sposobu używania tego, co AI zwraca.
+Dlatego potrzebna jest [epistemic vigilance](/pl/concepts/epistemic-vigilance/), czyli czujność epistemiczna. W prostym języku chodzi o ostrożność wobec informacji i źródeł: skąd pochodzi odpowiedź, dlaczego brzmi przekonująco, co ją potwierdza i czy można na niej oprzeć dalsze działanie.
 
-Zespół komunikacji może poprosić model o szkic tekstu dla klienta. Polecenie może być sensowne: zawiera odbiorcę, kontekst, ton i format. Wynik może brzmieć profesjonalnie. Nadal pozostają jednak kwestie, których nie rozwiązuje samo polecenie: czy fakty są poprawne, czy w tekście nie ma poufnych informacji, czy model nie dopisał kontekstu, którego nie było, kto podpisuje się pod finalną wersją i kiedy potrzebna jest druga para oczu.
+W tym miejscu warto odróżnić [model output](/pl/concepts/model-output/) od wiedzy. Odpowiedź modelu jest wynikiem systemu, nie automatycznym dowodem prawdziwości. Może być pomocna, ale jej status zależy od zadania, źródeł, kontekstu i sposobu użycia.
 
-Dla zespołu oznacza to potrzebę prostych rozróżnień. Co można potraktować jako szkic. Co wymaga źródeł. Czego nie wolno wklejać do narzędzia. Jakie treści mogą wyjść na zewnątrz. Kiedy odpowiedź modelu jest pomocą, a kiedy staje się elementem decyzji, która wymaga większej ostrożności.
+Podobnie zaufanie do AI nie powinno działać na zasadzie wszystko albo nic. Potrzebne jest raczej [calibrated trust](/pl/concepts/calibrated-trust/): dopasowanie poziomu zaufania do sytuacji. Inaczej traktujemy propozycję tytułu, inaczej streszczenie znanego dokumentu, inaczej interpretację danych, a jeszcze inaczej rekomendację, pod którą ktoś ma się podpisać.
 
-To nie musi przyjmować formy ciężkiej procedury. Często zaczyna się od wspólnego języka i kilku granic, które wszyscy rozumieją.
+Tu [AI literacy](/pl/concepts/ai-literacy/) staje się czymś szerszym niż nauka promptów. To zdolność rozumienia, kiedy AI pomaga, kiedy upraszcza, kiedy przenosi wysiłek na weryfikację i kiedy wymaga zatrzymania.
 
-## Po odpowiedzi zaczyna się praca
+## Od promptowania do odpowiedzialnej współpracy
 
-Nie chodzi o to, żeby przestać uczyć ludzi promptów. Dobre pytania nadal mają znaczenie. Lepsze polecenie może dać lepszy materiał i zmusić człowieka do większej precyzji.
+Dojrzała praca z AI nie jest zbiorem magicznych formuł. To praktyka budowania kontekstu, zadawania pytań, sprawdzania odpowiedzi, rozpoznawania ograniczeń i brania odpowiedzialności za użycie wyniku. Prompt jest początkiem, nie końcem.
 
-Chodzi raczej o to, żeby nie pomylić pierwszego kroku z całą praktyką pracy z AI. Ta praktyka zaczyna się naprawdę wtedy, gdy odpowiedź modelu ma zostać użyta. Gdy trzeba zrozumieć, czym jest, sprawdzić jej podstawy, zdecydować o poziomie zaufania i wziąć odpowiedzialność za to, co stanie się dalej.
+W niektórych sytuacjach AI działa jak narzędzie do szybszego szkicowania. W innych staje się częścią procesu decyzyjnego, komunikacyjnego albo organizacyjnego. Wtedy liczy się nie tylko to, co wpisano w okno czatu, ale także to, jaką rolę odpowiedź otrzymała po wyjściu z tego okna.
 
-Prompt jest widoczną częścią interakcji. Odpowiedź jest tą częścią, która trafia do innych ludzi. I właśnie tam, w przejściu od tekstu wygenerowanego do tekstu użytego, widać najwięcej o naszym sposobie pracy z AI.
+Dlatego organizacje nie potrzebują wyłącznie bibliotek promptów. Potrzebują także rozmowy o tym, jakie zadania można powierzać AI, jak oznaczać materiały robocze, kiedy wymagać źródeł, kiedy prosić drugą osobę o ocenę i kiedy nie używać wygenerowanej odpowiedzi mimo jej dobrej formy. Biblioteka promptów może być pomocna, ale bez tych rozróżnień łatwo staje się kolekcją formuł oderwanych od odpowiedzialności.
 
-## Źródła
+Pojęcie [cognitive offloading](/pl/concepts/cognitive-offloading/) pomaga zobaczyć, że korzystanie z narzędzi może przenosić część pracy poznawczej poza człowieka. Nie musi to być złe. Może być mądre i bardzo produktywne. Ale wymaga świadomości, co dokładnie zostało przesunięte: generowanie, pamiętanie, selekcja, ocena, styl, decyzja czy odpowiedzialność.
 
-### Polityka i kompetencje pracy z AI
+Właśnie dlatego [Human-AI Interaction](/pl/concepts/human-ai-interaction/) nie jest tylko kwestią interfejsu. To także pytanie o relację między człowiekiem, systemem, zadaniem i sytuacją społeczną, w której wynik zostanie użyty. AI nie działa w pustce. Jego odpowiedzi trafiają do dokumentów, zespołów, decyzji, relacji i instytucji.
 
-1. European Parliament and Council of the European Union. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (AI Act), especially Article 3(56), Article 4 and Article 14. 2024. https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng
-2. European Commission, Shaping Europe's digital future. AI Literacy - Questions & Answers. 2025 / current web guidance. https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers
-3. UNESCO. AI competency framework for students. 2024. https://www.unesco.org/en/articles/ai-competency-framework-students
-4. UNESCO. AI competency framework for teachers. 2024. https://www.unesco.org/en/articles/ai-competency-framework-teachers
-5. OECD AI Policy Observatory. OECD AI Principles. 2019, updated 2024. https://oecd.ai/en/ai-principles
+Nie chodzi więc tylko o prompt. Chodzi o to, kto pyta, po co pyta, co rozumie z odpowiedzi i co robi z nią dalej.
 
-### Ryzyko i zarządzanie
+## Źródła i dalsza lektura
 
-6. NIST. Artificial Intelligence Risk Management Framework (AI RMF 1.0). 2023. https://www.nist.gov/itl/ai-risk-management-framework
-
-### Zaufanie, automatyzacja i nadmierne poleganie na systemie
-
-7. Lee, John D. and See, Katrina A. Trust in Automation: Designing for Appropriate Reliance. 2004. https://journals.sagepub.com/doi/10.1518/hfes.46.1.50_30392
-8. Parasuraman, Raja and Riley, Victor. Humans and Automation: Use, Misuse, Disuse, Abuse. 1997. https://journals.sagepub.com/doi/10.1518/001872097778543886
-9. Bucinca, Zana; Malaya, Maja Barbara; Gajos, Krzysztof Z. To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted Decision-making. 2021. https://dl.acm.org/doi/10.1145/3449287
-
-### Halucynacje i ograniczenia modeli
-
-10. Ji, Ziwei et al. Survey of Hallucination in Natural Language Generation. 2023 ACM Computing Surveys version. https://dl.acm.org/doi/10.1145/3571730
-11. NIST. Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1). 2024. https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence
-
-### Kompetencje informacyjne
-
-12. ACRL / American Library Association. Framework for Information Literacy for Higher Education. 2015. https://www.ala.org/acrl/standards/ilframework
-13. International Federation of Library Associations and Institutions. IFLA Media and Information Literacy Recommendations. 2011. https://www.ifla.org/publications/ifla-media-and-information-literacy-recommendations/
-14. Wineburg, Sam and McGrew, Sarah. Lateral Reading and the Nature of Expertise: Reading Less and Learning More When Evaluating Digital Information. 2019. https://journals.sagepub.com/doi/10.1177/016146811912101102
-15. Reber, Rolf and Schwarz, Norbert. Effects of Perceptual Fluency on Judgments of Truth. 1999. https://pubmed.ncbi.nlm.nih.gov/10487787/
-16. Fazio, Lisa K.; Brashier, Nadia M.; Payne, B. Keith; Marsh, Elizabeth J. Knowledge Does Not Protect Against Illusory Truth. 2015. https://pubmed.ncbi.nlm.nih.gov/26301795/
-
-### Odciążanie poznawcze
-
-17. Risko, Evan F. and Gilbert, Sam J. Cognitive Offloading. 2016. https://www.cell.com/trends/cognitive-sciences/abstract/S1364-6613(16)30098-5
-
-### Nadzór człowieka i użycie organizacyjne
-
-18. High-Level Expert Group on Artificial Intelligence / European Commission. Ethics Guidelines for Trustworthy AI. 2019. https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai
-19. Bainbridge, Lisanne. Ironies of Automation. 1983. https://dl.acm.org/doi/abs/10.1016/0005-1098%2883%2990046-8
-20. Green, Ben. The Flaws of Policies Requiring Human Oversight of Government Algorithms. 2022. https://arxiv.org/abs/2109.05067
-21. Santoni de Sio, Filippo and van den Hoven, Jeroen. Meaningful Human Control over Autonomous Systems: A Philosophical Account. 2018. https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2018.00015/full
-22. Amershi, Saleema et al. Guidelines for Human-AI Interaction. 2019. https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/
-
-### Ochrona danych
-
-23. European Data Protection Board. Opinion 28/2024 on certain data protection aspects related to the processing of personal data in the context of AI models. 2024. https://www.edpb.europa.eu/documents/opinion-of-the-board-art-64/opinion-282024-on-certain-data-protection-aspects-related-to_en
-24. European Data Protection Supervisor. First EDPS Orientations for EUIs using Generative AI. 2024. https://www.edps.europa.eu/data-protection/our-work/publications/guidelines/2024-06-03-first-edps-orientations-euis-using-generative-ai_en
-25. Urząd Ochrony Danych Osobowych. Sztuczna inteligencja. Current official topic page. https://uodo.gov.pl/pl/p/sztuczna-inteligencja
-26. Urząd Ochrony Danych Osobowych. Opinia EROD w sprawie modeli AI. 2024. https://uodo.gov.pl/pl/138/3489
+- Anthropic. (n.d.). *Context windows*. Claude Platform Docs. Retrieved July 2, 2026, from https://platform.claude.com/docs/en/build-with-claude/context-windows
+- Flavell, J. H. (1979). Metacognition and cognitive monitoring: A new area of cognitive-developmental inquiry. *American Psychologist, 34*(10), 906-911. https://doi.org/10.1037/0003-066X.34.10.906
+- Lee, J. D., & See, K. A. (2004). Trust in automation: Designing for appropriate reliance. *Human Factors, 46*(1), 50-80. https://doi.org/10.1518/hfes.46.1.50_30392
+- OpenAI. (n.d.). *Key concepts*. OpenAI API documentation. Retrieved July 2, 2026, from https://developers.openai.com/api/docs/concepts
+- OpenAI. (n.d.). *What are tokens and how to count them?* OpenAI Help Center. Retrieved July 2, 2026, from https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them
+- Parasuraman, R., & Riley, V. (1997). Humans and automation: Use, misuse, disuse, abuse. *Human Factors, 39*(2), 230-253. https://doi.org/10.1518/001872097778543886
+- Schraw, G., & Moshman, D. (1995). Metacognitive theories. *Educational Psychology Review, 7*(4), 351-371. https://doi.org/10.1007/BF02212307
+- Sperber, D., Clément, F., Heintz, C., Mascaro, O., Mercier, H., Origgi, G., & Wilson, D. (2010). Epistemic vigilance. *Mind & Language, 25*(4), 359-393. https://doi.org/10.1111/j.1468-0017.2010.01394.x
+- Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. *Cognitive Science, 12*(2), 257-285. https://doi.org/10.1016/0364-0213(88)90023-7

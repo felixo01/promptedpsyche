@@ -1,38 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import EntryLayout from '../../layouts/EntryLayout.astro';
+import { getArticleAlternates } from '../../lib/articleRoutes';
 import { onlyPublicEntries, onlyPublicEntriesByLang } from '../../lib/content';
-
-const articlePath = {
-  en: (slug: string) => `/articles/${slug}/`,
-  pl: (slug: string) => `/pl/articles/${slug}/`
-};
-
-function getArticleAlternates(entry: any, publicArticles: any[]) {
-  const enPath = articlePath.en(entry.id);
-  const fallbackPlPath = '/pl/articles/';
-  const translationKey = entry.data.translationKey;
-
-  if (!translationKey) {
-    return {
-      en: enPath,
-      pl: fallbackPlPath,
-      xDefault: enPath
-    };
-  }
-
-  const plEntry = publicArticles.find(
-    (candidate) =>
-      candidate.data.translationKey === translationKey &&
-      candidate.data.lang === 'pl'
-  );
-
-  return {
-    en: enPath,
-    pl: plEntry ? articlePath.pl(plEntry.id) : fallbackPlPath,
-    xDefault: enPath
-  };
-}
 
 export async function getStaticPaths() {
   const publicArticles = onlyPublicEntries(await getCollection('articles'));
