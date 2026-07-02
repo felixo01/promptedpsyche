@@ -7,93 +7,88 @@ const contactEmail = site.email?.trim();
 
 <BaseLayout
   title="Contact"
-  description="Contact Feliks Mamczur about consulting, talks, workshops, media, collaboration or research conversations."
+  description="Contact Feliks Mamczur about consulting, workshops, expert commentary or projects related to AI and communication."
 >
   <div class="lovable-page contact-page">
-    <header class="lovable-page-hero">
-      <div class="lovable-container">
+    <header class="lovable-page-hero contact-hero">
+      <div class="lovable-container contact-hero__inner">
         <div class="lovable-heading-narrow">
           <p class="eyebrow">Contact</p>
-          <h1>Let's talk about the human side of AI</h1>
+          <h1>Get in touch</h1>
           <p class="lede">
-            For consulting, talks, workshops or research conversations, send a concise
-            note with context, timeline and the kind of support you are looking for.
+            For consulting, workshops, expert commentary or projects related to AI,
+            communication and human-AI interaction, write directly.
           </p>
-          <p class="prelaunch-note">
-            Prompted Psyche is currently in pre-launch, so response paths and public
-            contact details may still change.
-          </p>
+        </div>
+
+        <div class="contact-email-card" data-qa="contact-email-card">
+          <p class="eyebrow">Email</p>
+          {
+            contactEmail ? (
+              <>
+                <a
+                  href={`mailto:${contactEmail}`}
+                  class="contact-email-card__link"
+                  data-qa="contact-email-link"
+                >
+                  {contactEmail}
+                </a>
+                <p>
+                  The easiest way is to include a few sentences about the topic,
+                  context and expected timing.
+                </p>
+                <div class="contact-email-card__actions">
+                  <a href={`mailto:${contactEmail}`} class="hero-button hero-button-primary">
+                    <span aria-hidden="true"></span>
+                    Send an email
+                  </a>
+                </div>
+              </>
+            ) : (
+              <p class="contact-email-card__link">Contact details will be added soon.</p>
+            )
+          }
         </div>
       </div>
     </header>
 
-    <section class="lovable-section" aria-labelledby="contact-reasons-title">
-      <div class="lovable-container">
+    <section class="lovable-section contact-grid" aria-labelledby="contact-topics-title">
+      <div class="lovable-container contact-grid__inner">
         <div class="compact-heading">
-          <p class="eyebrow">Reasons to write</p>
-          <h2 id="contact-reasons-title">What you can get in touch about</h2>
+          <p class="eyebrow">Topics</p>
+          <h2 id="contact-topics-title">What to write about</h2>
         </div>
-        <ol class="lovable-service-list contact-reasons">
-          <li>
-            <span>01</span>
-            <h3>Organizational consulting</h3>
-            <p>AI use analysis, principles, process mapping and human-AI workflows.</p>
-          </li>
-          <li>
-            <span>02</span>
-            <h3>Workshops and briefings</h3>
-            <p>Practical sessions for teams, leaders and institutions.</p>
-          </li>
-          <li>
-            <span>03</span>
-            <h3>Talks and lectures</h3>
-            <p>Public or internal talks on AI, cyberpsychology and Human-AI Interaction.</p>
-          </li>
-          <li>
-            <span>04</span>
-            <h3>Media commentary</h3>
-            <p>Commentary on the human, psychological and cultural side of AI.</p>
-          </li>
-          <li>
-            <span>05</span>
-            <h3>Research conversations</h3>
-            <p>Conversations around concepts, questions and emerging research directions.</p>
-          </li>
-          <li>
-            <span>06</span>
-            <h3>Content and project collaboration</h3>
-            <p>Source-informed content, reviews and collaboration around AI and cyberpsychology.</p>
-          </li>
-        </ol>
+        <ul class="contact-list">
+          <li>consulting and AI use in organizations</li>
+          <li>workshops and talks</li>
+          <li>expert or media commentary</li>
+          <li>research conversations and editorial collaboration</li>
+          <li>projects around AI, communication, marketing and creativity</li>
+        </ul>
       </div>
     </section>
 
-    <section class="lovable-section contact-email-section">
-      <div class="lovable-container">
-        <div class="lovable-email-panel">
-          <div>
-            <p class="eyebrow">Email</p>
-            {
-              contactEmail ? (
-                <a href={`mailto:${contactEmail}`} class="email-link">{contactEmail}</a>
-              ) : (
-                <p class="email-link">Contact details will be added soon.</p>
-              )
-            }
-            <p>
-              A short note with the context, timeline and expected format is enough to
-              start the conversation.
-            </p>
-          </div>
-          <aside>
-            <p class="small-label">Helpful context</p>
-            <ul>
-              <li>organization or publication</li>
-              <li>topic and timeline</li>
-              <li>format: consulting, workshop, talk or comment</li>
-            </ul>
-          </aside>
+    <section class="lovable-section contact-grid contact-grid--compact" aria-labelledby="contact-context-title">
+      <div class="lovable-container contact-grid__inner">
+        <div class="compact-heading">
+          <p class="eyebrow">Context</p>
+          <h2 id="contact-context-title">What to include</h2>
         </div>
+        <ul class="contact-list">
+          <li>what the request is about</li>
+          <li>your organization or context</li>
+          <li>expected timing</li>
+          <li>whether it is consulting, a workshop, commentary or a conversation</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact-closing" aria-label="Response note">
+      <div class="lovable-container">
+        <p>
+          I reply when I can realistically help or when the conversation fits the
+          direction of Prompted Psyche.
+        </p>
       </div>
     </section>
   </div>

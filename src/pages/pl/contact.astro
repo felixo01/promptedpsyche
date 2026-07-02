@@ -8,93 +8,89 @@ const contactEmail = site.email?.trim();
 <BaseLayout
   lang="pl"
   title="Kontakt"
-  description="Kontakt w sprawie konsultingu, warsztatów, wystąpień, komentarzy medialnych albo rozmów badawczych."
+  description="Kontakt w sprawie współpracy, konsultingu, warsztatów, komentarza eksperckiego albo projektów związanych z AI i komunikacją."
 >
   <div class="lovable-page contact-page">
-    <header class="lovable-page-hero">
-      <div class="lovable-container">
+    <header class="lovable-page-hero contact-hero">
+      <div class="lovable-container contact-hero__inner">
         <div class="lovable-heading-narrow">
           <p class="eyebrow">Kontakt</p>
-          <h1>Porozmawiajmy o ludzkiej stronie AI</h1>
+          <h1>Napisz do mnie</h1>
           <p class="lede">
-            W sprawie konsultingu, wystąpień, warsztatów albo rozmów badawczych napisz
-            krótko o kontekście, terminie i rodzaju wsparcia, którego szukasz.
+            Jeśli chcesz porozmawiać o współpracy, konsultingu, warsztacie,
+            komentarzu eksperckim albo projekcie związanym z AI i komunikacją,
+            napisz bezpośrednio.
           </p>
-          <p class="prelaunch-note">
-            Prompted Psyche jest obecnie w trybie pre-launch, więc publiczne dane
-            kontaktowe mogą się jeszcze zmienić.
-          </p>
+        </div>
+
+        <div class="contact-email-card" data-qa="contact-email-card">
+          <p class="eyebrow">E-mail</p>
+          {
+            contactEmail ? (
+              <>
+                <a
+                  href={`mailto:${contactEmail}`}
+                  class="contact-email-card__link"
+                  data-qa="contact-email-link"
+                >
+                  {contactEmail}
+                </a>
+                <p>
+                  Najprościej napisać kilka zdań o temacie, kontekście i
+                  oczekiwanym terminie rozmowy.
+                </p>
+                <div class="contact-email-card__actions">
+                  <a href={`mailto:${contactEmail}`} class="hero-button hero-button-primary">
+                    <span aria-hidden="true"></span>
+                    Napisz e-mail
+                  </a>
+                </div>
+              </>
+            ) : (
+              <p class="contact-email-card__link">Dane kontaktowe zostaną dodane wkrótce.</p>
+            )
+          }
         </div>
       </div>
     </header>
 
-    <section class="lovable-section" aria-labelledby="contact-reasons-title">
-      <div class="lovable-container">
+    <section class="lovable-section contact-grid" aria-labelledby="contact-topics-title">
+      <div class="lovable-container contact-grid__inner">
         <div class="compact-heading">
-          <p class="eyebrow">Powody kontaktu</p>
-          <h2 id="contact-reasons-title">W jakich sprawach możesz napisać</h2>
+          <p class="eyebrow">Sprawy</p>
+          <h2 id="contact-topics-title">W jakich sprawach</h2>
         </div>
-        <ol class="lovable-service-list contact-reasons">
-          <li>
-            <span>01</span>
-            <h3>Konsulting dla organizacji</h3>
-            <p>Analiza używania AI, zasady, mapowanie procesów i przepływy człowiek-AI.</p>
-          </li>
-          <li>
-            <span>02</span>
-            <h3>Warsztaty i briefingi</h3>
-            <p>Praktyczne spotkania dla zespołów, liderów i instytucji.</p>
-          </li>
-          <li>
-            <span>03</span>
-            <h3>Wystąpienia i wykłady</h3>
-            <p>Publiczne lub wewnętrzne wystąpienia o AI, cyberpsychologii i Human-AI Interaction.</p>
-          </li>
-          <li>
-            <span>04</span>
-            <h3>Komentarze medialne</h3>
-            <p>Komentarze o ludzkiej, psychologicznej i kulturowej stronie AI.</p>
-          </li>
-          <li>
-            <span>05</span>
-            <h3>Rozmowy badawcze</h3>
-            <p>Rozmowy wokół pojęć, pytań i rozwijających się kierunków badań.</p>
-          </li>
-          <li>
-            <span>06</span>
-            <h3>Współpraca przy treściach</h3>
-            <p>Treści oparte na źródłach, recenzje i współpraca wokół AI oraz cyberpsychologii.</p>
-          </li>
-        </ol>
+        <ul class="contact-list">
+          <li>konsulting i uporządkowanie używania AI w organizacji</li>
+          <li>warsztaty i wystąpienia</li>
+          <li>komentarz ekspercki lub medialny</li>
+          <li>rozmowy badawcze i współpraca merytoryczna</li>
+          <li>projekty z obszaru AI, komunikacji, marketingu i twórczości</li>
+        </ul>
       </div>
     </section>
 
-    <section class="lovable-section contact-email-section">
-      <div class="lovable-container">
-        <div class="lovable-email-panel">
-          <div>
-            <p class="eyebrow">Email</p>
-            {
-              contactEmail ? (
-                <a href={`mailto:${contactEmail}`} class="email-link">{contactEmail}</a>
-              ) : (
-                <p class="email-link">Dane kontaktowe zostaną dodane wkrótce.</p>
-              )
-            }
-            <p>
-              Wystarczy krótka wiadomość z kontekstem, terminem i oczekiwaną formą
-              rozmowy albo współpracy.
-            </p>
-          </div>
-          <aside>
-            <p class="small-label">Pomocny kontekst</p>
-            <ul>
-              <li>organizacja albo redakcja</li>
-              <li>temat i termin</li>
-              <li>forma: konsulting, warsztat, wystąpienie albo komentarz</li>
-            </ul>
-          </aside>
+    <section class="lovable-section contact-grid contact-grid--compact" aria-labelledby="contact-context-title">
+      <div class="lovable-container contact-grid__inner">
+        <div class="compact-heading">
+          <p class="eyebrow">Kontekst</p>
+          <h2 id="contact-context-title">Co warto napisać</h2>
         </div>
+        <ul class="contact-list">
+          <li>czego dotyczy sprawa</li>
+          <li>z jakiej organizacji lub kontekstu piszesz</li>
+          <li>jaki jest termin</li>
+          <li>czy chodzi o konsultację, warsztat, komentarz czy rozmowę</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact-closing" aria-label="Informacja o odpowiedzi">
+      <div class="lovable-container">
+        <p>
+          Odpowiadam wtedy, kiedy mogę realnie pomóc albo rozmowa pasuje do
+          kierunku Prompted Psyche.
+        </p>
       </div>
     </section>
   </div>

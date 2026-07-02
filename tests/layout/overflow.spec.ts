@@ -17,6 +17,8 @@ const routes = [
   '/pl/concepts/context-window/',
   '/about/',
   '/pl/about/',
+  '/contact/',
+  '/pl/contact/',
   '/consulting/',
   '/pl/consulting/'
 ];
