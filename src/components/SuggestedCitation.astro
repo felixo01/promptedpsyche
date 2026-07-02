@@ -8,10 +8,9 @@ interface Props {
   year: number;
   siteName: string;
   canonicalUrl: string;
-  doi?: string;
 }
 
-const { lang, title, author, year, siteName, canonicalUrl, doi } = Astro.props;
+const { lang, title, author, year, siteName, canonicalUrl } = Astro.props;
 const label = lang === 'pl' ? 'Jak cytować' : 'Suggested citation';
 const authorCitation = author === 'Feliks Mamczur' ? 'Mamczur, F.' : author;
 const citation = `${authorCitation} (${year}). ${title}. ${siteName}. ${canonicalUrl}`;
@@ -20,5 +19,4 @@ const citation = `${authorCitation} (${year}). ${title}. ${siteName}. ${canonica
 <section class="suggested-citation" data-qa="suggested-citation" aria-labelledby="suggested-citation-title">
   <h2 id="suggested-citation-title">{label}</h2>
   <p>{citation}</p>
-  {doi && <p>DOI: {doi}</p>}
 </section>
