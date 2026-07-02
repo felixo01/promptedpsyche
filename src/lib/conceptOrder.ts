@@ -1,13 +1,19 @@
 const conceptOrder = [
   'ai-literacy',
+  'token',
+  'context-window',
+  'model-output',
   'human-ai-interaction',
   'calibrated-trust',
   'automation-bias',
+  'cognitive-load',
+  'mental-model',
+  'metacognition',
+  'epistemic-vigilance',
   'cognitive-offloading',
   'anthropomorphism',
   'ai-companions',
   'human-oversight',
-  'model-output',
   'ai-mediated-communication'
 ];
 

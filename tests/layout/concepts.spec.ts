@@ -5,15 +5,38 @@ const conceptIndexRoutes = [
   { route: '/pl/concepts/', readMore: 'Czytaj dalej' }
 ];
 
+const waveTwoDetailRoutes = [
+  '/concepts/token/',
+  '/concepts/context-window/',
+  '/concepts/cognitive-load/',
+  '/concepts/mental-model/',
+  '/concepts/metacognition/',
+  '/concepts/epistemic-vigilance/',
+  '/pl/concepts/token/',
+  '/pl/concepts/context-window/',
+  '/pl/concepts/cognitive-load/',
+  '/pl/concepts/mental-model/',
+  '/pl/concepts/metacognition/',
+  '/pl/concepts/epistemic-vigilance/'
+];
+
 const conceptDetailRoutes = [
   '/concepts/ai-literacy/',
   '/concepts/ai-mediated-communication/',
   '/pl/concepts/ai-literacy/',
-  '/pl/concepts/ai-mediated-communication/'
+  '/pl/concepts/ai-mediated-communication/',
+  ...waveTwoDetailRoutes
 ];
 
 test.describe('concept cards and tags', () => {
   for (const { route, readMore } of conceptIndexRoutes) {
+    test(`shows at least 16 public concept cards on ${route}`, async ({ page }) => {
+      await page.goto(route);
+
+      const cardCount = await page.locator('[data-qa="concept-card"]').count();
+      expect(cardCount).toBeGreaterThanOrEqual(16);
+    });
+
     test(`keeps concept tags informational on ${route}`, async ({ page }) => {
       await page.goto(route);
 
@@ -81,6 +104,18 @@ test.describe('concept cards and tags', () => {
         expect(state.closestLink).toBe(false);
         expect(state.cursor).not.toBe('pointer');
       }
+    });
+  }
+
+  for (const route of waveTwoDetailRoutes) {
+    test(`renders wave two detail page with references on ${route}`, async ({ page }) => {
+      await page.goto(route);
+
+      await expect(page.locator('.content-header h1')).toBeVisible();
+      await expect(page.locator('.prose')).toContainText(/Sources and context|Źródła i kontekst/);
+
+      const hasOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+      expect(hasOverflow).toBe(false);
     });
   }
 });
