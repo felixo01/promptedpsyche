@@ -111,6 +111,27 @@ The note supports the concepts of epistemic vigilance, calibrated trust, model o
 
 The Polish title was editorially refined after publication to sound more natural in Polish. The original slug was preserved to avoid breaking links. The note also passed a Polish editorial QA pass focused on natural phrasing, concise sentences and clear explanation of epistemic vigilance.
 
+## Notes series: communication, context and responsibility
+
+Three additional note pairs were published in pre-launch mode:
+
+- `Model widzi tekst, nie całą relację`
+- URL: `/pl/notes/model-widzi-tekst-nie-cala-relacje/`
+- `The model sees text, not the whole relationship`
+- URL: `/notes/the-model-sees-text-not-the-whole-relationship/`
+- `Nie diagnozuj ludzi z maili`
+- URL: `/pl/notes/nie-diagnozuj-ludzi-z-maili/`
+- `Do not diagnose people from emails`
+- URL: `/notes/do-not-diagnose-people-from-emails/`
+- `Dobre streszczenie nie jest dobrą decyzją`
+- URL: `/pl/notes/dobre-streszczenie-nie-jest-dobra-decyzja/`
+- `A good summary is not a good decision`
+- URL: `/notes/a-good-summary-is-not-a-good-decision/`
+
+The series supports the current article line around prompts, context, communication and responsibility. The notes focus on three distinctions: the model sees text rather than the whole relationship, correspondence should not be used to diagnose people, and a good summary is not the same as a responsible decision.
+
+The EN versions are adaptations, not literal translations. No DOI was added. Pre-launch safety remains unchanged: `noindex`, Vercel `X-Robots-Tag` and draft filtering stay active.
+
 ## Editorial and usability audit
 
 The publication layer passed an editorial and usability audit after article 03 was finalized as a case-study based article.
@@ -138,7 +159,7 @@ English adaptations now public:
 - Article 03: `AI does not read people. It helps read context.`
 - Note 01: `Fluent does not mean true`
 
-PL/EN publication parity is restored for the current public article and note layer: 3 public PL articles, 3 public EN articles, 1 public PL note and 1 public EN note.
+PL/EN publication parity is restored for the current public article and note layer: 3 public PL articles, 3 public EN articles, 4 public PL notes and 4 public EN notes.
 
 The site remains in pre-launch mode. Noindex and the Vercel X-Robots-Tag remain active. Suggested citation and rights notice remain standard for public articles and notes.
 
