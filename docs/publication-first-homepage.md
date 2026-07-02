@@ -48,7 +48,7 @@ The removed ideas remain available through About, Concepts and Consulting instea
 
 After the first publication-first reset, the homepage was clearer but too anonymous. This follow-up adds a stronger author context without returning to a large personal profile or a consulting landing page.
 
-The author note starts with Feliks Mamczur's perspective on AI, cyberpsychology, Human-AI Interaction and communication. His film, editing and post-production background is presented as an interpretive lens: a way to think about attention, narrative, image, emotion, decisions and communication.
+The author note starts with Feliks Mamczur's perspective on AI, cyberpsychology, Human-AI Interaction and communication. His background in marketing, advertising agencies, brand communication, film, editing and post-production is presented as context for thinking about attention, narrative, image, emotion, decisions and communication.
 
 This keeps the homepage publication-first, but not faceless. The reader can quickly understand who is writing, why the perspective matters and why the publication exists.
 
@@ -61,15 +61,19 @@ The existing About routes now work as author pages:
 
 The homepage stays short and links to the author page for fuller context. The bio starts with Feliks Mamczur's work on the human side of AI, then explains the project, the fields that shape the perspective and the role of consulting.
 
-Film, editing and post-production are presented as an interpretive lens for thinking about narrative, attention, image, emotion and communication. They are not the main label of the project.
+Marketing, advertising agencies, brand communication, film, editing and post-production are presented as sources of the author's communication perspective. Film is not the only source of that perspective and it is not the main label of the project.
 
 Cognitive psychology is used as a perspective and vocabulary. It is not presented as a formal professional title.
 
 ## Polish Author Copy
 
-The Polish `Kim jestem` page was edited for a more natural public voice. The heading `Skąd doświadczenie filmowe` was changed to `Doświadczenie filmowe`, defensive or stiff phrasing was removed and film experience is described as a way of looking at communication, attention, image and emotion.
+The Polish `Kim jestem` page was edited for a more natural public voice. Its communication experience section avoids defensive or stiff phrasing and presents film experience as part of a broader way of looking at communication, attention, image and emotion.
 
 The Polish homepage author note was also tightened. The homepage remains publication-first.
+
+## Communication Experience
+
+Author framing now includes experience in marketing, advertising agencies and brand communication. This supports the site's interest in AI, attention, language, emotion and decisions without turning the page into a client list or CV.
 
 ## Cognitive Framing
 
