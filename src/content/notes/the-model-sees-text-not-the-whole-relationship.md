@@ -40,15 +40,24 @@ This is where [epistemic vigilance](/concepts/epistemic-vigilance/) matters: car
 
 The problem is not using AI for difficult communication. The problem is forgetting that the model sees only part of the situation. It can help name possible readings, but it should not close the question on behalf of the human.
 
-## A better question
+## A safer way to ask
 
-Instead of asking:
+<div class="prompt-example prompt-example--bad" data-copyable-prompt>
+  <div class="prompt-example__header">
+    <p class="prompt-example__label">Do not ask this</p>
+    <button class="prompt-example__copy" type="button" aria-label="Copy example prompt" data-copy-label="Copy" data-copied-label="Copied">Copy</button>
+  </div>
+  <pre class="prompt-example__body"><code data-prompt-text>What does this person really think?</code></pre>
+</div>
 
-`What does this person really think?`
-
-It is better to ask:
-
-`What are possible readings of this message? What is fact, what is interpretation and what do we not know?`
+<div class="prompt-example prompt-example--better" data-copyable-prompt>
+  <div class="prompt-example__header">
+    <p class="prompt-example__label">Better question</p>
+    <button class="prompt-example__copy" type="button" aria-label="Copy example prompt" data-copy-label="Copy" data-copied-label="Copied">Copy</button>
+  </div>
+  <pre class="prompt-example__body"><code data-prompt-text>What are possible readings of this message?
+What is fact, what is interpretation and what do we not know?</code></pre>
+</div>
 
 That question changes the role of AI. The model is no longer asked to guess someone's inner state. It is asked to separate visible information from hypotheses. It helps show gaps, tensions and places where clarification is needed.
 

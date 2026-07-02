@@ -174,4 +174,50 @@ const asideLabels = isConceptEntry
       </div>
     </div>
   </article>
+
+  <script is:inline>
+    (() => {
+      const initializePromptCopy = () => {
+        document.querySelectorAll('[data-copyable-prompt]').forEach((box) => {
+          const button = box.querySelector('.prompt-example__copy');
+          const promptBody = box.querySelector('[data-prompt-text]');
+
+          if (!button || !promptBody || button.dataset.promptCopyReady === 'true') {
+            return;
+          }
+
+          button.dataset.promptCopyReady = 'true';
+          const copyLabel = button.getAttribute('data-copy-label') || button.textContent || 'Copy';
+          const copiedLabel = button.getAttribute('data-copied-label') || 'Copied';
+
+          button.addEventListener('click', async () => {
+            const promptText = (promptBody.textContent || '').trim();
+
+            try {
+              if (!navigator.clipboard?.writeText) {
+                throw new Error('Clipboard API unavailable');
+              }
+
+              await navigator.clipboard.writeText(promptText);
+              button.textContent = copiedLabel;
+              button.dataset.copyState = 'copied';
+
+              window.setTimeout(() => {
+                button.textContent = copyLabel;
+                button.dataset.copyState = 'ready';
+              }, 1600);
+            } catch {
+              button.dataset.copyState = 'unavailable';
+            }
+          });
+        });
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializePromptCopy, { once: true });
+      } else {
+        initializePromptCopy();
+      }
+    })();
+  </script>
 </BaseLayout>

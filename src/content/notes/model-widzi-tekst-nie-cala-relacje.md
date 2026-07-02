@@ -40,15 +40,24 @@ Właśnie tu potrzebna jest [epistemic vigilance](/pl/concepts/epistemic-vigilan
 
 Problemem nie jest korzystanie z AI przy trudnej komunikacji. Problemem jest zapominanie, że model widzi tylko część sytuacji. Może pomóc nazwać możliwe odczytania, ale nie powinien zamykać sprawy za człowieka.
 
-## Lepsze pytanie
+## Bezpieczniejszy sposób pytania
 
-Zamiast pytać:
+<div class="prompt-example prompt-example--bad" data-copyable-prompt>
+  <div class="prompt-example__header">
+    <p class="prompt-example__label">Nie pytaj tak</p>
+    <button class="prompt-example__copy" type="button" aria-label="Kopiuj przykładowy prompt" data-copy-label="Kopiuj" data-copied-label="Skopiowano">Kopiuj</button>
+  </div>
+  <pre class="prompt-example__body"><code data-prompt-text>Co ta osoba naprawdę myśli?</code></pre>
+</div>
 
-`Co ta osoba naprawdę myśli?`
-
-Lepiej zapytać:
-
-`Jakie są możliwe odczytania tej wiadomości? Co jest faktem, co interpretacją, a czego nie wiemy?`
+<div class="prompt-example prompt-example--better" data-copyable-prompt>
+  <div class="prompt-example__header">
+    <p class="prompt-example__label">Lepsze pytanie</p>
+    <button class="prompt-example__copy" type="button" aria-label="Kopiuj przykładowy prompt" data-copy-label="Kopiuj" data-copied-label="Skopiowano">Kopiuj</button>
+  </div>
+  <pre class="prompt-example__body"><code data-prompt-text>Jakie są możliwe odczytania tej wiadomości?
+Co jest faktem, co interpretacją, a czego nie wiemy?</code></pre>
+</div>
 
 Takie pytanie zmienia rolę AI. Model nie ma zgadywać czyjejś psychiki. Ma pomóc oddzielić widoczne informacje od hipotez. Ma pokazać luki, napięcia i miejsca, które wymagają doprecyzowania.
 

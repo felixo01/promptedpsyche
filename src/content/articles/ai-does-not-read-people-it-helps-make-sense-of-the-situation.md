@@ -103,13 +103,24 @@ AI can also point to escalation points. Sometimes a sentence is technically corr
 
 A better way of working does not need to become a named framework. It can begin with a different kind of prompt.
 
-Instead of asking:
+<div class="prompt-example prompt-example--bad" data-copyable-prompt>
+  <div class="prompt-example__header">
+    <p class="prompt-example__label">Do not ask this</p>
+    <button class="prompt-example__copy" type="button" aria-label="Copy example prompt" data-copy-label="Copy" data-copied-label="Copied">Copy</button>
+  </div>
+  <pre class="prompt-example__body"><code data-prompt-text>What is this person really trying to do?</code></pre>
+</div>
 
-`What is this person really trying to do?`
-
-Better:
-
-`List possible readings of this message. Separate facts from hypotheses. Identify what we do not know. Suggest questions that would reduce the risk of misinterpretation.`
+<div class="prompt-example prompt-example--better" data-copyable-prompt>
+  <div class="prompt-example__header">
+    <p class="prompt-example__label">Better question</p>
+    <button class="prompt-example__copy" type="button" aria-label="Copy example prompt" data-copy-label="Copy" data-copied-label="Copied">Copy</button>
+  </div>
+  <pre class="prompt-example__body"><code data-prompt-text>List possible readings of this message.
+Separate facts from hypotheses.
+Identify what we do not know.
+Suggest questions that would reduce the risk of misinterpretation.</code></pre>
+</div>
 
 This is not a prompt trick. It is a change in thinking. AI is not being asked to decide who is right. It is being asked to make visible what is in the text, what is missing and where the human reader should be careful.
 

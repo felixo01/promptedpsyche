@@ -127,6 +127,22 @@ test.describe('published notes', () => {
     }
   });
 
+  test('renders copyable prompt examples in the model sees text note pair', async ({ page }) => {
+    await page.goto('/pl/notes/model-widzi-tekst-nie-cala-relacje/');
+
+    await expect(page.locator('.prompt-example')).toHaveCount(2);
+    await expect(page.locator('.prompt-example--bad')).toContainText('Nie pytaj tak');
+    await expect(page.locator('.prompt-example--better')).toContainText('Lepsze pytanie');
+    await expect(page.getByRole('button', { name: 'Kopiuj przykładowy prompt' })).toHaveCount(2);
+
+    await page.goto('/notes/the-model-sees-text-not-the-whole-relationship/');
+
+    await expect(page.locator('.prompt-example')).toHaveCount(2);
+    await expect(page.locator('.prompt-example--bad')).toContainText('Do not ask this');
+    await expect(page.locator('.prompt-example--better')).toContainText('Better question');
+    await expect(page.getByRole('button', { name: 'Copy example prompt' })).toHaveCount(2);
+  });
+
   for (const note of notePairs) {
     test(`renders English note detail page for ${note.enTitle}`, async ({ page }) => {
       await page.goto(note.enRoute);

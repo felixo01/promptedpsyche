@@ -95,13 +95,24 @@ AI może też wskazać miejsca eskalacji. Czasem jedno zdanie jest technicznie p
 
 Dobry sposób pracy nie wymaga nadawania temu nazwy frameworku. Wystarczy zmienić rodzaj pytania.
 
-Zamiast pytać:
+<div class="prompt-example prompt-example--bad" data-copyable-prompt>
+  <div class="prompt-example__header">
+    <p class="prompt-example__label">Nie pytaj tak</p>
+    <button class="prompt-example__copy" type="button" aria-label="Kopiuj przykładowy prompt" data-copy-label="Kopiuj" data-copied-label="Skopiowano">Kopiuj</button>
+  </div>
+  <pre class="prompt-example__body"><code data-prompt-text>Co ta osoba naprawdę chce osiągnąć?</code></pre>
+</div>
 
-`Co ta osoba naprawdę chce osiągnąć?`
-
-Lepiej zapytać:
-
-`Wypisz możliwe interpretacje tej wiadomości. Oddziel fakty od hipotez. Wskaż, czego nie wiemy. Zaproponuj pytania, które zmniejszą ryzyko błędnej interpretacji.`
+<div class="prompt-example prompt-example--better" data-copyable-prompt>
+  <div class="prompt-example__header">
+    <p class="prompt-example__label">Lepsze pytanie</p>
+    <button class="prompt-example__copy" type="button" aria-label="Kopiuj przykładowy prompt" data-copy-label="Kopiuj" data-copied-label="Skopiowano">Kopiuj</button>
+  </div>
+  <pre class="prompt-example__body"><code data-prompt-text>Wypisz możliwe interpretacje tej wiadomości.
+Oddziel fakty od hipotez.
+Wskaż, czego nie wiemy.
+Zaproponuj pytania, które zmniejszą ryzyko błędnej interpretacji.</code></pre>
+</div>
 
 To nie jest lista magicznych promptów. To jest zmiana sposobu myślenia. AI nie ma rozstrzygać, kto ma rację. Ma pomóc zobaczyć, co jest widoczne w tekście, czego brakuje i gdzie człowiek powinien zachować ostrożność.
 

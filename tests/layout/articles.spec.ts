@@ -295,6 +295,35 @@ test.describe('published articles', () => {
     ).toBeVisible();
   });
 
+  test('renders copyable prompt examples in the third Polish article', async ({ page }) => {
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator, 'clipboard', {
+        configurable: true,
+        value: {
+          writeText: async (text: string) => {
+            (window as Window & { __copiedPrompt?: string }).__copiedPrompt = text;
+          }
+        }
+      });
+    });
+    await page.goto(thirdPolishArticleRoute);
+
+    const promptBoxes = page.locator('.prompt-example');
+    await expect(promptBoxes).toHaveCount(2);
+    await expect(promptBoxes.nth(0)).toContainText('Nie pytaj tak');
+    await expect(promptBoxes.nth(1)).toContainText('Lepsze pytanie');
+    await expect(page.getByRole('button', { name: 'Kopiuj przykładowy prompt' })).toHaveCount(2);
+
+    await page.locator('.prompt-example--better .prompt-example__copy').click();
+    await expect(page.locator('.prompt-example--better .prompt-example__copy')).toContainText(
+      'Skopiowano'
+    );
+    const copiedPrompt = await page.evaluate(
+      () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
+    );
+    expect(copiedPrompt).toContain('Wypisz możliwe interpretacje');
+  });
+
   test('renders the third English article detail page with byline, citation, rights notice and concept links', async ({ page }) => {
     await page.goto(thirdEnglishArticleRoute);
 
@@ -334,6 +363,35 @@ test.describe('published articles', () => {
         '.language-switcher a[href="/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/"]'
       )
     ).toBeVisible();
+  });
+
+  test('renders copyable prompt examples in the third English article', async ({ page }) => {
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator, 'clipboard', {
+        configurable: true,
+        value: {
+          writeText: async (text: string) => {
+            (window as Window & { __copiedPrompt?: string }).__copiedPrompt = text;
+          }
+        }
+      });
+    });
+    await page.goto(thirdEnglishArticleRoute);
+
+    const promptBoxes = page.locator('.prompt-example');
+    await expect(promptBoxes).toHaveCount(2);
+    await expect(promptBoxes.nth(0)).toContainText('Do not ask this');
+    await expect(promptBoxes.nth(1)).toContainText('Better question');
+    await expect(page.getByRole('button', { name: 'Copy example prompt' })).toHaveCount(2);
+
+    await page.locator('.prompt-example--better .prompt-example__copy').click();
+    await expect(page.locator('.prompt-example--better .prompt-example__copy')).toContainText(
+      'Copied'
+    );
+    const copiedPrompt = await page.evaluate(
+      () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
+    );
+    expect(copiedPrompt).toContain('List possible readings');
   });
 
   test('renders the second English article detail page with byline, citation, rights notice and concept links', async ({ page }) => {

@@ -134,6 +134,10 @@ The series supports the current article line around prompts, context, communicat
 
 The EN versions are adaptations, not literal translations. No DOI was added. Pre-launch safety remains unchanged: `noindex`, Vercel `X-Robots-Tag` and draft filtering stay active.
 
+## Prompt examples
+
+Prompt examples now use copyable multi-line boxes where a concrete question to AI clarifies the argument. They should remain sparse and support the editorial line, not turn articles or notes into prompt libraries.
+
 ## Editorial and usability audit
 
 The publication layer passed an editorial and usability audit after article 03 was finalized as a case-study based article.

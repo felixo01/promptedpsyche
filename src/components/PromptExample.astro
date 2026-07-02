@@ -1,0 +1,34 @@
+---
+interface Props {
+  lang?: 'en' | 'pl';
+  label?: string;
+  tone?: 'neutral' | 'bad' | 'better';
+}
+
+const { lang = 'en', tone = 'neutral' } = Astro.props;
+const toneLabels = {
+  neutral: lang === 'pl' ? 'Przykładowy prompt' : 'Example prompt',
+  bad: lang === 'pl' ? 'Nie pytaj tak' : 'Do not ask this',
+  better: lang === 'pl' ? 'Lepsze pytanie' : 'Better question'
+};
+const label = Astro.props.label ?? toneLabels[tone];
+const copyLabel = lang === 'pl' ? 'Kopiuj' : 'Copy';
+const copiedLabel = lang === 'pl' ? 'Skopiowano' : 'Copied';
+const ariaLabel = lang === 'pl' ? 'Kopiuj przykładowy prompt' : 'Copy example prompt';
+---
+
+<div class:list={['prompt-example', `prompt-example--${tone}`]} data-copyable-prompt>
+  <div class="prompt-example__header">
+    <p class="prompt-example__label">{label}</p>
+    <button
+      class="prompt-example__copy"
+      type="button"
+      aria-label={ariaLabel}
+      data-copy-label={copyLabel}
+      data-copied-label={copiedLabel}
+    >
+      {copyLabel}
+    </button>
+  </div>
+  <pre class="prompt-example__body"><code data-prompt-text><slot /></code></pre>
+</div>
