@@ -7,29 +7,38 @@ const englishArticleRoute = '/articles/it-is-not-just-about-the-prompt/';
 const secondEnglishArticleRoute = '/articles/the-model-does-not-remember-it-works-with-context/';
 const thirdEnglishArticleRoute =
   '/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation/';
+const mirrorPolishArticleRoute =
+  '/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/';
+const mirrorEnglishArticleRoute =
+  '/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/';
 const thirdEnglishArticleTitle =
   'AI does not read people. It helps make sense of the situation.';
 const thirdPolishArticleTitle = 'AI nie czyta ludzi. Pomaga uporządkować sytuację.';
+const mirrorPolishArticleTitle = 'AI jako lustro. Dlaczego tak łatwo się z nim dogadujemy?';
+const mirrorEnglishArticleTitle = 'AI as a mirror: why it can feel so easy to talk to';
 
 test.describe('published articles', () => {
   test('shows the English article on the English articles index', async ({ page }) => {
     await page.goto('/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(3);
+    await expect(page.locator('.entry-list article')).toHaveCount(4);
     await expect(page.locator('.entry-list')).toContainText('It is not just about the prompt');
     await expect(page.locator('.entry-list')).toContainText(
       'The model does not remember. It works with context.'
     );
     await expect(page.locator('.entry-list')).toContainText(thirdEnglishArticleTitle);
+    await expect(page.locator('.entry-list')).toContainText(mirrorEnglishArticleTitle);
     await expect(page.locator('.entry-list')).not.toContainText(
       'AI does not read people. It helps read context.'
     );
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles.slice(0, 3)).toEqual([
+    expect(titles).toHaveLength(4);
+    expect(titles).toEqual(expect.arrayContaining([
+      mirrorEnglishArticleTitle,
       thirdEnglishArticleTitle,
       'The model does not remember. It works with context.',
       'It is not just about the prompt'
-    ]);
+    ]));
     const titleLink = page.getByRole('link', {
       name: 'It is not just about the prompt',
       exact: true
@@ -69,13 +78,25 @@ test.describe('published articles', () => {
     await expect(thirdCtaLink).toHaveAttribute('href', thirdEnglishArticleRoute);
     await expect(thirdCtaLink).toContainText('Read article');
     await expect(thirdCtaLink.locator('span[aria-hidden="true"]')).toHaveText('->');
+
+    const mirrorTitleLink = page.getByRole('link', {
+      name: mirrorEnglishArticleTitle,
+      exact: true
+    });
+    const mirrorCtaLink = page.getByRole('link', {
+      name: `Read article: ${mirrorEnglishArticleTitle}`
+    });
+
+    await expect(mirrorTitleLink).toHaveAttribute('href', mirrorEnglishArticleRoute);
+    await expect(mirrorCtaLink).toHaveAttribute('href', mirrorEnglishArticleRoute);
   });
 
   test('shows the Polish article on the Polish articles index', async ({ page }) => {
     await page.goto('/pl/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(3);
+    await expect(page.locator('.entry-list article')).toHaveCount(4);
     await expect(page.locator('.entry-list')).toContainText('Nie chodzi tylko o prompt');
+    await expect(page.locator('.entry-list')).toContainText(mirrorPolishArticleTitle);
     const titleLink = page.getByRole('link', {
       name: 'Nie chodzi tylko o prompt',
       exact: true
@@ -91,17 +112,30 @@ test.describe('published articles', () => {
     await expect(ctaLink).toBeVisible();
     await ctaLink.focus();
     await expect(ctaLink).toBeFocused();
+
+    const mirrorTitleLink = page.getByRole('link', {
+      name: mirrorPolishArticleTitle,
+      exact: true
+    });
+    const mirrorCtaLink = page.getByRole('link', {
+      name: `Czytaj artykuł: ${mirrorPolishArticleTitle}`
+    });
+
+    await expect(mirrorTitleLink).toHaveAttribute('href', mirrorPolishArticleRoute);
+    await expect(mirrorCtaLink).toHaveAttribute('href', mirrorPolishArticleRoute);
   });
 
-  test('shows the third Polish article first on the Polish articles index', async ({ page }) => {
+  test('shows the third Polish article on the Polish articles index', async ({ page }) => {
     await page.goto('/pl/articles/');
 
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles.slice(0, 3)).toEqual([
+    expect(titles).toHaveLength(4);
+    expect(titles).toEqual(expect.arrayContaining([
+      mirrorPolishArticleTitle,
       thirdPolishArticleTitle,
       'Model nie pamięta. Model ma kontekst.',
       'Nie chodzi tylko o prompt'
-    ]);
+    ]));
     await expect(page.locator('.entry-list')).not.toContainText(
       'AI nie czyta ludzi. Pomaga czytać kontekst.'
     );
@@ -144,6 +178,7 @@ test.describe('published articles', () => {
     await expect(page.locator('body')).not.toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('body')).not.toContainText('Model nie pamięta. Model ma kontekst.');
     await expect(page.locator('body')).not.toContainText(thirdPolishArticleTitle);
+    await expect(page.locator('body')).not.toContainText(mirrorPolishArticleTitle);
   });
 
   test('does not show the English article on the Polish articles index', async ({ page }) => {
@@ -156,6 +191,7 @@ test.describe('published articles', () => {
     await expect(page.locator('body')).not.toContainText(
       thirdEnglishArticleTitle
     );
+    await expect(page.locator('body')).not.toContainText(mirrorEnglishArticleTitle);
   });
 
   test('renders the English article detail page with byline, citation and rights notice', async ({ page }) => {
@@ -281,7 +317,7 @@ test.describe('published articles', () => {
       `${thirdPolishArticleTitle} Prompted Psyche. https://promptedpsyche.com/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/`
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
-    await expect(page.locator('body')).not.toContainText(/DOI/i);
+    await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'Wszystkie prawa zastrzeżone'
     );
@@ -359,7 +395,7 @@ test.describe('published articles', () => {
       'Mamczur, F. (2026). AI does not read people. It helps make sense of the situation. Prompted Psyche. https://promptedpsyche.com/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
-    await expect(page.locator('body')).not.toContainText(/DOI/i);
+    await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'All rights reserved'
     );
@@ -418,6 +454,174 @@ test.describe('published articles', () => {
       () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
     );
     expect(copiedPrompt).toContain('List possible readings');
+  });
+
+  test('renders the AI mirror Polish article with citation, tags, concepts and language alternate', async ({ page }) => {
+    await page.goto(mirrorPolishArticleRoute);
+
+    await expect(page.locator('.content-header h1')).toHaveText(mirrorPolishArticleTitle);
+    await expect(page.locator('.prose')).toContainText('Lustro języka, nie lustro duszy');
+    await expect(page.locator('.prose')).toContainText('Dopasowanie nie jest zrozumieniem');
+    await expect(page.locator('.prose')).toContainText('Lepsze pytanie');
+    await expect(page.locator('[data-qa="article-byline"]')).toContainText('Autor: Feliks Mamczur');
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+      `${mirrorPolishArticleTitle} Prompted Psyche. https://promptedpsyche.com/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/`
+    );
+    await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'Wszystkie prawa zastrzeżone'
+    );
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+      'src',
+      '/images/articles/ai-mirror-conversation-loop.svg'
+    );
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+      'alt',
+      'Schemat pokazujący AI jako lustro rozmowy: użytkownik zadaje pytanie, model porządkuje odpowiedź, a człowiek musi wrócić do weryfikacji i kontekstu.'
+    );
+    await expect(page.locator('.article-hero-figure figcaption')).toContainText(
+      'AI może odbijać język'
+    );
+    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Przykład' })).toBeVisible();
+    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Granica' })).toBeVisible();
+    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Zatrzymaj się' })).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/pl/tags/ai-i-czlowiek/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/pl/tags/zaufanie-do-ai/"]')).toBeVisible();
+
+    await expect(page.locator('.prose a[href="/pl/concepts/model-output/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/antropomorfizacja/"]').first()).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/calibrated-trust/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/epistemic-vigilance/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/mental-model/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/ai-companions/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/cognitive-offloading/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/metacognition/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/human-ai-interaction/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/ai-mediated-communication/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/nadzor-ze-strony-czlowieka/"]')).toBeVisible();
+    await expect(page.locator('.prose')).toContainText('Źródła i dalsza lektura');
+    await expect(
+      page.locator(
+        '.language-switcher a[href="/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/"]'
+      )
+    ).toBeVisible();
+    await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
+    await expect(page.locator('body')).not.toContainText('automatyczna diagnoza');
+    await expect(page.locator('body')).not.toContainText('terapia przez AI');
+  });
+
+  test('renders copyable prompt examples in the AI mirror Polish article', async ({ page }) => {
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator, 'clipboard', {
+        configurable: true,
+        value: {
+          writeText: async (text: string) => {
+            (window as Window & { __copiedPrompt?: string }).__copiedPrompt = text;
+          }
+        }
+      });
+    });
+    await page.goto(mirrorPolishArticleRoute);
+
+    const promptBoxes = page.locator('.prompt-example');
+    await expect(promptBoxes).toHaveCount(2);
+    await expect(promptBoxes.nth(0)).toContainText('Nie pytaj tak');
+    await expect(promptBoxes.nth(1)).toContainText('Lepsze pytanie');
+    await expect(page.getByRole('button', { name: 'Kopiuj przykładowy prompt' })).toHaveCount(2);
+
+    await page.locator('.prompt-example--better .prompt-example__copy').click();
+    await expect(page.locator('.prompt-example--better .prompt-example__copy')).toContainText(
+      'Skopiowano'
+    );
+    const copiedPrompt = await page.evaluate(
+      () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
+    );
+    expect(copiedPrompt).toContain('Przeanalizuj tę wiadomość jako tekst');
+  });
+
+  test('renders the AI mirror English article with citation, tags, concepts and language alternate', async ({ page }) => {
+    await page.goto(mirrorEnglishArticleRoute);
+
+    await expect(page.locator('.content-header h1')).toHaveText(mirrorEnglishArticleTitle);
+    await expect(page.locator('.prose')).toContainText('A mirror of language, not a mirror of the soul');
+    await expect(page.locator('.prose')).toContainText('Fit is not understanding');
+    await expect(page.locator('.prose')).toContainText('Better question');
+    await expect(page.locator('[data-qa="article-byline"]')).toContainText('By Feliks Mamczur');
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+      `${mirrorEnglishArticleTitle}. Prompted Psyche. https://promptedpsyche.com/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/`
+    );
+    await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'All rights reserved'
+    );
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+      'src',
+      '/images/articles/ai-mirror-conversation-loop.svg'
+    );
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+      'alt',
+      "Diagram showing AI as a conversational mirror: the user asks, the model organizes a response, and the human returns to verification and context."
+    );
+    await expect(page.locator('.article-hero-figure figcaption')).toContainText(
+      'AI can reflect the language'
+    );
+    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Example' })).toBeVisible();
+    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Boundary' })).toBeVisible();
+    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Pause' })).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/tags/ai-and-humans/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/tags/trust-in-ai/"]')).toBeVisible();
+
+    await expect(page.locator('.prose a[href="/concepts/model-output/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/anthropomorphism/"]').first()).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/calibrated-trust/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/epistemic-vigilance/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/mental-model/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/ai-companions/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/cognitive-offloading/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/metacognition/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/human-ai-interaction/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/ai-mediated-communication/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/human-oversight/"]')).toBeVisible();
+    await expect(page.locator('.prose')).toContainText('Sources and further reading');
+    await expect(
+      page.locator(
+        '.language-switcher a[href="/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/"]'
+      )
+    ).toBeVisible();
+    await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
+    await expect(page.locator('body')).not.toContainText('AI therapy');
+    await expect(page.locator('body')).not.toContainText('automatic diagnosis');
+  });
+
+  test('renders copyable prompt examples in the AI mirror English article', async ({ page }) => {
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator, 'clipboard', {
+        configurable: true,
+        value: {
+          writeText: async (text: string) => {
+            (window as Window & { __copiedPrompt?: string }).__copiedPrompt = text;
+          }
+        }
+      });
+    });
+    await page.goto(mirrorEnglishArticleRoute);
+
+    const promptBoxes = page.locator('.prompt-example');
+    await expect(promptBoxes).toHaveCount(2);
+    await expect(promptBoxes.nth(0)).toContainText('Do not ask this');
+    await expect(promptBoxes.nth(1)).toContainText('Better question');
+    await expect(page.getByRole('button', { name: 'Copy example prompt' })).toHaveCount(2);
+
+    await page.locator('.prompt-example--better .prompt-example__copy').click();
+    await expect(page.locator('.prompt-example--better .prompt-example__copy')).toContainText(
+      'Copied'
+    );
+    const copiedPrompt = await page.evaluate(
+      () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
+    );
+    expect(copiedPrompt).toContain('Analyze this message as text');
   });
 
   test('renders the second English article detail page with byline, citation, rights notice and concept links', async ({ page }) => {

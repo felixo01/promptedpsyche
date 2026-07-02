@@ -43,3 +43,9 @@ Grafiki artykułowe mają wyjaśniać relacje między człowiekiem, AI, poznanie
 - każdy obraz ma alt text
 - alt opisuje sens diagramu, nie tylko wygląd
 - nie opierać sensu wyłącznie na tekście w obrazie
+
+## Current public graphics
+
+- `ai-mirror-conversation-loop.svg` visualizes AI as a conversational mirror: question, model mirror layer, organized output and return loop to context and verification.
+- The graphic should suggest language and framing, not a human mind, therapy relationship or AI authority.
+- Avoid literal humanoid, robot, brain, neon or stock-like AI imagery for this article line.

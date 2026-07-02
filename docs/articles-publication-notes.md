@@ -96,6 +96,34 @@ The public article includes byline, suggested citation and rights notice through
 - Article 02: `2026-06-18`
 - Article 01: `2026-05-23`
 
+## Article 04
+
+The fourth article pair published in pre-launch mode is:
+
+- `AI jako lustro. Dlaczego tak łatwo się z nim dogadujemy?`
+- URL: `/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/`
+- Source file: `src/content/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy.md`
+- Date: `2026-07-02`
+- Status: public PL article, `draft: false`
+- `AI as a mirror: why it can feel so easy to talk to`
+- URL: `/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/`
+- Source file: `src/content/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to.md`
+- Date: `2026-07-02`
+- Status: public EN article, `draft: false`
+
+The article explores AI as a linguistic and social mirror, not as literal understanding or human-like inner life. It distinguishes conversational fit, fluency and validation from understanding, responsibility and full context.
+
+The public article includes editorial asides, copyable prompt boxes, concept links and the original article graphic `ai-mirror-conversation-loop.svg`. APA references were checked against public source metadata and DOI pages where available. No DOI was added for the Prompted Psyche article. Site-wide `noindex` and the Vercel `X-Robots-Tag` remain active.
+
+The EN version is an editorial adaptation, not a literal translation. It preserves the core argument and safety boundaries while using natural English rhythm.
+
+Current article chronology is now:
+
+- Article 04: `2026-07-02`
+- Article 03: `2026-07-02`
+- Article 02: `2026-06-18`
+- Article 01: `2026-05-23`
+
 ## Note 01
 
 The first note pair published in pre-launch mode is:
@@ -177,9 +205,10 @@ English adaptations now public:
 - Article 01: `It is not just about the prompt`
 - Article 02: `The model does not remember. It works with context.`
 - Article 03: `AI does not read people. It helps make sense of the situation.`
+- Article 04: `AI as a mirror: why it can feel so easy to talk to`
 - Note 01: `Fluent does not mean true`
 
-PL/EN publication parity is restored for the current public article and note layer: 3 public PL articles, 3 public EN articles, 4 public PL notes and 4 public EN notes.
+PL/EN publication parity is restored for the current public article and note layer: 4 public PL articles, 4 public EN articles, 4 public PL notes and 4 public EN notes.
 
 The site remains in pre-launch mode. Noindex and the Vercel X-Robots-Tag remain active. Suggested citation and rights notice remain standard for public articles and notes.
 
@@ -194,6 +223,12 @@ The first article currently uses:
 - `public/images/articles/human-ai-workflow-judgment.webp`
 
 Future article graphics should follow the same quiet diagrammatic direction: light paper texture, charcoal linework, muted teal accents, system relationships and clear alt text.
+
+The fourth article uses:
+
+- `public/images/articles/ai-mirror-conversation-loop.svg`
+- purpose: visualize AI as a conversational mirror that reflects language and framing, not the human mind
+- boundary: avoid literal humanoid, robot, brain or authority imagery
 
 ## DOI and citation policy
 

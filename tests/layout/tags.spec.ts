@@ -4,13 +4,19 @@ test.describe('publication tag pages', () => {
   test('links visible article and note tags to English tag pages', async ({ page }) => {
     await page.goto('/articles/');
 
-    const articleTag = page.locator('.entry-list .tag-list a').first();
+    const articleTag = page.locator('.entry-list .tag-list a[href="/tags/ai-and-humans/"]').first();
     await expect(articleTag).toHaveAttribute('href', /\/tags\/.+\/$/);
-    await expect(articleTag).toHaveAttribute('href', '/tags/ai-literacy/');
+    await expect(articleTag).toHaveAttribute('href', '/tags/ai-and-humans/');
 
     await articleTag.click();
-    await expect(page).toHaveURL(/\/tags\/ai-literacy\/$/);
+    await expect(page).toHaveURL(/\/tags\/ai-and-humans\/$/);
     await expect(page.locator('.tag-archive-list article').first()).toBeVisible();
+    await expect(page.locator('.tag-archive-list')).toContainText(
+      'AI as a mirror: why it can feel so easy to talk to'
+    );
+    await expect(page.locator('.tag-archive-list')).not.toContainText(
+      'AI jako lustro. Dlaczego tak łatwo się z nim dogadujemy?'
+    );
 
     await page.goto('/notes/');
     const noteTag = page.locator('.entry-list .tag-list a').first();
@@ -20,13 +26,19 @@ test.describe('publication tag pages', () => {
   test('links visible article and note tags to Polish tag pages', async ({ page }) => {
     await page.goto('/pl/articles/');
 
-    const articleTag = page.locator('.entry-list .tag-list a').first();
+    const articleTag = page.locator('.entry-list .tag-list a[href="/pl/tags/ai-i-czlowiek/"]').first();
     await expect(articleTag).toHaveAttribute('href', /\/pl\/tags\/.+\/$/);
-    await expect(articleTag).toHaveAttribute('href', '/pl/tags/ai-literacy/');
+    await expect(articleTag).toHaveAttribute('href', '/pl/tags/ai-i-czlowiek/');
 
     await articleTag.click();
-    await expect(page).toHaveURL(/\/pl\/tags\/ai-literacy\/$/);
+    await expect(page).toHaveURL(/\/pl\/tags\/ai-i-czlowiek\/$/);
     await expect(page.locator('.tag-archive-list article').first()).toBeVisible();
+    await expect(page.locator('.tag-archive-list')).toContainText(
+      'AI jako lustro. Dlaczego tak łatwo się z nim dogadujemy?'
+    );
+    await expect(page.locator('.tag-archive-list')).not.toContainText(
+      'AI as a mirror: why it can feel so easy to talk to'
+    );
 
     await page.goto('/pl/notes/');
     const noteTag = page.locator('.entry-list .tag-list a').first();
@@ -42,6 +54,12 @@ test.describe('publication tag pages', () => {
 
     await page.goto('/concepts/ai-literacy/');
     await expect(page.locator('.content-tags a')).toHaveCount(0);
+
+    await page.goto('/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/');
+    await expect(page.locator('.content-tags a[href="/tags/ai-and-humans/"]')).toBeVisible();
+
+    await page.goto('/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/');
+    await expect(page.locator('.content-tags a[href="/pl/tags/ai-i-czlowiek/"]')).toBeVisible();
   });
 
   test('renders English tag archive without Polish publication leakage', async ({ page }) => {

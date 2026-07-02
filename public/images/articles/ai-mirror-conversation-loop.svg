@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">AI mirror conversation loop</title>
+  <desc id="desc">A calm editorial diagram showing a user question, a model mirror layer, organized output and a return loop to context and verification.</desc>
+  <defs>
+    <pattern id="paper" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#f7f3ea"/>
+      <path d="M0 20L20 0" stroke="#e6ded0" stroke-width="0.45" opacity="0.42"/>
+    </pattern>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10" fill="none" stroke="#22201c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#paper)"/>
+  <circle cx="185" cy="665" r="132" fill="#d7e1dc" opacity="0.58"/>
+  <circle cx="1350" cy="194" r="118" fill="#d7e1dc" opacity="0.62"/>
+  <g opacity="0.34" stroke="#8c9893" fill="none">
+    <circle cx="1280" cy="245" r="72"/>
+    <circle cx="1280" cy="245" r="102"/>
+    <circle cx="1280" cy="245" r="132"/>
+  </g>
+
+  <g fill="none" stroke="#22201c" stroke-width="2">
+    <circle cx="800" cy="450" r="178"/>
+    <circle cx="800" cy="450" r="236" stroke-dasharray="6 10" opacity="0.62"/>
+    <ellipse cx="800" cy="450" rx="112" ry="222" opacity="0.36"/>
+    <path d="M690 290 C760 338 840 338 910 290" opacity="0.42"/>
+    <path d="M690 610 C760 562 840 562 910 610" opacity="0.42"/>
+  </g>
+
+  <g fill="#536965" opacity="0.92">
+    <circle cx="800" cy="450" r="122"/>
+  </g>
+  <g stroke="#f7f3ea" stroke-width="2" opacity="0.7">
+    <path d="M736 412 H864"/>
+    <path d="M720 448 H880"/>
+    <path d="M740 484 H858"/>
+  </g>
+  <text x="800" y="380" text-anchor="middle" fill="#f7f3ea" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="21" font-weight="700" letter-spacing="5">MIRROR</text>
+  <text x="800" y="540" text-anchor="middle" fill="#f7f3ea" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="15" font-weight="700" letter-spacing="3" opacity="0.78">LANGUAGE + FRAME</text>
+
+  <g fill="#fbfaf6" stroke="#22201c" stroke-width="1.8">
+    <rect x="132" y="344" width="246" height="138" rx="20"/>
+    <rect x="1222" y="344" width="246" height="138" rx="20"/>
+    <circle cx="530" cy="222" r="72"/>
+    <circle cx="530" cy="678" r="72"/>
+    <circle cx="1070" cy="222" r="72"/>
+    <circle cx="1070" cy="678" r="72"/>
+  </g>
+
+  <g fill="#22201c" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18" font-weight="700" letter-spacing="3">
+    <text x="255" y="405" text-anchor="middle">QUESTION</text>
+    <text x="1345" y="405" text-anchor="middle">OUTPUT</text>
+    <text x="530" y="217" text-anchor="middle">CONTEXT</text>
+    <text x="530" y="687" text-anchor="middle">ATTENTION</text>
+    <text x="1070" y="217" text-anchor="middle">TRUST</text>
+    <text x="1070" y="687" text-anchor="middle">CHECK</text>
+  </g>
+
+  <g stroke="#536965" stroke-width="2" opacity="0.78">
+    <path d="M178 440 H332"/>
+    <path d="M1268 440 H1422"/>
+  </g>
+
+  <g fill="none" stroke="#22201c" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M380 414 C475 414 535 414 640 430"/>
+    <path d="M920 430 C1028 414 1134 414 1214 414"/>
+    <path d="M1218 465 C1100 590 965 660 820 673"/>
+    <path d="M780 673 C650 660 550 600 474 492"/>
+    <path d="M475 388 C548 274 648 215 784 205"/>
+    <path d="M824 205 C968 216 1084 276 1215 389"/>
+  </g>
+
+  <g stroke="#8c9893" stroke-width="1.4" stroke-dasharray="6 9" fill="none">
+    <path d="M530 294 C562 375 646 436 724 450"/>
+    <path d="M1070 294 C1038 375 954 436 876 450"/>
+    <path d="M530 606 C562 526 646 466 724 450"/>
+    <path d="M1070 606 C1038 526 954 466 876 450"/>
+  </g>
+
+  <g fill="#536965">
+    <circle cx="476" cy="492" r="7"/>
+    <circle cx="642" cy="430" r="7"/>
+    <circle cx="956" cy="436" r="7"/>
+    <circle cx="1214" cy="414" r="7"/>
+    <circle cx="820" cy="673" r="7"/>
+  </g>
+  <g fill="#22201c">
+    <circle cx="784" cy="205" r="6"/>
+    <circle cx="824" cy="205" r="6"/>
+  </g>
+
+  <g opacity="0.45">
+    <circle cx="134" cy="230" r="3" fill="#22201c"/>
+    <circle cx="164" cy="230" r="3" fill="#22201c"/>
+    <circle cx="194" cy="230" r="3" fill="#22201c"/>
+    <circle cx="134" cy="260" r="3" fill="#22201c"/>
+    <circle cx="164" cy="260" r="3" fill="#22201c"/>
+    <circle cx="194" cy="260" r="3" fill="#22201c"/>
+  </g>
+</svg>

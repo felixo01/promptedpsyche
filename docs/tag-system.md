@@ -31,6 +31,8 @@ Examples:
 - `Human-AI Interaction` -> `human-ai-interaction`
 - `praca z AI` -> `praca-z-ai`
 - `odpowiedzialność` -> `odpowiedzialnosc`
+- `AI i człowiek` -> `ai-i-czlowiek`
+- `AI and humans` -> `ai-and-humans`
 
 ## Language separation
 
@@ -40,3 +42,6 @@ PL tag pages show PL publications only.
 
 When an equivalent tag slug exists in both languages, the language switcher may point to the matching tag archive. Otherwise it should point to a safe publication index, not to an unrelated tag page.
 
+## Current publication check
+
+The AI mirror article pair uses functional publication tags on index cards and detail pages. New tag archives include `/pl/tags/ai-i-czlowiek/` and `/tags/ai-and-humans/`, and they should not mix PL and EN publications.

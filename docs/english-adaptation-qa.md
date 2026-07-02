@@ -31,3 +31,8 @@ Use this checklist before publishing English versions of Polish articles or note
 - Tag pages were checked for language separation.
 - The Projects EN page was added as an adaptation, not a literal translation.
 - Safety language around diagnosis, therapy and specialist responsibility was checked on Projects pages.
+- The EN adaptation for `AI as a mirror: why it can feel so easy to talk to` is complete.
+- The EN title is an editorial adaptation, not a literal translation of the Polish title.
+- PL/EN routing for the AI mirror article pair was checked through `translationKey`.
+- Prompt boxes were adapted naturally: `Do not ask this` and `Better question`.
+- Safety language avoids claims about AI consciousness, therapy, diagnosis or human-like understanding.

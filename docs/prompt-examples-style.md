@@ -41,3 +41,7 @@ Editorial asides are for ordinary examples, boundaries, short practical checks a
 Prompt boxes are only for copyable AI questions or instructions.
 
 Use both sparingly. The site should not become a prompt library.
+
+## Current article examples
+
+The AI mirror article uses prompt boxes to distinguish unsafe mind-reading prompts from better context-analysis prompts. They are examples of careful questioning, not a prompt library or prompt-guru pattern.
