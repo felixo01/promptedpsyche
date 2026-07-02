@@ -4,12 +4,16 @@ const portraitCases = [
   {
     route: '/about/',
     alt: 'Feliks Mamczur, author of Prompted Psyche',
-    title: 'About the author'
+    title: 'About the author',
+    summaryTitle: 'In brief',
+    communicationTitle: 'Experience in communication'
   },
   {
     route: '/pl/about/',
     alt: 'Feliks Mamczur, autor Prompted Psyche',
-    title: 'Kim jestem'
+    title: 'Kim jestem',
+    summaryTitle: 'W skrócie',
+    communicationTitle: 'Doświadczenie w komunikacji'
   }
 ];
 
@@ -42,29 +46,41 @@ test.describe('author portrait', () => {
       await page.goto(portraitCase.route);
 
       await expect(page.getByRole('heading', { level: 1, name: portraitCase.title })).toBeVisible();
+      await expect(page.getByRole('heading', { level: 2, name: portraitCase.summaryTitle })).toBeVisible();
+      await expect(page.getByRole('heading', { level: 2, name: portraitCase.communicationTitle })).toBeVisible();
 
       const metrics = await page.evaluate(() => {
-        const block = document.querySelector('.about-page .editorial-block');
-        const split = document.querySelector('.about-page .editorial-split');
-        if (!block || !split) {
+        const hero = document.querySelector('.about-page .about-hero');
+        const sectionList = document.querySelector('.about-page .about-section-list');
+        const section = document.querySelector('.about-page .about-section');
+        const heroInner = document.querySelector('.about-page .about-hero__inner');
+        if (!hero || !sectionList || !section || !heroInner) {
           return null;
         }
 
-        const blockStyle = window.getComputedStyle(block);
-        const splitStyle = window.getComputedStyle(split);
+        const heroStyle = window.getComputedStyle(hero);
+        const sectionListStyle = window.getComputedStyle(sectionList);
+        const sectionStyle = window.getComputedStyle(section);
+        const heroInnerStyle = window.getComputedStyle(heroInner);
 
         return {
-          paddingTop: Number.parseFloat(blockStyle.paddingTop),
-          paddingBottom: Number.parseFloat(blockStyle.paddingBottom),
-          columnGap: Number.parseFloat(splitStyle.columnGap || splitStyle.gap)
+          heroPaddingTop: Number.parseFloat(heroStyle.paddingTop),
+          heroPaddingBottom: Number.parseFloat(heroStyle.paddingBottom),
+          listGap: Number.parseFloat(sectionListStyle.rowGap || sectionListStyle.gap),
+          sectionPaddingTop: Number.parseFloat(sectionStyle.paddingTop),
+          sectionColumnGap: Number.parseFloat(sectionStyle.columnGap || sectionStyle.gap),
+          heroColumnGap: Number.parseFloat(heroInnerStyle.columnGap || heroInnerStyle.gap)
         };
       });
 
       expect(metrics).not.toBeNull();
       const isNarrow = testInfo.project.name === 'mobile-390' || testInfo.project.name === 'tablet-768';
-      expect(metrics?.paddingTop).toBeLessThanOrEqual(isNarrow ? 58 : 92);
-      expect(metrics?.paddingBottom).toBeLessThanOrEqual(isNarrow ? 58 : 92);
-      expect(metrics?.columnGap).toBeLessThanOrEqual(isNarrow ? 24 : 58);
+      expect(metrics?.heroPaddingTop).toBeLessThanOrEqual(isNarrow ? 58 : 92);
+      expect(metrics?.heroPaddingBottom).toBeLessThanOrEqual(isNarrow ? 58 : 92);
+      expect(metrics?.listGap).toBeLessThanOrEqual(isNarrow ? 42 : 62);
+      expect(metrics?.sectionPaddingTop).toBeLessThanOrEqual(isNarrow ? 28 : 36);
+      expect(metrics?.sectionColumnGap).toBeLessThanOrEqual(isNarrow ? 32 : 58);
+      expect(metrics?.heroColumnGap).toBeLessThanOrEqual(isNarrow ? 36 : 76);
     });
   }
 });

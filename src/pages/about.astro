@@ -8,9 +8,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="About Feliks Mamczur, author of Prompted Psyche, a publication and expert platform on AI, cyberpsychology and Human-AI Interaction."
 >
   <article class="lovable-page about-page">
-    <header class="lovable-page-hero author-page-hero">
-      <div class="lovable-container author-page-hero__inner">
-        <div class="lovable-heading-narrow author-page-hero__copy">
+    <header class="about-hero">
+      <div class="lovable-container about-hero__inner">
+        <div class="about-hero__copy">
           <p class="eyebrow">Author</p>
           <h1>About the author</h1>
           <p class="lede">
@@ -24,17 +24,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             Human-AI Interaction.
           </p>
         </div>
-        <AuthorPortrait lang="en" variant="about" />
+
+        <aside class="about-hero__aside" aria-labelledby="about-summary-title">
+          <AuthorPortrait lang="en" variant="about" />
+          <div class="about-summary-card">
+            <h2 id="about-summary-title">In brief</h2>
+            <ul>
+              <li>AI, cognition and communication</li>
+              <li>Human-AI Interaction</li>
+              <li>Cognitive psychology and cyberpsychology</li>
+              <li>Marketing, film and creative practice</li>
+              <li>Articles, notes and concepts</li>
+            </ul>
+          </div>
+        </aside>
       </div>
     </header>
 
-    <section class="editorial-block">
-      <div class="lovable-container editorial-split">
-        <div>
-          <p class="eyebrow">01</p>
-          <p class="meta-kicker">Human side</p>
+    <div class="lovable-container about-section-list">
+      <section class="about-section">
+        <div class="about-section__meta">
+          <span>01</span>
+          <p>Human side</p>
         </div>
-        <div>
+        <div class="about-section__body">
           <h2>Why I write about AI</h2>
           <div class="editorial-copy">
             <p>
@@ -51,16 +64,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="editorial-block">
-      <div class="lovable-container editorial-split">
-        <div>
-          <p class="eyebrow">02</p>
-          <p class="meta-kicker">Perspective</p>
+      <section class="about-section">
+        <div class="about-section__meta">
+          <span>02</span>
+          <p>Perspective</p>
         </div>
-        <div>
+        <div class="about-section__body">
           <h2>My perspective</h2>
           <div class="editorial-copy">
             <p>
@@ -73,16 +84,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="editorial-block with-side-note">
-      <div class="lovable-container editorial-split">
-        <div>
-          <p class="eyebrow">03</p>
-          <p class="meta-kicker">Communication</p>
+      <section class="about-section">
+        <div class="about-section__meta">
+          <span>03</span>
+          <p>Communication</p>
         </div>
-        <div>
+        <div class="about-section__body">
           <h2>Experience in communication</h2>
           <div class="editorial-copy">
             <p>
@@ -100,57 +109,46 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </p>
           </div>
         </div>
-      </div>
-      <aside class="floating-note" aria-hidden="true">
-        <span></span>
-        Communication, attention, image, emotion
-      </aside>
-    </section>
+      </section>
 
-    <section class="lovable-section" aria-labelledby="read-title">
-      <div class="lovable-container">
-        <div class="compact-heading">
-          <p class="eyebrow">04</p>
-          <h2 id="read-title">What to read here</h2>
+      <section class="about-section">
+        <div class="about-section__meta">
+          <span>04</span>
+          <p>Publishing</p>
         </div>
+        <div class="about-section__body">
+          <h2>What to read here</h2>
+          <div class="editorial-copy">
+            <p>
+              The site brings together long-form articles, shorter notes and a concept
+              library. These formats help build a shared language for AI, psychology,
+              trust, emotion, work and culture.
+            </p>
+          </div>
+          <div class="about-link-grid" aria-label="Publications">
+            <a href="/articles/">
+              <span>Articles</span>
+              <strong>Long-form essays and analysis</strong>
+            </a>
+            <a href="/notes/">
+              <span>Notes</span>
+              <strong>Short observations and working ideas</strong>
+            </a>
+            <a href="/concepts/">
+              <span>Concepts</span>
+              <strong>The language of Prompted Psyche</strong>
+            </a>
+          </div>
+        </div>
+      </section>
 
-        <div class="lovable-lens-grid">
-          <article class="lens-item">
-            <p>Articles</p>
-            <h3>Long-form essays</h3>
-            <span>
-              Developed arguments on AI, cyberpsychology, Human-AI Interaction,
-              trust, attention, work and culture.
-            </span>
-          </article>
-          <article class="lens-item lens-item-offset">
-            <p>Notes</p>
-            <h3>Shorter observations</h3>
-            <span>
-              Compact reflections, working ideas and signals from the changing
-              relationship between people and AI systems.
-            </span>
-          </article>
-          <article class="lens-item">
-            <p>Concepts</p>
-            <h3>A shared vocabulary</h3>
-            <span>
-              Terms that help name what happens when AI enters cognition,
-              communication, decision-making and creative practice.
-            </span>
-          </article>
+      <section class="about-section">
+        <div class="about-section__meta">
+          <span>05</span>
+          <p>Consulting</p>
         </div>
-      </div>
-    </section>
-
-    <section class="editorial-block">
-      <div class="lovable-container editorial-split">
-        <div>
-          <p class="eyebrow">05</p>
-          <p class="meta-kicker">Consulting</p>
-        </div>
-        <div>
-          <h2>Consulting as an extension of the work</h2>
+        <div class="about-section__body">
+          <h2>Consulting</h2>
           <div class="editorial-copy">
             <p>
               Consulting, workshops and talks grow from the same perspective. I help
@@ -159,22 +157,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               generative tools.
             </p>
             <p>
-              The consulting page explains the formats and the kinds of questions I
-              can help with.
-            </p>
-            <p>
               <a class="text-link" href="/consulting/">See consulting</a>
             </p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="lovable-final-links">
-      <div class="lovable-container final-link-grid">
-        <a href="/articles/">Read articles</a>
-        <a href="/concepts/">Explore concepts</a>
-      </div>
-    </section>
+      </section>
+    </div>
   </article>
 </BaseLayout>
