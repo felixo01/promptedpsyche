@@ -5,6 +5,7 @@ const routes = [
   '/pl/',
   '/articles/',
   '/pl/articles/',
+  '/articles/it-is-not-just-about-the-prompt/',
   '/pl/articles/nie-chodzi-tylko-o-prompt/',
   '/notes/',
   '/pl/notes/',

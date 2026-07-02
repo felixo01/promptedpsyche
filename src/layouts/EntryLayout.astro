@@ -1,8 +1,10 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import RightsNotice from '../components/RightsNotice.astro';
+import SuggestedCitation from '../components/SuggestedCitation.astro';
 import { formatDate } from '../lib/content';
 import type { AlternateLinks, Locale } from '../lib/i18n';
+import { site } from '../lib/site';
 
 interface Props {
   entry: {
@@ -11,6 +13,7 @@ interface Props {
       description: string;
       author: string;
       publishedAt: Date;
+      updatedAt?: Date;
       readingTime?: string;
       tags?: string[];
     };
@@ -35,6 +38,11 @@ const readingTime = entry.data.readingTime;
 const isConceptEntry = !showPublishedAt;
 const conceptBackHref = lang === 'pl' ? '/pl/concepts/' : '/concepts/';
 const conceptBackLabel = lang === 'pl' ? 'Wróć do pojęć' : 'Back to concepts';
+const aboutHref = lang === 'pl' ? '/pl/about/' : '/about/';
+const authorLabel = lang === 'pl' ? 'Autor:' : 'By';
+const publishedLabel = lang === 'pl' ? 'Opublikowano:' : 'Published:';
+const updatedLabel = lang === 'pl' ? 'Aktualizacja:' : 'Updated:';
+const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();
 // Tags are informational for now. Add tag routes or filtering before making them interactive.
 const asideLabels = lang === 'pl'
   ? {
@@ -69,17 +77,34 @@ const asideLabels = lang === 'pl'
         )
       }
       <h1>{entry.data.title}</h1>
+      {!isConceptEntry && (
+        <div class="article-byline" data-qa="article-byline">
+          <p>
+            <span>{authorLabel}</span>{' '}
+            <a href={aboutHref}>{entry.data.author}</a>
+          </p>
+          <p>{site.name}</p>
+          <p>
+            <span>{publishedLabel}</span>{' '}
+            <time datetime={entry.data.publishedAt.toISOString()}>
+              {formatDate(entry.data.publishedAt, lang)}
+            </time>
+          </p>
+          {entry.data.updatedAt && (
+            <p>
+              <span>{updatedLabel}</span>{' '}
+              <time datetime={entry.data.updatedAt.toISOString()}>
+                {formatDate(entry.data.updatedAt, lang)}
+              </time>
+            </p>
+          )}
+        </div>
+      )}
       <p class="lede">{entry.data.description}</p>
       {
-        (!isConceptEntry || readingTime) && (
+        readingTime && (
           <div class="content-meta">
-            {!isConceptEntry && <span>{entry.data.author}</span>}
-            {showPublishedAt && (
-              <time datetime={entry.data.publishedAt.toISOString()}>
-                {formatDate(entry.data.publishedAt, lang)}
-              </time>
-            )}
-            {readingTime && <span>{readingTime}</span>}
+            <span>{readingTime}</span>
           </div>
         )
       }
@@ -102,6 +127,16 @@ const asideLabels = lang === 'pl'
 
       <div class="prose">
         <slot />
+        {!isConceptEntry && (
+          <SuggestedCitation
+            lang={lang}
+            title={entry.data.title}
+            author={entry.data.author}
+            year={entry.data.publishedAt.getFullYear()}
+            siteName={site.name}
+            canonicalUrl={canonicalUrl}
+          />
+        )}
         {showRightsNotice && <RightsNotice lang={lang} variant="content" title={entry.data.title} />}
       </div>
     </div>

@@ -37,6 +37,14 @@ test.describe('rights and attribution notices', () => {
     await expect(notice).toContainText('Krótkie cytaty są dozwolone');
   });
 
+  test('shows content rights notice on the first English article', async ({ page }) => {
+    await page.goto('/articles/it-is-not-just-about-the-prompt/');
+
+    const notice = page.locator('[data-qa="rights-notice"][data-variant="content"]');
+    await expect(notice).toContainText('All rights reserved');
+    await expect(notice).toContainText('Short quotations are permitted only with attribution');
+  });
+
   test('shows content rights notice on concept detail pages', async ({ page }) => {
     await page.goto('/concepts/ai-literacy/');
 
