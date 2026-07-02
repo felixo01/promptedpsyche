@@ -1,0 +1,56 @@
+---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  lang: Locale;
+  variant?: 'about' | 'teaser';
+  class?: string;
+}
+
+const { lang, variant = 'about', class: className } = Astro.props;
+const locale = lang === 'pl' ? 'pl' : 'en';
+const candidates = [
+  {
+    src: '/images/author/feliks-mamczur.jpg',
+    file: join(process.cwd(), 'public', 'images', 'author', 'feliks-mamczur.jpg')
+  },
+  {
+    src: '/images/author/feliks-mamczur.webp',
+    file: join(process.cwd(), 'public', 'images', 'author', 'feliks-mamczur.webp')
+  }
+];
+
+const portrait = candidates.find((candidate) => existsSync(candidate.file));
+const alt = locale === 'pl'
+  ? 'Feliks Mamczur, autor Prompted Psyche'
+  : 'Feliks Mamczur, author of Prompted Psyche';
+const caption = locale === 'pl'
+  ? 'Feliks Mamczur - autor Prompted Psyche'
+  : 'Feliks Mamczur - author of Prompted Psyche';
+---
+
+{
+  portrait && (
+    <figure
+      class:list={[
+        'author-portrait',
+        `author-portrait--${variant}`,
+        variant === 'about' && 'author-page-hero__media',
+        className
+      ]}
+      data-qa="author-portrait"
+    >
+      <img
+        src={portrait.src}
+        alt={alt}
+        width="1200"
+        height="1500"
+        loading={variant === 'about' ? 'eager' : 'lazy'}
+        decoding="async"
+      />
+      <figcaption>{caption}</figcaption>
+    </figure>
+  )
+}

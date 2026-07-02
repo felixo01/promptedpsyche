@@ -128,6 +128,12 @@ The footer and public content detail layouts include a short rights notice in En
 
 The notice is implemented through `RightsNotice.astro` so footer copy and article, note and concept detail pages stay consistent. It does not grant Creative Commons, free reuse or full-copy permission.
 
+## Author Portrait
+
+The author portrait is prepared for `/about/` and `/pl/about/` through `AuthorPortrait.astro`. The component renders only when a local file exists in `public/images/author/`, so the site never shows a placeholder or broken image.
+
+The intended file is `public/images/author/feliks-mamczur.jpg`, with `feliks-mamczur.webp` also supported. The portrait should support trust and author context without becoming a personal-brand hero. The homepage remains publication-first, and film, marketing and communication stay part of the perspective rather than the main label.
+
 ## Safety Checklist
 
 - Astro stack stays in place.

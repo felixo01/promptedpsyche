@@ -1017,6 +1017,51 @@ html[lang='pl'] .lovable-page-hero h1 {
   margin-top: 2rem;
 }
 
+.author-page-hero__inner:has(.author-portrait--about) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 340px);
+  gap: clamp(2.25rem, 5vw, 5rem);
+  align-items: end;
+}
+
+.author-page-hero__copy {
+  min-width: 0;
+}
+
+.author-page-hero__media {
+  justify-self: end;
+  width: min(100%, 320px);
+}
+
+.author-portrait {
+  margin: 0;
+  color: rgba(28, 25, 23, 0.48);
+}
+
+.author-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: rgba(28, 25, 23, 0.04);
+  object-fit: cover;
+}
+
+.author-portrait figcaption {
+  margin-top: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.author-portrait--teaser {
+  width: min(100%, 160px);
+}
+
 .lovable-section,
 .editorial-block,
 .lovable-final-links {
@@ -1951,6 +1996,16 @@ html[lang='pl'] .content-header h1 {
     grid-template-columns: 1fr;
     gap: 2.25rem;
     padding: 4rem 0 3rem;
+  }
+
+  .author-page-hero__inner:has(.author-portrait--about) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .author-page-hero__media {
+    justify-self: start;
+    width: min(100%, 260px);
   }
 
   .home-hero-copy {

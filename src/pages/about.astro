@@ -1,4 +1,5 @@
 ---
+import AuthorPortrait from '../components/AuthorPortrait.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
@@ -7,9 +8,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="About Feliks Mamczur, author of Prompted Psyche, a publication and expert platform on AI, cyberpsychology and Human-AI Interaction."
 >
   <article class="lovable-page about-page">
-    <header class="lovable-page-hero">
-      <div class="lovable-container">
-        <div class="lovable-heading-narrow">
+    <header class="lovable-page-hero author-page-hero">
+      <div class="lovable-container author-page-hero__inner">
+        <div class="lovable-heading-narrow author-page-hero__copy">
           <p class="eyebrow">Author</p>
           <h1>About the author</h1>
           <p class="lede">
@@ -23,6 +24,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             Human-AI Interaction.
           </p>
         </div>
+        <AuthorPortrait lang="en" variant="about" />
       </div>
     </header>
 
