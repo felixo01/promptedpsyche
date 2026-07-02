@@ -137,6 +137,8 @@ The footer and public content detail layouts include a short rights notice in En
 
 The notice is implemented through `RightsNotice.astro` so footer copy and article, note and concept detail pages stay consistent. It does not grant Creative Commons, free reuse or full-copy permission.
 
+The footer shows a small pre-launch site version from `site.version`.
+
 ## Author Portrait
 
 The author portrait is prepared for `/about/` and `/pl/about/` through `AuthorPortrait.astro`. The component renders only when a local file exists in `public/images/author/`, so the site never shows a placeholder or broken image.

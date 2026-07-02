@@ -41,7 +41,7 @@ test.describe('author portrait', () => {
     test(`keeps author page spacing compact on ${portraitCase.route}`, async ({ page }, testInfo) => {
       await page.goto(portraitCase.route);
 
-      await expect(page.locator('h1')).toHaveText(portraitCase.title);
+      await expect(page.getByRole('heading', { level: 1, name: portraitCase.title })).toBeVisible();
 
       const metrics = await page.evaluate(() => {
         const block = document.querySelector('.about-page .editorial-block');

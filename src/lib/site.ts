@@ -6,6 +6,7 @@ export const site = {
   url: 'https://promptedpsyche.com',
   author: 'Feliks Mamczur',
   email: 'humanai.lab.edu@gmail.com',
+  version: '0.3.0-prelaunch',
   locale: 'en',
   futureLocales: ['pl']
 };
