@@ -103,12 +103,12 @@ The fourth article pair published in pre-launch mode is:
 - `AI jako lustro. Dlaczego tak łatwo się z nim dogadujemy?`
 - URL: `/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/`
 - Source file: `src/content/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy.md`
-- Date: `2026-07-02`
+- Date: `2026-07-03`
 - Status: public PL article, `draft: false`
 - `AI as a mirror: why it can feel so easy to talk to`
 - URL: `/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/`
 - Source file: `src/content/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to.md`
-- Date: `2026-07-02`
+- Date: `2026-07-03`
 - Status: public EN article, `draft: false`
 
 The article explores AI as a linguistic and social mirror, not as literal understanding or human-like inner life. It distinguishes conversational fit, fluency and validation from understanding, responsibility and full context.
@@ -119,7 +119,7 @@ The EN version is an editorial adaptation, not a literal translation. It preserv
 
 Current article chronology is now:
 
-- Article 04: `2026-07-02`
+- Article 04: `2026-07-03`
 - Article 03: `2026-07-02`
 - Article 02: `2026-06-18`
 - Article 01: `2026-05-23`

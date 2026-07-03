@@ -1,7 +1,7 @@
 ---
 title: "AI as a mirror: why it can feel so easy to talk to"
 description: "Why talking to AI can feel fluent, close and surprisingly easy: not because the model understands us like another person, but because it reflects language, framing, expectations and the need for meaning."
-publishedAt: 2026-07-02
+publishedAt: 2026-07-03
 draft: false
 tags:
   - AI and humans
