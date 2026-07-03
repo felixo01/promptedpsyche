@@ -45,4 +45,15 @@ const concepts = defineCollection({
   })
 });
 
-export const collections = { articles, notes, concepts };
+const practice = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/practice' }),
+  schema: baseSchema.extend({
+    readingTime: z.string().optional(),
+    lang: z.enum(['en', 'pl']).default('en'),
+    translationKey: z.string(),
+    type: z.literal('practice').default('practice'),
+    category: z.string().default('Practice')
+  })
+});
+
+export const collections = { articles, notes, concepts, practice };
