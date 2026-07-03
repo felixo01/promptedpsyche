@@ -85,6 +85,24 @@ const conceptLanguageChecks = [
 
 const conceptLanguagePairs = [
   {
+    enRoute: '/concepts/model-output/',
+    plRoute: '/pl/concepts/model-output/',
+    enTitle: 'Model Output',
+    plTitle: 'Odpowiedź modelu'
+  },
+  {
+    enRoute: '/concepts/calibrated-trust/',
+    plRoute: '/pl/concepts/calibrated-trust/',
+    enTitle: 'Calibrated Trust',
+    plTitle: 'Skalibrowane zaufanie'
+  },
+  {
+    enRoute: '/concepts/ai-mediated-communication/',
+    plRoute: '/pl/concepts/ai-mediated-communication/',
+    enTitle: 'AI-Mediated Communication',
+    plTitle: 'Komunikacja zapośredniczona przez AI'
+  },
+  {
     enRoute: '/concepts/hallucination/',
     plRoute: '/pl/concepts/halucynacja-modelu/',
     enTitle: 'Hallucination',

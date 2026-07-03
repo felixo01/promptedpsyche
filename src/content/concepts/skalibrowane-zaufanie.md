@@ -1,5 +1,5 @@
 ---
-title: "Calibrated trust"
+title: "Skalibrowane zaufanie"
 description: "Zaufanie do AI dopasowane do sytuacji, ryzyka zadania i możliwości weryfikacji."
 publishedAt: 2026-07-01
 draft: false

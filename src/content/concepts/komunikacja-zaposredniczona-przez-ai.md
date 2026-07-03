@@ -1,5 +1,5 @@
 ---
-title: "AI-mediated communication"
+title: "Komunikacja zapośredniczona przez AI"
 description: "Komunikacja między ludźmi współtworzona, filtrowana albo przekształcana przez systemy AI."
 publishedAt: 2026-07-01
 draft: false

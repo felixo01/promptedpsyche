@@ -1,5 +1,5 @@
 ---
-title: "Model output"
+title: "Odpowiedź modelu"
 description: "Dane wyjściowe modelu: tekst, obraz, kod, klasyfikacja albo rekomendacja wytworzona przez system AI w reakcji na dane wejściowe."
 publishedAt: 2026-07-01
 draft: false

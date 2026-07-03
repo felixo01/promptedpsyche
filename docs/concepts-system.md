@@ -20,6 +20,42 @@ Prompted Psyche concepts are a public working vocabulary for articles, notes and
 - Concept index tags are clickable filters.
 - Concept detail tags remain informational unless a dedicated concept tag route is intentionally added.
 
+## Polish Concepts title policy
+
+Polish Concepts use controlled title patterns, not one forced translation rule.
+
+Use a Polish title when:
+- the Polish term is established, natural and precise;
+- the term appears in Polish academic, public-sector, professional or strong public usage;
+- the Polish title does not pretend to be more official than it is.
+
+Use an English title when:
+- the English term is the dominant working term in Polish AI, HCI, cognitive science or product discourse;
+- a Polish translation would sound forced, misleading or too private;
+- the first paragraph explains the term clearly in Polish.
+
+Use a mixed EN/PL title when:
+- the English term matters for recognition;
+- the Polish equivalent is unstable or descriptive rather than official;
+- the title can teach the term and explain it at once, for example `Grounding: oparcie odpowiedzi na źródłach`.
+
+Slugs:
+- Before public launch, slugs may change only when there is a strong editorial reason.
+- After public launch, avoid slug changes unless redirects are added.
+- A title may become more Polish-facing without changing the slug.
+- Existing internal links, language alternates and tests must be checked whenever `routeSlug` changes.
+
+Body wording:
+- In Polish entries, define the concept plainly in the first paragraph.
+- If the title keeps an English term, explain it immediately in Polish.
+- Do not present descriptive Polish phrases as official terms without evidence.
+- Do not use English terms to create fake expertise.
+- Do not force Polish translations that reduce clarity or field recognition.
+
+Editorial boundary:
+- Concepts are a working vocabulary for the human side of AI, not a generic AI glossary.
+- Titles should serve understanding, trust and responsible use, not branding, hype or academic inflation.
+
 ## Wave 03 concepts
 
 | EN concept | PL public title | Category | Rationale |
@@ -57,4 +93,3 @@ Prompted Psyche concepts are a public working vocabulary for articles, notes and
 - Use mixed titles when the English term is dominant and the Polish phrase is explanatory.
 - Include related concepts manually in the body when useful.
 - Include sources and context for every public concept.
-
