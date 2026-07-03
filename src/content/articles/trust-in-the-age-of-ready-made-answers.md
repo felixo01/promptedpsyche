@@ -1,6 +1,6 @@
 ---
-title: "From sources to answers: how AI changes the path between people and knowledge"
-description: "How AI changes the path from a question to knowledge: between people, sources, science, institutions and the fluent answer of a model."
+title: "Trust in the age of ready-made answers"
+description: "How language models reshape trust in sources, experts, and our own judgment"
 publishedAt: 2026-07-03
 draft: false
 tags:

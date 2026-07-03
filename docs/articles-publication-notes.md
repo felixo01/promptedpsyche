@@ -121,14 +121,14 @@ The EN version is an editorial adaptation, not a literal translation. It preserv
 
 The fifth article pair published in pre-launch mode is:
 
-- `Od źródła do odpowiedzi. Jak AI zmienia drogę między człowiekiem a wiedzą`
-- URL: `/pl/articles/od-zrodla-do-odpowiedzi-jak-ai-zmienia-droge-miedzy-czlowiekiem-a-wiedza/`
-- Source file: `src/content/articles/od-zrodla-do-odpowiedzi-jak-ai-zmienia-droge-miedzy-czlowiekiem-a-wiedza.md`
+- `Zaufanie w epoce gotowych odpowiedzi`
+- URL: `/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/`
+- Source file: `src/content/articles/zaufanie-w-epoce-gotowych-odpowiedzi.md`
 - Date: `2026-07-03`
 - Status: public PL article, `draft: false`
-- `From sources to answers: how AI changes the path between people and knowledge`
-- URL: `/articles/from-sources-to-answers-how-ai-changes-the-path-between-people-and-knowledge/`
-- Source file: `src/content/articles/from-sources-to-answers-how-ai-changes-the-path-between-people-and-knowledge.md`
+- `Trust in the age of ready-made answers`
+- URL: `/articles/trust-in-the-age-of-ready-made-answers/`
+- Source file: `src/content/articles/trust-in-the-age-of-ready-made-answers.md`
 - Date: `2026-07-03`
 - Status: public EN article, `draft: false`
 
@@ -266,7 +266,7 @@ English adaptations now public:
 - Article 02: `The model does not remember. It works with context.`
 - Article 03: `AI does not read people. It helps make sense of the situation.`
 - Article 04: `AI as a mirror: why it can feel so easy to talk to`
-- Article 05: `From sources to answers: how AI changes the path between people and knowledge`
+- Article 05: `Trust in the age of ready-made answers`
 - Note 01: `Fluent does not mean true`
 
 PL/EN publication parity is restored for the current public article and note layer: 5 public PL articles, 5 public EN articles, 4 public PL notes and 4 public EN notes.

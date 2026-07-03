@@ -11,19 +11,19 @@ const mirrorPolishArticleRoute =
   '/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/';
 const mirrorEnglishArticleRoute =
   '/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/';
-const aiPathPolishArticleRoute =
-  '/pl/articles/od-zrodla-do-odpowiedzi-jak-ai-zmienia-droge-miedzy-czlowiekiem-a-wiedza/';
-const aiPathEnglishArticleRoute =
-  '/articles/from-sources-to-answers-how-ai-changes-the-path-between-people-and-knowledge/';
+const aiPathPolishArticleRoute = '/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/';
+const aiPathEnglishArticleRoute = '/articles/trust-in-the-age-of-ready-made-answers/';
 const thirdEnglishArticleTitle =
   'AI does not read people. It helps make sense of the situation.';
 const thirdPolishArticleTitle = 'AI nie czyta ludzi. Pomaga uporządkować sytuację.';
 const mirrorPolishArticleTitle = 'AI jako lustro. Dlaczego tak łatwo się z nim dogadujemy?';
 const mirrorEnglishArticleTitle = 'AI as a mirror: why it can feel so easy to talk to';
-const aiPathPolishArticleTitle =
+const oldAiPathPolishArticleTitle =
   'Od źródła do odpowiedzi. Jak AI zmienia drogę między człowiekiem a wiedzą';
-const aiPathEnglishArticleTitle =
+const oldAiPathEnglishArticleTitle =
   'From sources to answers: how AI changes the path between people and knowledge';
+const aiPathPolishArticleTitle = 'Zaufanie w epoce gotowych odpowiedzi';
+const aiPathEnglishArticleTitle = 'Trust in the age of ready-made answers';
 
 test.describe('published articles', () => {
   test('shows the English article on the English articles index', async ({ page }) => {
@@ -37,6 +37,7 @@ test.describe('published articles', () => {
     await expect(page.locator('.entry-list')).toContainText(thirdEnglishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(mirrorEnglishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiPathEnglishArticleTitle);
+    await expect(page.locator('.entry-list')).not.toContainText(oldAiPathEnglishArticleTitle);
     await expect(page.locator('.entry-list')).not.toContainText(
       'AI does not read people. It helps read context.'
     );
@@ -119,6 +120,7 @@ test.describe('published articles', () => {
     await expect(page.locator('.entry-list')).toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('.entry-list')).toContainText(mirrorPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiPathPolishArticleTitle);
+    await expect(page.locator('.entry-list')).not.toContainText(oldAiPathPolishArticleTitle);
     const titleLink = page.getByRole('link', {
       name: 'Nie chodzi tylko o prompt',
       exact: true

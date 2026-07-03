@@ -1,6 +1,6 @@
 ---
-title: "Od źródła do odpowiedzi. Jak AI zmienia drogę między człowiekiem a wiedzą"
-description: "O tym, jak AI zmienia drogę od pytania do wiedzy: między człowiekiem, źródłami, nauką, instytucjami i płynną odpowiedzią modelu."
+title: "Zaufanie w epoce gotowych odpowiedzi"
+description: "Jak modele językowe zmieniają zaufanie do źródeł, ekspertów i własnego osądu"
 publishedAt: 2026-07-03
 draft: false
 tags:

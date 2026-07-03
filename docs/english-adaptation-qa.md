@@ -41,7 +41,7 @@ Use this checklist before publishing English versions of Polish articles or note
 - The EN `TL;DR` summary was added to the AI mirror article as an adaptation, not a literal translation.
 - EN article summaries should preserve the same thesis as PL while using natural English rhythm.
 - Safety language avoids claims about AI consciousness, therapy, diagnosis or human-like understanding.
-- The EN adaptation for `From sources to answers: how AI changes the path between people and knowledge` is complete.
+- The EN adaptation for `Trust in the age of ready-made answers` is complete.
 - The EN title is an editorial adaptation, not a literal translation of the Polish title.
 - PL/EN routing for the AI path to knowledge article pair was checked through `translationKey`.
 - Prompt boxes were adapted naturally: `Do not ask this`, `Better question` and `Mini-agent`.
