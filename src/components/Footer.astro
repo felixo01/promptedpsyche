@@ -8,12 +8,11 @@ interface Props {
 }
 
 const activeLang = Astro.props.lang ?? getLangFromPath(Astro.url.pathname);
-const year = new Date().getFullYear();
 const isPl = activeLang === 'pl';
 const prefix = isPl ? '/pl' : '';
 ---
 
-<footer class="site-footer">
+<footer class="site-footer" data-qa="site-footer">
   <div class="footer-inner">
     <div class="footer-main">
       <div class="footer-intro">
@@ -53,10 +52,9 @@ const prefix = isPl ? '/pl' : '';
     <RightsNotice lang={activeLang} variant="footer" />
 
     <div class="footer-bottom">
-      <div>
+      <div class="footer-bottom__identity">
         <span aria-hidden="true">PP</span>
-        <p>Copyright {year} Prompted Psyche</p>
-        <p class="site-version">v{site.version}</p>
+        <p>Prompted Psyche</p>
       </div>
       <nav aria-label={isPl ? 'Linki w stopce' : 'Footer links'}>
         <a href={`${prefix}/concepts/`}>{isPl ? 'Pojęcia' : 'Concepts'}</a>

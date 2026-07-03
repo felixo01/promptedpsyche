@@ -2804,7 +2804,13 @@ html[lang='pl'] .content-header h1 {
 }
 
 .rights-notice-footer {
-  margin-top: 3.5rem;
+  max-width: none;
+  margin-top: clamp(3rem, 4vw, 4.5rem);
+  border-bottom: 1px solid var(--line-soft);
+  padding: 1.15rem 0;
+  color: rgba(28, 25, 23, 0.58);
+  font-size: 0.8rem;
+  line-height: 1.65;
 }
 
 .line-icon {
@@ -2865,6 +2871,7 @@ html[lang='pl'] .content-header h1 {
 .footer-inquiries a {
   color: rgba(28, 25, 23, 0.62);
   font-size: 0.84rem;
+  overflow-wrap: anywhere;
   text-decoration: none;
 }
 
@@ -2900,18 +2907,18 @@ html[lang='pl'] .content-header h1 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  margin-top: 6rem;
-  border-top: 1px solid var(--line-soft);
-  padding: 2rem 0;
+  gap: 1rem 2rem;
+  margin-top: 0;
+  padding: 1.35rem 0 2rem;
 }
 
-.footer-bottom div,
+.footer-bottom__identity,
 .footer-bottom nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
   align-items: center;
+  min-width: 0;
 }
 
 .footer-bottom span {
@@ -2924,7 +2931,6 @@ html[lang='pl'] .content-header h1 {
   font-size: 0.5rem;
 }
 
-.footer-bottom p,
 .footer-bottom a {
   color: rgba(28, 25, 23, 0.42);
   font-size: 0.625rem;
@@ -2934,9 +2940,12 @@ html[lang='pl'] .content-header h1 {
   text-transform: uppercase;
 }
 
-.footer-bottom .site-version {
-  color: rgba(28, 25, 23, 0.34);
-  letter-spacing: 0.04em;
+.footer-bottom__identity p {
+  color: rgba(28, 25, 23, 0.52);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0;
   text-transform: none;
 }
 
