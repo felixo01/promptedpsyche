@@ -44,7 +44,7 @@ Evaluate it this way:
 1. Which parts sound convincing mainly because of style?
 2. Which claims need checking outside this conversation?
 3. Where might the answer be hiding uncertainty or missing sources?
-4. Which sentences may be plausible but still false?
+4. Which sentences look like concrete facts or causes but need checking before I repeat them?
 5. How can the answer be edited so it is more cautious and does not pretend to have more certainty than it has?
 
 Do not make the text more rhetorically persuasive. Do not add certainty. Help me see what needs checking before I use the answer.
@@ -52,6 +52,10 @@ Do not make the text more rhetorically persuasive. Do not add certainty. Help me
 Answer:
 [paste answer]
 ```
+
+## Short example
+
+An AI answer says, "Companies that adopt AI usually see productivity gains quickly because automation removes most repetitive work." The prompt helps separate style from evidence: "usually", "quickly" and "most" all need data or narrower context. The user can then treat the sentence as a hypothesis to check, not as a polished fact.
 
 ## Why this helps
 

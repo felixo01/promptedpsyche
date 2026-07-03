@@ -37,7 +37,7 @@ The goal is not to make the model "verify itself". The goal is to prepare the wo
 ## Prompt
 
 ```text
-Read your previous answer and help me inspect its source status.
+Read your previous answer and help me inspect what its key information is based on.
 
 Divide the answer into:
 
@@ -49,9 +49,13 @@ Divide the answer into:
 Do not invent specific publications, links or authors if you are not sure. If you cannot verify something, say so directly. At the end, identify the 3 riskiest parts of the answer if I use them without checking.
 ```
 
+## Short example
+
+The model says that a method "increases team effectiveness by 30%" and that recent studies support it. After using the prompt, the user does not get confirmation of the number. They get a separation: the number needs a source, the general explanation may be interpretation, and external checking would require reports, research papers or institutional documents.
+
 ## Why this helps
 
-This prompt moves attention from the finished answer to its knowledge status. It helps the user see that [model output](/concepts/model-output/) can be a draft, a map of questions or an interpretation, but not automatically a source of knowledge.
+This prompt moves attention from the finished answer to what the information is based on. It helps the user see that [model output](/concepts/model-output/) can be a draft, a map of questions or an interpretation, but not automatically a source of knowledge.
 
 It is also a simple exercise in [epistemic vigilance](/concepts/epistemic-vigilance/). Instead of asking only "does this sound good?", the user asks: "what is this based on, what can I check and what do I still not know?".
 

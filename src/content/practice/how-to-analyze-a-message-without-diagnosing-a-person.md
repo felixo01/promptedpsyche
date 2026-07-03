@@ -18,7 +18,7 @@ category: "Practice"
 
 AI can help organize a difficult email, client message or tense exchange. It can also push the user too quickly toward psychological claims about the person on the other side. This practice sets a simple boundary: analyze the visible message, not the human being.
 
-The aim is a better reply, less escalation and more responsibility on the side of the person who decides what to send.
+The aim is a calmer reply, less intention-reading and more responsibility on the side of the person who decides what to send.
 
 ## When to use it
 
@@ -47,24 +47,29 @@ Analyze only the visible text:
 4. What cannot be honestly inferred from the message alone?
 5. What clarifying questions could I ask before replying?
 
-Do not diagnose the sender. Do not assign psychological traits. Do not guess hidden intentions. At the end, suggest a neutral reply that clarifies the situation and does not escalate the conflict.
+Do not diagnose the sender. Do not assign psychological traits. Do not guess hidden intentions. At the end, suggest a calmer working draft that clarifies the situation, does not add intentions and still needs human judgment before sending.
 
 Message:
 [paste message]
 ```
 
+## Short example
+
+A message says, "I still have not received the materials. I assume this is not a priority for you." The prompt helps separate the fact, missing materials, from the interpretation about priority. It may offer a few possible readings of tone and a clarifying question, but it should not decide that the sender is aggressive, manipulative or hiding an intention.
+
 ## Why this helps
 
 This prompt separates text analysis from judgment about a person. It helps show what is in the message, what is interpretation and what remains unknown. That matters in [AI-mediated communication](/concepts/ai-mediated-communication/), because a model can quickly give a difficult situation a narrative that feels too certain.
 
-The practice supports [human agency](/concepts/human-agency/). AI organizes the material, but it does not take responsibility for the relationship, the reply or the consequences.
+The practice supports [human agency](/concepts/human-agency/). AI can help separate visible text from interpretation, but it cannot know what was in someone's mind. It organizes the material, but it does not take responsibility for the relationship, the reply or the consequences.
 
 ## Risk and limitations
 
 - The model may still suggest an interpretation that goes too far.
 - Without fuller context, the message may look different from the real relationship.
-- A neutral reply may be too cautious or inadequate for the situation.
-- In legal, HR, violence, safety or severe conflict contexts, proper procedures and people are needed, not only AI.
+- A calmer reply may be too cautious, too soft or inadequate for the situation.
+- Do not use this practice as legal, HR, medical or therapeutic advice, or as a way to manipulate someone.
+- In cases involving violence, coercion, harassment, legal risk, workplace harm, urgent danger or severe conflict, proper procedures and people are needed, not only AI.
 
 ## Related Concepts
 

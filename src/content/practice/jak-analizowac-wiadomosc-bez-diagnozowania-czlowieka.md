@@ -18,7 +18,7 @@ category: "Praktyka"
 
 AI może pomóc uporządkować trudnego maila, wiadomość od klienta albo napiętą rozmowę. Może też zbyt łatwo popchnąć użytkownika w stronę psychologizowania osoby po drugiej stronie. Ta praktyka stawia prostą granicę: analizujemy widoczny komunikat, nie diagnozujemy człowieka.
 
-Celem jest lepsza odpowiedź, mniej eskalacji i więcej odpowiedzialności po stronie osoby, która ostatecznie decyduje, co napisać.
+Celem jest spokojniejsza odpowiedź, mniej dopisywania intencji i więcej odpowiedzialności po stronie osoby, która ostatecznie decyduje, co napisać.
 
 ## Kiedy używać
 
@@ -47,24 +47,29 @@ Zrób tylko analizę widocznego tekstu:
 4. Czego nie da się uczciwie wywnioskować z samej wiadomości?
 5. Jakie pytania doprecyzowujące mogę zadać, zanim odpowiem?
 
-Nie diagnozuj nadawcy. Nie przypisuj mu cech psychologicznych. Nie zgaduj ukrytych intencji. Na końcu zaproponuj neutralną wersję odpowiedzi, która wyjaśnia sytuację i nie eskaluje konfliktu.
+Nie diagnozuj nadawcy. Nie przypisuj mu cech psychologicznych. Nie zgaduj ukrytych intencji. Na końcu zaproponuj roboczą, spokojniejszą wersję odpowiedzi, która wyjaśnia sytuację, nie dopisuje intencji i którą człowiek musi ocenić przed wysłaniem.
 
 Wiadomość:
 [wklej wiadomość]
 ```
 
+## Krótki przykład
+
+Wiadomość brzmi: "Nie dostałem jeszcze materiałów. Zakładam, że temat nie jest dla was priorytetem". Prompt pomaga rozdzielić fakt, czyli brak materiałów, od interpretacji o priorytecie. Może wskazać kilka możliwych odczytań tonu i zaproponować pytanie doprecyzowujące, ale nie powinien stwierdzać, że nadawca jest agresywny, manipulacyjny albo ma ukrytą intencję.
+
 ## Dlaczego to pomaga
 
 Ten prompt oddziela analizę tekstu od oceny człowieka. Pomaga zobaczyć, co jest w wiadomości, co jest interpretacją, a czego po prostu nie wiemy. To ważne w [komunikacji zapośredniczonej przez AI](/pl/concepts/ai-mediated-communication/), bo model może szybko nadać trudnej sytuacji zbyt pewną narrację.
 
-Praktyka wspiera [sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/). AI porządkuje materiał, ale nie przejmuje odpowiedzialności za relację, odpowiedź ani konsekwencje.
+Praktyka wspiera [sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/). AI może pomóc oddzielić widoczny tekst od interpretacji, ale nie wie, co ktoś miał w głowie. Porządkuje materiał, ale nie przejmuje odpowiedzialności za relację, odpowiedź ani konsekwencje.
 
 ## Ryzyko i ograniczenia
 
 - Model może nadal zasugerować zbyt daleko idącą interpretację.
 - Bez pełnego kontekstu wiadomość może wyglądać inaczej niż w realnej relacji.
-- Neutralna odpowiedź może być zbyt ostrożna albo nieadekwatna do sytuacji.
-- W sprawach prawnych, HR, przemocy, bezpieczeństwa albo silnego konfliktu potrzebne są właściwe procedury i ludzie, nie tylko AI.
+- Spokojniejsza odpowiedź może być zbyt ostrożna, zbyt miękka albo nieadekwatna do sytuacji.
+- Nie używaj tej praktyki jako porady prawnej, HR, medycznej, terapeutycznej ani jako sposobu manipulowania drugą osobą.
+- W sprawach przemocy, przymusu, nękania, ryzyka prawnego, szkody w miejscu pracy, pilnego zagrożenia albo silnego konfliktu potrzebne są właściwe procedury i ludzie, nie tylko AI.
 
 ## Powiązane pojęcia
 

@@ -44,7 +44,7 @@ Oceń ją w taki sposób:
 1. Które fragmenty brzmią przekonująco głównie przez styl?
 2. Które twierdzenia wymagają sprawdzenia poza rozmową?
 3. Gdzie odpowiedź może ukrywać niepewność albo brak źródeł?
-4. Jakie zdania mogą być prawdopodobne, ale nadal fałszywe?
+4. Które zdania wyglądają jak konkretne fakty lub przyczyny, ale wymagają sprawdzenia, zanim je powtórzę?
 5. Jak przeredagować odpowiedź, żeby była ostrożniejsza i nie udawała większej pewności niż ma?
 
 Nie wzmacniaj retorycznie tekstu. Nie dopisuj pewności. Pomóż mi zobaczyć, co trzeba sprawdzić przed użyciem odpowiedzi.
@@ -52,6 +52,10 @@ Nie wzmacniaj retorycznie tekstu. Nie dopisuj pewności. Pomóż mi zobaczyć, c
 Odpowiedź:
 [wklej odpowiedź]
 ```
+
+## Krótki przykład
+
+Odpowiedź AI brzmi spokojnie: "Firmy wdrażające AI zwykle szybko widzą wzrost produktywności, bo automatyzacja usuwa większość powtarzalnych zadań". Prompt pomaga zauważyć, że płynny styl nie jest dowodem: "zwykle", "szybko" i "większość" wymagają danych albo doprecyzowania. Użytkownik może wtedy oddzielić ogólną hipotezę od twierdzeń, których nie warto powtarzać bez sprawdzenia.
 
 ## Dlaczego to pomaga
 

@@ -37,7 +37,7 @@ Nie chodzi o to, żeby model sam siebie "potwierdził". Chodzi o przygotowanie l
 ## Prompt
 
 ```text
-Przeczytaj swoją poprzednią odpowiedź i pomóż mi sprawdzić jej status źródłowy.
+Przeczytaj swoją poprzednią odpowiedź i pomóż mi sprawdzić, na czym opierają się jej najważniejsze informacje.
 
 Podziel odpowiedź na:
 
@@ -49,9 +49,13 @@ Podziel odpowiedź na:
 Nie wymyślaj konkretnych publikacji, linków ani autorów, jeśli nie masz pewności. Jeśli czegoś nie możesz zweryfikować, napisz to wprost. Na końcu wskaż, które 3 fragmenty odpowiedzi są najbardziej ryzykowne, jeśli użyję ich bez sprawdzenia.
 ```
 
+## Krótki przykład
+
+Model napisał, że konkretna metoda "zwiększa skuteczność zespołów o 30%" i że potwierdzają to badania z ostatnich lat. Po użyciu promptu użytkownik nie dostaje potwierdzenia tej liczby, tylko rozdzielenie: liczba wymaga źródła, ogólne wyjaśnienie może być interpretacją, a do sprawdzenia potrzebne byłyby raporty, artykuły badawcze albo dokumenty instytucji. To pomaga zaplanować zewnętrzną weryfikację zamiast traktować pewny ton jako dowód.
+
 ## Dlaczego to pomaga
 
-Ten prompt przesuwa uwagę z gotowej odpowiedzi na jej status poznawczy. Ułatwia zobaczenie, że [odpowiedź modelu](/pl/concepts/model-output/) może być szkicem, mapą pytań albo propozycją interpretacji, ale nie automatycznie źródłem wiedzy.
+Ten prompt przesuwa uwagę z gotowej odpowiedzi na pytanie, na czym opiera się dana informacja. Ułatwia zobaczenie, że [odpowiedź modelu](/pl/concepts/model-output/) może być szkicem, mapą pytań albo propozycją interpretacji, ale nie automatycznie źródłem wiedzy.
 
 To także prosty trening [czujności epistemicznej](/pl/concepts/epistemic-vigilance/). Zamiast pytać tylko "czy to brzmi dobrze?", użytkownik pyta: "na czym to się opiera, co można sprawdzić i czego jeszcze nie wiem?".
 
