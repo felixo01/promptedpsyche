@@ -44,35 +44,37 @@ const getTagHref = (tag: string) => `/concepts/?${new URLSearchParams({ tag }).t
             relations.
           </p>
         </div>
-        <nav class="concept-filter-list" aria-label="Concept topics" data-concept-filter-list>
-          <span>Filter</span>
-          <a
-            class="concept-filter"
-            href="/concepts/"
-            data-filter-value=""
-            aria-current={!selectedTag ? 'true' : undefined}
-          >
-            All concepts
-          </a>
-          {tags.map((tag) => (
-            <a
-              class="concept-filter"
-              href={getTagHref(tag)}
-              data-filter-value={tag}
-              aria-current={normalizeTag(tag) === selectedTagNormalized ? 'true' : undefined}
-            >
-              {tag}
-            </a>
-          ))}
-        </nav>
       </div>
     </header>
 
-    <section class="lovable-section">
+    <section class="lovable-section concept-library-section" aria-labelledby="concept-library-title">
       <div class="lovable-container">
-        <div class="concept-index-heading">
-          <h2>A working vocabulary</h2>
-          <span data-concept-count>{conceptCountLabel}</span>
+        <div class="concept-library-header">
+          <div class="concept-index-heading">
+            <h2 id="concept-library-title">A working vocabulary</h2>
+            <span data-concept-count>{conceptCountLabel}</span>
+          </div>
+          <nav class="concept-filter-list" aria-label="Concept topics" data-concept-filter-list>
+            <span>Filter</span>
+            <a
+              class="concept-filter"
+              href="/concepts/"
+              data-filter-value=""
+              aria-current={!selectedTag ? 'true' : undefined}
+            >
+              All concepts
+            </a>
+            {tags.map((tag) => (
+              <a
+                class="concept-filter"
+                href={getTagHref(tag)}
+                data-filter-value={tag}
+                aria-current={normalizeTag(tag) === selectedTagNormalized ? 'true' : undefined}
+              >
+                {tag}
+              </a>
+            ))}
+          </nav>
         </div>
         <p class="active-filter-note" data-active-filter hidden={!selectedTag}>
           Active filter: <strong>{activeTagLabel}</strong>. <a href="/concepts/">All concepts</a>

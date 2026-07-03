@@ -3,23 +3,36 @@ import { expect, test } from '@playwright/test';
 const conceptIndexRoutes = [
   {
     route: '/concepts/',
+    expectedCount: 26,
     readMore: 'Read more',
     filterTag: 'cognition',
     allLabel: 'All concepts',
     activeLabel: 'Active filter',
     expectedCopy: 'A working vocabulary',
     absentCopy: 'Roboczy język pojęć',
-    emptyFilterMessage: 'No concepts for this filter.'
+    emptyFilterMessage: 'No concepts for this filter.',
+    requiredTitles: ['Model Output', 'Calibrated Trust', 'AI-Mediated Communication'],
+    draftTitles: ['What Is Cyberpsychology of AI?', 'Human-AI Interaction: Why Companies Should Care']
   },
   {
     route: '/pl/concepts/',
+    expectedCount: 26,
     readMore: 'Czytaj dalej',
     filterTag: 'poznanie',
     allLabel: 'Wszystkie pojęcia',
     activeLabel: 'Aktywny filtr',
     expectedCopy: 'Słownik Prompted Psyche',
     absentCopy: 'Roboczy język pojęć',
-    emptyFilterMessage: 'Brak pojęć dla tego filtra.'
+    emptyFilterMessage: 'Brak pojęć dla tego filtra.',
+    requiredTitles: [
+      'Odpowiedź modelu',
+      'Skalibrowane zaufanie',
+      'Komunikacja zapośredniczona przez AI',
+      'Grounding: oparcie odpowiedzi na źródłach',
+      'Sycophancy: potakiwanie modelu',
+      'Deskilling: erozja kompetencji'
+    ],
+    draftTitles: ['What Is Cyberpsychology of AI?', 'Human-AI Interaction: Why Companies Should Care']
   }
 ];
 
@@ -137,15 +150,26 @@ test.describe('concept cards and tags', () => {
     activeLabel,
     expectedCopy,
     absentCopy,
-    emptyFilterMessage
+    emptyFilterMessage,
+    expectedCount,
+    requiredTitles,
+    draftTitles
   } of conceptIndexRoutes) {
-    test(`shows at least 26 public concept cards on ${route}`, async ({ page }) => {
+    test(`shows ${expectedCount} public concept cards on ${route}`, async ({ page }) => {
       await page.goto(route);
 
       const cardCount = await page.locator('[data-qa="concept-card"]').count();
-      expect(cardCount).toBeGreaterThanOrEqual(26);
+      expect(cardCount).toBe(expectedCount);
       await expect(page.locator('body')).toContainText(expectedCopy);
       await expect(page.locator('body')).not.toContainText(absentCopy);
+
+      for (const title of requiredTitles) {
+        await expect(page.locator('[data-qa="concept-card"] h2').filter({ hasText: title })).toHaveCount(1);
+      }
+
+      for (const title of draftTitles) {
+        await expect(page.locator('body')).not.toContainText(title);
+      }
     });
 
     test(`filters concept cards by tag on ${route}`, async ({ page }) => {
@@ -186,6 +210,51 @@ test.describe('concept cards and tags', () => {
       await expect(page.locator('body')).toContainText(emptyFilterMessage);
       await expect(page.locator('[data-active-filter]')).toBeVisible();
       await expect(page.locator('[data-qa="concept-card"]:visible')).toHaveCount(0);
+    });
+
+    test(`keeps concept index controls and titles inside the mobile viewport on ${route}`, async ({ page }) => {
+      await page.setViewportSize({ width: 390, height: 900 });
+      await page.goto(route);
+
+      const result = await page.evaluate(() => {
+        const selectors = [
+          '.concept-index-heading',
+          '[data-concept-filter-list]',
+          '[data-qa="concept-card"] h2',
+          '.concept-tag-list'
+        ];
+        const offenders = selectors.flatMap((selector) =>
+          Array.from(document.querySelectorAll(selector)).flatMap((node) => {
+            const element = node as HTMLElement;
+            const rect = element.getBoundingClientRect();
+            if (rect.width === 0 || rect.height === 0) {
+              return [];
+            }
+
+            if (rect.left >= -1 && rect.right <= window.innerWidth + 1) {
+              return [];
+            }
+
+            return [
+              {
+                selector,
+                left: Math.round(rect.left),
+                right: Math.round(rect.right),
+                text: (element.textContent ?? '').replace(/\s+/g, ' ').trim().slice(0, 90)
+              }
+            ];
+          })
+        );
+
+        return {
+          documentScrollWidth: document.documentElement.scrollWidth,
+          documentClientWidth: document.documentElement.clientWidth,
+          offenders
+        };
+      });
+
+      expect(result, JSON.stringify(result, null, 2)).toMatchObject({ offenders: [] });
+      expect(result.documentScrollWidth).toBeLessThanOrEqual(result.documentClientWidth + 1);
     });
 
     test(`links concept cards to real pages on ${route}`, async ({ page, request }) => {

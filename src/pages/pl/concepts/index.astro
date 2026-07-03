@@ -44,35 +44,37 @@ const getTagHref = (tag: string) => `/pl/concepts/?${new URLSearchParams({ tag }
             komunikacji i pracy.
           </p>
         </div>
-        <nav class="concept-filter-list" aria-label="Tematy pojęć" data-concept-filter-list>
-          <span>Filtr</span>
-          <a
-            class="concept-filter"
-            href="/pl/concepts/"
-            data-filter-value=""
-            aria-current={!selectedTag ? 'true' : undefined}
-          >
-            Wszystkie pojęcia
-          </a>
-          {tags.map((tag) => (
-            <a
-              class="concept-filter"
-              href={getTagHref(tag)}
-              data-filter-value={tag}
-              aria-current={normalizeTag(tag) === selectedTagNormalized ? 'true' : undefined}
-            >
-              {tag}
-            </a>
-          ))}
-        </nav>
       </div>
     </header>
 
-    <section class="lovable-section">
+    <section class="lovable-section concept-library-section" aria-labelledby="concept-library-title">
       <div class="lovable-container">
-        <div class="concept-index-heading">
-          <h2>Słownik Prompted Psyche</h2>
-          <span data-concept-count>{conceptCountLabel}</span>
+        <div class="concept-library-header">
+          <div class="concept-index-heading">
+            <h2 id="concept-library-title">Słownik Prompted Psyche</h2>
+            <span data-concept-count>{conceptCountLabel}</span>
+          </div>
+          <nav class="concept-filter-list" aria-label="Tematy pojęć" data-concept-filter-list>
+            <span>Filtr</span>
+            <a
+              class="concept-filter"
+              href="/pl/concepts/"
+              data-filter-value=""
+              aria-current={!selectedTag ? 'true' : undefined}
+            >
+              Wszystkie pojęcia
+            </a>
+            {tags.map((tag) => (
+              <a
+                class="concept-filter"
+                href={getTagHref(tag)}
+                data-filter-value={tag}
+                aria-current={normalizeTag(tag) === selectedTagNormalized ? 'true' : undefined}
+              >
+                {tag}
+              </a>
+            ))}
+          </nav>
         </div>
         <p class="active-filter-note" data-active-filter hidden={!selectedTag}>
           Aktywny filtr: <strong>{activeTagLabel}</strong>. <a href="/pl/concepts/">Wszystkie pojęcia</a>
