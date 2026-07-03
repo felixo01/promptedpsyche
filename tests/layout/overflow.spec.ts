@@ -104,17 +104,59 @@ test.describe('layout overflow', () => {
             ];
           })
           .slice(0, 12);
+        const pseudoOffenders = Array.from(
+          document.body.querySelectorAll('.topic-section, .tinted-section')
+        )
+          .flatMap((node) => {
+            const element = node as HTMLElement;
+            const style = window.getComputedStyle(element, '::before');
+            if (style.content === 'none') {
+              return [];
+            }
+
+            const rect = element.getBoundingClientRect();
+            const left = Number.parseFloat(style.left);
+            const right = Number.parseFloat(style.right);
+            const width = Number.parseFloat(style.width);
+
+            if (
+              Number.isFinite(left) &&
+              Number.isFinite(right) &&
+              Number.isFinite(width) &&
+              left >= -1 &&
+              right >= -1 &&
+              width <= rect.width + 1
+            ) {
+              return [];
+            }
+
+            return [
+              {
+                tag: element.tagName.toLowerCase(),
+                className: typeof element.className === 'string' ? element.className : '',
+                left: Math.round(left),
+                right: Math.round(right),
+                width: Math.round(width),
+                parentWidth: Math.round(rect.width)
+              }
+            ];
+          })
+          .slice(0, 12);
 
         return {
           documentScrollWidth: documentElement.scrollWidth,
           documentClientWidth: documentElement.clientWidth,
           bodyScrollWidth: document.body.scrollWidth,
           innerWidth: window.innerWidth,
-          offenders
+          offenders,
+          pseudoOffenders
         };
       });
 
-      expect(result, JSON.stringify(result, null, 2)).toMatchObject({ offenders: [] });
+      expect(result, JSON.stringify(result, null, 2)).toMatchObject({
+        offenders: [],
+        pseudoOffenders: []
+      });
       expect(result.documentScrollWidth).toBeLessThanOrEqual(result.documentClientWidth + 1);
       expect(result.bodyScrollWidth).toBeLessThanOrEqual(result.innerWidth + 1);
     });

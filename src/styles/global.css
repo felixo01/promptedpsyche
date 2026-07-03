@@ -756,12 +756,8 @@ html[lang='pl'] .home-hero h1 {
 .tinted-section::before {
   content: "";
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
+  inset: 0;
   z-index: -1;
-  width: 100vw;
-  transform: translateX(-50%);
   background: rgba(28, 25, 23, 0.02);
 }
 
