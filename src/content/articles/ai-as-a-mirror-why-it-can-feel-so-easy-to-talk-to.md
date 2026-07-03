@@ -11,6 +11,11 @@ tags:
   - cyberpsychology
 author: "Feliks Mamczur"
 readingTime: "16 min read"
+inBrief:
+  - "Talking to AI can feel close because the model quickly adapts its language, tone and structure to what we give it."
+  - "That fit does not mean the model knows us like another person or understands the whole situation."
+  - "AI works more like a linguistic mirror: it reflects our words, frames, expectations and need for meaning."
+  - "The main risk appears when we mistake fluency for understanding, or a well-fitted response for truth about the situation."
 image: /images/articles/ai-mirror-conversation-loop.svg
 imageAlt: "Diagram showing AI as a conversational mirror: the user asks, the model organizes a response, and the human returns to verification and context."
 imageCaption: "AI can reflect the language, framing and expectations of a conversation. The useful move is to return from a fluent answer to context, verification and responsibility."

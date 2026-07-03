@@ -11,6 +11,11 @@ tags:
   - cyberpsychologia
 author: "Feliks Mamczur"
 readingTime: "18 min czytania"
+inBrief:
+  - "Rozmowa z AI może wydawać się bliska, bo model szybko dopasowuje język, ton i strukturę odpowiedzi do tego, co mu podajemy."
+  - "To dopasowanie nie oznacza jednak, że model zna nas jak człowiek albo rozumie całą sytuację."
+  - "AI działa raczej jak lustro językowe: odbija nasze słowa, ramy interpretacyjne, oczekiwania i potrzebę sensu."
+  - "Największe ryzyko pojawia się wtedy, gdy płynność odpowiedzi mylimy z realnym zrozumieniem, a potwierdzenie własnej ramy z prawdą o sytuacji."
 image: /images/articles/ai-mirror-conversation-loop.svg
 imageAlt: "Schemat pokazujący AI jako lustro rozmowy: użytkownik zadaje pytanie, model porządkuje odpowiedź, a człowiek musi wrócić do weryfikacji i kontekstu."
 imageCaption: "AI może odbijać język, ramę i oczekiwania rozmowy. Warto wracać od płynnej odpowiedzi do kontekstu, weryfikacji i odpowiedzialności."

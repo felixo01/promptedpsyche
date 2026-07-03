@@ -65,7 +65,7 @@ test.describe('publication tag pages', () => {
   test('renders English tag archive without Polish publication leakage', async ({ page }) => {
     await page.goto('/tags/ai-literacy/');
 
-    await expect(page.locator('h1')).toHaveText('#AI literacy');
+    await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
     await expect(page.locator('body')).toContainText('Publications tagged with');
     await expect(page.locator('.tag-archive-list article')).toHaveCount(7);
     await expect(page.locator('.tag-archive-list')).toContainText('Article');
@@ -78,7 +78,7 @@ test.describe('publication tag pages', () => {
   test('renders Polish tag archive without English publication leakage', async ({ page }) => {
     await page.goto('/pl/tags/ai-literacy/');
 
-    await expect(page.locator('h1')).toHaveText('#AI literacy');
+    await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
     await expect(page.locator('body')).toContainText('Publikacje oznaczone tagiem');
     await expect(page.locator('.tag-archive-list article')).toHaveCount(7);
     await expect(page.locator('.tag-archive-list')).toContainText('Artykuł');

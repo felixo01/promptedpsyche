@@ -12,6 +12,11 @@ tags:
   - praca z AI
 author: "Feliks Mamczur"
 readingTime: "16 min czytania"
+inBrief:
+  - "AI może pomóc uporządkować trudną wiadomość, ale nie czyta intencji człowieka po drugiej stronie."
+  - "Lepsze użycie modelu polega na oddzieleniu faktów, hipotez, brakujących informacji i ryzyka odpowiedzi."
+  - "System może działać jak drugi czytelnik komunikacji, nie jak sędzia relacji."
+  - "Odpowiedzialność za decyzję, ton i dalszą rozmowę zostaje po stronie człowieka."
 image: /images/articles/communication-situation-map.svg
 imageAlt: "Diagram pokazujący mapowanie trudnej wiadomości na fakty, hipotezy, brakujące informacje, ryzyko odpowiedzi i jaśniejszą odpowiedź."
 imageCaption: "W trudnej komunikacji AI może pomóc uporządkować warstwy sytuacji: fakty, hipotezy, braki informacji i ryzyko odpowiedzi."

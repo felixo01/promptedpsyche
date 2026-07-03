@@ -48,6 +48,25 @@ Rules:
 - It should not introduce a claim that the article does not support.
 - It should not be used on every short note by default.
 
+## In Brief Summaries
+
+Use the optional `inBrief` field for long articles when a short reading aid helps the reader enter the text.
+
+Labels:
+
+- PL: `W skrócie`
+- EN: `In brief`
+
+Rules:
+
+- Keep the summary to 3-4 manually edited sentences.
+- Summarize the central tension and thesis, not the full table of contents.
+- Place it after the lead.
+- Do not call it `TL;DR` in the public UI.
+- Do not generate it on the frontend.
+- Do not render the block when the field is missing or empty.
+- Do not use it as a replacement for reading the article.
+
 ## Practice Section
 
 Use the practice section when an article benefits from one concrete way of applying the argument.

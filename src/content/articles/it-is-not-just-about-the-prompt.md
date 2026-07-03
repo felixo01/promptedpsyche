@@ -11,6 +11,11 @@ tags:
   - AI work
 author: "Feliks Mamczur"
 readingTime: "9 min read"
+inBrief:
+  - "A good prompt can help, but it is not enough for mature AI work."
+  - "The harder part begins after the model answers: understanding context, checking the result and deciding what role the output should have."
+  - "AI literacy includes trust, cognitive load, verification and responsibility, not only better instructions."
+  - "In organizations, the prompt is only one part of the wider human - model - decision loop."
 image: /images/articles/human-ai-workflow-judgment.webp
 imageAlt: "Diagram showing that the prompt is only one part of AI work, alongside context, attention, trust, verification, cognitive load and responsibility."
 imageCaption: "A prompt is only one point in a wider loop of context, attention, output, trust, verification and responsibility."

@@ -12,6 +12,11 @@ tags:
   - AI work
 author: "Feliks Mamczur"
 readingTime: "9 min read"
+inBrief:
+  - "A model can feel continuous in conversation, but it does not remember a situation the way a person does."
+  - "It works with available context: the prompt, previous turns, pasted material and constraints."
+  - "When users confuse context with memory, they may omit important information or trust the answer too much."
+  - "Working well with AI means actively managing context and checking the result before using it."
 image: /images/articles/model-context-window-diagram.svg
 imageAlt: "Diagram showing the context window as a bounded set of material the model can use to generate an answer."
 imageCaption: "The model does not work with the whole history of a situation. It works with available context: the prompt, material, constraints and what fits into the interaction."

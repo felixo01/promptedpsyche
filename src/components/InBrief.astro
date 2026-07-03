@@ -1,0 +1,25 @@
+---
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  items?: string[];
+  lang?: Locale;
+}
+
+const { items = [], lang = 'en' } = Astro.props;
+const cleanItems = items.map((item) => item.trim()).filter(Boolean);
+const label = lang === 'pl' ? 'W skrócie' : 'In brief';
+---
+
+{
+  cleanItems.length > 0 && (
+    <details class="in-brief" data-qa="in-brief">
+      <summary class="in-brief__summary">{label}</summary>
+      <div class="in-brief__body">
+        {cleanItems.map((item) => (
+          <p>{item}</p>
+        ))}
+      </div>
+    </details>
+  )
+}

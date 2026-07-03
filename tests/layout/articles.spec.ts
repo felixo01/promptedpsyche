@@ -460,6 +460,13 @@ test.describe('published articles', () => {
     await page.goto(mirrorPolishArticleRoute);
 
     await expect(page.locator('.content-header h1')).toHaveText(mirrorPolishArticleTitle);
+    const inBrief = page.locator('[data-qa="in-brief"]');
+    await expect(inBrief).toHaveCount(1);
+    await expect(inBrief.locator('summary.in-brief__summary')).toHaveText('W skrócie');
+    await inBrief.locator('summary').click();
+    await expect(inBrief.locator('.in-brief__body')).toBeVisible();
+    await expect(inBrief).toContainText('AI działa raczej jak lustro językowe');
+    await expect(page.locator('body')).not.toContainText('TL;DR');
     await expect(page.locator('.prose')).toContainText('Lustro języka, nie lustro duszy');
     await expect(page.locator('.prose')).toContainText('Dopasowanie nie jest zrozumieniem');
     await expect(page.locator('.prose')).toContainText('Kluczowy fragment');
@@ -574,6 +581,13 @@ test.describe('published articles', () => {
     await page.goto(mirrorEnglishArticleRoute);
 
     await expect(page.locator('.content-header h1')).toHaveText(mirrorEnglishArticleTitle);
+    const inBrief = page.locator('[data-qa="in-brief"]');
+    await expect(inBrief).toHaveCount(1);
+    await expect(inBrief.locator('summary.in-brief__summary')).toHaveText('In brief');
+    await inBrief.locator('summary').click();
+    await expect(inBrief.locator('.in-brief__body')).toBeVisible();
+    await expect(inBrief).toContainText('AI works more like a linguistic mirror');
+    await expect(page.locator('body')).not.toContainText('TL;DR');
     await expect(page.locator('.prose')).toContainText('A mirror of language, not a mirror of the soul');
     await expect(page.locator('.prose')).toContainText('Fit is not understanding');
     await expect(page.locator('.prose')).toContainText('Key passage');
@@ -677,6 +691,22 @@ test.describe('published articles', () => {
         .filter(Boolean)
     );
     expect(overflowingBoxes).toEqual([]);
+  });
+
+  test('keeps the in brief disclosure within the mobile viewport', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 });
+    await page.goto(mirrorPolishArticleRoute);
+
+    const overflows = await page.locator('[data-qa="in-brief"]').evaluateAll((blocks) =>
+      blocks
+        .map((block) => {
+          const rect = block.getBoundingClientRect();
+          return rect.left < -1 || rect.right > window.innerWidth + 1;
+        })
+        .filter(Boolean)
+    );
+
+    expect(overflows).toEqual([]);
   });
 
   test('renders the second English article detail page with byline, citation, rights notice and concept links', async ({ page }) => {

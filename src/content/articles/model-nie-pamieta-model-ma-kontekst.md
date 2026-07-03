@@ -12,6 +12,11 @@ tags:
   - praca z AI
 author: "Feliks Mamczur"
 readingTime: "9 min czytania"
+inBrief:
+  - "Model może sprawiać wrażenie ciągłości rozmowy, ale nie pamięta sytuacji tak jak człowiek."
+  - "Pracuje na dostępnym kontekście: poleceniu, wcześniejszych fragmentach rozmowy, materiałach i ograniczeniach."
+  - "Jeśli użytkownik pomyli kontekst z pamięcią, łatwo pominie ważne informacje albo zaufa odpowiedzi bardziej, niż powinien."
+  - "Dlatego praca z AI wymaga aktywnego porządkowania materiału i odpowiedzialnego sprawdzania wyniku."
 image: /images/articles/model-context-window-diagram.svg
 imageAlt: "Diagram pokazujący okno kontekstu jako ograniczony zakres materiału, który model może wykorzystać do wygenerowania odpowiedzi."
 imageCaption: "Model nie pracuje na całej historii sytuacji. Pracuje na dostępnym kontekście: poleceniu, materiale, ograniczeniach i tym, co mieści się w danej interakcji."

@@ -172,6 +172,7 @@ test.describe('published notes', () => {
       await page.goto(note.enRoute);
 
       await expect(page.locator('.content-header h1')).toHaveText(note.enTitle);
+      await expect(page.locator('[data-qa="in-brief"]')).toHaveCount(0);
       await expect(page.locator('[data-qa="article-byline"]')).toContainText('By Feliks Mamczur');
       await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
       await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
@@ -194,6 +195,7 @@ test.describe('published notes', () => {
       await page.goto(note.plRoute);
 
       await expect(page.locator('.content-header h1')).toHaveText(note.plTitle);
+      await expect(page.locator('[data-qa="in-brief"]')).toHaveCount(0);
       await expect(page.locator('[data-qa="article-byline"]')).toContainText('Autor: Feliks Mamczur');
       await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
       await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');

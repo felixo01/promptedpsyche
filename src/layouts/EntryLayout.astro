@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import InBrief from '../components/InBrief.astro';
 import RightsNotice from '../components/RightsNotice.astro';
 import SuggestedCitation from '../components/SuggestedCitation.astro';
 import TagList from '../components/TagList.astro';
@@ -20,6 +21,7 @@ interface Props {
       imageAlt?: string;
       imageCaption?: string;
       audioUrl?: string;
+      inBrief?: string[];
       tags?: string[];
     };
   };
@@ -41,6 +43,7 @@ const {
 const tags: string[] = entry.data.tags ?? [];
 const readingTime = entry.data.readingTime;
 const isConceptEntry = !showPublishedAt;
+const isArticleEntry = label === 'Article' || label === 'Artykuł';
 const conceptBackHref = lang === 'pl' ? '/pl/concepts/' : '/concepts/';
 const conceptBackLabel = lang === 'pl' ? 'Wróć do pojęć' : 'Back to concepts';
 const aboutHref = lang === 'pl' ? '/pl/about/' : '/about/';
@@ -52,6 +55,7 @@ const heroImage = !isConceptEntry ? entry.data.image : undefined;
 const heroImageAlt = entry.data.imageAlt ?? entry.data.title;
 const heroImageCaption = entry.data.imageCaption;
 const audioUrl = !isConceptEntry ? entry.data.audioUrl : undefined;
+const inBriefItems = isArticleEntry ? (entry.data.inBrief ?? []) : [];
 const audioLabel = lang === 'pl' ? 'Wersja audio' : 'Audio version';
 const audioFallback =
   lang === 'pl'
@@ -105,6 +109,7 @@ const asideLabels = isConceptEntry
         }
         <h1>{entry.data.title}</h1>
         <p class="lede">{entry.data.description}</p>
+        <InBrief items={inBriefItems} lang={lang} />
         {!isConceptEntry && (
           <div class="article-byline" data-qa="article-byline">
             <p>

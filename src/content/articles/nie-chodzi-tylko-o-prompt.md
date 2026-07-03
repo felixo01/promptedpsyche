@@ -11,6 +11,11 @@ tags:
   - praca z AI
 author: "Feliks Mamczur"
 readingTime: "10 min czytania"
+inBrief:
+  - "Dobry prompt może pomóc, ale nie wystarcza do dojrzałej pracy z AI."
+  - "Po odpowiedzi modelu zaczyna się ważniejsza część: rozumienie kontekstu, sprawdzanie wyniku i decyzja, co z nim zrobić."
+  - "AI literacy oznacza umiejętność pracy z zaufaniem, obciążeniem poznawczym, weryfikacją i odpowiedzialnością."
+  - "W organizacjach prompt jest tylko jednym elementem szerszej praktyki człowiek - model - decyzja."
 image: /images/articles/human-ai-workflow-judgment.webp
 imageAlt: "Diagram pokazujący, że prompt jest tylko częścią pracy z AI: obok kontekstu, uwagi, zaufania, weryfikacji, obciążenia poznawczego i odpowiedzialności."
 imageCaption: "Prompt jest tylko jednym punktem w szerszej pętli: kontekstu, uwagi, wyniku, zaufania, weryfikacji i odpowiedzialności."

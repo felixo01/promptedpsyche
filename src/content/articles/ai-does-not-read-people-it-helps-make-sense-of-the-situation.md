@@ -12,6 +12,11 @@ tags:
   - AI work
 author: "Feliks Mamczur"
 readingTime: "15 min read"
+inBrief:
+  - "AI can help organize a difficult message, but it does not read the other person's intentions."
+  - "A better use of the model is to separate facts, hypotheses, missing information and response risks."
+  - "The system can act as a second reader of communication, not as a judge of the relationship."
+  - "Responsibility for the decision, tone and next conversation remains with the human user."
 image: /images/articles/communication-situation-map.svg
 imageAlt: "Diagram mapping a difficult message into facts, hypotheses, missing information, response risk and a clearer reply."
 imageCaption: "In difficult communication, AI can help organize layers of the situation: facts, hypotheses, missing information and response risk."
