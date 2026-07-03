@@ -176,6 +176,18 @@ Prompt examples use copyable boxes only where a concrete AI question or instruct
 
 Visible publication tags are clickable and lead to tag archive pages. PL tag pages live under `/pl/tags/[slug]/`; EN tag pages live under `/tags/[slug]/`. Draft content is excluded from tag archives, and PL/EN publication parity was checked.
 
+## Concepts wave 03
+
+Concepts wave 03 was added on `2026-07-03` as a public vocabulary expansion in pre-launch mode.
+
+- 10 EN concepts and 10 PL counterparts were added.
+- Public Concepts total after wave 03: 26 EN and 26 PL.
+- New concepts: Hallucination, Grounding, Sycophancy, Overreliance, Algorithmic Authority, Social Presence, Parasocial Relationship, Human Agency, Deskilling and Decision Support.
+- PL naming follows the terminology rules in `docs/concepts-system.md`: established Polish terms are used where stable, while mixed EN/PL titles are used where the Polish equivalent is not settled.
+- Existing article and note content was not rewritten during this concepts wave.
+- No DOI was added.
+- Site-wide `noindex`, Vercel `X-Robots-Tag` and draft safety remain unchanged.
+
 ## Prompt examples
 
 Prompt examples now use copyable multi-line boxes where a concrete question to AI clarifies the argument. They should remain sparse and support the editorial line, not turn articles or notes into prompt libraries.

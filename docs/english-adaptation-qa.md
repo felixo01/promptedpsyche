@@ -36,3 +36,12 @@ Use this checklist before publishing English versions of Polish articles or note
 - PL/EN routing for the AI mirror article pair was checked through `translationKey`.
 - Prompt boxes were adapted naturally: `Do not ask this` and `Better question`.
 - Safety language avoids claims about AI consciousness, therapy, diagnosis or human-like understanding.
+
+## Concepts wave 03 adaptation note
+
+- Concepts wave 03 adds paired EN and PL entries for 10 concepts.
+- EN concepts use natural English titles and do not mirror Polish explanatory titles mechanically.
+- PL concepts use established Polish titles where supported by Polish usage.
+- Mixed PL titles are intentional for `Grounding`, `Sycophancy` and `Deskilling`, where the English term remains useful and the Polish phrase is explanatory.
+- Language alternates rely on shared `translationKey` values.
+- Safety language was checked for hallucination, sycophancy, social presence and parasocial relationship entries to avoid claims about AI consciousness, intentions, therapy or diagnosis.

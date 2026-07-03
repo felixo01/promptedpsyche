@@ -14,7 +14,17 @@ const conceptOrder = [
   'anthropomorphism',
   'ai-companions',
   'human-oversight',
-  'ai-mediated-communication'
+  'ai-mediated-communication',
+  'hallucination',
+  'grounding',
+  'sycophancy',
+  'overreliance',
+  'algorithmic-authority',
+  'social-presence',
+  'parasocial-relationship',
+  'human-agency',
+  'deskilling',
+  'decision-support'
 ];
 
 type OrderedConcept = {

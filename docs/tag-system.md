@@ -45,3 +45,10 @@ When an equivalent tag slug exists in both languages, the language switcher may 
 ## Current publication check
 
 The AI mirror article pair uses functional publication tags on index cards and detail pages. New tag archives include `/pl/tags/ai-i-czlowiek/` and `/tags/ai-and-humans/`, and they should not mix PL and EN publications.
+
+## Concepts tags
+
+- Concept index tags are clickable filters on `/concepts/` and `/pl/concepts/`.
+- Concept detail tags remain informational and should not link to empty routes.
+- Concepts wave 03 keeps this behavior for the 10 new EN concepts and 10 new PL concepts.
+- Publication tag archive tests and concept filter tests should remain separate.

@@ -38,12 +38,76 @@ const waveTwoDetailRoutes = [
   '/pl/concepts/epistemic-vigilance/'
 ];
 
+const waveThreeDetailRoutes = [
+  '/concepts/hallucination/',
+  '/concepts/grounding/',
+  '/concepts/sycophancy/',
+  '/concepts/overreliance/',
+  '/concepts/algorithmic-authority/',
+  '/concepts/social-presence/',
+  '/concepts/parasocial-relationship/',
+  '/concepts/human-agency/',
+  '/concepts/deskilling/',
+  '/concepts/decision-support/',
+  '/pl/concepts/halucynacja-modelu/',
+  '/pl/concepts/oparcie-odpowiedzi-na-zrodlach/',
+  '/pl/concepts/potakiwanie-modelu/',
+  '/pl/concepts/nadmierne-poleganie-na-ai/',
+  '/pl/concepts/autorytet-algorytmiczny/',
+  '/pl/concepts/poczucie-obecnosci-spolecznej/',
+  '/pl/concepts/relacja-paraspoleczna/',
+  '/pl/concepts/sprawczosc-czlowieka/',
+  '/pl/concepts/erozja-kompetencji/',
+  '/pl/concepts/wspomaganie-decyzji/'
+];
+
 const conceptDetailRoutes = [
   '/concepts/ai-literacy/',
   '/concepts/ai-mediated-communication/',
   '/pl/concepts/ai-literacy/',
   '/pl/concepts/ai-mediated-communication/',
-  ...waveTwoDetailRoutes
+  ...waveTwoDetailRoutes,
+  ...waveThreeDetailRoutes
+];
+
+const conceptLanguageChecks = [
+  {
+    route: '/concepts/',
+    visible: ['Hallucination', 'Grounding', 'Sycophancy', 'Human Agency'],
+    absent: ['Halucynacja modelu', 'Sprawczość człowieka']
+  },
+  {
+    route: '/pl/concepts/',
+    visible: ['Halucynacja modelu', 'Grounding: oparcie odpowiedzi na źródłach', 'Sycophancy: potakiwanie modelu', 'Sprawczość człowieka'],
+    absent: ['Algorithmic Authority', 'Decision Support']
+  }
+];
+
+const conceptLanguagePairs = [
+  {
+    enRoute: '/concepts/hallucination/',
+    plRoute: '/pl/concepts/halucynacja-modelu/',
+    enTitle: 'Hallucination',
+    plTitle: 'Halucynacja modelu'
+  },
+  {
+    enRoute: '/concepts/grounding/',
+    plRoute: '/pl/concepts/oparcie-odpowiedzi-na-zrodlach/',
+    enTitle: 'Grounding',
+    plTitle: 'Grounding: oparcie odpowiedzi na źródłach'
+  },
+  {
+    enRoute: '/concepts/sycophancy/',
+    plRoute: '/pl/concepts/potakiwanie-modelu/',
+    enTitle: 'Sycophancy',
+    plTitle: 'Sycophancy: potakiwanie modelu'
+  },
+  {
+    enRoute: '/concepts/decision-support/',
+    plRoute: '/pl/concepts/wspomaganie-decyzji/',
+    enTitle: 'Decision Support',
+    plTitle: 'Wspomaganie decyzji'
+  }
 ];
 
 test.describe('concept cards and tags', () => {
@@ -57,11 +121,11 @@ test.describe('concept cards and tags', () => {
     absentCopy,
     emptyFilterMessage
   } of conceptIndexRoutes) {
-    test(`shows at least 16 public concept cards on ${route}`, async ({ page }) => {
+    test(`shows at least 26 public concept cards on ${route}`, async ({ page }) => {
       await page.goto(route);
 
       const cardCount = await page.locator('[data-qa="concept-card"]').count();
-      expect(cardCount).toBeGreaterThanOrEqual(16);
+      expect(cardCount).toBeGreaterThanOrEqual(26);
       await expect(page.locator('body')).toContainText(expectedCopy);
       await expect(page.locator('body')).not.toContainText(absentCopy);
     });
@@ -71,7 +135,7 @@ test.describe('concept cards and tags', () => {
 
       const allCards = page.locator('[data-qa="concept-card"]');
       const initialCount = await allCards.count();
-      expect(initialCount).toBeGreaterThanOrEqual(16);
+      expect(initialCount).toBeGreaterThanOrEqual(26);
 
       const tagLink = page.locator(`[data-concept-tag-link][href*="tag=${encodeURIComponent(filterTag)}"]`).first();
       await expect(tagLink).toBeVisible();
@@ -144,6 +208,34 @@ test.describe('concept cards and tags', () => {
     });
   }
 
+  for (const { route, visible, absent } of conceptLanguageChecks) {
+    test(`keeps concept index language scoped on ${route}`, async ({ page }) => {
+      await page.goto(route);
+
+      for (const title of visible) {
+        await expect(page.locator('[data-qa="concept-card"] h2').filter({ hasText: title })).toBeVisible();
+      }
+
+      for (const title of absent) {
+        await expect(page.locator('[data-qa="concept-card"] h2').filter({ hasText: title })).toHaveCount(0);
+      }
+    });
+  }
+
+  for (const { enRoute, plRoute, enTitle, plTitle } of conceptLanguagePairs) {
+    test(`links language alternates for ${enRoute}`, async ({ page }) => {
+      await page.goto(enRoute);
+
+      await expect(page.locator('.content-header h1')).toHaveText(enTitle);
+      await expect(page.locator('a[href="' + plRoute + '"]')).toBeVisible();
+
+      await page.goto(plRoute);
+
+      await expect(page.locator('.content-header h1')).toHaveText(plTitle);
+      await expect(page.locator('a[href="' + enRoute + '"]')).toBeVisible();
+    });
+  }
+
   for (const route of ['/concepts/context-window/', '/pl/concepts/context-window/']) {
     test(`links related concepts to real pages on ${route}`, async ({ page, request }) => {
       await page.goto(route);
@@ -178,6 +270,23 @@ test.describe('concept cards and tags', () => {
 
       await expect(page.locator('.content-header h1')).toBeVisible();
       await expect(page.locator('.prose')).toContainText(/Sources and context|Źródła i kontekst/);
+
+      const hasOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+      expect(hasOverflow).toBe(false);
+    });
+  }
+
+  for (const route of waveThreeDetailRoutes) {
+    test(`renders wave three detail page with references on ${route}`, async ({ page }) => {
+      await page.goto(route);
+
+      await expect(page.locator('.content-header h1')).toBeVisible();
+      await expect(page.locator('.prose')).toContainText(/Sources and context|Źródła i kontekst/);
+
+      const text = await page.locator('.prose').innerText();
+      expect(text).not.toMatch(/clinical human hallucination|kliniczna halucynacja człowieka/i);
+      expect(text).not.toMatch(/the model wants|model chce/i);
+      expect(text).not.toMatch(/AI makes the decision for the human|AI podejmuje decyzję za człowieka/i);
 
       const hasOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
       expect(hasOverflow).toBe(false);
