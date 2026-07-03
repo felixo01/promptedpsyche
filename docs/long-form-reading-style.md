@@ -55,14 +55,15 @@ Use the optional `inBrief` field for long articles when a short reading aid help
 Labels:
 
 - PL: `W skrócie`
-- EN: `In brief`
+- EN: `TL;DR`
+- Internal name: `inBrief`
 
 Rules:
 
+- Use the disclosure for long flagship articles.
 - Keep the summary to 3-4 manually edited sentences.
 - Summarize the central tension and thesis, not the full table of contents.
 - Place it after the lead.
-- Do not call it `TL;DR` in the public UI.
 - Do not generate it on the frontend.
 - Do not render the block when the field is missing or empty.
 - Do not use it as a replacement for reading the article.

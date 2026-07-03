@@ -224,13 +224,13 @@ A long-form readability pass was completed after article 04 was published.
 
 ## Article in brief summaries
 
-An optional `In brief` / `W skrócie` disclosure was added for long-form articles.
+An optional `TL;DR` / `W skrócie` disclosure is used for long-form articles.
 
 - The summaries are manually written in frontmatter through the optional `inBrief` field.
 - The frontend does not generate summaries.
 - The block appears after the article lead and before the byline, hero image and article body.
-- The public labels are `In brief` in EN and `W skrócie` in PL.
-- The public UI does not use `TL;DR`.
+- The public labels are `TL;DR` in EN and `W skrócie` in PL.
+- The internal field may remain `inBrief`.
 - Empty blocks are not rendered.
 - The AI mirror article has PL/EN summaries.
 - All current public article pairs now have manually edited summaries.

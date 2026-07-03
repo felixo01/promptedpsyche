@@ -37,7 +37,8 @@ Use this checklist before publishing English versions of Polish articles or note
 - The EN AI mirror key passage and practice section were reviewed as adaptation, not literal translation.
 - The dense AI mirror passage about older systems and current language models was simplified naturally in EN.
 - Prompt examples were adapted naturally: `Better question` and `Mini-agent`.
-- The EN `In brief` summary was added to the AI mirror article as an adaptation, not a literal translation.
+- The EN article summary disclosure label changed from `In brief` to `TL;DR`.
+- The EN `TL;DR` summary was added to the AI mirror article as an adaptation, not a literal translation.
 - EN article summaries should preserve the same thesis as PL while using natural English rhythm.
 - Safety language avoids claims about AI consciousness, therapy, diagnosis or human-like understanding.
 - The EN adaptation for `From sources to answers: how AI changes the path between people and knowledge` is complete.

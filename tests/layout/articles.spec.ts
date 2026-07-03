@@ -620,11 +620,11 @@ test.describe('published articles', () => {
     await expect(page.locator('.content-header h1')).toHaveText(aiPathEnglishArticleTitle);
     const inBrief = page.locator('[data-qa="in-brief"]');
     await expect(inBrief).toHaveCount(1);
-    await expect(inBrief.locator('summary.in-brief__summary')).toHaveText('In brief');
+    await expect(inBrief.locator('summary.in-brief__summary')).toHaveText('TL;DR');
     await inBrief.locator('summary').click();
     await expect(inBrief.locator('.in-brief__body')).toBeVisible();
     await expect(inBrief).toContainText('AI changes not only how quickly we receive answers');
-    await expect(page.locator('body')).not.toContainText('TL;DR');
+    await expect(page.locator('body')).not.toContainText('In brief');
     await expect(page.locator('.prose')).toContainText('AI enters between the question and the source');
     await expect(page.locator('.prose')).toContainText('Better question');
     await expect(page.locator('.prose')).toContainText('Nature');
@@ -863,11 +863,11 @@ test.describe('published articles', () => {
     await expect(page.locator('.content-header h1')).toHaveText(mirrorEnglishArticleTitle);
     const inBrief = page.locator('[data-qa="in-brief"]');
     await expect(inBrief).toHaveCount(1);
-    await expect(inBrief.locator('summary.in-brief__summary')).toHaveText('In brief');
+    await expect(inBrief.locator('summary.in-brief__summary')).toHaveText('TL;DR');
     await inBrief.locator('summary').click();
     await expect(inBrief.locator('.in-brief__body')).toBeVisible();
     await expect(inBrief).toContainText('AI works more like a linguistic mirror');
-    await expect(page.locator('body')).not.toContainText('TL;DR');
+    await expect(page.locator('body')).not.toContainText('In brief');
     await expect(page.locator('.prose')).toContainText('A mirror of language, not a mirror of the soul');
     await expect(page.locator('.prose')).toContainText('Fit is not understanding');
     await expect(page.locator('.prose')).toContainText('Key passage');

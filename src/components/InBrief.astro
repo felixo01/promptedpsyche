@@ -8,7 +8,7 @@ interface Props {
 
 const { items = [], lang = 'en' } = Astro.props;
 const cleanItems = items.map((item) => item.trim()).filter(Boolean);
-const label = lang === 'pl' ? 'W skrócie' : 'In brief';
+const label = lang === 'pl' ? 'W skrócie' : 'TL;DR';
 ---
 
 {
