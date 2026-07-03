@@ -3,6 +3,19 @@ import { expect, test } from '@playwright/test';
 const email = 'humanai.lab.edu@gmail.com';
 const mailto = `mailto:${email}`;
 
+const contactSafetyCases = [
+  {
+    route: '/contact/',
+    expectedClosing: 'I try to respond thoughtfully',
+    absentCopy: 'I reply when I can realistically help'
+  },
+  {
+    route: '/pl/contact/',
+    expectedClosing: 'Staram się odpowiadać na wiadomości możliwie uważnie',
+    absentCopy: 'Odpowiadam wtedy, kiedy mogę realnie pomóc'
+  }
+];
+
 test.describe('contact pages', () => {
   test('shows direct email access on the English contact page', async ({ page }) => {
     await page.goto('/contact/');
@@ -33,6 +46,20 @@ test.describe('contact pages', () => {
       mailto
     );
   });
+
+  for (const { route, expectedClosing, absentCopy } of contactSafetyCases) {
+    test(`keeps contact copy and safety boundaries on ${route}`, async ({ page }) => {
+      await page.goto(route);
+
+      const body = page.locator('body');
+      await expect(body).toContainText(expectedClosing);
+      await expect(body).not.toContainText(absentCopy);
+      await expect(body).not.toContainText('DOI');
+      await expect(body).not.toContainText('Practice');
+      await expect(body).not.toContainText('Praktyka');
+      await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+    });
+  }
 
   for (const route of ['/contact/', '/pl/contact/']) {
     test(`keeps email layout inside the viewport on ${route}`, async ({ page }) => {
