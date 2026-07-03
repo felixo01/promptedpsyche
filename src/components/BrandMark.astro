@@ -9,23 +9,12 @@ interface Props {
 }
 
 const { href, label = site.name, line = site.tagline, compact = false } = Astro.props;
-
 ---
 
 {
   href ? (
     <a class:list={['brand-lockup', { 'brand-lockup-compact': compact }]} href={href} aria-label={label}>
-      <span class="brand-symbol" aria-hidden="true">
-        <img
-          class="brand-symbol__image"
-          src="/images/brand/prompted-psyche-icon.svg"
-          alt=""
-          width="32"
-          height="32"
-          loading="eager"
-          decoding="async"
-        />
-      </span>
+      <span class="brand-symbol" aria-hidden="true">PP</span>
       <span class="brand-copy">
         <span class="brand-name">{site.name}</span>
         {!compact && <span class="brand-line">{line}</span>}
@@ -33,17 +22,7 @@ const { href, label = site.name, line = site.tagline, compact = false } = Astro.
     </a>
   ) : (
     <div class:list={['brand-lockup', { 'brand-lockup-compact': compact }]}>
-      <span class="brand-symbol" aria-hidden="true">
-        <img
-          class="brand-symbol__image"
-          src="/images/brand/prompted-psyche-icon.svg"
-          alt=""
-          width="32"
-          height="32"
-          loading="eager"
-          decoding="async"
-        />
-      </span>
+      <span class="brand-symbol" aria-hidden="true">PP</span>
       <span class="brand-copy">
         <span class="brand-name">{site.name}</span>
         {!compact && <span class="brand-line">{line}</span>}

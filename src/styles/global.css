@@ -228,17 +228,14 @@ h4,
 
 .brand-symbol {
   display: grid;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   place-items: center;
+  border: 1px solid rgba(28, 25, 23, 0.2);
   color: var(--ink);
-  flex: 0 0 auto;
-}
-
-.brand-symbol__image {
-  display: block;
-  width: 100%;
-  height: 100%;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .brand-copy {
@@ -248,7 +245,7 @@ h4,
 
 .brand-name {
   color: var(--ink);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -2994,15 +2991,13 @@ html[lang='pl'] .content-header h1 {
 
 .footer-utility span {
   display: grid;
-  width: 1.45rem;
-  height: 1.45rem;
+  width: 1.2rem;
+  height: 1.2rem;
   place-items: center;
-}
-
-.footer-utility span img {
-  display: block;
-  width: 100%;
-  height: 100%;
+  border: 1px solid rgba(28, 25, 23, 0.2);
+  border-radius: 999px;
+  font-family: var(--font-serif);
+  font-size: 0.5rem;
 }
 
 .footer-utility a {
