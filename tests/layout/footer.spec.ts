@@ -71,7 +71,11 @@ test.describe('site footer', () => {
       await page.goto(footerCase.route);
 
       const footer = page.locator('[data-qa="site-footer"]');
+      const rightsRow = footer.locator('.footer-rights');
+      const utilityRow = footer.locator('.footer-utility');
       await expect(footer).toBeVisible();
+      await expect(rightsRow).toBeVisible();
+      await expect(utilityRow).toBeVisible();
       await expect(footer).toContainText('Prompted Psyche');
       await expect(footer).toContainText('Feliks Mamczur');
       await expect(footer).toContainText('humanai.lab.edu@gmail.com');
@@ -85,6 +89,27 @@ test.describe('site footer', () => {
       for (const label of footerCase.practiceLabels) {
         await expect(footer).not.toContainText(label);
       }
+    });
+
+    test(`keeps the rights note in a full-width footer row on ${footerCase.route}`, async ({ page }) => {
+      await page.goto(footerCase.route);
+
+      const result = await page.evaluate(() => {
+        const footerInner = document.querySelector('.footer-inner');
+        const rightsRow = document.querySelector('.footer-rights');
+        const utilityRow = document.querySelector('.footer-utility');
+
+        return {
+          footerWidth: Math.round(footerInner?.getBoundingClientRect().width ?? 0),
+          rightsWidth: Math.round(rightsRow?.getBoundingClientRect().width ?? 0),
+          utilityWidth: Math.round(utilityRow?.getBoundingClientRect().width ?? 0)
+        };
+      });
+
+      expect(result.rightsWidth).toBeGreaterThan(0);
+      expect(result.utilityWidth).toBeGreaterThan(0);
+      expect(result.rightsWidth).toBeGreaterThanOrEqual(result.footerWidth - 1);
+      expect(result.utilityWidth).toBeGreaterThanOrEqual(result.footerWidth - 1);
     });
 
     test(`keeps footer within the viewport on ${footerCase.route}`, async ({ page }) => {
