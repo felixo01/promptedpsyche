@@ -11,12 +11,12 @@ tags:
   - AI literacy
   - komunikacja
 author: "Feliks Mamczur"
-readingTime: "23 min czytania"
+readingTime: "25 min czytania"
 inBrief:
   - "AI zmienia nie tylko to, jak szybko dostajemy odpowiedzi, ale też drogę, którą przechodzimy od pytania do poczucia, że coś wiemy."
   - "Tekst Nature o zaufaniu do nauki jest punktem wyjścia, ale najważniejsze pytanie brzmi tu inaczej: co dzieje się, gdy między człowiekiem a źródłami pojawia się model językowy?"
-  - "Płynna odpowiedź może ułatwiać rozumienie, ale może też ukrywać źródła, spór, metodę i granice pewności."
-  - "Dojrzałe korzystanie z AI polega nie na ślepym zaufaniu ani odrzuceniu, lecz na umiejętności odtworzenia drogi od odpowiedzi do źródła."
+  - "Płynna odpowiedź może ułatwiać rozumienie, ale nie jest dowodem, a cytacja nie kończy sprawdzania."
+  - "Dojrzałe korzystanie z AI wymaga skalibrowanego zaufania: dopasowanego do zadania, stawki, źródeł i możliwości weryfikacji."
 image: /images/articles/ai-path-to-knowledge.svg
 imageAlt: "Diagram pokazujący, jak AI zmienia drogę między człowiekiem a wiedzą: model daje szybką odpowiedź, a pod spodem pozostają źródła, metoda, dane, spór i weryfikacja."
 imageCaption: "AI może skrócić drogę od pytania do odpowiedzi. Dojrzałe korzystanie zaczyna się wtedy, gdy potrafimy wrócić od odpowiedzi do źródeł, metody, danych, niepewności i sprawdzenia."
@@ -55,7 +55,7 @@ Ta wielowymiarowość ma znaczenie w epoce AI, bo model często spłaszcza ją d
 
 W codziennym użyciu to spłaszczenie bywa prawie niewidoczne. Ktoś pyta o wyniki badań nad snem, wpływ mediów społecznościowych na nastolatków albo bezpieczeństwo nowej technologii. Model odpowiada tak, jakby mówił głosem jednego uporządkowanego eksperta. Tymczasem za podobną odpowiedzią mogą stać różne typy materiału: przegląd badań, pojedynczy eksperyment, raport instytucji, komentarz medialny, stanowisko branżowe albo stary fragment wiedzy, który wymaga aktualizacji. Jeśli tego nie rozróżniamy, możemy zaufać nie tyle nauce, ile gładkiemu połączeniu elementów, które w źródłach miały różny ciężar.
 
-Właśnie dlatego [calibrated trust](/pl/concepts/calibrated-trust/) nie polega na ogólnym entuzjazmie albo ogólnej nieufności. Polega na dopasowaniu zaufania do zadania, stawki, źródeł i możliwości sprawdzenia. Inaczej czytamy odpowiedź o definicji terminu. Inaczej odpowiedź o leczeniu, klimacie, ryzyku prawnym, diagnozie społecznej albo publicznej polityce. Ten sam spokojny styl może przykrywać bardzo różne poziomy odpowiedzialności.
+Właśnie dlatego [skalibrowane zaufanie](/pl/concepts/calibrated-trust/) nie polega na ogólnym entuzjazmie albo ogólnej nieufności. Polega na dopasowaniu zaufania do zadania, stawki, źródeł i możliwości sprawdzenia. Inaczej czytamy odpowiedź o definicji terminu. Inaczej odpowiedź o leczeniu, klimacie, ryzyku prawnym, diagnozie społecznej albo publicznej polityce. Ten sam spokojny styl może przykrywać bardzo różne poziomy odpowiedzialności.
 
 ## AI wchodzi między pytanie a źródło
 
@@ -65,7 +65,7 @@ W klasycznym kontakcie ze źródłem jest opór. Artykuł naukowy ma strukturę,
 
 Model usuwa część tego oporu. To może być bardzo pomocne. Osoba, która nie zna tematu, może poprosić o mapę pojęć, proste wyjaśnienie, listę spornych punktów albo pytania do źródeł. Ale ta sama wygoda może sprawić, że droga do wiedzy stanie się mniej przezroczysta. Widzimy efekt pracy językowej, nie widzimy drogi.
 
-W Prompted Psyche wraca tu pojęcie [model output](/pl/concepts/model-output/), czyli odpowiedzi modelu jako szczególnego rodzaju tekstu. To nie jest surowe źródło. To nie jest instytucja. To nie jest badanie. To wynik działania systemu, który generuje język na podstawie danych, instrukcji, kontekstu rozmowy i mechanizmów dopasowania. Może być trafny. Może być użyteczny. Może też brzmieć lepiej, niż pozwala na to jego faktyczne oparcie w materiale.
+W Prompted Psyche wraca tu pojęcie [odpowiedzi modelu](/pl/concepts/model-output/), czyli szczególnego rodzaju tekstu. To nie jest surowe źródło. To nie jest instytucja. To nie jest badanie. To wynik działania systemu, który generuje język na podstawie danych, instrukcji, kontekstu rozmowy i mechanizmów dopasowania. Może być trafny. Może być użyteczny. Może też brzmieć lepiej, niż pozwala na to jego faktyczne oparcie w materiale.
 
 <aside class="editorial-aside editorial-aside--practice">
   <p class="editorial-aside__label">Przykład</p>
@@ -86,6 +86,8 @@ Kiedy dokument jest na pierwszym planie, czytelnik może przynajmniej zobaczyć,
 
 "Brzmi dobrze" nie znaczy "jest prawdziwe". To zdanie jest proste, ale w pracy z AI trzeba je powtarzać, bo płynność języka jest jedną z najsilniejszych pułapek. Odpowiedź dobrze zorganizowana, spokojna i pozbawiona widocznego chaosu może obniżać czujność. Człowiek nie zawsze sprawdza źródła, jeśli tekst już daje poczucie zrozumienia.
 
+Badania nad płynnością przetwarzania i efektem prawdy pomagają nazwać ten mechanizm ostrożnie. Łatwość odbioru, znajomość formy albo wrażenie uporządkowania mogą wpływać na ocenę prawdziwości, ale nie oznacza to, że każdy dobrze napisany tekst automatycznie nas przekonuje. W kontekście AI ważniejsze jest coś subtelniejszego: płynna odpowiedź może zmniejszać odczuwalną potrzebę sprawdzenia, zwłaszcza wtedy, gdy nie widzimy od razu drogi do źródła.
+
 Modele językowe są szczególnie dobre w produkowaniu formy, która przypomina wyjaśnienie. Potrafią uporządkować akapity, rozdzielić argumenty, nadać ton ostrożności, dodać warunki, a nawet ostrzec przed nadmierną pewnością. To nie jest wada sama w sobie. Problem zaczyna się wtedy, gdy forma ostrożności zastępuje realne oparcie w źródłach.
 
 Literatura o halucynacjach w generowaniu języka pokazuje, że system może tworzyć tekst płynny, naturalny i pozornie osadzony w faktach, a jednak niezgodny z materiałem albo niewierny źródłom. W praktyce użytkownika nie zawsze widać granicę między dobrą syntezą a tekstem, który tylko brzmi jak dobra synteza. Dlatego [halucynacja modelu](/pl/concepts/halucynacja-modelu/) nie jest wyłącznie technicznym błędem. Jest także zdarzeniem poznawczym po stronie czytelnika: coś, co brzmi jak wiedza, może zostać potraktowane jak wiedza.
@@ -94,7 +96,9 @@ Tu pojawia się [autorytet algorytmiczny](/pl/concepts/autorytet-algorytmiczny/)
 
 ## Co dzieje się ze źródłem, gdy odpowiedź jest na pierwszym planie
 
-Kiedy odpowiedź jest na pierwszym planie, źródło może stać się niewidoczne albo drugorzędne. Link pojawia się czasem jako dekoracja, a nie warunek wiarygodności. Cytat może być traktowany jak przyprawa do tekstu. Użytkownik dostaje listę publikacji, ale nie przechodzi do publikacji. Dostaje tytuły badań, ale nie sprawdza, czy istnieją, co dokładnie badały i czy w ogóle wspierają wniosek modelu.
+Kiedy odpowiedź jest na pierwszym planie, źródło może stać się niewidoczne albo drugorzędne. Link pojawia się czasem jako dekoracja, a nie warunek wiarygodności. Cytacja może działać jak sygnał powagi, zanim jeszcze ktokolwiek sprawdzi, czy prowadzi do właściwego materiału. Użytkownik dostaje listę publikacji, ale nie przechodzi do publikacji. Dostaje tytuły badań, ale nie sprawdza, czy istnieją, co dokładnie badały i czy w ogóle wspierają wniosek modelu.
+
+Cytacja w odpowiedzi modelu nie kończy sprawdzania. Ona dopiero pokazuje, gdzie można zacząć. Źródło może istnieć, ale być zbyt ogólne. Może dotyczyć podobnego tematu, ale nie wspierać konkretnego zdania. Może też zostać streszczone tak, że znikną ograniczenia metody, data, zakres badania albo spór między autorami. Dlatego pytanie nie brzmi tylko: czy odpowiedź ma źródła? Brzmi raczej: czy te źródła naprawdę podtrzymują to konkretne twierdzenie?
 
 Problemem nie jest samo streszczenie. Streszczenia są potrzebne. Dobra popularyzacja nauki też skraca drogę. Nauczyciel, dziennikarz naukowy, lekarz, edukator albo autor eseju także wybiera, upraszcza i porządkuje. Różnica polega na tym, że odpowiedzialna popularyzacja pokazuje, skąd bierze swoje twierdzenia, gdzie upraszcza i czego nie rozstrzyga.
 
@@ -152,6 +156,12 @@ AI może tu pomóc, jeśli używamy go jako narzędzia do odsłaniania procesu. 
 
 W [Human-AI Interaction](/pl/concepts/human-ai-interaction/) stawką jest więc nie tylko ergonomia pracy z narzędziem. Stawką jest to, czy człowiek zachowuje sprawczość poznawczą. Czy wie, kiedy korzysta z pomocy. Czy rozumie własny [mental model](/pl/concepts/mental-model/) narzędzia. Czy potrafi rozpoznać, kiedy model porządkuje materiał, a kiedy zaczyna udawać materiał.
 
+## Zaufanie dopasowane do sytuacji
+
+Badania nad automatyzacją od dawna odróżniają rozsądne poleganie na systemie od polegania zbyt silnego, zbyt słabego albo źle dopasowanego do zadania. To ważne, bo w rozmowie o AI łatwo wpaść w dwie proste reakcje: ufać, bo odpowiedź jest użyteczna, albo nie ufać, bo model może się mylić. Żadna z nich nie wystarcza.
+
+W praktyce bardziej pomocne jest pytanie o kalibrację. Jaka jest stawka? Czy temat jest sporny? Czy błąd miałby poważne konsekwencje? Czy źródła są widoczne i możliwe do sprawdzenia? Czy użytkownik ma kompetencje, żeby ocenić odpowiedź, czy powinien wrócić do publikacji, danych, instytucji albo eksperta? Dopiero takie pytania pozwalają odróżnić sytuację, w której model może być roboczym przewodnikiem, od sytuacji, w której nie powinien być ostatnim słowem.
+
 ## Nie ufać odpowiedzi. Odtwarzać drogę.
 
 Dojrzałe korzystanie z AI nie polega na tym, żeby nie ufać niczemu. Nie polega też na tym, żeby ufać modelowi zawsze wtedy, gdy brzmi rozsądnie. Chodzi o inne przesunięcie: nie ufać samej odpowiedzi, tylko odtwarzać drogę, którą odpowiedź powinna mieć za sobą.
@@ -165,7 +175,7 @@ Zaufanie w epoce AI nie musi oznaczać końca zaufania do nauki. Może oznaczać
 <section class="practice-block" data-qa="practice-block">
   <p class="practice-block__label">Wypróbuj podejście</p>
   <h2>Wypróbuj podejście</h2>
-  <p>Te przykłady nie są formułami na każdą sytuację. Pokazują zmianę postawy: od proszenia modelu o gotową prawdę do proszenia o drogę, źródła, spory i granice pewności.</p>
+  <p>Te przykłady nie są formułami na każdą sytuację. Pokazują zmianę postawy: od proszenia modelu o gotową prawdę do proszenia o drogę, źródła, założenia, spory i granice pewności.</p>
 
   <div class="prompt-example prompt-example--bad" data-copyable-prompt>
     <div class="prompt-example__header">
@@ -180,7 +190,7 @@ Zaufanie w epoce AI nie musi oznaczać końca zaufania do nauki. Może oznaczać
       <p class="prompt-example__label">Lepsze pytanie</p>
       <button class="prompt-example__copy" type="button" aria-label="Kopiuj" data-copy-label="Kopiuj" data-copied-label="Skopiowano">Kopiuj</button>
     </div>
-    <pre class="prompt-example__body"><code data-prompt-text>Wyjaśnij ten temat, ale oddziel to, co dobrze ustalone, od tego, co jest sporne albo niepewne. Podaj źródła pierwotne, wskaż poziom pewności i napisz, co powinienem sprawdzić poza tą odpowiedzią.</code></pre>
+    <pre class="prompt-example__body"><code data-prompt-text>Na czym opiera się ta odpowiedź? Wypisz osobno: twierdzenia, źródła, założenia, elementy niepewne i rzeczy, które powinienem sprawdzić poza modelem.</code></pre>
   </div>
 
   <div class="prompt-example prompt-example--agent" data-copyable-prompt>
@@ -195,13 +205,16 @@ Zaufanie w epoce AI nie musi oznaczać końca zaufania do nauki. Może oznaczać
 ## Źródła i dalsza lektura
 
 - Cologna, V., Mede, N. G., Berger, S., Besley, J., Brick, C., Joubert, M., Maibach, E. W., Mihelj, S., Oreskes, N., Schäfer, M. S., van der Linden, S., Abdul Aziz, N. I., Abdulsalam, S., Abu Shamsi, N., Aczel, B., Adinugroho, I., Alabrese, E., Aldoh, A., Alfano, M., ... Zwaan, R. A. (2025). Trust in scientists and their role in society across 68 countries. *Nature Human Behaviour, 9*, 713-730. https://doi.org/10.1038/s41562-024-02090-5
+- Dechene, A., Stahl, C., Hansen, J., & Wanke, M. (2010). The truth about the truth: A meta-analytic review of the truth effect. *Personality and Social Psychology Review, 14*(2), 238-257. https://doi.org/10.1177/1088868309352251
 - European Commission. (2025). *Special Eurobarometer 557: European citizens' knowledge and attitudes towards science and technology*. https://europa.eu/eurobarometer/surveys/detail/3227
 - Ji, Z., Lee, N., Frieske, R., Yu, T., Su, D., Xu, Y., Ishii, E., Bang, Y., Chen, D., Dai, W., Chan, H. S., Madotto, A., & Fung, P. (2023). Survey of hallucination in natural language generation. *ACM Computing Surveys, 55*(12), Article 248. https://doi.org/10.1145/3571730
 - Lee, J. D., & See, K. A. (2004). Trust in automation: Designing for appropriate reliance. *Human Factors, 46*(1), 50-80. https://doi.org/10.1518/hfes.46.1.50_30392
+- Liu, N. F., Zhang, T., & Liang, P. (2023). Evaluating verifiability in generative search engines. In *Findings of EMNLP 2023*. https://aclanthology.org/2023.findings-emnlp.467/
 - Long, D., & Magerko, B. (2020). What is AI literacy? Competencies and design considerations. In *Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems* (pp. 1-16). ACM. https://doi.org/10.1145/3313831.3376727
 - Maynez, J., Narayan, S., Bohnet, B., & McDonald, R. T. (2020). On faithfulness and factuality in abstractive summarization. In *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics* (pp. 1906-1919). Association for Computational Linguistics. https://doi.org/10.18653/v1/2020.acl-main.173
 - National Institute of Standards and Technology. (2023). *Artificial intelligence risk management framework (AI RMF 1.0)* (NIST AI 100-1). https://doi.org/10.6028/NIST.AI.100-1
 - Pearson, H. (2026, July 1). Have people stopped trusting science? The data tell a surprising story. *Nature, 655*, 22-25. https://doi.org/10.1038/d41586-026-01977-9
+- Reber, R., & Schwarz, N. (1999). Effects of perceptual fluency on judgments of truth. *Consciousness and Cognition, 8*(3), 338-342. https://doi.org/10.1006/ccog.1999.0386
 - Risko, E. F., & Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive Sciences, 20*(9), 676-688. https://doi.org/10.1016/j.tics.2016.07.002
 - Sperber, D., Clement, F., Heintz, C., Mascaro, O., Mercier, H., Origgi, G., & Wilson, D. (2010). Epistemic vigilance. *Mind & Language, 25*(4), 359-393. https://doi.org/10.1111/j.1468-0017.2010.01394.x
 - UK Research and Innovation. (2026). *Public Attitudes to Science 2025*. https://pas.ipsos.com/

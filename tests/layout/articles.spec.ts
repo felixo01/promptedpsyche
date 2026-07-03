@@ -597,7 +597,7 @@ test.describe('published articles', () => {
     const copiedPrompt = await page.evaluate(
       () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
     );
-    expect(copiedPrompt).toContain('Podaj źródła pierwotne');
+    expect(copiedPrompt).toContain('Wypisz osobno: twierdzenia, źródła, założenia');
 
     await page.locator('.prompt-example--agent .prompt-example__copy').click();
     const copiedAgent = await page.evaluate(
