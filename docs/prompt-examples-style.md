@@ -34,6 +34,14 @@ EN labels:
 
 Prompt boxes show better questions, not magic formulas. They should make the reader more careful, not more mechanical.
 
+## Prompt examples and mini-agent instructions
+
+A prompt example is a concrete question or instruction for one situated use.
+
+A mini-agent instruction defines a temporary role, task boundary and operating habit for the model. It can be copyable, but it should remain sparse and should not become the default structure of every article.
+
+Both forms must support the argument of the article. Neither form should imply that AI can read intentions, diagnose people, provide therapy or replace human responsibility.
+
 ## Asides vs prompt boxes
 
 Editorial asides are for ordinary examples, boundaries, short practical checks and explanatory pauses.
@@ -44,4 +52,4 @@ Use both sparingly. The site should not become a prompt library.
 
 ## Current article examples
 
-The AI mirror article uses prompt boxes to distinguish unsafe mind-reading prompts from better context-analysis prompts. They are examples of careful questioning, not a prompt library or prompt-guru pattern.
+The AI mirror article uses a practice section with one better question and one mini-agent instruction. They are examples of careful communication analysis, not a prompt library or prompt-guru pattern.

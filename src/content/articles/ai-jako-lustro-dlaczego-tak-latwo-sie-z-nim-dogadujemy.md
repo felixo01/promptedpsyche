@@ -26,6 +26,11 @@ Być może więc lubimy rozmawiać z AI nie dlatego, że ono naprawdę nas zna. 
 
 Problem zaczyna się wtedy, gdy mylimy dopasowaną odpowiedź z realnym rozumieniem.
 
+<aside class="key-passage" data-qa="key-passage">
+  <p class="key-passage__label">Kluczowy fragment</p>
+  <p>AI nie jest naszym prawdziwym odbiciem. Jest raczej lustrem językowym i społecznym: odbija nasze słowa, ramy interpretacyjne, oczekiwania i potrzebę sensu. Dlatego rozmowa z nim może być tak płynna. Problem zaczyna się wtedy, gdy dopasowaną odpowiedź mylimy z realnym rozumieniem.</p>
+</aside>
+
 ## Rozmowa, która zbyt łatwo się układa
 
 Zwykła rozmowa z człowiekiem ma opór. Druga osoba ma własny czas, nastrój, interesy, historię, ograniczenia i granice uwagi. Może nie zrozumieć. Może wejść w słowo. Może powiedzieć, że nie ma teraz siły. Może odpowiedzieć zbyt szybko albo zbyt ostro. Może mieć swoje przekonania na temat sytuacji, zanim skończymy ją opowiadać.
@@ -34,7 +39,7 @@ AI usuwa dużą część tego oporu. Odpowiada natychmiast. Nie okazuje znużeni
 
 To doświadczenie jest nowe nie dlatego, że ludzie wcześniej nie pisali pamiętników, nie rozmawiali z wyszukiwarkami albo nie korzystali z narzędzi do porządkowania myśli. Nowe jest połączenie trzech rzeczy: rozmownej formy, płynnej odpowiedzi i poczucia, że system dopasowuje się do tonu użytkownika. W badaniach nad interakcją człowiek-komputer od dawna opisywano, że ludzie potrafią reagować społecznie na media i komputery, nawet wtedy, gdy deklaratywnie wiedzą, że nie mają do czynienia z osobą. Reeves i Nass nazwali to szeroko "media equation", a badania CASA pokazywały, że komputer może uruchamiać społeczne nawyki reagowania.
 
-Dzisiejsze modele językowe nie są prostym powtórzeniem tamtych systemów. Są bardziej elastyczne, bogatsze językowo i mocniej obecne w codziennej pracy. Ale mechanizm użytkownika nie zaczyna się od zera. Człowiek od dawna jest gotów czytać społeczność tam, gdzie pojawia się język, responsywność, ton i pozór roli rozmówcy.
+Dzisiejsze modele językowe nie są prostym powtórzeniem ELIZY ani dawnych chatbotów. Są bardziej elastyczne, piszą lepiej i realnie uczestniczą w codziennej pracy. Ale po stronie użytkownika działa znany mechanizm: gdy coś odpowiada językiem, tonem i rytmem rozmowy, łatwo zaczynamy traktować to jak obecność społeczną.
 
 Łatwość rozmowy z AI bierze się więc nie tylko z jakości odpowiedzi. Bierze się także z braku społecznego kosztu. Można pomyśleć na głos. Można przyznać się do niewiedzy. Można wkleić szkic, którego nie pokazalibyśmy jeszcze współpracownikowi. Można zapytać o coś trzeci raz, bez poczucia, że męczymy drugą osobę. Można napisać zdanie nieporadne, a dostać odpowiedź elegancką.
 
@@ -180,25 +185,27 @@ Po szóste, wracaj do rzeczywistości poza interfejsem. Jeśli sprawa dotyczy re
   </ul>
 </aside>
 
-Poniższy przykład pokazuje różnicę między pytaniem, które prosi model o czytanie cudzej głowy, a pytaniem, które ustawia pracę na tekście, kontekście i odpowiedzialności.
+<section class="practice-block" data-qa="practice-block">
+  <p class="practice-block__label">Wypróbuj podejście</p>
+  <h2>Wypróbuj podejście</h2>
+  <p>To nie jest gotowa formuła na każdą sytuację. To przykład przesunięcia pytania z "co ta osoba naprawdę myśli?" na "jakie interpretacje są możliwe i czego nie wiem?".</p>
 
-<div class="prompt-example prompt-example--bad" data-copyable-prompt>
-  <div class="prompt-example__header">
-    <p class="prompt-example__label">Nie pytaj tak</p>
-    <button class="prompt-example__copy" type="button" aria-label="Kopiuj przykładowy prompt" data-copy-label="Kopiuj" data-copied-label="Skopiowano">Kopiuj</button>
+  <div class="prompt-example prompt-example--better" data-copyable-prompt>
+    <div class="prompt-example__header">
+      <p class="prompt-example__label">Lepsze pytanie</p>
+      <button class="prompt-example__copy" type="button" aria-label="Kopiuj" data-copy-label="Kopiuj" data-copied-label="Skopiowano">Kopiuj</button>
+    </div>
+    <pre class="prompt-example__body"><code data-prompt-text>Przeanalizuj tę wiadomość jako tekst, nie jako diagnozę osoby. Oddziel fakty od interpretacji. Podaj trzy możliwe odczytania sytuacji. Wskaż, czego nie wiemy. Zaproponuj odpowiedź, która nie eskaluje napięcia.</code></pre>
   </div>
-  <pre class="prompt-example__body"><code data-prompt-text>Co ta osoba naprawdę miała na myśli?</code></pre>
-</div>
 
-<div class="prompt-example prompt-example--better" data-copyable-prompt>
-  <div class="prompt-example__header">
-    <p class="prompt-example__label">Lepsze pytanie</p>
-    <button class="prompt-example__copy" type="button" aria-label="Kopiuj przykładowy prompt" data-copy-label="Kopiuj" data-copied-label="Skopiowano">Kopiuj</button>
+  <div class="prompt-example prompt-example--agent" data-copyable-prompt>
+    <div class="prompt-example__header">
+      <p class="prompt-example__label">Mini-agent</p>
+      <button class="prompt-example__copy" type="button" aria-label="Kopiuj" data-copy-label="Kopiuj" data-copied-label="Skopiowano">Kopiuj</button>
+    </div>
+    <pre class="prompt-example__body"><code data-prompt-text>Przyjmij rolę krytycznego czytelnika komunikacji. Twoim zadaniem nie jest zgadywanie intencji osoby, tylko porządkowanie możliwych interpretacji. Za każdym razem oddziel fakty od hipotez, wskaż brakujące informacje i zaproponuj pytania, które zmniejszą ryzyko błędnego odczytania sytuacji.</code></pre>
   </div>
-  <pre class="prompt-example__body"><code data-prompt-text>Przeanalizuj tę wiadomość jako tekst, nie jako diagnozę osoby. Oddziel fakty od interpretacji. Podaj trzy możliwe odczytania sytuacji. Wskaż, czego nie wiemy. Zaproponuj odpowiedź, która nie eskaluje napięcia.</code></pre>
-</div>
-
-Lepsze pytanie nie jest bardziej magiczne. Jest bardziej odpowiedzialne. Nie udaje, że system ma dostęp do wnętrza drugiej osoby. Ustawia model jako narzędzie do analizy komunikacji, nie jako wyrocznię relacji.
+</section>
 
 ## Nie drugi człowiek, ale narzędzie do widzenia własnego myślenia
 

@@ -188,6 +188,20 @@ Concepts wave 03 was added on `2026-07-03` as a public vocabulary expansion in p
 - No DOI was added.
 - Site-wide `noindex`, Vercel `X-Robots-Tag` and draft safety remain unchanged.
 
+## Long-form readability pass
+
+A long-form readability pass was completed after article 04 was published.
+
+- Article and note body line-height was increased for reading comfort.
+- Desktop article measure was narrowed from the previous wider column to a calmer long-form width.
+- Article and note H2/H3 rhythm was improved so sections divide longer texts more clearly.
+- Long-form body copy now uses the site serif stack while UI, metadata, tags, buttons and prompt boxes keep their existing sans or mono styles.
+- A `key-passage` pattern was added for central claims in flagship articles.
+- The AI mirror article PL/EN now includes a key passage near the opening.
+- The dense AI mirror passage about current language models and older social-computing research was simplified in PL and adapted naturally in EN.
+- A practice section was added to the AI mirror article PL/EN with one copyable prompt and one copyable mini-agent instruction.
+- Audio versions are recorded as a future enhancement only. No fake audio player or placeholder audio link was added.
+
 ## Prompt examples
 
 Prompt examples now use copyable multi-line boxes where a concrete question to AI clarifies the argument. They should remain sparse and support the editorial line, not turn articles or notes into prompt libraries.

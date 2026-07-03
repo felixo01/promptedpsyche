@@ -34,7 +34,9 @@ Use this checklist before publishing English versions of Polish articles or note
 - The EN adaptation for `AI as a mirror: why it can feel so easy to talk to` is complete.
 - The EN title is an editorial adaptation, not a literal translation of the Polish title.
 - PL/EN routing for the AI mirror article pair was checked through `translationKey`.
-- Prompt boxes were adapted naturally: `Do not ask this` and `Better question`.
+- The EN AI mirror key passage and practice section were reviewed as adaptation, not literal translation.
+- The dense AI mirror passage about older systems and current language models was simplified naturally in EN.
+- Prompt examples were adapted naturally: `Better question` and `Mini-agent`.
 - Safety language avoids claims about AI consciousness, therapy, diagnosis or human-like understanding.
 
 ## Concepts wave 03 adaptation note

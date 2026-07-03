@@ -19,6 +19,7 @@ interface Props {
       image?: string;
       imageAlt?: string;
       imageCaption?: string;
+      audioUrl?: string;
       tags?: string[];
     };
   };
@@ -50,6 +51,12 @@ const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();
 const heroImage = !isConceptEntry ? entry.data.image : undefined;
 const heroImageAlt = entry.data.imageAlt ?? entry.data.title;
 const heroImageCaption = entry.data.imageCaption;
+const audioUrl = !isConceptEntry ? entry.data.audioUrl : undefined;
+const audioLabel = lang === 'pl' ? 'Wersja audio' : 'Audio version';
+const audioFallback =
+  lang === 'pl'
+    ? 'Twoja przeglądarka nie obsługuje odtwarzacza audio.'
+    : 'Your browser does not support the audio player.';
 const asideLabels = isConceptEntry
   ? lang === 'pl'
     ? {
@@ -83,7 +90,7 @@ const asideLabels = isConceptEntry
   lang={lang}
   alternateLinks={alternateLinks}
 >
-  <article class="article-shell">
+  <article class:list={['article-shell', isConceptEntry ? 'article-shell--concept' : 'article-shell--publication']}>
     <header class="content-header">
       <div class="content-header-inner">
         {
@@ -148,6 +155,15 @@ const asideLabels = isConceptEntry
         />
         {heroImageCaption && <figcaption>{heroImageCaption}</figcaption>}
       </figure>
+    )}
+
+    {audioUrl && (
+      <section class="article-audio" aria-label={audioLabel} data-qa="article-audio">
+        <p class="small-label">{audioLabel}</p>
+        <audio controls preload="none" src={audioUrl}>
+          {audioFallback}
+        </audio>
+      </section>
     )}
 
     <div class="article-grid">

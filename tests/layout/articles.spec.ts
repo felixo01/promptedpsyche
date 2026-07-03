@@ -462,7 +462,16 @@ test.describe('published articles', () => {
     await expect(page.locator('.content-header h1')).toHaveText(mirrorPolishArticleTitle);
     await expect(page.locator('.prose')).toContainText('Lustro języka, nie lustro duszy');
     await expect(page.locator('.prose')).toContainText('Dopasowanie nie jest zrozumieniem');
+    await expect(page.locator('.prose')).toContainText('Kluczowy fragment');
+    await expect(page.locator('.prose')).toContainText('Wypróbuj podejście');
     await expect(page.locator('.prose')).toContainText('Lepsze pytanie');
+    await expect(page.locator('.prose')).toContainText('Mini-agent');
+    await expect(page.locator('.prose')).toContainText(
+      'łatwo zaczynamy traktować to jak obecność społeczną'
+    );
+    await expect(page.locator('.prose')).not.toContainText(
+      'Człowiek od dawna jest gotów czytać społeczność tam'
+    );
     await expect(page.locator('[data-qa="article-byline"]')).toContainText('Autor: Feliks Mamczur');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
@@ -486,6 +495,10 @@ test.describe('published articles', () => {
     await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Przykład' })).toBeVisible();
     await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Granica' })).toBeVisible();
     await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Zatrzymaj się' })).toBeVisible();
+    await expect(page.locator('[data-qa="key-passage"]')).toHaveCount(1);
+    await expect(page.locator('[data-qa="practice-block"]')).toHaveCount(1);
+    await expect(page.locator('[data-qa="article-audio"]')).toHaveCount(0);
+    await expect(page.locator('audio')).toHaveCount(0);
     await expect(page.locator('.content-tags a[href="/pl/tags/ai-i-czlowiek/"]')).toBeVisible();
     await expect(page.locator('.content-tags a[href="/pl/tags/zaufanie-do-ai/"]')).toBeVisible();
 
@@ -509,6 +522,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('body')).not.toContainText('automatyczna diagnoza');
     await expect(page.locator('body')).not.toContainText('terapia przez AI');
+    await expect(page.locator('body')).not.toContainText('AI ma świadomość');
   });
 
   test('renders copyable prompt examples in the AI mirror Polish article', async ({ page }) => {
@@ -526,9 +540,9 @@ test.describe('published articles', () => {
 
     const promptBoxes = page.locator('.prompt-example');
     await expect(promptBoxes).toHaveCount(2);
-    await expect(promptBoxes.nth(0)).toContainText('Nie pytaj tak');
-    await expect(promptBoxes.nth(1)).toContainText('Lepsze pytanie');
-    await expect(page.getByRole('button', { name: 'Kopiuj przykładowy prompt' })).toHaveCount(2);
+    await expect(promptBoxes.nth(0)).toContainText('Lepsze pytanie');
+    await expect(promptBoxes.nth(1)).toContainText('Mini-agent');
+    await expect(page.getByRole('button', { name: 'Kopiuj' })).toHaveCount(2);
 
     await page.locator('.prompt-example--better .prompt-example__copy').click();
     await expect(page.locator('.prompt-example--better .prompt-example__copy')).toContainText(
@@ -538,6 +552,22 @@ test.describe('published articles', () => {
       () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
     );
     expect(copiedPrompt).toContain('Przeanalizuj tę wiadomość jako tekst');
+
+    await page.locator('.prompt-example--agent .prompt-example__copy').click();
+    const copiedAgent = await page.evaluate(
+      () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
+    );
+    expect(copiedAgent).toContain('krytycznego czytelnika komunikacji');
+
+    const overflowingBoxes = await page.locator('.prompt-example').evaluateAll((boxes) =>
+      boxes
+        .map((box) => {
+          const rect = box.getBoundingClientRect();
+          return rect.left < -1 || rect.right > window.innerWidth + 1;
+        })
+        .filter(Boolean)
+    );
+    expect(overflowingBoxes).toEqual([]);
   });
 
   test('renders the AI mirror English article with citation, tags, concepts and language alternate', async ({ page }) => {
@@ -546,7 +576,11 @@ test.describe('published articles', () => {
     await expect(page.locator('.content-header h1')).toHaveText(mirrorEnglishArticleTitle);
     await expect(page.locator('.prose')).toContainText('A mirror of language, not a mirror of the soul');
     await expect(page.locator('.prose')).toContainText('Fit is not understanding');
+    await expect(page.locator('.prose')).toContainText('Key passage');
+    await expect(page.locator('.prose')).toContainText('Try this approach');
     await expect(page.locator('.prose')).toContainText('Better question');
+    await expect(page.locator('.prose')).toContainText('Mini-agent');
+    await expect(page.locator('.prose')).toContainText('a kind of social presence');
     await expect(page.locator('[data-qa="article-byline"]')).toContainText('By Feliks Mamczur');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
@@ -570,6 +604,10 @@ test.describe('published articles', () => {
     await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Example' })).toBeVisible();
     await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Boundary' })).toBeVisible();
     await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Pause' })).toBeVisible();
+    await expect(page.locator('[data-qa="key-passage"]')).toHaveCount(1);
+    await expect(page.locator('[data-qa="practice-block"]')).toHaveCount(1);
+    await expect(page.locator('[data-qa="article-audio"]')).toHaveCount(0);
+    await expect(page.locator('audio')).toHaveCount(0);
     await expect(page.locator('.content-tags a[href="/tags/ai-and-humans/"]')).toBeVisible();
     await expect(page.locator('.content-tags a[href="/tags/trust-in-ai/"]')).toBeVisible();
 
@@ -593,6 +631,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('body')).not.toContainText('AI therapy');
     await expect(page.locator('body')).not.toContainText('automatic diagnosis');
+    await expect(page.locator('body')).not.toContainText('AI has consciousness');
   });
 
   test('renders copyable prompt examples in the AI mirror English article', async ({ page }) => {
@@ -610,9 +649,9 @@ test.describe('published articles', () => {
 
     const promptBoxes = page.locator('.prompt-example');
     await expect(promptBoxes).toHaveCount(2);
-    await expect(promptBoxes.nth(0)).toContainText('Do not ask this');
-    await expect(promptBoxes.nth(1)).toContainText('Better question');
-    await expect(page.getByRole('button', { name: 'Copy example prompt' })).toHaveCount(2);
+    await expect(promptBoxes.nth(0)).toContainText('Better question');
+    await expect(promptBoxes.nth(1)).toContainText('Mini-agent');
+    await expect(page.getByRole('button', { name: 'Copy' })).toHaveCount(2);
 
     await page.locator('.prompt-example--better .prompt-example__copy').click();
     await expect(page.locator('.prompt-example--better .prompt-example__copy')).toContainText(
@@ -622,6 +661,22 @@ test.describe('published articles', () => {
       () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
     );
     expect(copiedPrompt).toContain('Analyze this message as text');
+
+    await page.locator('.prompt-example--agent .prompt-example__copy').click();
+    const copiedAgent = await page.evaluate(
+      () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
+    );
+    expect(copiedAgent).toContain('critical reader of communication');
+
+    const overflowingBoxes = await page.locator('.prompt-example').evaluateAll((boxes) =>
+      boxes
+        .map((box) => {
+          const rect = box.getBoundingClientRect();
+          return rect.left < -1 || rect.right > window.innerWidth + 1;
+        })
+        .filter(Boolean)
+    );
+    expect(overflowingBoxes).toEqual([]);
   });
 
   test('renders the second English article detail page with byline, citation, rights notice and concept links', async ({ page }) => {

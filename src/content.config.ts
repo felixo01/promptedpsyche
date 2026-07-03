@@ -19,6 +19,7 @@ const articles = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     imageCaption: z.string().optional(),
+    audioUrl: z.string().optional(),
     lang: z.enum(['en', 'pl']).default('en'),
     translationKey: z.string().optional()
   })

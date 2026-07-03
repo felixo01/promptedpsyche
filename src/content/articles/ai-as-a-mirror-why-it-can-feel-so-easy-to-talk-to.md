@@ -28,6 +28,11 @@ Perhaps this is part of the appeal. AI often feels good to talk to not because i
 
 The risk begins when we mistake conversational fit for real understanding.
 
+<aside class="key-passage" data-qa="key-passage">
+  <p class="key-passage__label">Key passage</p>
+  <p>AI is not a true reflection of who we are. It is closer to a linguistic and social mirror: it reflects our words, frames, expectations and need for meaning. That is why talking to it can feel so fluent. The problem begins when we mistake a well-fitted response for real understanding.</p>
+</aside>
+
 ## The conversation that becomes too easy
 
 Human conversation has friction. Another person has their own time, mood, needs, history and limits. They may misunderstand. They may interrupt. They may say they cannot do this now. They may hear the story through their own assumptions before we finish explaining it. They may challenge us in a way we did not ask for, or fail to challenge us when we need it.
@@ -36,7 +41,7 @@ AI removes much of that friction. It replies immediately. It does not show fatig
 
 This is not only convenient. It changes the emotional texture of thinking. A person can think aloud without the usual pressure of performance. They can ask the same question several ways. They can admit uncertainty without worrying about status. They can bring a fragile thought to the surface before it is ready for another human being.
 
-Research in human-computer interaction has long shown that people respond socially to media and computers even when they know they are not dealing with people. Reeves and Nass described this broadly through the "media equation", while the Computers Are Social Actors line of research showed how social habits can be triggered by machines and interfaces. Contemporary language models are not the same as those older systems, but users do not arrive without social reflexes. When something replies in language, adapts tone and seems to occupy a conversational role, people naturally begin to use social expectations.
+Research in human-computer interaction has long shown that people respond socially to media and computers even when they know they are not dealing with people. Reeves and Nass described this broadly through the "media equation", while the Computers Are Social Actors line of research showed how social habits can be triggered by machines and interfaces. Today's language models are not simple repeats of ELIZA or earlier chatbots. They are more flexible, write better and now participate in everyday work. But on the user's side, a familiar mechanism is still active: when something replies with language, tone and conversational rhythm, it becomes easy to treat it as a kind of social presence.
 
 The ease of AI conversation therefore comes from more than answer quality. It also comes from the absence of ordinary social resistance. The system does not ask whether the topic is worth its time. It does not carry visible disappointment. It does not bring its own story into the room. It can keep going.
 
@@ -184,25 +189,27 @@ Return to the world beyond the interface. If the issue involves a relationship, 
   </ul>
 </aside>
 
-The following example shows the difference between asking the model to read another person's mind and asking it to work with text, context and responsibility.
+<section class="practice-block" data-qa="practice-block">
+  <p class="practice-block__label">Try this approach</p>
+  <h2>Try this approach</h2>
+  <p>This is not a universal formula. It is an example of shifting the question from "what did this person really mean?" to "what readings are possible, and what do I not know?".</p>
 
-<div class="prompt-example prompt-example--bad" data-copyable-prompt>
-  <div class="prompt-example__header">
-    <p class="prompt-example__label">Do not ask this</p>
-    <button class="prompt-example__copy" type="button" aria-label="Copy example prompt" data-copy-label="Copy" data-copied-label="Copied">Copy</button>
+  <div class="prompt-example prompt-example--better" data-copyable-prompt>
+    <div class="prompt-example__header">
+      <p class="prompt-example__label">Better question</p>
+      <button class="prompt-example__copy" type="button" aria-label="Copy" data-copy-label="Copy" data-copied-label="Copied">Copy</button>
+    </div>
+    <pre class="prompt-example__body"><code data-prompt-text>Analyze this message as text, not as a diagnosis of the person. Separate facts from interpretations. Give three possible readings of the situation. Identify what we do not know. Suggest a response that does not escalate the tension.</code></pre>
   </div>
-  <pre class="prompt-example__body"><code data-prompt-text>What did this person really mean?</code></pre>
-</div>
 
-<div class="prompt-example prompt-example--better" data-copyable-prompt>
-  <div class="prompt-example__header">
-    <p class="prompt-example__label">Better question</p>
-    <button class="prompt-example__copy" type="button" aria-label="Copy example prompt" data-copy-label="Copy" data-copied-label="Copied">Copy</button>
+  <div class="prompt-example prompt-example--agent" data-copyable-prompt>
+    <div class="prompt-example__header">
+      <p class="prompt-example__label">Mini-agent</p>
+      <button class="prompt-example__copy" type="button" aria-label="Copy" data-copy-label="Copy" data-copied-label="Copied">Copy</button>
+    </div>
+    <pre class="prompt-example__body"><code data-prompt-text>Act as a critical reader of communication. Your task is not to guess the person's intention, but to organize possible interpretations. Always separate facts from hypotheses, identify missing information and suggest questions that reduce the risk of misreading the situation.</code></pre>
   </div>
-  <pre class="prompt-example__body"><code data-prompt-text>Analyze this message as text, not as a diagnosis of the person. Separate facts from interpretations. Give three possible readings of the situation. Identify what we do not know. Suggest a response that does not escalate the tension.</code></pre>
-</div>
-
-The better question is not more magical. It is more responsible. It does not pretend the system has access to the interior of another person. It frames the model as a tool for communication analysis, not as an oracle of relationships.
+</section>
 
 ## Not another person, but a tool for seeing one's own thinking
 
