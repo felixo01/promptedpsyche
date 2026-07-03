@@ -37,12 +37,16 @@ test.describe('Projects page content', () => {
     await page.goto('/pl/projects/');
 
     await expect(page.getByRole('heading', { name: 'Projekty', level: 1 })).toBeVisible();
-    await expect(page.getByText('Kierunki pracy badawczo-praktycznej')).toBeVisible();
+    await expect(page.getByText('może przechodzić w badania, narzędzia, formaty edukacyjne')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Kierunki, które porządkują dalszą pracę' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Język dla artykułów, pojęć i praktyki' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'AI i psychoedukacja' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'AI jako wsparcie rozumowania diagnostycznego' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'HumanAI research' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Słownik Prompted Psyche' })).toBeVisible();
-    await expect(page.getByText('nie zastępują terapii, diagnozy ani decyzji specjalisty')).toBeVisible();
+    await expect(page.locator('dt').filter({ hasText: 'Możliwy rezultat' })).toHaveCount(4);
+    await expect(page.locator('dt').filter({ hasText: 'Etap' })).toHaveCount(4);
+    await expect(page.getByText('Nie jest terapią, diagnozą ani zamiennikiem kontaktu ze specjalistą.')).toBeVisible();
 
     await expect(page.getByRole('link', { name: 'Zobacz pojęcia' })).toHaveAttribute('href', '/pl/concepts/');
     expect(await page.locator('a[href="/pl/consulting/"]').filter({ hasText: 'Konsulting' }).count()).toBeGreaterThanOrEqual(1);
@@ -53,12 +57,16 @@ test.describe('Projects page content', () => {
     await page.goto('/projects/');
 
     await expect(page.getByRole('heading', { name: 'Projects', level: 1 })).toBeVisible();
-    await expect(page.getByText('Research-informed and applied')).toBeVisible();
+    await expect(page.getByText('starts to become research, tools, educational formats')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Directions that organize the next layer of work' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Language for articles, Concepts and practice' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'AI and psychoeducation' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'AI-assisted diagnostic reasoning' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'HumanAI research' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Prompted Psyche Concepts' })).toBeVisible();
-    await expect(page.getByText('do not replace therapy, diagnosis or specialist decisions')).toBeVisible();
+    await expect(page.locator('dt').filter({ hasText: 'Possible output' })).toHaveCount(4);
+    await expect(page.locator('dt').filter({ hasText: 'Stage' })).toHaveCount(4);
+    await expect(page.getByText('This is not therapy, diagnosis or a substitute for contact with a specialist.')).toBeVisible();
 
     await expect(page.getByRole('link', { name: 'Explore concepts' })).toHaveAttribute('href', '/concepts/');
     expect(await page.locator('a[href="/consulting/"]').filter({ hasText: 'Consulting' }).count()).toBeGreaterThanOrEqual(1);

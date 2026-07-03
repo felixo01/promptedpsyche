@@ -1423,10 +1423,18 @@ html[lang='pl'] .about-hero h1 {
   gap: 1.5rem;
 }
 
+.projects-section + .projects-section {
+  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.projects-section__header {
+  align-items: start;
+}
+
 .project-card {
   display: grid;
   align-content: start;
-  gap: 1.1rem;
+  gap: 1rem;
   min-width: 0;
   border: 1px solid var(--line-soft);
   border-top-color: var(--line-strong);
@@ -1435,7 +1443,7 @@ html[lang='pl'] .about-hero h1 {
 }
 
 .project-card__status,
-.project-card__section h4 {
+.project-card__details dt {
   color: var(--accent);
   font-family: var(--font-mono);
   font-size: 0.65rem;
@@ -1460,11 +1468,42 @@ html[lang='pl'] .about-hero h1 {
   line-height: 1.66;
 }
 
-.project-card__section {
+.project-card__summary {
+  max-width: 42rem;
+}
+
+.project-card__details {
   display: grid;
-  gap: 0.45rem;
+  gap: 0;
   border-top: 1px solid var(--rule);
-  padding-top: 0.9rem;
+  margin: 0;
+  padding-top: 0.15rem;
+}
+
+.project-card__details div {
+  display: grid;
+  grid-template-columns: minmax(7.8rem, 0.42fr) minmax(0, 1fr);
+  gap: 1rem;
+  border-bottom: 1px solid var(--rule);
+  padding-block: 0.8rem;
+}
+
+.project-card__details dt,
+.project-card__details dd {
+  min-width: 0;
+}
+
+.project-card__details dd {
+  margin: 0;
+  color: rgba(28, 25, 23, 0.68);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.project-card__boundary {
+  border-left: 2px solid var(--accent);
+  padding-left: 0.9rem;
+  color: rgba(28, 25, 23, 0.78);
 }
 
 .project-card .text-link {
