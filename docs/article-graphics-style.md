@@ -49,3 +49,6 @@ Grafiki artykułowe mają wyjaśniać relacje między człowiekiem, AI, poznanie
 - `ai-mirror-conversation-loop.svg` visualizes AI as a conversational mirror: question, model mirror layer, organized output and return loop to context and verification.
 - The graphic should suggest language and framing, not a human mind, therapy relationship or AI authority.
 - Avoid literal humanoid, robot, brain, neon or stock-like AI imagery for this article line.
+- `ai-path-to-knowledge.svg` visualizes AI as an intermediary between a human question, a fluent answer and the underlying sources, methods, data, uncertainty and verification.
+- The purpose is to show that AI can shorten the path to an answer while the path back to knowledge still needs to remain visible.
+- Avoid logos, media references, literal Nature visual copying, robots, brains, neon and AI authority imagery for this article line.

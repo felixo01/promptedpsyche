@@ -46,6 +46,8 @@ When an equivalent tag slug exists in both languages, the language switcher may 
 
 The AI mirror article pair uses functional publication tags on index cards and detail pages. New tag archives include `/pl/tags/ai-i-czlowiek/` and `/tags/ai-and-humans/`, and they should not mix PL and EN publications.
 
+The AI path to knowledge article pair uses functional publication tags on index cards and detail pages. New article tags include `/pl/tags/wiedza/`, `/pl/tags/nauka/`, `/tags/knowledge/` and `/tags/science/`; shared archive tags such as `/pl/tags/ai-literacy/` and `/tags/ai-literacy/` remain language-separated and exclude drafts.
+
 ## Concepts tags
 
 - Concept index tags are clickable filters on `/concepts/` and `/pl/concepts/`.

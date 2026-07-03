@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">AI path to knowledge</title>
+  <desc id="desc">A calm editorial diagram showing how an AI model can sit between a human question and a fluent answer while sources, methods, data, uncertainty and verification remain underneath.</desc>
+  <defs>
+    <pattern id="paper" width="22" height="22" patternUnits="userSpaceOnUse">
+      <rect width="22" height="22" fill="#f7f3ea"/>
+      <path d="M0 22L22 0" stroke="#e6ded0" stroke-width="0.45" opacity="0.42"/>
+    </pattern>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10" fill="none" stroke="#22201c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#paper)"/>
+  <circle cx="194" cy="202" r="116" fill="#d7e1dc" opacity="0.58"/>
+  <circle cx="1400" cy="686" r="132" fill="#d7e1dc" opacity="0.62"/>
+
+  <g opacity="0.34" stroke="#8c9893" fill="none">
+    <circle cx="1390" cy="204" r="60"/>
+    <circle cx="1390" cy="204" r="92"/>
+    <circle cx="1390" cy="204" r="124"/>
+  </g>
+
+  <g fill="#fbfaf6" stroke="#22201c" stroke-width="1.8">
+    <rect x="115" y="344" width="255" height="142" rx="18"/>
+    <rect x="1230" y="344" width="255" height="142" rx="18"/>
+    <rect x="623" y="288" width="354" height="210" rx="24"/>
+  </g>
+
+  <g fill="#536965">
+    <rect x="648" y="315" width="304" height="156" rx="18"/>
+  </g>
+
+  <g stroke="#f7f3ea" stroke-width="2" opacity="0.72">
+    <path d="M700 361 H900"/>
+    <path d="M690 395 H910"/>
+    <path d="M722 429 H878"/>
+  </g>
+
+  <g fill="#22201c" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18" font-weight="700" letter-spacing="3">
+    <text x="242" y="407" text-anchor="middle">QUESTION</text>
+    <text x="1358" y="407" text-anchor="middle">ANSWER</text>
+  </g>
+
+  <g fill="#f7f3ea" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="700" text-anchor="middle">
+    <text x="800" y="372" font-size="20" letter-spacing="5">MODEL</text>
+    <text x="800" y="446" font-size="15" letter-spacing="3" opacity="0.78">SYNTHESIS LAYER</text>
+  </g>
+
+  <g fill="#fbfaf6" stroke="#22201c" stroke-width="1.6">
+    <rect x="278" y="628" width="178" height="82" rx="16"/>
+    <rect x="512" y="648" width="178" height="82" rx="16"/>
+    <rect x="746" y="666" width="178" height="82" rx="16"/>
+    <rect x="980" y="648" width="178" height="82" rx="16"/>
+    <rect x="1214" y="628" width="178" height="82" rx="16"/>
+  </g>
+
+  <g fill="#22201c" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="15" font-weight="700" letter-spacing="2.2" text-anchor="middle">
+    <text x="367" y="676">SOURCES</text>
+    <text x="601" y="696">METHOD</text>
+    <text x="835" y="714">DATA</text>
+    <text x="1069" y="696">UNCERTAINTY</text>
+    <text x="1303" y="676">CHECK</text>
+  </g>
+
+  <g fill="none" stroke="#22201c" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M372 414 C468 414 535 396 622 393"/>
+    <path d="M978 393 C1082 396 1144 414 1228 414"/>
+    <path d="M1358 486 C1280 570 1160 616 1042 641"/>
+    <path d="M558 641 C445 612 337 562 242 486"/>
+  </g>
+
+  <g fill="none" stroke="#536965" stroke-width="2" opacity="0.86">
+    <path d="M367 628 C404 560 514 516 643 472"/>
+    <path d="M601 648 C628 570 690 520 748 498"/>
+    <path d="M835 666 C835 584 820 536 812 498"/>
+    <path d="M1069 648 C1028 570 942 522 852 498"/>
+    <path d="M1303 628 C1218 548 1080 500 957 470"/>
+  </g>
+
+  <g stroke="#8c9893" stroke-width="1.35" stroke-dasharray="6 9" fill="none">
+    <path d="M242 344 C322 252 486 202 678 286"/>
+    <path d="M922 286 C1106 214 1288 256 1358 344"/>
+    <path d="M457 670 C583 768 1004 780 1214 670"/>
+  </g>
+
+  <g fill="#536965">
+    <circle cx="622" cy="393" r="7"/>
+    <circle cx="978" cy="393" r="7"/>
+    <circle cx="1042" cy="641" r="7"/>
+    <circle cx="558" cy="641" r="7"/>
+    <circle cx="812" cy="498" r="6"/>
+    <circle cx="957" cy="470" r="6"/>
+  </g>
+
+  <g opacity="0.45" fill="#22201c">
+    <circle cx="138" cy="616" r="3"/>
+    <circle cx="168" cy="616" r="3"/>
+    <circle cx="198" cy="616" r="3"/>
+    <circle cx="138" cy="646" r="3"/>
+    <circle cx="168" cy="646" r="3"/>
+    <circle cx="198" cy="646" r="3"/>
+    <circle cx="1420" cy="106" r="3"/>
+    <circle cx="1450" cy="106" r="3"/>
+    <circle cx="1480" cy="106" r="3"/>
+  </g>
+</svg>

@@ -53,3 +53,5 @@ Use both sparingly. The site should not become a prompt library.
 ## Current article examples
 
 The AI mirror article uses a practice section with one better question and one mini-agent instruction. They are examples of careful communication analysis, not a prompt library or prompt-guru pattern.
+
+The AI path to knowledge article uses prompt boxes to shift from asking the model for "truth" to reconstructing sources, uncertainty, confidence and verification. It includes a deliberately weak question, a better question and a mini-agent instruction for source-guided reading.

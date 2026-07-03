@@ -60,6 +60,38 @@ test.describe('publication tag pages', () => {
 
     await page.goto('/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/');
     await expect(page.locator('.content-tags a[href="/pl/tags/ai-i-czlowiek/"]')).toBeVisible();
+
+    await page.goto('/articles/from-sources-to-answers-how-ai-changes-the-path-between-people-and-knowledge/');
+    await expect(page.locator('.content-tags a[href="/tags/knowledge/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/tags/science/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/tags/ai-literacy/"]')).toBeVisible();
+
+    await page.goto('/pl/articles/od-zrodla-do-odpowiedzi-jak-ai-zmienia-droge-miedzy-czlowiekiem-a-wiedza/');
+    await expect(page.locator('.content-tags a[href="/pl/tags/wiedza/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/pl/tags/nauka/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/pl/tags/ai-literacy/"]')).toBeVisible();
+  });
+
+  test('renders new article tag archives without language leakage', async ({ page }) => {
+    await page.goto('/tags/knowledge/');
+
+    await expect(page.locator('.page-header h1')).toHaveText('#knowledge');
+    await expect(page.locator('.tag-archive-list')).toContainText(
+      'From sources to answers: how AI changes the path between people and knowledge'
+    );
+    await expect(page.locator('.tag-archive-list')).not.toContainText(
+      'Od źródła do odpowiedzi. Jak AI zmienia drogę między człowiekiem a wiedzą'
+    );
+
+    await page.goto('/pl/tags/wiedza/');
+
+    await expect(page.locator('.page-header h1')).toHaveText('#wiedza');
+    await expect(page.locator('.tag-archive-list')).toContainText(
+      'Od źródła do odpowiedzi. Jak AI zmienia drogę między człowiekiem a wiedzą'
+    );
+    await expect(page.locator('.tag-archive-list')).not.toContainText(
+      'From sources to answers: how AI changes the path between people and knowledge'
+    );
   });
 
   test('renders English tag archive without Polish publication leakage', async ({ page }) => {
@@ -67,10 +99,13 @@ test.describe('publication tag pages', () => {
 
     await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
     await expect(page.locator('body')).toContainText('Publications tagged with');
-    await expect(page.locator('.tag-archive-list article')).toHaveCount(7);
+    await expect(page.locator('.tag-archive-list article')).toHaveCount(8);
     await expect(page.locator('.tag-archive-list')).toContainText('Article');
     await expect(page.locator('.tag-archive-list')).toContainText('Note');
     await expect(page.locator('.tag-archive-list')).toContainText('It is not just about the prompt');
+    await expect(page.locator('.tag-archive-list')).toContainText(
+      'From sources to answers: how AI changes the path between people and knowledge'
+    );
     await expect(page.locator('.tag-archive-list')).not.toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('.tag-archive-list')).not.toContainText('AI Literacy Is Not Prompt Engineering');
   });
@@ -80,10 +115,13 @@ test.describe('publication tag pages', () => {
 
     await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
     await expect(page.locator('body')).toContainText('Publikacje oznaczone tagiem');
-    await expect(page.locator('.tag-archive-list article')).toHaveCount(7);
+    await expect(page.locator('.tag-archive-list article')).toHaveCount(8);
     await expect(page.locator('.tag-archive-list')).toContainText('Artykuł');
     await expect(page.locator('.tag-archive-list')).toContainText('Notatka');
     await expect(page.locator('.tag-archive-list')).toContainText('Nie chodzi tylko o prompt');
+    await expect(page.locator('.tag-archive-list')).toContainText(
+      'Od źródła do odpowiedzi. Jak AI zmienia drogę między człowiekiem a wiedzą'
+    );
     await expect(page.locator('.tag-archive-list')).not.toContainText('It is not just about the prompt');
     await expect(page.locator('.tag-archive-list')).not.toContainText('AI Literacy Is Not Prompt Engineering');
   });

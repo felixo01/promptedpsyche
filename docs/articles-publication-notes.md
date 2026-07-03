@@ -117,8 +117,28 @@ The public article includes editorial asides, copyable prompt boxes, concept lin
 
 The EN version is an editorial adaptation, not a literal translation. It preserves the core argument and safety boundaries while using natural English rhythm.
 
+## Article 05
+
+The fifth article pair published in pre-launch mode is:
+
+- `Od źródła do odpowiedzi. Jak AI zmienia drogę między człowiekiem a wiedzą`
+- URL: `/pl/articles/od-zrodla-do-odpowiedzi-jak-ai-zmienia-droge-miedzy-czlowiekiem-a-wiedza/`
+- Source file: `src/content/articles/od-zrodla-do-odpowiedzi-jak-ai-zmienia-droge-miedzy-czlowiekiem-a-wiedza.md`
+- Date: `2026-07-03`
+- Status: public PL article, `draft: false`
+- `From sources to answers: how AI changes the path between people and knowledge`
+- URL: `/articles/from-sources-to-answers-how-ai-changes-the-path-between-people-and-knowledge/`
+- Source file: `src/content/articles/from-sources-to-answers-how-ai-changes-the-path-between-people-and-knowledge.md`
+- Date: `2026-07-03`
+- Status: public EN article, `draft: false`
+
+The article uses Helen Pearson's Nature article on trust in science as a public debate trigger, not as a template. It does not copy the Nature structure, does not use long quotes and does not build a one-to-one polemic. The Prompted Psyche thesis is original: AI changes the path between a person's question, sources, scientific institutions and the fluent answer of a model.
+
+The article includes the original graphic `ai-path-to-knowledge.svg`, manual `inBrief` summaries, a key passage, editorial asides and copyable prompt boxes. APA-style references were checked against public source metadata where available. No DOI was added for the Prompted Psyche article. Site-wide `noindex` and the Vercel `X-Robots-Tag` remain active.
+
 Current article chronology is now:
 
+- Article 05: `2026-07-03`
 - Article 04: `2026-07-03`
 - Article 03: `2026-07-02`
 - Article 02: `2026-06-18`
@@ -246,9 +266,10 @@ English adaptations now public:
 - Article 02: `The model does not remember. It works with context.`
 - Article 03: `AI does not read people. It helps make sense of the situation.`
 - Article 04: `AI as a mirror: why it can feel so easy to talk to`
+- Article 05: `From sources to answers: how AI changes the path between people and knowledge`
 - Note 01: `Fluent does not mean true`
 
-PL/EN publication parity is restored for the current public article and note layer: 4 public PL articles, 4 public EN articles, 4 public PL notes and 4 public EN notes.
+PL/EN publication parity is restored for the current public article and note layer: 5 public PL articles, 5 public EN articles, 4 public PL notes and 4 public EN notes.
 
 The site remains in pre-launch mode. Noindex and the Vercel X-Robots-Tag remain active. Suggested citation and rights notice remain standard for public articles and notes.
 
@@ -269,6 +290,12 @@ The fourth article uses:
 - `public/images/articles/ai-mirror-conversation-loop.svg`
 - purpose: visualize AI as a conversational mirror that reflects language and framing, not the human mind
 - boundary: avoid literal humanoid, robot, brain or authority imagery
+
+The fifth article uses:
+
+- `public/images/articles/ai-path-to-knowledge.svg`
+- purpose: visualize AI as an intermediary between question, fluent answer and the sources, methods, data, uncertainty and verification underneath
+- boundary: avoid logos, media references, literal Nature visual copying, robots, brains and AI authority imagery
 
 ## DOI and citation policy
 
