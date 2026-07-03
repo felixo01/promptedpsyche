@@ -14,6 +14,18 @@ const practiceDrafts = [
     route: '/pl/practice/jak-analizowac-wiadomosc-bez-diagnozowania-czlowieka/'
   },
   {
+    title: 'Jak poprosić model o niepewność',
+    route: '/pl/practice/jak-poprosic-model-o-niepewnosc/'
+  },
+  {
+    title: 'Jak użyć AI jako drugiego czytelnika',
+    route: '/pl/practice/jak-uzyc-ai-jako-drugiego-czytelnika/'
+  },
+  {
+    title: 'Jak oddzielić fakty od interpretacji',
+    route: '/pl/practice/jak-oddzielic-fakty-od-interpretacji/'
+  },
+  {
     title: 'How to check whether an AI answer has sources',
     route: '/practice/how-to-check-whether-an-ai-answer-has-sources/'
   },
@@ -24,6 +36,18 @@ const practiceDrafts = [
   {
     title: 'How to analyze a message without diagnosing a person',
     route: '/practice/how-to-analyze-a-message-without-diagnosing-a-person/'
+  },
+  {
+    title: 'How to ask a model about uncertainty',
+    route: '/practice/how-to-ask-a-model-about-uncertainty/'
+  },
+  {
+    title: 'How to use AI as a second reader',
+    route: '/practice/how-to-use-ai-as-a-second-reader/'
+  },
+  {
+    title: 'How to separate facts from interpretations',
+    route: '/practice/how-to-separate-facts-from-interpretations/'
   }
 ];
 
