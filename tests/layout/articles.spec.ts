@@ -719,7 +719,7 @@ test.describe('published articles', () => {
     const copiedPrompt = await page.evaluate(
       () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
     );
-    expect(copiedPrompt).toContain('Provide primary sources');
+    expect(copiedPrompt).toContain('List separately: claims, sources, assumptions');
 
     await page.locator('.prompt-example--agent .prompt-example__copy').click();
     const copiedAgent = await page.evaluate(

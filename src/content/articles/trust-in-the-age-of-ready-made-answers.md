@@ -11,12 +11,12 @@ tags:
   - AI literacy
   - communication
 author: "Feliks Mamczur"
-readingTime: "20 min read"
+readingTime: "25 min read"
 inBrief:
   - "AI changes not only how quickly we receive answers, but also the path from a question to the feeling that we know something."
   - "The Nature feature on trust in science is a starting point, but the central question here is different: what happens when a language model stands between people and sources?"
-  - "A fluent answer can support understanding, but it can also hide sources, disagreement, method and uncertainty."
-  - "Mature AI use is not blind trust or rejection, but the ability to reconstruct the path from the answer back to the source."
+  - "A fluent answer can support understanding, but fluency is not proof, and a citation does not end the work of checking."
+  - "Mature AI use requires calibrated trust: reliance matched to the task, stakes, sources and possibility of verification."
 image: /images/articles/ai-path-to-knowledge.svg
 imageAlt: "Diagram showing how AI changes the path between people and knowledge: the model provides a fast answer, while sources, methods, data, disagreement and verification remain underneath."
 imageCaption: "AI can shorten the path from question to answer. Mature use begins when we can move back from the answer to sources, methods, data, uncertainty and verification."
@@ -53,6 +53,8 @@ Trust research often separates dimensions such as competence, honesty, good will
 
 This matters in the age of AI because a model often compresses these dimensions into one answer. The user may not see who produced the knowledge, what kind of study is being cited, what disagreement exists, who funded the work, what was left out or where certainty ends. What they do see is a well-formed text. Many separate questions about trust can collapse into one impression: does this sound reasonable?
 
+In everyday use, that compression can be almost invisible. Someone asks about sleep research, social media and teenagers, or the safety of a new technology. The model answers as if one organized expert were speaking. Yet behind a similar answer there may be very different kinds of material: a research review, a single experiment, an institutional report, a media commentary, an industry position or an old fragment of knowledge that needs updating. If we do not separate those layers, we may end up trusting not science, but a smooth blend of elements that carried different weight in their original sources.
+
 That is why [calibrated trust](/concepts/calibrated-trust/) is not general enthusiasm or general suspicion. It is reliance fitted to the task, the stakes, the source base and the possibility of checking. We should read an answer about a term differently from an answer about treatment, climate, legal risk, psychological interpretation or public policy. The tone may be similar. The responsibility is not.
 
 ## AI enters between the question and the source
@@ -84,6 +86,8 @@ When the document remains visible, the reader can at least see that there is an 
 
 "Sounds good" does not mean "is true." The sentence is simple, but it has to be repeated in work with AI because fluency is one of the strongest traps. A well-structured, calm answer can lower vigilance. A person may not check sources if the text has already given them the feeling of understanding.
 
+Research on processing fluency and truth effects helps name this mechanism carefully. Ease of processing, familiarity of form and a sense of order can influence judgments of truth, but that does not mean every polished text automatically persuades us. In AI use, the more subtle risk is that a fluent answer can reduce the felt need to verify, especially when the path back to the source is not immediately visible.
+
 Language models are especially good at producing a form that resembles explanation. They can organize paragraphs, separate arguments, adopt a careful tone, add conditions and even warn against overconfidence. That is not a flaw in itself. The problem begins when the form of caution replaces real grounding in sources.
 
 Research on hallucination in natural language generation shows that a system can produce fluent, natural and seemingly factual text that is not faithful to the source material. From the user's point of view, the line between a good synthesis and a text that only sounds like a good synthesis is not always visible. A [hallucination](/concepts/hallucination/) is therefore not only a technical failure. It is also a cognitive event for the reader: something that sounds like knowledge may be treated as knowledge.
@@ -93,6 +97,8 @@ This is where [algorithmic authority](/concepts/algorithmic-authority/) enters q
 ## What happens to the source when the answer is foregrounded
 
 When the answer is in the foreground, the source can become invisible or secondary. A link may become decoration rather than a condition of credibility. A citation may be treated as a visual sign of seriousness, not as a path back to evidence. The user receives a list of papers but does not open the papers. They see titles but do not check whether the studies exist, what they studied or whether they support the model's claim.
+
+A citation in a model's answer does not end checking. It only shows where checking can begin. A source may exist, but be too general. It may concern a similar topic without supporting the exact sentence. It may also be summarized in a way that hides limits of method, date, scope or disagreement between authors. The better question is not only whether the answer has sources. It is whether those sources really support this specific claim.
 
 The problem is not summarization itself. Summaries are necessary. Good science communication also shortens the path. Teachers, science journalists, physicians, educators and essayists all select, simplify and organize. The difference is that responsible communication shows where claims come from, where simplification happens and what remains unresolved.
 
@@ -150,6 +156,12 @@ AI can help if we use it to make the process visible. It can generate questions 
 
 In [Human-AI Interaction](/concepts/human-ai-interaction/), the stakes are therefore not only usability. The deeper question is whether the person preserves cognitive agency. Do they know when they are using help? Do they understand their [mental model](/concepts/mental-model/) of the tool? Can they notice when a model is organizing material and when it is beginning to stand in for the material?
 
+## Calibrated trust means matching reliance to the situation
+
+Research on automation has long distinguished reasonable reliance on a system from reliance that is too strong, too weak or poorly matched to the task. That matters because conversations about AI easily fall into two simple reactions: trust it because the answer is useful, or distrust it because the model can be wrong. Neither reaction is enough.
+
+In practice, the more useful question is calibration. What are the stakes? Is the topic disputed? Would an error have serious consequences? Are sources visible and possible to check? Does the user have enough competence to evaluate the answer, or should they return to a publication, dataset, institution or expert? Those questions help distinguish a situation in which a model can serve as a working guide from one in which it should not be the last word.
+
 ## Do not trust the answer. Reconstruct the path.
 
 Mature AI use is not distrust of everything. It is also not trust whenever the model sounds reasonable. It is a different stance: do not trust the answer by itself. Reconstruct the path that the answer should have behind it.
@@ -163,7 +175,7 @@ Trust in the age of AI does not have to mean the end of trust in science. It may
 <section class="practice-block" data-qa="practice-block">
   <p class="practice-block__label">Try this approach</p>
   <h2>Try this approach</h2>
-  <p>These examples are not universal formulas. They show a shift in stance: from asking a model for a final truth to asking for the path, sources, disagreements and limits of confidence.</p>
+  <p>These examples are not universal formulas. They show a shift in stance: from asking a model for a final truth to asking for the path, sources, assumptions, disagreements and limits of confidence.</p>
 
   <div class="prompt-example prompt-example--bad" data-copyable-prompt>
     <div class="prompt-example__header">
@@ -178,7 +190,7 @@ Trust in the age of AI does not have to mean the end of trust in science. It may
       <p class="prompt-example__label">Better question</p>
       <button class="prompt-example__copy" type="button" aria-label="Copy" data-copy-label="Copy" data-copied-label="Copied">Copy</button>
     </div>
-    <pre class="prompt-example__body"><code data-prompt-text>Explain this topic, but separate what is well established from what is disputed or uncertain. Provide primary sources, indicate the level of confidence and tell me what I should check outside this answer.</code></pre>
+    <pre class="prompt-example__body"><code data-prompt-text>What is this answer based on? List separately: claims, sources, assumptions, uncertain elements and things I should check outside the model.</code></pre>
   </div>
 
   <div class="prompt-example prompt-example--agent" data-copyable-prompt>
@@ -193,13 +205,16 @@ Trust in the age of AI does not have to mean the end of trust in science. It may
 ## Sources and further reading
 
 - Cologna, V., Mede, N. G., Berger, S., Besley, J., Brick, C., Joubert, M., Maibach, E. W., Mihelj, S., Oreskes, N., Schäfer, M. S., van der Linden, S., Abdul Aziz, N. I., Abdulsalam, S., Abu Shamsi, N., Aczel, B., Adinugroho, I., Alabrese, E., Aldoh, A., Alfano, M., ... Zwaan, R. A. (2025). Trust in scientists and their role in society across 68 countries. *Nature Human Behaviour, 9*, 713-730. https://doi.org/10.1038/s41562-024-02090-5
+- Dechene, A., Stahl, C., Hansen, J., & Wanke, M. (2010). The truth about the truth: A meta-analytic review of the truth effect. *Personality and Social Psychology Review, 14*(2), 238-257. https://doi.org/10.1177/1088868309352251
 - European Commission. (2025). *Special Eurobarometer 557: European citizens' knowledge and attitudes towards science and technology*. https://europa.eu/eurobarometer/surveys/detail/3227
 - Ji, Z., Lee, N., Frieske, R., Yu, T., Su, D., Xu, Y., Ishii, E., Bang, Y., Chen, D., Dai, W., Chan, H. S., Madotto, A., & Fung, P. (2023). Survey of hallucination in natural language generation. *ACM Computing Surveys, 55*(12), Article 248. https://doi.org/10.1145/3571730
 - Lee, J. D., & See, K. A. (2004). Trust in automation: Designing for appropriate reliance. *Human Factors, 46*(1), 50-80. https://doi.org/10.1518/hfes.46.1.50_30392
+- Liu, N. F., Zhang, T., & Liang, P. (2023). Evaluating verifiability in generative search engines. In *Findings of EMNLP 2023*. https://aclanthology.org/2023.findings-emnlp.467/
 - Long, D., & Magerko, B. (2020). What is AI literacy? Competencies and design considerations. In *Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems* (pp. 1-16). ACM. https://doi.org/10.1145/3313831.3376727
 - Maynez, J., Narayan, S., Bohnet, B., & McDonald, R. T. (2020). On faithfulness and factuality in abstractive summarization. In *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics* (pp. 1906-1919). Association for Computational Linguistics. https://doi.org/10.18653/v1/2020.acl-main.173
 - National Institute of Standards and Technology. (2023). *Artificial intelligence risk management framework (AI RMF 1.0)* (NIST AI 100-1). https://doi.org/10.6028/NIST.AI.100-1
 - Pearson, H. (2026, July 1). Have people stopped trusting science? The data tell a surprising story. *Nature, 655*, 22-25. https://doi.org/10.1038/d41586-026-01977-9
+- Reber, R., & Schwarz, N. (1999). Effects of perceptual fluency on judgments of truth. *Consciousness and Cognition, 8*(3), 338-342. https://doi.org/10.1006/ccog.1999.0386
 - Risko, E. F., & Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive Sciences, 20*(9), 676-688. https://doi.org/10.1016/j.tics.2016.07.002
 - Sperber, D., Clement, F., Heintz, C., Mascaro, O., Mercier, H., Origgi, G., & Wilson, D. (2010). Epistemic vigilance. *Mind & Language, 25*(4), 359-393. https://doi.org/10.1111/j.1468-0017.2010.01394.x
 - UK Research and Innovation. (2026). *Public Attitudes to Science 2025*. https://pas.ipsos.com/
