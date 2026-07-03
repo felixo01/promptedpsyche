@@ -1,6 +1,6 @@
 ---
 title: "AI jako lustro. Dlaczego tak łatwo się z nim dogadujemy?"
-description: "O tym, dlaczego rozmowa z AI może wydawać się tak płynna i bliska: nie dlatego, że model rozumie nas jak człowiek, ale dlatego, że odbija język, intencje, styl myślenia i potrzebę sensu."
+description: "O tym, dlaczego rozmowa z AI może wydawać się tak płynna i bliska: nie dlatego, że model rozumie nas jak człowiek, ale dlatego, że odbija język, ramy interpretacyjne, sposób formułowania myśli i potrzebę sensu."
 publishedAt: 2026-07-03
 draft: false
 tags:

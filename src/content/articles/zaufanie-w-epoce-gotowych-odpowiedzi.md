@@ -41,7 +41,7 @@ Helen Pearson w tekście Nature z 1 lipca 2026 roku bierze za punkt wyjścia pop
 
 Duże badanie opublikowane w Nature Human Behaviour w 2025 roku, obejmujące 68 krajów i ponad 71 tysięcy respondentów, sugeruje, że w wielu miejscach zaufanie do naukowców pozostaje umiarkowanie wysokie. Ten obraz nie usuwa pęknięć. Są spory wokół zdrowia, klimatu, szczepień, regulacji, finansowania badań, polityzacji wiedzy i tego, czy ludzie czują, że nauka odpowiada także na ich doświadczenia. Ale punkt wyjścia jest bardziej złożony niż proste "ludzie już nie ufają nauce".
 
-Z tego miejsca chcę przesunąć pytanie. Nie będę streszczał artykułu Nature sekcja po sekcji. Traktuję go jako publiczny trigger debaty: jeśli zaufanie do nauki nie jest jednym prostym uczuciem, to co dzieje się, gdy coraz więcej ludzi poznaje naukę, fakty i argumenty nie przez kontakt ze źródłem, lecz przez odpowiedź modelu?
+Z tego miejsca chcę przesunąć pytanie. Nie będę streszczał artykułu Nature sekcja po sekcji. Traktuję go jako punkt wyjścia do publicznej debaty: jeśli zaufanie do nauki nie jest jednym prostym uczuciem, to co dzieje się, gdy coraz więcej ludzi poznaje naukę, fakty i argumenty nie przez kontakt ze źródłem, lecz przez odpowiedź modelu?
 
 To pytanie nie dotyczy tylko wiarygodności AI. Dotyczy tego, gdzie w ogóle lokujemy zaufanie. Czy ufamy metodzie? Instytucji? Ekspertowi? Autorowi? Cytatowi? Interfejsowi? A może płynności tekstu, który zebrał wszystko w jedną wygodną całość?
 
@@ -49,7 +49,7 @@ To pytanie nie dotyczy tylko wiarygodności AI. Dotyczy tego, gdzie w ogóle lok
 
 Mówienie "zaufanie do nauki" brzmi tak, jakby chodziło o pojedynczy przełącznik. Albo ufam, albo nie ufam. W praktyce ludzie mogą ufać jednemu wymiarowi, a nie ufać innemu. Mogą ufać lekarzowi, ale nie ufać polityce zdrowotnej. Mogą cenić metodę naukową, ale mieć ograniczone zaufanie do instytucji. Mogą ufać wynikom badań, ale nie ufać temu, jak media albo politycy używają tych wyników.
 
-W literaturze o zaufaniu często wracają takie wymiary jak kompetencja, uczciwość, dobra wola, otwartość i odpowiedzialność. Badanie Cologny i współautorów operacjonalizowało zaufanie do naukowców przez kilka takich komponentów, między innymi kompetencję, benevolence, integralność i otwartość. To dobry hamulec dla prostych diagnoz. Człowiek może uznać, że naukowcy są kompetentni, a jednocześnie uważać, że nie komunikują niepewności wystarczająco jasno albo że instytucje są zbyt daleko od jego życia.
+W literaturze o zaufaniu często wracają takie wymiary jak kompetencja, uczciwość, dobra wola, otwartość i odpowiedzialność. Badanie Cologny i współautorów operacjonalizowało zaufanie do naukowców przez kilka takich komponentów, między innymi kompetencję, życzliwość lub przychylność wobec odbiorcy, integralność i otwartość. To dobry hamulec dla prostych diagnoz. Człowiek może uznać, że naukowcy są kompetentni, a jednocześnie uważać, że nie komunikują niepewności wystarczająco jasno albo że instytucje są zbyt daleko od jego życia.
 
 Ta wielowymiarowość ma znaczenie w epoce AI, bo model często spłaszcza ją do jednej odpowiedzi. Użytkownik nie zawsze widzi, kto jest autorem wiedzy, jaki był zakres badania, jakie istnieją spory, kto finansował projekt, co zostało pominięte i gdzie są granice pewności. Widzi za to dobrze napisany tekst. Wtedy wiele oddzielnych pytań o zaufanie zlewa się w jedno wrażenie: czy to brzmi sensownie?
 
