@@ -1,7 +1,7 @@
 ---
 title: "It is not just about the prompt"
 description: "The prompt is only the visible part of working with AI. Mature AI literacy also depends on context, cognitive load, trust, verification and responsibility."
-publishedAt: 2026-05-23
+publishedAt: 2026-03-12
 draft: false
 tags:
   - AI literacy

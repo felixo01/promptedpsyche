@@ -1,7 +1,7 @@
 ---
 title: "AI does not read people. It helps make sense of the situation."
 description: "A case-study based essay on how AI can help organize difficult communication: tensions, missing information, possible readings and response risks."
-publishedAt: 2026-07-02
+publishedAt: 2026-04-17
 draft: false
 tags:
   - AI literacy

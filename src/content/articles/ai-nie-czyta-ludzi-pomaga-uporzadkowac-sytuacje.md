@@ -1,7 +1,7 @@
 ---
 title: "AI nie czyta ludzi. Pomaga uporządkować sytuację."
 description: "Studium przypadku o tym, jak AI może pomóc uporządkować trudną komunikację: napięcia, brakujące informacje, możliwe interpretacje i ryzyka odpowiedzi."
-publishedAt: 2026-07-02
+publishedAt: 2026-04-17
 draft: false
 tags:
   - AI literacy

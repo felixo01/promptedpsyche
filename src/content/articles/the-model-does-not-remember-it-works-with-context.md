@@ -1,7 +1,7 @@
 ---
 title: "The model does not remember. It works with context."
 description: "When working with AI, it is easy to confuse context with memory. That mistake can lead to wrong expectations, misplaced trust and poor decisions."
-publishedAt: 2026-06-18
+publishedAt: 2026-03-28
 draft: false
 tags:
   - AI literacy

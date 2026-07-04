@@ -1,7 +1,7 @@
 ---
 title: "Trust in the age of ready-made answers"
 description: "How language models reshape trust in sources, experts, and our own judgment"
-publishedAt: 2026-07-03
+publishedAt: 2026-06-18
 draft: false
 tags:
   - AI and humans

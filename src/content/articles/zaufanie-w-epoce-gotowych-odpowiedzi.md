@@ -1,7 +1,7 @@
 ---
 title: "Zaufanie w epoce gotowych odpowiedzi"
 description: "Jak modele językowe zmieniają zaufanie do źródeł, ekspertów i własnego osądu"
-publishedAt: 2026-07-03
+publishedAt: 2026-06-18
 draft: false
 tags:
   - AI i człowiek
