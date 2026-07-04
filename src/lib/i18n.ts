@@ -32,7 +32,8 @@ export const navItemsByLocale: Record<Locale, Array<{ label: string; href: strin
     { label: 'Articles', href: '/articles/' },
     { label: 'Notes', href: '/notes/' },
     { label: 'Concepts', href: '/concepts/' },
-    { label: 'Projects', href: '/projects/' }
+    { label: 'Projects', href: '/projects/' },
+    { label: 'Search', href: '/search/' }
   ],
   pl: [
     { label: 'Start', href: '/pl/' },
@@ -42,7 +43,8 @@ export const navItemsByLocale: Record<Locale, Array<{ label: string; href: strin
     { label: 'Artykuły', href: '/pl/articles/' },
     { label: 'Notatki', href: '/pl/notes/' },
     { label: 'Pojęcia', href: '/pl/concepts/' },
-    { label: 'Projekty', href: '/pl/projects/' }
+    { label: 'Projekty', href: '/pl/projects/' },
+    { label: 'Szukaj', href: '/pl/search/' }
   ]
 };
 

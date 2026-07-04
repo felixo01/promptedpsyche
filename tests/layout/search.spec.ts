@@ -40,6 +40,14 @@ test.describe('local search', () => {
 
     await expect(page.getByRole('heading', { name: 'Search', level: 1 })).toBeVisible();
     await expect(page.getByPlaceholder('Search by topic, concept or phrase')).toBeVisible();
+    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Search' })).toHaveAttribute(
+      'href',
+      '/search/'
+    );
+    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Search' })).toHaveAttribute(
+      'aria-current',
+      'page'
+    );
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
     await expect(page.locator('link[rel="alternate"][hreflang="pl"]')).toHaveAttribute(
       'href',
@@ -50,6 +58,14 @@ test.describe('local search', () => {
 
     await expect(page.getByRole('heading', { name: 'Szukaj', level: 1 })).toBeVisible();
     await expect(page.getByPlaceholder('Szukaj tematu, pojęcia albo frazy')).toBeVisible();
+    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Szukaj' })).toHaveAttribute(
+      'href',
+      '/pl/search/'
+    );
+    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Szukaj' })).toHaveAttribute(
+      'aria-current',
+      'page'
+    );
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
     await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute(
       'href',
