@@ -1,3 +1,5 @@
+import { siteVersion } from './buildMeta';
+
 export const site = {
   name: 'Prompted Psyche',
   tagline: 'AI, cyberpsychology and Human-AI Interaction.',
@@ -6,7 +8,7 @@ export const site = {
   url: 'https://promptedpsyche.com',
   author: 'Feliks Mamczur',
   email: 'humanai.lab.edu@gmail.com',
-  version: '0.3.0-prelaunch',
+  version: siteVersion,
   locale: 'en',
   futureLocales: ['pl']
 };

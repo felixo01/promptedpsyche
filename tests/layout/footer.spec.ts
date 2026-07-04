@@ -8,6 +8,7 @@ const cases = [
     search: 'Search',
     concepts: 'Concepts',
     author: 'Author',
+    versionLabel: 'Site version',
     practiceLabels: ['Practice', 'Praktyka']
   },
   {
@@ -17,6 +18,7 @@ const cases = [
     search: 'Szukaj',
     concepts: 'Pojęcia',
     author: 'Kim jestem',
+    versionLabel: 'Wersja strony',
     practiceLabels: ['Practice', 'Praktyka']
   }
 ];
@@ -87,6 +89,15 @@ test.describe('site footer', () => {
       await expect(footer.getByRole('link', { name: footerCase.concepts })).toBeVisible();
       await expect(footer.getByRole('link', { name: footerCase.author })).toBeVisible();
       await expect(footer.getByRole('link', { name: 'RSS' })).toHaveAttribute('href', '/rss.xml');
+
+      const siteVersion = footer.locator('[data-qa="site-version"]');
+      await expect(siteVersion).toBeVisible();
+      await expect(siteVersion).toContainText(`${footerCase.versionLabel}:`);
+
+      const versionText = (await siteVersion.textContent())?.trim() ?? '';
+      expect(versionText).toMatch(new RegExp(`^${footerCase.versionLabel}: [0-9a-f]{7}$`));
+      expect(versionText).not.toMatch(/\/Users|AI SPECIALIST|ai-specialista|main|origin|0\.3\.0-prelaunch/);
+
       await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
 
       for (const label of footerCase.practiceLabels) {
