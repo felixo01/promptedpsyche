@@ -12,6 +12,7 @@ interface Props {
   type?: 'website' | 'article';
   lang?: Locale;
   alternateLinks?: AlternateLinks;
+  robots?: string;
 }
 
 const {
@@ -20,7 +21,8 @@ const {
   image = '/images/prompted-psyche-editorial.png',
   type = 'website',
   lang = getLangFromPath(Astro.url.pathname),
-  alternateLinks: providedAlternateLinks
+  alternateLinks: providedAlternateLinks,
+  robots = 'noindex, nofollow, noarchive, nosnippet'
 } = Astro.props;
 
 const pageTitle = title === site.name ? `${site.name} | ${site.tagline}` : `${title} | ${site.name}`;
@@ -44,8 +46,8 @@ const skipLinkLabel = lang === 'pl' ? 'Przejdź do treści' : 'Skip to content';
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
-    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet" />
+    <meta name="robots" content={robots} />
+    <meta name="googlebot" content={robots} />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="en" href={new URL(alternateLinks.en, site.url).toString()} />
     <link rel="alternate" hreflang="pl" href={new URL(alternateLinks.pl, site.url).toString()} />

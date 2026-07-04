@@ -76,6 +76,7 @@ test.describe('publication tag pages', () => {
     await page.goto('/tags/knowledge/');
 
     await expect(page.locator('.page-header h1')).toHaveText('#knowledge');
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.locator('.tag-archive-list')).toContainText(
       'Trust in the age of ready-made answers'
     );
@@ -86,6 +87,7 @@ test.describe('publication tag pages', () => {
     await page.goto('/pl/tags/wiedza/');
 
     await expect(page.locator('.page-header h1')).toHaveText('#wiedza');
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.locator('.tag-archive-list')).toContainText(
       'Zaufanie w epoce gotowych odpowiedzi'
     );
@@ -98,6 +100,7 @@ test.describe('publication tag pages', () => {
     await page.goto('/tags/ai-literacy/');
 
     await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.locator('body')).toContainText('Publications tagged with');
     await expect(page.locator('.tag-archive-list article')).toHaveCount(8);
     await expect(page.locator('.tag-archive-list')).toContainText('Article');
@@ -114,6 +117,7 @@ test.describe('publication tag pages', () => {
     await page.goto('/pl/tags/ai-literacy/');
 
     await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.locator('body')).toContainText('Publikacje oznaczone tagiem');
     await expect(page.locator('.tag-archive-list article')).toHaveCount(8);
     await expect(page.locator('.tag-archive-list')).toContainText('Artykuł');

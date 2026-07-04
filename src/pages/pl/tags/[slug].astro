@@ -28,6 +28,7 @@ const { tag, items, alternateLinks } = Astro.props;
   title={`Tag: ${tag}`}
   description={`Publikacje oznaczone tagiem ${tag}.`}
   alternateLinks={alternateLinks}
+  robots="noindex, follow"
 >
   <section class="page-shell tag-archive">
     <header class="page-header">
