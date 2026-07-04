@@ -15,6 +15,7 @@ const routes = [
   '/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/',
   '/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/',
   '/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/',
+  '/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/',
   '/notes/',
   '/pl/notes/',
   '/notes/fluent-does-not-mean-true/',

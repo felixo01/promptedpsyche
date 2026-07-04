@@ -13,6 +13,8 @@ const mirrorEnglishArticleRoute =
   '/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/';
 const aiPathPolishArticleRoute = '/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/';
 const aiPathEnglishArticleRoute = '/articles/trust-in-the-age-of-ready-made-answers/';
+const aiFearsPolishArticleRoute =
+  '/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/';
 const thirdEnglishArticleTitle =
   'AI does not read people. It helps make sense of the situation.';
 const thirdPolishArticleTitle = 'AI nie czyta ludzi. Pomaga uporządkować sytuację.';
@@ -24,6 +26,7 @@ const oldAiPathEnglishArticleTitle =
   'From sources to answers: how AI changes the path between people and knowledge';
 const aiPathPolishArticleTitle = 'Zaufanie w epoce gotowych odpowiedzi';
 const aiPathEnglishArticleTitle = 'Trust in the age of ready-made answers';
+const aiFearsPolishArticleTitle = 'Czy boimy się AI, czy boimy się samych siebie?';
 
 test.describe('published articles', () => {
   test('shows the English article on the English articles index', async ({ page }) => {
@@ -116,10 +119,11 @@ test.describe('published articles', () => {
   test('shows the Polish article on the Polish articles index', async ({ page }) => {
     await page.goto('/pl/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(5);
+    await expect(page.locator('.entry-list article')).toHaveCount(6);
     await expect(page.locator('.entry-list')).toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('.entry-list')).toContainText(mirrorPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiPathPolishArticleTitle);
+    await expect(page.locator('.entry-list')).toContainText(aiFearsPolishArticleTitle);
     await expect(page.locator('.entry-list')).not.toContainText(oldAiPathPolishArticleTitle);
     const titleLink = page.getByRole('link', {
       name: 'Nie chodzi tylko o prompt',
@@ -158,14 +162,26 @@ test.describe('published articles', () => {
 
     await expect(aiPathTitleLink).toHaveAttribute('href', aiPathPolishArticleRoute);
     await expect(aiPathCtaLink).toHaveAttribute('href', aiPathPolishArticleRoute);
+
+    const aiFearsTitleLink = page.getByRole('link', {
+      name: aiFearsPolishArticleTitle,
+      exact: true
+    });
+    const aiFearsCtaLink = page.getByRole('link', {
+      name: `Czytaj artykuł: ${aiFearsPolishArticleTitle}`
+    });
+
+    await expect(aiFearsTitleLink).toHaveAttribute('href', aiFearsPolishArticleRoute);
+    await expect(aiFearsCtaLink).toHaveAttribute('href', aiFearsPolishArticleRoute);
   });
 
   test('shows the third Polish article on the Polish articles index', async ({ page }) => {
     await page.goto('/pl/articles/');
 
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(5);
+    expect(titles).toHaveLength(6);
     expect(titles).toEqual(expect.arrayContaining([
+      aiFearsPolishArticleTitle,
       aiPathPolishArticleTitle,
       mirrorPolishArticleTitle,
       thirdPolishArticleTitle,
@@ -216,6 +232,7 @@ test.describe('published articles', () => {
     await expect(page.locator('body')).not.toContainText(thirdPolishArticleTitle);
     await expect(page.locator('body')).not.toContainText(mirrorPolishArticleTitle);
     await expect(page.locator('body')).not.toContainText(aiPathPolishArticleTitle);
+    await expect(page.locator('body')).not.toContainText(aiFearsPolishArticleTitle);
   });
 
   test('does not show the English article on the Polish articles index', async ({ page }) => {
@@ -614,6 +631,72 @@ test.describe('published articles', () => {
         .filter(Boolean)
     );
     expect(overflowingBoxes).toEqual([]);
+  });
+
+  test('renders the AI fears Polish article with sources, concepts and safe language fallback', async ({ page }) => {
+    await page.goto(aiFearsPolishArticleRoute);
+
+    await expect(page.locator('.content-header h1')).toHaveText(aiFearsPolishArticleTitle);
+    const inBrief = page.locator('[data-qa="in-brief"]');
+    await expect(inBrief).toHaveCount(1);
+    await expect(inBrief.locator('summary.in-brief__summary')).toHaveText('W skrócie');
+    await inBrief.locator('summary').click();
+    await expect(inBrief.locator('.in-brief__body')).toBeVisible();
+    await expect(inBrief).toContainText('Lęk przed AI ma realne powody');
+    await expect(page.locator('body')).not.toContainText('TL;DR');
+    await expect(page.locator('.prose')).toContainText('Dlaczego nie warto wyśmiewać obaw');
+    await expect(page.locator('.prose')).toContainText('Odpowiedź, która brzmi jak wiedza');
+    await expect(page.locator('.prose')).toContainText('Jak korzystać z AI, żeby nie oddać odpowiedzialności');
+    await expect(page.locator('.prose')).toContainText('Źródła i dalsza lektura');
+    await expect(page.locator('.prose')).toContainText('Chesney');
+    await expect(page.locator('.prose')).toContainText('National Institute of Standards and Technology');
+    await expect(page.locator('.prose li')).toHaveCount(10);
+    await expect(page.locator('[data-qa="article-byline"]')).toContainText('Autor: Feliks Mamczur');
+    await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+      `${aiFearsPolishArticleTitle} Prompted Psyche. https://promptedpsyche.com${aiFearsPolishArticleRoute}`
+    );
+    await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'Wszystkie prawa zastrzeżone'
+    );
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+      'src',
+      '/images/articles/human-ai-workflow-judgment.webp'
+    );
+    await expect(page.locator('.article-hero-figure figcaption')).toContainText(
+      'Lęk przed AI nie dotyczy tylko maszyny'
+    );
+    await expect(page.locator('[data-qa="article-audio"]')).toHaveCount(0);
+    await expect(page.locator('audio')).toHaveCount(0);
+    await expect(page.locator('[data-qa="practice-block"]')).toHaveCount(0);
+    await expect(page.locator('.prompt-example')).toHaveCount(0);
+    await expect(page.locator('.content-tags a[href="/pl/tags/ai-i-czlowiek/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/pl/tags/zaufanie-do-ai/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/pl/tags/odpowiedzialnosc/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/pl/tags/human-ai-interaction/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/pl/tags/decyzje/"]')).toBeVisible();
+
+    const conceptLinks = page.locator('.prose a[href^="/pl/concepts/"]');
+    await expect(conceptLinks).toHaveCount(8);
+    await expect(page.locator('.prose a[href="/pl/concepts/model-output/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/oparcie-odpowiedzi-na-zrodlach/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/sprawczosc-czlowieka/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/blad-automatyzacji/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/cognitive-offloading/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/nadmierne-poleganie-na-ai/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/calibrated-trust/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/human-ai-interaction/"]')).toBeVisible();
+    await expect(page.locator('.language-switcher a[href="/articles/"]')).toBeVisible();
+    await expect(page.locator('body')).not.toContainText('Working notes');
+    await expect(page.locator('body')).not.toContainText('Source pack');
+    await expect(page.locator('body')).not.toContainText('Final copyedit');
+    await expect(page.locator('body')).not.toContainText('AI SPECIALIST');
+    await expect(page.locator('body')).not.toContainText('ai-specialista');
+    await expect(page.locator('body')).not.toContainText('AI ma świadomość');
+    await expect(page.locator('body')).not.toContainText('terapia przez AI');
+    await expect(page.locator('body')).not.toContainText('automatyczna diagnoza');
   });
 
   test('renders the AI path English article with sources, tags, concepts and language alternate', async ({ page }) => {
