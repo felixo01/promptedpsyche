@@ -145,4 +145,22 @@ test.describe('local search', () => {
     ).toBeVisible();
     await expect(page.locator('[data-search-results]')).toContainText('Pojęcie');
   });
+
+  test('finds the expanded Polish AI fears article by title and threat framing terms', async ({ page }) => {
+    await page.goto('/pl/search/');
+
+    const input = page.getByPlaceholder('Szukaj tematu, pojęcia albo frazy');
+    const articleLink = page.getByRole('link', {
+      name: 'Czy boimy się AI, czy boimy się samych siebie?'
+    });
+
+    await input.fill('czy boimy');
+    await expect(articleLink).toBeVisible();
+
+    await input.fill('zagrozenia');
+    await expect(articleLink).toBeVisible();
+
+    await input.fill('AI');
+    await expect(articleLink).toBeVisible();
+  });
 });
