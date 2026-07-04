@@ -4,6 +4,10 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://promptedpsyche.com',
+  redirects: {
+    '/author': '/about/',
+    '/pl/author': '/pl/about/'
+  },
   integrations: [mdx(), sitemap()],
   markdown: {
     shikiConfig: {
