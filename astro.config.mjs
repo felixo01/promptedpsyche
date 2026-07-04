@@ -7,13 +7,18 @@ const isTagArchive = (page) => {
   return pathname.startsWith('/tags/') || pathname.startsWith('/pl/tags/');
 };
 
+const isSearchIndex = (page) => {
+  const { pathname } = new URL(page);
+  return pathname.startsWith('/search-index') && pathname.endsWith('.json');
+};
+
 export default defineConfig({
   site: 'https://promptedpsyche.com',
   redirects: {
     '/author': '/about/',
     '/pl/author': '/pl/about/'
   },
-  integrations: [mdx(), sitemap({ filter: (page) => !isTagArchive(page) })],
+  integrations: [mdx(), sitemap({ filter: (page) => !isTagArchive(page) && !isSearchIndex(page) })],
   markdown: {
     shikiConfig: {
       theme: 'github-dark'

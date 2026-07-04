@@ -2221,6 +2221,114 @@ html[lang='pl'] .page-header h1 {
   line-height: 1.65;
 }
 
+.search-panel {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 54rem;
+  margin-top: 3rem;
+}
+
+.search-field {
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 0.8rem;
+}
+
+.search-field input {
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  line-height: 1.25;
+  outline: 0;
+}
+
+.search-field input::placeholder {
+  color: rgba(28, 25, 23, 0.36);
+}
+
+.search-field:focus-within {
+  border-bottom-color: var(--accent);
+}
+
+.search-status {
+  color: rgba(28, 25, 23, 0.56);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.search-results {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.search-result {
+  display: grid;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+  padding-block: 1.6rem;
+}
+
+.search-result-meta,
+.search-result-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.8rem;
+  align-items: center;
+}
+
+.search-result-meta {
+  color: rgba(28, 25, 23, 0.42);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.search-result h2 {
+  color: var(--ink);
+  font-size: clamp(1.28rem, 1.5vw, 1.72rem);
+  line-height: 1.18;
+}
+
+.search-result h2 a {
+  text-decoration: none;
+}
+
+.search-result h2 a:hover,
+.search-result h2 a:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.search-result-description {
+  max-width: 62ch;
+  color: rgba(28, 25, 23, 0.66);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.search-result-tags {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.search-result-tags li {
+  border: 1px solid rgba(61, 90, 92, 0.16);
+  border-radius: 999px;
+  padding: 0.24rem 0.55rem;
+  color: rgba(28, 25, 23, 0.52);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .empty-followup {
   display: grid;
   gap: 1rem;

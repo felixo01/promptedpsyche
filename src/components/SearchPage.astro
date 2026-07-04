@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  lang?: Locale;
+}
+
+const lang = Astro.props.lang ?? 'en';
+const isPl = lang === 'pl';
+const copy = isPl
+  ? {
+      title: 'Szukaj',
+      intro: 'Szukaj w artykułach, notatkach i pojęciach Prompted Psyche.',
+      placeholder: 'Szukaj tematu, pojęcia albo frazy',
+      empty: 'Zacznij pisać, żeby przeszukać publiczne artykuły, notatki i pojęcia.',
+      noResults: 'Nie znaleziono wyników. Spróbuj innej frazy.',
+      loading: 'Ładowanie indeksu wyszukiwania.',
+      error: 'Nie udało się załadować indeksu wyszukiwania.',
+      inputLabel: 'Szukaj w publicznych treściach',
+      resultCountSingular: 'wynik',
+      resultCountPlural: 'wyników',
+      labels: {
+        article: 'Artykuł',
+        note: 'Notatka',
+        concept: 'Pojęcie'
+      }
+    }
+  : {
+      title: 'Search',
+      intro: 'Search articles, notes and concepts on Prompted Psyche.',
+      placeholder: 'Search by topic, concept or phrase',
+      empty: 'Start typing to search public articles, notes and concepts.',
+      noResults: 'No results found. Try a different phrase.',
+      loading: 'Loading the search index.',
+      error: 'The search index could not be loaded.',
+      inputLabel: 'Search public content',
+      resultCountSingular: 'result',
+      resultCountPlural: 'results',
+      labels: {
+        article: 'Article',
+        note: 'Note',
+        concept: 'Concept'
+      }
+    };
+const searchIndexUrl = isPl ? '/search-index.pl.json' : '/search-index.en.json';
+const alternateLinks = {
+  en: '/search/',
+  pl: '/pl/search/',
+  xDefault: '/search/'
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title={copy.title}
+  description={copy.intro}
+  alternateLinks={alternateLinks}
+>
+  <section
+    class="page-shell search-page"
+    data-search-page
+    data-search-index-url={searchIndexUrl}
+    data-search-copy={JSON.stringify(copy)}
+  >
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">{copy.title}</p>
+        <h1>{copy.title}</h1>
+      </div>
+      <p>{copy.intro}</p>
+    </header>
+
+    <div class="search-panel">
+      <div class="search-field">
+        <input
+          id={isPl ? 'szukaj' : 'search'}
+          data-search-input
+          type="search"
+          inputmode="search"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label={copy.inputLabel}
+          placeholder={copy.placeholder}
+        />
+      </div>
+      <p class="search-status" data-search-status aria-live="polite">{copy.empty}</p>
+      <div class="search-results" data-search-results hidden></div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  type SearchItemType = 'article' | 'note' | 'concept';
+  type SearchItem = {
+    title: string;
+    description: string;
+    url: string;
+    type: SearchItemType;
+    language: 'en' | 'pl';
+    tags: string[];
+    date?: string;
+    readingTime?: string;
+  };
+
+  type SearchCopy = {
+    noResults: string;
+    empty: string;
+    loading: string;
+    error: string;
+    resultCountSingular: string;
+    resultCountPlural: string;
+    labels: Record<SearchItemType, string>;
+  };
+
+  const normalizeSearchText = (value: string) =>
+    value
+      .toLocaleLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/ł/g, 'l')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+  const formatSearchDate = (dateValue: string | undefined, locale: string) => {
+    if (!dateValue) return '';
+    const date = new Date(`${dateValue}T00:00:00Z`);
+    if (Number.isNaN(date.getTime())) return '';
+
+    return new Intl.DateTimeFormat(locale, {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+      timeZone: 'UTC'
+    }).format(date);
+  };
+
+  const createElement = <K extends keyof HTMLElementTagNameMap>(
+    tagName: K,
+    className?: string,
+    text?: string
+  ) => {
+    const element = document.createElement(tagName);
+    if (className) element.className = className;
+    if (text) element.textContent = text;
+    return element;
+  };
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-search-page]')) {
+    const input = root.querySelector<HTMLInputElement>('[data-search-input]');
+    const status = root.querySelector<HTMLElement>('[data-search-status]');
+    const results = root.querySelector<HTMLElement>('[data-search-results]');
+    const indexUrl = root.dataset.searchIndexUrl;
+    const copy = JSON.parse(root.dataset.searchCopy ?? '{}') as SearchCopy;
+    const locale = document.documentElement.lang === 'pl' ? 'pl' : 'en';
+    let index: SearchItem[] = [];
+
+    if (!input || !status || !results || !indexUrl) continue;
+
+    const renderEmpty = (message: string) => {
+      results.hidden = true;
+      results.replaceChildren();
+      status.textContent = message;
+    };
+
+    const renderResults = (items: SearchItem[], query: string) => {
+      if (!query) {
+        renderEmpty(copy.empty);
+        return;
+      }
+
+      if (items.length === 0) {
+        renderEmpty(copy.noResults);
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+      for (const item of items) {
+        const result = createElement('article', 'search-result');
+        const meta = createElement('p', 'search-result-meta');
+        const type = createElement('span', '', copy.labels[item.type]);
+        meta.append(type);
+
+        const date = formatSearchDate(item.date, locale);
+        if (date) meta.append(createElement('span', '', date));
+        if (item.readingTime) meta.append(createElement('span', '', item.readingTime));
+
+        const title = createElement('h2');
+        const link = createElement('a', '', item.title);
+        link.href = item.url;
+        title.append(link);
+
+        const description = createElement('p', 'search-result-description', item.description);
+
+        result.append(meta, title, description);
+
+        if (item.tags.length > 0) {
+          const tags = createElement('ul', 'search-result-tags');
+          for (const tagText of item.tags.slice(0, 6)) {
+            const tag = createElement('li', '', tagText);
+            tags.append(tag);
+          }
+          result.append(tags);
+        }
+
+        fragment.append(result);
+      }
+
+      results.hidden = false;
+      results.replaceChildren(fragment);
+      const suffix = items.length === 1 ? copy.resultCountSingular : copy.resultCountPlural;
+      status.textContent = `${items.length} ${suffix}`;
+    };
+
+    const scoreItem = (item: SearchItem, tokens: string[]) => {
+      const title = normalizeSearchText(item.title);
+      const tags = normalizeSearchText(item.tags.join(' '));
+      const description = normalizeSearchText(item.description);
+      const type = normalizeSearchText(`${item.type} ${copy.labels[item.type]}`);
+      let score = 0;
+
+      for (const token of tokens) {
+        if (title.includes(token)) score += title.startsWith(token) ? 130 : 100;
+        if (tags.includes(token)) score += 70;
+        if (type.includes(token)) score += 45;
+        if (description.includes(token)) score += 25;
+      }
+
+      return score;
+    };
+
+    const runSearch = () => {
+      const query = normalizeSearchText(input.value);
+      const tokens = query.split(' ').filter(Boolean);
+
+      if (tokens.length === 0) {
+        renderEmpty(copy.empty);
+        return;
+      }
+
+      const matches = index
+        .map((item) => ({ item, score: scoreItem(item, tokens) }))
+        .filter((result) => result.score > 0)
+        .sort((a, b) => {
+          if (b.score !== a.score) return b.score - a.score;
+
+          const dateA = a.item.date ? Date.parse(a.item.date) : 0;
+          const dateB = b.item.date ? Date.parse(b.item.date) : 0;
+          if (dateB !== dateA) return dateB - dateA;
+
+          return a.item.title.localeCompare(b.item.title, locale);
+        })
+        .map((result) => result.item);
+
+      renderResults(matches, query);
+    };
+
+    renderEmpty(copy.loading);
+
+    fetch(indexUrl, { headers: { Accept: 'application/json' } })
+      .then((response) => {
+        if (!response.ok) throw new Error(`Search index ${response.status}`);
+        return response.json() as Promise<SearchItem[]>;
+      })
+      .then((items) => {
+        index = items;
+        runSearch();
+        input.addEventListener('input', runSearch);
+      })
+      .catch(() => {
+        renderEmpty(copy.error);
+      });
+  }
+</script>

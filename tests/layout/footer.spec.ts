@@ -5,6 +5,7 @@ const cases = [
     route: '/',
     rights: 'All rights reserved',
     citation: 'credit the author, title and source link',
+    search: 'Search',
     concepts: 'Concepts',
     author: 'Author',
     practiceLabels: ['Practice', 'Praktyka']
@@ -13,6 +14,7 @@ const cases = [
     route: '/pl/',
     rights: 'Wszystkie prawa zastrzeżone',
     citation: 'podaj autora, tytuł i link do źródła',
+    search: 'Szukaj',
     concepts: 'Pojęcia',
     author: 'Kim jestem',
     practiceLabels: ['Practice', 'Praktyka']
@@ -81,6 +83,7 @@ test.describe('site footer', () => {
       await expect(footer).toContainText('humanai.lab.edu@gmail.com');
       await expect(footer).toContainText(footerCase.rights);
       await expect(footer).toContainText(footerCase.citation);
+      await expect(footer.getByRole('link', { name: footerCase.search, exact: true })).toBeVisible();
       await expect(footer.getByRole('link', { name: footerCase.concepts })).toBeVisible();
       await expect(footer.getByRole('link', { name: footerCase.author })).toBeVisible();
       await expect(footer.getByRole('link', { name: 'RSS' })).toHaveAttribute('href', '/rss.xml');

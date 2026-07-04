@@ -19,7 +19,8 @@ const routePairs: RoutePair[] = [
   { en: '/articles/', pl: '/pl/articles/' },
   { en: '/notes/', pl: '/pl/notes/' },
   { en: '/concepts/', pl: '/pl/concepts/' },
-  { en: '/projects/', pl: '/pl/projects/' }
+  { en: '/projects/', pl: '/pl/projects/' },
+  { en: '/search/', pl: '/pl/search/' }
 ];
 
 export const navItemsByLocale: Record<Locale, Array<{ label: string; href: string }>> = {

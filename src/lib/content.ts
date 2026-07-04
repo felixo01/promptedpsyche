@@ -16,6 +16,8 @@ type LanguageEntry = {
   };
 };
 
+export type SearchLocale = 'en' | 'pl';
+
 export function onlyPublicEntries<T extends DraftableEntry>(entries: T[]) {
   return entries.filter((entry) => !entry.data.draft);
 }

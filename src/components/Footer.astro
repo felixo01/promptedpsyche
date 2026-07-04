@@ -59,6 +59,7 @@ const prefix = isPl ? '/pl' : '';
         <p>Prompted Psyche</p>
       </div>
       <nav aria-label={isPl ? 'Linki w stopce' : 'Footer links'}>
+        <a href={`${prefix}/search/`}>{isPl ? 'Szukaj' : 'Search'}</a>
         <a href={`${prefix}/concepts/`}>{isPl ? 'Pojęcia' : 'Concepts'}</a>
         <a href={`${prefix}/about/`}>{isPl ? 'Kim jestem' : 'Author'}</a>
         <a href="/rss.xml">RSS</a>
