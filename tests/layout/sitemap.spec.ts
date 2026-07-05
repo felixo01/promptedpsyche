@@ -19,7 +19,28 @@ function readVercelConfig() {
   return JSON.parse(fs.readFileSync(path.join(process.cwd(), 'vercel.json'), 'utf8'));
 }
 
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function countRssItemsByLink(rss: string, url: string) {
+  const escapedUrl = escapeRegExp(url);
+  return (
+    rss.match(new RegExp(`<item>[\\s\\S]*?<link>${escapedUrl}</link>[\\s\\S]*?</item>`, 'g')) ?? []
+  ).length;
+}
+
 test.describe('built sitemap and RSS policy', () => {
+  test('publishes a minimal robots.txt with sitemap reference', () => {
+    const robots = readDistFile('robots.txt');
+
+    expect(robots).toContain('User-agent: *');
+    expect(robots).toContain('Allow: /');
+    expect(robots).toContain('Sitemap: https://promptedpsyche.com/sitemap-index.xml');
+    expect(robots).not.toContain('Disallow: /practice');
+    expect(robots).not.toContain('Disallow: /pl/practice');
+  });
+
   test('excludes tag archives and Practice drafts from sitemap', () => {
     const sitemap = readBuiltSitemap();
 
@@ -39,6 +60,7 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).toContain('/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/');
     expect(sitemap).toContain('/articles/are-we-afraid-of-ai-or-of-ourselves/');
     expect(sitemap).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
+    expect(sitemap.match(/\/articles\/are-we-afraid-of-ai-or-of-ourselves\//g) ?? []).toHaveLength(1);
   });
 
   test('keeps Practice drafts out of RSS', () => {
@@ -50,6 +72,12 @@ test.describe('built sitemap and RSS policy', () => {
     expect(rss).toContain('/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/');
     expect(rss).toContain('/articles/are-we-afraid-of-ai-or-of-ourselves/');
     expect(rss).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
+    expect(
+      countRssItemsByLink(
+        rss,
+        'https://promptedpsyche.com/articles/are-we-afraid-of-ai-or-of-ourselves/'
+      )
+    ).toBe(1);
   });
 
   test('keeps X-Robots-Tag scoped to tag archives after launch', () => {
