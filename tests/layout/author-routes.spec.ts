@@ -26,6 +26,16 @@ test.describe('author and about routes', () => {
       'href',
       '/pl/about/'
     );
+    await expect(page.locator('body')).toContainText('European Film Academy');
+    await expect(page.locator('body')).toContainText('studying psychology');
+    await expect(page.locator('body')).toContainText('tools, repositories, versioned texts, sources');
+    await expect(page.getByRole('link', { name: 'felixmamczur.com' })).toHaveAttribute(
+      'href',
+      'https://felixmamczur.com/'
+    );
+    await expect(page.locator('body')).not.toContainText('AI engineer');
+    await expect(page.locator('body')).not.toContainText('cybersecurity expert');
+    await expect(page.locator('body')).not.toContainText('clinical psychologist');
     await expect(page.getByRole('link', { name: /^Practice$/ })).toHaveCount(0);
     await expectNoHorizontalOverflow(page);
   });
@@ -43,6 +53,16 @@ test.describe('author and about routes', () => {
       'href',
       '/about/'
     );
+    await expect(page.locator('body')).toContainText('European Film Academy');
+    await expect(page.locator('body')).toContainText('studiuję psychologię');
+    await expect(page.locator('body')).toContainText('narzędziami, repozytoriami, wersjonowanymi tekstami');
+    await expect(page.getByRole('link', { name: 'felixmamczur.com' })).toHaveAttribute(
+      'href',
+      'https://felixmamczur.com/'
+    );
+    await expect(page.locator('body')).not.toContainText('inżynier AI');
+    await expect(page.locator('body')).not.toContainText('ekspert cyberbezpieczeństwa');
+    await expect(page.locator('body')).not.toContainText('psychologiem');
     await expect(page.getByRole('link', { name: /^Praktyka$/ })).toHaveCount(0);
     await expectNoHorizontalOverflow(page);
   });

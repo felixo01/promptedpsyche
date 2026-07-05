@@ -24,6 +24,10 @@ test.describe('Consulting pages', () => {
     await expect(page.getByText('Pomagam osobom i zespołom pracować z AI bardziej świadomie')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Dla osób i zespołów, które chcą używać AI uważniej' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'W czym mogę pomóc' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Audyt przepływu pracy człowiek-AI' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Projektowanie praktycznych przepływów pracy z AI' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Audyt komunikacji i zaufania do AI' })).toBeVisible();
+    await expect(page.getByText('repozytoriów, źródeł, cytowania, metadanych')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Kiedy warto porozmawiać' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Jak pracuję' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Czego nie robię' })).toBeVisible();
@@ -39,6 +43,10 @@ test.describe('Consulting pages', () => {
     await expect(page.getByText('I help people and teams work with AI more deliberately')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'For people and teams that want to use AI more carefully' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'What I help with' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Human-AI workflow audit' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Practical AI workflow design' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'AI communication and trust audit' })).toBeVisible();
+    await expect(page.getByText('repositories, sources, citation, metadata')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'When it makes sense to talk' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'How I work' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'What I do not do' })).toBeVisible();
@@ -59,6 +67,10 @@ test.describe('Consulting pages', () => {
       await expect(body).not.toContainText('terapia AI');
       await expect(body).not.toContainText('automatic diagnosis');
       await expect(body).not.toContainText('automatyczna diagnoza');
+      await expect(body).not.toContainText('security audit');
+      await expect(body).not.toContainText('audyt bezpieczeństwa');
+      await expect(body).not.toContainText('clinical evaluation');
+      await expect(body).not.toContainText('ewaluacja kliniczna');
 
       await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
     });
