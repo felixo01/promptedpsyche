@@ -1,12 +1,31 @@
 ---
 import AuthorPortrait from '../../components/AuthorPortrait.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { absoluteUrl, getAuthorEntity, site } from '../../lib/site';
+
+const pageDescription =
+  'O Feliksie Mamczurze, autorze Prompted Psyche - publikacyjnej i eksperckiej platformy o AI, cyberpsychologii i Human-AI Interaction.';
+const profileStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  name: 'Feliks Mamczur - autor Prompted Psyche',
+  description: pageDescription,
+  url: absoluteUrl('/pl/about/'),
+  inLanguage: 'pl',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: site.name,
+    url: site.url
+  },
+  mainEntity: getAuthorEntity('pl')
+};
 ---
 
 <BaseLayout
   lang="pl"
   title="Kim jestem"
-  description="O Feliksie Mamczurze, autorze Prompted Psyche - publikacyjnej i eksperckiej platformy o AI, cyberpsychologii i Human-AI Interaction."
+  description={pageDescription}
+  structuredData={profileStructuredData}
 >
   <article class="lovable-page about-page">
     <header class="about-hero">

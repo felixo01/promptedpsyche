@@ -1,11 +1,30 @@
 ---
 import AuthorPortrait from '../components/AuthorPortrait.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { absoluteUrl, getAuthorEntity, site } from '../lib/site';
+
+const pageDescription =
+  'About Feliks Mamczur, author of Prompted Psyche, a publication and expert platform on AI, cyberpsychology and Human-AI Interaction.';
+const profileStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  name: 'About Feliks Mamczur',
+  description: pageDescription,
+  url: absoluteUrl('/about/'),
+  inLanguage: 'en',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: site.name,
+    url: site.url
+  },
+  mainEntity: getAuthorEntity('en')
+};
 ---
 
 <BaseLayout
   title="About the author"
-  description="About Feliks Mamczur, author of Prompted Psyche, a publication and expert platform on AI, cyberpsychology and Human-AI Interaction."
+  description={pageDescription}
+  structuredData={profileStructuredData}
 >
   <article class="lovable-page about-page">
     <header class="about-hero">

@@ -25,6 +25,10 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).not.toContain('/pl/practice/');
     expect(sitemap).not.toContain('/search-index.en.json');
     expect(sitemap).not.toContain('/search-index.pl.json');
+    expect(sitemap).toContain('/about/');
+    expect(sitemap).toContain('/pl/about/');
+    expect(sitemap).not.toContain('/author/');
+    expect(sitemap).not.toContain('/pl/author/');
     expect(sitemap).toContain('/search/');
     expect(sitemap).toContain('/pl/search/');
     expect(sitemap).toContain('/articles/trust-in-the-age-of-ready-made-answers/');

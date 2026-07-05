@@ -6,7 +6,7 @@ import SuggestedCitation from '../components/SuggestedCitation.astro';
 import TagList from '../components/TagList.astro';
 import { formatDate } from '../lib/content';
 import type { AlternateLinks, Locale } from '../lib/i18n';
-import { site } from '../lib/site';
+import { absoluteUrl, getAuthorEntity, getAuthorUrl, site } from '../lib/site';
 
 interface Props {
   entry: {
@@ -46,7 +46,7 @@ const isConceptEntry = !showPublishedAt;
 const isArticleEntry = label === 'Article' || label === 'Artykuł';
 const conceptBackHref = lang === 'pl' ? '/pl/concepts/' : '/concepts/';
 const conceptBackLabel = lang === 'pl' ? 'Wróć do pojęć' : 'Back to concepts';
-const aboutHref = lang === 'pl' ? '/pl/about/' : '/about/';
+const aboutHref = getAuthorUrl(lang);
 const authorLabel = lang === 'pl' ? 'Autor:' : 'By';
 const publishedLabel = lang === 'pl' ? 'Opublikowano:' : 'Published:';
 const updatedLabel = lang === 'pl' ? 'Aktualizacja:' : 'Updated:';
@@ -56,6 +56,29 @@ const heroImageAlt = entry.data.imageAlt ?? entry.data.title;
 const heroImageCaption = entry.data.imageCaption;
 const audioUrl = !isConceptEntry ? entry.data.audioUrl : undefined;
 const inBriefItems = isArticleEntry ? (entry.data.inBrief ?? []) : [];
+const articleStructuredData = isArticleEntry
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: entry.data.title,
+      description: entry.data.description,
+      url: canonicalUrl,
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': canonicalUrl
+      },
+      datePublished: entry.data.publishedAt.toISOString(),
+      ...(entry.data.updatedAt ? { dateModified: entry.data.updatedAt.toISOString() } : {}),
+      author: getAuthorEntity(lang),
+      inLanguage: lang,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: site.name,
+        url: site.url
+      },
+      ...(heroImage ? { image: absoluteUrl(heroImage) } : {})
+    }
+  : undefined;
 const audioLabel = lang === 'pl' ? 'Wersja audio' : 'Audio version';
 const audioFallback =
   lang === 'pl'
@@ -93,6 +116,7 @@ const asideLabels = isConceptEntry
   type="article"
   lang={lang}
   alternateLinks={alternateLinks}
+  structuredData={articleStructuredData}
 >
   <article class:list={['article-shell', isConceptEntry ? 'article-shell--concept' : 'article-shell--publication']}>
     <header class="content-header">
