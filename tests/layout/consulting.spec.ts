@@ -60,7 +60,7 @@ test.describe('Consulting pages', () => {
       await expect(body).not.toContainText('automatic diagnosis');
       await expect(body).not.toContainText('automatyczna diagnoza');
 
-      await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+      await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
     });
 
     test(`has no horizontal overflow on mobile for ${route}`, async ({ page }) => {

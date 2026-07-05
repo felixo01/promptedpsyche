@@ -35,7 +35,7 @@ async function readSearchIndex(request: APIRequestContext, path: string) {
 }
 
 test.describe('local search', () => {
-  test('builds search pages with language alternates and noindex', async ({ page }) => {
+  test('builds search pages with language alternates and indexable robots state', async ({ page }) => {
     await page.goto('/search/');
 
     await expect(page.getByRole('heading', { name: 'Search', level: 1 })).toBeVisible();
@@ -48,7 +48,7 @@ test.describe('local search', () => {
       'aria-current',
       'page'
     );
-    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+    await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
     await expect(page.locator('link[rel="alternate"][hreflang="pl"]')).toHaveAttribute(
       'href',
       'https://promptedpsyche.com/pl/search/'
@@ -66,7 +66,7 @@ test.describe('local search', () => {
       'aria-current',
       'page'
     );
-    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+    await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
     await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute(
       'href',
       'https://promptedpsyche.com/search/'

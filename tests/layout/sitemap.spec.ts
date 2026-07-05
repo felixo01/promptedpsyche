@@ -15,6 +15,10 @@ function readBuiltSitemap() {
     .join('\n');
 }
 
+function readVercelConfig() {
+  return JSON.parse(fs.readFileSync(path.join(process.cwd(), 'vercel.json'), 'utf8'));
+}
+
 test.describe('built sitemap and RSS policy', () => {
   test('excludes tag archives and Practice drafts from sitemap', () => {
     const sitemap = readBuiltSitemap();
@@ -49,6 +53,27 @@ test.describe('built sitemap and RSS policy', () => {
     expect(rss).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
     expect(rss).not.toContain(
       'https://promptedpsyche.com/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/'
+    );
+  });
+
+  test('keeps X-Robots-Tag scoped to tag archives after launch', () => {
+    const config = readVercelConfig();
+    const headers = config.headers ?? [];
+    const robotHeaders = headers.flatMap((entry: { source: string; headers: Array<{ key: string; value: string }> }) =>
+      entry.headers
+        .filter((header) => header.key === 'X-Robots-Tag')
+        .map((header) => ({
+          source: entry.source,
+          value: header.value
+        }))
+    );
+
+    expect(robotHeaders).toEqual([
+      { source: '/tags/(.*)', value: 'noindex, follow' },
+      { source: '/pl/tags/(.*)', value: 'noindex, follow' }
+    ]);
+    expect(robotHeaders).not.toEqual(
+      expect.arrayContaining([expect.objectContaining({ source: '/(.*)' })])
     );
   });
 });

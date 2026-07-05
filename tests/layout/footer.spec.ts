@@ -98,7 +98,7 @@ test.describe('site footer', () => {
       expect(versionText).toMatch(new RegExp(`^${footerCase.versionLabel}: [0-9a-f]{7}$`));
       expect(versionText).not.toMatch(/\/Users|AI SPECIALIST|ai-specialista|main|origin|0\.3\.0-prelaunch/);
 
-      await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+      await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
 
       for (const label of footerCase.practiceLabels) {
         await expect(footer).not.toContainText(label);

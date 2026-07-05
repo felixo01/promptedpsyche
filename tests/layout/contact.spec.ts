@@ -57,7 +57,7 @@ test.describe('contact pages', () => {
       await expect(body).not.toContainText('DOI');
       await expect(body).not.toContainText('Practice');
       await expect(body).not.toContainText('Praktyka');
-      await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+      await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
     });
   }
 
