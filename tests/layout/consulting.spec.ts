@@ -29,6 +29,9 @@ test.describe('Consulting pages', () => {
     await expect(page.getByRole('heading', { name: 'Audyt komunikacji i zaufania do AI' })).toBeVisible();
     await expect(page.getByText('repozytoriów, źródeł, cytowania, metadanych')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Kiedy warto porozmawiać' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Jak może wyglądać współpraca?' })).toBeVisible();
+    await expect(page.getByText('Zakres i wycena zależą od sytuacji')).toBeVisible();
+    await expect(page.getByText('Nie trzeba od razu wiedzieć, jak nazwać usługę')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Jak pracuję' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Czego nie robię' })).toBeVisible();
     await expect(page.getByText('nie sprzedaję gotowych "magicznych promptów"')).toBeVisible();
@@ -48,6 +51,9 @@ test.describe('Consulting pages', () => {
     await expect(page.getByRole('heading', { name: 'AI communication and trust audit' })).toBeVisible();
     await expect(page.getByText('repositories, sources, citation, metadata')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'When it makes sense to talk' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'What can working together look like?' })).toBeVisible();
+    await expect(page.getByText('Scope and pricing depend on the situation')).toBeVisible();
+    await expect(page.getByText('You do not need to know the exact service name')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'How I work' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'What I do not do' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Ask about consulting' })).toHaveAttribute('href', '/contact/');
@@ -71,6 +77,10 @@ test.describe('Consulting pages', () => {
       await expect(body).not.toContainText('audyt bezpieczeństwa');
       await expect(body).not.toContainText('clinical evaluation');
       await expect(body).not.toContainText('ewaluacja kliniczna');
+      await expect(body).not.toContainText('fixed price');
+      await expect(body).not.toContainText('price list');
+      await expect(body).not.toContainText('cennik');
+      await expect(body).not.toContainText('stała cena');
 
       await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
     });
