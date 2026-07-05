@@ -10,6 +10,7 @@ const routes = [
   '/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation/',
   '/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/',
   '/articles/trust-in-the-age-of-ready-made-answers/',
+  '/articles/are-we-afraid-of-ai-or-of-ourselves/',
   '/pl/articles/nie-chodzi-tylko-o-prompt/',
   '/pl/articles/model-nie-pamieta-model-ma-kontekst/',
   '/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/',

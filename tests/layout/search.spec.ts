@@ -78,7 +78,7 @@ test.describe('local search', () => {
     const plIndex = await readSearchIndex(request, '/search-index.pl.json');
     const allText = JSON.stringify([...enIndex, ...plIndex]);
 
-    expect(countByType(enIndex, 'article')).toBe(5);
+    expect(countByType(enIndex, 'article')).toBe(6);
     expect(countByType(plIndex, 'article')).toBe(6);
     expect(countByType(enIndex, 'note')).toBe(4);
     expect(countByType(plIndex, 'note')).toBe(4);
@@ -91,6 +91,11 @@ test.describe('local search', () => {
         expect.objectContaining({
           title: 'Trust in the age of ready-made answers',
           url: '/articles/trust-in-the-age-of-ready-made-answers/',
+          type: 'article'
+        }),
+        expect.objectContaining({
+          title: 'Are we afraid of AI, or of ourselves?',
+          url: '/articles/are-we-afraid-of-ai-or-of-ourselves/',
           type: 'article'
         })
       ])
@@ -161,6 +166,30 @@ test.describe('local search', () => {
     await expect(articleLink).toBeVisible();
 
     await input.fill('AI');
+    await expect(articleLink).toBeVisible();
+  });
+
+  test('finds the English AI fears article by title and threat framing terms', async ({ page }) => {
+    await page.goto('/search/');
+
+    const input = page.getByPlaceholder('Search by topic, concept or phrase');
+    const articleLink = page.getByRole('link', {
+      name: 'Are we afraid of AI, or of ourselves?'
+    });
+
+    await input.fill('afraid');
+    await expect(articleLink).toBeVisible();
+
+    await input.fill('harmful intentions');
+    await expect(articleLink).toBeVisible();
+
+    await input.fill('war');
+    await expect(articleLink).toBeVisible();
+
+    await input.fill('surveillance');
+    await expect(articleLink).toBeVisible();
+
+    await input.fill('responsibility');
     await expect(articleLink).toBeVisible();
   });
 });

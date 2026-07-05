@@ -37,10 +37,8 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).toContain('/pl/search/');
     expect(sitemap).toContain('/articles/trust-in-the-age-of-ready-made-answers/');
     expect(sitemap).toContain('/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/');
+    expect(sitemap).toContain('/articles/are-we-afraid-of-ai-or-of-ourselves/');
     expect(sitemap).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
-    expect(sitemap).not.toContain(
-      'https://promptedpsyche.com/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/'
-    );
   });
 
   test('keeps Practice drafts out of RSS', () => {
@@ -50,10 +48,8 @@ test.describe('built sitemap and RSS policy', () => {
     expect(rss).not.toContain('/pl/practice/');
     expect(rss).toContain('/articles/trust-in-the-age-of-ready-made-answers/');
     expect(rss).toContain('/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/');
+    expect(rss).toContain('/articles/are-we-afraid-of-ai-or-of-ourselves/');
     expect(rss).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
-    expect(rss).not.toContain(
-      'https://promptedpsyche.com/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/'
-    );
   });
 
   test('keeps X-Robots-Tag scoped to tag archives after launch', () => {
