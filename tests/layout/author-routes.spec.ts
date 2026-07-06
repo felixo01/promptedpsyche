@@ -12,6 +12,14 @@ async function expectNoHorizontalOverflow(page: Page) {
   expect(result.bodyScrollWidth).toBeLessThanOrEqual(result.innerWidth + 1);
 }
 
+async function expectStructuredAuthorIdentity(page: Page) {
+  const structuredData = await page.locator('script[type="application/ld+json"]').evaluateAll((scripts) =>
+    scripts.map((script) => script.textContent ?? '').join('\n')
+  );
+
+  expect(structuredData).toContain('Feliks Mamczur');
+}
+
 test.describe('author and about routes', () => {
   test('keeps English About as the canonical author route', async ({ page }) => {
     await page.goto('/about/');
@@ -28,8 +36,9 @@ test.describe('author and about routes', () => {
     );
     await expect(page.locator('body')).toContainText('artificial intelligence changes the way people think');
     await expect(page.locator('body')).toContainText(
-      'Feliks Mamczur is the author of Prompted Psyche'
+      'I created Prompted Psyche as a place to write about the human side of AI'
     );
+    await expectStructuredAuthorIdentity(page);
     await expect(page.locator('body')).toContainText('Cyberpsychology and Human-AI Interaction');
     await expect(page.locator('body')).toContainText('intelligent systems');
     await expect(page.locator('body')).toContainText(
@@ -74,7 +83,8 @@ test.describe('author and about routes', () => {
       '/about/'
     );
     await expect(page.locator('body')).toContainText('sztuczna inteligencja zmienia sposób myślenia');
-    await expect(page.locator('body')).toContainText('Feliks Mamczur jest autorem Prompted Psyche');
+    await expect(page.locator('body')).toContainText('Stworzyłem Prompted Psyche jako miejsce');
+    await expectStructuredAuthorIdentity(page);
     await expect(page.locator('body')).toContainText('cyberpsychologii, Human-AI Interaction');
     await expect(page.locator('body')).toContainText('inteligentnymi systemami');
     await expect(page.locator('body')).toContainText(
