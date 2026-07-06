@@ -12,13 +12,23 @@ const isSearchIndex = (page) => {
   return pathname.startsWith('/search-index') && pathname.endsWith('.json');
 };
 
+const isPracticePreview = (page) => {
+  const { pathname } = new URL(page);
+  return pathname.startsWith('/practice/') || pathname.startsWith('/pl/practice/');
+};
+
 export default defineConfig({
   site: 'https://promptedpsyche.com',
   redirects: {
     '/author': '/about/',
     '/pl/author': '/pl/about/'
   },
-  integrations: [mdx(), sitemap({ filter: (page) => !isTagArchive(page) && !isSearchIndex(page) })],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) => !isTagArchive(page) && !isSearchIndex(page) && !isPracticePreview(page)
+    })
+  ],
   markdown: {
     shikiConfig: {
       theme: 'github-dark'

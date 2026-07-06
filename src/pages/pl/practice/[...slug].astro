@@ -1,0 +1,95 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import EntryList from '../../../components/EntryList.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import EntryLayout from '../../../layouts/EntryLayout.astro';
+import { onlyEntriesByLang, sortByDateDesc } from '../../../lib/content';
+import { showPractice } from '../../../lib/features';
+import { getPracticeAlternates } from '../../../lib/practiceRoutes';
+
+type PracticeEntry = CollectionEntry<'practice'>;
+
+const practiceIndexAlternates = {
+  en: '/practice/',
+  pl: '/pl/practice/',
+  xDefault: '/practice/'
+};
+
+export async function getStaticPaths() {
+  if (!showPractice) {
+    return [];
+  }
+
+  const allPractice = await getCollection('practice');
+  const entries = sortByDateDesc(onlyEntriesByLang(allPractice, 'pl'));
+
+  return [
+    {
+      params: { slug: undefined },
+      props: { pageKind: 'index', entries }
+    },
+    ...entries.map((entry) => ({
+      params: { slug: entry.id },
+      props: {
+        pageKind: 'entry',
+        entry,
+        alternateLinks: getPracticeAlternates(entry, allPractice)
+      }
+    }))
+  ];
+}
+
+const { pageKind, entries = [], entry, alternateLinks } = Astro.props as {
+  pageKind: 'index' | 'entry';
+  entries?: PracticeEntry[];
+  entry?: PracticeEntry;
+  alternateLinks?: typeof practiceIndexAlternates;
+};
+
+const rendered = entry ? await render(entry) : undefined;
+const Content = rendered?.Content;
+---
+
+{
+  pageKind === 'entry' && entry ? (
+    <EntryLayout
+      entry={entry}
+      label="Praktyka"
+      lang="pl"
+      alternateLinks={alternateLinks}
+      robots="noindex, nofollow"
+    >
+      {Content && <Content />}
+    </EntryLayout>
+  ) : (
+    <BaseLayout
+      title="Praktyka"
+      description="Praktyczne ćwiczenia AI literacy do sprawdzania źródeł, niepewności, interpretacji i zaufania."
+      lang="pl"
+      alternateLinks={practiceIndexAlternates}
+      robots="noindex, nofollow"
+    >
+      <section class="hero publication-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Praktyka</p>
+          <h1>Praktyka</h1>
+          <p class="lede">
+            Praktyczne ćwiczenia AI literacy do sprawdzania źródeł, niepewności, interpretacji i zaufania.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <EntryList
+            entries={entries}
+            basePath="/pl/practice"
+            label="Praktyka"
+            dateLocale="pl"
+            ctaLabel="Otwórz praktykę"
+          />
+        </div>
+      </section>
+    </BaseLayout>
+  )
+}

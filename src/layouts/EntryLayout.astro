@@ -28,6 +28,7 @@ interface Props {
   label: string;
   lang?: Locale;
   alternateLinks?: AlternateLinks;
+  robots?: string;
   showPublishedAt?: boolean;
   showRightsNotice?: boolean;
 }
@@ -37,6 +38,7 @@ const {
   label,
   lang = 'en',
   alternateLinks,
+  robots,
   showPublishedAt = true,
   showRightsNotice = true
 } = Astro.props;
@@ -116,6 +118,7 @@ const asideLabels = isConceptEntry
   type="article"
   lang={lang}
   alternateLinks={alternateLinks}
+  robots={robots}
   structuredData={articleStructuredData}
 >
   <article class:list={['article-shell', isConceptEntry ? 'article-shell--concept' : 'article-shell--publication']}>
