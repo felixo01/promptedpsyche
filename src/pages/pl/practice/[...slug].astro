@@ -64,31 +64,44 @@ const Content = rendered?.Content;
   ) : (
     <BaseLayout
       title="Praktyka"
-      description="Praktyczne ćwiczenia AI literacy do sprawdzania źródeł, niepewności, interpretacji i zaufania."
+      description="Krótkie, praktyczne scenariusze pracy z AI."
       lang="pl"
       alternateLinks={practiceIndexAlternates}
       robots="noindex, nofollow"
     >
-      <section class="hero publication-hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Praktyka</p>
-          <h1>Praktyka</h1>
-          <p class="lede">
-            Praktyczne ćwiczenia AI literacy do sprawdzania źródeł, niepewności, interpretacji i zaufania.
+      <section class="page-shell">
+        <header class="page-header">
+          <div>
+            <p class="eyebrow">Praktyka</p>
+            <h1>Praktyka</h1>
+          </div>
+          <p>
+            Krótkie, praktyczne scenariusze pracy z AI - sprawdzanie odpowiedzi,
+            źródeł, niepewności, tekstów i decyzji bez oddawania modelowi
+            odpowiedzialności.
           </p>
-        </div>
-      </section>
+        </header>
 
-      <section class="section">
-        <div class="section-inner">
+        <section class="practice-discovery" aria-labelledby="practice-discovery-title">
+          <div class="editorial-section-header">
+            <div>
+              <p class="section-kicker">Praktyka</p>
+              <h2 id="practice-discovery-title">Wybierz sytuację</h2>
+            </div>
+            <p>
+              Wybierz konkretną sytuację pracy z AI i użyj scenariusza, żeby
+              zwolnić, sprawdzić to, co ważne, i zostawić odpowiedzialność po
+              stronie człowieka.
+            </p>
+          </div>
           <EntryList
             entries={entries}
             basePath="/pl/practice"
             label="Praktyka"
             dateLocale="pl"
-            ctaLabel="Otwórz praktykę"
+            ctaLabel="Otwórz scenariusz"
           />
-        </div>
+        </section>
       </section>
     </BaseLayout>
   )

@@ -64,30 +64,42 @@ const Content = rendered?.Content;
   ) : (
     <BaseLayout
       title="Practice"
-      description="Practical AI literacy exercises for checking sources, uncertainty, interpretation and trust."
+      description="Short, practical scenarios for working with AI more carefully."
       lang="en"
       alternateLinks={practiceIndexAlternates}
       robots="noindex, nofollow"
     >
-      <section class="hero publication-hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Practice</p>
-          <h1>Practice</h1>
-          <p class="lede">
-            Practical AI literacy exercises for checking sources, uncertainty, interpretation and trust.
+      <section class="page-shell">
+        <header class="page-header">
+          <div>
+            <p class="eyebrow">Practice</p>
+            <h1>Practice</h1>
+          </div>
+          <p>
+            Short, practical scenarios for working with AI more carefully -
+            checking answers, handling sources, asking for uncertainty,
+            reviewing text and keeping decisions human.
           </p>
-        </div>
-      </section>
+        </header>
 
-      <section class="section">
-        <div class="section-inner">
+        <section class="practice-discovery" aria-labelledby="practice-discovery-title">
+          <div class="editorial-section-header">
+            <div>
+              <p class="section-kicker">Practice</p>
+              <h2 id="practice-discovery-title">Choose a situation</h2>
+            </div>
+            <p>
+              Pick a concrete AI-use situation and use the guide to slow down,
+              check what matters and keep responsibility with the person using the model.
+            </p>
+          </div>
           <EntryList
             entries={entries}
             basePath="/practice"
             label="Practice"
-            ctaLabel="Open practice"
+            ctaLabel="Open scenario"
           />
-        </div>
+        </section>
       </section>
     </BaseLayout>
   )

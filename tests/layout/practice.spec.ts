@@ -1,6 +1,14 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 
 const showPractice = process.env.SHOW_PRACTICE === 'true';
+
+const forbiddenPracticePhrases = [
+  'Prompt library',
+  'Prompt database',
+  'Best prompts',
+  'Prompt hacks',
+  'Szukaj promptu'
+];
 
 const practiceDrafts = [
   {
@@ -64,6 +72,18 @@ const publicIndexes = [
   '/pl/concepts/'
 ];
 
+async function expectNoHorizontalOverflow(page: Page) {
+  const overflow = await page.evaluate(() => ({
+    documentScrollWidth: document.documentElement.scrollWidth,
+    documentClientWidth: document.documentElement.clientWidth,
+    bodyScrollWidth: document.body.scrollWidth,
+    innerWidth: window.innerWidth
+  }));
+
+  expect(overflow.documentScrollWidth).toBeLessThanOrEqual(overflow.documentClientWidth + 1);
+  expect(overflow.bodyScrollWidth).toBeLessThanOrEqual(overflow.innerWidth + 1);
+}
+
 test.describe('practice drafts', () => {
   test('keeps practice drafts out of public indexes and routes', async ({ page, request }) => {
     test.skip(showPractice, 'Production Practice safety runs with SHOW_PRACTICE disabled.');
@@ -83,6 +103,12 @@ test.describe('practice drafts', () => {
       const response = await request.get(draft.route);
       expect(response.ok()).toBe(false);
     }
+
+    const enIndexResponse = await request.get('/practice/');
+    const plIndexResponse = await request.get('/pl/practice/');
+
+    expect(enIndexResponse.ok()).toBe(false);
+    expect(plIndexResponse.ok()).toBe(false);
   });
 
   test('renders local Practice preview routes when SHOW_PRACTICE is enabled', async ({ page, request }) => {
@@ -100,9 +126,17 @@ test.describe('practice drafts', () => {
 
     await page.goto('/practice/');
     await expect(page.getByRole('heading', { name: 'Practice', level: 1 })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Choose a situation', level: 2 })).toBeVisible();
+    await expect(
+      page.getByText(
+        'Short, practical scenarios for working with AI more carefully - checking answers, handling sources, asking for uncertainty, reviewing text and keeping decisions human.'
+      )
+    ).toBeVisible();
+    await expect(page.locator('.entry-list article')).toHaveCount(6);
     await expect(
       page.locator('.entry-title-link', { hasText: 'How to check whether an AI answer has sources' })
     ).toBeVisible();
+    await expect(page.getByRole('link', { name: /Open scenario:/ })).toHaveCount(6);
     await expect(page.locator('[data-qa="site-nav"]')).not.toContainText('Practice');
     await expect(page.locator('[data-qa="site-nav"]')).not.toContainText('Praktyka');
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
@@ -110,6 +144,10 @@ test.describe('practice drafts', () => {
       'href',
       '/pl/practice/'
     );
+    for (const phrase of forbiddenPracticePhrases) {
+      await expect(page.locator('body')).not.toContainText(phrase);
+    }
+    await expectNoHorizontalOverflow(page);
 
     await page.goto('/practice/how-to-check-whether-an-ai-answer-has-sources/');
     await expect(page.getByRole('heading', { name: 'How to check whether an AI answer has sources' })).toBeVisible();
@@ -121,22 +159,24 @@ test.describe('practice drafts', () => {
 
     await page.goto('/pl/practice/');
     await expect(page.getByRole('heading', { name: 'Praktyka', level: 1 })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Wybierz sytuację', level: 2 })).toBeVisible();
+    await expect(
+      page.getByText(
+        'Krótkie, praktyczne scenariusze pracy z AI - sprawdzanie odpowiedzi, źródeł, niepewności, tekstów i decyzji bez oddawania modelowi odpowiedzialności.'
+      )
+    ).toBeVisible();
+    await expect(page.locator('.entry-list article')).toHaveCount(6);
     await expect(
       page.locator('.entry-title-link', { hasText: 'Jak sprawdzić, czy odpowiedź AI ma źródła' })
     ).toBeVisible();
+    await expect(page.getByRole('link', { name: /Otwórz scenariusz:/ })).toHaveCount(6);
     await expect(page.locator('[data-qa="language-switcher"]').getByRole('link', { name: 'EN' })).toHaveAttribute(
       'href',
       '/practice/'
     );
-
-    const overflow = await page.evaluate(() => ({
-      documentScrollWidth: document.documentElement.scrollWidth,
-      documentClientWidth: document.documentElement.clientWidth,
-      bodyScrollWidth: document.body.scrollWidth,
-      innerWidth: window.innerWidth
-    }));
-
-    expect(overflow.documentScrollWidth).toBeLessThanOrEqual(overflow.documentClientWidth + 1);
-    expect(overflow.bodyScrollWidth).toBeLessThanOrEqual(overflow.innerWidth + 1);
+    for (const phrase of forbiddenPracticePhrases) {
+      await expect(page.locator('body')).not.toContainText(phrase);
+    }
+    await expectNoHorizontalOverflow(page);
   });
 });
