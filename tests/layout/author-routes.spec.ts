@@ -26,25 +26,30 @@ test.describe('author and about routes', () => {
       'href',
       '/pl/about/'
     );
-    await expect(page.locator('body')).toContainText('why an answer feels credible');
+    await expect(page.locator('body')).toContainText('artificial intelligence changes the way people think');
     await expect(page.locator('body')).toContainText('Cyberpsychology and Human-AI Interaction');
-    await expect(page.locator('body')).toContainText('writing, sources, context, versions');
+    await expect(page.locator('body')).toContainText('intelligent systems');
     await expect(page.locator('body')).toContainText(
-      'You can find more of my film work and directing portfolio at felixmamczur.com.'
+      'You can find my earlier visual and film projects at felixmamczur.com.'
     );
-    await expect(page.getByRole('link', { name: 'film work and directing portfolio' })).toHaveAttribute(
+    await expect(page.getByRole('link', { name: 'earlier visual and film projects' })).toHaveAttribute(
       'href',
       'https://felixmamczur.com/'
     );
-    await expect(page.getByRole('link', { name: 'film work and directing portfolio' })).toHaveAttribute(
+    await expect(page.getByRole('link', { name: 'earlier visual and film projects' })).toHaveAttribute(
       'title',
-      'Feliks Mamczur - film work and directing portfolio'
+      'Feliks Mamczur - earlier visual and film projects'
     );
     await expect(page.getByRole('link', { name: 'felixmamczur.com' })).toHaveCount(0);
     await expect(page.locator('body')).not.toContainText('film director portfolio and earlier projects');
     await expect(page.locator('body')).not.toContainText('European Film Academy');
     await expect(page.locator('body')).not.toContainText('I am a filmmaker');
+    await expect(page.locator('body')).not.toContainText('filmmaker');
+    await expect(page.locator('body')).not.toContainText('film director');
+    await expect(page.locator('body')).not.toContainText('director');
+    await expect(page.locator('body')).not.toContainText('film work and directing portfolio');
     await expect(page.locator('body')).not.toContainText('studying psychology');
+    await expect(page.locator('body')).not.toContainText('psychology studies');
     await expect(page.locator('body')).not.toContainText('AI engineer');
     await expect(page.locator('body')).not.toContainText('cybersecurity expert');
     await expect(page.locator('body')).not.toContainText('clinical psychologist');
@@ -65,25 +70,31 @@ test.describe('author and about routes', () => {
       'href',
       '/about/'
     );
-    await expect(page.locator('body')).toContainText('co dzieje się z człowiekiem');
-    await expect(page.locator('body')).toContainText('Cyberpsychologia i Human-AI Interaction');
-    await expect(page.locator('body')).toContainText('tekstów, źródeł, kontekstu');
+    await expect(page.locator('body')).toContainText('sztuczna inteligencja zmienia sposób myślenia');
+    await expect(page.locator('body')).toContainText('cyberpsychologii, Human-AI Interaction');
+    await expect(page.locator('body')).toContainText('inteligentnymi systemami');
     await expect(page.locator('body')).toContainText(
-      'Moje prace filmowe i portfolio reżyserskie można znaleźć na felixmamczur.com.'
+      'Moje wcześniejsze projekty wizualne i filmowe można znaleźć na felixmamczur.com.'
     );
-    await expect(page.getByRole('link', { name: 'prace filmowe i portfolio reżyserskie' })).toHaveAttribute(
+    await expect(page.getByRole('link', { name: 'wcześniejsze projekty wizualne i filmowe' })).toHaveAttribute(
       'href',
       'https://felixmamczur.com/'
     );
-    await expect(page.getByRole('link', { name: 'prace filmowe i portfolio reżyserskie' })).toHaveAttribute(
+    await expect(page.getByRole('link', { name: 'wcześniejsze projekty wizualne i filmowe' })).toHaveAttribute(
       'title',
-      'Feliks Mamczur - prace filmowe i portfolio reżyserskie'
+      'Feliks Mamczur - wcześniejsze projekty wizualne i filmowe'
     );
     await expect(page.getByRole('link', { name: 'felixmamczur.com' })).toHaveCount(0);
     await expect(page.locator('body')).not.toContainText('portfolio filmowe i wcześniejsze projekty');
     await expect(page.locator('body')).not.toContainText('European Film Academy');
     await expect(page.locator('body')).not.toContainText('Jestem reżyserem');
+    await expect(page.locator('body')).not.toContainText('reżyser');
+    await expect(page.locator('body')).not.toContainText('montażysta');
+    await expect(page.locator('body')).not.toContainText('filmowiec');
+    await expect(page.locator('body')).not.toContainText('portfolio reżyserskie');
     await expect(page.locator('body')).not.toContainText('studiuję psychologię');
+    await expect(page.locator('body')).not.toContainText('studiuje psychologię');
+    await expect(page.locator('body')).not.toContainText('studia psychologiczne');
     await expect(page.locator('body')).not.toContainText('inżynier AI');
     await expect(page.locator('body')).not.toContainText('ekspert cyberbezpieczeństwa');
     await expect(page.locator('body')).not.toContainText('psychologiem');
