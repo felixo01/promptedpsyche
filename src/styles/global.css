@@ -747,6 +747,19 @@ html[lang='pl'] .home-hero h1 {
   color: var(--accent);
 }
 
+.inline-text-link {
+  border-bottom: 1px solid rgba(28, 25, 23, 0.35);
+  color: var(--ink);
+  font-weight: 560;
+  text-decoration: none;
+}
+
+.inline-text-link:hover,
+.inline-text-link:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .topic-section,
 .tinted-section {
   position: relative;
