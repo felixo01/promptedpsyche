@@ -1,6 +1,6 @@
 ---
 title: "How to check whether an AI answer has sources"
-description: "A practice for checking which AI claims need sources, whether cited sources exist and whether they actually support the answer."
+description: "A practice for checking AI claims, sources and citations before they enter an article, presentation, team note or decision."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -18,7 +18,7 @@ category: "Practice"
 
 A fluent AI answer can look like a finished explanation, but style does not show where the claims come from. Even a link, publication title or author name is not evidence until a person checks whether the source exists and whether it actually supports the claim.
 
-This practice treats the answer as material for verification: source-dependent claims, interpretations, risky passages and the work that has to happen outside the chat.
+This practice treats the answer as material for verification: source-dependent claims, interpretations, risky passages and the work that has to happen outside the chat. It is most useful for article drafts, team notes, presentations and claims that contain numbers, dates or institutional names.
 
 ## When this helps
 
@@ -29,7 +29,7 @@ This practice treats the answer as material for verification: source-dependent c
 
 ## What to ask the model
 
-Use the model to organize risk, not to confirm itself.
+Use the model to organize risk, not to confirm itself. Source checking happens outside the model.
 
 ```text
 Read your previous answer and help me check which parts require sources.
@@ -39,10 +39,10 @@ Divide the answer into 5 parts:
 1. Claims that require a source.
 2. Claims that are interpretation or general explanation.
 3. Links, titles, names or citations that I need to check outside this conversation.
-4. Places where a source must not only exist, but actually support the specific claim.
-5. Information I should not use without current verification.
+4. Places where a source must not only exist, but support this specific claim.
+5. Information I should not use without current external verification.
 
-Do not invent publications, links or authors. If you cannot verify something, say so directly. At the end, identify the 3 riskiest parts of the answer if I use them without checking.
+Do not invent publications, links or authors. Do not pretend to check sources if you do not have access to them. At the end, identify the 3 riskiest parts of the answer if I use them without checking.
 ```
 
 ## What to check yourself
@@ -62,7 +62,7 @@ Do not invent publications, links or authors. If you cannot verify something, sa
 
 ## Better way to use the answer
 
-The model says that a method "increases team effectiveness by 30%" and that recent studies support it. The better move is not to ask the model to "add sources". First mark the number as a claim that requires verification. Then check whether the study exists and whether it applies to a similar team, method and context.
+The model says in a presentation draft that a method "increases team effectiveness by 30%" and that recent studies support it. The better move is not to ask the model to "add sources". First mark the number as a claim that requires verification. Then check whether the study exists and whether it applies to a similar team, method and context.
 
 This moves attention from finished [model output](/concepts/model-output/) to what the information is based on. It is a simple exercise in [epistemic vigilance](/concepts/epistemic-vigilance/): not only "does this sound good?", but "what can be checked, where and by whom?".
 

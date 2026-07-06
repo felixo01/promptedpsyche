@@ -1,6 +1,6 @@
 ---
 title: "How to analyze a message without diagnosing a person"
-description: "A practice for organizing a difficult message with AI without diagnosing the sender, mind-reading intentions or handing over responsibility for the reply."
+description: "A practice for organizing a difficult message with AI without diagnosing the sender, mind-reading intentions or handing over responsibility for a working reply."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -18,18 +18,20 @@ category: "Practice"
 
 AI can help organize a difficult email, client message or tense exchange. It can also push the user too quickly toward psychological claims about the person on the other side: "they are manipulative", "they are narcissistic", "they have a hidden intention", "they are definitely attacking me".
 
-This practice sets a simple boundary: analyze the visible text and missing context, not the human being. The aim is a calmer reply, less intention-reading and more responsibility on the side of the person who decides what to send.
+This practice sets a simple boundary: analyze the visible text and missing context, not the human being. The aim is a working reply, less intention-reading and more responsibility on the side of the person who decides what to send.
+
+It can help prepare a response, but it does not determine what someone "really" meant.
 
 ## When this helps
 
 - When a message is conflictual, unclear or emotionally loaded.
 - When you need to prepare a reply without escalating tension.
 - When you want to separate facts, requests, tone and possible readings.
-- When a team is analyzing communication with a client, colleague, partner or audience.
+- When a team is analyzing communication with a client, colleague, partner or audience without evaluating the person on the other side.
 
 ## What to ask the model
 
-Ask the model to analyze the visible message, not the person.
+Ask the model to analyze the visible message, not the person. Treat the result as a draft to judge, not as a conclusion.
 
 ```text
 Help me analyze the message below without diagnosing the person who wrote it.
@@ -42,8 +44,9 @@ Analyze only the visible text:
 4. What context is missing if I want to reply carefully?
 5. What cannot be honestly inferred from the message alone?
 6. What clarifying questions could I ask before replying?
+7. What could a working reply look like if it responds only to the visible situation?
 
-Do not diagnose the sender. Do not use labels such as narcissistic, borderline, manipulative or toxic. Do not assign psychological traits and do not guess hidden intentions. At the end, suggest a calmer working version that responds to the visible situation and still needs human judgment before sending.
+Do not diagnose the sender. Do not use labels such as narcissistic, borderline, manipulative or toxic. Do not assign psychological traits and do not guess hidden intentions. If context is missing, name the missing context instead of filling it with a judgment about the person. The reply should be a working draft that still needs human judgment before sending.
 
 Message:
 [paste message]
@@ -55,6 +58,7 @@ Message:
 - Which facts can be confirmed before replying.
 - Whether the situation needs a procedure, another person or support beyond AI.
 - Whether the suggested reply fits the relationship, stakes and context.
+- Whether you should reply immediately at all, or first gather facts or talk outside the text thread.
 
 ## What can go wrong
 
@@ -62,10 +66,11 @@ Message:
 - The model may suggest a psychological label when only a fragment of communication is visible.
 - The user may use the analysis to confirm their own anger or fear.
 - A calmer reply may be too soft, too formal or inadequate to the situation.
+- A working draft can start to look like a finished decision if the person does not pause before sending it.
 
 ## Better way to use the answer
 
-A message says, "I still have not received the materials. I assume this is not a priority for you." The model can help separate the visible fact, missing materials, from the interpretation about priority. It can suggest a careful reply: acknowledge the delay, clarify the status and ask which deadline matters now. It should not decide that the sender is aggressive, manipulative or "really" feeling something.
+A message says, "I still have not received the materials. I assume this is not a priority for you." The model can help separate the visible fact, missing materials, from the interpretation about priority. It can suggest a working reply: acknowledge the delay, clarify the status and ask which deadline matters now. That draft still has to be fitted to the relationship and situation. The model should not decide that the sender is aggressive, manipulative or "really" feeling something.
 
 This matters in [AI-mediated communication](/concepts/ai-mediated-communication/), because a model can quickly give a difficult situation a narrative that feels too certain. The practice supports [human agency](/concepts/human-agency/): AI organizes the material, but it does not take responsibility for the relationship, the decision or the consequences.
 

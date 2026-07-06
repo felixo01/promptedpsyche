@@ -1,6 +1,6 @@
 ---
 title: "How not to confuse fluency with truth"
-description: "A practice for pausing when an AI answer sounds coherent and confident but may hide uncertainty, assumptions or missing sources."
+description: "A practice for pausing when an AI answer sounds coherent and confident but may hide uncertainty, assumptions, overgeneralization or missing sources."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -20,6 +20,8 @@ Language models can write calmly, elegantly and logically even when an answer is
 
 This practice helps you pause when an answer "sounds true" and ask: what comes from the material, what is an assumption, where are sources missing and what counterexamples could weaken the conclusion?
 
+It is different from source checking. There the question is: "does this have external support?". Here the question is: "is the style of the answer giving me too much confidence?".
+
 ## When this helps
 
 - When an answer sounds very convincing but has no sources.
@@ -29,7 +31,7 @@ This practice helps you pause when an answer "sounds true" and ask: what comes f
 
 ## What to ask the model
 
-Ask the model to break the feeling of certainty into parts.
+Ask the model to break the feeling of certainty into parts. The aim is not to improve the style, but to notice where style is acting like evidence.
 
 ```text
 Read the answer below and help me avoid confusing fluency with truth.
@@ -41,9 +43,9 @@ Evaluate it this way:
 3. Which claims need checking outside this conversation?
 4. Where might the answer be hiding uncertainty, missing sources or overgeneralization?
 5. What counterexamples or conditions could change the conclusion?
-6. How can the answer be edited so it is more cautious and does not pretend to have more certainty than it has?
+6. What would a more cautious version of this answer look like, without adding false certainty?
 
-Do not make the text more rhetorically persuasive. Do not add certainty. Help me see what needs checking before I use the answer.
+Do not make the text more rhetorically persuasive. Do not add certainty. Do not treat a more cautious rewrite as fact-checking. Help me see what needs checking before I use the answer.
 
 Answer:
 [paste answer]
@@ -66,7 +68,7 @@ Answer:
 
 ## Better way to use the answer
 
-An AI answer says, "Companies that adopt AI usually see productivity gains quickly because automation removes most repetitive work." Instead of repeating the sentence, pause at "usually", "quickly" and "most". These are not just style. They are claims that need data, definitions and context.
+An AI answer says, "Companies that adopt AI usually see productivity gains quickly because automation removes most repetitive work." Instead of repeating the sentence, pause at "usually", "quickly" and "most". These are not just style. They are claims that need data, definitions and context. A more cautious version may sound better, but it still does not replace checking the facts.
 
 This separates language quality from the knowledge status of [model output](/concepts/model-output/). It is a practical exercise in [calibrated trust](/concepts/calibrated-trust/): do not reject everything, but do not mistake good style for a basis for trust.
 

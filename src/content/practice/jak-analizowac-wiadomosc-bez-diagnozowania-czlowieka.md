@@ -1,6 +1,6 @@
 ---
 title: "Jak analizować wiadomość bez diagnozowania człowieka"
-description: "Praktyka porządkowania trudnej wiadomości z AI bez diagnozowania nadawcy, czytania intencji ani oddawania modelowi odpowiedzialności za odpowiedź."
+description: "Praktyka porządkowania trudnej wiadomości z AI bez diagnozowania nadawcy, czytania intencji ani oddawania modelowi odpowiedzialności za roboczą odpowiedź."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -18,18 +18,20 @@ category: "Praktyka"
 
 AI może pomóc uporządkować trudnego maila, wiadomość od klienta albo napiętą rozmowę. Może też zbyt łatwo popchnąć użytkownika w stronę psychologizowania osoby po drugiej stronie: "manipuluje", "jest narcystyczna", "ma ukrytą intencję", "na pewno chce mnie zaatakować".
 
-Ta praktyka stawia prostą granicę: analizujemy widoczny tekst i brakujący kontekst, nie diagnozujemy człowieka. Celem jest spokojniejsza odpowiedź, mniej dopisywania intencji i więcej odpowiedzialności po stronie osoby, która ostatecznie decyduje, co napisać.
+Ta praktyka stawia prostą granicę: analizujemy widoczny tekst i brakujący kontekst, nie diagnozujemy człowieka. Celem jest przygotowanie roboczej odpowiedzi, mniej dopisywania intencji i więcej odpowiedzialności po stronie osoby, która ostatecznie decyduje, co napisać.
+
+To pomaga przygotować reakcję, ale nie ustala, co ktoś "naprawdę" miał na myśli.
 
 ## Kiedy to pomaga
 
 - Gdy wiadomość jest konfliktowa, niejasna albo emocjonalnie obciążająca.
 - Gdy trzeba przygotować odpowiedź bez eskalowania napięcia.
 - Gdy chcesz rozdzielić fakty, prośby, ton i możliwe interpretacje.
-- Gdy zespół analizuje komunikację z klientem, współpracownikiem, partnerem albo odbiorcą.
+- Gdy zespół analizuje komunikację z klientem, współpracownikiem, partnerem albo odbiorcą bez oceniania osoby po drugiej stronie.
 
 ## O co poprosić model
 
-Poproś model o analizę widocznego komunikatu, nie osoby.
+Poproś model o analizę widocznego komunikatu, nie osoby. Wynik traktuj jako szkic do oceny, nie jako rozstrzygnięcie.
 
 ```text
 Pomóż mi przeanalizować poniższą wiadomość bez diagnozowania osoby, która ją napisała.
@@ -42,8 +44,9 @@ Zrób tylko analizę widocznego tekstu:
 4. Jakiego kontekstu brakuje, żeby odpowiedzieć ostrożnie?
 5. Czego nie da się uczciwie wywnioskować z samej wiadomości?
 6. Jakie pytania doprecyzowujące mogę zadać, zanim odpowiem?
+7. Jak może wyglądać robocza odpowiedź, która odnosi się tylko do widocznej sytuacji?
 
-Nie diagnozuj nadawcy. Nie używaj etykiet takich jak narcystyczny, borderline, manipulacyjny albo toksyczny. Nie przypisuj cech psychologicznych i nie zgaduj ukrytych intencji. Na końcu zaproponuj roboczą, spokojniejszą wersję odpowiedzi, która odnosi się do widocznej sytuacji i którą człowiek musi ocenić przed wysłaniem.
+Nie diagnozuj nadawcy. Nie używaj etykiet takich jak narcystyczny, borderline, manipulacyjny albo toksyczny. Nie przypisuj cech psychologicznych i nie zgaduj ukrytych intencji. Jeśli brakuje kontekstu, nazwij brak kontekstu zamiast wypełniać go oceną osoby. Odpowiedź ma być roboczym szkicem, który człowiek musi ocenić przed wysłaniem.
 
 Wiadomość:
 [wklej wiadomość]
@@ -55,6 +58,7 @@ Wiadomość:
 - Jakie fakty można potwierdzić przed odpowiedzią.
 - Czy sytuacja wymaga procedury, rozmowy z człowiekiem albo wsparcia poza AI.
 - Czy proponowana odpowiedź jest adekwatna do relacji, stawki i kontekstu.
+- Czy w ogóle należy odpowiadać od razu, czy lepiej najpierw zebrać fakty albo porozmawiać poza tekstem.
 
 ## Co może pójść źle
 
@@ -62,10 +66,11 @@ Wiadomość:
 - Model może zasugerować etykietę psychologiczną tam, gdzie widać tylko fragment komunikacji.
 - Użytkownik może użyć analizy jako potwierdzenia własnej złości albo lęku.
 - Spokojniejsza odpowiedź może być zbyt miękka, zbyt formalna albo nieadekwatna do sytuacji.
+- Roboczy szkic może zacząć wyglądać jak gotowa decyzja, jeśli człowiek nie zatrzyma się przed wysłaniem.
 
 ## Lepszy sposób użycia odpowiedzi
 
-Wiadomość brzmi: "Nie dostałem jeszcze materiałów. Zakładam, że temat nie jest dla was priorytetem". Model może pomóc rozdzielić widoczny fakt, czyli brak materiałów, od interpretacji o priorytecie. Może też zaproponować ostrożną odpowiedź: potwierdzić opóźnienie, wyjaśnić status i zapytać, jaki termin jest teraz kluczowy. Nie powinien jednak orzekać, że nadawca jest agresywny, manipulacyjny albo "naprawdę" coś czuje.
+Wiadomość brzmi: "Nie dostałem jeszcze materiałów. Zakładam, że temat nie jest dla was priorytetem". Model może pomóc rozdzielić widoczny fakt, czyli brak materiałów, od interpretacji o priorytecie. Może też zaproponować roboczą odpowiedź: potwierdzić opóźnienie, wyjaśnić status i zapytać, jaki termin jest teraz kluczowy. Taki szkic nadal trzeba dopasować do relacji i sytuacji. Model nie powinien orzekać, że nadawca jest agresywny, manipulacyjny albo "naprawdę" coś czuje.
 
 Ta praktyka jest ważna w [komunikacji zapośredniczonej przez AI](/pl/concepts/ai-mediated-communication/), bo model może szybko nadać trudnej sytuacji zbyt pewną narrację. Wspiera [sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/): AI porządkuje materiał, ale nie przejmuje odpowiedzialności za relację, decyzję ani konsekwencje.
 

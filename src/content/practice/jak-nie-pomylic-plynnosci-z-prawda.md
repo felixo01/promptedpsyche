@@ -1,6 +1,6 @@
 ---
 title: "Jak nie pomylić płynności z prawdą"
-description: "Praktyka zatrzymania się przy odpowiedzi, która brzmi spójnie i pewnie, ale może ukrywać niepewność, założenia albo brak źródeł."
+description: "Praktyka zatrzymania się przy odpowiedzi, która brzmi spójnie i pewnie, ale może ukrywać niepewność, założenia, zbyt szerokie uogólnienia albo brak źródeł."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -20,6 +20,8 @@ Modele językowe potrafią pisać spokojnie, elegancko i logicznie nawet wtedy, 
 
 Ta praktyka pomaga zatrzymać się przy odpowiedzi, która "brzmi prawdziwie", i zapytać: co wynika z danych, co jest założeniem, gdzie brakuje źródeł i jakie kontrprzykłady mogłyby osłabić wniosek.
 
+Różni się od sprawdzania źródeł. Tam pytanie brzmi: "czy to ma zewnętrzne oparcie?". Tutaj pytanie brzmi: "czy styl odpowiedzi nie daje mi zbyt dużego poczucia pewności?".
+
 ## Kiedy to pomaga
 
 - Gdy odpowiedź brzmi bardzo przekonująco, ale nie zawiera źródeł.
@@ -29,7 +31,7 @@ Ta praktyka pomaga zatrzymać się przy odpowiedzi, która "brzmi prawdziwie", i
 
 ## O co poprosić model
 
-Poproś model o rozbicie efektu pewności na części.
+Poproś model o rozbicie efektu pewności na części. Nie chodzi o poprawienie stylu, tylko o zobaczenie, gdzie styl udaje dowód.
 
 ```text
 Przeczytaj poniższą odpowiedź i pomóż mi nie pomylić płynności z prawdą.
@@ -41,9 +43,9 @@ Oceń ją w taki sposób:
 3. Które twierdzenia wymagają sprawdzenia poza rozmową?
 4. Gdzie odpowiedź może ukrywać niepewność, brak źródeł albo zbyt szerokie uogólnienie?
 5. Jakie kontrprzykłady albo warunki mogłyby zmienić ten wniosek?
-6. Jak przeredagować odpowiedź, żeby była ostrożniejsza i nie udawała większej pewności niż ma?
+6. Jak brzmiałaby ostrożniejsza wersja tej odpowiedzi, bez dodawania pozornej pewności?
 
-Nie wzmacniaj retorycznie tekstu. Nie dopisuj pewności. Pomóż mi zobaczyć, co trzeba sprawdzić przed użyciem odpowiedzi.
+Nie wzmacniaj retorycznie tekstu. Nie dopisuj pewności. Nie traktuj ostrożniejszej redakcji jako weryfikacji faktów. Pomóż mi zobaczyć, co trzeba sprawdzić przed użyciem odpowiedzi.
 
 Odpowiedź:
 [wklej odpowiedź]
@@ -66,7 +68,7 @@ Odpowiedź:
 
 ## Lepszy sposób użycia odpowiedzi
 
-Odpowiedź AI brzmi spokojnie: "Firmy wdrażające AI zwykle szybko widzą wzrost produktywności, bo automatyzacja usuwa większość powtarzalnych zadań". Zamiast powtarzać to zdanie, zatrzymaj słowa "zwykle", "szybko" i "większość". To nie są tylko ozdobniki. To twierdzenia, które wymagają danych, definicji i kontekstu.
+Odpowiedź AI brzmi spokojnie: "Firmy wdrażające AI zwykle szybko widzą wzrost produktywności, bo automatyzacja usuwa większość powtarzalnych zadań". Zamiast powtarzać to zdanie, zatrzymaj słowa "zwykle", "szybko" i "większość". To nie są tylko ozdobniki. To twierdzenia, które wymagają danych, definicji i kontekstu. Ostrożniejsza wersja może brzmieć lepiej, ale nadal nie zastępuje sprawdzenia faktów.
 
 Ten prompt pomaga rozdzielić jakość językową od statusu poznawczego [odpowiedzi modelu](/pl/concepts/model-output/). To praktyczne ćwiczenie [skalibrowanego zaufania](/pl/concepts/calibrated-trust/): nie odrzucać wszystkiego, ale nie mylić dobrego stylu z podstawą do zaufania.
 

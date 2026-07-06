@@ -1,6 +1,6 @@
 ---
 title: "Jak sprawdzić, czy odpowiedź AI ma źródła"
-description: "Praktyka sprawdzania, które twierdzenia AI wymagają źródeł, czy podane źródła istnieją i czy naprawdę wspierają daną odpowiedź."
+description: "Praktyka sprawdzania twierdzeń AI, źródeł i cytowań zanim trafią do artykułu, prezentacji, notatki zespołowej albo decyzji."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -18,7 +18,7 @@ category: "Praktyka"
 
 Płynna odpowiedź AI może wyglądać jak gotowe wyjaśnienie, ale sama forma nie pokazuje jeszcze, skąd pochodzą twierdzenia. Nawet link, tytuł publikacji albo nazwisko autora nie są dowodem, dopóki człowiek nie sprawdzi, czy źródło istnieje i czy rzeczywiście wspiera daną tezę.
 
-Ta praktyka pomaga potraktować odpowiedź jako materiał do weryfikacji: oddzielić twierdzenia wymagające źródła od interpretacji, wskazać miejsca najbardziej ryzykowne i przygotować pracę, którą trzeba wykonać poza rozmową.
+Ta praktyka pomaga potraktować odpowiedź jako materiał do weryfikacji: oddzielić twierdzenia wymagające źródła od interpretacji, wskazać miejsca najbardziej ryzykowne i przygotować pracę, którą trzeba wykonać poza rozmową. Najlepiej sprawdza się przy szkicach artykułów, notatkach dla zespołu, prezentacjach i zdaniach z liczbami, datami albo nazwami instytucji.
 
 ## Kiedy to pomaga
 
@@ -29,7 +29,7 @@ Ta praktyka pomaga potraktować odpowiedź jako materiał do weryfikacji: oddzie
 
 ## O co poprosić model
 
-Użyj modelu do uporządkowania ryzyka, nie do samopotwierdzenia.
+Użyj modelu do uporządkowania ryzyka, nie do samopotwierdzenia. Źródła sprawdza człowiek poza modelem.
 
 ```text
 Przeczytaj swoją poprzednią odpowiedź i pomóż mi sprawdzić, które jej fragmenty wymagają źródeł.
@@ -39,10 +39,10 @@ Podziel odpowiedź na 5 części:
 1. Twierdzenia, które wymagają źródła.
 2. Twierdzenia, które są interpretacją albo ogólnym wyjaśnieniem.
 3. Podane linki, tytuły, nazwiska lub cytowania, które muszę sprawdzić poza rozmową.
-4. Miejsca, w których źródło musi nie tylko istnieć, ale też rzeczywiście wspierać konkretną tezę.
-5. Informacje, których nie powinienem używać bez aktualnej weryfikacji.
+4. Miejsca, w których źródło musi nie tylko istnieć, ale też wspierać tę konkretną tezę.
+5. Informacje, których nie powinienem używać bez aktualnej, zewnętrznej weryfikacji.
 
-Nie wymyślaj publikacji, linków ani autorów. Jeśli nie możesz czegoś zweryfikować, napisz to wprost. Na końcu wskaż 3 fragmenty najbardziej ryzykowne, jeśli użyję ich bez sprawdzenia.
+Nie wymyślaj publikacji, linków ani autorów. Nie udawaj, że sprawdzasz źródła, jeśli nie masz do nich dostępu. Na końcu wskaż 3 fragmenty najbardziej ryzykowne, jeśli użyję ich bez sprawdzenia.
 ```
 
 ## Co sprawdzić samodzielnie
@@ -62,7 +62,7 @@ Nie wymyślaj publikacji, linków ani autorów. Jeśli nie możesz czegoś zwery
 
 ## Lepszy sposób użycia odpowiedzi
 
-Model napisał, że konkretna metoda "zwiększa skuteczność zespołów o 30%" i że potwierdzają to badania z ostatnich lat. Dobra reakcja nie polega na poproszeniu modelu, żeby "dodał źródła". Lepiej najpierw oznaczyć tę liczbę jako twierdzenie wymagające weryfikacji, sprawdzić, czy badanie istnieje, a potem zobaczyć, czy dotyczy podobnego typu zespołu, metody i kontekstu.
+Model napisał w szkicu prezentacji, że konkretna metoda "zwiększa skuteczność zespołów o 30%" i że potwierdzają to badania z ostatnich lat. Dobra reakcja nie polega na poproszeniu modelu, żeby "dodał źródła". Lepiej najpierw oznaczyć tę liczbę jako twierdzenie wymagające weryfikacji, sprawdzić, czy badanie istnieje, a potem zobaczyć, czy dotyczy podobnego typu zespołu, metody i kontekstu.
 
 Ten prompt przesuwa uwagę z gotowej [odpowiedzi modelu](/pl/concepts/model-output/) na pytanie, na czym opiera się dana informacja. To prosty trening [czujności epistemicznej](/pl/concepts/epistemic-vigilance/): nie tylko "czy to brzmi dobrze?", ale "co można sprawdzić, gdzie i przez kogo?".
 
