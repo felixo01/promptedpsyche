@@ -126,6 +126,12 @@ test.describe('practice drafts', () => {
 
     await page.goto('/practice/');
     await expect(page.getByRole('heading', { name: 'Practice', level: 1 })).toBeVisible();
+    await expect(page.locator('.practice-index')).toBeVisible();
+    await expect(
+      page.getByText(
+        'Practice is a set of short, practical AI-use scenarios - not a prompt library, but a guide to using models responsibly in concrete situations.'
+      )
+    ).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Choose a situation', level: 2 })).toBeVisible();
     await expect(
       page.getByText(
@@ -133,6 +139,8 @@ test.describe('practice drafts', () => {
       )
     ).toBeVisible();
     await expect(page.locator('.entry-list article')).toHaveCount(6);
+    await expect(page.locator('.entry-list article').first().locator('.entry-meta')).toContainText('Practice');
+    await expect(page.locator('.entry-list article').first().locator('.tag-list li').first()).toBeVisible();
     await expect(
       page.locator('.entry-title-link', { hasText: 'How to check whether an AI answer has sources' })
     ).toBeVisible();
@@ -159,6 +167,12 @@ test.describe('practice drafts', () => {
 
     await page.goto('/pl/practice/');
     await expect(page.getByRole('heading', { name: 'Praktyka', level: 1 })).toBeVisible();
+    await expect(page.locator('.practice-index')).toBeVisible();
+    await expect(
+      page.getByText(
+        'Praktyka to krótkie, praktyczne scenariusze pracy z AI - nie baza promptów, ale przewodniki po rozsądnym użyciu modeli w konkretnych sytuacjach.'
+      )
+    ).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Wybierz sytuację', level: 2 })).toBeVisible();
     await expect(
       page.getByText(
@@ -166,6 +180,8 @@ test.describe('practice drafts', () => {
       )
     ).toBeVisible();
     await expect(page.locator('.entry-list article')).toHaveCount(6);
+    await expect(page.locator('.entry-list article').first().locator('.entry-meta')).toContainText('Praktyka');
+    await expect(page.locator('.entry-list article').first().locator('.tag-list li').first()).toBeVisible();
     await expect(
       page.locator('.entry-title-link', { hasText: 'Jak sprawdzić, czy odpowiedź AI ma źródła' })
     ).toBeVisible();
