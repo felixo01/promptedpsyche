@@ -27,6 +27,9 @@ test.describe('author and about routes', () => {
       '/pl/about/'
     );
     await expect(page.locator('body')).toContainText('artificial intelligence changes the way people think');
+    await expect(page.locator('body')).toContainText(
+      'Feliks Mamczur is the author of Prompted Psyche'
+    );
     await expect(page.locator('body')).toContainText('Cyberpsychology and Human-AI Interaction');
     await expect(page.locator('body')).toContainText('intelligent systems');
     await expect(page.locator('body')).toContainText(
@@ -71,6 +74,7 @@ test.describe('author and about routes', () => {
       '/about/'
     );
     await expect(page.locator('body')).toContainText('sztuczna inteligencja zmienia sposób myślenia');
+    await expect(page.locator('body')).toContainText('Feliks Mamczur jest autorem Prompted Psyche');
     await expect(page.locator('body')).toContainText('cyberpsychologii, Human-AI Interaction');
     await expect(page.locator('body')).toContainText('inteligentnymi systemami');
     await expect(page.locator('body')).toContainText(
