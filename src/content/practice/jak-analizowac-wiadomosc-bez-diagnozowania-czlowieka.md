@@ -1,6 +1,6 @@
 ---
 title: "Jak analizować wiadomość bez diagnozowania człowieka"
-description: "Praktyka używania AI do porządkowania trudnej wiadomości bez przypisywania nadawcy cech, motywacji ani ukrytych intencji."
+description: "Praktyka porządkowania trudnej wiadomości z AI bez diagnozowania nadawcy, czytania intencji ani oddawania modelowi odpowiedzialności za odpowiedź."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,60 +16,64 @@ type: "practice"
 category: "Praktyka"
 ---
 
-AI może pomóc uporządkować trudnego maila, wiadomość od klienta albo napiętą rozmowę. Może też zbyt łatwo popchnąć użytkownika w stronę psychologizowania osoby po drugiej stronie. Ta praktyka stawia prostą granicę: analizujemy widoczny komunikat, nie diagnozujemy człowieka.
+AI może pomóc uporządkować trudnego maila, wiadomość od klienta albo napiętą rozmowę. Może też zbyt łatwo popchnąć użytkownika w stronę psychologizowania osoby po drugiej stronie: "manipuluje", "jest narcystyczna", "ma ukrytą intencję", "na pewno chce mnie zaatakować".
 
-Celem jest spokojniejsza odpowiedź, mniej dopisywania intencji i więcej odpowiedzialności po stronie osoby, która ostatecznie decyduje, co napisać.
+Ta praktyka stawia prostą granicę: analizujemy widoczny tekst i brakujący kontekst, nie diagnozujemy człowieka. Celem jest spokojniejsza odpowiedź, mniej dopisywania intencji i więcej odpowiedzialności po stronie osoby, która ostatecznie decyduje, co napisać.
 
-## Kiedy używać
+## Kiedy to pomaga
 
 - Gdy wiadomość jest konfliktowa, niejasna albo emocjonalnie obciążająca.
 - Gdy trzeba przygotować odpowiedź bez eskalowania napięcia.
 - Gdy chcesz rozdzielić fakty, prośby, ton i możliwe interpretacje.
 - Gdy zespół analizuje komunikację z klientem, współpracownikiem, partnerem albo odbiorcą.
 
-## Czego nie robić
+## O co poprosić model
 
-- Nie proś AI o diagnozę osobowości, zaburzeń, motywacji albo ukrytych intencji.
-- Nie traktuj modelu jak narzędzia do czytania człowieka.
-- Nie używaj analizy do manipulacji odbiorcą.
-- Nie przenoś odpowiedzialności za ton, decyzję i skutki odpowiedzi na model.
-
-## Prompt
+Poproś model o analizę widocznego komunikatu, nie osoby.
 
 ```text
 Pomóż mi przeanalizować poniższą wiadomość bez diagnozowania osoby, która ją napisała.
 
 Zrób tylko analizę widocznego tekstu:
 
-1. Jakie fakty, prośby albo decyzje są wprost zapisane?
-2. Jakie elementy są interpretacją, a nie faktem?
+1. Co jest wprost napisane: fakty, prośby, decyzje, terminy?
+2. Co jest moją interpretacją, a nie faktem widocznym w tekście?
 3. Jakie są 2-3 możliwe odczytania tonu, bez przypisywania intencji?
-4. Czego nie da się uczciwie wywnioskować z samej wiadomości?
-5. Jakie pytania doprecyzowujące mogę zadać, zanim odpowiem?
+4. Jakiego kontekstu brakuje, żeby odpowiedzieć ostrożnie?
+5. Czego nie da się uczciwie wywnioskować z samej wiadomości?
+6. Jakie pytania doprecyzowujące mogę zadać, zanim odpowiem?
 
-Nie diagnozuj nadawcy. Nie przypisuj mu cech psychologicznych. Nie zgaduj ukrytych intencji. Na końcu zaproponuj roboczą, spokojniejszą wersję odpowiedzi, która wyjaśnia sytuację, nie dopisuje intencji i którą człowiek musi ocenić przed wysłaniem.
+Nie diagnozuj nadawcy. Nie używaj etykiet takich jak narcystyczny, borderline, manipulacyjny albo toksyczny. Nie przypisuj cech psychologicznych i nie zgaduj ukrytych intencji. Na końcu zaproponuj roboczą, spokojniejszą wersję odpowiedzi, która odnosi się do widocznej sytuacji i którą człowiek musi ocenić przed wysłaniem.
 
 Wiadomość:
 [wklej wiadomość]
 ```
 
-## Krótki przykład
+## Co sprawdzić samodzielnie
 
-Wiadomość brzmi: "Nie dostałem jeszcze materiałów. Zakładam, że temat nie jest dla was priorytetem". Prompt pomaga rozdzielić fakt, czyli brak materiałów, od interpretacji o priorytecie. Może wskazać kilka możliwych odczytań tonu i zaproponować pytanie doprecyzowujące, ale nie powinien stwierdzać, że nadawca jest agresywny, manipulacyjny albo ma ukrytą intencję.
+- Co naprawdę jest napisane, a co dopowiadasz z emocji, historii relacji albo zmęczenia.
+- Jakie fakty można potwierdzić przed odpowiedzią.
+- Czy sytuacja wymaga procedury, rozmowy z człowiekiem albo wsparcia poza AI.
+- Czy proponowana odpowiedź jest adekwatna do relacji, stawki i kontekstu.
 
-## Dlaczego to pomaga
+## Co może pójść źle
 
-Ten prompt oddziela analizę tekstu od oceny człowieka. Pomaga zobaczyć, co jest w wiadomości, co jest interpretacją, a czego po prostu nie wiemy. To ważne w [komunikacji zapośredniczonej przez AI](/pl/concepts/ai-mediated-communication/), bo model może szybko nadać trudnej sytuacji zbyt pewną narrację.
+- Model może nazwać czyjś ton zbyt pewnie.
+- Model może zasugerować etykietę psychologiczną tam, gdzie widać tylko fragment komunikacji.
+- Użytkownik może użyć analizy jako potwierdzenia własnej złości albo lęku.
+- Spokojniejsza odpowiedź może być zbyt miękka, zbyt formalna albo nieadekwatna do sytuacji.
 
-Praktyka wspiera [sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/). AI może pomóc oddzielić widoczny tekst od interpretacji, ale nie wie, co ktoś miał w głowie. Porządkuje materiał, ale nie przejmuje odpowiedzialności za relację, odpowiedź ani konsekwencje.
+## Lepszy sposób użycia odpowiedzi
 
-## Ryzyko i ograniczenia
+Wiadomość brzmi: "Nie dostałem jeszcze materiałów. Zakładam, że temat nie jest dla was priorytetem". Model może pomóc rozdzielić widoczny fakt, czyli brak materiałów, od interpretacji o priorytecie. Może też zaproponować ostrożną odpowiedź: potwierdzić opóźnienie, wyjaśnić status i zapytać, jaki termin jest teraz kluczowy. Nie powinien jednak orzekać, że nadawca jest agresywny, manipulacyjny albo "naprawdę" coś czuje.
 
-- Model może nadal zasugerować zbyt daleko idącą interpretację.
-- Bez pełnego kontekstu wiadomość może wyglądać inaczej niż w realnej relacji.
-- Spokojniejsza odpowiedź może być zbyt ostrożna, zbyt miękka albo nieadekwatna do sytuacji.
-- Nie używaj tej praktyki jako porady prawnej, HR, medycznej, terapeutycznej ani jako sposobu manipulowania drugą osobą.
-- W sprawach przemocy, przymusu, nękania, ryzyka prawnego, szkody w miejscu pracy, pilnego zagrożenia albo silnego konfliktu potrzebne są właściwe procedury i ludzie, nie tylko AI.
+Ta praktyka jest ważna w [komunikacji zapośredniczonej przez AI](/pl/concepts/ai-mediated-communication/), bo model może szybko nadać trudnej sytuacji zbyt pewną narrację. Wspiera [sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/): AI porządkuje materiał, ale nie przejmuje odpowiedzialności za relację, decyzję ani konsekwencje.
+
+## Krótka zasada
+
+Użyj AI, żeby zobaczyć tekst, możliwe odczytania i brakujący kontekst. Nie używaj AI, żeby rozstrzygnąć, jaki ktoś "naprawdę" jest albo co "naprawdę" czuje.
+
+W sprawach przemocy, przymusu, nękania, ryzyka prawnego, szkody w miejscu pracy, pilnego zagrożenia albo silnego konfliktu potrzebne są właściwe procedury i ludzie, nie tylko AI.
 
 ## Powiązane pojęcia
 

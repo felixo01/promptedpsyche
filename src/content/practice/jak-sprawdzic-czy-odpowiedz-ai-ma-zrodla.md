@@ -1,6 +1,6 @@
 ---
 title: "Jak sprawdzić, czy odpowiedź AI ma źródła"
-description: "Praktyka sprawdzania, które części odpowiedzi AI wymagają źródeł i jak przygotować zewnętrzną weryfikację bez proszenia modelu o pewność na skróty."
+description: "Praktyka sprawdzania, które twierdzenia AI wymagają źródeł, czy podane źródła istnieją i czy naprawdę wspierają daną odpowiedź."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,55 +16,59 @@ type: "practice"
 category: "Praktyka"
 ---
 
-Płynna odpowiedź AI może wyglądać jak gotowe wyjaśnienie, ale sama forma nie pokazuje jeszcze, skąd pochodzą twierdzenia. Ta praktyka pomaga potraktować odpowiedź jako materiał do sprawdzenia: rozdzielić fakty, interpretacje, miejsca wymagające źródeł i fragmenty, których nie warto używać bez zewnętrznej kontroli.
+Płynna odpowiedź AI może wyglądać jak gotowe wyjaśnienie, ale sama forma nie pokazuje jeszcze, skąd pochodzą twierdzenia. Nawet link, tytuł publikacji albo nazwisko autora nie są dowodem, dopóki człowiek nie sprawdzi, czy źródło istnieje i czy rzeczywiście wspiera daną tezę.
 
-Nie chodzi o to, żeby model sam siebie "potwierdził". Chodzi o przygotowanie listy elementów, które człowiek powinien sprawdzić poza rozmową.
+Ta praktyka pomaga potraktować odpowiedź jako materiał do weryfikacji: oddzielić twierdzenia wymagające źródła od interpretacji, wskazać miejsca najbardziej ryzykowne i przygotować pracę, którą trzeba wykonać poza rozmową.
 
-## Kiedy używać
+## Kiedy to pomaga
 
 - Gdy odpowiedź zawiera daty, liczby, nazwiska, przepisy, badania, raporty albo nazwy instytucji.
 - Gdy tekst ma trafić do artykułu, prezentacji, notatki dla zespołu, oferty albo decyzji.
-- Gdy model podaje ogólne twierdzenia bez linków, nazw źródeł albo opisu kontekstu.
-- Gdy chcesz ustalić, które fragmenty są hipotezą, które interpretacją, a które wymagają sprawdzenia w realnych materiałach.
+- Gdy model podaje linki, cytowania albo tytuły, których nie sprawdziłeś samodzielnie.
+- Gdy chcesz ustalić, które fragmenty odpowiedzi są hipotezą, które interpretacją, a które wymagają realnego źródła.
 
-## Czego nie robić
+## O co poprosić model
 
-- Nie proś modelu o wymyślenie bibliografii do gotowego tekstu.
-- Nie traktuj samego tonu pewności jako dowodu.
-- Nie zakładaj, że link, tytuł albo cytowanie istnieje tylko dlatego, że model je podał.
-- Nie używaj tej praktyki jako zastępstwa dla samodzielnego sprawdzenia źródeł.
-
-## Prompt
+Użyj modelu do uporządkowania ryzyka, nie do samopotwierdzenia.
 
 ```text
-Przeczytaj swoją poprzednią odpowiedź i pomóż mi sprawdzić, na czym opierają się jej najważniejsze informacje.
+Przeczytaj swoją poprzednią odpowiedź i pomóż mi sprawdzić, które jej fragmenty wymagają źródeł.
 
-Podziel odpowiedź na:
+Podziel odpowiedź na 5 części:
 
 1. Twierdzenia, które wymagają źródła.
-2. Twierdzenia, które są raczej ogólnym wyjaśnieniem albo interpretacją.
-3. Informacje, których nie powinieneś podawać bez aktualnej weryfikacji.
-4. Typy źródeł, których powinienem szukać poza rozmową, żeby to sprawdzić.
+2. Twierdzenia, które są interpretacją albo ogólnym wyjaśnieniem.
+3. Podane linki, tytuły, nazwiska lub cytowania, które muszę sprawdzić poza rozmową.
+4. Miejsca, w których źródło musi nie tylko istnieć, ale też rzeczywiście wspierać konkretną tezę.
+5. Informacje, których nie powinienem używać bez aktualnej weryfikacji.
 
-Nie wymyślaj konkretnych publikacji, linków ani autorów, jeśli nie masz pewności. Jeśli czegoś nie możesz zweryfikować, napisz to wprost. Na końcu wskaż, które 3 fragmenty odpowiedzi są najbardziej ryzykowne, jeśli użyję ich bez sprawdzenia.
+Nie wymyślaj publikacji, linków ani autorów. Jeśli nie możesz czegoś zweryfikować, napisz to wprost. Na końcu wskaż 3 fragmenty najbardziej ryzykowne, jeśli użyję ich bez sprawdzenia.
 ```
 
-## Krótki przykład
+## Co sprawdzić samodzielnie
 
-Model napisał, że konkretna metoda "zwiększa skuteczność zespołów o 30%" i że potwierdzają to badania z ostatnich lat. Po użyciu promptu użytkownik nie dostaje potwierdzenia tej liczby, tylko rozdzielenie: liczba wymaga źródła, ogólne wyjaśnienie może być interpretacją, a do sprawdzenia potrzebne byłyby raporty, artykuły badawcze albo dokumenty instytucji. To pomaga zaplanować zewnętrzną weryfikację zamiast traktować pewny ton jako dowód.
+- Czy źródło istnieje.
+- Czy jest pierwotne, wiarygodne i aktualne dla tego tematu.
+- Czy źródło mówi dokładnie to, co przypisał mu model.
+- Czy liczby, daty i nazwiska zgadzają się z materiałem źródłowym.
+- Czy odpowiedź nie składa kilku różnych źródeł w jedną zbyt pewną tezę.
 
-## Dlaczego to pomaga
+## Co może pójść źle
 
-Ten prompt przesuwa uwagę z gotowej odpowiedzi na pytanie, na czym opiera się dana informacja. Ułatwia zobaczenie, że [odpowiedź modelu](/pl/concepts/model-output/) może być szkicem, mapą pytań albo propozycją interpretacji, ale nie automatycznie źródłem wiedzy.
+- Model może podać źródło, które brzmi prawdopodobnie, ale nie istnieje.
+- Model może wskazać istniejące źródło, które nie wspiera danej tezy.
+- Model może pomylić autora, rok, zakres badania albo kontekst.
+- Użytkownik może potraktować obecność cytowania jak dekorację wiarygodności.
 
-To także prosty trening [czujności epistemicznej](/pl/concepts/epistemic-vigilance/). Zamiast pytać tylko "czy to brzmi dobrze?", użytkownik pyta: "na czym to się opiera, co można sprawdzić i czego jeszcze nie wiem?".
+## Lepszy sposób użycia odpowiedzi
 
-## Ryzyko i ograniczenia
+Model napisał, że konkretna metoda "zwiększa skuteczność zespołów o 30%" i że potwierdzają to badania z ostatnich lat. Dobra reakcja nie polega na poproszeniu modelu, żeby "dodał źródła". Lepiej najpierw oznaczyć tę liczbę jako twierdzenie wymagające weryfikacji, sprawdzić, czy badanie istnieje, a potem zobaczyć, czy dotyczy podobnego typu zespołu, metody i kontekstu.
 
-- Model nadal może błędnie ocenić, które twierdzenia wymagają źródła.
-- Model może nie znać aktualnych danych albo zmian po dacie swojej wiedzy.
-- Poprawnie wskazane typy źródeł nadal trzeba sprawdzić poza modelem.
-- Sama obecność linku, tytułu albo cytatu nie wystarcza. Trzeba sprawdzić, czy źródło istnieje i czy wspiera konkretną tezę.
+Ten prompt przesuwa uwagę z gotowej [odpowiedzi modelu](/pl/concepts/model-output/) na pytanie, na czym opiera się dana informacja. To prosty trening [czujności epistemicznej](/pl/concepts/epistemic-vigilance/): nie tylko "czy to brzmi dobrze?", ale "co można sprawdzić, gdzie i przez kogo?".
+
+## Krótka zasada
+
+Nie pytaj modelu, czy ma rację. Poproś go, żeby pomógł ci zobaczyć, co trzeba sprawdzić poza modelem.
 
 ## Powiązane pojęcia
 

@@ -1,6 +1,6 @@
 ---
 title: "How to check whether an AI answer has sources"
-description: "A practice for separating source-dependent claims from interpretation and preparing external verification without asking the model to invent certainty."
+description: "A practice for checking which AI claims need sources, whether cited sources exist and whether they actually support the answer."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,55 +16,59 @@ type: "practice"
 category: "Practice"
 ---
 
-A fluent AI answer can look like a finished explanation, but form does not show where the claims come from. This practice treats the answer as material to inspect: facts, interpretations, source-dependent claims and places that should not be used before outside checking.
+A fluent AI answer can look like a finished explanation, but style does not show where the claims come from. Even a link, publication title or author name is not evidence until a person checks whether the source exists and whether it actually supports the claim.
 
-The goal is not to make the model "verify itself". The goal is to prepare the work that a person should do beyond the chat.
+This practice treats the answer as material for verification: source-dependent claims, interpretations, risky passages and the work that has to happen outside the chat.
 
-## When to use it
+## When this helps
 
 - When the answer contains dates, numbers, names, regulations, studies, reports or institutions.
 - When the text may enter an article, presentation, team note, proposal or decision.
-- When the model gives broad claims without links, source names or context.
-- When you need to know which parts are hypotheses, which are interpretations and which require real source work.
+- When the model gives links, citations or titles you have not checked yourself.
+- When you need to know which parts are hypotheses, which are interpretations and which require actual source work.
 
-## What not to do
+## What to ask the model
 
-- Do not ask the model to invent a bibliography for a finished text.
-- Do not treat a confident tone as evidence.
-- Do not assume that a link, title or citation exists because the model gave it.
-- Do not use this practice as a replacement for checking sources yourself.
-
-## Prompt
+Use the model to organize risk, not to confirm itself.
 
 ```text
-Read your previous answer and help me inspect what its key information is based on.
+Read your previous answer and help me check which parts require sources.
 
-Divide the answer into:
+Divide the answer into 5 parts:
 
 1. Claims that require a source.
-2. Claims that are more like general explanation or interpretation.
-3. Information you should not provide without current verification.
-4. Types of sources I should look for outside this conversation in order to check it.
+2. Claims that are interpretation or general explanation.
+3. Links, titles, names or citations that I need to check outside this conversation.
+4. Places where a source must not only exist, but actually support the specific claim.
+5. Information I should not use without current verification.
 
-Do not invent specific publications, links or authors if you are not sure. If you cannot verify something, say so directly. At the end, identify the 3 riskiest parts of the answer if I use them without checking.
+Do not invent publications, links or authors. If you cannot verify something, say so directly. At the end, identify the 3 riskiest parts of the answer if I use them without checking.
 ```
 
-## Short example
+## What to check yourself
 
-The model says that a method "increases team effectiveness by 30%" and that recent studies support it. After using the prompt, the user does not get confirmation of the number. They get a separation: the number needs a source, the general explanation may be interpretation, and external checking would require reports, research papers or institutional documents.
+- Whether the source exists.
+- Whether it is primary, credible and current enough for the topic.
+- Whether it says what the model claims it says.
+- Whether numbers, dates and names match the source.
+- Whether the answer combines several sources into one claim that is too strong.
 
-## Why this helps
+## What can go wrong
 
-This prompt moves attention from the finished answer to what the information is based on. It helps the user see that [model output](/concepts/model-output/) can be a draft, a map of questions or an interpretation, but not automatically a source of knowledge.
+- The model may provide a source that sounds plausible but does not exist.
+- The model may point to a real source that does not support the claim.
+- The model may confuse the author, year, scope or context.
+- A citation may become a decoration of credibility instead of a checked basis.
 
-It is also a simple exercise in [epistemic vigilance](/concepts/epistemic-vigilance/). Instead of asking only "does this sound good?", the user asks: "what is this based on, what can I check and what do I still not know?".
+## Better way to use the answer
 
-## Risk and limitations
+The model says that a method "increases team effectiveness by 30%" and that recent studies support it. The better move is not to ask the model to "add sources". First mark the number as a claim that requires verification. Then check whether the study exists and whether it applies to a similar team, method and context.
 
-- The model may still misjudge which claims require sources.
-- The model may not know current data or changes after its knowledge cutoff.
-- Even useful source categories must be checked outside the model.
-- A link, title or citation is not enough. You still need to check whether the source exists and whether it supports the specific claim.
+This moves attention from finished [model output](/concepts/model-output/) to what the information is based on. It is a simple exercise in [epistemic vigilance](/concepts/epistemic-vigilance/): not only "does this sound good?", but "what can be checked, where and by whom?".
+
+## Short rule
+
+Do not ask the model whether it is right. Ask it to help you see what needs checking outside the model.
 
 ## Related Concepts
 

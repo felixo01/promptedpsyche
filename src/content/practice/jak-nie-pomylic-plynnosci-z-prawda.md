@@ -1,6 +1,6 @@
 ---
 title: "Jak nie pomylić płynności z prawdą"
-description: "Praktyka zatrzymania się przy odpowiedzi, która brzmi przekonująco, ale nie pokazuje jeszcze podstaw, źródeł ani granic pewności."
+description: "Praktyka zatrzymania się przy odpowiedzi, która brzmi spójnie i pewnie, ale może ukrywać niepewność, założenia albo brak źródeł."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,25 +16,20 @@ type: "practice"
 category: "Praktyka"
 ---
 
-Modele językowe potrafią pisać spokojnie, elegancko i logicznie nawet wtedy, gdy odpowiedź jest zbyt słabo oparta na materiale. Ta praktyka pomaga zatrzymać się przy wrażeniu płynności i zapytać, które fragmenty brzmią wiarygodnie dlatego, że są dobrze napisane, a które naprawdę zasługują na zaufanie.
+Modele językowe potrafią pisać spokojnie, elegancko i logicznie nawet wtedy, gdy odpowiedź jest błędna, zbyt ogólna albo słabo oparta na materiale. Dobra struktura może dawać poczucie pewności, ale sama w sobie nie jest dowodem.
 
-Problemem nie jest dobry styl. Problem zaczyna się wtedy, gdy styl zaczyna działać jak dowód.
+Ta praktyka pomaga zatrzymać się przy odpowiedzi, która "brzmi prawdziwie", i zapytać: co wynika z danych, co jest założeniem, gdzie brakuje źródeł i jakie kontrprzykłady mogłyby osłabić wniosek.
 
-## Kiedy używać
+## Kiedy to pomaga
 
 - Gdy odpowiedź brzmi bardzo przekonująco, ale nie zawiera źródeł.
 - Gdy model podaje długie wyjaśnienie bez pokazania niepewności.
 - Gdy tekst ma zostać użyty publicznie albo w pracy zespołu.
 - Gdy czujesz, że odpowiedź "brzmi prawdziwie", ale nie potrafisz wskazać, na czym opiera się to wrażenie.
 
-## Czego nie robić
+## O co poprosić model
 
-- Nie uznawaj dobrego stylu za dowód.
-- Nie proś modelu tylko o "bardziej przekonującą wersję".
-- Nie usuwaj zastrzeżeń, żeby tekst brzmiał pewniej.
-- Nie używaj płynnej odpowiedzi bez sprawdzenia miejsc, które mogą być fałszywe, zbyt ogólne albo niepełne.
-
-## Prompt
+Poproś model o rozbicie efektu pewności na części.
 
 ```text
 Przeczytaj poniższą odpowiedź i pomóż mi nie pomylić płynności z prawdą.
@@ -42,10 +37,11 @@ Przeczytaj poniższą odpowiedź i pomóż mi nie pomylić płynności z prawdą
 Oceń ją w taki sposób:
 
 1. Które fragmenty brzmią przekonująco głównie przez styl?
-2. Które twierdzenia wymagają sprawdzenia poza rozmową?
-3. Gdzie odpowiedź może ukrywać niepewność albo brak źródeł?
-4. Które zdania wyglądają jak konkretne fakty lub przyczyny, ale wymagają sprawdzenia, zanim je powtórzę?
-5. Jak przeredagować odpowiedź, żeby była ostrożniejsza i nie udawała większej pewności niż ma?
+2. Jakie założenia są potrzebne, żeby odpowiedź była prawdziwa?
+3. Które twierdzenia wymagają sprawdzenia poza rozmową?
+4. Gdzie odpowiedź może ukrywać niepewność, brak źródeł albo zbyt szerokie uogólnienie?
+5. Jakie kontrprzykłady albo warunki mogłyby zmienić ten wniosek?
+6. Jak przeredagować odpowiedź, żeby była ostrożniejsza i nie udawała większej pewności niż ma?
 
 Nie wzmacniaj retorycznie tekstu. Nie dopisuj pewności. Pomóż mi zobaczyć, co trzeba sprawdzić przed użyciem odpowiedzi.
 
@@ -53,22 +49,30 @@ Odpowiedź:
 [wklej odpowiedź]
 ```
 
-## Krótki przykład
+## Co sprawdzić samodzielnie
 
-Odpowiedź AI brzmi spokojnie: "Firmy wdrażające AI zwykle szybko widzą wzrost produktywności, bo automatyzacja usuwa większość powtarzalnych zadań". Prompt pomaga zauważyć, że płynny styl nie jest dowodem: "zwykle", "szybko" i "większość" wymagają danych albo doprecyzowania. Użytkownik może wtedy oddzielić ogólną hipotezę od twierdzeń, których nie warto powtarzać bez sprawdzenia.
+- Fakty, liczby, daty i nazwy.
+- Słowa typu "zwykle", "większość", "szybko", "wszyscy", "nikt".
+- Przyczyny podane bez pokazania mechanizmu albo źródła.
+- Wnioski, które brzmią jak oczywiste tylko dlatego, że są dobrze uporządkowane.
+- Decyzje, które mają konsekwencje poza tekstem.
 
-## Dlaczego to pomaga
+## Co może pójść źle
 
-Ten prompt rozdziela jakość językową od statusu poznawczego odpowiedzi. Dobrze napisany tekst może być pomocny, ale nadal pozostaje [odpowiedzią modelu](/pl/concepts/model-output/), którą trzeba ocenić wobec zadania, stawki i źródeł.
+- Możesz zaufać odpowiedzi, bo ma dobry rytm i logiczne akapity.
+- Model może brzmieć spójnie, chociaż pomija ważny wyjątek.
+- Ostrożniejsza redakcja może wyglądać jak weryfikacja, choć nadal nią nie jest.
+- Długa lista zastrzeżeń może sprawiać wrażenie rzetelności, nawet jeśli model nie sprawdził faktów.
 
-To praktyczne ćwiczenie [skalibrowanego zaufania](/pl/concepts/calibrated-trust/). Nie każe odrzucać każdej odpowiedzi AI. Pomaga dobrać poziom zaufania do tego, co naprawdę wiemy, a nie tylko do tego, jak dobrze brzmi tekst.
+## Lepszy sposób użycia odpowiedzi
 
-## Ryzyko i ograniczenia
+Odpowiedź AI brzmi spokojnie: "Firmy wdrażające AI zwykle szybko widzą wzrost produktywności, bo automatyzacja usuwa większość powtarzalnych zadań". Zamiast powtarzać to zdanie, zatrzymaj słowa "zwykle", "szybko" i "większość". To nie są tylko ozdobniki. To twierdzenia, które wymagają danych, definicji i kontekstu.
 
-- Model może nie wykryć własnych halucynacji ani błędnych uogólnień.
-- Ostrożniejsza redakcja nie oznacza, że tekst jest prawdziwy.
-- Lista ryzyk nie jest pełną kontrolą jakości.
-- Jeśli odpowiedź dotyczy decyzji, zdrowia, prawa, finansów, danych albo publicznej komunikacji, weryfikacja powinna wyjść poza czat.
+Ten prompt pomaga rozdzielić jakość językową od statusu poznawczego [odpowiedzi modelu](/pl/concepts/model-output/). To praktyczne ćwiczenie [skalibrowanego zaufania](/pl/concepts/calibrated-trust/): nie odrzucać wszystkiego, ale nie mylić dobrego stylu z podstawą do zaufania.
+
+## Krótka zasada
+
+Płynność jest sygnałem formy, nie dowodem prawdy. Im ważniejsza decyzja, tym bardziej weryfikacja musi wyjść poza model.
 
 ## Powiązane pojęcia
 

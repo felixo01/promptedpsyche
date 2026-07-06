@@ -1,6 +1,6 @@
 ---
 title: "How not to confuse fluency with truth"
-description: "A practice for pausing when an AI answer sounds convincing but has not yet shown its basis, sources or limits of confidence."
+description: "A practice for pausing when an AI answer sounds coherent and confident but may hide uncertainty, assumptions or missing sources."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,25 +16,20 @@ type: "practice"
 category: "Practice"
 ---
 
-Language models can write calmly, elegantly and logically even when an answer is weakly grounded. This practice helps you pause at the feeling of fluency and ask which parts sound credible because they are well written, and which parts actually deserve trust.
+Language models can write calmly, elegantly and logically even when an answer is wrong, too broad or weakly grounded. Good structure can create confidence, but structure is not evidence.
 
-Good style is not the problem. The problem begins when style starts behaving like evidence.
+This practice helps you pause when an answer "sounds true" and ask: what comes from the material, what is an assumption, where are sources missing and what counterexamples could weaken the conclusion?
 
-## When to use it
+## When this helps
 
 - When an answer sounds very convincing but has no sources.
 - When the model gives a long explanation without showing uncertainty.
 - When the text may be used publicly or inside a team workflow.
 - When you feel that the answer "sounds true", but cannot say what that feeling is based on.
 
-## What not to do
+## What to ask the model
 
-- Do not treat good style as evidence.
-- Do not ask only for a "more convincing version".
-- Do not remove caveats just to make the text sound more certain.
-- Do not use a fluent answer without checking the places that may be false, too broad or incomplete.
-
-## Prompt
+Ask the model to break the feeling of certainty into parts.
 
 ```text
 Read the answer below and help me avoid confusing fluency with truth.
@@ -42,10 +37,11 @@ Read the answer below and help me avoid confusing fluency with truth.
 Evaluate it this way:
 
 1. Which parts sound convincing mainly because of style?
-2. Which claims need checking outside this conversation?
-3. Where might the answer be hiding uncertainty or missing sources?
-4. Which sentences look like concrete facts or causes but need checking before I repeat them?
-5. How can the answer be edited so it is more cautious and does not pretend to have more certainty than it has?
+2. What assumptions need to be true for the answer to hold?
+3. Which claims need checking outside this conversation?
+4. Where might the answer be hiding uncertainty, missing sources or overgeneralization?
+5. What counterexamples or conditions could change the conclusion?
+6. How can the answer be edited so it is more cautious and does not pretend to have more certainty than it has?
 
 Do not make the text more rhetorically persuasive. Do not add certainty. Help me see what needs checking before I use the answer.
 
@@ -53,22 +49,30 @@ Answer:
 [paste answer]
 ```
 
-## Short example
+## What to check yourself
 
-An AI answer says, "Companies that adopt AI usually see productivity gains quickly because automation removes most repetitive work." The prompt helps separate style from evidence: "usually", "quickly" and "most" all need data or narrower context. The user can then treat the sentence as a hypothesis to check, not as a polished fact.
+- Facts, numbers, dates and names.
+- Words such as "usually", "most", "quickly", "everyone" and "no one".
+- Causes that appear without a mechanism or source.
+- Conclusions that feel obvious mainly because they are well organized.
+- Decisions that have consequences beyond the text.
 
-## Why this helps
+## What can go wrong
 
-This prompt separates language quality from the knowledge status of an answer. A well-written text can be useful, but it is still [model output](/concepts/model-output/) that needs to be judged against the task, stakes and sources.
+- You may trust the answer because it has good rhythm and logical paragraphs.
+- The model may sound coherent while leaving out an important exception.
+- A cautious rewrite may look like verification, even though it is not.
+- A long list of caveats may feel rigorous even if the facts were not checked.
 
-It is a practical exercise in [calibrated trust](/concepts/calibrated-trust/). It does not tell you to reject every AI answer. It helps match trust to what you actually know, not only to how good the answer sounds.
+## Better way to use the answer
 
-## Risk and limitations
+An AI answer says, "Companies that adopt AI usually see productivity gains quickly because automation removes most repetitive work." Instead of repeating the sentence, pause at "usually", "quickly" and "most". These are not just style. They are claims that need data, definitions and context.
 
-- The model may miss its own hallucinations or weak generalizations.
-- A more cautious edit does not make the text true.
-- A risk list is not a complete quality check.
-- If the answer affects decisions, health, law, finance, data or public communication, verification should leave the chat.
+This separates language quality from the knowledge status of [model output](/concepts/model-output/). It is a practical exercise in [calibrated trust](/concepts/calibrated-trust/): do not reject everything, but do not mistake good style for a basis for trust.
+
+## Short rule
+
+Fluency is a signal of form, not proof of truth. The more important the decision, the more verification has to leave the model.
 
 ## Related Concepts
 

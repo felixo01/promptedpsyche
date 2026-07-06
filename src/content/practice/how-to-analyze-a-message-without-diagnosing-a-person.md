@@ -1,6 +1,6 @@
 ---
 title: "How to analyze a message without diagnosing a person"
-description: "A practice for using AI to organize a difficult message without assigning traits, motives or hidden intentions to the sender."
+description: "A practice for organizing a difficult message with AI without diagnosing the sender, mind-reading intentions or handing over responsibility for the reply."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,60 +16,64 @@ type: "practice"
 category: "Practice"
 ---
 
-AI can help organize a difficult email, client message or tense exchange. It can also push the user too quickly toward psychological claims about the person on the other side. This practice sets a simple boundary: analyze the visible message, not the human being.
+AI can help organize a difficult email, client message or tense exchange. It can also push the user too quickly toward psychological claims about the person on the other side: "they are manipulative", "they are narcissistic", "they have a hidden intention", "they are definitely attacking me".
 
-The aim is a calmer reply, less intention-reading and more responsibility on the side of the person who decides what to send.
+This practice sets a simple boundary: analyze the visible text and missing context, not the human being. The aim is a calmer reply, less intention-reading and more responsibility on the side of the person who decides what to send.
 
-## When to use it
+## When this helps
 
 - When a message is conflictual, unclear or emotionally loaded.
 - When you need to prepare a reply without escalating tension.
 - When you want to separate facts, requests, tone and possible readings.
 - When a team is analyzing communication with a client, colleague, partner or audience.
 
-## What not to do
+## What to ask the model
 
-- Do not ask AI to diagnose personality, disorders, motives or hidden intentions.
-- Do not treat the model as a tool for reading a person.
-- Do not use the analysis to manipulate the recipient.
-- Do not move responsibility for tone, judgment and consequences onto the model.
-
-## Prompt
+Ask the model to analyze the visible message, not the person.
 
 ```text
 Help me analyze the message below without diagnosing the person who wrote it.
 
 Analyze only the visible text:
 
-1. What facts, requests or decisions are stated directly?
-2. Which elements are interpretation rather than fact?
+1. What is directly stated: facts, requests, decisions, deadlines?
+2. What is my interpretation rather than something visible in the text?
 3. What are 2-3 possible readings of the tone, without assigning intention?
-4. What cannot be honestly inferred from the message alone?
-5. What clarifying questions could I ask before replying?
+4. What context is missing if I want to reply carefully?
+5. What cannot be honestly inferred from the message alone?
+6. What clarifying questions could I ask before replying?
 
-Do not diagnose the sender. Do not assign psychological traits. Do not guess hidden intentions. At the end, suggest a calmer working draft that clarifies the situation, does not add intentions and still needs human judgment before sending.
+Do not diagnose the sender. Do not use labels such as narcissistic, borderline, manipulative or toxic. Do not assign psychological traits and do not guess hidden intentions. At the end, suggest a calmer working version that responds to the visible situation and still needs human judgment before sending.
 
 Message:
 [paste message]
 ```
 
-## Short example
+## What to check yourself
 
-A message says, "I still have not received the materials. I assume this is not a priority for you." The prompt helps separate the fact, missing materials, from the interpretation about priority. It may offer a few possible readings of tone and a clarifying question, but it should not decide that the sender is aggressive, manipulative or hiding an intention.
+- What is actually written and what you are adding from emotion, history or fatigue.
+- Which facts can be confirmed before replying.
+- Whether the situation needs a procedure, another person or support beyond AI.
+- Whether the suggested reply fits the relationship, stakes and context.
 
-## Why this helps
+## What can go wrong
 
-This prompt separates text analysis from judgment about a person. It helps show what is in the message, what is interpretation and what remains unknown. That matters in [AI-mediated communication](/concepts/ai-mediated-communication/), because a model can quickly give a difficult situation a narrative that feels too certain.
+- The model may label someone's tone too confidently.
+- The model may suggest a psychological label when only a fragment of communication is visible.
+- The user may use the analysis to confirm their own anger or fear.
+- A calmer reply may be too soft, too formal or inadequate to the situation.
 
-The practice supports [human agency](/concepts/human-agency/). AI can help separate visible text from interpretation, but it cannot know what was in someone's mind. It organizes the material, but it does not take responsibility for the relationship, the reply or the consequences.
+## Better way to use the answer
 
-## Risk and limitations
+A message says, "I still have not received the materials. I assume this is not a priority for you." The model can help separate the visible fact, missing materials, from the interpretation about priority. It can suggest a careful reply: acknowledge the delay, clarify the status and ask which deadline matters now. It should not decide that the sender is aggressive, manipulative or "really" feeling something.
 
-- The model may still suggest an interpretation that goes too far.
-- Without fuller context, the message may look different from the real relationship.
-- A calmer reply may be too cautious, too soft or inadequate for the situation.
-- Do not use this practice as legal, HR, medical or therapeutic advice, or as a way to manipulate someone.
-- In cases involving violence, coercion, harassment, legal risk, workplace harm, urgent danger or severe conflict, proper procedures and people are needed, not only AI.
+This matters in [AI-mediated communication](/concepts/ai-mediated-communication/), because a model can quickly give a difficult situation a narrative that feels too certain. The practice supports [human agency](/concepts/human-agency/): AI organizes the material, but it does not take responsibility for the relationship, the decision or the consequences.
+
+## Short rule
+
+Use AI to see the text, possible readings and missing context. Do not use AI to decide what someone "really" is or what they are "really" feeling.
+
+In cases involving violence, coercion, harassment, legal risk, workplace harm, urgent danger or severe conflict, proper procedures and people are needed, not only AI.
 
 ## Related Concepts
 
