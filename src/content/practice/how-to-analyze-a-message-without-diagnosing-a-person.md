@@ -1,6 +1,6 @@
 ---
 title: "How to analyze a message without diagnosing a person"
-description: "A practice for organizing a difficult message with AI without diagnosing the sender, mind-reading intentions or handing over responsibility for a working reply."
+description: "A practice for organizing a difficult message with AI without diagnosing the sender, mind-reading intentions or handing over responsibility for the reply."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -31,7 +31,7 @@ It can help prepare a response, but it does not determine what someone "really" 
 
 ## What to ask the model
 
-Ask the model to analyze the visible message, not the person. Treat the result as a draft to judge, not as a conclusion.
+Ask the model to analyze the visible message, not the person. Treat the result as a draft to judge, not as a conclusion or proof of someone's intention.
 
 ```text
 Help me analyze the message below without diagnosing the person who wrote it.
@@ -46,7 +46,7 @@ Analyze only the visible text:
 6. What clarifying questions could I ask before replying?
 7. What could a working reply look like if it responds only to the visible situation?
 
-Do not diagnose the sender. Do not use labels such as narcissistic, borderline, manipulative or toxic. Do not assign psychological traits and do not guess hidden intentions. If context is missing, name the missing context instead of filling it with a judgment about the person. The reply should be a working draft that still needs human judgment before sending.
+Do not diagnose the sender. Do not use labels such as narcissistic, borderline, manipulative or toxic. Do not assign psychological traits and do not guess hidden intentions. If context is missing, name the missing context instead of filling it with a judgment about the person. Separate possible readings from facts. The reply should be a working draft that still needs human judgment before sending.
 
 Message:
 [paste message]
@@ -58,6 +58,7 @@ Message:
 - Which facts can be confirmed before replying.
 - Whether the situation needs a procedure, another person or support beyond AI.
 - Whether the suggested reply fits the relationship, stakes and context.
+- Whether the reply sounds calm only because it removes a real problem or conflict.
 - Whether you should reply immediately at all, or first gather facts or talk outside the text thread.
 
 ## What can go wrong
@@ -70,13 +71,13 @@ Message:
 
 ## Better way to use the answer
 
-A message says, "I still have not received the materials. I assume this is not a priority for you." The model can help separate the visible fact, missing materials, from the interpretation about priority. It can suggest a working reply: acknowledge the delay, clarify the status and ask which deadline matters now. That draft still has to be fitted to the relationship and situation. The model should not decide that the sender is aggressive, manipulative or "really" feeling something.
+A message says, "I still have not received the materials. I assume this is not a priority for you." The model can help separate the visible fact, missing materials, from the interpretation about priority. It can suggest a working reply: acknowledge the delay, clarify the status and ask which deadline matters now. That draft still has to be fitted to the relationship and situation. The model should not decide that the sender is aggressive, manipulative or "really" feeling something. It should also not smooth the reply so much that the real problem disappears.
 
 This matters in [AI-mediated communication](/concepts/ai-mediated-communication/), because a model can quickly give a difficult situation a narrative that feels too certain. The practice supports [human agency](/concepts/human-agency/): AI organizes the material, but it does not take responsibility for the relationship, the decision or the consequences.
 
 ## Short rule
 
-Use AI to see the text, possible readings and missing context. Do not use AI to decide what someone "really" is or what they are "really" feeling.
+Use AI to see the text, possible readings and missing context. Do not use AI to decide what someone "really" is, what they are "really" feeling or what hidden intention they have.
 
 In cases involving violence, coercion, harassment, legal risk, workplace harm, urgent danger or severe conflict, proper procedures and people are needed, not only AI.
 

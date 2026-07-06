@@ -1,6 +1,6 @@
 ---
 title: "Jak sprawdzić, czy odpowiedź AI ma źródła"
-description: "Praktyka sprawdzania twierdzeń AI, źródeł i cytowań zanim trafią do artykułu, prezentacji, notatki zespołowej albo decyzji."
+description: "Praktyka rozkładania odpowiedzi AI na twierdzenia, źródła i miejsca ryzyka, zanim tekst trafi do artykułu, prezentacji, notatki zespołowej albo decyzji."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,9 +16,11 @@ type: "practice"
 category: "Praktyka"
 ---
 
-Płynna odpowiedź AI może wyglądać jak gotowe wyjaśnienie, ale sama forma nie pokazuje jeszcze, skąd pochodzą twierdzenia. Nawet link, tytuł publikacji albo nazwisko autora nie są dowodem, dopóki człowiek nie sprawdzi, czy źródło istnieje i czy rzeczywiście wspiera daną tezę.
+Płynna odpowiedź AI może wyglądać jak gotowe wyjaśnienie. Problem w tym, że sama forma nie pokazuje jeszcze, skąd pochodzą twierdzenia. Link, tytuł publikacji albo nazwisko autora też nie są dowodem, dopóki człowiek nie sprawdzi, czy źródło istnieje i czy rzeczywiście wspiera daną tezę.
 
-Ta praktyka pomaga potraktować odpowiedź jako materiał do weryfikacji: oddzielić twierdzenia wymagające źródła od interpretacji, wskazać miejsca najbardziej ryzykowne i przygotować pracę, którą trzeba wykonać poza rozmową. Najlepiej sprawdza się przy szkicach artykułów, notatkach dla zespołu, prezentacjach i zdaniach z liczbami, datami albo nazwami instytucji.
+Ta praktyka pomaga potraktować odpowiedź jako materiał do sprawdzenia, a nie jako gotową podstawę. Chodzi o oddzielenie twierdzeń wymagających źródła od interpretacji, wskazanie miejsc najbardziej ryzykownych i przygotowanie pracy, którą trzeba wykonać poza rozmową z modelem.
+
+Najlepiej sprawdza się przy szkicach artykułów, notatkach dla zespołu, prezentacjach i zdaniach, w których pojawiają się liczby, daty, nazwiska, badania albo nazwy instytucji.
 
 ## Kiedy to pomaga
 
@@ -29,7 +31,7 @@ Ta praktyka pomaga potraktować odpowiedź jako materiał do weryfikacji: oddzie
 
 ## O co poprosić model
 
-Użyj modelu do uporządkowania ryzyka, nie do samopotwierdzenia. Źródła sprawdza człowiek poza modelem.
+Użyj modelu do uporządkowania ryzyka, nie do samopotwierdzenia. Źródła sprawdza człowiek poza modelem, najlepiej w osobnym kroku.
 
 ```text
 Przeczytaj swoją poprzednią odpowiedź i pomóż mi sprawdzić, które jej fragmenty wymagają źródeł.
@@ -42,16 +44,16 @@ Podziel odpowiedź na 5 części:
 4. Miejsca, w których źródło musi nie tylko istnieć, ale też wspierać tę konkretną tezę.
 5. Informacje, których nie powinienem używać bez aktualnej, zewnętrznej weryfikacji.
 
-Nie wymyślaj publikacji, linków ani autorów. Nie udawaj, że sprawdzasz źródła, jeśli nie masz do nich dostępu. Na końcu wskaż 3 fragmenty najbardziej ryzykowne, jeśli użyję ich bez sprawdzenia.
+Nie wymyślaj publikacji, linków ani autorów. Nie udawaj, że sprawdzasz źródła, jeśli nie masz do nich dostępu. Jeśli nie możesz czegoś zweryfikować, nazwij to wprost. Na końcu wskaż 3 fragmenty najbardziej ryzykowne, jeśli użyję ich bez sprawdzenia.
 ```
 
 ## Co sprawdzić samodzielnie
 
-- Czy źródło istnieje.
-- Czy jest pierwotne, wiarygodne i aktualne dla tego tematu.
-- Czy źródło mówi dokładnie to, co przypisał mu model.
-- Czy liczby, daty i nazwiska zgadzają się z materiałem źródłowym.
-- Czy odpowiedź nie składa kilku różnych źródeł w jedną zbyt pewną tezę.
+- Czy źródło rzeczywiście istnieje.
+- Czy jest pierwotne, wiarygodne i wystarczająco aktualne dla tego tematu.
+- Czy mówi dokładnie to, co przypisał mu model.
+- Czy liczby, daty, nazwiska i zakres badania zgadzają się z materiałem źródłowym.
+- Czy odpowiedź nie skleja kilku różnych źródeł w jedną zbyt pewną tezę.
 
 ## Co może pójść źle
 
@@ -62,13 +64,13 @@ Nie wymyślaj publikacji, linków ani autorów. Nie udawaj, że sprawdzasz źró
 
 ## Lepszy sposób użycia odpowiedzi
 
-Model napisał w szkicu prezentacji, że konkretna metoda "zwiększa skuteczność zespołów o 30%" i że potwierdzają to badania z ostatnich lat. Dobra reakcja nie polega na poproszeniu modelu, żeby "dodał źródła". Lepiej najpierw oznaczyć tę liczbę jako twierdzenie wymagające weryfikacji, sprawdzić, czy badanie istnieje, a potem zobaczyć, czy dotyczy podobnego typu zespołu, metody i kontekstu.
+Model napisał w szkicu prezentacji, że konkretna metoda "zwiększa skuteczność zespołów o 30%" i że potwierdzają to badania z ostatnich lat. Dobra reakcja nie polega na poproszeniu modelu, żeby "dodał źródła". Lepiej najpierw oznaczyć tę liczbę jako twierdzenie wymagające weryfikacji, sprawdzić, czy badanie istnieje, a potem zobaczyć, czy dotyczy podobnego typu zespołu, metody i kontekstu. Dopiero wtedy warto zdecydować, czy zdanie zostaje, zostaje osłabione, czy znika.
 
 Ten prompt przesuwa uwagę z gotowej [odpowiedzi modelu](/pl/concepts/model-output/) na pytanie, na czym opiera się dana informacja. To prosty trening [czujności epistemicznej](/pl/concepts/epistemic-vigilance/): nie tylko "czy to brzmi dobrze?", ale "co można sprawdzić, gdzie i przez kogo?".
 
 ## Krótka zasada
 
-Nie pytaj modelu, czy ma rację. Poproś go, żeby pomógł ci zobaczyć, co trzeba sprawdzić poza modelem.
+Nie pytaj modelu, czy ma rację. Poproś go, żeby pokazał, co trzeba sprawdzić poza modelem.
 
 ## Powiązane pojęcia
 

@@ -1,6 +1,6 @@
 ---
 title: "Jak nie pomylić płynności z prawdą"
-description: "Praktyka zatrzymania się przy odpowiedzi, która brzmi spójnie i pewnie, ale może ukrywać niepewność, założenia, zbyt szerokie uogólnienia albo brak źródeł."
+description: "Praktyka zatrzymania się przy odpowiedzi, która brzmi spójnie i pewnie, ale może ukrywać niepewność, założenia, brak źródeł albo zbyt szerokie uogólnienia."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,9 +16,9 @@ type: "practice"
 category: "Praktyka"
 ---
 
-Modele językowe potrafią pisać spokojnie, elegancko i logicznie nawet wtedy, gdy odpowiedź jest błędna, zbyt ogólna albo słabo oparta na materiale. Dobra struktura może dawać poczucie pewności, ale sama w sobie nie jest dowodem.
+Modele językowe potrafią pisać spokojnie, elegancko i logicznie także wtedy, gdy odpowiedź jest błędna, zbyt ogólna albo słabo oparta na materiale. Dobra struktura może dawać poczucie pewności, ale sama w sobie nie jest dowodem.
 
-Ta praktyka pomaga zatrzymać się przy odpowiedzi, która "brzmi prawdziwie", i zapytać: co wynika z danych, co jest założeniem, gdzie brakuje źródeł i jakie kontrprzykłady mogłyby osłabić wniosek.
+Ta praktyka pomaga zatrzymać się przy odpowiedzi, która "brzmi prawdziwie", i zapytać: co wynika z danych, co jest założeniem, gdzie brakuje źródeł i jakie kontrprzykłady mogłyby osłabić wniosek. Nie chodzi o to, żeby odrzucać każdą dobrą odpowiedź, tylko żeby nie traktować płynności jak gwarancji.
 
 Różni się od sprawdzania źródeł. Tam pytanie brzmi: "czy to ma zewnętrzne oparcie?". Tutaj pytanie brzmi: "czy styl odpowiedzi nie daje mi zbyt dużego poczucia pewności?".
 
@@ -31,7 +31,7 @@ Różni się od sprawdzania źródeł. Tam pytanie brzmi: "czy to ma zewnętrzne
 
 ## O co poprosić model
 
-Poproś model o rozbicie efektu pewności na części. Nie chodzi o poprawienie stylu, tylko o zobaczenie, gdzie styl udaje dowód.
+Poproś model o rozbicie efektu pewności na części. Nie chodzi o poprawienie stylu, tylko o zobaczenie, gdzie styl zaczyna udawać dowód.
 
 ```text
 Przeczytaj poniższą odpowiedź i pomóż mi nie pomylić płynności z prawdą.
@@ -45,7 +45,7 @@ Oceń ją w taki sposób:
 5. Jakie kontrprzykłady albo warunki mogłyby zmienić ten wniosek?
 6. Jak brzmiałaby ostrożniejsza wersja tej odpowiedzi, bez dodawania pozornej pewności?
 
-Nie wzmacniaj retorycznie tekstu. Nie dopisuj pewności. Nie traktuj ostrożniejszej redakcji jako weryfikacji faktów. Pomóż mi zobaczyć, co trzeba sprawdzić przed użyciem odpowiedzi.
+Nie wzmacniaj retorycznie tekstu. Nie dopisuj pewności. Nie traktuj ostrożniejszej redakcji jako weryfikacji faktów. Jeśli czegoś nie da się ocenić z samej odpowiedzi, powiedz to wprost. Pomóż mi zobaczyć, co trzeba sprawdzić przed użyciem odpowiedzi.
 
 Odpowiedź:
 [wklej odpowiedź]
@@ -54,7 +54,7 @@ Odpowiedź:
 ## Co sprawdzić samodzielnie
 
 - Fakty, liczby, daty i nazwy.
-- Słowa typu "zwykle", "większość", "szybko", "wszyscy", "nikt".
+- Słowa typu "zwykle", "większość", "szybko", "wszyscy", "nikt", "zawsze" i "nigdy".
 - Przyczyny podane bez pokazania mechanizmu albo źródła.
 - Wnioski, które brzmią jak oczywiste tylko dlatego, że są dobrze uporządkowane.
 - Decyzje, które mają konsekwencje poza tekstem.
@@ -68,13 +68,13 @@ Odpowiedź:
 
 ## Lepszy sposób użycia odpowiedzi
 
-Odpowiedź AI brzmi spokojnie: "Firmy wdrażające AI zwykle szybko widzą wzrost produktywności, bo automatyzacja usuwa większość powtarzalnych zadań". Zamiast powtarzać to zdanie, zatrzymaj słowa "zwykle", "szybko" i "większość". To nie są tylko ozdobniki. To twierdzenia, które wymagają danych, definicji i kontekstu. Ostrożniejsza wersja może brzmieć lepiej, ale nadal nie zastępuje sprawdzenia faktów.
+Odpowiedź AI brzmi spokojnie: "Firmy wdrażające AI zwykle szybko widzą wzrost produktywności, bo automatyzacja usuwa większość powtarzalnych zadań". Zamiast powtarzać to zdanie, zatrzymaj słowa "zwykle", "szybko" i "większość". To nie są tylko ozdobniki. To twierdzenia, które wymagają danych, definicji i kontekstu. Ostrożniejsza wersja może brzmieć lepiej, ale nadal nie zastępuje sprawdzenia faktów ani decyzji, czy to zdanie w ogóle powinno zostać użyte.
 
 Ten prompt pomaga rozdzielić jakość językową od statusu poznawczego [odpowiedzi modelu](/pl/concepts/model-output/). To praktyczne ćwiczenie [skalibrowanego zaufania](/pl/concepts/calibrated-trust/): nie odrzucać wszystkiego, ale nie mylić dobrego stylu z podstawą do zaufania.
 
 ## Krótka zasada
 
-Płynność jest sygnałem formy, nie dowodem prawdy. Im ważniejsza decyzja, tym bardziej weryfikacja musi wyjść poza model.
+Płynność jest sygnałem formy, nie dowodem prawdy. Im ważniejsza decyzja, tym szybciej weryfikacja musi wyjść poza model.
 
 ## Powiązane pojęcia
 

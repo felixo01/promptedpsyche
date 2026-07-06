@@ -1,6 +1,6 @@
 ---
 title: "How not to confuse fluency with truth"
-description: "A practice for pausing when an AI answer sounds coherent and confident but may hide uncertainty, assumptions, overgeneralization or missing sources."
+description: "A practice for pausing when an AI answer sounds coherent and confident but may hide uncertainty, assumptions, missing sources or overgeneralization."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -18,7 +18,7 @@ category: "Practice"
 
 Language models can write calmly, elegantly and logically even when an answer is wrong, too broad or weakly grounded. Good structure can create confidence, but structure is not evidence.
 
-This practice helps you pause when an answer "sounds true" and ask: what comes from the material, what is an assumption, where are sources missing and what counterexamples could weaken the conclusion?
+This practice helps you pause when an answer "sounds true" and ask: what comes from the material, what is an assumption, where are sources missing and what counterexamples could weaken the conclusion? The point is not to reject every good answer, but to avoid treating fluency as a guarantee.
 
 It is different from source checking. There the question is: "does this have external support?". Here the question is: "is the style of the answer giving me too much confidence?".
 
@@ -31,7 +31,7 @@ It is different from source checking. There the question is: "does this have ext
 
 ## What to ask the model
 
-Ask the model to break the feeling of certainty into parts. The aim is not to improve the style, but to notice where style is acting like evidence.
+Ask the model to break the feeling of certainty into parts. The aim is not to improve the style, but to notice where style starts acting like evidence.
 
 ```text
 Read the answer below and help me avoid confusing fluency with truth.
@@ -45,7 +45,7 @@ Evaluate it this way:
 5. What counterexamples or conditions could change the conclusion?
 6. What would a more cautious version of this answer look like, without adding false certainty?
 
-Do not make the text more rhetorically persuasive. Do not add certainty. Do not treat a more cautious rewrite as fact-checking. Help me see what needs checking before I use the answer.
+Do not make the text more rhetorically persuasive. Do not add certainty. Do not treat a more cautious rewrite as fact-checking. If something cannot be assessed from the answer alone, say so directly. Help me see what needs checking before I use the answer.
 
 Answer:
 [paste answer]
@@ -54,7 +54,7 @@ Answer:
 ## What to check yourself
 
 - Facts, numbers, dates and names.
-- Words such as "usually", "most", "quickly", "everyone" and "no one".
+- Words such as "usually", "most", "quickly", "everyone", "no one", "always" and "never".
 - Causes that appear without a mechanism or source.
 - Conclusions that feel obvious mainly because they are well organized.
 - Decisions that have consequences beyond the text.
@@ -68,13 +68,13 @@ Answer:
 
 ## Better way to use the answer
 
-An AI answer says, "Companies that adopt AI usually see productivity gains quickly because automation removes most repetitive work." Instead of repeating the sentence, pause at "usually", "quickly" and "most". These are not just style. They are claims that need data, definitions and context. A more cautious version may sound better, but it still does not replace checking the facts.
+An AI answer says, "Companies that adopt AI usually see productivity gains quickly because automation removes most repetitive work." Instead of repeating the sentence, pause at "usually", "quickly" and "most". These are not just style. They are claims that need data, definitions and context. A more cautious version may sound better, but it still does not replace checking the facts or deciding whether the sentence should be used at all.
 
 This separates language quality from the knowledge status of [model output](/concepts/model-output/). It is a practical exercise in [calibrated trust](/concepts/calibrated-trust/): do not reject everything, but do not mistake good style for a basis for trust.
 
 ## Short rule
 
-Fluency is a signal of form, not proof of truth. The more important the decision, the more verification has to leave the model.
+Fluency is a signal of form, not proof of truth. The more important the decision, the sooner verification has to leave the model.
 
 ## Related Concepts
 
