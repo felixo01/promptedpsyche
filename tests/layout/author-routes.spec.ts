@@ -26,11 +26,11 @@ test.describe('author and about routes', () => {
       'href',
       '/pl/about/'
     );
-    await expect(page.locator('body')).toContainText('European Film Academy');
-    await expect(page.locator('body')).toContainText('studying psychology');
-    await expect(page.locator('body')).toContainText('tools, repositories, versioned texts, sources');
+    await expect(page.locator('body')).toContainText('why an answer feels credible');
+    await expect(page.locator('body')).toContainText('Cyberpsychology and Human-AI Interaction');
+    await expect(page.locator('body')).toContainText('writing, sources, context, versions');
     await expect(page.locator('body')).toContainText(
-      'You can find my film work and directing portfolio at felixmamczur.com.'
+      'You can find more of my film work and directing portfolio at felixmamczur.com.'
     );
     await expect(page.getByRole('link', { name: 'film work and directing portfolio' })).toHaveAttribute(
       'href',
@@ -42,6 +42,9 @@ test.describe('author and about routes', () => {
     );
     await expect(page.getByRole('link', { name: 'felixmamczur.com' })).toHaveCount(0);
     await expect(page.locator('body')).not.toContainText('film director portfolio and earlier projects');
+    await expect(page.locator('body')).not.toContainText('European Film Academy');
+    await expect(page.locator('body')).not.toContainText('I am a filmmaker');
+    await expect(page.locator('body')).not.toContainText('studying psychology');
     await expect(page.locator('body')).not.toContainText('AI engineer');
     await expect(page.locator('body')).not.toContainText('cybersecurity expert');
     await expect(page.locator('body')).not.toContainText('clinical psychologist');
@@ -62,9 +65,9 @@ test.describe('author and about routes', () => {
       'href',
       '/about/'
     );
-    await expect(page.locator('body')).toContainText('European Film Academy');
-    await expect(page.locator('body')).toContainText('studiuję psychologię');
-    await expect(page.locator('body')).toContainText('narzędziami, repozytoriami, wersjonowanymi tekstami');
+    await expect(page.locator('body')).toContainText('co dzieje się z człowiekiem');
+    await expect(page.locator('body')).toContainText('Cyberpsychologia i Human-AI Interaction');
+    await expect(page.locator('body')).toContainText('tekstów, źródeł, kontekstu');
     await expect(page.locator('body')).toContainText(
       'Moje prace filmowe i portfolio reżyserskie można znaleźć na felixmamczur.com.'
     );
@@ -78,6 +81,9 @@ test.describe('author and about routes', () => {
     );
     await expect(page.getByRole('link', { name: 'felixmamczur.com' })).toHaveCount(0);
     await expect(page.locator('body')).not.toContainText('portfolio filmowe i wcześniejsze projekty');
+    await expect(page.locator('body')).not.toContainText('European Film Academy');
+    await expect(page.locator('body')).not.toContainText('Jestem reżyserem');
+    await expect(page.locator('body')).not.toContainText('studiuję psychologię');
     await expect(page.locator('body')).not.toContainText('inżynier AI');
     await expect(page.locator('body')).not.toContainText('ekspert cyberbezpieczeństwa');
     await expect(page.locator('body')).not.toContainText('psychologiem');
