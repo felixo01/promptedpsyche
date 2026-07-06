@@ -35,6 +35,7 @@ test.describe('author and about routes', () => {
       '/pl/about/'
     );
     await expect(page.locator('body')).toContainText('artificial intelligence changes the way people think');
+    await expect(page.locator('body')).toContainText('My name is Feliks Mamczur');
     await expect(page.locator('body')).toContainText(
       'I created Prompted Psyche as a place to write about the human side of AI'
     );
@@ -83,7 +84,8 @@ test.describe('author and about routes', () => {
       '/about/'
     );
     await expect(page.locator('body')).toContainText('sztuczna inteligencja zmienia sposób myślenia');
-    await expect(page.locator('body')).toContainText('Stworzyłem Prompted Psyche jako miejsce');
+    await expect(page.locator('body')).toContainText('Nazywam się Feliks Mamczur');
+    await expect(page.locator('body')).toContainText('stworzyłem Prompted Psyche');
     await expectStructuredAuthorIdentity(page);
     await expect(page.locator('body')).toContainText('cyberpsychologii, Human-AI Interaction');
     await expect(page.locator('body')).toContainText('inteligentnymi systemami');
