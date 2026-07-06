@@ -5,6 +5,7 @@ test.describe('homepage hero positioning', () => {
     await page.goto('/');
 
     await expect(page.locator('[data-qa="hero-title"]')).toHaveText('The human side of AI.');
+    await expect(page.locator('[data-qa="hero-copy"]')).not.toContainText('Feliks Mamczur');
     await expect(page.locator('body')).toContainText('The first essays and notes are now live.');
     await expect(page.locator('body')).not.toContainText('The first article is now published.');
   });
@@ -13,7 +14,19 @@ test.describe('homepage hero positioning', () => {
     await page.goto('/pl/');
 
     await expect(page.locator('[data-qa="hero-title"]')).toHaveText('Ludzka strona AI.');
+    await expect(page.locator('[data-qa="hero-copy"]')).not.toContainText('Feliks Mamczur');
     await expect(page.locator('body')).toContainText('Pierwsze eseje i notatki są już dostępne.');
     await expect(page.locator('body')).not.toContainText('Pierwszy artykuł jest już dostępny.');
+  });
+
+  test('keeps visible author-name repetition restrained on homepages', async ({ page }) => {
+    for (const route of ['/', '/pl/']) {
+      await page.goto(route);
+
+      const visibleText = await page.locator('body').innerText();
+      const matches = visibleText.match(/Feliks Mamczur/g) ?? [];
+
+      expect(matches.length).toBeLessThanOrEqual(3);
+    }
   });
 });
