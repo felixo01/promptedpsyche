@@ -16,7 +16,7 @@ type: "practice"
 category: "Praktyka"
 ---
 
-Płynna odpowiedź AI może wyglądać jak gotowe wyjaśnienie. Problem w tym, że sama forma nie pokazuje jeszcze, skąd pochodzą twierdzenia. Link, tytuł publikacji albo nazwisko autora też nie są dowodem, dopóki człowiek nie sprawdzi, czy źródło istnieje i czy rzeczywiście wspiera daną tezę.
+Płynna odpowiedź AI może wyglądać jak gotowe wyjaśnienie. Problem w tym, że sama forma nie pokazuje jeszcze, skąd pochodzą twierdzenia. Link, tytuł publikacji albo nazwisko autora też nie wystarczają, dopóki człowiek nie sprawdzi, czy źródło istnieje i czy rzeczywiście wspiera daną tezę.
 
 Ta praktyka pomaga potraktować odpowiedź jako materiał do sprawdzenia, a nie jako gotową podstawę. Chodzi o oddzielenie twierdzeń wymagających źródła od interpretacji, wskazanie miejsc najbardziej ryzykownych i przygotowanie pracy, którą trzeba wykonać poza rozmową z modelem.
 
@@ -31,7 +31,7 @@ Najlepiej sprawdza się przy szkicach artykułów, notatkach dla zespołu, preze
 
 ## O co poprosić model
 
-Użyj modelu do uporządkowania ryzyka, nie do samopotwierdzenia. Źródła sprawdza człowiek poza modelem, najlepiej w osobnym kroku.
+Użyj modelu do uporządkowania ryzyka, nie do samopotwierdzenia. Źródła sprawdza człowiek poza modelem, najlepiej w osobnym kroku i w materiale, który da się otworzyć.
 
 ```text
 Przeczytaj swoją poprzednią odpowiedź i pomóż mi sprawdzić, które jej fragmenty wymagają źródeł.
@@ -41,7 +41,7 @@ Podziel odpowiedź na 5 części:
 1. Twierdzenia, które wymagają źródła.
 2. Twierdzenia, które są interpretacją albo ogólnym wyjaśnieniem.
 3. Podane linki, tytuły, nazwiska lub cytowania, które muszę sprawdzić poza rozmową.
-4. Miejsca, w których źródło musi nie tylko istnieć, ale też wspierać tę konkretną tezę.
+4. Miejsca, w których źródło musi nie tylko istnieć, ale też wspierać dokładnie tę konkretną tezę.
 5. Informacje, których nie powinienem używać bez aktualnej, zewnętrznej weryfikacji.
 
 Nie wymyślaj publikacji, linków ani autorów. Nie udawaj, że sprawdzasz źródła, jeśli nie masz do nich dostępu. Jeśli nie możesz czegoś zweryfikować, nazwij to wprost. Na końcu wskaż 3 fragmenty najbardziej ryzykowne, jeśli użyję ich bez sprawdzenia.

@@ -18,7 +18,7 @@ category: "Practice"
 
 AI can help organize a difficult email, client message or tense exchange. It can also push the user too quickly toward psychological claims about the person on the other side: "they are manipulative", "they are narcissistic", "they have a hidden intention", "they are definitely attacking me".
 
-This practice sets a simple boundary: analyze the visible text and missing context, not the human being. The aim is a working reply, less intention-reading and more responsibility on the side of the person who decides what to send.
+This practice sets a simple boundary: analyze the visible text, the stakes of the situation and the missing context, not the human being. The aim is a working reply, less intention-reading and more responsibility on the side of the person who decides what to send.
 
 It can help prepare a response, but it does not determine what someone "really" meant.
 

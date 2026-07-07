@@ -18,7 +18,7 @@ category: "Praktyka"
 
 Autor tekstu zwykle wie, co chciał powiedzieć. Właśnie dlatego łatwo przeoczyć niejasne przejścia, brakujący kontekst albo zdania, które czytelnik może zrozumieć inaczej. AI może pomóc jako drugi czytelnik, ale nie powinno przejmować autorstwa, głosu ani decyzji o sensie tekstu.
 
-Ta praktyka ustawia model jako narzędzie redakcyjnego dystansu. Ma pomóc zobaczyć możliwe reakcje czytelnika, ślepe punkty i miejsca ryzyka, a nie automatycznie wygładzić tekst do bezpiecznego, podobnego do wszystkich stylu.
+Ta praktyka ustawia model jako narzędzie redakcyjnego dystansu. Ma pomóc zobaczyć możliwe reakcje czytelnika, ślepe punkty i miejsca ryzyka, a nie automatycznie wygładzić tekst do bezpiecznego stylu, który brzmi podobnie do wszystkiego.
 
 ## Kiedy to pomaga
 

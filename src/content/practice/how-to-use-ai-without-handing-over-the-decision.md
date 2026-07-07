@@ -1,6 +1,6 @@
 ---
 title: "How to use AI without handing over the decision"
-description: "A scenario for organizing options, risks and missing information without transferring responsibility to the model."
+description: "A practice for organizing options, criteria, risks and missing information without transferring responsibility for the choice to the model."
 publishedAt: 2026-07-07
 draft: true
 tags:
@@ -16,7 +16,7 @@ type: "practice"
 category: "Practice"
 ---
 
-AI can help organize options, risks and missing information. It should not take over the decision. The model does not know your values, consequences, relationships or responsibility for the next step.
+AI can help organize options, criteria, risks and missing information. It should not take over the decision. The model does not know your values, consequences, relationships or responsibility for the next step.
 
 This practice helps use AI as decision support, not as a replacement for human decision-making.
 
@@ -43,7 +43,7 @@ Options I see:
 Prepare the analysis in 6 parts:
 
 1. Possible options.
-2. Main tradeoffs of each option.
+2. Main costs, gains and tensions of each option.
 3. Risks and missing information.
 4. Values, priorities or criteria that affect the decision.
 5. What the model can help organize.
@@ -59,6 +59,7 @@ At the end, suggest 5 questions I should ask myself before deciding. Do not choo
 - Whether missing information cannot be replaced by a conversation with AI.
 - Whether consequences affect other people, a team or procedures.
 - Whether the decision needs an expert, source or formal process.
+- Whether the model has shifted the criteria toward what is easy to organize in a table.
 
 ## What can go wrong
 

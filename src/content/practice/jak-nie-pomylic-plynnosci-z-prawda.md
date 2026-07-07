@@ -18,7 +18,7 @@ category: "Praktyka"
 
 Modele językowe potrafią pisać spokojnie, elegancko i logicznie także wtedy, gdy odpowiedź jest błędna, zbyt ogólna albo słabo oparta na materiale. Dobra struktura może dawać poczucie pewności, ale sama w sobie nie jest dowodem.
 
-Ta praktyka pomaga zatrzymać się przy odpowiedzi, która "brzmi prawdziwie", i zapytać: co wynika z danych, co jest założeniem, gdzie brakuje źródeł i jakie kontrprzykłady mogłyby osłabić wniosek. Nie chodzi o to, żeby odrzucać każdą dobrą odpowiedź, tylko żeby nie traktować płynności jak gwarancji.
+Ta praktyka pomaga zatrzymać się przy odpowiedzi, która "brzmi prawdziwie", i zapytać: co wynika z danych, co jest założeniem, gdzie brakuje źródeł i jakie kontrprzykłady mogłyby osłabić wniosek. Nie chodzi o odrzucanie każdej dobrej odpowiedzi, tylko o to, żeby nie traktować płynności jak podstawy do zaufania.
 
 Różni się od sprawdzania źródeł. Tam pytanie brzmi: "czy to ma zewnętrzne oparcie?". Tutaj pytanie brzmi: "czy styl odpowiedzi nie daje mi zbyt dużego poczucia pewności?".
 
@@ -74,7 +74,7 @@ Ten prompt pomaga rozdzielić jakość językową od statusu poznawczego [odpowi
 
 ## Krótka zasada
 
-Płynność jest sygnałem formy, nie dowodem prawdy. Im ważniejsza decyzja, tym szybciej weryfikacja musi wyjść poza model.
+Płynność jest sygnałem formy, nie dowodem prawdy. Im ważniejsza decyzja, tym szybciej sprawdzanie musi wyjść poza model.
 
 ## Powiązane pojęcia
 

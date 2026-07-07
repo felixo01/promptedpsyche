@@ -1,6 +1,6 @@
 ---
 title: "Jak użyć AI bez oddawania mu decyzji"
-description: "Scenariusz porządkowania opcji, ryzyk i brakujących informacji bez przenoszenia odpowiedzialności na model."
+description: "Praktyka porządkowania opcji, kryteriów, ryzyk i brakujących informacji bez przenoszenia odpowiedzialności za wybór na model."
 publishedAt: 2026-07-07
 draft: true
 tags:
@@ -16,14 +16,14 @@ type: "practice"
 category: "Praktyka"
 ---
 
-AI może pomóc uporządkować opcje, ryzyka i brakujące informacje. Nie powinna jednak przejmować decyzji. Model nie zna twoich wartości, konsekwencji, relacji ani odpowiedzialności za dalszy krok.
+AI może pomóc uporządkować opcje, kryteria, ryzyka i brakujące informacje. Nie powinna jednak przejmować decyzji. Model nie zna twoich wartości, konsekwencji, relacji ani odpowiedzialności za dalszy krok.
 
 Ta praktyka pomaga używać AI jako narzędzia wspierającego decyzję, a nie jako zastępstwa za decyzję człowieka.
 
 ## Kiedy to pomaga
 
 - Gdy masz kilka możliwych opcji i trudno je porównać.
-- Gdy chcesz zobaczyć trade-offy bez proszenia modelu o wyrok.
+- Gdy chcesz zobaczyć koszty, zyski i napięcia bez proszenia modelu o wyrok.
 - Gdy brakuje ci kryteriów albo informacji.
 - Gdy decyzja jest zwykła, odwracalna albo robocza, a nie medyczna, prawna, finansowa lub wysokiego ryzyka.
 
@@ -43,7 +43,7 @@ Opcje, które widzę:
 Przygotuj analizę w 6 częściach:
 
 1. Możliwe opcje.
-2. Główne trade-offy każdej opcji.
+2. Główne koszty, zyski i napięcia każdej opcji.
 3. Ryzyka i brakujące informacje.
 4. Wartości, priorytety albo kryteria, które wpływają na decyzję.
 5. Co model może pomóc uporządkować.
@@ -59,6 +59,7 @@ Na końcu zaproponuj 5 pytań, które powinienem sobie zadać przed decyzją. Ni
 - Czy brakuje informacji, których nie da się zastąpić rozmową z AI.
 - Czy konsekwencje dotyczą innych osób, zespołu albo procedur.
 - Czy decyzja wymaga eksperta, źródła albo formalnego procesu.
+- Czy model nie przesunął kryteriów decyzji w stronę tego, co łatwo uporządkować w tabeli.
 
 ## Co może pójść źle
 

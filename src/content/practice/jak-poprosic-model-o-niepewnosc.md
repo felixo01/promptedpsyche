@@ -18,7 +18,7 @@ category: "Praktyka"
 
 Model może odpowiedzieć płynnie nawet wtedy, gdy brakuje mu ważnych informacji. Ta praktyka pomaga zatrzymać się przy odpowiedzi, która brzmi gotowo, i zapytać: co jest znane, co jest prawdopodobne, co jest założeniem, czego brakuje i co mogłoby zmienić wniosek.
 
-Celem nie jest wymuszenie liczby pewności. Celem jest lepszy osąd: które fragmenty odpowiedzi są mocniejsze, które są robocze i co człowiek powinien sprawdzić poza modelem przed dalszym krokiem.
+Celem nie jest wymuszenie liczby pewności. Celem jest lepszy osąd: które fragmenty odpowiedzi są mocniejsze, które są robocze i co człowiek powinien sprawdzić poza modelem przed dalszym krokiem. Ten wpis dotyczy ostrożności wobec wniosku; osobna praktyka sprawdza, czy model miał wystarczający kontekst wejściowy.
 
 ## Kiedy to pomaga
 

@@ -18,7 +18,7 @@ category: "Practice"
 
 A model can answer fluently even when important information is missing. This practice helps you pause when an answer sounds finished and ask: what is known, what is likely, what is assumed, what is missing and what could change the conclusion?
 
-The goal is not to force a confidence score. The goal is better judgment: which parts of the answer are stronger, which parts are tentative and what a person should verify outside the model before taking the next step.
+The goal is not to force a confidence score. The goal is better judgment: which parts of the answer are stronger, which parts are tentative and what a person should verify outside the model before taking the next step. This entry is about caution around a conclusion; a separate practice checks whether the model had enough input context.
 
 ## When this helps
 

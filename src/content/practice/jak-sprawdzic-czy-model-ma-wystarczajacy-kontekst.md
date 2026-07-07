@@ -1,6 +1,6 @@
 ---
 title: "Jak sprawdzić, czy model ma wystarczający kontekst"
-description: "Scenariusz sprawdzania, czy odpowiedź AI opiera się na wystarczającym kontekście, czy tylko na brakujących założeniach."
+description: "Praktyka sprawdzania, czy odpowiedź AI opiera się na wystarczającym kontekście wejściowym, czy na brakujących założeniach."
 publishedAt: 2026-07-07
 draft: true
 tags:
@@ -18,18 +18,18 @@ category: "Praktyka"
 
 Model może odpowiedzieć nawet wtedy, gdy dostał za mało kontekstu. Płynność odpowiedzi może wtedy ukrywać fakt, że część wniosku opiera się na domysłach. Ta praktyka pomaga sprawdzić, czy model ma wystarczające informacje, żeby odpowiedzieć odpowiedzialnie.
 
-Nie chodzi o to, żeby model idealnie wiedział, czego brakuje. Chodzi o to, żeby pokazał, gdzie odpowiedź jest krucha i jakie informacje mogą ją poprawić.
+Nie chodzi o to, żeby model idealnie wiedział, czego brakuje. Chodzi o to, żeby pokazał, gdzie odpowiedź jest krucha i jakie informacje mogą ją poprawić. To ćwiczenie dotyczy kontekstu wejściowego; praktyka o niepewności dotyczy ostrożności wobec samego wniosku.
 
 ## Kiedy to pomaga
 
 - Gdy odpowiedź brzmi pewnie, ale podałeś mało informacji.
 - Gdy sytuacja zależy od osób, terminów, celów albo ograniczeń, których nie opisałeś.
 - Gdy chcesz użyć odpowiedzi w pracy, tekście, notatce albo decyzji.
-- Gdy nie wiesz, czy warto dopytać model, czy najpierw dopisać kontekst.
+- Gdy nie wiesz, czy warto dopytać model, czy najpierw dopisać kontekst wejściowy.
 
 ## O co poprosić model
 
-Poproś model o sprawdzenie braków kontekstu, założeń i kruchych części odpowiedzi. Model powinien też powiedzieć, kiedy odpowiedź wymaga kwalifikacji.
+Poproś model o sprawdzenie braków kontekstu, założeń i kruchych części odpowiedzi. Model powinien też powiedzieć, kiedy odpowiedź wymaga doprecyzowania albo nie powinna być użyta dalej bez dodatkowych informacji.
 
 ```text
 Przeczytaj swoją poprzednią odpowiedź i sprawdź, czy miała wystarczający kontekst.
@@ -53,6 +53,7 @@ Jeśli kontekst jest niewystarczający, powiedz to wprost. Zamiast udzielać zby
 - Czy odpowiedź zależy od celów, ograniczeń albo odbiorcy.
 - Czy model nie używa ogólnych zaleceń tam, gdzie potrzebny jest konkretny kontekst.
 - Czy przed użyciem odpowiedzi trzeba zapytać człowieka, źródło albo procedurę.
+- Czy najważniejszy brak kontekstu jest jeden i konkretny, czy lista braków tylko wygląda kompletnie.
 
 ## Co może pójść źle
 

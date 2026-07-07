@@ -18,7 +18,7 @@ category: "Praktyka"
 
 AI może pomóc uporządkować trudnego maila, wiadomość od klienta albo napiętą rozmowę. Może też zbyt łatwo popchnąć użytkownika w stronę psychologizowania osoby po drugiej stronie: "manipuluje", "jest narcystyczna", "ma ukrytą intencję", "na pewno chce mnie zaatakować".
 
-Ta praktyka stawia prostą granicę: analizujemy widoczny tekst i brakujący kontekst, nie diagnozujemy człowieka. Celem jest przygotowanie roboczej odpowiedzi, ograniczenie dopisywania intencji i zostawienie odpowiedzialności po stronie osoby, która ostatecznie decyduje, co napisać.
+Ta praktyka stawia prostą granicę: analizujemy widoczny tekst, stawkę sytuacji i brakujący kontekst, nie diagnozujemy człowieka. Celem jest przygotowanie roboczej odpowiedzi, ograniczenie dopisywania intencji i zostawienie odpowiedzialności po stronie osoby, która ostatecznie decyduje, co napisać.
 
 To pomaga przygotować reakcję, ale nie ustala, co ktoś "naprawdę" miał na myśli.
 
@@ -39,7 +39,7 @@ Pomóż mi przeanalizować poniższą wiadomość bez diagnozowania osoby, któr
 Zrób tylko analizę widocznego tekstu:
 
 1. Co jest wprost napisane: fakty, prośby, decyzje, terminy?
-2. Co jest moją interpretacją, a nie faktem widocznym w tekście?
+2. Co jest moją interpretacją, a nie czymś widocznym w tekście?
 3. Jakie są 2-3 możliwe odczytania tonu, bez przypisywania intencji?
 4. Jakiego kontekstu brakuje, żeby odpowiedzieć ostrożnie?
 5. Czego nie da się uczciwie wywnioskować z samej wiadomości?

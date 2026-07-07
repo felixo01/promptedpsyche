@@ -16,7 +16,7 @@ type: "practice"
 category: "Practice"
 ---
 
-A fluent AI answer can look like a finished explanation. The problem is that style does not show where the claims come from. A link, publication title or author name is not evidence either until a person checks whether the source exists and whether it actually supports the claim.
+A fluent AI answer can look like a finished explanation. The problem is that style does not show where the claims come from. A link, publication title or author name is not enough either until a person checks whether the source exists and whether it actually supports the claim.
 
 This practice treats the answer as material to check, not as a finished basis. The aim is to separate source-dependent claims from interpretation, mark the riskiest passages and prepare the work that has to happen outside the conversation with the model.
 
@@ -31,7 +31,7 @@ It is most useful for article drafts, team notes, presentations and sentences th
 
 ## What to ask the model
 
-Use the model to organize risk, not to confirm itself. Source checking happens outside the model, preferably as a separate step.
+Use the model to organize risk, not to confirm itself. Source checking happens outside the model, preferably as a separate step and in material you can actually open.
 
 ```text
 Read your previous answer and help me check which parts require sources.
@@ -41,7 +41,7 @@ Divide the answer into 5 parts:
 1. Claims that require a source.
 2. Claims that are interpretation or general explanation.
 3. Links, titles, names or citations that I need to check outside this conversation.
-4. Places where a source must not only exist, but support this specific claim.
+4. Places where a source must not only exist, but support this exact claim.
 5. Information I should not use without current external verification.
 
 Do not invent publications, links or authors. Do not pretend to check sources if you do not have access to them. If you cannot verify something, say that directly. At the end, identify the 3 riskiest parts of the answer if I use them without checking.

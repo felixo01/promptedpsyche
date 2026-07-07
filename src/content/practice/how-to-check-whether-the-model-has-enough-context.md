@@ -1,6 +1,6 @@
 ---
 title: "How to check whether the model has enough context"
-description: "A scenario for checking whether an AI answer rests on enough context or only on missing assumptions."
+description: "A practice for checking whether an AI answer rests on enough input context or on missing assumptions."
 publishedAt: 2026-07-07
 draft: true
 tags:
@@ -18,18 +18,18 @@ category: "Practice"
 
 A model can answer even when it has too little context. The fluency of the answer can hide the fact that part of the conclusion rests on guesses. This practice helps check whether the model has enough information to answer responsibly.
 
-The goal is not for the model to know perfectly what is missing. The goal is to show where the answer is fragile and what information could improve it.
+The goal is not for the model to know perfectly what is missing. The goal is to show where the answer is fragile and what information could improve it. This exercise is about input context; the uncertainty practice is about caution around the conclusion itself.
 
 ## When this helps
 
 - When an answer sounds confident but you provided little information.
 - When the situation depends on people, deadlines, goals or constraints you did not describe.
 - When you want to use the answer in work, writing, a note or a decision.
-- When you are not sure whether to ask the model again or first add context.
+- When you are not sure whether to ask the model again or first add input context.
 
 ## What to ask the model
 
-Ask the model to check missing context, assumptions and fragile parts of the answer. The model should also say when an answer needs qualification.
+Ask the model to check missing context, assumptions and fragile parts of the answer. The model should also say when an answer needs clarification or should not be used further without more information.
 
 ```text
 Read your previous answer and check whether it had enough context.
@@ -53,6 +53,7 @@ If the context is insufficient, say that directly. Instead of giving an overly c
 - Whether the answer depends on goals, constraints or audience.
 - Whether the model uses general advice where specific context is needed.
 - Whether using the answer requires a person, source or procedure first.
+- Whether there is one concrete missing context point, or whether the list of gaps only looks complete.
 
 ## What can go wrong
 

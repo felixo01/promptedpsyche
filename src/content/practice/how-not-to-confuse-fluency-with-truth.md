@@ -18,7 +18,7 @@ category: "Practice"
 
 Language models can write calmly, elegantly and logically even when an answer is wrong, too broad or weakly grounded. Good structure can create confidence, but structure is not evidence.
 
-This practice helps you pause when an answer "sounds true" and ask: what comes from the material, what is an assumption, where are sources missing and what counterexamples could weaken the conclusion? The point is not to reject every good answer, but to avoid treating fluency as a guarantee.
+This practice helps you pause when an answer "sounds true" and ask: what comes from the material, what is an assumption, where are sources missing and what counterexamples could weaken the conclusion? The point is not to reject every good answer, but to avoid treating fluency as a basis for trust.
 
 It is different from source checking. There the question is: "does this have external support?". Here the question is: "is the style of the answer giving me too much confidence?".
 
@@ -74,7 +74,7 @@ This separates language quality from the knowledge status of [model output](/con
 
 ## Short rule
 
-Fluency is a signal of form, not proof of truth. The more important the decision, the sooner verification has to leave the model.
+Fluency is a signal of form, not proof of truth. The more important the decision, the sooner checking has to leave the model.
 
 ## Related Concepts
 

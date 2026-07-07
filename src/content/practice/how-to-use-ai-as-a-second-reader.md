@@ -18,7 +18,7 @@ category: "Practice"
 
 Writers usually know what they meant. That is exactly why unclear transitions, missing context or sentences that readers may misunderstand can be hard to see. AI can help as a second reader, but it should not take over authorship, voice or the decision about what the text means.
 
-This practice treats the model as a source of editorial distance. It helps reveal possible reader reactions, blind spots and reception risks without automatically smoothing the text into a safe style that sounds like everything else.
+This practice treats the model as a source of editorial distance. It helps reveal possible reader reactions, blind spots and reception risks without automatically smoothing the text into a safe, generic style that sounds like everything else.
 
 ## When this helps
 

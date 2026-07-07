@@ -1,6 +1,6 @@
 ---
 title: "How to ask AI for a counterargument"
-description: "A scenario for using AI to test your argument without treating the model as the judge."
+description: "A practice for using AI to test your argument without treating the model as the judge, opponent or source of a final verdict."
 publishedAt: 2026-07-07
 draft: true
 tags:
@@ -18,7 +18,7 @@ category: "Practice"
 
 A good argument often sounds strongest to the person who has just built it. AI can help show where a claim is weaker, where it depends on assumptions and what could change the conclusion. The point is not to win an argument against the model. The point is to stress-test your own thinking.
 
-This practice is useful when you have an idea, decision, text or position and want to see how it could be challenged fairly.
+This practice is useful when you have an idea, decision, text or position and want to see how it could be challenged fairly before you defend it publicly or use it in work.
 
 ## When this helps
 
@@ -26,6 +26,7 @@ This practice is useful when you have an idea, decision, text or position and wa
 - When a claim sounds good, but you are not sure where it is weak.
 - When you want a serious counterargument, not polite criticism.
 - When you want to separate defending a position from checking it.
+- When you want to clarify the conditions under which your claim is strong.
 
 ## What to ask the model
 
@@ -38,9 +39,9 @@ Help me test it in 6 steps:
 
 1. Formulate the strongest fair counterargument.
 2. Identify which parts of my argument are weakest.
-3. List the assumptions the counterargument depends on.
-4. Identify what evidence or examples could weaken my position.
-5. Identify what evidence or examples could strengthen it.
+3. List the assumptions my argument and the counterargument depend on.
+4. Identify what evidence, examples or contexts could weaken my position.
+5. Identify what evidence, examples or contexts could strengthen it.
 6. Suggest 3 questions I should ask myself before using the argument further.
 
 Do not treat yourself as the judge. Do not try to win the debate. Help me see the conditions under which my claim is strong or weak.
@@ -56,6 +57,7 @@ Argument:
 - Whether the weak points follow from the material or from extra assumptions.
 - Whether you know what sources, data or experience could change the assessment.
 - Whether the argument becomes more precise, not just more defensive.
+- Whether the counterargument helps you think better, not only win an imaginary debate.
 
 ## What can go wrong
 

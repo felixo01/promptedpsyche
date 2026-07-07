@@ -1,6 +1,6 @@
 ---
 title: "Jak sprawdzić własne założenia z pomocą AI"
-description: "Scenariusz używania AI do zobaczenia, co w twoim rozumowaniu jest faktem, założeniem albo brakującym kontekstem."
+description: "Praktyka sprawdzania własnego pierwszego odczytania sytuacji: co jest faktem, co założeniem, co emocją, a czego nadal nie wiadomo."
 publishedAt: 2026-07-07
 draft: true
 tags:
@@ -16,9 +16,9 @@ type: "practice"
 category: "Praktyka"
 ---
 
-Własne założenia są trudne do zauważenia, bo często wyglądają jak oczywistość. AI może pomóc je nazwać, ale nie zna twoich ukrytych motywów ani całego kontekstu. Może uporządkować tekst, decyzję albo opis sytuacji i pokazać, co zostało dopowiedziane bez mocnego potwierdzenia.
+Własne założenia są trudne do zauważenia, bo często wyglądają jak oczywistość. AI może pomóc je nazwać, ale nie zna twoich ukrytych motywów ani całego kontekstu. Może uporządkować opis sytuacji i pokazać, co zostało dopowiedziane bez mocnego potwierdzenia.
 
-Ta praktyka pomaga sprawdzić rozumowanie przed tym, jak założenia zamienią się w wnioski.
+Ta praktyka różni się od rozdzielania faktów i interpretacji. Tam porządkujesz materiał. Tutaj sprawdzasz własne pierwsze odczytanie: gdzie już dopowiedziałeś sens, motyw, ryzyko albo wniosek.
 
 ## Kiedy to pomaga
 
@@ -26,10 +26,11 @@ Ta praktyka pomaga sprawdzić rozumowanie przed tym, jak założenia zamienią s
 - Gdy decyzja zależy od informacji, których nie sprawdziłeś.
 - Gdy masz silne pierwsze odczytanie sytuacji.
 - Gdy chcesz przygotować pytania zamiast od razu bronić swojej interpretacji.
+- Gdy emocja jest ważnym sygnałem, ale może też zawężać interpretację.
 
 ## O co poprosić model
 
-Poproś model o rozdzielenie faktów, założeń i brakującego kontekstu. Nie proś go o ocenę twoich intencji.
+Poproś model o sprawdzenie twojego pierwszego odczytania. Nie proś go o ocenę twojej osobowości ani intencji.
 
 ```text
 Przeczytaj poniższy opis i pomóż mi sprawdzić moje założenia.
@@ -39,9 +40,9 @@ Nie oceniaj mojej osobowości, motywów ani emocji. Pracuj tylko na materiale, k
 Podziel analizę na 6 części:
 
 1. Fakty: co można wskazać w opisie.
-2. Założenia: co dopowiadam bez pełnego potwierdzenia.
-3. Najmocniejsze założenia: które z nich mają sens na podstawie materiału.
-4. Najsłabsze założenia: które wymagają sprawdzenia.
+2. Moje pierwsze odczytanie: jaki wniosek albo sens dopowiadam.
+3. Założenia: co musi być prawdą, żeby moje odczytanie było trafne.
+4. Słabsze miejsca: które założenia wymagają sprawdzenia.
 5. Brakujący kontekst: czego trzeba się dowiedzieć.
 6. Pytania: co powinienem zapytać albo sprawdzić przed wnioskiem.
 
@@ -55,6 +56,7 @@ Opis:
 
 - Czy "fakty" naprawdę znajdują się w materiale.
 - Czy założenie nie wynika głównie z emocji, pośpiechu albo wcześniejszego doświadczenia.
+- Czy pierwsze odczytanie nie stało się w twojej głowie jedynym możliwym odczytaniem.
 - Czy brakuje głosu osoby albo źródła, którego dotyczy sprawa.
 - Czy model nie dopisał kontekstu, którego nie podałeś.
 - Czy powstały konkretne pytania, a nie tylko dłuższa lista wątpliwości.
@@ -63,14 +65,14 @@ Opis:
 
 - Model może nazwać założenie zbyt pewnie.
 - Użytkownik może użyć listy założeń do obrony wcześniejszej decyzji.
-- Ćwiczenie może wyglądać jak neutralna analiza, mimo że materiał jest niepełny.
+- Ćwiczenie może wyglądać jak chłodna analiza, mimo że materiał jest niepełny.
 - W sprawach wysokiego ryzyka potrzebne są właściwe osoby, źródła i procedury.
 
 ## Lepszy sposób użycia odpowiedzi
 
 Opisujesz sytuację: "Zespół nie odpowiada, więc projekt nie jest dla nich ważny". Model może rozdzielić fakt: zespół nie odpowiedział od dwóch dni. Założenie: brak odpowiedzi oznacza brak zaangażowania. Brakujący kontekst: czy zespół ma inne terminy, czy dostał wszystkie materiały, czy wie, czego oczekujesz. To nie rozwiązuje sytuacji, ale zmienia pierwszy ruch: zamiast osądu pojawia się pytanie.
 
-Ta praktyka łączy [epistemic vigilance](/pl/concepts/epistemic-vigilance/) z [metacognition](/pl/concepts/metacognition/). Model pomaga zobaczyć strukturę rozumowania, ale nie zastępuje sprawdzenia sytuacji ani odpowiedzialności człowieka.
+Ta praktyka łączy [epistemic vigilance](/pl/concepts/epistemic-vigilance/) z [metacognition](/pl/concepts/metacognition/). Model pomaga zobaczyć strukturę własnego odczytania, ale nie zastępuje sprawdzenia sytuacji ani odpowiedzialności człowieka.
 
 ## Krótka zasada
 

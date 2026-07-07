@@ -1,6 +1,6 @@
 ---
 title: "Jak poprosić AI o kontrargument"
-description: "Scenariusz używania AI do sprawdzenia własnego argumentu bez traktowania modelu jak sędziego."
+description: "Praktyka używania AI do sprawdzenia własnego argumentu bez traktowania modelu jak sędziego, przeciwnika albo źródła ostatecznego werdyktu."
 publishedAt: 2026-07-07
 draft: true
 tags:
@@ -18,7 +18,7 @@ category: "Praktyka"
 
 Dobry argument często brzmi najmocniej dla osoby, która go właśnie zbudowała. AI może pomóc zobaczyć, gdzie teza jest słabsza, gdzie zależy od założeń i co mogłoby zmienić wniosek. Nie chodzi o wygranie sporu z modelem. Chodzi o spokojny test odporności własnego myślenia.
 
-Ta praktyka jest przydatna, gdy masz pomysł, decyzję, tekst albo stanowisko i chcesz sprawdzić, jak można je uczciwie zakwestionować.
+Ta praktyka jest przydatna, gdy masz pomysł, decyzję, tekst albo stanowisko i chcesz sprawdzić, jak można je uczciwie zakwestionować, zanim zaczniesz go bronić publicznie albo używać w pracy.
 
 ## Kiedy to pomaga
 
@@ -26,6 +26,7 @@ Ta praktyka jest przydatna, gdy masz pomysł, decyzję, tekst albo stanowisko i 
 - Gdy masz poczucie, że teza brzmi dobrze, ale nie wiesz, gdzie jest słaba.
 - Gdy chcesz zobaczyć poważny kontrargument, nie tylko uprzejmą krytykę.
 - Gdy chcesz oddzielić obronę własnego stanowiska od jego sprawdzenia.
+- Gdy chcesz doprecyzować warunki, w których twoja teza jest mocna.
 
 ## O co poprosić model
 
@@ -38,9 +39,9 @@ Pomóż mi go sprawdzić w 6 krokach:
 
 1. Sformułuj najmocniejszy uczciwy kontrargument.
 2. Wskaż, które elementy mojego argumentu są najsłabsze.
-3. Wypisz założenia, od których zależy kontrargument.
-4. Wskaż, jakie dane albo przykłady mogłyby osłabić moje stanowisko.
-5. Wskaż, jakie dane albo przykłady mogłyby je wzmocnić.
+3. Wypisz założenia, od których zależy mój argument i kontrargument.
+4. Wskaż, jakie dane, przykłady albo konteksty mogłyby osłabić moje stanowisko.
+5. Wskaż, jakie dane, przykłady albo konteksty mogłyby je wzmocnić.
 6. Zaproponuj 3 pytania, które powinienem sobie zadać przed dalszym użyciem argumentu.
 
 Nie traktuj siebie jak sędziego. Nie próbuj wygrać debaty. Pomóż mi lepiej zobaczyć warunki, w których moja teza jest mocna albo słaba.
@@ -56,6 +57,7 @@ Argument:
 - Czy wskazane słabości wynikają z materiału, czy z dodatkowych założeń modelu.
 - Czy wiesz, jakie źródła, dane albo doświadczenia mogą realnie zmienić ocenę.
 - Czy po sprawdzeniu argument jest bardziej precyzyjny, a nie tylko bardziej defensywny.
+- Czy kontrargument pomaga lepiej myśleć, a nie tylko wygrać wymyśloną debatę.
 
 ## Co może pójść źle
 
