@@ -1,6 +1,6 @@
 ---
 title: "Jak poprosić model o niepewność"
-description: "Praktyka proszenia AI o założenia, braki i warunki, które mogą zmienić odpowiedź, bez traktowania deklaracji modelu jako dowodu."
+description: "Praktyka proszenia AI o pokazanie założeń, braków, poziomu ostrożności i warunków, które mogłyby zmienić odpowiedź."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,57 +16,61 @@ type: "practice"
 category: "Praktyka"
 ---
 
-Model może odpowiedzieć płynnie nawet wtedy, gdy brakuje mu ważnych informacji. Ta praktyka pomaga zapytać nie tylko o samą odpowiedź, ale też o jej założenia, luki i warunki, które mogłyby zmienić wniosek.
+Model może odpowiedzieć płynnie nawet wtedy, gdy brakuje mu ważnych informacji. Ta praktyka pomaga zatrzymać się przy odpowiedzi, która brzmi gotowo, i zapytać: co jest znane, co jest założeniem, czego brakuje i co mogłoby zmienić wniosek.
 
-Celem nie jest uzyskanie sztucznej liczby pewności. Celem jest zobaczenie, gdzie odpowiedź jest mocniejsza, gdzie jest robocza i co człowiek powinien sprawdzić poza modelem.
+Celem nie jest uzyskanie sztucznej liczby pewności. Celem jest lepszy osąd: które fragmenty odpowiedzi są mocniejsze, które są robocze i co człowiek powinien sprawdzić poza modelem przed dalszym krokiem.
 
-## Kiedy używać
+## Kiedy to pomaga
 
 - Gdy odpowiedź dotyczy złożonej sytuacji, decyzji albo interpretacji.
 - Gdy brakuje danych wejściowych, kontekstu albo jasnych kryteriów.
 - Gdy model brzmi zbyt pewnie.
-- Gdy chcesz przygotować pytania kontrolne przed dalszym krokiem.
+- Gdy chcesz przygotować pytania kontrolne, zanim użyjesz odpowiedzi.
 
-## Czego nie robić
+## O co poprosić model
 
-- Nie proś modelu o procentową pewność, jeśli nie ma podstaw do takiej liczby.
-- Nie traktuj deklaracji niepewności jako obiektywnego pomiaru.
-- Nie używaj tej praktyki po to, żeby model wziął odpowiedzialność za decyzję.
-- Nie uznawaj długiej listy zastrzeżeń za dowód jakości odpowiedzi.
-
-## Prompt
+Poproś model o rozdzielenie odpowiedzi na to, co wiadomo, co jest prawdopodobne, co jest założeniem i czego nadal brakuje. Nie proś o sztuczną precyzję.
 
 ```text
-Przeanalizuj swoją odpowiedź pod kątem niepewności.
+Przeanalizuj swoją poprzednią odpowiedź pod kątem niepewności.
 
-Wypisz:
+Podziel ją na 6 części:
 
-1. Jakie założenia przyjąłeś.
-2. Jakich informacji brakuje, żeby odpowiedź była mocniejsza.
-3. Które elementy odpowiedzi są najbardziej oparte na podanych danych.
-4. Które elementy są hipotezą albo roboczą interpretacją.
-5. Co mogłoby zmienić Twoją odpowiedź.
-6. Co powinienem sprawdzić poza modelem, zanim użyję tej odpowiedzi.
+1. Co wynika bezpośrednio z podanych informacji.
+2. Co jest prawdopodobną interpretacją, ale nie faktem.
+3. Jakie założenia przyjąłeś.
+4. Jakich informacji brakuje, żeby odpowiedź była mocniejsza.
+5. Co mogłoby zmienić tę odpowiedź.
+6. Co powinienem sprawdzić poza modelem przed użyciem tej odpowiedzi.
 
-Nie podawaj sztucznej liczby pewności. Zamiast tego opisz poziom ostrożności prostym językiem: wysoka ostrożność, średnia ostrożność albo niska ostrożność. Na końcu zaproponuj 5 pytań, które powinienem zadać przed dalszym krokiem.
+Nie podawaj procentowej pewności, jeśli nie masz do tego podstaw. Zamiast tego opisz poziom ostrożności prostym językiem: wysoka ostrożność, średnia ostrożność albo niska ostrożność. Wyjaśnij, z czego ten poziom ostrożności wynika. Na końcu zaproponuj 5 pytań, które powinienem zadać przed dalszym krokiem.
 ```
 
-## Krótki przykład
+## Co sprawdzić samodzielnie
 
-Model rekomenduje jeden kierunek działania dla zespołu, ale użytkownik podał tylko krótki opis problemu. Po użyciu promptu widać, że odpowiedź zakłada stabilny termin, mały zespół i brak ograniczeń budżetowych. Model może pomóc nazwać te założenia i brakujące informacje, ale nie dowodzi, że rekomendacja jest prawdziwa. Użytkownik dostaje listę rzeczy do sprawdzenia przed decyzją.
+- Czy model nie przyjął warunków, których nie podałeś.
+- Czy brakujące informacje da się szybko uzupełnić.
+- Czy odpowiedź zależy od danych, które mogą być nieaktualne albo niepełne.
+- Czy poziom ostrożności jest opisem pomocniczym, a nie pomiarem prawdy.
+- Czy decyzja wymaga rozmowy z człowiekiem, źródła, procedury albo dodatkowego kontekstu.
 
-## Dlaczego to pomaga
+## Co może pójść źle
 
-Ten prompt pomaga budować [skalibrowane zaufanie](/pl/concepts/calibrated-trust/). Zamiast traktować płynną odpowiedź jako gotowy wniosek, użytkownik widzi, które części zależą od danych, kontekstu i założeń.
+- Model może nie zauważyć własnych luk.
+- Lista założeń może wyglądać kompletnie, mimo że nadal czegoś brakuje.
+- Etykieta ostrożności może zacząć brzmieć jak obiektywny wynik.
+- Zbyt długa lista zastrzeżeń może sparaliżować działanie zamiast pomóc w decyzji.
+- Użytkownik może potraktować ostrożniejszą odpowiedź jak weryfikację faktów.
 
-To także ćwiczenie [czujności epistemicznej](/pl/concepts/epistemic-vigilance/). Model działa w ramach dostępnego [context window](/pl/concepts/context-window/), więc może porządkować materiał, ale nie zna wszystkiego, czego człowiek nie podał.
+## Lepszy sposób użycia odpowiedzi
 
-## Ryzyko i ograniczenia
+Model rekomenduje jeden kierunek działania dla zespołu, ale użytkownik podał tylko krótki opis problemu. Po użyciu promptu widać, że odpowiedź zakłada stabilny termin, mały zespół i brak ograniczeń budżetowych. To nie znaczy, że rekomendacja jest fałszywa. Znaczy tylko, że jej użycie zależy od warunków, które trzeba sprawdzić przed decyzją.
 
-- Model może nie rozpoznać własnych braków.
-- Lista założeń może wyglądać kompletnie, mimo że taka nie jest.
-- Opis ostrożności nie jest pomiarem prawdy ani gwarancją jakości.
-- W sprawach wysokiego ryzyka weryfikacja powinna wyjść poza czat i trafić do właściwych ludzi, źródeł albo procedur.
+Ten prompt pomaga budować [skalibrowane zaufanie](/pl/concepts/calibrated-trust/). Zamiast traktować płynną odpowiedź jako gotowy wniosek, użytkownik widzi, które części zależą od danych, kontekstu i założeń. To także ćwiczenie [czujności epistemicznej](/pl/concepts/epistemic-vigilance/): model może porządkować materiał w ramach dostępnego [context window](/pl/concepts/context-window/), ale nie zna wszystkiego, czego człowiek nie podał.
+
+## Krótka zasada
+
+Nie pytaj modelu o sztuczną pewność. Poproś go, żeby pokazał, od czego zależy odpowiedź i co trzeba wiedzieć przed działaniem.
 
 ## Powiązane pojęcia
 

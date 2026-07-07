@@ -1,6 +1,6 @@
 ---
 title: "Jak oddzielić fakty od interpretacji"
-description: "Praktyka porządkowania materiału przed decyzją: co jest faktem, co interpretacją, co hipotezą i czego nadal brakuje."
+description: "Praktyka rozdzielania tego, co widać w materiale, od interpretacji, założeń i pytań, zanim powstanie wniosek albo decyzja."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,62 +16,65 @@ type: "practice"
 category: "Praktyka"
 ---
 
-W pracy z AI uporządkowane streszczenie może wyglądać jak gotowy wniosek. W jednym akapicie łatwo mieszają się fakty, interpretacje, przypuszczenia i rekomendacje. Ta praktyka pomaga zatrzymać ten skrót.
+W pracy z AI uporządkowane streszczenie może wyglądać jak gotowy wniosek. W jednym akapicie łatwo mieszają się fakty, interpretacje, założenia i rekomendacje. Ta praktyka pomaga zatrzymać ten skrót, zanim pierwsze odczytanie sytuacji zamieni się w decyzję.
 
-Celem jest mapa materiału przed decyzją, nie decyzja podjęta przez model. AI może pomóc rozdzielić warstwy informacji, ale człowiek nadal odpowiada za ocenę, kontekst i dalszy krok.
+Celem jest mapa materiału przed decyzją, nie decyzja podjęta przez model. AI może pomóc rozdzielić warstwy informacji, ale człowiek nadal odpowiada za ocenę, kontekst i dalszy krok. Emocje też są informacją o sytuacji, ale nie są tym samym co fakt widoczny w materiale.
 
-## Kiedy używać
+## Kiedy to pomaga
 
 - Przed decyzją opartą na mailach, notatkach, raportach albo rozmowach.
-- Gdy materiał jest chaotyczny i obciąża poznawczo.
+- Gdy materiał jest chaotyczny, emocjonalny albo obciąża poznawczo.
 - Gdy chcesz przygotować pytania do zespołu, klienta albo eksperta.
 - Gdy odpowiedź AI zawiera wnioski, ale nie pokazuje drogi dojścia.
 
-## Czego nie robić
+## O co poprosić model
 
-- Nie proś modelu o ostateczną decyzję.
-- Nie traktuj hipotez jako faktów tylko dlatego, że są uporządkowane.
-- Nie pomijaj informacji, które nie pasują do wygodnego wniosku.
-- Nie używaj tej praktyki do uzasadniania decyzji podjętej z góry.
-
-## Prompt
+Poproś model o tabelę albo listę warstw. Najważniejsze rozróżnienie: co można wskazać w materiale, co jest odczytaniem, co jest założeniem i jakie pytanie trzeba zadać przed decyzją.
 
 ```text
 Pomóż mi uporządkować poniższy materiał przed podjęciem decyzji.
 
 Nie podejmuj decyzji za mnie. Nie diagnozuj ludzi i nie zgaduj ukrytych intencji.
 
-Podziel informacje na:
+Podziel materiał na 5 kolumn:
 
-1. Fakty widoczne w materiale.
-2. Interpretacje lub oceny.
-3. Hipotezy, które mogą być prawdziwe, ale wymagają sprawdzenia.
-4. Założenia, które pojawiają się w materiale lub w moim opisie.
-5. Braki informacyjne.
-6. Pytania, które powinienem zadać przed dalszym krokiem.
+1. Fakt: co można zacytować, zaobserwować albo wskazać w materiale.
+2. Interpretacja: co myślę, że to może znaczyć.
+3. Założenie: co dodaję bez wystarczającego potwierdzenia.
+4. Alternatywne odczytanie: jaka inna interpretacja też pasuje do tego samego faktu.
+5. Pytanie: czego trzeba się dowiedzieć przed dalszym krokiem.
 
-Następnie wskaż, które wnioski byłyby przedwczesne na podstawie tego materiału. Jeśli zaproponujesz możliwe kierunki działania, opisz je jako opcje, nie jako decyzję.
+Następnie wskaż, które wnioski byłyby przedwczesne na podstawie tego materiału. Jeśli zaproponujesz możliwe kierunki działania, opisz je jako opcje, nie jako decyzję. Nie pomijaj informacji, które nie pasują do najwygodniejszego wniosku.
 
 Materiał:
 [wklej materiał]
 ```
 
-## Krótki przykład
+## Co sprawdzić samodzielnie
 
-W notatce pojawia się zdanie: "Klient jest niezadowolony i projekt jest zagrożony". Prompt pomaga rozdzielić widoczny fakt, na przykład opóźnioną odpowiedź klienta, od interpretacji o niezadowoleniu i hipotezy o ryzyku projektu. Może też wskazać brakujące informacje: czy klient zgłosił problem, czego oczekuje i jaki jest rzeczywisty termin. Dzięki temu użytkownik nie zamienia pierwszej interpretacji w decyzję.
+- Czy "fakt" naprawdę da się wskazać w materiale.
+- Czy ta sama informacja może wspierać więcej niż jedną interpretację.
+- Czy założenia nie pochodzą głównie z napięcia, zmęczenia albo wcześniejszej historii.
+- Czy brakuje głosu osoby, zespołu albo źródła, którego dotyczy sprawa.
+- Czy emocja pomaga zauważyć stawkę, ale nie zastępuje sprawdzenia sytuacji.
 
-## Dlaczego to pomaga
-
-Ten prompt wspiera [wspomaganie decyzji](/pl/concepts/wspomaganie-decyzji/) bez przenoszenia decyzji na model. Użytkownik dostaje uporządkowanie materiału, a nie gotowy wyrok.
-
-Pomaga też utrzymać [skalibrowane zaufanie](/pl/concepts/calibrated-trust/). [Odpowiedź modelu](/pl/concepts/model-output/) może być użyteczną mapą, ale nie zastępuje sprawdzenia faktów, pytań do ludzi ani odpowiedzialności za dalszy krok.
-
-## Ryzyko i ograniczenia
+## Co może pójść źle
 
 - Model może błędnie uznać interpretację za fakt.
-- Materiał wejściowy może być niepełny, stronniczy albo wyrwany z kontekstu.
-- Samo uporządkowanie może stworzyć wrażenie większej pewności niż naprawdę istnieje.
+- Uporządkowana tabela może stworzyć wrażenie większej pewności niż istnieje.
+- Użytkownik może użyć ćwiczenia do obrony decyzji podjętej wcześniej.
+- Emocje mogą zostać zignorowane zamiast nazwane i oddzielone od faktów.
 - W sprawach prawnych, HR, zdrowia, bezpieczeństwa, przemocy albo wysokiego ryzyka potrzebne są właściwe osoby, procedury i źródła.
+
+## Lepszy sposób użycia odpowiedzi
+
+W notatce pojawia się zdanie: "Klient jest niezadowolony i projekt jest zagrożony". Lepsza analiza nie zaczyna od decyzji, ale od rozdzielenia warstw. Fakt może brzmieć: klient nie odpowiedział od pięciu dni albo napisał, że brakuje mu materiałów. Interpretacja: klient jest niezadowolony. Założenie: brak odpowiedzi oznacza ryzyko projektu. Pytanie: czy klient zgłosił problem, czego oczekuje i jaki termin jest teraz kluczowy?
+
+Ten prompt wspiera [wspomaganie decyzji](/pl/concepts/wspomaganie-decyzji/) bez przenoszenia decyzji na model. Użytkownik dostaje uporządkowanie materiału, a nie gotowy wyrok. Pomaga też utrzymać [skalibrowane zaufanie](/pl/concepts/calibrated-trust/): [odpowiedź modelu](/pl/concepts/model-output/) może być użyteczną mapą, ale nie zastępuje sprawdzenia faktów, pytań do ludzi ani odpowiedzialności za dalszy krok.
+
+## Krótka zasada
+
+Najpierw oddziel to, co widać, od tego, co to może znaczyć. Dopiero potem decyduj, jakie pytanie albo działanie ma sens.
 
 ## Powiązane pojęcia
 

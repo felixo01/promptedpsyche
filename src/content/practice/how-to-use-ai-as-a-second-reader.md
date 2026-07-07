@@ -1,6 +1,6 @@
 ---
 title: "How to use AI as a second reader"
-description: "A practice for using AI as an editorial reader without handing over authorship, voice or responsibility for the text."
+description: "A practice for using AI as a second reader: checking clarity, structure, tone and reception risks without handing over authorship."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,62 +16,65 @@ type: "practice"
 category: "Practice"
 ---
 
-Writers usually know what they meant. That is exactly why unclear transitions, missing context or sentences that readers may misunderstand can be hard to see. AI can help as a second reader, but it should not take over authorship.
+Writers usually know what they meant. That is exactly why unclear transitions, missing context or sentences that readers may misunderstand can be hard to see. AI can help as a second reader, but it should not take over authorship, voice or the decision about what the text means.
 
-This practice treats the model as a source of editorial distance. It helps reveal possible reader reactions without automatically smoothing the text into something generic.
+This practice treats the model as a source of editorial distance. It helps reveal possible reader reactions, blind spots and reception risks without automatically smoothing the text into something generic.
 
-## When to use it
+## When this helps
 
 - Before publishing an article, note, email or presentation.
 - When the text is clear to the author but may be unclear to the reader.
 - When you want to check whether the argument guides the reader step by step.
 - When the text may sound too certain, too sharp or too broad.
 
-## What not to do
+## What to ask the model
 
-- Do not ask the model to rewrite the text in someone else's style.
-- Do not hand over the thesis, tone or final version to the model.
-- Do not accept every suggestion just because it sounds professional.
-- Do not turn an authored text into a neutral, polished text with no character.
-
-## Prompt
+Ask for feedback in layers. Start with reader reception, then clarity, argument, tone and risk. Only then ask for possible edits.
 
 ```text
 Read my text as a second reader, not as the author.
 
-Do not rewrite the whole text. Help me see how it may be received.
+Do not rewrite the whole text. Help me see how it may be received and where a reader may pause.
 
-List:
+Evaluate the text in 5 layers:
 
 1. The main claim of the text as you understand it.
-2. Places where a reader may get lost.
-3. Sentences that sound too certain for the available argument.
-4. Missing context a reader may need.
-5. Parts that may be read differently than I intend.
-6. Three concrete editorial questions I should ask myself.
+2. Clarity: where a reader may get lost or need more context.
+3. Argument: where the movement between sentences is too fast.
+4. Tone: what may sound too certain, too sharp or too broad.
+5. Reception risk: what may be understood differently than I intend.
 
-Do not make the tone more marketing-oriented. Do not automatically smooth the text. Do not take over authorship. If you suggest an edit, explain what reader problem it solves.
+At the end, suggest no more than 5 editorial comments. Do not make the tone more marketing-oriented. Do not automatically smooth the text. Do not take over authorship. If you suggest an edit, explain what reader problem it solves.
 
 Text:
 [paste text]
 ```
 
-## Short example
+## What to check yourself
 
-An author writes a short text about AI in an organization and assumes the reader understands the difference between automation and decision support. The prompt can show that this shortcut is clear to the author but not necessarily to the reader. The model suggests editorial questions and places that need context instead of taking over the voice. The final decision about changes stays with the author.
+- Whether the model understood the main claim correctly.
+- Whether a suggested edit solves a real reader problem.
+- Whether the suggestion weakens the voice, rhythm or intention of the text.
+- Whether the text becomes smoother at the cost of precision.
+- Which comments you reject deliberately because they do not fit the goal of the text.
 
-## Why this helps
-
-This prompt treats [model output](/concepts/model-output/) as feedback, not as finished copy. The model can show where a reader may pause, but it does not know which voice, rhythm and meaning the author wants to keep.
-
-The practice supports [human agency](/concepts/human-agency/). AI may reduce [cognitive load](/concepts/cognitive-load/) in editing, but it does not replace the author's judgment.
-
-## Risk and limitations
+## What can go wrong
 
 - The model may reward smoothness over precision.
 - Suggestions may weaken the author's voice.
+- The model may turn the text into a safe, generic statement with no character.
+- The author may accept a change only because it sounds professional.
 - The model does not know the real audience or full publication context.
-- The author still has to decide which comments are useful and what to change.
+
+## Better way to use the answer
+
+An author writes a short text about AI in an organization and assumes the reader understands the difference between automation and decision support. The model may point out that this shortcut is clear to the author but not necessarily to the reader. The better move is not to accept the model's whole rewrite. It may be enough to add one sentence of context in the author's own voice and decide whether the rhythm still works.
+
+This prompt treats [model output](/concepts/model-output/) as feedback, not as finished copy. The model can show where a reader may pause, but it does not know which voice, rhythm and meaning the author wants to keep. The practice supports [human agency](/concepts/human-agency/): AI may reduce [cognitive load](/concepts/cognitive-load/) in editing, but it does not replace the author's judgment.
+
+## Short rule
+
+Use AI to see the text through another reader's eyes. Do not use AI to hand over authorship.
 
 ## Related Concepts
 

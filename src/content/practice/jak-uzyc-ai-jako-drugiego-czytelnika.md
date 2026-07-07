@@ -1,6 +1,6 @@
 ---
 title: "Jak użyć AI jako drugiego czytelnika"
-description: "Praktyka używania AI do redakcyjnego sprawdzenia tekstu bez oddawania modelowi autorstwa, tonu ani decyzji o sensie."
+description: "Praktyka używania AI jako drugiego czytelnika: do sprawdzenia jasności, struktury, tonu i ryzyk odbioru bez oddawania modelowi autorstwa."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,62 +16,65 @@ type: "practice"
 category: "Praktyka"
 ---
 
-Autor tekstu zwykle wie, co chciał powiedzieć. Właśnie dlatego łatwo przeoczyć niejasne przejścia, brakujący kontekst albo zdania, które czytelnik może zrozumieć inaczej. AI może pomóc jako drugi czytelnik, ale nie powinno przejmować autorstwa.
+Autor tekstu zwykle wie, co chciał powiedzieć. Właśnie dlatego łatwo przeoczyć niejasne przejścia, brakujący kontekst albo zdania, które czytelnik może zrozumieć inaczej. AI może pomóc jako drugi czytelnik, ale nie powinno przejmować autorstwa, głosu ani decyzji o sensie tekstu.
 
-Ta praktyka ustawia model jako narzędzie redakcyjnego dystansu. Ma pomóc zobaczyć możliwe reakcje czytelnika, a nie automatycznie wygładzić tekst.
+Ta praktyka ustawia model jako narzędzie redakcyjnego dystansu. Ma pomóc zobaczyć możliwe reakcje czytelnika, ślepe punkty i miejsca ryzyka, a nie automatycznie wygładzić tekst do neutralnego stylu.
 
-## Kiedy używać
+## Kiedy to pomaga
 
 - Przed publikacją artykułu, notatki, maila albo prezentacji.
 - Gdy tekst jest zrozumiały dla autora, ale może być niejasny dla odbiorcy.
 - Gdy chcesz sprawdzić, czy argument prowadzi czytelnika krok po kroku.
 - Gdy tekst może brzmieć zbyt pewnie, zbyt ostro albo zbyt ogólnie.
 
-## Czego nie robić
+## O co poprosić model
 
-- Nie proś modelu o przepisanie tekstu w cudzy styl.
-- Nie oddawaj modelowi decyzji o tezie, tonie ani finalnej wersji.
-- Nie akceptuj wszystkich sugestii tylko dlatego, że brzmią profesjonalnie.
-- Nie zamieniaj autorskiego tekstu w neutralną, wygładzoną wypowiedź bez charakteru.
-
-## Prompt
+Poproś o feedback w warstwach. Najpierw odbiór czytelnika, potem jasność, argument, ton i ryzyka. Dopiero na końcu ewentualne poprawki.
 
 ```text
 Przeczytaj mój tekst jak drugi czytelnik, nie jak autor.
 
-Nie przepisuj całości. Pomóż mi zobaczyć, jak tekst może zostać odebrany.
+Nie przepisuj całości. Pomóż mi zobaczyć, jak tekst może zostać odebrany i gdzie czytelnik może się zatrzymać.
 
-Wypisz:
+Oceń tekst w 5 warstwach:
 
 1. Główne twierdzenie tekstu, tak jak je rozumiesz.
-2. Miejsca, w których czytelnik może się zgubić.
-3. Zdania, które brzmią zbyt pewnie wobec dostępnych argumentów.
-4. Brakujący kontekst, którego czytelnik może potrzebować.
-5. Fragmenty, które mogą zostać odczytane inaczej niż zamierzam.
-6. Trzy konkretne pytania redakcyjne, które powinienem sobie zadać.
+2. Jasność: gdzie czytelnik może się zgubić albo potrzebować kontekstu.
+3. Argument: gdzie przejście między zdaniami jest za szybkie.
+4. Ton: co może brzmieć zbyt pewnie, zbyt ostro albo zbyt ogólnie.
+5. Ryzyko odbioru: co można zrozumieć inaczej, niż zamierzam.
 
-Nie zmieniaj tonu na marketingowy. Nie wygładzaj tekstu automatycznie. Nie przejmuj autorstwa. Jeśli proponujesz poprawkę, wyjaśnij, jaki problem czytelniczy ona rozwiązuje.
+Na końcu zaproponuj maksymalnie 5 uwag redakcyjnych. Nie zmieniaj tonu na marketingowy. Nie wygładzaj tekstu automatycznie. Nie przejmuj autorstwa. Jeśli proponujesz poprawkę, wyjaśnij, jaki problem czytelniczy ona rozwiązuje.
 
 Tekst:
 [wklej tekst]
 ```
 
-## Krótki przykład
+## Co sprawdzić samodzielnie
 
-Autor pisze krótki tekst o AI w organizacji i zakłada, że czytelnik rozumie różnicę między automatyzacją a wsparciem decyzji. Prompt może pokazać, że ten skrót jest jasny dla autora, ale niekoniecznie dla odbiorcy. Model sugeruje pytania redakcyjne i miejsca wymagające kontekstu, zamiast przejmować ton tekstu. Ostateczna decyzja o zmianach zostaje po stronie autora.
+- Czy model dobrze rozumie główną tezę.
+- Czy proponowana poprawka rozwiązuje realny problem czytelniczy.
+- Czy sugestia nie osłabia głosu, rytmu albo intencji tekstu.
+- Czy tekst nie staje się bardziej gładki kosztem precyzji.
+- Które uwagi odrzucasz świadomie, bo nie pasują do celu tekstu.
 
-## Dlaczego to pomaga
-
-Ten prompt traktuje [odpowiedź modelu](/pl/concepts/model-output/) jako informację zwrotną, a nie gotowy tekst. Model może pokazać, gdzie czytelnik może się zatrzymać, ale nie wie, jaki głos, rytm i sens autor chce zachować.
-
-Praktyka wspiera [sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/). AI może zmniejszyć [cognitive load](/pl/concepts/cognitive-load/) w redakcji, ale nie zastępuje decyzji autora.
-
-## Ryzyko i ograniczenia
+## Co może pójść źle
 
 - Model może premiować gładkość zamiast precyzji.
 - Sugestie mogą osłabić autorski głos.
+- Model może zamienić tekst w bezpieczną, ogólną wypowiedź bez charakteru.
+- Autor może zaakceptować zmianę tylko dlatego, że brzmi profesjonalnie.
 - Model nie zna realnego odbiorcy ani pełnego kontekstu publikacji.
-- Autor nadal musi ocenić, które uwagi są trafne i co zmienić.
+
+## Lepszy sposób użycia odpowiedzi
+
+Autor pisze krótki tekst o AI w organizacji i zakłada, że czytelnik rozumie różnicę między automatyzacją a wsparciem decyzji. Model może wskazać, że ten skrót jest jasny dla autora, ale niekoniecznie dla odbiorcy. Dobra reakcja nie polega na przyjęciu całej redakcji modelu. Lepiej dopisać jedno zdanie kontekstu własnym głosem i zdecydować, czy rytm tekstu nadal działa.
+
+Ten prompt traktuje [odpowiedź modelu](/pl/concepts/model-output/) jako informację zwrotną, a nie gotowy tekst. Model może pokazać, gdzie czytelnik może się zatrzymać, ale nie wie, jaki głos, rytm i sens autor chce zachować. Praktyka wspiera [sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/): AI może zmniejszyć [cognitive load](/pl/concepts/cognitive-load/) w redakcji, ale nie zastępuje decyzji autora.
+
+## Krótka zasada
+
+Użyj AI, żeby zobaczyć tekst oczami drugiego czytelnika. Nie używaj AI, żeby oddać mu autorstwo.
 
 ## Powiązane pojęcia
 

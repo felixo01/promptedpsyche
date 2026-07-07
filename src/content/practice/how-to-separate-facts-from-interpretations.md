@@ -1,6 +1,6 @@
 ---
 title: "How to separate facts from interpretations"
-description: "A practice for organizing material before a decision: what is fact, what is interpretation, what is hypothesis and what is still missing."
+description: "A practice for separating what is visible in the material from interpretations, assumptions and questions before a conclusion or decision forms."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,62 +16,65 @@ type: "practice"
 category: "Practice"
 ---
 
-When working with AI, an organized summary can look like a finished conclusion. Facts, interpretations, assumptions and recommendations can blend into one paragraph. This practice helps slow that movement down.
+When working with AI, an organized summary can look like a finished conclusion. Facts, interpretations, assumptions and recommendations can blend into one paragraph. This practice helps slow that movement down before a first reading of the situation turns into a decision.
 
-The goal is a map of the material before a decision, not a decision made by the model. AI can help separate layers of information, but the person remains responsible for judgment, context and the next step.
+The goal is a map of the material before a decision, not a decision made by the model. AI can help separate layers of information, but the person remains responsible for judgment, context and the next step. Emotions are also information about the situation, but they are not the same as a fact visible in the material.
 
-## When to use it
+## When this helps
 
 - Before a decision based on emails, notes, reports or conversations.
-- When the material is messy and cognitively demanding.
+- When the material is messy, emotional or cognitively demanding.
 - When you need questions for a team, client or expert.
 - When an AI answer contains conclusions but does not show how it got there.
 
-## What not to do
+## What to ask the model
 
-- Do not ask the model for the final decision.
-- Do not treat hypotheses as facts because they are neatly organized.
-- Do not ignore information that does not fit a convenient conclusion.
-- Do not use this practice to justify a decision already made.
-
-## Prompt
+Ask the model for columns or layered categories. The key distinction is: what can be pointed to in the material, what is a reading of it, what is an assumption and what question has to be asked before deciding.
 
 ```text
 Help me organize the material below before I make a decision.
 
 Do not decide for me. Do not diagnose people and do not guess hidden intentions.
 
-Divide the information into:
+Divide the material into 5 columns:
 
-1. Facts visible in the material.
-2. Interpretations or evaluations.
-3. Hypotheses that may be true but need checking.
-4. Assumptions present in the material or in my description.
-5. Missing information.
-6. Questions I should ask before the next step.
+1. Fact: what can be quoted, observed or pointed to in the material.
+2. Interpretation: what I think it may mean.
+3. Assumption: what I am adding without enough confirmation.
+4. Alternative reading: what other interpretation could also fit the same fact.
+5. Question: what needs to be known before the next step.
 
-Then identify which conclusions would be premature based on this material. If you suggest possible directions of action, describe them as options, not as the decision.
+Then identify which conclusions would be premature based on this material. If you suggest possible directions of action, describe them as options, not as the decision. Do not ignore information that does not fit the most convenient conclusion.
 
 Material:
 [paste material]
 ```
 
-## Short example
+## What to check yourself
 
-A note says, "The client is unhappy and the project is at risk." The prompt helps separate a visible fact, such as a delayed client reply, from the interpretation about dissatisfaction and the hypothesis about project risk. It can also show missing information: whether the client reported a problem, what they expect and what the actual deadline is. This keeps the user from turning the first interpretation into a decision.
+- Whether a "fact" can really be pointed to in the material.
+- Whether the same information could support more than one interpretation.
+- Whether assumptions are coming mainly from tension, fatigue or previous history.
+- Whether the person, team or source affected by the situation is missing from the material.
+- Whether emotion helps reveal the stakes, but does not replace checking the situation.
 
-## Why this helps
-
-This prompt supports [decision support](/concepts/decision-support/) without moving the decision onto the model. The user gets an organized map of the material, not a verdict.
-
-It also helps maintain [calibrated trust](/concepts/calibrated-trust/). [Model output](/concepts/model-output/) can be a useful map, but it does not replace checking facts, asking people questions or taking responsibility for the next step.
-
-## Risk and limitations
+## What can go wrong
 
 - The model may wrongly classify an interpretation as a fact.
-- The input material may be incomplete, biased or missing context.
-- Organization can create the impression of more certainty than actually exists.
+- A tidy table may create the impression of more certainty than actually exists.
+- The user may use the exercise to defend a decision already made.
+- Emotions may be ignored instead of named and separated from facts.
 - In legal, HR, health, safety, violence or high-risk contexts, proper people, procedures and sources are needed.
+
+## Better way to use the answer
+
+A note says, "The client is unhappy and the project is at risk." Better analysis does not start with a decision. It separates layers. The fact may be: the client has not replied for five days or wrote that they are missing materials. The interpretation: the client is unhappy. The assumption: no reply means project risk. The question: has the client reported a problem, what do they expect and which deadline matters now?
+
+This prompt supports [decision support](/concepts/decision-support/) without moving the decision onto the model. The user gets an organized map of the material, not a verdict. It also helps maintain [calibrated trust](/concepts/calibrated-trust/): [model output](/concepts/model-output/) can be a useful map, but it does not replace checking facts, asking people questions or taking responsibility for the next step.
+
+## Short rule
+
+First separate what is visible from what it may mean. Only then decide which question or action makes sense.
 
 ## Related Concepts
 

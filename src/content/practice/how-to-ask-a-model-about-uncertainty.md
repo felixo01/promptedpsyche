@@ -1,6 +1,6 @@
 ---
 title: "How to ask a model about uncertainty"
-description: "A practice for asking AI to name assumptions, missing information and conditions that could change an answer without treating model confidence as proof."
+description: "A practice for asking AI to show assumptions, missing context, caution levels and conditions that could change an answer."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,57 +16,61 @@ type: "practice"
 category: "Practice"
 ---
 
-A model can answer fluently even when important information is missing. This practice helps you ask not only for the answer, but for the assumptions, gaps and conditions that could change it.
+A model can answer fluently even when important information is missing. This practice helps you pause when an answer sounds finished and ask: what is known, what is assumed, what is missing and what could change the conclusion?
 
-The goal is not to get an artificial confidence score. The goal is to see which parts of the answer are better grounded, which parts are tentative and what a person should verify outside the model.
+The goal is not to get an artificial confidence score. The goal is better judgment: which parts of the answer are stronger, which parts are tentative and what a person should verify outside the model before taking the next step.
 
-## When to use it
+## When this helps
 
 - When an answer concerns a complex situation, decision or interpretation.
 - When input data, context or criteria are incomplete.
 - When the model sounds more certain than the material allows.
-- When you want control questions before taking the next step.
+- When you want control questions before using the answer.
 
-## What not to do
+## What to ask the model
 
-- Do not ask for a percentage of certainty when there is no basis for one.
-- Do not treat the model's uncertainty statement as an objective measurement.
-- Do not use this practice to move responsibility for a decision onto the model.
-- Do not treat a long list of caveats as proof that the answer is good.
-
-## Prompt
+Ask the model to separate what is known, what is likely, what is assumed and what is still missing. Do not ask for false precision.
 
 ```text
-Analyze your answer in terms of uncertainty.
+Analyze your previous answer in terms of uncertainty.
 
-List:
+Divide it into 6 parts:
 
-1. What assumptions you made.
-2. What information is missing that would make the answer stronger.
-3. Which parts of the answer are most grounded in the information provided.
-4. Which parts are hypotheses or working interpretations.
-5. What could change your answer.
+1. What follows directly from the information provided.
+2. What is a likely interpretation, but not a fact.
+3. What assumptions you made.
+4. What information is missing that would make the answer stronger.
+5. What could change this answer.
 6. What I should verify outside the model before using this answer.
 
-Do not give me an artificial confidence percentage. Instead, describe the level of caution in plain language: high caution, medium caution or low caution. At the end, suggest 5 questions I should ask before taking the next step.
+Do not give me a confidence percentage unless there is a real basis for it. Instead, describe the level of caution in plain language: high caution, medium caution or low caution. Explain what the caution level is based on. At the end, suggest 5 questions I should ask before taking the next step.
 ```
 
-## Short example
+## What to check yourself
 
-The model recommends one direction for a team, but the user gave only a short description of the problem. After using the prompt, it becomes visible that the answer assumed a stable deadline, a small team and no budget constraint. The model can help name those assumptions and gaps, but it does not prove the recommendation is true. The user gets a checklist for what to verify before deciding.
+- Whether the model assumed conditions you did not provide.
+- Whether the missing information can be filled quickly.
+- Whether the answer depends on data that may be incomplete or outdated.
+- Whether the caution level is a helpful description, not a truth measurement.
+- Whether the decision needs another person, source, procedure or context.
 
-## Why this helps
+## What can go wrong
 
-This prompt supports [calibrated trust](/concepts/calibrated-trust/). Instead of treating fluent output as a finished conclusion, the user sees which parts depend on data, context and assumptions.
-
-It is also an exercise in [epistemic vigilance](/concepts/epistemic-vigilance/). A model works inside the available [context window](/concepts/context-window/), so it can organize material, but it does not know everything the person did not provide.
-
-## Risk and limitations
-
-- The model may fail to notice its own gaps.
+- The model may miss its own gaps.
 - The assumption list may look complete when it is not.
-- A caution label is not a truth measurement or a quality guarantee.
-- In high-stakes contexts, verification should leave the chat and involve appropriate people, sources or procedures.
+- A caution label may start to feel like an objective score.
+- Too many caveats may paralyze action instead of improving judgment.
+- The user may treat a more cautious answer as fact-checking.
+
+## Better way to use the answer
+
+The model recommends one direction for a team, but the user gave only a short description of the problem. After using the prompt, it becomes visible that the answer assumed a stable deadline, a small team and no budget constraint. That does not mean the recommendation is false. It means the recommendation depends on conditions that need to be checked before a decision.
+
+This prompt supports [calibrated trust](/concepts/calibrated-trust/). Instead of treating fluent output as a finished conclusion, the user sees which parts depend on data, context and assumptions. It is also an exercise in [epistemic vigilance](/concepts/epistemic-vigilance/): a model can organize material inside the available [context window](/concepts/context-window/), but it does not know everything the person did not provide.
+
+## Short rule
+
+Do not ask the model for artificial certainty. Ask it to show what the answer depends on and what needs to be known before acting.
 
 ## Related Concepts
 
