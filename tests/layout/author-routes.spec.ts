@@ -43,16 +43,19 @@ test.describe('author and about routes', () => {
     await expect(page.locator('body')).toContainText('Cyberpsychology and Human-AI Interaction');
     await expect(page.locator('body')).toContainText('intelligent systems');
     await expect(page.locator('body')).toContainText(
-      'You can find my earlier visual and film projects at felixmamczur.com.'
+      'My earlier work with image, narrative, emotion and attention remains part of how I look at technology, but it is not the main label of this site. Visual and film projects are available at felixmamczur.com.'
     );
-    await expect(page.getByRole('link', { name: 'earlier visual and film projects' })).toHaveAttribute(
+    await expect(page.getByRole('link', { name: 'Visual and film projects' })).toHaveAttribute(
       'href',
       'https://felixmamczur.com/'
     );
-    await expect(page.getByRole('link', { name: 'earlier visual and film projects' })).toHaveAttribute(
+    await expect(page.getByRole('link', { name: 'Visual and film projects' })).toHaveAttribute(
       'title',
-      'Feliks Mamczur - earlier visual and film projects'
+      'Feliks Mamczur - visual and film projects'
     );
+    const englishBodyText = await page.locator('body').innerText();
+    expect(englishBodyText.match(/My earlier/g) ?? []).toHaveLength(1);
+    await expect(page.locator('body')).not.toContainText('You can find my earlier visual and film projects');
     await expect(page.getByRole('link', { name: 'felixmamczur.com' })).toHaveCount(0);
     await expect(page.locator('body')).not.toContainText('film director portfolio and earlier projects');
     await expect(page.locator('body')).not.toContainText('European Film Academy');
@@ -90,16 +93,19 @@ test.describe('author and about routes', () => {
     await expect(page.locator('body')).toContainText('cyberpsychologii, Human-AI Interaction');
     await expect(page.locator('body')).toContainText('inteligentnymi systemami');
     await expect(page.locator('body')).toContainText(
-      'Moje wcześniejsze projekty wizualne i filmowe można znaleźć na felixmamczur.com.'
+      'Moje wcześniejsze doświadczenie pracy z obrazem, narracją, emocją i uwagą nadal wpływa na to, jak patrzę na technologię, ale nie jest główną etykietą tej strony. Na felixmamczur.com można znaleźć projekty wizualne i filmowe.'
     );
-    await expect(page.getByRole('link', { name: 'wcześniejsze projekty wizualne i filmowe' })).toHaveAttribute(
+    await expect(page.getByRole('link', { name: 'projekty wizualne i filmowe' })).toHaveAttribute(
       'href',
       'https://felixmamczur.com/'
     );
-    await expect(page.getByRole('link', { name: 'wcześniejsze projekty wizualne i filmowe' })).toHaveAttribute(
+    await expect(page.getByRole('link', { name: 'projekty wizualne i filmowe' })).toHaveAttribute(
       'title',
-      'Feliks Mamczur - wcześniejsze projekty wizualne i filmowe'
+      'Feliks Mamczur - projekty wizualne i filmowe'
     );
+    const polishBodyText = await page.locator('body').innerText();
+    expect(polishBodyText.match(/Moje wcześniejsze/g) ?? []).toHaveLength(1);
+    await expect(page.locator('body')).not.toContainText('Moje wcześniejsze projekty wizualne i filmowe');
     await expect(page.getByRole('link', { name: 'felixmamczur.com' })).toHaveCount(0);
     await expect(page.locator('body')).not.toContainText('portfolio filmowe i wcześniejsze projekty');
     await expect(page.locator('body')).not.toContainText('European Film Academy');
