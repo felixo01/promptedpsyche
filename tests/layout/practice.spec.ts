@@ -36,6 +36,22 @@ const practiceDrafts = [
     route: '/pl/practice/jak-oddzielic-fakty-od-interpretacji/'
   },
   {
+    title: 'Jak poprosić AI o kontrargument',
+    route: '/pl/practice/jak-poprosic-ai-o-kontrargument/'
+  },
+  {
+    title: 'Jak sprawdzić własne założenia z pomocą AI',
+    route: '/pl/practice/jak-sprawdzic-wlasne-zalozenia-z-pomoca-ai/'
+  },
+  {
+    title: 'Jak użyć AI bez oddawania mu decyzji',
+    route: '/pl/practice/jak-uzyc-ai-bez-oddawania-mu-decyzji/'
+  },
+  {
+    title: 'Jak sprawdzić, czy model ma wystarczający kontekst',
+    route: '/pl/practice/jak-sprawdzic-czy-model-ma-wystarczajacy-kontekst/'
+  },
+  {
     title: 'How to check whether an AI answer has sources',
     route: '/practice/how-to-check-whether-an-ai-answer-has-sources/'
   },
@@ -58,6 +74,22 @@ const practiceDrafts = [
   {
     title: 'How to separate facts from interpretations',
     route: '/practice/how-to-separate-facts-from-interpretations/'
+  },
+  {
+    title: 'How to ask AI for a counterargument',
+    route: '/practice/how-to-ask-ai-for-a-counterargument/'
+  },
+  {
+    title: 'How to check your assumptions with AI',
+    route: '/practice/how-to-check-your-assumptions-with-ai/'
+  },
+  {
+    title: 'How to use AI without handing over the decision',
+    route: '/practice/how-to-use-ai-without-handing-over-the-decision/'
+  },
+  {
+    title: 'How to check whether the model has enough context',
+    route: '/practice/how-to-check-whether-the-model-has-enough-context/'
   }
 ];
 
@@ -138,13 +170,14 @@ test.describe('practice drafts', () => {
         'Short, practical scenarios for working with AI more carefully - checking answers, handling sources, asking for uncertainty, reviewing text and keeping decisions human.'
       )
     ).toBeVisible();
-    await expect(page.locator('.entry-list article')).toHaveCount(6);
+    await expect(page.locator('.entry-list article')).toHaveCount(10);
     await expect(page.locator('.entry-list article').first().locator('.entry-meta')).toContainText('Practice');
     await expect(page.locator('.entry-list article').first().locator('.tag-list li').first()).toBeVisible();
     await expect(
       page.locator('.entry-title-link', { hasText: 'How to check whether an AI answer has sources' })
     ).toBeVisible();
-    await expect(page.getByRole('link', { name: /Open scenario:/ })).toHaveCount(6);
+    await expect(page.locator('.entry-title-link', { hasText: 'How to ask AI for a counterargument' })).toBeVisible();
+    await expect(page.getByRole('link', { name: /Open scenario:/ })).toHaveCount(10);
     await expect(page.locator('[data-qa="site-nav"]')).not.toContainText('Practice');
     await expect(page.locator('[data-qa="site-nav"]')).not.toContainText('Praktyka');
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
@@ -179,13 +212,14 @@ test.describe('practice drafts', () => {
         'Krótkie, praktyczne scenariusze pracy z AI - sprawdzanie odpowiedzi, źródeł, niepewności, tekstów i decyzji bez oddawania modelowi odpowiedzialności.'
       )
     ).toBeVisible();
-    await expect(page.locator('.entry-list article')).toHaveCount(6);
+    await expect(page.locator('.entry-list article')).toHaveCount(10);
     await expect(page.locator('.entry-list article').first().locator('.entry-meta')).toContainText('Praktyka');
     await expect(page.locator('.entry-list article').first().locator('.tag-list li').first()).toBeVisible();
     await expect(
       page.locator('.entry-title-link', { hasText: 'Jak sprawdzić, czy odpowiedź AI ma źródła' })
     ).toBeVisible();
-    await expect(page.getByRole('link', { name: /Otwórz scenariusz:/ })).toHaveCount(6);
+    await expect(page.locator('.entry-title-link', { hasText: 'Jak poprosić AI o kontrargument' })).toBeVisible();
+    await expect(page.getByRole('link', { name: /Otwórz scenariusz:/ })).toHaveCount(10);
     await expect(page.locator('[data-qa="language-switcher"]').getByRole('link', { name: 'EN' })).toHaveAttribute(
       'href',
       '/practice/'
