@@ -35,6 +35,7 @@ test.describe('Consulting pages', () => {
     await expect(page.getByRole('heading', { name: 'Jak pracuję' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Czego nie robię' })).toBeVisible();
     await expect(page.getByText('nie sprzedaję gotowych "magicznych promptów"')).toBeVisible();
+    await expect(page.locator('body')).not.toContainText('Human-Machine Interaction');
     await expect(page.getByRole('link', { name: 'Napisz w sprawie konsultingu' })).toHaveAttribute('href', '/pl/contact/');
     await expect(page.locator('body')).not.toContainText('Kiedy ta praca jest potrzebna');
   });
@@ -56,6 +57,7 @@ test.describe('Consulting pages', () => {
     await expect(page.getByText('You do not need to know the exact service name')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'How I work' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'What I do not do' })).toBeVisible();
+    await expect(page.locator('body')).not.toContainText('Human-Machine Interaction');
     await expect(page.getByRole('link', { name: 'Ask about consulting' })).toHaveAttribute('href', '/contact/');
   });
 

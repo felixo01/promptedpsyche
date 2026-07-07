@@ -42,6 +42,8 @@ test.describe('author and about routes', () => {
     await expectStructuredAuthorIdentity(page);
     await expect(page.locator('body')).toContainText('Cyberpsychology and Human-AI Interaction');
     await expect(page.locator('body')).toContainText('intelligent systems');
+    await expect(page.locator('body')).toContainText('Cyberpsychology remains the core');
+    await expect(page.locator('body')).toContainText('Human-Machine Interaction');
     await expect(page.locator('body')).toContainText(
       'My earlier work with image, narrative, emotion and attention remains part of how I look at technology, but it is not the main label of this site. Visual and film projects are available at felixmamczur.com.'
     );
@@ -92,6 +94,8 @@ test.describe('author and about routes', () => {
     await expectStructuredAuthorIdentity(page);
     await expect(page.locator('body')).toContainText('cyberpsychologii, Human-AI Interaction');
     await expect(page.locator('body')).toContainText('inteligentnymi systemami');
+    await expect(page.locator('body')).toContainText('Cyberpsychologia pozostaje rdzeniem');
+    await expect(page.locator('body')).toContainText('Human-Machine Interaction');
     await expect(page.locator('body')).toContainText(
       'Moje wcześniejsze doświadczenie pracy z obrazem, narracją, emocją i uwagą nadal wpływa na to, jak patrzę na technologię, ale nie jest główną etykietą tej strony. Na felixmamczur.com można znaleźć projekty wizualne i filmowe.'
     );

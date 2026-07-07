@@ -8,6 +8,7 @@ test.describe('homepage hero positioning', () => {
     await expect(page.locator('[data-qa="hero-copy"]')).not.toContainText('Feliks Mamczur');
     await expect(page.locator('body')).toContainText('The first essays and notes are now live.');
     await expect(page.locator('body')).not.toContainText('The first article is now published.');
+    await expect(page.locator('body')).not.toContainText('Human-Machine Interaction');
   });
 
   test('shows the Polish project positioning', async ({ page }) => {
@@ -17,6 +18,7 @@ test.describe('homepage hero positioning', () => {
     await expect(page.locator('[data-qa="hero-copy"]')).not.toContainText('Feliks Mamczur');
     await expect(page.locator('body')).toContainText('Pierwsze eseje i notatki są już dostępne.');
     await expect(page.locator('body')).not.toContainText('Pierwszy artykuł jest już dostępny.');
+    await expect(page.locator('body')).not.toContainText('Human-Machine Interaction');
   });
 
   test('keeps visible author-name repetition restrained on homepages', async ({ page }) => {
