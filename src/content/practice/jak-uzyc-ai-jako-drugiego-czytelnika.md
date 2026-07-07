@@ -18,13 +18,14 @@ category: "Praktyka"
 
 Autor tekstu zwykle wie, co chciał powiedzieć. Właśnie dlatego łatwo przeoczyć niejasne przejścia, brakujący kontekst albo zdania, które czytelnik może zrozumieć inaczej. AI może pomóc jako drugi czytelnik, ale nie powinno przejmować autorstwa, głosu ani decyzji o sensie tekstu.
 
-Ta praktyka ustawia model jako narzędzie redakcyjnego dystansu. Ma pomóc zobaczyć możliwe reakcje czytelnika, ślepe punkty i miejsca ryzyka, a nie automatycznie wygładzić tekst do neutralnego stylu.
+Ta praktyka ustawia model jako narzędzie redakcyjnego dystansu. Ma pomóc zobaczyć możliwe reakcje czytelnika, ślepe punkty i miejsca ryzyka, a nie automatycznie wygładzić tekst do bezpiecznego, podobnego do wszystkich stylu.
 
 ## Kiedy to pomaga
 
 - Przed publikacją artykułu, notatki, maila albo prezentacji.
 - Gdy tekst jest zrozumiały dla autora, ale może być niejasny dla odbiorcy.
 - Gdy chcesz sprawdzić, czy argument prowadzi czytelnika krok po kroku.
+- Gdy potrzebujesz uwag, ale chcesz zachować własny głos i decyzję redakcyjną.
 - Gdy tekst może brzmieć zbyt pewnie, zbyt ostro albo zbyt ogólnie.
 
 ## O co poprosić model
@@ -44,7 +45,7 @@ Oceń tekst w 5 warstwach:
 4. Ton: co może brzmieć zbyt pewnie, zbyt ostro albo zbyt ogólnie.
 5. Ryzyko odbioru: co można zrozumieć inaczej, niż zamierzam.
 
-Na końcu zaproponuj maksymalnie 5 uwag redakcyjnych. Nie zmieniaj tonu na marketingowy. Nie wygładzaj tekstu automatycznie. Nie przejmuj autorstwa. Jeśli proponujesz poprawkę, wyjaśnij, jaki problem czytelniczy ona rozwiązuje.
+Na końcu zaproponuj maksymalnie 5 uwag redakcyjnych. Nie zmieniaj tonu na marketingowy. Nie wygładzaj tekstu automatycznie. Nie przejmuj autorstwa. Jeśli proponujesz poprawkę, wyjaśnij, jaki problem czytelniczy ona rozwiązuje i co może zostać utracone.
 
 Tekst:
 [wklej tekst]
@@ -55,7 +56,7 @@ Tekst:
 - Czy model dobrze rozumie główną tezę.
 - Czy proponowana poprawka rozwiązuje realny problem czytelniczy.
 - Czy sugestia nie osłabia głosu, rytmu albo intencji tekstu.
-- Czy tekst nie staje się bardziej gładki kosztem precyzji.
+- Czy tekst nie staje się bardziej gładki kosztem precyzji, charakteru albo odpowiedzialności za tezę.
 - Które uwagi odrzucasz świadomie, bo nie pasują do celu tekstu.
 
 ## Co może pójść źle
@@ -64,11 +65,11 @@ Tekst:
 - Sugestie mogą osłabić autorski głos.
 - Model może zamienić tekst w bezpieczną, ogólną wypowiedź bez charakteru.
 - Autor może zaakceptować zmianę tylko dlatego, że brzmi profesjonalnie.
-- Model nie zna realnego odbiorcy ani pełnego kontekstu publikacji.
+- Model nie zna realnego odbiorcy, celu publikacji ani momentu, w którym tekst ma zadziałać.
 
 ## Lepszy sposób użycia odpowiedzi
 
-Autor pisze krótki tekst o AI w organizacji i zakłada, że czytelnik rozumie różnicę między automatyzacją a wsparciem decyzji. Model może wskazać, że ten skrót jest jasny dla autora, ale niekoniecznie dla odbiorcy. Dobra reakcja nie polega na przyjęciu całej redakcji modelu. Lepiej dopisać jedno zdanie kontekstu własnym głosem i zdecydować, czy rytm tekstu nadal działa.
+Autor pisze krótki tekst o AI w organizacji i zakłada, że czytelnik rozumie różnicę między automatyzacją a wsparciem decyzji. Model może wskazać, że ten skrót jest jasny dla autora, ale niekoniecznie dla odbiorcy. Dobra reakcja nie polega na przyjęciu całej redakcji modelu. Lepiej dopisać jedno zdanie kontekstu własnym głosem, a potem zdecydować, czy rytm tekstu nadal działa.
 
 Ten prompt traktuje [odpowiedź modelu](/pl/concepts/model-output/) jako informację zwrotną, a nie gotowy tekst. Model może pokazać, gdzie czytelnik może się zatrzymać, ale nie wie, jaki głos, rytm i sens autor chce zachować. Praktyka wspiera [sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/): AI może zmniejszyć [cognitive load](/pl/concepts/cognitive-load/) w redakcji, ale nie zastępuje decyzji autora.
 

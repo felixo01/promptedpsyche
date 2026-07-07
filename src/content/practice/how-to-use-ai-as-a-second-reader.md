@@ -18,13 +18,14 @@ category: "Practice"
 
 Writers usually know what they meant. That is exactly why unclear transitions, missing context or sentences that readers may misunderstand can be hard to see. AI can help as a second reader, but it should not take over authorship, voice or the decision about what the text means.
 
-This practice treats the model as a source of editorial distance. It helps reveal possible reader reactions, blind spots and reception risks without automatically smoothing the text into something generic.
+This practice treats the model as a source of editorial distance. It helps reveal possible reader reactions, blind spots and reception risks without automatically smoothing the text into a safe style that sounds like everything else.
 
 ## When this helps
 
 - Before publishing an article, note, email or presentation.
 - When the text is clear to the author but may be unclear to the reader.
 - When you want to check whether the argument guides the reader step by step.
+- When you need feedback but want to keep your own voice and editorial decision.
 - When the text may sound too certain, too sharp or too broad.
 
 ## What to ask the model
@@ -44,7 +45,7 @@ Evaluate the text in 5 layers:
 4. Tone: what may sound too certain, too sharp or too broad.
 5. Reception risk: what may be understood differently than I intend.
 
-At the end, suggest no more than 5 editorial comments. Do not make the tone more marketing-oriented. Do not automatically smooth the text. Do not take over authorship. If you suggest an edit, explain what reader problem it solves.
+At the end, suggest no more than 5 editorial comments. Do not make the tone more marketing-oriented. Do not automatically smooth the text. Do not take over authorship. If you suggest an edit, explain what reader problem it solves and what may be lost.
 
 Text:
 [paste text]
@@ -55,7 +56,7 @@ Text:
 - Whether the model understood the main claim correctly.
 - Whether a suggested edit solves a real reader problem.
 - Whether the suggestion weakens the voice, rhythm or intention of the text.
-- Whether the text becomes smoother at the cost of precision.
+- Whether the text becomes smoother at the cost of precision, character or responsibility for the claim.
 - Which comments you reject deliberately because they do not fit the goal of the text.
 
 ## What can go wrong
@@ -64,11 +65,11 @@ Text:
 - Suggestions may weaken the author's voice.
 - The model may turn the text into a safe, generic statement with no character.
 - The author may accept a change only because it sounds professional.
-- The model does not know the real audience or full publication context.
+- The model does not know the real audience, the publication goal or the moment in which the text needs to work.
 
 ## Better way to use the answer
 
-An author writes a short text about AI in an organization and assumes the reader understands the difference between automation and decision support. The model may point out that this shortcut is clear to the author but not necessarily to the reader. The better move is not to accept the model's whole rewrite. It may be enough to add one sentence of context in the author's own voice and decide whether the rhythm still works.
+An author writes a short text about AI in an organization and assumes the reader understands the difference between automation and decision support. The model may point out that this shortcut is clear to the author but not necessarily to the reader. The better move is not to accept the model's whole rewrite. It may be enough to add one sentence of context in the author's own voice, then decide whether the rhythm still works.
 
 This prompt treats [model output](/concepts/model-output/) as feedback, not as finished copy. The model can show where a reader may pause, but it does not know which voice, rhythm and meaning the author wants to keep. The practice supports [human agency](/concepts/human-agency/): AI may reduce [cognitive load](/concepts/cognitive-load/) in editing, but it does not replace the author's judgment.
 

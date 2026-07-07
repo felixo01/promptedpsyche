@@ -1,6 +1,6 @@
 ---
 title: "Jak oddzielić fakty od interpretacji"
-description: "Praktyka rozdzielania tego, co widać w materiale, od interpretacji, założeń i pytań, zanim powstanie wniosek albo decyzja."
+description: "Praktyka rozdzielania tego, co można wskazać w materiale, od interpretacji, założeń i pytań, zanim powstanie wniosek albo decyzja."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,14 +16,15 @@ type: "practice"
 category: "Praktyka"
 ---
 
-W pracy z AI uporządkowane streszczenie może wyglądać jak gotowy wniosek. W jednym akapicie łatwo mieszają się fakty, interpretacje, założenia i rekomendacje. Ta praktyka pomaga zatrzymać ten skrót, zanim pierwsze odczytanie sytuacji zamieni się w decyzję.
+W pracy z AI uporządkowane streszczenie może wyglądać jak gotowy wniosek. W jednym akapicie łatwo mieszają się fakty, interpretacje, założenia i rekomendacje. Ta praktyka pomaga zatrzymać ten skrót, zanim pierwsze odczytanie sytuacji zacznie działać jak decyzja.
 
-Celem jest mapa materiału przed decyzją, nie decyzja podjęta przez model. AI może pomóc rozdzielić warstwy informacji, ale człowiek nadal odpowiada za ocenę, kontekst i dalszy krok. Emocje też są informacją o sytuacji, ale nie są tym samym co fakt widoczny w materiale.
+Celem jest mapa materiału przed decyzją, nie decyzja podjęta przez model. AI może pomóc rozdzielić warstwy informacji, ale człowiek nadal odpowiada za ocenę, kontekst i dalszy krok. Emocje też są ważną informacją o sytuacji, ale nie są tym samym co fakt, który można wskazać, zacytować albo sprawdzić.
 
 ## Kiedy to pomaga
 
 - Przed decyzją opartą na mailach, notatkach, raportach albo rozmowach.
 - Gdy materiał jest chaotyczny, emocjonalny albo obciąża poznawczo.
+- Gdy chcesz zmniejszyć pewność pierwszej interpretacji bez ignorowania emocji.
 - Gdy chcesz przygotować pytania do zespołu, klienta albo eksperta.
 - Gdy odpowiedź AI zawiera wnioski, ale nie pokazuje drogi dojścia.
 
@@ -39,12 +40,12 @@ Nie podejmuj decyzji za mnie. Nie diagnozuj ludzi i nie zgaduj ukrytych intencji
 Podziel materiał na 5 kolumn:
 
 1. Fakt: co można zacytować, zaobserwować albo wskazać w materiale.
-2. Interpretacja: co myślę, że to może znaczyć.
-3. Założenie: co dodaję bez wystarczającego potwierdzenia.
+2. Interpretacja: co ktoś może myśleć, że to znaczy.
+3. Założenie: co zostaje dodane bez wystarczającego potwierdzenia.
 4. Alternatywne odczytanie: jaka inna interpretacja też pasuje do tego samego faktu.
 5. Pytanie: czego trzeba się dowiedzieć przed dalszym krokiem.
 
-Następnie wskaż, które wnioski byłyby przedwczesne na podstawie tego materiału. Jeśli zaproponujesz możliwe kierunki działania, opisz je jako opcje, nie jako decyzję. Nie pomijaj informacji, które nie pasują do najwygodniejszego wniosku.
+Następnie wskaż, które wnioski byłyby przedwczesne na podstawie tego materiału. Jeśli zaproponujesz możliwe kierunki działania, opisz je jako opcje, nie jako decyzję. Nie pomijaj informacji, które nie pasują do najwygodniejszego wniosku. Jeśli emocja jest widoczna w materiale, nazwij ją jako sygnał do sprawdzenia, nie jako dowód intencji.
 
 Materiał:
 [wklej materiał]
@@ -52,29 +53,30 @@ Materiał:
 
 ## Co sprawdzić samodzielnie
 
-- Czy "fakt" naprawdę da się wskazać w materiale.
+- Czy "fakt" naprawdę da się wskazać, zacytować albo sprawdzić.
 - Czy ta sama informacja może wspierać więcej niż jedną interpretację.
 - Czy założenia nie pochodzą głównie z napięcia, zmęczenia albo wcześniejszej historii.
 - Czy brakuje głosu osoby, zespołu albo źródła, którego dotyczy sprawa.
 - Czy emocja pomaga zauważyć stawkę, ale nie zastępuje sprawdzenia sytuacji.
+- Czy ćwiczenie nie zamienia niepewności w pozornie neutralną tabelę.
 
 ## Co może pójść źle
 
 - Model może błędnie uznać interpretację za fakt.
-- Uporządkowana tabela może stworzyć wrażenie większej pewności niż istnieje.
+- Uporządkowana tabela może stworzyć wrażenie większej pewności i neutralności niż istnieje.
 - Użytkownik może użyć ćwiczenia do obrony decyzji podjętej wcześniej.
 - Emocje mogą zostać zignorowane zamiast nazwane i oddzielone od faktów.
 - W sprawach prawnych, HR, zdrowia, bezpieczeństwa, przemocy albo wysokiego ryzyka potrzebne są właściwe osoby, procedury i źródła.
 
 ## Lepszy sposób użycia odpowiedzi
 
-W notatce pojawia się zdanie: "Klient jest niezadowolony i projekt jest zagrożony". Lepsza analiza nie zaczyna od decyzji, ale od rozdzielenia warstw. Fakt może brzmieć: klient nie odpowiedział od pięciu dni albo napisał, że brakuje mu materiałów. Interpretacja: klient jest niezadowolony. Założenie: brak odpowiedzi oznacza ryzyko projektu. Pytanie: czy klient zgłosił problem, czego oczekuje i jaki termin jest teraz kluczowy?
+W notatce pojawia się zdanie: "Klient jest niezadowolony i projekt jest zagrożony". Lepsza analiza nie zaczyna od decyzji, ale od rozdzielenia warstw. Fakt może brzmieć: klient nie odpowiedział od pięciu dni albo napisał, że brakuje mu materiałów. Interpretacja: klient jest niezadowolony. Założenie: brak odpowiedzi oznacza ryzyko projektu. Alternatywne odczytanie: klient może czekać na informację, której nie dostał. Pytanie: czy klient zgłosił problem, czego oczekuje i jaki termin jest teraz kluczowy?
 
 Ten prompt wspiera [wspomaganie decyzji](/pl/concepts/wspomaganie-decyzji/) bez przenoszenia decyzji na model. Użytkownik dostaje uporządkowanie materiału, a nie gotowy wyrok. Pomaga też utrzymać [skalibrowane zaufanie](/pl/concepts/calibrated-trust/): [odpowiedź modelu](/pl/concepts/model-output/) może być użyteczną mapą, ale nie zastępuje sprawdzenia faktów, pytań do ludzi ani odpowiedzialności za dalszy krok.
 
 ## Krótka zasada
 
-Najpierw oddziel to, co widać, od tego, co to może znaczyć. Dopiero potem decyduj, jakie pytanie albo działanie ma sens.
+Najpierw oddziel to, co można wskazać, od tego, co to może znaczyć. Dopiero potem decyduj, jakie pytanie albo działanie ma sens.
 
 ## Powiązane pojęcia
 

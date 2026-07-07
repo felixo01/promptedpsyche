@@ -1,6 +1,6 @@
 ---
 title: "Jak poprosić model o niepewność"
-description: "Praktyka proszenia AI o pokazanie założeń, braków, poziomu ostrożności i warunków, które mogłyby zmienić odpowiedź."
+description: "Praktyka proszenia AI o pokazanie założeń, braków, poziomu ostrożności i warunków, które mogą zmienić odpowiedź."
 publishedAt: 2026-07-03
 draft: true
 tags:
@@ -16,16 +16,16 @@ type: "practice"
 category: "Praktyka"
 ---
 
-Model może odpowiedzieć płynnie nawet wtedy, gdy brakuje mu ważnych informacji. Ta praktyka pomaga zatrzymać się przy odpowiedzi, która brzmi gotowo, i zapytać: co jest znane, co jest założeniem, czego brakuje i co mogłoby zmienić wniosek.
+Model może odpowiedzieć płynnie nawet wtedy, gdy brakuje mu ważnych informacji. Ta praktyka pomaga zatrzymać się przy odpowiedzi, która brzmi gotowo, i zapytać: co jest znane, co jest prawdopodobne, co jest założeniem, czego brakuje i co mogłoby zmienić wniosek.
 
-Celem nie jest uzyskanie sztucznej liczby pewności. Celem jest lepszy osąd: które fragmenty odpowiedzi są mocniejsze, które są robocze i co człowiek powinien sprawdzić poza modelem przed dalszym krokiem.
+Celem nie jest wymuszenie liczby pewności. Celem jest lepszy osąd: które fragmenty odpowiedzi są mocniejsze, które są robocze i co człowiek powinien sprawdzić poza modelem przed dalszym krokiem.
 
 ## Kiedy to pomaga
 
 - Gdy odpowiedź dotyczy złożonej sytuacji, decyzji albo interpretacji.
 - Gdy brakuje danych wejściowych, kontekstu albo jasnych kryteriów.
 - Gdy model brzmi zbyt pewnie.
-- Gdy chcesz przygotować pytania kontrolne, zanim użyjesz odpowiedzi.
+- Gdy chcesz przygotować pytania sprawdzające, zanim użyjesz odpowiedzi.
 
 ## O co poprosić model
 
@@ -41,9 +41,9 @@ Podziel ją na 6 części:
 3. Jakie założenia przyjąłeś.
 4. Jakich informacji brakuje, żeby odpowiedź była mocniejsza.
 5. Co mogłoby zmienić tę odpowiedź.
-6. Co powinienem sprawdzić poza modelem przed użyciem tej odpowiedzi.
+6. Co powinienem sprawdzić poza modelem albo w rozmowie z właściwą osobą przed użyciem tej odpowiedzi.
 
-Nie podawaj procentowej pewności, jeśli nie masz do tego podstaw. Zamiast tego opisz poziom ostrożności prostym językiem: wysoka ostrożność, średnia ostrożność albo niska ostrożność. Wyjaśnij, z czego ten poziom ostrożności wynika. Na końcu zaproponuj 5 pytań, które powinienem zadać przed dalszym krokiem.
+Nie podawaj procentowej pewności, jeśli nie masz do tego podstaw. Zamiast tego opisz poziom ostrożności prostym językiem: wysoka ostrożność, średnia ostrożność albo niska ostrożność. Wyjaśnij, z czego ten poziom ostrożności wynika i czego nie obejmuje. Na końcu zaproponuj 5 pytań, które powinienem zadać przed dalszym krokiem.
 ```
 
 ## Co sprawdzić samodzielnie
@@ -52,6 +52,7 @@ Nie podawaj procentowej pewności, jeśli nie masz do tego podstaw. Zamiast tego
 - Czy brakujące informacje da się szybko uzupełnić.
 - Czy odpowiedź zależy od danych, które mogą być nieaktualne albo niepełne.
 - Czy poziom ostrożności jest opisem pomocniczym, a nie pomiarem prawdy.
+- Czy odpowiedź nie miesza braku danych z pewnością stylu.
 - Czy decyzja wymaga rozmowy z człowiekiem, źródła, procedury albo dodatkowego kontekstu.
 
 ## Co może pójść źle
@@ -59,12 +60,12 @@ Nie podawaj procentowej pewności, jeśli nie masz do tego podstaw. Zamiast tego
 - Model może nie zauważyć własnych luk.
 - Lista założeń może wyglądać kompletnie, mimo że nadal czegoś brakuje.
 - Etykieta ostrożności może zacząć brzmieć jak obiektywny wynik.
-- Zbyt długa lista zastrzeżeń może sparaliżować działanie zamiast pomóc w decyzji.
+- Zbyt długa lista zastrzeżeń może sparaliżować działanie zamiast pomóc w rozsądnym kolejnym kroku.
 - Użytkownik może potraktować ostrożniejszą odpowiedź jak weryfikację faktów.
 
 ## Lepszy sposób użycia odpowiedzi
 
-Model rekomenduje jeden kierunek działania dla zespołu, ale użytkownik podał tylko krótki opis problemu. Po użyciu promptu widać, że odpowiedź zakłada stabilny termin, mały zespół i brak ograniczeń budżetowych. To nie znaczy, że rekomendacja jest fałszywa. Znaczy tylko, że jej użycie zależy od warunków, które trzeba sprawdzić przed decyzją.
+Model rekomenduje jeden kierunek działania dla zespołu, ale użytkownik podał tylko krótki opis problemu. Po użyciu promptu widać, że odpowiedź zakłada stabilny termin, mały zespół i brak ograniczeń budżetowych. To nie znaczy, że rekomendacja jest fałszywa. Znaczy tylko, że jej użycie zależy od warunków, które trzeba najpierw dopowiedzieć albo sprawdzić.
 
 Ten prompt pomaga budować [skalibrowane zaufanie](/pl/concepts/calibrated-trust/). Zamiast traktować płynną odpowiedź jako gotowy wniosek, użytkownik widzi, które części zależą od danych, kontekstu i założeń. To także ćwiczenie [czujności epistemicznej](/pl/concepts/epistemic-vigilance/): model może porządkować materiał w ramach dostępnego [context window](/pl/concepts/context-window/), ale nie zna wszystkiego, czego człowiek nie podał.
 
