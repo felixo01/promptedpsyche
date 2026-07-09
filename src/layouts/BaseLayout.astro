@@ -9,6 +9,7 @@ type StructuredData = Record<string, unknown>;
 
 interface Props {
   title?: string;
+  fullTitle?: boolean;
   description?: string;
   image?: string;
   type?: 'website' | 'article';
@@ -20,6 +21,7 @@ interface Props {
 
 const {
   title = site.name,
+  fullTitle = false,
   description = site.description,
   image = '/images/prompted-psyche-editorial.png',
   type = 'website',
@@ -29,7 +31,7 @@ const {
   structuredData
 } = Astro.props;
 
-const pageTitle = title === site.name ? `${site.name} | ${site.tagline}` : `${title} | ${site.name}`;
+const pageTitle = fullTitle || title === site.name ? title : `${title} | ${site.name}`;
 const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();
 const imageUrl = new URL(image, site.url).toString();
 const rssUrl = new URL('/rss.xml', site.url).toString();
