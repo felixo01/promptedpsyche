@@ -2,14 +2,16 @@ import { getCollection } from 'astro:content';
 import { getArticlePath } from './articleRoutes';
 import { getConceptPath } from './conceptRoutes';
 import { getNotePath } from './noteRoutes';
+import { getPracticePath } from './practiceRoutes';
 import {
   onlyPublicEntriesByLang,
   sortByDateDesc,
   type SearchLocale
 } from './content';
 import { sortConceptsForIndex } from './conceptOrder';
+import { showPractice } from './features';
 
-export type SearchItemType = 'article' | 'note' | 'concept';
+export type SearchItemType = 'article' | 'note' | 'concept' | 'practice';
 
 export type SearchIndexItem = {
   title: string;
@@ -34,6 +36,9 @@ export async function buildSearchIndex(language: SearchLocale): Promise<SearchIn
   const concepts = sortConceptsForIndex(
     onlyPublicEntriesByLang(await getCollection('concepts'), language)
   );
+  const practice = showPractice
+    ? sortByDateDesc(onlyPublicEntriesByLang(await getCollection('practice'), language))
+    : [];
 
   return [
     ...articles.map((entry) => ({
@@ -62,6 +67,15 @@ export async function buildSearchIndex(language: SearchLocale): Promise<SearchIn
       type: 'concept' as const,
       language,
       tags: entry.data.tags ?? []
+    })),
+    ...practice.map((entry) => ({
+      title: entry.data.title,
+      description: entry.data.description,
+      url: getPracticePath(entry, language),
+      type: 'practice' as const,
+      language,
+      tags: entry.data.tags ?? [],
+      date: formatDateForIndex(entry.data.publishedAt)
     }))
   ];
 }

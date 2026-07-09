@@ -12,11 +12,6 @@ const isSearchIndex = (page) => {
   return pathname.startsWith('/search-index') && pathname.endsWith('.json');
 };
 
-const isPracticePreview = (page) => {
-  const { pathname } = new URL(page);
-  return pathname.startsWith('/practice/') || pathname.startsWith('/pl/practice/');
-};
-
 export default defineConfig({
   site: 'https://promptedpsyche.com',
   redirects: {
@@ -26,7 +21,7 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) => !isTagArchive(page) && !isSearchIndex(page) && !isPracticePreview(page)
+      filter: (page) => !isTagArchive(page) && !isSearchIndex(page)
     })
   ],
   markdown: {

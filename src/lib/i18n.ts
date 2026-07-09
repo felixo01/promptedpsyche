@@ -19,6 +19,7 @@ const routePairs: RoutePair[] = [
   { en: '/articles/', pl: '/pl/articles/' },
   { en: '/notes/', pl: '/pl/notes/' },
   { en: '/concepts/', pl: '/pl/concepts/' },
+  { en: '/practice/', pl: '/pl/practice/' },
   { en: '/projects/', pl: '/pl/projects/' },
   { en: '/search/', pl: '/pl/search/' }
 ];
@@ -32,6 +33,7 @@ export const navItemsByLocale: Record<Locale, Array<{ label: string; href: strin
     { label: 'Articles', href: '/articles/' },
     { label: 'Notes', href: '/notes/' },
     { label: 'Concepts', href: '/concepts/' },
+    { label: 'Practice', href: '/practice/' },
     { label: 'Projects', href: '/projects/' },
     { label: 'Search', href: '/search/' }
   ],
@@ -43,6 +45,7 @@ export const navItemsByLocale: Record<Locale, Array<{ label: string; href: strin
     { label: 'Artykuły', href: '/pl/articles/' },
     { label: 'Notatki', href: '/pl/notes/' },
     { label: 'Pojęcia', href: '/pl/concepts/' },
+    { label: 'Praktyka', href: '/pl/practice/' },
     { label: 'Projekty', href: '/pl/projects/' },
     { label: 'Szukaj', href: '/pl/search/' }
   ]
@@ -98,6 +101,10 @@ function findRoutePair(pathname: string): RoutePair {
 
   if (path.startsWith('/pl/concepts/') || path.startsWith('/concepts/')) {
     return routePairs.find((pair) => pair.en === '/concepts/') ?? routePairs[0];
+  }
+
+  if (path.startsWith('/pl/practice/') || path.startsWith('/practice/')) {
+    return routePairs.find((pair) => pair.en === '/practice/') ?? routePairs[0];
   }
 
   return routePairs[0];

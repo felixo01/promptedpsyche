@@ -2,6 +2,8 @@ import { expect, test } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
 
+const showPractice = process.env.SHOW_PRACTICE === 'true';
+
 function readDistFile(fileName: string) {
   return fs.readFileSync(path.join(process.cwd(), 'dist', fileName), 'utf8');
 }
@@ -41,13 +43,24 @@ test.describe('built sitemap and RSS policy', () => {
     expect(robots).not.toContain('Disallow: /pl/practice');
   });
 
-  test('excludes tag archives and Practice drafts from sitemap', () => {
+  test('excludes tag archives and follows Practice launch visibility in sitemap', () => {
     const sitemap = readBuiltSitemap();
 
     expect(sitemap).not.toContain('/tags/');
     expect(sitemap).not.toContain('/pl/tags/');
-    expect(sitemap).not.toContain('/practice/');
-    expect(sitemap).not.toContain('/pl/practice/');
+    if (showPractice) {
+      expect(sitemap).toContain('/practice/');
+      expect(sitemap).toContain('/pl/practice/');
+      expect(sitemap).toContain('/practice/how-to-check-whether-an-ai-answer-has-sources/');
+      expect(sitemap).toContain('/practice/how-to-check-your-assumptions-with-ai/');
+      expect(sitemap).toContain('/pl/practice/jak-sprawdzic-czy-odpowiedz-ai-ma-zrodla/');
+      expect(sitemap).toContain('/pl/practice/jak-sprawdzic-wlasne-zalozenia-z-pomoca-ai/');
+      expect(sitemap.match(/https:\/\/promptedpsyche\.com\/practice\//g) ?? []).toHaveLength(11);
+      expect(sitemap.match(/https:\/\/promptedpsyche\.com\/pl\/practice\//g) ?? []).toHaveLength(11);
+    } else {
+      expect(sitemap).not.toContain('/practice/');
+      expect(sitemap).not.toContain('/pl/practice/');
+    }
     expect(sitemap).not.toContain('/search-index.en.json');
     expect(sitemap).not.toContain('/search-index.pl.json');
     expect(sitemap).toContain('/about/');
@@ -63,7 +76,7 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap.match(/\/articles\/are-we-afraid-of-ai-or-of-ourselves\//g) ?? []).toHaveLength(1);
   });
 
-  test('keeps Practice drafts out of RSS', () => {
+  test('keeps Practice out of RSS', () => {
     const rss = readDistFile('rss.xml');
 
     expect(rss).not.toContain('/practice/');

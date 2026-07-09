@@ -116,8 +116,8 @@ async function expectNoHorizontalOverflow(page: Page) {
   expect(overflow.bodyScrollWidth).toBeLessThanOrEqual(overflow.innerWidth + 1);
 }
 
-test.describe('practice drafts', () => {
-  test('keeps practice drafts out of public indexes and routes', async ({ page, request }) => {
+test.describe('practice section', () => {
+  test('keeps practice hidden when SHOW_PRACTICE is disabled', async ({ page, request }) => {
     test.skip(showPractice, 'Production Practice safety runs with SHOW_PRACTICE disabled.');
 
     for (const path of publicIndexes) {
@@ -143,8 +143,8 @@ test.describe('practice drafts', () => {
     expect(plIndexResponse.ok()).toBe(false);
   });
 
-  test('renders local Practice preview routes when SHOW_PRACTICE is enabled', async ({ page, request }) => {
-    test.skip(!showPractice, 'Practice preview routes are generated only with SHOW_PRACTICE=true.');
+  test('renders public Practice routes when SHOW_PRACTICE is enabled', async ({ page, request }) => {
+    test.skip(!showPractice, 'Practice routes are generated only with SHOW_PRACTICE=true.');
 
     await page.addInitScript(() => {
       Object.defineProperty(navigator, 'clipboard', {
@@ -189,9 +189,12 @@ test.describe('practice drafts', () => {
     ).toBeVisible();
     await expect(page.locator('.entry-title-link', { hasText: 'How to ask AI for a counterargument' })).toBeVisible();
     await expect(page.getByRole('link', { name: /Open scenario:/ })).toHaveCount(10);
-    await expect(page.locator('[data-qa="site-nav"]')).not.toContainText('Practice');
+    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Practice' })).toHaveAttribute(
+      'href',
+      '/practice/'
+    );
     await expect(page.locator('[data-qa="site-nav"]')).not.toContainText('Praktyka');
-    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
+    await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
     await expect(page.locator('[data-qa="language-switcher"]').getByRole('link', { name: 'PL' })).toHaveAttribute(
       'href',
       '/pl/practice/'
@@ -203,7 +206,7 @@ test.describe('practice drafts', () => {
 
     await page.goto('/practice/how-to-check-whether-an-ai-answer-has-sources/');
     await expect(page.getByRole('heading', { name: 'How to check whether an AI answer has sources' })).toBeVisible();
-    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
+    await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
     await expect(page.locator('[data-qa="language-switcher"]').getByRole('link', { name: 'PL' })).toHaveAttribute(
       'href',
       '/pl/practice/jak-sprawdzic-czy-odpowiedz-ai-ma-zrodla/'
@@ -241,6 +244,10 @@ test.describe('practice drafts', () => {
     ).toBeVisible();
     await expect(page.locator('.entry-title-link', { hasText: 'Jak poprosić AI o kontrargument' })).toBeVisible();
     await expect(page.getByRole('link', { name: /Otwórz scenariusz:/ })).toHaveCount(10);
+    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Praktyka' })).toHaveAttribute(
+      'href',
+      '/pl/practice/'
+    );
     await expect(page.locator('[data-qa="language-switcher"]').getByRole('link', { name: 'EN' })).toHaveAttribute(
       'href',
       '/practice/'

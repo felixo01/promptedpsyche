@@ -57,17 +57,15 @@ const Content = rendered?.Content;
       label="Practice"
       lang="en"
       alternateLinks={alternateLinks}
-      robots="noindex, nofollow"
     >
       {Content && <Content />}
     </EntryLayout>
   ) : (
     <BaseLayout
       title="Practice"
-      description="Short, practical scenarios for working with AI more carefully."
+      description="Short exercises for thinking with AI more carefully: sources, uncertainty, assumptions, counterarguments and decisions."
       lang="en"
       alternateLinks={practiceIndexAlternates}
-      robots="noindex, nofollow"
     >
       <section class="page-shell practice-index">
         <header class="page-header practice-index__header">
