@@ -2,7 +2,7 @@
 title: "Jak analizować wiadomość bez diagnozowania człowieka"
 description: "Praktyka porządkowania trudnej wiadomości z AI bez diagnozowania nadawcy, czytania intencji ani oddawania modelowi odpowiedzialności za odpowiedź."
 publishedAt: 2026-07-03
-draft: true
+draft: false
 tags:
   - komunikacja
   - odpowiedzialność

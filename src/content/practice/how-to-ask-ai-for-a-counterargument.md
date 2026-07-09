@@ -2,7 +2,7 @@
 title: "How to ask AI for a counterargument"
 description: "A practice for using AI to test your argument without treating the model as the judge, opponent or source of a final verdict."
 publishedAt: 2026-07-07
-draft: true
+draft: false
 tags:
   - arguments
   - checking

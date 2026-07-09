@@ -2,7 +2,7 @@
 title: "Jak sprawdzić, czy model ma wystarczający kontekst"
 description: "Praktyka sprawdzania, czy odpowiedź AI opiera się na wystarczającym kontekście wejściowym, czy na brakujących założeniach."
 publishedAt: 2026-07-07
-draft: true
+draft: false
 tags:
   - kontekst
   - weryfikacja

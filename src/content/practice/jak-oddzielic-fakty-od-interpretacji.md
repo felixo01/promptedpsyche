@@ -2,7 +2,7 @@
 title: "Jak oddzielić fakty od interpretacji"
 description: "Praktyka rozdzielania widocznych faktów, interpretacji, założeń, ocen i brakujących pytań, zanim powstanie wniosek albo decyzja."
 publishedAt: 2026-07-03
-draft: true
+draft: false
 tags:
   - decyzje
   - interpretacja

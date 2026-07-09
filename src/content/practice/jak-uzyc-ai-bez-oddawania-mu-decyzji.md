@@ -2,7 +2,7 @@
 title: "Jak użyć AI bez oddawania mu decyzji"
 description: "Praktyka porządkowania opcji, kryteriów, ryzyk i brakujących informacji bez przenoszenia odpowiedzialności za wybór na model."
 publishedAt: 2026-07-07
-draft: true
+draft: false
 tags:
   - decyzje
   - odpowiedzialność

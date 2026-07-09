@@ -2,7 +2,7 @@
 title: "How not to confuse fluency with truth"
 description: "A practice for pausing when an AI answer sounds coherent and confident but may hide uncertainty, assumptions, missing sources or overgeneralization."
 publishedAt: 2026-07-03
-draft: true
+draft: false
 tags:
   - fluency
   - verification

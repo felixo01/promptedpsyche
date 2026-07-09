@@ -2,7 +2,7 @@
 title: "How to check whether the model has enough context"
 description: "A practice for checking whether an AI answer rests on enough input context or on missing assumptions."
 publishedAt: 2026-07-07
-draft: true
+draft: false
 tags:
   - context
   - verification

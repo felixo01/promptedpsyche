@@ -2,7 +2,7 @@
 title: "How to check your assumptions with AI"
 description: "A practice for checking your first reading of a situation: what is fact, what is assumption, what is emotion and what is still unknown."
 publishedAt: 2026-07-07
-draft: true
+draft: false
 tags:
   - assumptions
   - checking

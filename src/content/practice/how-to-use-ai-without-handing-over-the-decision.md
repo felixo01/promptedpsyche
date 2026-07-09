@@ -2,7 +2,7 @@
 title: "How to use AI without handing over the decision"
 description: "A practice for organizing options, criteria, risks and missing information without transferring responsibility for the choice to the model."
 publishedAt: 2026-07-07
-draft: true
+draft: false
 tags:
   - decisions
   - responsibility

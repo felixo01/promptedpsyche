@@ -2,7 +2,7 @@
 title: "Jak sprawdzić własne założenia z pomocą AI"
 description: "Praktyka sprawdzania własnego pierwszego odczytania sytuacji: co jest faktem, co założeniem, co emocją, a czego nadal nie wiadomo."
 publishedAt: 2026-07-07
-draft: true
+draft: false
 tags:
   - założenia
   - sprawdzanie

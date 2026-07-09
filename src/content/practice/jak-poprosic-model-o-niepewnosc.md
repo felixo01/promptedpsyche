@@ -2,7 +2,7 @@
 title: "Jak poprosić model o niepewność"
 description: "Praktyka proszenia AI o pokazanie założeń, braków, poziomu ostrożności i warunków, które mogą zmienić odpowiedź."
 publishedAt: 2026-07-03
-draft: true
+draft: false
 tags:
   - niepewność
   - weryfikacja

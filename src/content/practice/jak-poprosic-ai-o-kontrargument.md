@@ -2,7 +2,7 @@
 title: "Jak poprosić AI o kontrargument"
 description: "Praktyka używania AI do sprawdzenia własnego argumentu bez traktowania modelu jak sędziego, przeciwnika albo źródła ostatecznego werdyktu."
 publishedAt: 2026-07-07
-draft: true
+draft: false
 tags:
   - argumenty
   - sprawdzanie

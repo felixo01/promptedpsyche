@@ -2,7 +2,7 @@
 title: "How to check whether an AI answer has sources"
 description: "A practice for breaking an AI answer into claims, sources and risk points before it enters an article, presentation, team note or decision."
 publishedAt: 2026-07-03
-draft: true
+draft: false
 tags:
   - sources
   - verification

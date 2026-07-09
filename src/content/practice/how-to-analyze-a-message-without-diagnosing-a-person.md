@@ -2,7 +2,7 @@
 title: "How to analyze a message without diagnosing a person"
 description: "A practice for organizing a difficult message with AI without diagnosing the sender, mind-reading intentions or handing over responsibility for the reply."
 publishedAt: 2026-07-03
-draft: true
+draft: false
 tags:
   - communication
   - responsibility

@@ -2,7 +2,7 @@
 title: "Jak nie pomylić płynności z prawdą"
 description: "Praktyka zatrzymania się przy odpowiedzi, która brzmi spójnie i pewnie, ale może ukrywać niepewność, założenia, brak źródeł albo zbyt szerokie uogólnienia."
 publishedAt: 2026-07-03
-draft: true
+draft: false
 tags:
   - płynność
   - weryfikacja

@@ -2,7 +2,7 @@
 title: "Jak sprawdzić, czy odpowiedź AI ma źródła"
 description: "Praktyka rozkładania odpowiedzi AI na twierdzenia, źródła i miejsca ryzyka, zanim tekst trafi do artykułu, prezentacji, notatki zespołowej albo decyzji."
 publishedAt: 2026-07-03
-draft: true
+draft: false
 tags:
   - źródła
   - weryfikacja

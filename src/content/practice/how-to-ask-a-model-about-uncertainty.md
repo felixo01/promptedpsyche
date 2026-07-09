@@ -2,7 +2,7 @@
 title: "How to ask a model about uncertainty"
 description: "A practice for asking AI to show assumptions, missing context, caution levels and conditions that can change an answer."
 publishedAt: 2026-07-03
-draft: true
+draft: false
 tags:
   - uncertainty
   - verification

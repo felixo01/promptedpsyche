@@ -2,7 +2,7 @@
 title: "How to use AI as a second reader"
 description: "A practice for using AI as a second reader: checking clarity, structure, tone and reception risks without handing over authorship."
 publishedAt: 2026-07-03
-draft: true
+draft: false
 tags:
   - editing
   - writing

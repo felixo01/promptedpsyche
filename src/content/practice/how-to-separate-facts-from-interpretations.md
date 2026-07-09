@@ -2,7 +2,7 @@
 title: "How to separate facts from interpretations"
 description: "A practice for separating visible facts, interpretations, assumptions, judgments and missing questions before a conclusion or decision forms."
 publishedAt: 2026-07-03
-draft: true
+draft: false
 tags:
   - decision-making
   - interpretation

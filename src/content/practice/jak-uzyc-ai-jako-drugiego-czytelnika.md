@@ -2,7 +2,7 @@
 title: "Jak użyć AI jako drugiego czytelnika"
 description: "Praktyka używania AI jako drugiego czytelnika: do sprawdzenia jasności, struktury, tonu i ryzyk odbioru bez oddawania modelowi autorstwa."
 publishedAt: 2026-07-03
-draft: true
+draft: false
 tags:
   - redakcja
   - pisanie
