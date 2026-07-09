@@ -225,6 +225,51 @@ const asideLabels = isConceptEntry
 
   <script is:inline>
     (() => {
+      const enhanceMarkdownPromptBlocks = () => {
+        const lang = document.documentElement.lang === 'pl' ? 'pl' : 'en';
+        const label = lang === 'pl' ? 'Przykładowy prompt' : 'Example prompt';
+        const copyLabel = lang === 'pl' ? 'Kopiuj' : 'Copy';
+        const copiedLabel = lang === 'pl' ? 'Skopiowano' : 'Copied';
+        const ariaLabel = lang === 'pl' ? 'Kopiuj przykładowy prompt' : 'Copy example prompt';
+
+        document.querySelectorAll('.prose > pre').forEach((pre) => {
+          if (pre.closest('[data-copyable-prompt]') || pre.dataset.promptEnhanced === 'true') {
+            return;
+          }
+
+          pre.dataset.promptEnhanced = 'true';
+          pre.classList.add('prompt-example__body');
+
+          const code = pre.querySelector('code');
+          if (code && !code.hasAttribute('data-prompt-text')) {
+            code.setAttribute('data-prompt-text', '');
+          }
+
+          const wrapper = document.createElement('div');
+          wrapper.className = 'prompt-example prompt-example--better';
+          wrapper.setAttribute('data-copyable-prompt', '');
+
+          const header = document.createElement('div');
+          header.className = 'prompt-example__header';
+
+          const labelElement = document.createElement('p');
+          labelElement.className = 'prompt-example__label';
+          labelElement.textContent = label;
+
+          const button = document.createElement('button');
+          button.className = 'prompt-example__copy';
+          button.type = 'button';
+          button.setAttribute('aria-label', ariaLabel);
+          button.setAttribute('data-copy-label', copyLabel);
+          button.setAttribute('data-copied-label', copiedLabel);
+          button.textContent = copyLabel;
+
+          header.append(labelElement, button);
+          pre.before(wrapper);
+          wrapper.append(header, pre);
+        });
+      };
+
       const initializePromptCopy = () => {
         document.querySelectorAll('[data-copyable-prompt]').forEach((box) => {
           const button = box.querySelector('.prompt-example__copy');
@@ -262,8 +307,12 @@ const asideLabels = isConceptEntry
       };
 
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initializePromptCopy, { once: true });
+        document.addEventListener('DOMContentLoaded', () => {
+          enhanceMarkdownPromptBlocks();
+          initializePromptCopy();
+        }, { once: true });
       } else {
+        enhanceMarkdownPromptBlocks();
         initializePromptCopy();
       }
     })();

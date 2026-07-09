@@ -146,6 +146,17 @@ test.describe('practice drafts', () => {
   test('renders local Practice preview routes when SHOW_PRACTICE is enabled', async ({ page, request }) => {
     test.skip(!showPractice, 'Practice preview routes are generated only with SHOW_PRACTICE=true.');
 
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator, 'clipboard', {
+        configurable: true,
+        value: {
+          writeText: async (text: string) => {
+            (window as Window & { __copiedPrompt?: string }).__copiedPrompt = text;
+          }
+        }
+      });
+    });
+
     const enIndexResponse = await request.get('/practice/');
     const plIndexResponse = await request.get('/pl/practice/');
     const enEntryResponse = await request.get('/practice/how-to-check-whether-an-ai-answer-has-sources/');
@@ -197,6 +208,16 @@ test.describe('practice drafts', () => {
       'href',
       '/pl/practice/jak-sprawdzic-czy-odpowiedz-ai-ma-zrodla/'
     );
+    await expect(page.locator('.prompt-example')).toHaveCount(1);
+    await expect(page.locator('.prompt-example')).toContainText('Example prompt');
+    await expect(page.getByRole('button', { name: 'Copy example prompt' })).toBeVisible();
+    await page.getByRole('button', { name: 'Copy example prompt' }).click();
+    await expect(page.getByRole('button', { name: 'Copy example prompt' })).toContainText('Copied');
+    const copiedEnglishPrompt = await page.evaluate(
+      () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
+    );
+    expect(copiedEnglishPrompt).toContain('Read your previous answer and help me check which parts require sources.');
+    await expectNoHorizontalOverflow(page);
 
     await page.goto('/pl/practice/');
     await expect(page.getByRole('heading', { name: 'Praktyka', level: 1 })).toBeVisible();
@@ -227,6 +248,21 @@ test.describe('practice drafts', () => {
     for (const phrase of forbiddenPracticePhrases) {
       await expect(page.locator('body')).not.toContainText(phrase);
     }
+    await expectNoHorizontalOverflow(page);
+
+    await page.goto('/pl/practice/jak-sprawdzic-wlasne-zalozenia-z-pomoca-ai/');
+    await expect(
+      page.getByRole('heading', { name: 'Jak sprawdzić własne założenia z pomocą AI' })
+    ).toBeVisible();
+    await expect(page.locator('.prompt-example')).toHaveCount(1);
+    await expect(page.locator('.prompt-example')).toContainText('Przykładowy prompt');
+    await expect(page.getByRole('button', { name: 'Kopiuj przykładowy prompt' })).toBeVisible();
+    await page.getByRole('button', { name: 'Kopiuj przykładowy prompt' }).click();
+    await expect(page.getByRole('button', { name: 'Kopiuj przykładowy prompt' })).toContainText('Skopiowano');
+    const copiedPolishPrompt = await page.evaluate(
+      () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
+    );
+    expect(copiedPolishPrompt).toContain('Przeczytaj poniższy opis i pomóż mi sprawdzić moje założenia.');
     await expectNoHorizontalOverflow(page);
   });
 });
