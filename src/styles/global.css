@@ -3211,6 +3211,7 @@ html[lang='pl'] .content-header h1 {
   }
 
   .site-header {
+    flex-wrap: wrap;
     align-items: flex-start;
     gap: 1rem;
     min-height: 0;
@@ -3227,11 +3228,22 @@ html[lang='pl'] .content-header h1 {
   }
 
   .site-nav {
+    flex-wrap: wrap;
     gap: 0.85rem 1rem;
   }
 
+  .site-nav a {
+    font-size: 0.68rem;
+  }
+
   .language-switcher {
+    align-self: flex-start;
     flex-basis: 100%;
+  }
+
+  .header-actions {
+    justify-content: flex-start;
+    min-width: 0;
   }
 
   .lovable-container,
@@ -3542,6 +3554,10 @@ html[lang='pl'] .content-header h1 {
     max-width: 100%;
     font-size: 1.05rem;
     line-height: 1.8;
+  }
+
+  .article-aside {
+    display: none;
   }
 
   .article-shell--publication .prose h2 {
