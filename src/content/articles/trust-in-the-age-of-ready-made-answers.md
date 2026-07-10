@@ -38,11 +38,11 @@ The central problem is therefore larger than whether a model occasionally invent
 
 ## Abstract
 
-This conceptual, research-informed essay examines how generative AI changes the relationship between questions, sources and the user's feeling of knowing. It offers a narrative synthesis rather than a systematic review, drawing on research about public trust in science, social epistemology, information retrieval and generative search, hallucination and factuality, trust in automation, Human-AI Interaction, cognitive offloading and critical thinking in AI-assisted work. Its central argument is that generative AI acts as an epistemic intermediary: it can make complex material more accessible, while presenting the result as one conversational answer that obscures the route through documents, methods, evidential limits and disagreement. I describe this interface-level effect as a compression of the epistemic path, without proposing a new psychological construct or scientific theory. Evidence about citation support, self-reported critical-thinking effort and overreliance shows why fluency, explanations and citations cannot by themselves guarantee appropriate reliance. The practical conclusion is not to distrust generated answers categorically. It is to calibrate reliance to the task and its stakes, then reconstruct the path from a claim back to provenance, evidence, uncertainty, disagreement and human responsibility whenever the consequences require it.
+This research-informed conceptual essay examines how generative AI changes the relationship between questions, sources and the feeling of knowing. It is a narrative synthesis, not a systematic review. It connects research on trust, verifiability, automation and AI-assisted work to an analysis of how conversational interfaces present knowledge. The central argument is that generative AI acts as an epistemic intermediary: it can open access to complex material while compressing the epistemic path into one fluent answer. Provenance, evidential strength, uncertainty, disagreement and responsibility can become less visible in that compression. Evidence about citation support, self-reported critical-thinking effort and overreliance shows why fluent explanations do not guarantee appropriate reliance. The practical response is calibrated reliance rather than categorical trust or distrust. Match reliance to the task and its stakes, then reconstruct the path from a claim to its provenance, evidence, uncertainty, disagreement and responsible decision-maker when the consequences require it.
 
 ## Scope and method
 
-This essay is a narrative synthesis, not a systematic review. It does not claim exhaustive coverage, a preregistered search strategy or a quantitative estimate of effects. The selection rule was narrower and practical: priority went to peer-reviewed research, official reports and directly relevant primary sources that could clarify a claim made in the article.
+The method is deliberately selective rather than exhaustive. It does not use a preregistered search strategy or provide a quantitative estimate of effects. Priority went to peer-reviewed research, official reports and directly relevant primary sources that could clarify a claim made in the article.
 
 The evidence comes from several fields that ask related but different questions. Public-trust research shows how people evaluate scientists and institutions. Social epistemology examines how knowledge depends on testimony, experts and other people. Information retrieval and generative-search studies ask whether answers can be traced to supporting material. Research on [hallucination](/concepts/hallucination/) and factuality examines whether generated text remains faithful to its sources. Trust-in-automation and [Human-AI Interaction](/concepts/human-ai-interaction/) research focus on reliance, interface cues and human control. Work on [cognitive offloading](/concepts/cognitive-offloading/) and critical thinking helps explain how effort can be redistributed when a system performs part of a task.
 
@@ -153,15 +153,13 @@ Not every low-stakes task needs a verification ritual. Generating title ideas is
 
 Trust, reliance and appropriate reliance should be kept separate. Trust is an attitude or expectation about a system. Reliance is behavior: using its output in a decision or action. Appropriate reliance means that behavior is reasonably matched to what the system can do in that context. Classic automation research also warns about misuse through overreliance and disuse through excessive rejection; "trust more" and "trust less" are both inadequate general rules (Parasuraman & Riley, 1997; Lee & See, 2004).
 
-[Calibrated trust](/concepts/calibrated-trust/) depends on at least seven features:
+[Calibrated trust](/concepts/calibrated-trust/) depends on five features:
 
-1. **Stakes.** What happens if the answer is wrong?
-2. **Source visibility.** Can the route to the underlying material be inspected?
-3. **Source quality.** Are the sources primary, current, independent and suitable?
-4. **User competence.** Can the person recognize a weak answer in this domain?
-5. **Independent verification.** Is there another way to check the claim?
-6. **Reversibility.** Can an error be corrected before it causes lasting harm?
-7. **Responsibility.** Who must justify and answer for the outcome?
+1. **Stakes and reversibility.** What happens if the answer is wrong, and can the error be corrected before it causes lasting harm?
+2. **Source visibility and quality.** Can the route to the underlying material be inspected, and are the sources primary, current, independent and suitable?
+3. **User competence.** Can the person recognize a weak answer in this domain?
+4. **Independent verification.** Is there another way to check the claim?
+5. **Responsibility.** Who must justify and answer for the outcome?
 
 Consider how these features change across tasks. Title ideas are low stakes and easily reversed, so fluency may be enough. A summary of a document already in front of the user is more checkable, although omissions still matter. An explanation of an unfamiliar scientific topic requires source inspection because the user has limited ability to detect a confident error. Interpreting a disputed finding requires comparison of definitions, methods and alternative readings. Advice about health, law, finance or public policy needs authoritative sources and qualified human judgment. A recommendation that affects another person adds an ethical and organizational duty that cannot be delegated to the model.
 
@@ -193,6 +191,19 @@ When an answer matters, the practical move is to rebuild the distinctions that s
   </div>
 </section>
 
+### Hypothetical worked example
+
+Suppose an AI answer states: **"Research shows that AI increases employee productivity by 40%."** Before the number enters a proposal or policy, reconstruct its path:
+
+- **Claim:** Does 40% mean faster task completion, more output, higher quality or a composite score?
+- **Provenance:** Which study, authors, funder and publication date produced the figure?
+- **Evidence:** Who was studied, what work was measured, what comparison group was used and how was productivity calculated?
+- **Uncertainty:** Does the estimate include a range, and does it apply beyond the tested tasks, workers and tools?
+- **Disagreement:** Could the gain reflect novelty, task selection or speed at the expense of quality?
+- **Responsibility:** Who will verify the study and decide whether the number is suitable for this organization?
+
+This example is hypothetical. The protocol does not validate the 40% claim; it turns an impressive number into questions that can be checked.
+
 The protocol does not require reading every cited paper for every casual question. Its value is diagnostic. If a high-stakes claim has no recoverable provenance, if evidence and interpretation are mixed, or if no one accepts responsibility for checking the result, the answer is not ready for use.
 
 ## Implications for interface and organizational design
@@ -205,11 +216,11 @@ Good provenance does not guarantee truth. It makes error more inspectable and co
 
 ## Limits of this argument
 
-The evidence base on generative AI use is developing quickly. Results from one system, product version or task should not be generalized to every model and context. Retrieval mechanisms, citation interfaces and model behavior change over time, which is why the 2023 generative-search audit is evidence of a verification problem, not a current industry score.
+The evidence base on generative AI use is developing quickly. Retrieval mechanisms, citation interfaces and model behavior change over time. The cited studies use different methods and contexts, so their findings cannot be combined into a single estimate of how strongly AI changes judgment or performance.
 
 Self-reported critical-thinking effort is not the same as directly measured reasoning performance. Classic studies of processing fluency and automation illuminate possible mechanisms without directly testing today's conversational systems. This essay does not measure user behavior, estimate the prevalence of overreliance or test whether the reconstruction protocol improves decisions.
 
-The protocol is an analytical and practical framework, not a validated instrument. It may be unnecessary for low-stakes, reversible tasks and insufficient for professional decisions that require licensed expertise, formal review or institutional accountability.
+The protocol may be unnecessary for low-stakes, reversible tasks and insufficient for professional decisions that require licensed expertise, formal review or institutional accountability.
 
 Finally, compression can help. Generative AI can improve access to technical language, reveal useful questions and guide readers toward primary sources. The concern is not that every shorter route is false. It is that a route becomes hard to evaluate when the distinctions it removed cannot be recovered.
 
@@ -219,7 +230,7 @@ Generative AI can shorten the path from a question to useful knowledge. A shorte
 
 Convenience becomes risky when provenance, uncertainty, disagreement and responsibility disappear together. At that point, the user can possess a polished conclusion without knowing what kind of support stands behind it or who must answer for its use.
 
-Mature AI literacy means knowing when an answer is enough and when the route back to evidence must be rebuilt. Do not trust or distrust the answer in the abstract. Calibrate reliance to the task, then reconstruct the path when the stakes demand it.
+A model can give us the conclusion before we have seen the route. Mature AI literacy begins with knowing which conclusions are safe to use immediately and which require us to rebuild the path through sources, evidence, uncertainty and responsibility.
 
 ## Sources and further reading
 
