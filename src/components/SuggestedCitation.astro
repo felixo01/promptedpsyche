@@ -1,6 +1,5 @@
 ---
 import type { Locale } from '../lib/i18n';
-import { formatDate } from '../lib/content';
 
 interface Props {
   lang: Locale;
@@ -21,7 +20,13 @@ const authorCitation = author === 'Feliks Mamczur' ? 'Mamczur, F.' : author;
 const titleText = title.trim();
 const titleWithStop = /[.!?]$/.test(titleText) ? titleText : `${titleText}.`;
 const citationUrl = doiUrl ?? canonicalUrl;
-const publicationDate = citationDate ? formatDate(citationDate, lang) : String(year);
+const publicationDate = citationDate
+  ? `${citationDate.getUTCFullYear()}, ${new Intl.DateTimeFormat(lang === 'pl' ? 'pl-PL' : 'en-US', {
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'UTC'
+    }).format(citationDate)}`
+  : String(year);
 const citation = `${authorCitation} (${publicationDate}). ${titleWithStop} ${siteName}. ${citationUrl}`;
 ---
 

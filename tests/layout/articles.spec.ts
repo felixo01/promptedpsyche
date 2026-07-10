@@ -311,7 +311,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). It is not just about the prompt. Prompted Psyche. https://promptedpsyche.com/articles/it-is-not-just-about-the-prompt/'
+      'Mamczur, F. (2026, March 12). It is not just about the prompt. Prompted Psyche. https://promptedpsyche.com/articles/it-is-not-just-about-the-prompt/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -348,7 +348,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). Nie chodzi tylko o prompt. Prompted Psyche. https://promptedpsyche.com/pl/articles/nie-chodzi-tylko-o-prompt/'
+      'Mamczur, F. (2026, 12 marca). Nie chodzi tylko o prompt. Prompted Psyche. https://promptedpsyche.com/pl/articles/nie-chodzi-tylko-o-prompt/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -385,7 +385,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). Model nie pamięta. Model ma kontekst. Prompted Psyche. https://promptedpsyche.com/pl/articles/model-nie-pamieta-model-ma-kontekst/'
+      'Mamczur, F. (2026, 28 marca). Model nie pamięta. Model ma kontekst. Prompted Psyche. https://promptedpsyche.com/pl/articles/model-nie-pamieta-model-ma-kontekst/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -499,7 +499,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). AI does not read people. It helps make sense of the situation. Prompted Psyche. https://promptedpsyche.com/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation/'
+      'Mamczur, F. (2026, April 17). AI does not read people. It helps make sense of the situation. Prompted Psyche. https://promptedpsyche.com/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
@@ -593,7 +593,7 @@ test.describe('published articles', () => {
     await expect(byline.locator('time[datetime^="2026-07-10"]')).toHaveCount(1);
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      `Mamczur, F. (2 lipca 2026). ${aiPathPolishArticleTitle}. Prompted Psyche. https://promptedpsyche.com${aiPathPolishArticleRoute}`
+      `Mamczur, F. (2026, 2 lipca). ${aiPathPolishArticleTitle}. Prompted Psyche. https://promptedpsyche.com${aiPathPolishArticleRoute}`
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -871,7 +871,7 @@ test.describe('published articles', () => {
     await expect(byline.locator('time[datetime^="2026-07-10"]')).toHaveCount(1);
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      `Mamczur, F. (July 2, 2026). ${aiPathEnglishArticleTitle}. Prompted Psyche. https://promptedpsyche.com${aiPathEnglishArticleRoute}`
+      `Mamczur, F. (2026, July 2). ${aiPathEnglishArticleTitle}. Prompted Psyche. https://promptedpsyche.com${aiPathEnglishArticleRoute}`
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -1237,7 +1237,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). The model does not remember. It works with context. Prompted Psyche. https://promptedpsyche.com/articles/the-model-does-not-remember-it-works-with-context/'
+      'Mamczur, F. (2026, March 28). The model does not remember. It works with context. Prompted Psyche. https://promptedpsyche.com/articles/the-model-does-not-remember-it-works-with-context/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -1274,7 +1274,7 @@ test.describe('published articles', () => {
       doiUrl
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). What changes when AI has a body? Prompted Psyche. https://doi.org/10.5281/zenodo.21296384'
+      'Mamczur, F. (2026, July 10). What changes when AI has a body? Prompted Psyche. https://doi.org/10.5281/zenodo.21296384'
     );
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'This article is licensed under CC BY 4.0'
