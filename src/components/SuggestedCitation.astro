@@ -1,11 +1,13 @@
 ---
 import type { Locale } from '../lib/i18n';
+import { formatDate } from '../lib/content';
 
 interface Props {
   lang: Locale;
   title: string;
   author: string;
   year: number;
+  citationDate?: Date;
   siteName: string;
   canonicalUrl: string;
   doi?: string;
@@ -13,13 +15,14 @@ interface Props {
   version?: string;
 }
 
-const { lang, title, author, year, siteName, canonicalUrl, doiUrl } = Astro.props;
+const { lang, title, author, year, citationDate, siteName, canonicalUrl, doiUrl } = Astro.props;
 const label = lang === 'pl' ? 'Jak cytować' : 'Suggested citation';
 const authorCitation = author === 'Feliks Mamczur' ? 'Mamczur, F.' : author;
 const titleText = title.trim();
 const titleWithStop = /[.!?]$/.test(titleText) ? titleText : `${titleText}.`;
 const citationUrl = doiUrl ?? canonicalUrl;
-const citation = `${authorCitation} (${year}). ${titleWithStop} ${siteName}. ${citationUrl}`;
+const publicationDate = citationDate ? formatDate(citationDate, lang) : String(year);
+const citation = `${authorCitation} (${publicationDate}). ${titleWithStop} ${siteName}. ${citationUrl}`;
 ---
 
 <section class="suggested-citation" data-qa="suggested-citation" aria-labelledby="suggested-citation-title">

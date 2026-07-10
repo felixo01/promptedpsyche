@@ -94,7 +94,8 @@ test.describe('author entity structured data', () => {
       },
       inLanguage: 'en'
     });
-    expect(article?.datePublished).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+    expect(article?.datePublished).toMatch(/^2026-07-02T/);
+    expect(article?.dateModified).toMatch(/^2026-07-10T/);
     expect(serialized).not.toMatch(privatePatterns);
   });
 
@@ -118,7 +119,8 @@ test.describe('author entity structured data', () => {
       },
       inLanguage: 'pl'
     });
-    expect(article?.datePublished).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+    expect(article?.datePublished).toMatch(/^2026-07-02T/);
+    expect(article?.dateModified).toMatch(/^2026-07-10T/);
     expect(serialized).not.toMatch(privatePatterns);
   });
 
