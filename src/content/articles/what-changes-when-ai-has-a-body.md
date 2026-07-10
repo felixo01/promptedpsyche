@@ -14,6 +14,11 @@ tags:
   - anthropomorphism
 author: "Feliks Mamczur"
 readingTime: "18 min read"
+doi: "10.5281/zenodo.21296384"
+doiUrl: "https://doi.org/10.5281/zenodo.21296384"
+version: "1.0"
+licenseName: "CC BY 4.0"
+licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 image: /images/articles/what-changes-when-ai-has-a-body/embodied-ai-presence-in-space-prompted-psyche.png
 imageAlt: "A woman sitting across from a small robot in a quiet interior, showing embodied AI as a presence in shared physical space."
 imageCaption: "Embodied AI is no longer only an answer on a screen. It can take up space, look, speak and co-create a social situation."

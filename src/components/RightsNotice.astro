@@ -5,11 +5,14 @@ interface Props {
   lang: Locale;
   variant?: 'footer' | 'content';
   title?: string;
+  licenseName?: string;
+  licenseUrl?: string;
 }
 
-const { lang, variant = 'content' } = Astro.props;
+const { lang, variant = 'content', licenseName, licenseUrl } = Astro.props;
 const locale = lang === 'pl' ? 'pl' : 'en';
 const label = locale === 'pl' ? 'Prawa autorskie i uznanie autorstwa' : 'Rights and attribution';
+const hasOpenLicense = variant === 'content' && licenseName && licenseUrl;
 
 const notices = {
   content: {
@@ -29,5 +32,14 @@ const notices = {
   data-variant={variant}
   aria-label={label}
 >
-  {notices[variant][locale]}
+  {
+    hasOpenLicense ? (
+      <>
+        © 2026 Feliks Mamczur / Prompted Psyche. This article is licensed under{' '}
+        <a href={licenseUrl}>{licenseName}</a>.
+      </>
+    ) : (
+      notices[variant][locale]
+    )
+  }
 </p>

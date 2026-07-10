@@ -16,6 +16,8 @@ const aiPathEnglishArticleRoute = '/articles/trust-in-the-age-of-ready-made-answ
 const aiFearsPolishArticleRoute =
   '/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/';
 const aiFearsEnglishArticleRoute = '/articles/are-we-afraid-of-ai-or-of-ourselves/';
+const embodiedPolishArticleRoute = '/pl/articles/co-sie-zmienia-kiedy-ai-ma-cialo/';
+const embodiedEnglishArticleRoute = '/articles/what-changes-when-ai-has-a-body/';
 const thirdEnglishArticleTitle =
   'AI does not read people. It helps make sense of the situation.';
 const thirdPolishArticleTitle = 'AI nie czyta ludzi. Pomaga uporządkować sytuację.';
@@ -29,12 +31,14 @@ const aiPathPolishArticleTitle = 'Zaufanie w epoce gotowych odpowiedzi';
 const aiPathEnglishArticleTitle = 'Trust in the age of ready-made answers';
 const aiFearsPolishArticleTitle = 'Czy boimy się AI, czy boimy się samych siebie?';
 const aiFearsEnglishArticleTitle = 'Are we afraid of AI, or of ourselves?';
+const embodiedPolishArticleTitle = 'Co się zmienia, kiedy AI ma ciało?';
+const embodiedEnglishArticleTitle = 'What changes when AI has a body?';
 
 test.describe('published articles', () => {
   test('shows the English article on the English articles index', async ({ page }) => {
     await page.goto('/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(6);
+    await expect(page.locator('.entry-list article')).toHaveCount(7);
     await expect(page.locator('.entry-list')).toContainText('It is not just about the prompt');
     await expect(page.locator('.entry-list')).toContainText(
       'The model does not remember. It works with context.'
@@ -43,13 +47,15 @@ test.describe('published articles', () => {
     await expect(page.locator('.entry-list')).toContainText(mirrorEnglishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiPathEnglishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiFearsEnglishArticleTitle);
+    await expect(page.locator('.entry-list')).toContainText(embodiedEnglishArticleTitle);
     await expect(page.locator('.entry-list')).not.toContainText(oldAiPathEnglishArticleTitle);
     await expect(page.locator('.entry-list')).not.toContainText(
       'AI does not read people. It helps read context.'
     );
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(6);
+    expect(titles).toHaveLength(7);
     expect(titles).toEqual(expect.arrayContaining([
+      embodiedEnglishArticleTitle,
       aiFearsEnglishArticleTitle,
       aiPathEnglishArticleTitle,
       mirrorEnglishArticleTitle,
@@ -129,16 +135,28 @@ test.describe('published articles', () => {
 
     await expect(aiFearsTitleLink).toHaveAttribute('href', aiFearsEnglishArticleRoute);
     await expect(aiFearsCtaLink).toHaveAttribute('href', aiFearsEnglishArticleRoute);
+
+    const embodiedTitleLink = page.getByRole('link', {
+      name: embodiedEnglishArticleTitle,
+      exact: true
+    });
+    const embodiedCtaLink = page.getByRole('link', {
+      name: `Read article: ${embodiedEnglishArticleTitle}`
+    });
+
+    await expect(embodiedTitleLink).toHaveAttribute('href', embodiedEnglishArticleRoute);
+    await expect(embodiedCtaLink).toHaveAttribute('href', embodiedEnglishArticleRoute);
   });
 
   test('shows the Polish article on the Polish articles index', async ({ page }) => {
     await page.goto('/pl/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(6);
+    await expect(page.locator('.entry-list article')).toHaveCount(7);
     await expect(page.locator('.entry-list')).toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('.entry-list')).toContainText(mirrorPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiPathPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiFearsPolishArticleTitle);
+    await expect(page.locator('.entry-list')).toContainText(embodiedPolishArticleTitle);
     await expect(page.locator('.entry-list')).not.toContainText(oldAiPathPolishArticleTitle);
     const titleLink = page.getByRole('link', {
       name: 'Nie chodzi tylko o prompt',
@@ -188,14 +206,26 @@ test.describe('published articles', () => {
 
     await expect(aiFearsTitleLink).toHaveAttribute('href', aiFearsPolishArticleRoute);
     await expect(aiFearsCtaLink).toHaveAttribute('href', aiFearsPolishArticleRoute);
+
+    const embodiedTitleLink = page.getByRole('link', {
+      name: embodiedPolishArticleTitle,
+      exact: true
+    });
+    const embodiedCtaLink = page.getByRole('link', {
+      name: `Czytaj artykuł: ${embodiedPolishArticleTitle}`
+    });
+
+    await expect(embodiedTitleLink).toHaveAttribute('href', embodiedPolishArticleRoute);
+    await expect(embodiedCtaLink).toHaveAttribute('href', embodiedPolishArticleRoute);
   });
 
   test('shows the third Polish article on the Polish articles index', async ({ page }) => {
     await page.goto('/pl/articles/');
 
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(6);
+    expect(titles).toHaveLength(7);
     expect(titles).toEqual(expect.arrayContaining([
+      embodiedPolishArticleTitle,
       aiFearsPolishArticleTitle,
       aiPathPolishArticleTitle,
       mirrorPolishArticleTitle,
@@ -1203,6 +1233,49 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose a[href="/concepts/cognitive-load/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/epistemic-vigilance/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/human-ai-interaction/"]')).toBeVisible();
+  });
+
+  test('shows DOI, citable version and CC BY metadata only for the embodied AI article', async ({ page }) => {
+    await page.goto(embodiedEnglishArticleRoute);
+
+    const doiUrl = 'https://doi.org/10.5281/zenodo.21296384';
+    const byline = page.locator('[data-qa="article-byline"]');
+
+    await expect(byline).toContainText('Citable version (v1.0):');
+    await expect(byline.getByRole('link', { name: 'DOI 10.5281/zenodo.21296384' })).toHaveAttribute(
+      'href',
+      doiUrl
+    );
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+      'Mamczur, F. (2026). What changes when AI has a body? Prompted Psyche. https://doi.org/10.5281/zenodo.21296384'
+    );
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'This article is licensed under CC BY 4.0'
+    );
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"] a')).toHaveAttribute(
+      'href',
+      'https://creativecommons.org/licenses/by/4.0/'
+    );
+    await expect(page.locator('meta[name="citation_doi"]')).toHaveAttribute(
+      'content',
+      '10.5281/zenodo.21296384'
+    );
+
+    const structuredDataText = await page
+      .locator('script[type="application/ld+json"]')
+      .evaluateAll((scripts) => scripts.map((script) => script.textContent ?? '').join('\n'));
+
+    expect(structuredDataText).toContain('"propertyID":"DOI"');
+    expect(structuredDataText).toContain('"value":"10.5281/zenodo.21296384"');
+    expect(structuredDataText).toContain('"sameAs":"https://doi.org/10.5281/zenodo.21296384"');
+    expect(structuredDataText).toContain('"license":"https://creativecommons.org/licenses/by/4.0/"');
+    expect(structuredDataText).toContain('"version":"1.0"');
+
+    await page.goto(secondEnglishArticleRoute);
+    await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'All rights reserved'
+    );
   });
 
   test('keeps other article drafts hidden', async ({ page, request }) => {

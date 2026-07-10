@@ -20,6 +20,11 @@ interface Props {
       image?: string;
       imageAlt?: string;
       imageCaption?: string;
+      doi?: string;
+      doiUrl?: string;
+      version?: string;
+      licenseName?: string;
+      licenseUrl?: string;
       audioUrl?: string;
       inBrief?: string[];
       tags?: string[];
@@ -56,8 +61,14 @@ const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();
 const heroImage = !isConceptEntry ? entry.data.image : undefined;
 const heroImageAlt = entry.data.imageAlt ?? entry.data.title;
 const heroImageCaption = entry.data.imageCaption;
+const doi = isArticleEntry ? entry.data.doi : undefined;
+const doiUrl = doi ? (entry.data.doiUrl ?? `https://doi.org/${doi}`) : undefined;
+const version = isArticleEntry ? entry.data.version : undefined;
+const licenseName = isArticleEntry ? entry.data.licenseName : undefined;
+const licenseUrl = isArticleEntry ? entry.data.licenseUrl : undefined;
 const audioUrl = !isConceptEntry ? entry.data.audioUrl : undefined;
 const inBriefItems = isArticleEntry ? (entry.data.inBrief ?? []) : [];
+const citableVersionLabel = lang === 'pl' ? 'Wersja do cytowania' : 'Citable version';
 const articleStructuredData = isArticleEntry
   ? {
       '@context': 'https://schema.org',
@@ -78,6 +89,18 @@ const articleStructuredData = isArticleEntry
         name: site.name,
         url: site.url
       },
+      ...(doi
+        ? {
+            identifier: {
+              '@type': 'PropertyValue',
+              propertyID: 'DOI',
+              value: doi
+            }
+          }
+        : {}),
+      ...(doiUrl ? { sameAs: doiUrl } : {}),
+      ...(licenseUrl ? { license: licenseUrl } : {}),
+      ...(version ? { version } : {}),
       ...(heroImage ? { image: absoluteUrl(heroImage) } : {})
     }
   : undefined;
@@ -120,6 +143,7 @@ const asideLabels = isConceptEntry
   alternateLinks={alternateLinks}
   robots={robots}
   structuredData={articleStructuredData}
+  citationDoi={doi}
 >
   <article class:list={['article-shell', isConceptEntry ? 'article-shell--concept' : 'article-shell--publication']}>
     <header class="content-header">
@@ -159,6 +183,14 @@ const asideLabels = isConceptEntry
               </p>
             )}
             {readingTime && <p>{readingTime}</p>}
+            {doi && doiUrl && (
+              <p class="article-byline__citable">
+                <span>{citableVersionLabel}{version ? ` (v${version})` : ''}:</span>{' '}
+                <a href={doiUrl} aria-label={`DOI ${doi}`}>
+                  DOI {doi}
+                </a>
+              </p>
+            )}
           </div>
         )}
         {isConceptEntry && readingTime && (
@@ -216,9 +248,20 @@ const asideLabels = isConceptEntry
             year={entry.data.publishedAt.getFullYear()}
             siteName={site.name}
             canonicalUrl={canonicalUrl}
+            doi={doi}
+            doiUrl={doiUrl}
+            version={version}
           />
         )}
-        {showRightsNotice && <RightsNotice lang={lang} variant="content" title={entry.data.title} />}
+        {showRightsNotice && (
+          <RightsNotice
+            lang={lang}
+            variant="content"
+            title={entry.data.title}
+            licenseName={licenseName}
+            licenseUrl={licenseUrl}
+          />
+        )}
       </div>
     </div>
   </article>

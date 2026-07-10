@@ -16,6 +16,7 @@ interface Props {
   alternateLinks?: AlternateLinks;
   robots?: string;
   structuredData?: StructuredData | StructuredData[];
+  citationDoi?: string;
 }
 
 const {
@@ -26,7 +27,8 @@ const {
   lang = getLangFromPath(Astro.url.pathname),
   alternateLinks: providedAlternateLinks,
   robots,
-  structuredData
+  structuredData,
+  citationDoi
 } = Astro.props;
 
 const pageTitle = title === site.name ? `${site.name} | ${site.tagline}` : `${title} | ${site.name}`;
@@ -60,6 +62,7 @@ const structuredDataJson = structuredDataItems.map((item) =>
     <meta name="description" content={description} />
     {robots && <meta name="robots" content={robots} />}
     {robots && <meta name="googlebot" content={robots} />}
+    {citationDoi && <meta name="citation_doi" content={citationDoi} />}
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="en" href={new URL(alternateLinks.en, site.url).toString()} />
     <link rel="alternate" hreflang="pl" href={new URL(alternateLinks.pl, site.url).toString()} />

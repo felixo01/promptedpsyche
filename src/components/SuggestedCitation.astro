@@ -8,14 +8,18 @@ interface Props {
   year: number;
   siteName: string;
   canonicalUrl: string;
+  doi?: string;
+  doiUrl?: string;
+  version?: string;
 }
 
-const { lang, title, author, year, siteName, canonicalUrl } = Astro.props;
+const { lang, title, author, year, siteName, canonicalUrl, doiUrl } = Astro.props;
 const label = lang === 'pl' ? 'Jak cytować' : 'Suggested citation';
 const authorCitation = author === 'Feliks Mamczur' ? 'Mamczur, F.' : author;
 const titleText = title.trim();
 const titleWithStop = /[.!?]$/.test(titleText) ? titleText : `${titleText}.`;
-const citation = `${authorCitation} (${year}). ${titleWithStop} ${siteName}. ${canonicalUrl}`;
+const citationUrl = doiUrl ?? canonicalUrl;
+const citation = `${authorCitation} (${year}). ${titleWithStop} ${siteName}. ${citationUrl}`;
 ---
 
 <section class="suggested-citation" data-qa="suggested-citation" aria-labelledby="suggested-citation-title">
