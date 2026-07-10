@@ -23,6 +23,10 @@ interface Props {
       doi?: string;
       doiUrl?: string;
       version?: string;
+      relatedDoi?: string;
+      relatedDoiUrl?: string;
+      relatedVersion?: string;
+      relatedDoiLabel?: string;
       licenseName?: string;
       licenseUrl?: string;
       audioUrl?: string;
@@ -64,11 +68,19 @@ const heroImageCaption = entry.data.imageCaption;
 const doi = isArticleEntry ? entry.data.doi : undefined;
 const doiUrl = doi ? (entry.data.doiUrl ?? `https://doi.org/${doi}`) : undefined;
 const version = isArticleEntry ? entry.data.version : undefined;
+const relatedDoi = isArticleEntry ? entry.data.relatedDoi : undefined;
+const relatedDoiUrl = relatedDoi ? (entry.data.relatedDoiUrl ?? `https://doi.org/${relatedDoi}`) : undefined;
+const relatedVersion = isArticleEntry ? entry.data.relatedVersion : undefined;
+const relatedDoiLabel = entry.data.relatedDoiLabel ?? (lang === 'pl' ? 'DOI wersji angielskiej' : 'English version DOI');
 const licenseName = isArticleEntry ? entry.data.licenseName : undefined;
 const licenseUrl = isArticleEntry ? entry.data.licenseUrl : undefined;
 const audioUrl = !isConceptEntry ? entry.data.audioUrl : undefined;
 const inBriefItems = isArticleEntry ? (entry.data.inBrief ?? []) : [];
 const citableVersionLabel = lang === 'pl' ? 'Wersja do cytowania' : 'Citable version';
+const visibleDoi = doi ?? relatedDoi;
+const visibleDoiUrl = doiUrl ?? relatedDoiUrl;
+const visibleDoiVersion = doi ? version : relatedVersion;
+const visibleDoiLabel = doi ? citableVersionLabel : relatedDoiLabel;
 const articleStructuredData = isArticleEntry
   ? {
       '@context': 'https://schema.org',
@@ -183,11 +195,11 @@ const asideLabels = isConceptEntry
               </p>
             )}
             {readingTime && <p>{readingTime}</p>}
-            {doi && doiUrl && (
+            {visibleDoi && visibleDoiUrl && (
               <p class="article-byline__citable">
-                <span>{citableVersionLabel}{version ? ` (v${version})` : ''}:</span>{' '}
-                <a href={doiUrl} aria-label={`DOI ${doi}`}>
-                  DOI {doi}
+                <span>{visibleDoiLabel}{visibleDoiVersion ? ` (v${visibleDoiVersion})` : ''}:</span>{' '}
+                <a href={visibleDoiUrl} aria-label={`DOI ${visibleDoi}`}>
+                  DOI {visibleDoi}
                 </a>
               </p>
             )}

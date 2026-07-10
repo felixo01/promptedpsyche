@@ -12,6 +12,10 @@ tags:
   - odpowiedzialność
   - roboty społeczne
 readingTime: "18 min czytania"
+relatedDoi: "10.5281/zenodo.21296384"
+relatedDoiUrl: "https://doi.org/10.5281/zenodo.21296384"
+relatedVersion: "1.0"
+relatedDoiLabel: "DOI wersji angielskiej"
 image: /images/articles/co-sie-zmienia-kiedy-ai-ma-cialo/ai-z-cialem-obecnosc-w-przestrzeni-prompted-psyche.png
 imageAlt: "Kobieta siedząca naprzeciw małego robota w spokojnym wnętrzu, pokazująca AI jako obecność w przestrzeni."
 imageCaption: "AI z ciałem nie jest już tylko odpowiedzią na ekranie. Zaczyna zajmować miejsce, patrzeć, mówić i współtworzyć sytuację społeczną."

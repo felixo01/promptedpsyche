@@ -1276,6 +1276,26 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'All rights reserved'
     );
+
+    await page.goto(embodiedPolishArticleRoute);
+    const polishByline = page.locator('[data-qa="article-byline"]');
+    await expect(polishByline).toContainText('DOI wersji angielskiej (v1.0):');
+    await expect(polishByline.getByRole('link', { name: 'DOI 10.5281/zenodo.21296384' })).toHaveAttribute(
+      'href',
+      doiUrl
+    );
+    await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
+
+    const polishStructuredDataText = await page
+      .locator('script[type="application/ld+json"]')
+      .evaluateAll((scripts) => scripts.map((script) => script.textContent ?? '').join('\n'));
+    expect(polishStructuredDataText).not.toContain('"propertyID":"DOI"');
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+      'https://promptedpsyche.com/pl/articles/co-sie-zmienia-kiedy-ai-ma-cialo/'
+    );
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'Wszystkie prawa'
+    );
   });
 
   test('keeps other article drafts hidden', async ({ page, request }) => {
