@@ -12,6 +12,9 @@ tags:
   - odpowiedzialność
   - roboty społeczne
 readingTime: "18 min czytania"
+image: /images/articles/co-sie-zmienia-kiedy-ai-ma-cialo/ai-z-cialem-obecnosc-w-przestrzeni-prompted-psyche.png
+imageAlt: "Kobieta siedząca naprzeciw małego robota w spokojnym wnętrzu, pokazująca AI jako obecność w przestrzeni."
+imageCaption: "AI z ciałem nie jest już tylko odpowiedzią na ekranie. Zaczyna zajmować miejsce, patrzeć, mówić i współtworzyć sytuację społeczną."
 lang: pl
 translationKey: embodied-ai-body
 inBrief:
@@ -65,6 +68,11 @@ Po czwarte, podatność na [antropomorfizację](/pl/concepts/antropomorfizacja/)
 
 To nie znaczy, że ludzie są naiwni. To znaczy, że ludzkie poznanie społeczne działa szybko, oszczędnie i często automatycznie. W codziennym życiu to ogromna zaleta. Dzięki temu rozpoznajemy uwagę, zagrożenie, bliskość, dystans i intencje innych ludzi. Problem zaczyna się wtedy, gdy podobne sygnały wysyła system, który nie ma ludzkiego umysłu.
 
+<figure class="article-figure">
+  <img src="/images/articles/co-sie-zmienia-kiedy-ai-ma-cialo/co-sie-zmienia-kiedy-ai-ma-cialo-schemat-pojeciowy.png" alt="Schemat pokazujący pięć elementów, które zmieniają relację człowieka z AI z ciałem: obecność, głos, ruch, spojrzenie i dystans." loading="lazy" decoding="async" />
+  <figcaption>Ciało nie dowodzi świadomości, ale zmienia układ sygnałów: obecność, głos, ruch, spojrzenie i dystans zaczynają pracować psychologicznie.</figcaption>
+</figure>
+
 ## Obecność, spojrzenie, głos i ruch
 
 W relacji z ucieleśnioną AI znaczenie mają szczegóły, które w zwykłym narzędziu byłyby tylko elementami interfejsu.
@@ -92,6 +100,11 @@ Dlatego ludzie mogą mówić o robocie tak, jakby miał charakter. Mogą uznać 
 To nie jest dowód, że robot czuje. To dowód, że człowiek reaguje na sygnały społeczne.
 
 W tym sensie AI z ciałem jest testem dla naszych własnych kategorii. Pokazuje, jak łatwo język relacji przenosi się na systemy, które relacji nie przeżywają. Pokazuje też, że "wiedzieć, że to maszyna" i "reagować tak, jakby była obecna społecznie" mogą współistnieć.
+
+<figure class="article-figure">
+  <img src="/images/articles/co-sie-zmienia-kiedy-ai-ma-cialo/ai-na-ekranie-vs-ai-z-cialem-porownanie.png" alt="Porównanie AI na ekranie i AI z ciałem pod względem obecności, sygnałów niewerbalnych, presji społecznej, antropomorfizacji, zaufania i odpowiedzialności." loading="lazy" decoding="async" />
+  <figcaption>To nie są dane liczbowe, lecz schemat porównawczy: ucieleśnienie może wzmacniać odczucie obecności, sprawczości i relacji.</figcaption>
+</figure>
 
 ## Zaufanie do AI z ciałem
 
@@ -134,6 +147,11 @@ W debacie o AI często pytamy o zdolności systemu: czy rozpoznaje, przewiduje, 
 Przy AI z ciałem trzeba dodać drugie pytanie: co forma systemu robi z człowiekiem?
 
 Czy zwiększa zaufanie ponad miarę? Czy zachęca do ujawniania informacji, których użytkownik nie ujawniłby zwykłej aplikacji? Czy tworzy wrażenie troski tam, gdzie jest tylko symulacja troskliwego zachowania? Czy osłabia [sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/)? Czy utrudnia odmowę? Czy zaciera granicę między wsparciem a wpływem?
+
+<figure class="article-figure">
+  <img src="/images/articles/co-sie-zmienia-kiedy-ai-ma-cialo/obecnosc-nie-oznacza-swiadomosci-embodied-ai.png" alt="Infografika wyjaśniająca, że embodied AI może rozpoznawać sygnały i klasyfikować wzorce, ale nie oznacza to empatii ani świadomości." loading="lazy" decoding="async" />
+  <figcaption>System może wykrywać sygnały i klasyfikować wzorce, ale to nie jest to samo co ludzkie doświadczenie, empatia albo odpowiedzialność.</figcaption>
+</figure>
 
 To nie są pytania przeciwko technologii. To pytania o warunki sensownego użycia.
 

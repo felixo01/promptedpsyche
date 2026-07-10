@@ -3412,6 +3412,15 @@ html[lang='pl'] .content-header h1 {
     margin-bottom: 2.5rem;
   }
 
+  .article-grid {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: stretch;
+  }
+
+  .article-shell--publication .article-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .entry-paths,
     .home-writing-grid,
     .home-compact-feature,
@@ -3588,7 +3597,9 @@ html[lang='pl'] .content-header h1 {
   }
 
   .article-shell--publication .prose {
+    width: 100%;
     max-width: 100%;
+    justify-self: stretch;
     font-size: 1.05rem;
     line-height: 1.8;
   }
