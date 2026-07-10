@@ -13,6 +13,10 @@ tags:
   - komunikacja
 author: "Feliks Mamczur"
 readingTime: "22 min czytania"
+relatedDoi: "10.5281/zenodo.21301650"
+relatedDoiUrl: "https://doi.org/10.5281/zenodo.21301650"
+relatedVersion: "1.0"
+relatedDoiLabel: "DOI wersji angielskiej"
 inBrief:
   - "Generatywna AI zmienia nie tylko dostęp do informacji, ale też widoczną drogę między źródłami a wnioskami."
   - "Płynna synteza może ułatwiać dostęp do wiedzy, a jednocześnie ukrywać pochodzenie informacji, spory, niepewność i granice dowodów."

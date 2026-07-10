@@ -641,13 +641,26 @@ test.describe('published articles', () => {
       'href',
       `https://promptedpsyche.com${aiPathPolishArticleRoute}`
     );
+    const polishDoiUrl = 'https://doi.org/10.5281/zenodo.21301650';
+    const polishByline = page.locator('[data-qa="article-byline"]');
+    await expect(polishByline).toContainText('DOI wersji angielskiej (v1.0):');
+    await expect(
+      polishByline.getByRole('link', { name: 'DOI 10.5281/zenodo.21301650' })
+    ).toHaveAttribute('href', polishDoiUrl);
     await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+      'https://promptedpsyche.com/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/'
+    );
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'Wszystkie prawa'
+    );
     const structuredDataText = await page
       .locator('script[type="application/ld+json"]')
       .evaluateAll((scripts) => scripts.map((script) => script.textContent ?? '').join('\n'));
     expect(structuredDataText).toContain('"datePublished":"2026-07-02T');
     expect(structuredDataText).toContain('"dateModified":"2026-07-10T');
     expect(structuredDataText).not.toContain('"propertyID":"DOI"');
+    expect(structuredDataText).not.toContain('"license":"https://creativecommons.org/licenses/by/4.0/"');
     await expect(page.locator('body')).not.toContainText('18 czerwca 2026');
     await expect(page.locator('body')).not.toContainText('Ten artykuł jest recenzowany');
     await expect(page.locator('body')).not.toContainText('10.0000/placeholder');
@@ -871,11 +884,11 @@ test.describe('published articles', () => {
     await expect(byline.locator('time[datetime^="2026-07-10"]')).toHaveCount(1);
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      `Mamczur, F. (2026, July 2). ${aiPathEnglishArticleTitle}. Prompted Psyche. https://promptedpsyche.com${aiPathEnglishArticleRoute}`
+      `Mamczur, F. (2026, July 2). ${aiPathEnglishArticleTitle}. Prompted Psyche. https://doi.org/10.5281/zenodo.21301650`
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
-      'All rights reserved'
+      'This article is licensed under CC BY 4.0'
     );
     await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
       'src',
@@ -919,13 +932,39 @@ test.describe('published articles', () => {
       'href',
       `https://promptedpsyche.com${aiPathEnglishArticleRoute}`
     );
-    await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
+    const doiUrl = 'https://doi.org/10.5281/zenodo.21301650';
+    const trustDoiByline = page.locator('[data-qa="article-byline"]');
+    await expect(trustDoiByline).toContainText('Citable version (v1.0):');
+    await expect(
+      trustDoiByline.getByRole('link', { name: 'DOI 10.5281/zenodo.21301650' })
+    ).toHaveAttribute(
+      'href',
+      doiUrl
+    );
+    await expect(page.locator('meta[name="citation_doi"]')).toHaveAttribute(
+      'content',
+      '10.5281/zenodo.21301650'
+    );
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+      'Mamczur, F. (2026, July 2). Trust in the age of ready-made answers. Prompted Psyche. https://doi.org/10.5281/zenodo.21301650'
+    );
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'This article is licensed under CC BY 4.0'
+    );
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"] a')).toHaveAttribute(
+      'href',
+      'https://creativecommons.org/licenses/by/4.0/'
+    );
     const structuredDataText = await page
       .locator('script[type="application/ld+json"]')
       .evaluateAll((scripts) => scripts.map((script) => script.textContent ?? '').join('\n'));
     expect(structuredDataText).toContain('"datePublished":"2026-07-02T');
     expect(structuredDataText).toContain('"dateModified":"2026-07-10T');
-    expect(structuredDataText).not.toContain('"propertyID":"DOI"');
+    expect(structuredDataText).toContain('"propertyID":"DOI"');
+    expect(structuredDataText).toContain('"value":"10.5281/zenodo.21301650"');
+    expect(structuredDataText).toContain('"sameAs":"https://doi.org/10.5281/zenodo.21301650"');
+    expect(structuredDataText).toContain('"license":"https://creativecommons.org/licenses/by/4.0/"');
+    expect(structuredDataText).toContain('"version":"1.0"');
     await expect(page.locator('body')).not.toContainText('June 18, 2026');
     await expect(page.locator('body')).not.toContainText('This article is peer-reviewed');
     await expect(page.locator('body')).not.toContainText('10.0000/placeholder');

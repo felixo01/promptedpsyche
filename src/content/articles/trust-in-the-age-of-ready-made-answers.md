@@ -13,6 +13,11 @@ tags:
   - communication
 author: "Feliks Mamczur"
 readingTime: "18 min read"
+doi: "10.5281/zenodo.21301650"
+doiUrl: "https://doi.org/10.5281/zenodo.21301650"
+version: "1.0"
+licenseName: "CC BY 4.0"
+licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 inBrief:
   - "Generative AI changes not only access to information, but also the visible path between sources and conclusions."
   - "Fluent synthesis can improve access while hiding provenance, disagreement, uncertainty and the limits of evidence."
