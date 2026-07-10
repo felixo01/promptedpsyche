@@ -82,8 +82,8 @@ test.describe('local search', () => {
     const plIndex = await readSearchIndex(request, '/search-index.pl.json');
     const allText = JSON.stringify([...enIndex, ...plIndex]);
 
-    expect(countByType(enIndex, 'article')).toBe(6);
-    expect(countByType(plIndex, 'article')).toBe(6);
+    expect(countByType(enIndex, 'article')).toBe(7);
+    expect(countByType(plIndex, 'article')).toBe(7);
     expect(countByType(enIndex, 'note')).toBe(4);
     expect(countByType(plIndex, 'note')).toBe(4);
     expect(countByType(enIndex, 'concept')).toBe(26);
@@ -164,7 +164,7 @@ test.describe('local search', () => {
     await expect(page.locator('[data-search-results]')).toContainText('Article');
     await expect(page.locator('[data-search-results]')).not.toContainText('Zaufanie w epoce gotowych odpowiedzi');
 
-    await page.getByPlaceholder('Search by topic, concept or phrase').fill('robot');
+    await page.getByPlaceholder('Search by topic, concept or phrase').fill('zzzz-no-result-phrase');
     await expect(page.getByText('No results found. Try a different phrase.')).toBeVisible();
   });
 

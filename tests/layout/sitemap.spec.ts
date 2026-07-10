@@ -32,6 +32,11 @@ function countRssItemsByLink(rss: string, url: string) {
   ).length;
 }
 
+function readRssItemByLink(rss: string, url: string) {
+  const escapedUrl = escapeRegExp(url);
+  return rss.match(new RegExp(`<item>[\\s\\S]*?<link>${escapedUrl}</link>[\\s\\S]*?</item>`))?.[0];
+}
+
 test.describe('built sitemap and RSS policy', () => {
   test('publishes a minimal robots.txt with sitemap reference', () => {
     const robots = readDistFile('robots.txt');
@@ -85,6 +90,18 @@ test.describe('built sitemap and RSS policy', () => {
     expect(rss).toContain('/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/');
     expect(rss).toContain('/articles/are-we-afraid-of-ai-or-of-ourselves/');
     expect(rss).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
+    expect(
+      readRssItemByLink(
+        rss,
+        'https://promptedpsyche.com/articles/trust-in-the-age-of-ready-made-answers/'
+      )
+    ).toContain('<pubDate>Thu, 02 Jul 2026');
+    expect(
+      readRssItemByLink(
+        rss,
+        'https://promptedpsyche.com/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/'
+      )
+    ).toContain('<pubDate>Thu, 02 Jul 2026');
     expect(
       countRssItemsByLink(
         rss,

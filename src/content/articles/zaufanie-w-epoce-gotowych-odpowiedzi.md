@@ -1,7 +1,8 @@
 ---
 title: "Zaufanie w epoce gotowych odpowiedzi"
-description: "Jak modele językowe zmieniają zaufanie do źródeł, ekspertów i własnego osądu"
-publishedAt: 2026-06-18
+description: "Jak generatywna AI skraca drogę od źródeł do odpowiedzi i dlaczego zaufanie wymaga sprawdzania pochodzenia informacji, niepewności, sporów i ludzkiej odpowiedzialności."
+publishedAt: 2026-07-02
+updatedAt: 2026-07-10
 draft: false
 tags:
   - AI i człowiek
@@ -11,12 +12,12 @@ tags:
   - AI literacy
   - komunikacja
 author: "Feliks Mamczur"
-readingTime: "25 min czytania"
+readingTime: "22 min czytania"
 inBrief:
-  - "AI zmienia nie tylko to, jak szybko dostajemy odpowiedzi, ale też drogę, którą przechodzimy od pytania do poczucia, że coś wiemy."
-  - "Tekst Nature o zaufaniu do nauki jest punktem wyjścia, ale najważniejsze pytanie brzmi tu inaczej: co dzieje się, gdy między człowiekiem a źródłami pojawia się model językowy?"
-  - "Płynna odpowiedź może ułatwiać rozumienie, ale nie jest dowodem, a cytacja nie kończy sprawdzania."
-  - "Dojrzałe korzystanie z AI wymaga skalibrowanego zaufania: dopasowanego do zadania, stawki, źródeł i możliwości weryfikacji."
+  - "Generatywna AI zmienia nie tylko dostęp do informacji, ale też widoczną drogę między źródłami a wnioskami."
+  - "Płynna synteza może ułatwiać dostęp do wiedzy, a jednocześnie ukrywać pochodzenie informacji, spory, niepewność i granice dowodów."
+  - "Krytyczne myślenie nie znika po prostu podczas pracy z AI; część tej pracy przesuwa się w stronę weryfikacji, integracji i nadzoru nad całym zadaniem."
+  - "Zaufanie powinno być dopasowane do zadania, stawki, źródeł i możliwości korekty, a nie do pewności lub płynności interfejsu."
 image: /images/articles/ai-path-to-knowledge.svg
 imageAlt: "Diagram pokazujący, jak AI zmienia drogę między człowiekiem a wiedzą: model daje szybką odpowiedź, a pod spodem pozostają źródła, metoda, dane, spór i weryfikacja."
 imageCaption: "AI może skrócić drogę od pytania do odpowiedzi. Dojrzałe korzystanie zaczyna się wtedy, gdy potrafimy wrócić od odpowiedzi do źródeł, metody, danych, niepewności i sprawdzenia."
@@ -24,197 +25,230 @@ lang: "pl"
 translationKey: "ai-path-to-knowledge"
 ---
 
-Pytanie o zaufanie do nauki nie kończy się dziś na naukowcach, instytucjach i mediach. Coraz częściej między człowiekiem a wiedzą pojawia się model AI, który nie tylko wyszukuje albo streszcza informacje, ale zamienia je w płynną odpowiedź. To zmienia coś ważnego: człowiek może szybciej poczuć, że wie, zanim zobaczy źródła, metodę, spór i granice pewności.
+Zadajesz trudne pytanie i dostajesz kompletną odpowiedź, zanim zobaczysz choćby jeden dowód. Tekst brzmi spokojnie. Rozróżnia kilka możliwości, uprzedza zastrzeżenie i kończy się praktyczną rekomendacją. Nic w jego formie nie przypomina wersji roboczej. Gdy pojawiają się źródła, o ile pojawiają się w ogóle, ważna zmiana po stronie czytelnika mogła już nastąpić: niejasność ustąpiła miejsca orientacji, a orientacja zaczęła przypominać wiedzę.
 
-Ten tekst nie jest o tym, że ludzie przestali ufać nauce. Nie jest też o tym, że AI jest nową instytucją wiedzy. Jest o drodze, którą przechodzimy od niewiedzy do poczucia rozumienia. W świecie wyszukiwarki ta droga często prowadziła przez tytuł, link, autora, publikację, raport, datę i porównanie kilku wyników. W świecie modeli językowych coraz częściej zaczyna się od rozmowy i kończy na odpowiedzi, która brzmi tak, jakby była gotową wiedzą.
+To jedno z rzeczywistych osiągnięć generatywnej AI. Potrafi obniżyć próg wejścia w obcą dziedzinę, przełożyć specjalistyczny język na prostszy i pokazać strukturę rozproszoną w wielu dokumentach. Ten sam interfejs może jednak ukryć to, co zwykle towarzyszy wnioskowi: autora, metodę, datę, materiał dowodowy, spór oraz osobę albo instytucję odpowiedzialną za użycie wiedzy.
 
-Prompted Psyche interesuje właśnie ten moment: nie tylko sama odpowiedź modelu, ale psychologiczna zmiana po stronie użytkownika. Kiedy odpowiedź jest spokojna, uporządkowana i szybka, trudniej zauważyć, gdzie kończy się pomoc w rozumieniu, a zaczyna zastępowanie kontaktu ze źródłem.
+Problem jest więc większy niż sporadyczne zmyślenie faktu przez model. Nawet odpowiedź poprawna faktograficznie może zmienić relację użytkownika z wiedzą, jeżeli usuwa z pola widzenia drogę, którą powstał wniosek. Odpowiedź zostaje, droga znika na dalszym planie.
 
 <aside class="key-passage" data-qa="key-passage">
   <p class="key-passage__label">Kluczowy fragment</p>
-  <p>AI zmienia drogę do wiedzy, bo przenosi ciężar z kontaktu ze źródłem na kontakt z odpowiedzią. To może być ogromnym ułatwieniem, ale też ryzykiem: im bardziej odpowiedź jest płynna, tym łatwiej zapomnieć, że wiedza ma swoją drogę, źródła, metodę, niepewność i odpowiedzialność.</p>
+  <p>Generatywna AI może skrócić drogę od pytania do użytecznej orientacji. Zaufanie trudno jednak skalibrować, gdy krótsza droga ukrywa pochodzenie informacji, siłę dowodów, niepewność, spór i odpowiedzialność.</p>
 </aside>
 
-## Kryzys zaufania brzmi prosto. Dane są bardziej skomplikowane.
+## Abstrakt
 
-Helen Pearson w tekście Nature z 1 lipca 2026 roku bierze za punkt wyjścia popularne przekonanie, że zaufanie do nauki znalazło się w globalnym kryzysie. Sam artykuł pokazuje jednak obraz mniej prosty: nie jedną katastrofę zaufania, lecz różnice między krajami, tematami, grupami społecznymi, instytucjami i sposobami zadawania pytania. To ważne, bo narracja o wielkim załamaniu ma w sobie dramaturgię, ale nie zawsze dobrze opisuje dane.
+Ten esej koncepcyjny oparty na badaniach analizuje, jak generatywna AI zmienia relację między pytaniem, źródłami a poczuciem wiedzy. Jest narracyjną syntezą, nie przeglądem systematycznym. Łączy badania nad zaufaniem, weryfikowalnością, automatyzacją i pracą wspieraną przez AI z analizą sposobu, w jaki interfejs konwersacyjny przedstawia wiedzę. Nie wszystkie etapy dochodzenia do wniosku pozostają wtedy widoczne. Główna teza brzmi: generatywna AI działa jako pośrednik poznawczy. Ułatwia dostęp do złożonego materiału, a jednocześnie może zamknąć wieloetapową drogę w jednej płynnej odpowiedzi. Ten efekt opisuję jako kompresję drogi poznawczej, w której słabiej widać pochodzenie informacji, siłę dowodów, niepewność, spór i odpowiedzialność. Badania nad źródłami, deklarowanym wysiłkiem krytycznym i nadmiernym poleganiem pokazują, dlaczego płynne wyjaśnienie nie gwarantuje polegania dopasowanego do możliwości systemu. Nie chodzi więc o ogólne zaufanie lub nieufność wobec modelu. Praktyczną odpowiedzią jest zaufanie skalibrowane do zadania i stawki oraz odtworzenie drogi od twierdzenia do źródła, dowodów, niepewności, sporu i osoby odpowiedzialnej za decyzję.
 
-Duże badanie opublikowane w Nature Human Behaviour w 2025 roku, obejmujące 68 krajów i ponad 71 tysięcy respondentów, sugeruje, że w wielu miejscach zaufanie do naukowców pozostaje umiarkowanie wysokie. Ten obraz nie usuwa pęknięć. Są spory wokół zdrowia, klimatu, szczepień, regulacji, finansowania badań, polityzacji wiedzy i tego, czy ludzie czują, że nauka odpowiada także na ich doświadczenia. Ale punkt wyjścia jest bardziej złożony niż proste "ludzie już nie ufają nauce".
+## Zakres i metoda
 
-Z tego miejsca chcę przesunąć pytanie. Nie będę streszczał artykułu Nature sekcja po sekcji. Traktuję go jako punkt wyjścia do publicznej debaty: jeśli zaufanie do nauki nie jest jednym prostym uczuciem, to co dzieje się, gdy coraz więcej ludzi poznaje naukę, fakty i argumenty nie przez kontakt ze źródłem, lecz przez odpowiedź modelu?
+Metoda jest celowo selektywna, nie wyczerpująca. Tekst nie opiera się na prerejestrowanej strategii wyszukiwania ani nie przedstawia ilościowego oszacowania efektów. Pierwszeństwo miały recenzowane badania, oficjalne raporty oraz bezpośrednio związane z tematem źródła pierwotne, które pozwalają sprawdzić twierdzenia użyte w eseju.
 
-To pytanie nie dotyczy tylko wiarygodności AI. Dotyczy tego, gdzie w ogóle lokujemy zaufanie. Czy ufamy metodzie? Instytucji? Ekspertowi? Autorowi? Cytatowi? Interfejsowi? A może płynności tekstu, który zebrał wszystko w jedną wygodną całość?
+Materiał pochodzi z kilku pól zadających podobne, lecz nieidentyczne pytania. Badania zaufania publicznego pokazują, jak ludzie oceniają naukowców i instytucje. Epistemologia społeczna analizuje zależność wiedzy od świadectwa innych, ekspertów i organizacji. Badania nad wyszukiwaniem informacji i generatywnymi wyszukiwarkami analizują, czy od odpowiedzi można wrócić do materiału, który ją wspiera. Prace nad [halucynacjami modelu](/pl/concepts/halucynacja-modelu/) i zgodnością z faktami sprawdzają wierność wygenerowanego tekstu wobec źródeł. Literatura o automatyzacji i [Human-AI Interaction](/pl/concepts/human-ai-interaction/) koncentruje się na poleganiu na systemie, sygnałach interfejsu i kontroli człowieka. Badania [odciążenia poznawczego](/pl/concepts/cognitive-offloading/) i krytycznego myślenia pomagają opisać, jak zmienia się rozkład wysiłku, gdy narzędzie wykonuje część zadania.
 
-## Zaufanie do nauki to nie jedno uczucie
+Te nurty nie składają się na jedną ustaloną teorię generatywnej AI i wiedzy. Wyznaczają granice dla argumentu koncepcyjnego. Liczby w dalszej części odnoszę do konkretnych badań, a wnioski o działaniu interfejsu przedstawiam jako interpretacje. Artykuł Helen Pearson opublikowany w *Nature* w 2026 roku jest publicystycznym punktem wyjścia do debaty, a nie głównym dowodem empirycznym.
 
-Mówienie "zaufanie do nauki" brzmi tak, jakby chodziło o pojedynczy przełącznik. Albo ufam, albo nie ufam. W praktyce ludzie mogą ufać jednemu wymiarowi, a nie ufać innemu. Mogą ufać lekarzowi, ale nie ufać polityce zdrowotnej. Mogą cenić metodę naukową, ale mieć ograniczone zaufanie do instytucji. Mogą ufać wynikom badań, ale nie ufać temu, jak media albo politycy używają tych wyników.
+## Zaufanie do nauki nie jest jednym przełącznikiem
 
-W literaturze o zaufaniu często wracają takie wymiary jak kompetencja, uczciwość, dobra wola, otwartość i odpowiedzialność. Badanie Cologny i współautorów operacjonalizowało zaufanie do naukowców przez kilka takich komponentów, między innymi kompetencję, życzliwość lub przychylność wobec odbiorcy, integralność i otwartość. To dobry hamulec dla prostych diagnoz. Człowiek może uznać, że naukowcy są kompetentni, a jednocześnie uważać, że nie komunikują niepewności wystarczająco jasno albo że instytucje są zbyt daleko od jego życia.
+Opowieść o globalnym kryzysie zaufania do nauki dobrze działa jako hasło, ale słabo oddaje złożoność danych. Prerejestrowane badanie prowadzone przez Viktorię Colognę i Nielsa Medego objęło 71 922 osoby z 68 krajów. Autorzy stwierdzili ogólnie umiarkowanie wysokie zaufanie do naukowców i brak powszechnego globalnego braku zaufania, przy zachowaniu istotnych różnic między krajami i grupami społecznymi. Pomiar obejmował postrzeganą kompetencję, dobrą wolę, uczciwość i otwartość. Wynik nie daje powodów do samozadowolenia, lecz nie pozwala też utrzymać prostej tezy, że ludzie na całym świecie przestali ufać naukowcom (Cologna et al., 2025).
 
-Ta wielowymiarowość ma znaczenie w epoce AI, bo model często spłaszcza ją do jednej odpowiedzi. Użytkownik nie zawsze widzi, kto jest autorem wiedzy, jaki był zakres badania, jakie istnieją spory, kto finansował projekt, co zostało pominięte i gdzie są granice pewności. Widzi za to dobrze napisany tekst. Wtedy wiele oddzielnych pytań o zaufanie zlewa się w jedno wrażenie: czy to brzmi sensownie?
+Brytyjski raport *Public Attitudes to Science 2025* pokazuje bardziej lokalny i ambiwalentny obraz. Ipsos przebadał 5 281 mieszkańców Wielkiej Brytanii w wieku co najmniej 16 lat między lutym a lipcem 2025 roku na zlecenie UK Research and Innovation i we współpracy z British Science Association. Duże większości nadal ceniły wkład nauki i naukowców. Jednocześnie częściej pojawiały się odpowiedzi neutralne lub niepewne, mniej osób niż w 2019 roku czuło się dobrze poinformowanych, a AI okazała się tematem silnie dzielącym. Metodę zmieniono na zbieranie danych przede wszystkim w modelu push-to-web, dlatego porównania z 2019 rokiem wymagają ostrożności (Ipsos, 2026).
 
-W codziennym użyciu to spłaszczenie bywa prawie niewidoczne. Ktoś pyta o wyniki badań nad snem, wpływ mediów społecznościowych na nastolatków albo bezpieczeństwo nowej technologii. Model odpowiada tak, jakby mówił głosem jednego uporządkowanego eksperta. Tymczasem za podobną odpowiedzią mogą stać różne typy materiału: przegląd badań, pojedynczy eksperyment, raport instytucji, komentarz medialny, stanowisko branżowe albo stary fragment wiedzy, który wymaga aktualizacji. Jeśli tego nie rozróżniamy, możemy zaufać nie tyle nauce, ile gładkiemu połączeniu elementów, które w źródłach miały różny ciężar.
+Te dane kierują uwagę na różne obiekty zaufania. Można wierzyć w kompetencje naukowców, a jednocześnie wątpić w konkretną instytucję. Można uznawać wartość metody naukowej i sprzeciwiać się temu, jak rząd albo firma wykorzystuje wyniki. Można akceptować konsensus ekspertów, lecz krytycznie oceniać sposób komunikowania niepewności. Te obszary są ze sobą powiązane, ale nie są tym samym.
 
-Właśnie dlatego [skalibrowane zaufanie](/pl/concepts/calibrated-trust/) nie polega na ogólnym entuzjazmie albo ogólnej nieufności. Polega na dopasowaniu zaufania do zadania, stawki, źródeł i możliwości sprawdzenia. Inaczej czytamy odpowiedź o definicji terminu. Inaczej odpowiedź o leczeniu, klimacie, ryzyku prawnym, diagnozie społecznej albo publicznej polityce. Ten sam spokojny styl może przykrywać bardzo różne poziomy odpowiedzialności.
+Reportaż Pearson w *Nature* trafnie komplikuje dramatyczną narrację o kryzysie i pokazuje miejsca realnych pęknięć (Pearson, 2026). Dla tego eseju ważniejsze pytanie zaczyna się krok dalej: co dzieje się z tymi rozróżnieniami, gdy człowiek spotyka je przez interfejs mówiący jednym głosem?
 
-## AI wchodzi między pytanie a źródło
+## AI staje się pośrednikiem poznawczym
 
-Kiedy człowiek pyta model, często nie pyta już źródła. Pyta interfejs, który obiecuje szybkie przejście od niejasności do porządku. Model odpowiada językiem naturalnym, zwykle w formie dostosowanej do pytania: krótko, długo, z listą, z przykładem, z tonem eksperckim albo przyjaznym. To nie jest tylko inny kanał dostępu. To zmiana doświadczenia poznawczego.
+Ludzka wiedza nigdy nie była wyłącznie indywidualnym osiągnięciem. Zależy od świadectw innych ludzi, instrumentów, dokumentów, instytucji i specjalistów, których pracy nie potrafimy samodzielnie powtórzyć. John Hardwig zwracał uwagę na tę zależność poznawczą w nauce i codziennym życiu, a Alvin Goldman analizował, jak niespecjalista może oceniać rywalizujących ekspertów (Hardwig, 1985; Goldman, 2001). Dan Sperber i współautorzy opisali [czujność epistemiczną](/pl/concepts/epistemic-vigilance/) jako procesy służące ocenie przekazywanych informacji oraz ich źródeł (Sperber et al., 2010).
 
-W klasycznym kontakcie ze źródłem jest opór. Artykuł naukowy ma strukturę, przypisy, metody, tabele, ograniczenia i słowa, które nie zawsze są przyjemne. Raport ma zakres, autorów, sponsorów, noty metodologiczne i czasem niewygodne zastrzeżenia. Książka wymaga czasu. Ekspert może powiedzieć, że sprawa jest bardziej skomplikowana. Bibliografia prowadzi dalej, ale nie daje natychmiastowego domknięcia.
+Generatywna AI nie tworzy zależności od zera. Zmienia sposób, w jaki ją widzimy. Gdy przed czytelnikiem znajduje się nazwisko badacza, instytucja albo dokument, istnieją przynajmniej pewne wskazówki dotyczące kompetencji, kontekstu i odpowiedzialności. Model może zebrać język wielu źródeł i zwrócić jedną [odpowiedź modelu](/pl/concepts/model-output/), której głos nie należy do żadnego z nich. Zależności pozostają, ale ich tożsamość staje się mniej widoczna.
 
-Model usuwa część tego oporu. To może być bardzo pomocne. Osoba, która nie zna tematu, może poprosić o mapę pojęć, proste wyjaśnienie, listę spornych punktów albo pytania do źródeł. Ale ta sama wygoda może sprawić, że droga do wiedzy stanie się mniej przezroczysta. Widzimy efekt pracy językowej, nie widzimy drogi.
+Model językowy nie jest instytucją naukową, autorem omawianych badań, metodą badawczą, źródłem pierwotnym ani odpowiedzialnym ekspertem. W systemie korzystającym z wyszukiwania może dobierać i porządkować dokumenty. W innych warunkach generuje na podstawie wzorców poznanych w treningu i materiału przekazanego w rozmowie. W obu przypadkach odpowiedź jest produktem interfejsu. Może prowadzić użytkownika ku wiedzy, lecz nie powinna być utożsamiana z procesami instytucjonalnymi i dowodowymi stojącymi za wiedzą.
 
-W Prompted Psyche wraca tu pojęcie [odpowiedzi modelu](/pl/concepts/model-output/), czyli szczególnego rodzaju tekstu. To nie jest surowe źródło. To nie jest instytucja. To nie jest badanie. To wynik działania systemu, który generuje język na podstawie danych, instrukcji, kontekstu rozmowy i mechanizmów dopasowania. Może być trafny. Może być użyteczny. Może też brzmieć lepiej, niż pozwala na to jego faktyczne oparcie w materiale.
+Dlatego określenie AI jako pośrednika poznawczego jest trafniejsze niż nazywanie jej nowym ekspertem. Pośrednik wpływa na to, co widać, jak uporządkowane są twierdzenia i ile niepewności przetrwa przejście do formy odpowiedzi. Ułatwia dostęp, a przy okazji może zmieniać sygnały, na podstawie których użytkownik decyduje, czemu zaufać.
 
-<aside class="editorial-aside editorial-aside--practice">
-  <p class="editorial-aside__label">Przykład</p>
-  <p>Kiedy pytasz model o szczepienia, klimat albo zdrowie, możesz dostać odpowiedź, która brzmi spokojnie i kompetentnie. Ale dopiero pytanie o źródła, poziom pewności i możliwe spory pokazuje, czy rozmawiasz z wiedzą, czy tylko z dobrze ułożonym tekstem o wiedzy.</p>
-</aside>
+## Gdy droga poznawcza ulega kompresji
 
-## Od dokumentu do interfejsu
+Frazy **kompresja drogi poznawczej** używam opisowo. Nazywa ona zdarzenie na poziomie interfejsu: złożona droga przez dokumenty, dowody i spory zostaje pokazana jako jedna odpowiedź w rozmowie. Nie jest to zwalidowany konstrukt psychologiczny, termin ustalony w polskiej literaturze ani teoria przypisana temu artykułowi.
 
-Przez długi czas podstawowym obrazem wiedzy był dokument. Artykuł, książka, raport, podręcznik, notatka ekspercka, strona instytucji, tabela danych, bibliografia. Nawet jeśli większość ludzi nie czytała pełnych publikacji naukowych, kontakt z wiedzą zwykle zostawiał ślady dokumentu: tytuł, autor, źródło, data, instytucja, cytat, link.
+Kompresja nie musi oznaczać zniekształcenia. Mapy, abstrakty, wykłady i odpowiedzialne dziennikarstwo także skracają drogę przez wiedzę. Trzeba jednak zapytać, które rozróżnienia przetrwały skrót i czy użytkownik może odzyskać to, co zostało pominięte. Szczególnie ważne są cztery rodzaje kompresji.
 
-Interfejs rozmowy przesuwa ten obraz. Wiedza pojawia się jako odpowiedź na moje pytanie. Nie muszę najpierw wejść do biblioteki, bazy danych albo archiwum. Nie muszę przechodzić przez listę wyników wyszukiwania. Dostaję tekst, który wydaje się ułożony specjalnie dla mnie. To zmienia relację z wiedzą. Z dokumentu, który trzeba czytać, robi się odpowiedź, którą można przyjąć, doprecyzować albo poprosić o wersję prostszą.
+### Kompresja pochodzenia informacji
 
-AI nie tylko podaje treść. AI formatuje relację z treścią. Uczy nas, że wiedza może być rozmowna, natychmiastowa, cierpliwa i dopasowana do naszego poziomu. To ma ogromną wartość edukacyjną, zwłaszcza wtedy, gdy wejście w trudny materiał byłoby inaczej zbyt kosztowne. Jednocześnie ten format może budować zaufanie do stylu odpowiedzi, a nie do procesu, który powinien stać za odpowiedzią.
+Wygenerowany akapit może łączyć recenzowaną publikację, raport instytucjonalny, dziennikarstwo, dokumentację firmy, komentarz i stary materiał kontekstowy bez zachowania różnic między nimi. Wszystkie zdania otrzymują tę samą typografię, ton i pozorny status. Czytelnik widzi odwołania do źródeł, lecz niekoniecznie zauważa, czy kluczowa teza pochodzi z badania pierwotnego, wtórnego omówienia czy źródła mającego interes komercyjny.
 
-Kiedy dokument jest na pierwszym planie, czytelnik może przynajmniej zobaczyć, że istnieje autor, gatunek i instytucjonalne osadzenie. Kiedy na pierwszym planie jest interfejs, te elementy mogą stać się tłem. Pytanie brzmi wtedy nie tylko: czy odpowiedź jest poprawna? Pytanie brzmi: co zostało schowane, żeby odpowiedź mogła być tak wygodna?
+[Oparcie odpowiedzi na źródłach](/pl/concepts/oparcie-odpowiedzi-na-zrodlach/) może poprawić sytuację, łącząc tekst z wyszukanym materiałem. Nie rozstrzyga jednak jakości, niezależności ani trafności źródła. Prawdziwy dokument może być przestarzały, zbyt ogólny albo słabo dopasowany do twierdzenia. Pochodzenie informacji to coś więcej niż link. Trzeba wiedzieć, jakiego rodzaju jest źródło, kto je stworzył, kiedy i w jakim celu.
 
-## Płynność odpowiedzi może udawać wiarygodność
+### Kompresja niepewności
 
-"Brzmi dobrze" nie znaczy "jest prawdziwe". To zdanie jest proste, ale w pracy z AI trzeba je powtarzać, bo płynność języka jest jedną z najsilniejszych pułapek. Odpowiedź dobrze zorganizowana, spokojna i pozbawiona widocznego chaosu może obniżać czujność. Człowiek nie zawsze sprawdza źródła, jeśli tekst już daje poczucie zrozumienia.
+Badania rzadko mówią językiem kompletnej odpowiedzi konwersacyjnej. Wyniki mają za sobą sposób doboru próby, przedziały ufności, założenia modeli, ograniczenia pomiaru oraz warunki, w których nie powinny być uogólniane. Przeglądy rozdzielają powtarzalne wzorce od pytań otwartych. Eksperci mogą różnić się w ocenie, jak daleko wolno wyjść poza dostępne dowody.
 
-Badania nad płynnością przetwarzania i efektem prawdy pomagają nazwać ten mechanizm ostrożnie. Łatwość odbioru, znajomość formy albo wrażenie uporządkowania mogą wpływać na ocenę prawdziwości, ale nie oznacza to, że każdy dobrze napisany tekst automatycznie nas przekonuje. W kontekście AI ważniejsze jest coś subtelniejszego: płynna odpowiedź może zmniejszać odczuwalną potrzebę sprawdzenia, zwłaszcza wtedy, gdy nie widzimy od razu drogi do źródła.
+W syntezie te elementy łatwo zamieniają się w gładki akapit, którego gramatyka sugeruje większą pewność, niż daje materiał. Zwrot „badania pokazują” może opisywać zarówno dobrze powtarzalny efekt, jak i jedno badanie obserwacyjne. Zdanie bywa technicznie poprawne, a mimo to ukrywa warunkowy charakter wniosku.
 
-Modele językowe są szczególnie dobre w produkowaniu formy, która przypomina wyjaśnienie. Potrafią uporządkować akapity, rozdzielić argumenty, nadać ton ostrożności, dodać warunki, a nawet ostrzec przed nadmierną pewnością. To nie jest wada sama w sobie. Problem zaczyna się wtedy, gdy forma ostrożności zastępuje realne oparcie w źródłach.
+### Kompresja sporu
 
-Literatura o halucynacjach w generowaniu języka pokazuje, że system może tworzyć tekst płynny, naturalny i pozornie osadzony w faktach, a jednak niezgodny z materiałem albo niewierny źródłom. W praktyce użytkownika nie zawsze widać granicę między dobrą syntezą a tekstem, który tylko brzmi jak dobra synteza. Dlatego [halucynacja modelu](/pl/concepts/halucynacja-modelu/) nie jest wyłącznie technicznym błędem. Jest także zdarzeniem poznawczym po stronie czytelnika: coś, co brzmi jak wiedza, może zostać potraktowane jak wiedza.
+Specjaliści mogą zgadzać się co do danych, a jednocześnie spierać o definicje, metodę, interpretację, możliwość uogólnienia lub konsekwencje dla polityki publicznej. Synteza nastawiona na pomoc często rozwiązuje napięcie przez wybór jednego głównego stanowiska. Dla wstępnej orientacji może to wystarczyć, ale może też usunąć z obrazu poważną alternatywę.
 
-Tu pojawia się [autorytet algorytmiczny](/pl/concepts/autorytet-algorytmiczny/). Nie musi wyglądać jak ślepa wiara w maszynę. Często wygląda zwyczajnie: model odpowiedział szybko, odpowiedź jest spójna, nie mam czasu sprawdzać, a styl brzmi kompetentnie. W tym momencie autorytet nie wynika z instytucji naukowej, autora ani metody. Wynika z połączenia dostępności, płynności i użyteczności.
+Brak widocznego sporu ma największe znaczenie wtedy, gdy decyzja użytkownika zależy od wyboru interpretacji. Model poproszony o wyjaśnienie ustalonego pojęcia i model poproszony o interpretację spornego wyniku nauk społecznych może użyć identycznie spokojnego tonu. Dopiero drugie zadanie wymaga mapy stanowisk, a interfejs nie zawsze ją pokaże bez wyraźnej prośby.
 
-## Co dzieje się ze źródłem, gdy odpowiedź jest na pierwszym planie
+### Kompresja odpowiedzialności
 
-Kiedy odpowiedź jest na pierwszym planie, źródło może stać się niewidoczne albo drugorzędne. Link pojawia się czasem jako dekoracja, a nie warunek wiarygodności. Cytacja może działać jak sygnał powagi, zanim jeszcze ktokolwiek sprawdzi, czy prowadzi do właściwego materiału. Użytkownik dostaje listę publikacji, ale nie przechodzi do publikacji. Dostaje tytuły badań, ale nie sprawdza, czy istnieją, co dokładnie badały i czy w ogóle wspierają wniosek modelu.
+Wygenerowana informacja często przechodzi przez cały łańcuch: model tworzy tekst, system wyszukujący wybiera źródła, użytkownik akceptuje albo redaguje wynik, organizacja go publikuje, a inna osoba podejmuje działanie. Gdy pojawia się błąd, każda część łańcucha może wskazać kolejną.
 
-Cytacja w odpowiedzi modelu nie kończy sprawdzania. Ona dopiero pokazuje, gdzie można zacząć. Źródło może istnieć, ale być zbyt ogólne. Może dotyczyć podobnego tematu, ale nie wspierać konkretnego zdania. Może też zostać streszczone tak, że znikną ograniczenia metody, data, zakres badania albo spór między autorami. Dlatego pytanie nie brzmi tylko: czy odpowiedź ma źródła? Brzmi raczej: czy te źródła naprawdę podtrzymują to konkretne twierdzenie?
+Model nie ponosi zawodowej, moralnej ani instytucjonalnej odpowiedzialności za wykorzystanie odpowiedzi. Nie podpisze opinii klinicznej, nie obroni interpretacji prawnej, nie ujawni konfliktu interesów organizacji i nie odpowie przed osobą poszkodowaną przez rekomendację. Odpowiedzialność pozostaje po stronie ludzi i instytucji projektujących proces, zatwierdzających wynik oraz podejmujących działanie. Interfejs może ukryć ten łańcuch, ale nie może go unieważnić.
 
-Problemem nie jest samo streszczenie. Streszczenia są potrzebne. Dobra popularyzacja nauki też skraca drogę. Nauczyciel, dziennikarz naukowy, lekarz, edukator albo autor eseju także wybiera, upraszcza i porządkuje. Różnica polega na tym, że odpowiedzialna popularyzacja pokazuje, skąd bierze swoje twierdzenia, gdzie upraszcza i czego nie rozstrzyga.
+## Płynność może udawać siłę dowodów
 
-AI może robić podobną pracę, ale nie robi jej automatycznie dobrze. Jeśli użytkownik nie poprosi o źródła pierwotne, nie zapyta o niepewność, nie odróżni badania od komentarza i nie sprawdzi, czy wskazane publikacje istnieją, odpowiedź może zastąpić drogę. Powstaje wtedy nie wiedza, lecz poczucie wiedzy.
+Badania psychologiczne dają powody, by traktować płynność jako możliwy sygnał wiarygodności, lecz nie jako uniwersalną przyczynę perswazji. Eksperymenty dotyczące płynności percepcyjnej pokazały, że łatwiejsze do przetworzenia zdania mogą otrzymywać wyższe oceny prawdziwości. Metaanaliza 51 badań potwierdziła efekt prawdy związany z powtórzeniem (Reber & Schwarz, 1999; Dechêne et al., 2010). Te badania nie dotyczyły interfejsów modeli językowych. Uzasadniają węższy wniosek: cechy niezwiązane z jakością dowodu mogą wpływać na subiektywną ocenę prawdziwości.
 
-To szczególnie ważne w tematach wysokiej stawki. Zdrowie, klimat, psychologia, prawo, finanse, edukacja, polityka publiczna i technologia nie wymagają takiego samego poziomu sprawdzania w każdym pytaniu, ale wymagają świadomości, kiedy odpowiedź modelu jest tylko początkiem pracy. [Grounding: oparcie odpowiedzi na źródłach](/pl/concepts/oparcie-odpowiedzi-na-zrodlach/) nie jest ozdobą. Jest warunkiem, który pozwala przejść od płynnego tekstu do sprawdzalnej drogi.
+Generatywna AI dodaje do tego specyficzny rodzaj łatwości. Tworzy uporządkowaną prozę, dopasowuje wyjaśnienie do czytelnika i odpowiada na kolejne pytania bez konieczności otwierania publikacji. Płynność może zmniejszać odczuwaną potrzebę sprawdzenia, zwłaszcza gdy brakuje czasu, wiedzy dziedzinowej albo dostępu do materiału. Nie przekonuje automatycznie każdego, a tekst trudny w odbiorze nie staje się przez to prawdziwszy. Ryzyko polega na tym, że profesjonalny język i widoczna struktura zaczynają zastępować dowody, których użytkownik nie umie łatwo ocenić.
 
-<aside class="editorial-aside editorial-aside--boundary">
-  <p class="editorial-aside__label">Granica</p>
-  <p>Model nie jest instytucją wiedzy. Nie prowadzi badania, nie bierze odpowiedzialności za metodę i nie ponosi konsekwencji użycia odpowiedzi. Może pomóc przejść przez materiał, ale nie powinien stawać się jedynym źródłem zaufania.</p>
-</aside>
+Badania generowania języka pokazują, dlaczego forma nie może unieść tego ciężaru. Szeroki przegląd Ji i współpracowników opisuje, jak systemy w różnych zadaniach tworzą treści płynne, lecz niewierne albo pozbawione oparcia. Wcześniejsze badanie streszczania abstrakcyjnego wykazało znaczny udział treści halucynowanych w streszczeniach tworzonych przez analizowane systemy, mimo poprawy typowych miar jakości przez modele wstępnie trenowane (Ji et al., 2023; Maynez et al., 2020). Wyniki dotyczą konkretnych systemów i zadań, a nie niezmiennej właściwości wszystkich dzisiejszych modeli. Pokazują jednak, że jakość językową i wierność dowodową trzeba oceniać osobno.
 
-## AI może też pomagać w drodze do wiedzy
+To samo dotyczy odpowiedzi wyglądającej naukowo. Nagłówki, zastrzeżenia i bibliografia mogą zwiększać zaufanie do sposobu prezentacji. Nie dowodzą, że konkretne zdanie ma wystarczające wsparcie.
 
-Krytyka płynnej odpowiedzi nie oznacza odrzucenia AI. Dobrze użyty model może być świetnym przewodnikiem po trudnym materiale. Może wyjaśnić pojęcia, rozpisać strukturę argumentu, pomóc odróżnić wynik badania od interpretacji, wskazać pytania do autora, pokazać, które elementy wymagają źródła pierwotnego, a które są komentarzem.
+## Odwołanie prowadzi do źródła, ale nie jest certyfikatem prawdziwości
 
-AI może także obniżać próg wejścia do wiedzy. Osoba, która nie czyta na co dzień artykułów naukowych, może poprosić o wyjaśnienie abstraktu, różnicę między korelacją a przyczynowością, krótką mapę stanowisk albo listę terminów do sprawdzenia. To jest realna wartość. W takim użyciu AI nie zastępuje źródła. Pomaga do niego dojść.
+W 2023 roku Nelson Liu, Tianyi Zhang i Percy Liang przeprowadzili audyt czterech generatywnych wyszukiwarek. W ocenionych odpowiedziach około 51,5% wygenerowanych zdań było w pełni popartych wskazanymi źródłami, a około 74,5% odwołań rzeczywiście potwierdzało zdanie, z którym je połączono (Liu et al., 2023). Audyt dotyczył określonych systemów w określonym momencie. Nie powinien być powtarzany jako trwały wynik wszystkich współczesnych produktów.
 
-Można to powiązać z [cognitive offloading](/pl/concepts/cognitive-offloading/): przeniesieniem części pracy poznawczej na narzędzie zewnętrzne. Robimy to od dawna, używając notatek, kalkulatorów, map, wyszukiwarek i bibliotek. AI jest kolejnym narzędziem, ale bardziej rozmownym i bardziej sugestywnym. Wspiera uwagę, lecz może też przejąć za dużo drogi, jeśli użytkownik oddaje mu nie tylko porządkowanie, ale również ocenę wiarygodności.
+Trwalszy wniosek ma charakter pojęciowy: obecność odwołania do źródła nie jest tym samym co oparcie w dowodach. Po zobaczeniu przypisu pozostaje co najmniej siedem pytań:
 
-Problemem nie jest AI jako pośrednik. Problemem jest pośrednik, który udaje koniec drogi. Jeśli model pomaga zobaczyć pytania, źródła, spory i ograniczenia, może wzmacniać [AI literacy](/pl/concepts/ai-literacy/). Jeśli pozwala zatrzymać się na pierwszej płynnej odpowiedzi, wzmacnia [nadmierne poleganie na AI](/pl/concepts/nadmierne-poleganie-na-ai/).
+1. **Istnienie:** Czy wskazane źródło jest prawdziwe i dostępne?
+2. **Trafność:** Czy dotyczy przedmiotu twierdzenia?
+3. **Jakość:** Czy metoda i kontekst publikacji są odpowiednie do danego użycia?
+4. **Rzetelność przedstawienia:** Czy odpowiedź uczciwie oddaje treść źródła?
+5. **Wsparcie konkretnej tezy:** Czy źródło potwierdza dokładnie to zdanie, a nie tylko ogólny temat?
+6. **Aktualność:** Czy materiał jest wystarczająco świeży dla zmieniającej się dziedziny?
+7. **Niezależność:** Czy kilka odwołań oznacza niezależne dowody, czy prowadzi do tego samego źródła pierwotnego?
 
-<aside class="editorial-aside editorial-aside--practice">
-  <p class="editorial-aside__label">W praktyce</p>
-  <p>AI może być dobrym przewodnikiem po trudnym tekście. Może wyjaśnić pojęcia, streścić argumenty i wskazać pytania. Problem zaczyna się wtedy, gdy przewodnik zastępuje całą wyprawę.</p>
-</aside>
+Prawidłowy DOI potwierdza istnienie zarejestrowanego obiektu. Nie dowodzi, że obiekt wspiera zdanie, przy którym go umieszczono. Prawdziwe badanie może zostać źle przedstawione, być przestarzałe, słabe metodologicznie, nieadekwatne do precyzyjnej tezy albo wtórne tam, gdzie potrzebne jest źródło pierwotne. Sprawdzenie wskazanego źródła wymaga więc przejścia od wizualnego sygnału powagi do rzeczywistego argumentu, danych i zakresu publikacji.
 
-## Nowa czujność epistemiczna
+## Krytyczne myślenie może się przesunąć, zamiast zniknąć
 
-W epoce AI [epistemic vigilance](/pl/concepts/epistemic-vigilance/), czyli czujność epistemiczna, nie oznacza paranoi. Nie chodzi o to, żeby podejrzewać każdą odpowiedź o złą wolę albo uznać, że niczemu nie można ufać. Chodzi o prostszy i bardziej dojrzały nawyk: skąd to wiadomo?
+Teza, że AI „niszczy krytyczne myślenie”, wyprzedza dostępne dowody. W badaniu przedstawionym na CHI 2025 Hao-Ping Lee i współautorzy przeprowadzili ankietę wśród 319 pracowników wiedzy i zebrali 936 przykładów użycia GenAI w zadaniach zawodowych. Większe zaufanie do GenAI wiązało się z mniejszym deklarowanym wysiłkiem krytycznym. Większa pewność siebie dotycząca konkretnego zadania wiązała się z większym deklarowanym wysiłkiem. Opisy uczestników sugerowały również przesunięcie pracy krytycznej w stronę weryfikowania informacji, integrowania odpowiedzi i nadzoru nad całym zadaniem (Lee et al., 2025).
 
-To pytanie ma kilka warstw. Czy model wskazuje źródła pierwotne, czy tylko wtórne omówienia? Czy źródła są aktualne? Czy temat jest sporny? Czy odpowiedź pokazuje różnicę między tym, co dobrze ustalone, a tym, co interpretacyjne? Czy ujawnia niepewność? Czy można odtworzyć drogę od zdania w odpowiedzi do materiału, na którym zdanie powinno się opierać?
+Znaczenie badania widać najlepiej razem z jego ograniczeniami. Autorzy analizowali samoopis i zależności, a nie przyczynowy spadek zdolności poznawczych. Wyniki nie pokazują, że korzystanie z AI obniża inteligencję. Sugerują, że rozkład wysiłku zmienia się zależnie od zaufania do systemu, własnej kompetencji i rodzaju zadania.
 
-Czujność epistemiczna jest szczególnie ważna, bo AI zmienia poczucie wysiłku. Dawniej sprawdzanie źródła wymagało osobnego kroku. Dziś możemy poprosić model o źródła w tym samym oknie, w którym dostaliśmy odpowiedź. To wygodne, ale też niebezpieczne, jeśli model zaczyna sprawdzać samego siebie bez kontaktu z zewnętrznym materiałem. Pytanie "podaj źródła" nie wystarcza, jeśli nie sprawdzamy, czy te źródła istnieją i czy mówią to, co odpowiedź im przypisuje.
+Łączy się to z odciążeniem poznawczym, czyli wykorzystywaniem zewnętrznych działań lub narzędzi do zmniejszania wewnętrznych wymagań zadania. Notatki, kalkulatory, mapy i wyszukiwarki od dawna pełnią taką funkcję. Odciążenie może uwolnić uwagę dla pracy wyższego poziomu, ale może też stworzyć lukę, gdy znika kontrola. Ważniejsze od pytania, czy coś delegujemy, jest pytanie, co dokładnie delegujemy (Risko & Gilbert, 2016):
 
-Nowa czujność nie musi być ciężka. Może wyglądać jak kilka dobrych pytań zadanych w odpowiednim momencie. Nie każde zdanie wymaga audytu. Ale odpowiedzi w sprawach wysokiej stawki, spornych albo publicznie ważnych powinny dać się cofnąć do materiału. Jeśli nie da się odtworzyć drogi, nie mamy pełnej wiedzy. Mamy wygodną narrację.
+- pamięć lub wyszukiwanie;
+- szkicowanie lub syntezę;
+- wybór źródeł;
+- interpretację;
+- osąd;
+- odpowiedzialność.
 
-<aside class="editorial-aside editorial-aside--pause">
-  <p class="editorial-aside__label">Zatrzymaj się</p>
-  <ul>
-    <li>Skąd model może to wiedzieć?</li>
-    <li>Czy odpowiedź wskazuje źródła pierwotne?</li>
-    <li>Czy temat jest sporny albo wysokiej stawki?</li>
-    <li>Czy mogę odtworzyć drogę od odpowiedzi do materiału?</li>
-  </ul>
-</aside>
+AI może ograniczyć wysiłek potrzebny do wytworzenia pierwszej odpowiedzi, jednocześnie zwiększając znaczenie sprawdzania, porównywania i integrowania wyniku. Nadzór nad całym zadaniem oznacza czuwanie nad procesem: określenie celu, zauważenie, kiedy system wykracza poza dowody, decyzję o potrzebie przeglądu eksperta i przyjęcie konsekwencji użycia. To krytyczne myślenie umieszczone w innym miejscu, a nie dowód jego zaniku.
 
-## Nie wystarczy powiedzieć "zaufaj nauce"
+## Dlaczego wyjaśnienia i odwołania do źródeł nie wystarczają
 
-Hasło "zaufaj nauce" bywa zrozumiałą reakcją na dezinformację, ale w świecie pośredników może brzmieć jak nakaz. Dla części ludzi nie odpowiada na pytanie, komu właściwie mają zaufać: naukowcowi, instytucji, redakcji, polityce publicznej, platformie, wyszukiwarce, modelowi czy osobie, która mówi w imieniu "nauki".
+Wyjaśnienie może pomóc użytkownikowi ocenić rekomendację, ale może też stać się kolejnym sygnałem kompetencji systemu. W eksperymencie z udziałem 199 osób Zana Buçinca, Maja Barbara Malaya i Krzysztof Gajos porównali trzy rozwiązania wymagające aktywnego namysłu z prostszymi interfejsami wyjaśniającymi działanie AI oraz wariantem bez AI. Interwencje wymagające większego zaangażowania skuteczniej ograniczały [nadmierne poleganie](/pl/concepts/nadmierne-poleganie-na-ai/) niż proste wyjaśnienia. Skuteczność miała jednak koszt: rozwiązania, które najlepiej ograniczały nadmierne poleganie, otrzymały najmniej korzystne oceny uczestników (Buçinca et al., 2021).
 
-Potrzebujemy języka procesu. Trzeba pokazywać, jak wiedza powstaje, jak zmienia się poziom pewności, jak działa spór, dlaczego jedno badanie nie kończy dyskusji, czemu źródła bywają niejednoznaczne i co to znaczy, że dana teza jest lepiej albo słabiej ugruntowana. To nie osłabia nauki. To ją wzmacnia, bo pokazuje, że nauka nie jest magicznym autorytetem, lecz sposobem pracy z dowodami, błędem i korektą.
+Jeden eksperyment nie tworzy uniwersalnej reguły projektowej. Podważa jednak założenie, że dodanie uzasadnienia automatycznie prowadzi do polegania dopasowanego do możliwości systemu. Użytkownik może potraktować wyjaśnienie jako dowód jakości systemu, zamiast jako materiał do sprawdzenia. Rozwiązania wymagające własnej oceny przed pokazaniem rekomendacji, opóźniające podpowiedź albo zmuszające do porównania mogą wprowadzić pożyteczne tarcie, ale często wydają się mniej wygodne.
 
-AI może tu pomóc, jeśli używamy go jako narzędzia do odsłaniania procesu. Może zadać pytania do tekstu, przygotować listę założeń, wyjaśnić metodę, porównać kilka stanowisk, wskazać, czego nie wiemy. Ale jeśli używamy go jako maszyny do ostatecznego brzmienia, proces znika. Zostaje odpowiedź, która może wyglądać jak wiedza bez historii.
+Nie każde zadanie o niskiej stawce potrzebuje protokołu weryfikacji. Wymyślanie tytułów różni się od rekomendowania leczenia. Dobry projekt powinien zwiększać wysiłek proporcjonalnie do konsekwencji, niepewności i możliwości naprawienia błędu.
 
-W [Human-AI Interaction](/pl/concepts/human-ai-interaction/) stawką jest więc nie tylko ergonomia pracy z narzędziem. Stawką jest to, czy człowiek zachowuje sprawczość poznawczą. Czy wie, kiedy korzysta z pomocy. Czy rozumie własny [mental model](/pl/concepts/mental-model/) narzędzia. Czy potrafi rozpoznać, kiedy model porządkuje materiał, a kiedy zaczyna udawać materiał.
+## Skalibrowane zaufanie zależy od zadania
 
-## Zaufanie dopasowane do sytuacji
+Trzeba rozdzielić zaufanie, poleganie i poleganie dopasowane do możliwości systemu. Zaufanie jest postawą albo oczekiwaniem wobec systemu. Poleganie jest zachowaniem: użyciem jego wyniku w decyzji lub działaniu. Poleganie dopasowane oznacza, że zachowanie odpowiada rzeczywistym możliwościom systemu w danym kontekście. Klasyczna literatura automatyzacji ostrzega zarówno przed nadużyciem wynikającym z nadmiernego polegania, jak i przed zbyt silnym odrzuceniem narzędzia. Ogólne zalecenia „ufaj bardziej” i „ufaj mniej” są równie słabe (Parasuraman & Riley, 1997; Lee & See, 2004).
 
-Badania nad automatyzacją od dawna odróżniają rozsądne poleganie na systemie od polegania zbyt silnego, zbyt słabego albo źle dopasowanego do zadania. To ważne, bo w rozmowie o AI łatwo wpaść w dwie proste reakcje: ufać, bo odpowiedź jest użyteczna, albo nie ufać, bo model może się mylić. Żadna z nich nie wystarcza.
+[Skalibrowane zaufanie](/pl/concepts/calibrated-trust/) zależy od pięciu cech:
 
-W praktyce bardziej pomocne jest pytanie o kalibrację. Jaka jest stawka? Czy temat jest sporny? Czy błąd miałby poważne konsekwencje? Czy źródła są widoczne i możliwe do sprawdzenia? Czy użytkownik ma kompetencje, żeby ocenić odpowiedź, czy powinien wrócić do publikacji, danych, instytucji albo eksperta? Dopiero takie pytania pozwalają odróżnić sytuację, w której model może być roboczym przewodnikiem, od sytuacji, w której nie powinien być ostatnim słowem.
+1. **Stawka i odwracalność.** Co się stanie, jeśli odpowiedź będzie błędna, i czy błąd da się naprawić przed wystąpieniem trwałej szkody?
+2. **Widoczność i jakość źródeł.** Czy można sprawdzić drogę do materiału i czy źródła są pierwotne, aktualne, niezależne oraz odpowiednie?
+3. **Kompetencja użytkownika.** Czy potrafi rozpoznać słabą odpowiedź w tej dziedzinie?
+4. **Niezależna weryfikacja.** Czy istnieje inny sposób sprawdzenia tezy?
+5. **Odpowiedzialność.** Kto musi uzasadnić wynik i odpowiedzieć za konsekwencje?
 
-## Nie ufać odpowiedzi. Odtwarzać drogę.
+Zobaczmy, jak zmieniają się te cechy w różnych zadaniach. Pomysły na tytuły mają niską stawkę i łatwo je odrzucić, więc płynność może wystarczyć. Streszczenie dokumentu, który użytkownik ma przed sobą, jest bardziej sprawdzalne, choć nadal może pomijać ważne treści. Wyjaśnienie nieznanego tematu naukowego wymaga kontroli źródeł, ponieważ użytkownik słabiej wykrywa pewnie brzmiący błąd. Interpretacja spornego wyniku wymaga porównania definicji, metod i alternatywnych odczytań. Porada dotycząca zdrowia, prawa, finansów lub polityki publicznej potrzebuje źródeł o odpowiednim autorytecie i osądu kompetentnego człowieka. Rekomendacja wpływająca na inną osobę dodaje obowiązek etyczny i organizacyjny, którego nie da się przekazać modelowi.
 
-Dojrzałe korzystanie z AI nie polega na tym, żeby nie ufać niczemu. Nie polega też na tym, żeby ufać modelowi zawsze wtedy, gdy brzmi rozsądnie. Chodzi o inne przesunięcie: nie ufać samej odpowiedzi, tylko odtwarzać drogę, którą odpowiedź powinna mieć za sobą.
+Ton wygenerowanej odpowiedzi może być niemal identyczny we wszystkich sześciu sytuacjach. Poziom potrzebnej weryfikacji nie jest. [AI literacy](/pl/concepts/ai-literacy/) obejmuje zatem coś więcej niż umiejętność uzyskania przydatnej odpowiedzi. Wymaga rozpoznania zadania, zrozumienia roli systemu, oceny wyniku i zachowania [sprawczości człowieka](/pl/concepts/sprawczosc-czlowieka/) tam, gdzie decyzja ma konsekwencje (Long & Magerko, 2020).
 
-Lepsze pytanie nie brzmi wyłącznie: czy model ma rację? W wielu sytuacjach nie jesteśmy w stanie ocenić tego od razu. Lepsze pytanie brzmi: jaką drogą ta odpowiedź doszła do mnie i czy mogę ją sprawdzić? Czy prowadzi do źródeł? Czy pokazuje metodę? Czy ujawnia spór? Czy oddziela pewność od interpretacji? Czy pozwala mi przejść dalej niż wygodny tekst?
+## Odtwórz drogę
 
-To nie jest drobiazg techniczny. To jedna z podstawowych kompetencji poznawczych w świecie modeli językowych. Jeśli AI skraca drogę do wiedzy, człowiek musi umieć tę drogę wydłużyć wtedy, gdy sytuacja tego wymaga. Czasem wystarczy prosta odpowiedź. Czasem potrzebny jest raport. Czasem trzeba porozmawiać z ekspertem. Czasem trzeba wrócić do publikacji, danych albo instytucji, która ponosi odpowiedzialność za twierdzenie.
-
-Zaufanie w epoce AI nie musi oznaczać końca zaufania do nauki. Może oznaczać zmianę miejsca, w którym zaufanie zaczyna działać. Jeśli zaczyna się przy odpowiedzi modelu, trzeba przywrócić widoczność źródeł, metody i odpowiedzialności. Nie po to, żeby odrzucić AI. Po to, żeby AI nie zamieniło drogi do wiedzy w samo poczucie, że już wiemy.
+Gdy odpowiedź ma znaczenie, warto odbudować rozróżnienia skompresowane przez syntezę. Poniższy sześcioczęściowy protokół jest pomocą w czytaniu, a nie naukowo zwalidowaną skalą.
 
 <section class="practice-block" data-qa="practice-block">
-  <p class="practice-block__label">Wypróbuj podejście</p>
-  <h2>Wypróbuj podejście</h2>
-  <p>Te przykłady nie są formułami na każdą sytuację. Pokazują zmianę postawy: od proszenia modelu o gotową prawdę do proszenia o drogę, źródła, założenia, spory i granice pewności.</p>
-
-  <div class="prompt-example prompt-example--bad" data-copyable-prompt>
-    <div class="prompt-example__header">
-      <p class="prompt-example__label">Nie pytaj tak</p>
-      <button class="prompt-example__copy" type="button" aria-label="Kopiuj" data-copy-label="Kopiuj" data-copied-label="Skopiowano">Kopiuj</button>
-    </div>
-    <pre class="prompt-example__body"><code data-prompt-text>Wyjaśnij mi, jaka jest prawda na ten temat.</code></pre>
-  </div>
+  <p class="practice-block__label">Protokół odtwarzania drogi</p>
+  <h2>Odtwórz drogę od odpowiedzi do dowodów</h2>
+  <ol>
+    <li><strong>Twierdzenie:</strong> Co dokładnie zostało powiedziane? Oddziel fakty, interpretacje i rekomendacje.</li>
+    <li><strong>Pochodzenie:</strong> Skąd pochodzi każde twierdzenie? Ustal autora, instytucję, rodzaj źródła i datę.</li>
+    <li><strong>Dowody:</strong> Jakie dane, metoda albo argument je wspierają? Sprawdź, czy źródło potwierdza dokładne brzmienie.</li>
+    <li><strong>Niepewność:</strong> Co pozostaje nieznane, warunkowe, niedokładnie zmierzone lub ograniczone zakresem?</li>
+    <li><strong>Spór:</strong> Jakie poważne alternatywne interpretacje istnieją i dlaczego dobrze poinformowane osoby się różnią?</li>
+    <li><strong>Odpowiedzialność:</strong> Kto w tej sytuacji sprawdza, decyduje i odpowiada za użycie wyniku?</li>
+  </ol>
+  <p>Model może pomóc uporządkować tę pracę, ale jego własne wyjaśnienie nie jest niezależną weryfikacją. Ostatni krok powinien pozostawić konkretną osobę albo instytucję odpowiedzialną za decyzję.</p>
 
   <div class="prompt-example prompt-example--better" data-copyable-prompt>
     <div class="prompt-example__header">
-      <p class="prompt-example__label">Lepsze pytanie</p>
-      <button class="prompt-example__copy" type="button" aria-label="Kopiuj" data-copy-label="Kopiuj" data-copied-label="Skopiowano">Kopiuj</button>
+      <p class="prompt-example__label">Przykładowy prompt</p>
+      <button class="prompt-example__copy" type="button" aria-label="Kopiuj przykładowy prompt" data-copy-label="Kopiuj" data-copied-label="Skopiowano">Kopiuj</button>
     </div>
-    <pre class="prompt-example__body"><code data-prompt-text>Na czym opiera się ta odpowiedź? Wypisz osobno: twierdzenia, źródła, założenia, elementy niepewne i rzeczy, które powinienem sprawdzić poza modelem.</code></pre>
-  </div>
-
-  <div class="prompt-example prompt-example--agent" data-copyable-prompt>
-    <div class="prompt-example__header">
-      <p class="prompt-example__label">Mini-agent</p>
-      <button class="prompt-example__copy" type="button" aria-label="Kopiuj" data-copy-label="Kopiuj" data-copied-label="Skopiowano">Kopiuj</button>
-    </div>
-    <pre class="prompt-example__body"><code data-prompt-text>Przyjmij rolę przewodnika po źródłach, nie ostatecznego autorytetu. Twoim zadaniem jest pomagać mi odtworzyć drogę od pytania do wiedzy: wskazuj źródła pierwotne, poziom pewności, spory, ograniczenia i pytania, które powinienem zadać przed przyjęciem odpowiedzi.</code></pre>
+    <pre class="prompt-example__body"><code data-prompt-text>Rozdziel tę odpowiedź na twierdzenia, źródła, dowody, założenia, niepewności i punkty sporne. Przy każdym twierdzeniu faktograficznym wskaż, jakiego źródła potrzeba do jego sprawdzenia. Nie traktuj wyjaśnienia modelu jako weryfikacji.</code></pre>
   </div>
 </section>
 
+### Przykład hipotetyczny
+
+Załóżmy, że odpowiedź AI stwierdza: **„Badania pokazują, że AI zwiększa produktywność pracowników o 40%.”** Zanim ta liczba trafi do prezentacji, rekomendacji albo firmowej polityki, trzeba odtworzyć jej drogę:
+
+- **Twierdzenie:** Czy 40% oznacza krótszy czas wykonania zadania, większą liczbę rezultatów, wyższą jakość czy wskaźnik łączący kilka miar?
+- **Pochodzenie:** Z jakiego badania pochodzi wynik, kto je przeprowadził, kto finansował i kiedy je opublikowano?
+- **Dowody:** Kogo badano, jaki rodzaj pracy mierzono, z czym porównywano wyniki i jak obliczono produktywność?
+- **Niepewność:** Czy podano przedział wyników i czy wniosek wykracza poza badane zadania, osoby oraz narzędzia?
+- **Spór:** Czy poprawę może wyjaśniać efekt nowości, dobór łatwiejszych zadań albo większa szybkość kosztem jakości?
+- **Odpowiedzialność:** Kto sprawdzi badanie i zdecyduje, czy tę liczbę wolno odnieść do konkretnej organizacji?
+
+To przykład hipotetyczny. Protokół nie potwierdza twierdzenia o 40%; zamienia efektowną liczbę w pytania, które można sprawdzić.
+
+Protokół nie wymaga czytania każdej cytowanej publikacji przy każdym codziennym pytaniu. Ma pomóc w rozpoznaniu problemu. Jeśli twierdzenie wysokiej stawki nie ma możliwego do odtworzenia pochodzenia, dowody mieszają się z interpretacją albo nikt nie przyjmuje odpowiedzialności za sprawdzenie wyniku, odpowiedź nie jest jeszcze gotowa do użycia.
+
+## Wnioski dla projektowania interfejsów i organizacji
+
+Całego ciężaru nie można przerzucić na czujność pojedynczego użytkownika. Systemy pośredniczące w dostępie do wiedzy powinny zachowywać odwołania do źródeł na poziomie twierdzeń, rodzaj źródła, datę publikacji, informacje o niepewności i historię wersji. Powinny umożliwiać zakwestionowanie odpowiedzi, sprawdzenie zmian oraz przekazanie istotnego wyniku do przeglądu kompetentnego człowieka. Organizacja potrzebuje zapisu, kto dokonał kontroli, według jakiej zasady i z jaką wiedzą dziedzinową.
+
+Profil NIST dla generatywnej AI jest dobrowolną pomocą w zarządzaniu ryzykiem, a nie wymogiem prawnym. Wśród sugerowanych działań NIST wymienia sprawdzanie wygenerowanych informacji, przegląd i weryfikację źródeł oraz odwołań, śledzenie pochodzenia treści, dokumentowanie udziału ludzkiej wiedzy dziedzinowej, a także ocenę, czy operatorzy i użytkownicy rozumieją pochodzenie oraz historię treści (National Institute of Standards and Technology, 2024). Takie środki przenoszą część pracy z osamotnionego czytelnika na system i organizację, które nadają odpowiedzi praktyczne znaczenie.
+
+Dobre informacje o pochodzeniu nie gwarantują prawdy. Sprawiają jednak, że błąd łatwiej zobaczyć i poprawić. To istotna różnica wobec odpowiedzi, której autorytet wynika głównie ze sposobu prezentacji.
+
+## Ograniczenia argumentu
+
+Baza badań nad użyciem generatywnej AI rozwija się szybko. Mechanizmy wyszukiwania, interfejsy odwołań do źródeł i zachowanie modeli zmieniają się w czasie. Przywołane badania korzystają z różnych metod i dotyczą różnych kontekstów, dlatego nie można z nich wyprowadzić jednego oszacowania, jak silnie AI zmienia osąd lub wyniki pracy.
+
+Deklarowany wysiłek krytyczny nie jest tym samym co bezpośrednio zmierzona jakość rozumowania. Klasyczne badania płynności przetwarzania i automatyzacji pomagają wskazać możliwe mechanizmy, ale nie testowały dzisiejszych systemów konwersacyjnych. Ten esej nie mierzy zachowań użytkowników, częstości nadmiernego polegania ani skuteczności protokołu odtwarzania drogi.
+
+Protokół może być niepotrzebny przy zadaniach o niskiej stawce i łatwych do odwrócenia, a niewystarczający przy decyzjach zawodowych wymagających uprawnień, formalnego przeglądu albo odpowiedzialności instytucjonalnej.
+
+Kompresja może też pomagać. Generatywna AI ułatwia dostęp do specjalistycznego języka, podpowiada użyteczne pytania i potrafi prowadzić czytelnika ku źródłom pierwotnym. Zagrożeniem nie jest każda krótsza droga. Problem pojawia się wtedy, gdy nie da się odzyskać rozróżnień usuniętych przez skrót.
+
+## Zakończenie
+
+Generatywna AI może skrócić drogę od pytania do użytecznej wiedzy. Krótsza droga nie jest automatycznie drogą fałszywą, a wymaganie od każdego użytkownika odtworzenia całej pracy ekspertów podważałoby sens komunikacji i narzędzi. Korzyść jest realna, gdy odpowiedź pomaga wejść w nową dziedzinę, zrozumieć dokument albo dotrzeć do właściwych dowodów.
+
+Wygoda staje się ryzykowna, gdy równocześnie znikają pochodzenie informacji, niepewność, spór i odpowiedzialność. Użytkownik może wtedy posiadać dopracowany wniosek, nie wiedząc, jakiego rodzaju wsparcie za nim stoi i kto odpowiada za jego zastosowanie.
+
+Model może podać nam wniosek, zanim zobaczymy drogę, która do niego prowadzi. Dojrzałe korzystanie z AI zaczyna się od rozpoznania, które wnioski można bezpiecznie wykorzystać od razu, a przy których trzeba odbudować drogę przez źródła, dowody, niepewność i odpowiedzialność.
+
 ## Źródła i dalsza lektura
 
-- Cologna, V., Mede, N. G., Berger, S., Besley, J., Brick, C., Joubert, M., Maibach, E. W., Mihelj, S., Oreskes, N., Schäfer, M. S., van der Linden, S., Abdul Aziz, N. I., Abdulsalam, S., Abu Shamsi, N., Aczel, B., Adinugroho, I., Alabrese, E., Aldoh, A., Alfano, M., ... Zwaan, R. A. (2025). Trust in scientists and their role in society across 68 countries. *Nature Human Behaviour, 9*, 713-730. https://doi.org/10.1038/s41562-024-02090-5
-- Dechene, A., Stahl, C., Hansen, J., & Wanke, M. (2010). The truth about the truth: A meta-analytic review of the truth effect. *Personality and Social Psychology Review, 14*(2), 238-257. https://doi.org/10.1177/1088868309352251
-- European Commission. (2025). *Special Eurobarometer 557: European citizens' knowledge and attitudes towards science and technology*. https://europa.eu/eurobarometer/surveys/detail/3227
-- Ji, Z., Lee, N., Frieske, R., Yu, T., Su, D., Xu, Y., Ishii, E., Bang, Y., Chen, D., Dai, W., Chan, H. S., Madotto, A., & Fung, P. (2023). Survey of hallucination in natural language generation. *ACM Computing Surveys, 55*(12), Article 248. https://doi.org/10.1145/3571730
+- Buçinca, Z., Malaya, M. B., & Gajos, K. Z. (2021). To trust or to think: Cognitive forcing functions can reduce overreliance on AI in AI-assisted decision-making. *Proceedings of the ACM on Human-Computer Interaction, 5*(CSCW1), Article 188, 1-21. https://doi.org/10.1145/3449287
+- Cologna, V., Mede, N. G., Berger, S., Besley, J., Brick, C., Joubert, M., Maibach, E. W., Mihelj, S., Oreskes, N., Schäfer, M. S., van der Linden, S., Abdul Aziz, N. I., Abdulsalam, S., Abu Shamsi, N., Aczel, B., Adinugroho, I., Alabrese, E., Aldoh, A., Alfano, M., ... Zwaan, R. A. (2025). Trust in scientists and their role in society across 68 countries. *Nature Human Behaviour, 9*(4), 713-730. https://doi.org/10.1038/s41562-024-02090-5
+- Dechêne, A., Stahl, C., Hansen, J., & Wänke, M. (2010). The truth about the truth: A meta-analytic review of the truth effect. *Personality and Social Psychology Review, 14*(2), 238-257. https://doi.org/10.1177/1088868309352251
+- Goldman, A. I. (2001). Experts: Which ones should you trust? *Philosophy and Phenomenological Research, 63*(1), 85-110. https://doi.org/10.1111/j.1933-1592.2001.tb00093.x
+- Hardwig, J. (1985). Epistemic dependence. *The Journal of Philosophy, 82*(7), 335-349. https://doi.org/10.2307/2026523
+- Ipsos. (2026). *Public Attitudes to Science 2025*. UK Research and Innovation. https://pas.ipsos.com/
+- Ji, Z., Lee, N., Frieske, R., Yu, T., Su, D., Xu, Y., Ishii, E., Bang, Y., Chen, D., Dai, W., Chan, H. S., Madotto, A., & Fung, P. (2023). Survey of hallucination in natural language generation. *ACM Computing Surveys, 55*(12), Article 248, 1-38. https://doi.org/10.1145/3571730
+- Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., & Wilson, N. (2025). The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers. In *Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems* (Article 1121, pp. 1-22). Association for Computing Machinery. https://doi.org/10.1145/3706598.3713778
 - Lee, J. D., & See, K. A. (2004). Trust in automation: Designing for appropriate reliance. *Human Factors, 46*(1), 50-80. https://doi.org/10.1518/hfes.46.1.50_30392
-- Liu, N. F., Zhang, T., & Liang, P. (2023). Evaluating verifiability in generative search engines. In *Findings of EMNLP 2023*. https://aclanthology.org/2023.findings-emnlp.467/
-- Long, D., & Magerko, B. (2020). What is AI literacy? Competencies and design considerations. In *Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems* (pp. 1-16). ACM. https://doi.org/10.1145/3313831.3376727
-- Maynez, J., Narayan, S., Bohnet, B., & McDonald, R. T. (2020). On faithfulness and factuality in abstractive summarization. In *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics* (pp. 1906-1919). Association for Computational Linguistics. https://doi.org/10.18653/v1/2020.acl-main.173
-- National Institute of Standards and Technology. (2023). *Artificial intelligence risk management framework (AI RMF 1.0)* (NIST AI 100-1). https://doi.org/10.6028/NIST.AI.100-1
+- Liu, N. F., Zhang, T., & Liang, P. (2023). Evaluating verifiability in generative search engines. In *Findings of the Association for Computational Linguistics: EMNLP 2023* (pp. 7001-7025). Association for Computational Linguistics. https://doi.org/10.18653/v1/2023.findings-emnlp.467
+- Long, D., & Magerko, B. (2020). What is AI literacy? Competencies and design considerations. In *Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems* (pp. 1-16). Association for Computing Machinery. https://doi.org/10.1145/3313831.3376727
+- Maynez, J., Narayan, S., Bohnet, B., & McDonald, R. (2020). On faithfulness and factuality in abstractive summarization. In *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics* (pp. 1906-1919). Association for Computational Linguistics. https://doi.org/10.18653/v1/2020.acl-main.173
+- National Institute of Standards and Technology. (2024). *Artificial intelligence risk management framework: Generative artificial intelligence profile* (NIST AI 600-1). https://doi.org/10.6028/NIST.AI.600-1
+- Parasuraman, R., & Riley, V. (1997). Humans and automation: Use, misuse, disuse, abuse. *Human Factors, 39*(2), 230-253. https://doi.org/10.1518/001872097778543886
 - Pearson, H. (2026, July 1). Have people stopped trusting science? The data tell a surprising story. *Nature, 655*, 22-25. https://doi.org/10.1038/d41586-026-01977-9
 - Reber, R., & Schwarz, N. (1999). Effects of perceptual fluency on judgments of truth. *Consciousness and Cognition, 8*(3), 338-342. https://doi.org/10.1006/ccog.1999.0386
 - Risko, E. F., & Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive Sciences, 20*(9), 676-688. https://doi.org/10.1016/j.tics.2016.07.002
-- Sperber, D., Clement, F., Heintz, C., Mascaro, O., Mercier, H., Origgi, G., & Wilson, D. (2010). Epistemic vigilance. *Mind & Language, 25*(4), 359-393. https://doi.org/10.1111/j.1468-0017.2010.01394.x
-- UK Research and Innovation. (2026). *Public Attitudes to Science 2025*. https://pas.ipsos.com/
+- Sperber, D., Clément, F., Heintz, C., Mascaro, O., Mercier, H., Origgi, G., & Wilson, D. (2010). Epistemic vigilance. *Mind & Language, 25*(4), 359-393. https://doi.org/10.1111/j.1468-0017.2010.01394.x

@@ -124,22 +124,22 @@ The fifth article pair published in pre-launch mode is:
 - `Zaufanie w epoce gotowych odpowiedzi`
 - URL: `/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/`
 - Source file: `src/content/articles/zaufanie-w-epoce-gotowych-odpowiedzi.md`
-- Date: `2026-07-03`
+- Date: `2026-07-02`
 - Status: public PL article, `draft: false`
 - `Trust in the age of ready-made answers`
 - URL: `/articles/trust-in-the-age-of-ready-made-answers/`
 - Source file: `src/content/articles/trust-in-the-age-of-ready-made-answers.md`
-- Date: `2026-07-03`
+- Date: `2026-07-02`
 - Status: public EN article, `draft: false`
 
-The article uses Helen Pearson's Nature article on trust in science as a public debate trigger, not as a template. It does not copy the Nature structure, does not use long quotes and does not build a one-to-one polemic. The Prompted Psyche thesis is original: AI changes the path between a person's question, sources, scientific institutions and the fluent answer of a model.
+The article uses Helen Pearson's Nature article on trust in science as a public debate trigger, not as primary empirical evidence. Its central thesis is that generative AI acts as an epistemic intermediary and can compress the visible path between a person's question, sources, evidence, uncertainty, disagreement and responsibility.
 
-The article includes the original graphic `ai-path-to-knowledge.svg`, manual `inBrief` summaries, a key passage, editorial asides and copyable prompt boxes. APA-style references were checked against public source metadata where available. No DOI was added for the Prompted Psyche article. Site-wide `noindex` and the Vercel `X-Robots-Tag` remain active.
+The PL and EN versions were substantially revised as one publication pair on `2026-07-10`, while retaining the corrected original publication date `2026-07-02`. Both include an abstract, scope and method, an explicit limitations section, a six-part path reconstruction protocol, one copyable prompt and an alphabetized list of 18 checked references. The article is presented as a research-informed conceptual essay and narrative synthesis, not a systematic review or empirical study. No DOI or DOI placeholder was added.
 
 Current article chronology is now:
 
-- Article 05: `2026-07-03`
 - Article 04: `2026-07-03`
+- Article 05: `2026-07-02`
 - Article 03: `2026-07-02`
 - Article 02: `2026-06-18`
 - Article 01: `2026-05-23`

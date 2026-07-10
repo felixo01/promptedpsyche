@@ -6,6 +6,8 @@ const notePairs = [
     enTitle: 'Fluent does not mean true',
     plRoute: '/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/',
     enRoute: '/notes/fluent-does-not-mean-true/',
+    plDate: '2026, 24 czerwca',
+    enDate: '2026, June 24',
     plConcepts: [
       '/pl/concepts/model-output/',
       '/pl/concepts/calibrated-trust/',
@@ -24,6 +26,8 @@ const notePairs = [
     enTitle: 'The model sees text, not the whole relationship',
     plRoute: '/pl/notes/model-widzi-tekst-nie-cala-relacje/',
     enRoute: '/notes/the-model-sees-text-not-the-whole-relationship/',
+    plDate: '2026, 26 czerwca',
+    enDate: '2026, June 26',
     plConcepts: [
       '/pl/concepts/context-window/',
       '/pl/concepts/model-output/',
@@ -42,6 +46,8 @@ const notePairs = [
     enTitle: 'Do not diagnose people from emails',
     plRoute: '/pl/notes/nie-diagnozuj-ludzi-z-maili/',
     enRoute: '/notes/do-not-diagnose-people-from-emails/',
+    plDate: '2026, 30 czerwca',
+    enDate: '2026, June 30',
     plConcepts: [
       '/pl/concepts/ai-mediated-communication/',
       '/pl/concepts/calibrated-trust/',
@@ -60,6 +66,8 @@ const notePairs = [
     enTitle: 'A good summary is not the same as a good decision',
     plRoute: '/pl/notes/dobre-streszczenie-to-jeszcze-nie-dobra-decyzja/',
     enRoute: '/notes/a-good-summary-is-not-the-same-as-a-good-decision/',
+    plDate: '2026, 2 lipca',
+    enDate: '2026, July 2',
     plConcepts: [
       '/pl/concepts/cognitive-load/',
       '/pl/concepts/ai-literacy/',
@@ -177,7 +185,7 @@ test.describe('published notes', () => {
       await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
       await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
       await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-        `Mamczur, F. (2026). ${note.enTitle}. Prompted Psyche. https://promptedpsyche.com${note.enRoute}`
+        `Mamczur, F. (${note.enDate}). ${note.enTitle}. Prompted Psyche. https://promptedpsyche.com${note.enRoute}`
       );
       await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
       await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -200,7 +208,7 @@ test.describe('published notes', () => {
       await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
       await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
       await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-        `Mamczur, F. (2026). ${note.plTitle}. Prompted Psyche. https://promptedpsyche.com${note.plRoute}`
+        `Mamczur, F. (${note.plDate}). ${note.plTitle}. Prompted Psyche. https://promptedpsyche.com${note.plRoute}`
       );
       await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
       await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(

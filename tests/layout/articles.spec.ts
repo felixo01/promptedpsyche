@@ -124,6 +124,9 @@ test.describe('published articles', () => {
 
     await expect(aiPathTitleLink).toHaveAttribute('href', aiPathEnglishArticleRoute);
     await expect(aiPathCtaLink).toHaveAttribute('href', aiPathEnglishArticleRoute);
+    await expect(aiPathTitleLink.locator('xpath=ancestor::article').locator('time')).toHaveText(
+      'July 2, 2026'
+    );
 
     const aiFearsTitleLink = page.getByRole('link', {
       name: aiFearsEnglishArticleTitle,
@@ -195,6 +198,9 @@ test.describe('published articles', () => {
 
     await expect(aiPathTitleLink).toHaveAttribute('href', aiPathPolishArticleRoute);
     await expect(aiPathCtaLink).toHaveAttribute('href', aiPathPolishArticleRoute);
+    await expect(aiPathTitleLink.locator('xpath=ancestor::article').locator('time')).toHaveText(
+      '2 lipca 2026'
+    );
 
     const aiFearsTitleLink = page.getByRole('link', {
       name: aiFearsPolishArticleTitle,
@@ -305,7 +311,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). It is not just about the prompt. Prompted Psyche. https://promptedpsyche.com/articles/it-is-not-just-about-the-prompt/'
+      'Mamczur, F. (2026, March 12). It is not just about the prompt. Prompted Psyche. https://promptedpsyche.com/articles/it-is-not-just-about-the-prompt/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -342,7 +348,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). Nie chodzi tylko o prompt. Prompted Psyche. https://promptedpsyche.com/pl/articles/nie-chodzi-tylko-o-prompt/'
+      'Mamczur, F. (2026, 12 marca). Nie chodzi tylko o prompt. Prompted Psyche. https://promptedpsyche.com/pl/articles/nie-chodzi-tylko-o-prompt/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -379,7 +385,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). Model nie pamięta. Model ma kontekst. Prompted Psyche. https://promptedpsyche.com/pl/articles/model-nie-pamieta-model-ma-kontekst/'
+      'Mamczur, F. (2026, 28 marca). Model nie pamięta. Model ma kontekst. Prompted Psyche. https://promptedpsyche.com/pl/articles/model-nie-pamieta-model-ma-kontekst/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -493,7 +499,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). AI does not read people. It helps make sense of the situation. Prompted Psyche. https://promptedpsyche.com/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation/'
+      'Mamczur, F. (2026, April 17). AI does not read people. It helps make sense of the situation. Prompted Psyche. https://promptedpsyche.com/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
@@ -566,20 +572,28 @@ test.describe('published articles', () => {
     await expect(inBrief.locator('summary.in-brief__summary')).toHaveText('W skrócie');
     await inBrief.locator('summary').click();
     await expect(inBrief.locator('.in-brief__body')).toBeVisible();
-    await expect(inBrief).toContainText('AI zmienia nie tylko to, jak szybko dostajemy odpowiedzi');
+    await expect(inBrief).toContainText('Generatywna AI zmienia nie tylko dostęp do informacji');
     await expect(page.locator('body')).not.toContainText('TL;DR');
-    await expect(page.locator('.prose')).toContainText('Kryzys zaufania brzmi prosto');
-    await expect(page.locator('.prose')).toContainText('AI wchodzi między pytanie a źródło');
-    await expect(page.locator('.prose')).toContainText('Lepsze pytanie');
+    await expect(page.locator('.prose')).toContainText('Abstrakt');
+    await expect(page.locator('.prose')).toContainText('Zakres i metoda');
+    await expect(page.locator('.prose')).toContainText('Gdy droga poznawcza ulega kompresji');
+    await expect(page.locator('.prose')).toContainText('Odtwórz drogę od odpowiedzi do dowodów');
+    await expect(page.locator('.prose')).toContainText('Ograniczenia argumentu');
+    await expect(page.locator('.prose')).toContainText('kompresja drogi poznawczej');
     await expect(page.locator('.prose')).toContainText('Nature');
     await expect(page.locator('.prose')).toContainText('Pearson');
     await expect(page.locator('.content-header h1')).not.toHaveText(
       'Have people stopped trusting science? The data tell a surprising story'
     );
-    await expect(page.locator('[data-qa="article-byline"]')).toContainText('Autor: Feliks Mamczur');
+    const byline = page.locator('[data-qa="article-byline"]');
+    await expect(byline).toContainText('Autor: Feliks Mamczur');
+    await expect(byline).toContainText('Opublikowano: 2 lipca 2026');
+    await expect(byline).toContainText('Aktualizacja: 10 lipca 2026');
+    await expect(byline.locator('time[datetime^="2026-07-02"]')).toHaveCount(1);
+    await expect(byline.locator('time[datetime^="2026-07-10"]')).toHaveCount(1);
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      `${aiPathPolishArticleTitle}. Prompted Psyche. https://promptedpsyche.com${aiPathPolishArticleRoute}`
+      `Mamczur, F. (2026, 2 lipca). ${aiPathPolishArticleTitle}. Prompted Psyche. https://promptedpsyche.com${aiPathPolishArticleRoute}`
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -596,10 +610,6 @@ test.describe('published articles', () => {
     await expect(page.locator('.article-hero-figure figcaption')).toContainText(
       'AI może skrócić drogę'
     );
-    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Przykład' })).toBeVisible();
-    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'W praktyce' })).toBeVisible();
-    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Granica' })).toBeVisible();
-    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Zatrzymaj się' })).toBeVisible();
     await expect(page.locator('[data-qa="key-passage"]')).toHaveCount(1);
     await expect(page.locator('[data-qa="practice-block"]')).toHaveCount(1);
     await expect(page.locator('.content-tags a[href="/pl/tags/ai-i-czlowiek/"]')).toBeVisible();
@@ -609,24 +619,38 @@ test.describe('published articles', () => {
     await expect(page.locator('.content-tags a[href="/pl/tags/ai-literacy/"]')).toBeVisible();
 
     const conceptLinks = page.locator('.prose a[href^="/pl/concepts/"]');
-    await expect(conceptLinks).toHaveCount(11);
+    await expect(conceptLinks).toHaveCount(10);
     await expect(page.locator('.prose a[href="/pl/concepts/epistemic-vigilance/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/calibrated-trust/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/model-output/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/oparcie-odpowiedzi-na-zrodlach/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/halucynacja-modelu/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/autorytet-algorytmiczny/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/nadmierne-poleganie-na-ai/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/human-ai-interaction/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/mental-model/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/cognitive-offloading/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/ai-literacy/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/sprawczosc-czlowieka/"]')).toBeVisible();
     await expect(page.locator('.prose')).toContainText('Źródła i dalsza lektura');
+    await expect(page.locator('h2:has-text("Źródła i dalsza lektura") + ul > li')).toHaveCount(18);
     await expect(
       page.locator(
         `.language-switcher a[href="${aiPathEnglishArticleRoute}"]`
       )
     ).toBeVisible();
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      'href',
+      `https://promptedpsyche.com${aiPathPolishArticleRoute}`
+    );
+    await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
+    const structuredDataText = await page
+      .locator('script[type="application/ld+json"]')
+      .evaluateAll((scripts) => scripts.map((script) => script.textContent ?? '').join('\n'));
+    expect(structuredDataText).toContain('"datePublished":"2026-07-02T');
+    expect(structuredDataText).toContain('"dateModified":"2026-07-10T');
+    expect(structuredDataText).not.toContain('"propertyID":"DOI"');
+    await expect(page.locator('body')).not.toContainText('18 czerwca 2026');
+    await expect(page.locator('body')).not.toContainText('Ten artykuł jest recenzowany');
+    await expect(page.locator('body')).not.toContainText('10.0000/placeholder');
     await expect(page.locator('body')).not.toContainText('nauce nie należy ufać');
     await expect(page.locator('body')).not.toContainText('AI zastępuje ekspertów');
     await expect(page.locator('body')).not.toContainText('źródła są niepotrzebne');
@@ -647,11 +671,9 @@ test.describe('published articles', () => {
     await page.goto(aiPathPolishArticleRoute);
 
     const promptBoxes = page.locator('.prompt-example');
-    await expect(promptBoxes).toHaveCount(3);
-    await expect(promptBoxes.nth(0)).toContainText('Nie pytaj tak');
-    await expect(promptBoxes.nth(1)).toContainText('Lepsze pytanie');
-    await expect(promptBoxes.nth(2)).toContainText('Mini-agent');
-    await expect(page.getByRole('button', { name: 'Kopiuj' })).toHaveCount(3);
+    await expect(promptBoxes).toHaveCount(1);
+    await expect(promptBoxes).toContainText('Przykładowy prompt');
+    await expect(page.getByRole('button', { name: 'Kopiuj przykładowy prompt' })).toHaveCount(1);
 
     await page.locator('.prompt-example--better .prompt-example__copy').click();
     await expect(page.locator('.prompt-example--better .prompt-example__copy')).toContainText(
@@ -660,13 +682,7 @@ test.describe('published articles', () => {
     const copiedPrompt = await page.evaluate(
       () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
     );
-    expect(copiedPrompt).toContain('Wypisz osobno: twierdzenia, źródła, założenia');
-
-    await page.locator('.prompt-example--agent .prompt-example__copy').click();
-    const copiedAgent = await page.evaluate(
-      () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
-    );
-    expect(copiedAgent).toContain('przewodnika po źródłach');
+    expect(copiedPrompt).toContain('Rozdziel tę odpowiedź na twierdzenia, źródła, dowody');
 
     const overflowingBoxes = await page.locator('.prompt-example').evaluateAll((boxes) =>
       boxes
@@ -834,19 +850,28 @@ test.describe('published articles', () => {
     await expect(inBrief.locator('summary.in-brief__summary')).toHaveText('TL;DR');
     await inBrief.locator('summary').click();
     await expect(inBrief.locator('.in-brief__body')).toBeVisible();
-    await expect(inBrief).toContainText('AI changes not only how quickly we receive answers');
+    await expect(inBrief).toContainText('Generative AI changes not only access to information');
     await expect(page.locator('body')).not.toContainText('In brief');
-    await expect(page.locator('.prose')).toContainText('AI enters between the question and the source');
-    await expect(page.locator('.prose')).toContainText('Better question');
+    await expect(page.locator('.prose')).toContainText('Abstract');
+    await expect(page.locator('.prose')).toContainText('Scope and method');
+    await expect(page.locator('.prose')).toContainText('When the epistemic path is compressed');
+    await expect(page.locator('.prose')).toContainText('Reconstruct the path from answer to evidence');
+    await expect(page.locator('.prose')).toContainText('Limits of this argument');
+    await expect(page.locator('.prose')).toContainText('compression of the epistemic path');
     await expect(page.locator('.prose')).toContainText('Nature');
     await expect(page.locator('.prose')).toContainText('Pearson');
     await expect(page.locator('.content-header h1')).not.toHaveText(
       'Have people stopped trusting science? The data tell a surprising story'
     );
-    await expect(page.locator('[data-qa="article-byline"]')).toContainText('By Feliks Mamczur');
+    const byline = page.locator('[data-qa="article-byline"]');
+    await expect(byline).toContainText('By Feliks Mamczur');
+    await expect(byline).toContainText('Published: July 2, 2026');
+    await expect(byline).toContainText('Updated: July 10, 2026');
+    await expect(byline.locator('time[datetime^="2026-07-02"]')).toHaveCount(1);
+    await expect(byline.locator('time[datetime^="2026-07-10"]')).toHaveCount(1);
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      `${aiPathEnglishArticleTitle}. Prompted Psyche. https://promptedpsyche.com${aiPathEnglishArticleRoute}`
+      `Mamczur, F. (2026, July 2). ${aiPathEnglishArticleTitle}. Prompted Psyche. https://promptedpsyche.com${aiPathEnglishArticleRoute}`
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -863,10 +888,6 @@ test.describe('published articles', () => {
     await expect(page.locator('.article-hero-figure figcaption')).toContainText(
       'AI can shorten the path'
     );
-    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Example' })).toBeVisible();
-    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'In practice' })).toBeVisible();
-    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Boundary' })).toBeVisible();
-    await expect(page.locator('.editorial-aside__label').filter({ hasText: 'Pause' })).toBeVisible();
     await expect(page.locator('[data-qa="key-passage"]')).toHaveCount(1);
     await expect(page.locator('[data-qa="practice-block"]')).toHaveCount(1);
     await expect(page.locator('.content-tags a[href="/tags/ai-and-humans/"]')).toBeVisible();
@@ -876,24 +897,38 @@ test.describe('published articles', () => {
     await expect(page.locator('.content-tags a[href="/tags/ai-literacy/"]')).toBeVisible();
 
     const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
-    await expect(conceptLinks).toHaveCount(11);
+    await expect(conceptLinks).toHaveCount(10);
     await expect(page.locator('.prose a[href="/concepts/epistemic-vigilance/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/calibrated-trust/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/model-output/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/grounding/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/hallucination/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/algorithmic-authority/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/overreliance/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/human-ai-interaction/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/mental-model/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/cognitive-offloading/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/ai-literacy/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/human-agency/"]')).toBeVisible();
     await expect(page.locator('.prose')).toContainText('Sources and further reading');
+    await expect(page.locator('h2:has-text("Sources and further reading") + ul > li')).toHaveCount(18);
     await expect(
       page.locator(
         `.language-switcher a[href="${aiPathPolishArticleRoute}"]`
       )
     ).toBeVisible();
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      'href',
+      `https://promptedpsyche.com${aiPathEnglishArticleRoute}`
+    );
+    await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
+    const structuredDataText = await page
+      .locator('script[type="application/ld+json"]')
+      .evaluateAll((scripts) => scripts.map((script) => script.textContent ?? '').join('\n'));
+    expect(structuredDataText).toContain('"datePublished":"2026-07-02T');
+    expect(structuredDataText).toContain('"dateModified":"2026-07-10T');
+    expect(structuredDataText).not.toContain('"propertyID":"DOI"');
+    await expect(page.locator('body')).not.toContainText('June 18, 2026');
+    await expect(page.locator('body')).not.toContainText('This article is peer-reviewed');
+    await expect(page.locator('body')).not.toContainText('10.0000/placeholder');
     await expect(page.locator('body')).not.toContainText('science should not be trusted');
     await expect(page.locator('body')).not.toContainText('AI replaces experts');
     await expect(page.locator('body')).not.toContainText('sources are unnecessary');
@@ -915,11 +950,9 @@ test.describe('published articles', () => {
     await page.goto(aiPathEnglishArticleRoute);
 
     const promptBoxes = page.locator('.prompt-example');
-    await expect(promptBoxes).toHaveCount(3);
-    await expect(promptBoxes.nth(0)).toContainText('Do not ask this');
-    await expect(promptBoxes.nth(1)).toContainText('Better question');
-    await expect(promptBoxes.nth(2)).toContainText('Mini-agent');
-    await expect(page.getByRole('button', { name: 'Copy' })).toHaveCount(3);
+    await expect(promptBoxes).toHaveCount(1);
+    await expect(promptBoxes).toContainText('Example prompt');
+    await expect(page.getByRole('button', { name: 'Copy example prompt' })).toHaveCount(1);
 
     await page.locator('.prompt-example--better .prompt-example__copy').click();
     await expect(page.locator('.prompt-example--better .prompt-example__copy')).toContainText(
@@ -928,13 +961,7 @@ test.describe('published articles', () => {
     const copiedPrompt = await page.evaluate(
       () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
     );
-    expect(copiedPrompt).toContain('List separately: claims, sources, assumptions');
-
-    await page.locator('.prompt-example--agent .prompt-example__copy').click();
-    const copiedAgent = await page.evaluate(
-      () => (window as Window & { __copiedPrompt?: string }).__copiedPrompt
-    );
-    expect(copiedAgent).toContain('guide to sources');
+    expect(copiedPrompt).toContain('Separate this answer into claims, sources, evidence');
 
     const overflowingBoxes = await page.locator('.prompt-example').evaluateAll((boxes) =>
       boxes
@@ -1210,7 +1237,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). The model does not remember. It works with context. Prompted Psyche. https://promptedpsyche.com/articles/the-model-does-not-remember-it-works-with-context/'
+      'Mamczur, F. (2026, March 28). The model does not remember. It works with context. Prompted Psyche. https://promptedpsyche.com/articles/the-model-does-not-remember-it-works-with-context/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -1247,7 +1274,7 @@ test.describe('published articles', () => {
       doiUrl
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026). What changes when AI has a body? Prompted Psyche. https://doi.org/10.5281/zenodo.21296384'
+      'Mamczur, F. (2026, July 10). What changes when AI has a body? Prompted Psyche. https://doi.org/10.5281/zenodo.21296384'
     );
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'This article is licensed under CC BY 4.0'
