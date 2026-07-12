@@ -124,7 +124,7 @@ test.describe('author entity structured data', () => {
     expect(serialized).not.toMatch(privatePatterns);
   });
 
-  test('keeps the newest Polish-only article connected to the Polish author page', async ({ page }) => {
+  test('connects the revised Polish AI fears article to its author and revision date', async ({ page }) => {
     await page.goto('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
 
     const items = await readStructuredData(page);
@@ -142,8 +142,39 @@ test.describe('author entity structured data', () => {
         url: 'https://promptedpsyche.com/pl/about/',
         sameAs: [orcidUrl]
       },
-      inLanguage: 'pl'
+      inLanguage: 'pl',
+      image: 'https://promptedpsyche.com/images/articles/human-ai-workflow-judgment.webp'
     });
+    expect(article?.datePublished).toMatch(/^2026-07-04T/);
+    expect(article?.dateModified).toMatch(/^2026-07-12T/);
+    expect(article?.identifier).toBeUndefined();
+    expect(serialized).not.toMatch(privatePatterns);
+  });
+
+  test('connects the revised English AI fears article to its author and revision date', async ({ page }) => {
+    await page.goto('/articles/are-we-afraid-of-ai-or-of-ourselves/');
+
+    const items = await readStructuredData(page);
+    const article = findStructuredData(items, 'Article');
+    const serialized = JSON.stringify(items);
+
+    expect(article).toMatchObject({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Are we afraid of AI, or of ourselves?',
+      url: 'https://promptedpsyche.com/articles/are-we-afraid-of-ai-or-of-ourselves/',
+      author: {
+        '@type': 'Person',
+        name: 'Feliks Mamczur',
+        url: 'https://promptedpsyche.com/about/',
+        sameAs: [orcidUrl]
+      },
+      inLanguage: 'en',
+      image: 'https://promptedpsyche.com/images/articles/human-ai-workflow-judgment.webp'
+    });
+    expect(article?.datePublished).toMatch(/^2026-07-04T/);
+    expect(article?.dateModified).toMatch(/^2026-07-12T/);
+    expect(article?.identifier).toBeUndefined();
     expect(serialized).not.toMatch(privatePatterns);
   });
 });

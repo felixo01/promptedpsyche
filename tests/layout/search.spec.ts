@@ -182,7 +182,7 @@ test.describe('local search', () => {
     await expect(page.locator('[data-search-results]')).toContainText('Pojęcie');
   });
 
-  test('finds the expanded Polish AI fears article by title and threat framing terms', async ({ page }) => {
+  test('finds the revised Polish AI fears article by title and responsibility framing', async ({ page }) => {
     await page.goto('/pl/search/');
 
     const input = page.getByPlaceholder('Szukaj tematu, pojęcia albo frazy');
@@ -193,14 +193,14 @@ test.describe('local search', () => {
     await input.fill('czy boimy');
     await expect(articleLink).toBeVisible();
 
-    await input.fill('zagrozenia');
+    await input.fill('moralne alibi');
     await expect(articleLink).toBeVisible();
 
-    await input.fill('AI');
+    await input.fill('odpowiedzialnosc');
     await expect(articleLink).toBeVisible();
   });
 
-  test('finds the English AI fears article by title and threat framing terms', async ({ page }) => {
+  test('finds the revised English AI fears article by title and responsibility framing', async ({ page }) => {
     await page.goto('/search/');
 
     const input = page.getByPlaceholder('Search by topic, concept or phrase');
@@ -211,16 +211,11 @@ test.describe('local search', () => {
     await input.fill('afraid');
     await expect(articleLink).toBeVisible();
 
-    await input.fill('harmful intentions');
-    await expect(articleLink).toBeVisible();
-
-    await input.fill('war');
-    await expect(articleLink).toBeVisible();
-
-    await input.fill('surveillance');
+    await input.fill('moral alibi');
     await expect(articleLink).toBeVisible();
 
     await input.fill('responsibility');
     await expect(articleLink).toBeVisible();
+
   });
 });
