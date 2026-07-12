@@ -338,3 +338,5 @@ The new edition is a research-informed conceptual essay and narrative synthesis 
 The final bibliography contains 28 verified sources: 26 peer-reviewed publications and two reports, with no preprints. The article also preserves the counterargument around genuine responsibility gaps, symbolic human oversight and moral crumple zones.
 
 No DOI, DOI placeholder, Zenodo record or PDF claim was added. Existing indexing, RSS, sitemap, rights-notice, citation and draft-safety behavior remain unchanged.
+
+On 2026-07-12, this revision also received a final internal claim-level scientific audit, bibliographic audit, bilingual terminology audit and EN/PL equivalence audit. This was editorial quality assurance, not external peer review or scientific validation.

@@ -718,6 +718,7 @@ test.describe('published articles', () => {
     await inBrief.locator('summary').click();
     await expect(inBrief.locator('.in-brief__body')).toBeVisible();
     await expect(inBrief).toContainText('Opowieść o samodzielnie działającej, złej AI');
+    await expect(inBrief).toContainText('W ograniczonych zadaniach eksperymentalnych');
     await expect(page.locator('body')).not.toContainText('TL;DR');
     await expect(page.locator('.prose')).toContainText('Abstrakt');
     await expect(page.locator('.prose')).toContainText('Zakres i metoda');
@@ -789,6 +790,14 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose')).toContainText(
       'Nie stanowią zwalidowanych konstruktów, narzędzia diagnostycznego ani skali.'
     );
+    await expect(page.locator('.prose')).toContainText('mechanizmy moralnego odłączenia');
+    await expect(page.locator('.prose')).toContainText(
+      'nie będąc podmiotami moralnymi w ludzkim sensie'
+    );
+    await expect(page.locator('.prose')).toContainText(
+      'Powinniśmy bać się nie tylko tego, co AI może zrobić'
+    );
+    await expect(page.locator('.prose')).not.toContainText('ludzkiego życia moralnego');
     await expect(page.locator('.prose')).not.toContainText('Ten recenzowany esej');
   });
 
@@ -802,6 +811,7 @@ test.describe('published articles', () => {
     await inBrief.locator('summary').click();
     await expect(inBrief.locator('.in-brief__body')).toBeVisible();
     await expect(inBrief).toContainText('The story of an independently evil AI');
+    await expect(inBrief).toContainText('In bounded experimental tasks');
     await expect(page.locator('body')).not.toContainText('W skrócie');
     await expect(page.locator('.prose')).toContainText('Abstract');
     await expect(page.locator('.prose')).toContainText('Scope and method');
@@ -881,6 +891,13 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose')).toContainText(
       'They are not validated constructs, a diagnostic taxonomy or a scale.'
     );
+    await expect(page.locator('.prose')).toContainText(
+      'without being moral agents in the human sense'
+    );
+    await expect(page.locator('.prose')).toContainText(
+      'We should fear not only what AI may do'
+    );
+    await expect(page.locator('.prose')).not.toContainText('human moral life');
     await expect(page.locator('.prose')).not.toContainText('This peer-reviewed essay');
   });
 
