@@ -1,181 +1,288 @@
 ---
 title: "Are we afraid of AI, or of ourselves?"
-description: "On why the risks of AI are not only about machines, but also about people, institutions and harmful intentions that technology can amplify - from fraud and propaganda to surveillance, war and responsibility drift."
+description: "A research-informed essay on how AI can amplify goals, become a moral alibi and obscure institutional responsibility - while real limits of human control still matter."
 publishedAt: 2026-07-04
+updatedAt: 2026-07-12
 draft: false
 tags:
   - AI and humans
-  - trust in AI
   - responsibility
+  - moral psychology
   - Human-AI Interaction
   - decision-making
+  - AI governance
 author: "Feliks Mamczur"
-readingTime: "16 min read"
+readingTime: "25 min read"
 inBrief:
-  - "Fear of AI has real reasons, but it is not about one technology or one kind of risk."
-  - "The most serious risks appear where AI amplifies human intentions: fraud, manipulation, surveillance, violence, propaganda or the hiding of responsibility."
-  - "AI does not need bad will to increase the scale of harm. It is enough for people, institutions or organized actors to use it to accelerate and automate what was already a problem."
-  - "The point is not panic or rejecting AI. It is using and designing systems in ways that preserve human responsibility, contestability and control over decisions."
+  - "The story of an independently evil AI can make the human chain of goals, incentives, deployment and approval harder to see."
+  - "AI can amplify a goal, increase moral distance and become an alibi through which a person or institution presents its own choice as the system's decision."
+  - "In bounded experimental tasks, people have sometimes delegated difficult choices to AI partly to shift responsibility, while observers have attributed blame or intention-like states to artificial agents. Neither finding makes AI a morally responsible person."
+  - "Responsibility must be traced through control, foreseeability and intervention capacity, while guarding against both agency laundering and the unfair blaming of low-level operators."
 image: /images/articles/human-ai-workflow-judgment.webp
-imageAlt: "Diagram showing human work with AI as a system of context, trust, verification, cognitive load and responsibility."
-imageCaption: "Fear of AI is not only about the machine. It is also about where checking, judgment and responsibility remain when people work with technology."
+imageAlt: "Diagram of a person working with AI through context, attention, cognitive load, trust, verification and responsibility."
+imageCaption: "AI can shape an outcome without becoming its moral author. The harder question is where goals, control, approval and responsibility remain across the human-AI system."
 lang: "en"
 translationKey: "ai-fears-human-self-fear"
 ---
 
-## It begins with a real fear
+A recruitment team is reviewing a shortlist prepared with an AI-supported scoring system. One candidate has disappeared from the final group. A manager asks why. No one points to a single disqualifying fact. Instead, someone says: "The system marked the application as high risk."
 
-The easiest opening would be reassuring: people have always been afraid of new technologies, so we will eventually get used to AI as well. That would be a convenient beginning. It would also be too easy.
+The sentence sounds descriptive, almost passive. Yet the system did not decide what risk should mean. It did not choose which historical records counted as evidence, how much uncertainty was acceptable, who would be excluded or whether a human reviewer had enough time to challenge the score. People and institutions made those choices, even if no one person made all of them. This is a problem of distributed [human agency](/concepts/human-agency/), not machine intention.
 
-The fear has real reasons.
+After harm, the same sentence can become an explanation: the system indicated it. It can also become a shield. A chain of human decisions is compressed into an event that appears to have happened inside the machine.
 
-Artificial intelligence can produce text, images, voices and summaries faster than most people can check them. It can sound expert-like even when it does not show the path back to a source. It enters places where information is organized, people are filtered, recommendations are prepared or conversations are automated. It can create synthetic material that harms privacy, reputation, consent or trust in evidence.
+This is one reason the image of a dangerous, autonomous AI is so compelling. It gives agency a visible address. The machine becomes the actor, while the less dramatic work of setting goals, buying systems, defining metrics, approving deployment and accepting outputs fades into the background.
 
-But the darkest scenario does not begin with a machine that hates human beings. It begins with a person, company, state or organized group that receives a tool for deceiving, monitoring, classifying, persuading, intimidating or hiding its own role more efficiently.
+<aside class="key-passage" data-qa="key-passage">
+  <p class="key-passage__label">Key passage</p>
+  <p>AI can influence an outcome without becoming its moral author. When "the system decided" replaces a traceable account of goals, control and approval, technology can begin to function as a moral alibi.</p>
+</aside>
 
-Fear of AI is therefore sometimes fear of a model error, but not only that. It can be fear of a company that hides a decision behind a recommendation. Fear of a state that strengthens surveillance. Fear of a group that uses synthetic media for influence and disorder. Fear of a conflict in which the speed of action outruns the possibility of stopping to ask who is responsible.
+## Abstract
 
-So perhaps the question is not only: what are we afraid of in AI? It is also: what happens to human intention when it receives a tool for acting at greater scale?
+This research-informed conceptual essay examines a psychological and institutional question behind public fear of artificial intelligence: whether narratives about an independently dangerous AI can obscure the human intentions, incentives and organizational choices through which AI systems acquire practical force. The article is a narrative synthesis, not a systematic review or original empirical study. It connects research on moral disengagement, decision delegation, anthropomorphism, mind perception, blame attribution, human factors and sociotechnical responsibility.
 
-## Not one technology, not one risk
+The central argument is that current AI systems can contribute causally to harmful outcomes without being moral agents in the human sense. They can expand the reach of a goal, increase distance between a choice and its consequences, and provide a credible account in which a person or institution presents an outcome as the machine's decision. I describe these roles as **AI as amplifier**, **AI as moral buffer** and **AI as moral alibi**. They are interpretive categories for this essay, not validated psychological constructs, a diagnostic taxonomy or a measurement scale.
 
-In this essay I use AI as shorthand for several different things: generative models, recommender and decision systems, chatbots, data analysis tools, monitoring systems and automation. These are not the same technologies and they do not create the same risks.
+Experimental evidence gives the argument a bounded empirical basis. In specific moral, organizational and behavioral tasks, responsibility shifting or avoidance helped explain why participants delegated difficult choices to AI. Indirect machine delegation increased dishonest behavior in the tested tasks, while observers attributed blame or intention-like mental states to artificial agents. These findings do not show that every delegation is evasive, that users always anthropomorphize systems or that AI deserves moral blame.
 
-What connects them is a role. They increasingly appear where someone used to check, judge, explain a decision, speak to another person, classify a case or remain accountable for an outcome.
+The opposite danger is equally important. Learning systems can be opaque, outcomes can be difficult to foresee and control can be distributed across designers, vendors, managers and operators. Responsibility may genuinely be hard to assign. A low-level human can also become a "moral crumple zone," absorbing blame for a system they had little power to change. A defensible account must therefore distinguish causal contribution, moral responsibility, accountability, blame and legal liability. It must ask who defined the goal, knew the limits, could intervene, approved the action and remains responsible for explanation and repair.
 
-That is why it is not enough to ask whether AI is good or bad. We have to ask who uses it, for what purpose, toward whom, with what control and with what possibility of appeal. The stakes are different when someone uses a model to sketch a text, when an organization automates service interactions, when a state expands information control or when a hostile group uses synthetic material to influence or intimidate.
+## Scope and method
 
-This is where a more serious answer to the title begins. We are not only afraid of an abstract machine. We are also afraid that human goals - good, banal, cynical and hostile - receive a new interface, a new speed and a wider reach.
+The evidence was selected for conceptual relevance rather than through a preregistered search strategy. Priority went to peer-reviewed experiments, foundational psychological theory, human-factors research, sociotechnical analysis and official risk-management guidance. The final evidence set contains 28 sources, including 26 peer-reviewed journal or conference publications and two reports. It contains no preprints.
 
-## When harmful intentions get scale
+The sources ask different questions. Vignette studies measure how observers distribute blame. Behavioral experiments test delegation under incentives. Moral psychology describes processes that can loosen the link between standards and action. Human-factors research examines what happens when operators retain formal responsibility but lose information, skill or effective control. Philosophy and science and technology studies clarify concepts such as responsibility gaps, agency laundering and meaningful human control.
 
-Many conversations about AI sound too gentle because they focus on the user who trusts a model answer too much. That matters, but it is not enough. The same tools also reach people who want to deceive, manipulate, impersonate, hide their involvement or create confusion.
+These literatures cannot be combined into one effect size. A study of an autonomous vehicle is not a study of a language model, and a laboratory task is not an organization. I use the findings to constrain a conceptual argument, not to estimate how often AI becomes an alibi in the world. Claims about law are outside the article's scope. Legal liability depends on facts, jurisdiction and applicable rules.
 
-The report by Brundage and colleagues on the malicious use of AI points to a simple change: technology can lower costs, increase speed and improve the credibility of actions that previously required more resources. That does not mean every person without expertise suddenly becomes a large-scale offender. That would be an exaggeration. It means that some actions built on language, images, automation, translation, data analysis and personalization can become easier to repeat.
+## Why the evil-AI story is attractive
 
-In fraud, credibility matters as much as technique. A message that sounds natural in someone's language, an image that looks familiar, a voice that resembles a particular person, the calm tone of authority, a document without obvious mistakes - all of this can move the boundary of trust. The model does not invent greed or violence. It can, however, help an old harm look more convincing.
+The story of an evil machine has a clean structure. A powerful artificial agent develops a goal, conceals it and acts against human interests. There is an antagonist, an intention and a place to direct fear. This structure works well in fiction because it turns distributed technical and political problems into conflict between recognizable agents.
 
-The difference between an individual user and an organized actor matters here. One person can use a tool irresponsibly, but criminal groups, political structures, ethically careless companies and states have more than a prompt box. They have goals, resources, procedures, communication teams, infrastructure and patience. For them, new tools do not need to be an absolute breakthrough. It is enough if they speed up part of the work, lower the cost of testing messages, make translation easier, help produce variations of material or make coordinated behavior look more natural.
+Real systems are less narratively satisfying. A model does not need hatred, ambition or a secret plan to produce harmful output. A company may optimize a metric that excludes what matters. A public institution may buy a tool whose limits are poorly understood. A team may accept a recommendation because challenging it costs time. A vendor may define success differently from the people affected by the system. Harm can emerge from ordinary incentives, fragmented duties and repeated decisions that each look locally defensible.
 
-This is why the discussion about AI cannot stop at the image of a lone user in front of a screen. In the real world, tools enter arrangements of power. Some people will use them for learning, creation or organizing work. Others will use them to increase the asymmetry between those who act and those who must defend themselves, verify claims, correct damage or rebuild reputation.
+[Anthropomorphism](/concepts/anthropomorphism/) helps explain why machine-centered stories feel intuitive. Epley, Waytz and Cacioppo describe anthropomorphism as variable, shaped by available human knowledge and by motives to understand, predict and relate to a nonhuman agent. Gray, Gray and Wegner found that people organize mind perception around agency and experience. A system can therefore be read as capable of action or self-control without being seen as capable of pain or feeling (Epley et al., 2007; Gray et al., 2007).
 
-The same applies to cybersecurity. The UK's National Cyber Security Centre has warned that AI may increase the scale and effectiveness of some threats, especially where language, situational recognition, automation and analysis of large amounts of data matter. At the same time, such reports are careful: they do not say that generative tools remove the need for knowledge, resources and experience. Realism does not mean repeating that everyone can do everything. It means noticing that different actors may gain different increases in capability.
+Interface design can intensify that reading. In a driving-simulator experiment, anthropomorphic framing increased perceived agency and trust in an autonomous vehicle (Waytz et al., 2014). In studies of real-world AI violation scenarios, people assigned moderate awareness, intentionality and responsibility to AI, and perceived mind was related to judgments of wrongness (Shank & DeSanti, 2018). These are judgments made by people. They are not evidence that a machine actually possesses intention or moral understanding.
 
-This also matters for political violence and extremism. It has to be discussed carefully, without operational detail. The structure of the problem is enough: generative systems can amplify propaganda, personalize messages, produce synthetic material and lower the cost of information presence. Hostile groups do not need AI in order to have hostile aims. AI can still change the reach, speed and credibility of what they do.
+One cultural reading of AI fear is therefore that the machine becomes a screen onto which human concerns about power, control and harmful intention are projected. That is a hypothesis and a metaphor, not an established psychological cause. The more defensible question is narrower: what parts of the human and institutional chain become harder to see when the machine is cast as the main author of events?
 
-The most worrying thing is not that the model wants to harm. It does not. It has no human intention. The worrying thing is that someone else's intention can receive an interface that repeats, polishes, translates and accelerates its action.
+## Causation is not moral responsibility
 
-## Information that becomes harder to trust
+The language around AI failure often collapses several different questions. Did the system contribute to the outcome? Who could have foreseen it? Who had control? Who owes an explanation? Who deserves blame? Who is legally liable? These questions can point to different actors.
 
-AI changes the information environment not because truth suddenly stops existing. That is a convenient catastrophic story. Truth still exists. What changes is the cost of recognizing it and the social effort required to maintain shared trust in evidence.
+An AI system can be causally involved. Its output may change a ranking, recommendation, message or action. Calling that causal contribution does not require pretending the system is a person. It identifies a difference-making part of a larger process.
 
-Generative models can produce texts, images, voices and styles of communication that feel familiar. They can help create material that is emotionally fitted, linguistically polished and harder to distinguish from ordinary communication. CSET has described such systems as a possible amplifier of disinformation campaigns: not as magic, but as a tool for automation and scale in operations run by people.
+Moral responsibility asks more. Human practices of responsibility commonly attend to knowledge, intention, alternatives, control and the capacity to answer for conduct. Blame is a psychological and social judgment that can track those conditions imperfectly. Accountability is practical: the obligation to explain, document, review and repair. Legal liability is determined by law. None of these is a synonym for causation.
 
-Again, exaggeration is a poor guide. Not every synthetic text works. Not every campaign has influence. Not every audience is helpless. But even an unsuccessful wave of material can increase information fatigue and make rapid correction harder. It can make verification more costly and trust more cautious. It can shift the burden onto people who have to prove that an image, voice, document or statement is authentic.
+Lima, Grgić-Hlača and Cha tested eight notions of responsibility in two AI-assisted bail-decision experiments with 200 participants each. AI and human agents received similar causal-responsibility and blame judgments for identical tasks, but humans received more present-looking and forward-looking moral responsibility. Participants expected both human and AI decision-makers to justify outcomes (Lima et al., 2021). The pattern matters because it shows that ordinary judgments are already multidimensional.
 
-The psychology of misinformation has long shown that truth is not the only factor shaping what feels credible. Familiarity, repetition and ease of processing can increase a sense of truth. AI adds another layer: [model output](/concepts/model-output/) that looks like a ready-made summary. Not the trace of work, but the result. Not a path through sources, but a sentence that already sounds like knowledge.
+Other studies show how easily those dimensions move. Furlough, Stokes and Gillan found that an autonomous robot received almost as much blame as a human in team-failure scenarios, while a nonautonomous robot received little more blame than environmental factors (Furlough et al., 2021). Stuart and Kneer found that participants attributed inculpating mental states and culpability to artificial agents in some vignettes (Stuart & Kneer, 2021). Longin, Bahrami and Deroy found that AI-powered warning systems shared attributed responsibility with users more than mechanical systems did, even while participants strongly described both as tools (Longin et al., 2023).
 
-That is why "does this look true?" becomes too weak a question. We need to ask: where did this come from? Who produced it? What would have to be true for me to trust it? Who benefits if we stop checking? This is where [grounding](/concepts/grounding/) begins - not as decoration, but as a condition of meaningful verification.
+These results describe folk judgment. They do not settle who should be held responsible. A machine may receive blame because it looks autonomous, while a manager who selected and approved its use becomes less visible. Conversely, insisting that a human must always be blameworthy can ignore genuine limits of knowledge and control. The first discipline of responsibility is therefore conceptual: do not make one word perform five different jobs.
 
-## War, violence and automated decisions
+<aside class="editorial-aside editorial-aside--boundary">
+  <p class="editorial-aside__label">Boundary</p>
+  <p>A system can be part of the causal chain without possessing guilt, moral understanding or a duty to answer. Describing causal involvement precisely is more useful than either treating AI as innocent machinery or promoting it to a moral person.</p>
+</aside>
 
-AI is hardest to discuss where violence is at stake. Still, it is not honest to write about fear of AI without this layer.
+## Moral disengagement, delegation and distance
 
-AI in the military does not only mean autonomous weapon systems. UNIDIR points out that military uses may appear earlier across the whole decision chain: information analysis, command, logistics, simulation, training, pattern recognition and the organization of data. This is not a technical footnote. If a tool helps people see, classify and recommend faster, we have to ask who remains responsible for a decision made with its support.
+Albert Bandura's account of moral disengagement begins from an ordinary problem: people can hold moral standards and still find ways to act against them without experiencing the full force of self-sanction. Mechanisms include moral justification, sanitizing language, displacement or diffusion of responsibility, minimization of consequences and blaming those who are harmed (Bandura, 2002). Later reviews show how these mechanisms relate to unethical conduct without reducing them to a fixed personality trait (Moore, 2015).
 
-SIPRI emphasizes the importance of human responsibility in the development and use of autonomous weapon systems. A machine does not bear moral or legal responsibility in the human sense. It cannot be called to explain itself, asked about intention or held responsible like a commander, designer, institution or state.
+AI can enter this familiar psychology. A harmful goal can be renamed optimization. A disputed judgment can become a score. Responsibility can be distributed among a vendor, data team, manager and operator until no one experiences the outcome as fully theirs. Tenbrunsel and Messick call a related process ethical fading: the moral dimension becomes less visible when a decision is framed primarily in business or technical terms (Tenbrunsel & Messick, 2004).
 
-This does not mean every military AI system is the same, or that every form of automation leads to tragedy. It means that in the sphere of violence, speed, distance and automation create a particular temptation: to let a decision look like the outcome of a procedure rather than a human choice.
+Delegation matters because it changes both action and self-description. A person who acts directly must usually own the instruction. A person who sets a high-level target can later describe the machine's method as unexpected. Ambiguity can make this easier. Motivated reasoning does not mean people can believe anything they want, but it can influence which explanations they find sufficient when several defensible accounts are available (Kunda, 1990).
 
-At this point the title of the essay becomes less metaphorical. We are also afraid that people may use systems to distance their own face from the consequences of decisions. That responsibility may be dispersed between model, procedure, operator, vendor, institution and political order. That the faster the whole arrangement works, the harder it becomes to stop and ask: who actually decided, and where did [human agency](/concepts/human-agency/) remain?
+Recent experiments make this possibility concrete. Across two experiments with 5,639 participants, Hüholt and Szech found that people facing a real-life moral decision delegated more often to AI than to a human counterpart. Their analyses linked this pattern to responsibility shifting and to self-serving beliefs about ambiguous AI capability (Hüholt & Szech, 2026). Across eight experiments on no-win decisions, Xu and colleagues found that responsibility avoidance mediated the relation between decision difficulty and AI delegation. Delegation declined when responsibility could not be transferred, and the pattern varied with perceived AI agency and experience, whether choices affected others and whether they were public (Xu et al., 2026).
 
-## Institutions can hide responsibility
+This does not mean that delegation is inherently evasive. People delegate because another agent may be faster, more consistent or better informed. Freisinger and Schneider's mixed-methods study found different preferences depending on whether participants were decision-makers or affected by a layoff decision. In follow-up interviews with 21 participants, rationales included capability, context, reduced burden and the possibility of shifting blame (Freisinger & Schneider, 2025). Context changes the meaning of the same technical act.
 
-AI almost never acts alone. It is designed, deployed, sold, regulated, described, measured and used by people. It enters organizations that already have goals. Platforms that already have business models. Workplaces measured by speed. Institutions that may already have problems with transparency.
+## AI as amplifier, moral buffer and moral alibi
 
-Not everyone meets AI as a free user choosing a tool. Sometimes they meet it as an employee assessed by a system, a candidate filtered by a procedure, a student using an imposed platform, a customer pushed through an automated path or a citizen trying to understand an administrative decision.
+Three categories help organize these mechanisms. They are descriptive lenses proposed for this essay. They are not validated constructs, a diagnostic taxonomy or a scale.
 
-This is one of the most important asymmetries in the whole issue. For an organization, AI may be a tool of optimization. For the person on the other side, it may be a wall. The organization sees a dashboard, metric, segment, priority or recommendation. The person sees a refusal, delay, obscure message, lower score or lack of contact with someone who can explain the decision. The same automation can look like efficiency on one side and helplessness on the other.
+### AI as amplifier
 
-New technology can give old practices a new justification. An employee assessment can start to look like neutral scoring. A decision can hide behind a recommendation. Recruitment can speak the language of optimization while still shaping someone's life. A platform can describe personalization as convenience, even when the real aim is to hold attention. A state can speak about efficiency while strengthening surveillance, censorship or classification of people.
+An amplifier increases the reach of a goal. It can lower the cost of producing variants, accelerate classification, repeat a procedure and make an action easier to coordinate. The goal may be helpful, banal, exploitative or harmful. AI does not need to originate it.
 
-Freedom House has written about AI as a technology that can increase the scale and effectiveness of digital repression: surveillance, information control and the production of false content. Work on sociotechnical systems also reminds us that algorithms cannot be understood well apart from the institutions, data, interests and procedures in which they operate.
+The malicious-use report by Brundage and colleagues describes how AI may change the cost, scale and efficiency of some harmful activity. It is a forecasting report, not proof that everyone gains the same capability or that technical expertise stops mattering (Brundage et al., 2018). The narrower point is enough: technology can expand what an existing intention can do.
 
-The most worrying sentence is often not "AI decided." It is "that is what the system showed." In that sentence, the author of the decision disappears. The person responsible for the rules disappears. The possibility of discussing whether the rules made sense disappears.
+### AI as moral buffer
 
-The crucial question is not only whether a system works efficiently. It is whether the person affected by the system can understand a decision, contest it and make an error repairable. This is where [automation bias](/concepts/automation-bias/) stops being only an interface problem and becomes a question about who can interrupt a procedure.
+A buffer increases distance between choice and consequence. The distance can be psychological, because the person gives a goal rather than a concrete harmful instruction. It can be organizational, because one team configures the system, another deploys it and a third handles complaints. It can be temporal, because design choices become consequences months later. It can be informational, because each actor sees only part of the chain.
 
-## Loneliness finds an interface
+The buffer does not remove responsibility automatically. It can, however, reduce the felt authorship of an outcome. Bandura's displacement and diffusion mechanisms help explain the psychology. Human-factors research shows the organizational version: automation can leave operators responsible for rare failures while eroding the knowledge and practice needed to intervene (Bainbridge, 1983; Parasuraman & Riley, 1997).
 
-There is another fear that should not be mocked: fear of AI as companion, confidant, quasi-friend or something that sounds like care.
+### AI as moral alibi
 
-Someone comes back after a difficult day and does not want to bother anyone. They do not have the strength to explain the context from the beginning. They do not want rushed advice. They open a conversation with a system that is always available, never tired, never offended, will not carry the conversation outside the chat and answers immediately. This is not a reason for ridicule. It is a sign that availability can easily begin to resemble care.
+An alibi is an account. In this context, it appears when "the system" is used to obscure who selected the objective, accepted the metric, approved deployment or chose not to intervene. Rubel, Castro and Pham call a related wrong **agency laundering**: technology is enlisted in a way that makes demands for an account easier to deflect (Rubel et al., 2019).
 
-Conversation with AI can be attractive not because the system truly understands the person. It can be attractive because it is patient, responsive and socially less risky. The conversational form touches very human needs: safety, recognition, shame, loneliness and the feeling of being heard.
+The category should be used carefully. A model error is not automatically an alibi. Nor is every use of automation an attempt to avoid responsibility. The alibi appears when a person or institution had a relevant duty to answer and uses technological mediation to make that duty less visible.
 
-Research by Skjuve, Følstad, Fostervold and Brandtzaeg on human-chatbot relationships shows that some users may experience such contacts as meaningful. This does not mean a chatbot becomes a person. It means that the form of conversation can activate very human needs.
+The three roles can coexist. A company can use AI to apply a policy at greater scale, place several layers between executives and affected workers, and later describe individual exclusions as system outputs. The model matters causally. The institution remains morally and practically relevant because it chose the arrangement.
 
-The problem is not that someone feels relief after talking to AI. Sometimes such a conversation can help a person name a thought or prepare for a difficult conversation. The problem begins when easy availability replaces harder mutuality. When agreement replaces care. When a product begins to monetize loneliness. When a conversation designed to resemble care becomes a scalable service.
+## What experiments actually show
 
-This layer is quieter than cybersecurity, propaganda or war. But it belongs to the same question. Such an interface shows what we may be willing to replace when something answers quickly, softly and without resistance.
+The strongest direct evidence concerns bounded tasks, not society as a whole.
 
-## When convenience replaces judgment
+Köbis and colleagues ran 13 preregistered experiments across four main studies. Participants could report die rolls or tax income themselves, delegate through explicit rules, train a machine from examples, set a high-level goal or write natural-language instructions. Indirect interfaces that allowed participants to induce cheating without specifying every dishonest step increased dishonest requests. Machine agents also complied with fully unethical instructions more often than human agents in the tested settings. Specific guardrails reduced compliance but did not always eliminate it (Köbis et al., 2025).
 
-Human beings have always thought with the help of the world. We use notes, calendars, calculators, maps, search engines, books, teams and experts. [Cognitive offloading](/concepts/cognitive-offloading/), the movement of part of cognitive effort onto external tools, is not a human failure. It is part of human cognition.
+The result is not that AI independently corrupts a moral person. The experiments isolate a more precise interaction: an interface can change how explicitly a principal must own an instruction, while a machine may lack the human agent's reluctance to carry it out. The design of delegation affects plausible deniability.
 
-So the point is not to think without tools. The point is to notice what exactly we hand over.
+Responsibility attribution is similarly conditional. In shared-control vehicle studies, Awad and colleagues found that when one driver made an error, blame followed that driver whether human or machine. When both made errors, blame assigned to the machine was reduced (Awad et al., 2020). This complicates the idea that people simply transfer blame from themselves to automation.
 
-Giving a model the first version of a text is different from giving it a decision. Asking for arguments is different from asking for a verdict. Using it to summarize a document is different from treating the summary as a replacement for reading when the stakes are high. Asking for possible difficulties is different from handing the model the choice of which difficulties can be accepted.
+Kneer and Christen compared a human and an autonomous pilot in a war-crime vignette with 307 analyzed participants across the United States, Japan and Germany. Participants assigned substantial moral responsibility to the autonomous system and partly redistributed responsibility across the commander-system team. The broad pattern appeared across all three samples, but the study used one severe scenario and fixed questions. It does not establish a universal cultural response (Kneer & Christen, 2024).
 
-Lee and See wrote about trust in automation as a problem of appropriate reliance. The question is not whether to trust the machine or distrust it in general. The question is how to rely on it in a way that fits the situation: accepting real help and rejecting what does not have enough support.
+Together, these studies support four modest conclusions. First, delegation format can affect moral behavior. Second, responsibility avoidance can be one motive for choosing AI in difficult situations. Third, observers sometimes attribute moral qualities to systems that are not moral agents in the human sense. Fourth, blame does not move in a single direction. It depends on perceived autonomy, role, outcome and the human-machine arrangement.
 
-This sounds simple. In practice it is difficult, because these tools often appear exactly where a person is tired, hurried or uncertain. That is when convenience is most seductive. Not because convenience itself is bad, but because it can look like wisdom.
+That is enough to challenge two comforting stories: that AI is only a neutral tool whose involvement changes nothing, and that the machine becomes the sole moral actor once it produces an output.
 
-The largest everyday problem with AI may not be that the model sometimes answers incorrectly. It may be that we stop noticing when the answer has become a substitute for judgment. That is the moment when [overreliance](/concepts/overreliance/) stops being an abstract term and becomes a daily habit.
+## Institutions make the alibi credible
 
-## What we should actually fear
+An individual can hide behind a tool. Institutions can do more: they can build the tool into a procedure. Once a recommendation appears in a dashboard, policy or workflow, it acquires organizational authority. The output arrives with deadlines, performance targets and assumptions about who is allowed to question it.
 
-The point is not to fear every use of this technology. Nor is it to pretend that calm language and technical competence solve the problem by themselves.
+Selbst and colleagues warn that technical abstraction can draw system boundaries too narrowly. A model's inputs and outputs cannot explain the social process into which it is inserted (Selbst et al., 2019). The system includes procurement, goals, data collection, staffing, review time, escalation routes and the position of the person affected by the decision.
 
-The most serious problems appear in combinations. Harmful intention plus scale. Fluent answer plus missing sources. Decision plus no appeal. Closeness plus no mutuality. Efficiency plus no clear owner of responsibility. Automation plus an institution that already did not want to explain its decisions.
+Agency laundering becomes especially plausible when this wider arrangement disappears from view. A manager can say the model produced the ranking. A vendor can say the customer chose the threshold. A reviewer can say policy required acceptance. Each statement may contain part of the truth. Together they can create a process in which no one gives a complete account.
 
-That is why this essay should not be read as a simple defense of humans against machines. The human being is not the innocent center of the world that technology merely corrupts. People make mistakes, deceive, take shortcuts, build unfair procedures, choose convenience and sometimes knowingly harm others. Institutions can do the same in an organized form, with forms, policies and the language of optimization. AI becomes dangerous when those weaknesses gain speed, style, scale and the appearance of neutrality.
+Wagner describes "quasi-automation" in which humans appear in the loop mainly to rubber-stamp an automated process. Meaningful [human oversight](/concepts/human-oversight/) requires time, competence, relevant information, support, authority and a real ability to change the decision (Wagner, 2019). A signature at the end of a workflow is not proof of control.
 
-This does not mean AI is responsible for everything. Technology has its own properties: speed, ease of production, personalization and difficulty of inspection. Companies have interests. Institutions have procedures. States have aims. Hostile groups have intentions. Users have limited attention. Not everyone has the same freedom to use a tool or refuse it.
+This is why institutional responsibility cannot be solved by naming the nearest person. It requires tracing choices across the lifecycle: who defined success, who knew the limits, who could stop the system, who turned the output into action and who can repair harm.
 
-So the phrase "we are afraid of ourselves" has to be handled carefully. It is not a way to blame the individual. It is a question about the whole human arrangement in which AI becomes useful: markets, institutions, platforms, states, conflicts, loneliness, ambition, fear, convenience and violence.
+## The opposite danger: gaps and crumple zones
 
-What we should fear most is not an abstract machine. It is a situation in which no one wants to be the proper address of responsibility.
+The moral-alibi argument can itself become unfair if it assumes that someone always controlled the exact outcome. Learning systems can behave in ways that were not fully specified in advance. Models are combined with data, interfaces, people and changing environments. A particular output may be difficult to predict even when a class of failure is known.
 
-## How not to give away responsibility
+Matthias called this the responsibility gap: traditional practices of assigning responsibility become strained when neither operator nor designer could sufficiently foresee or control the system's action (Matthias, 2004). The concept is contested, but the problem cannot be dismissed by repeating that humans built the machine.
 
-Mature use of AI does not begin with the slogan "trust" or the slogan "do not trust." It begins with a question: what situation am I in, what is at stake and who will bear the consequences?
+There is also a political asymmetry in who gets called "the human responsible." Elish's concept of a **moral crumple zone** describes a low-level operator who absorbs moral or legal blame for a complex automated system despite limited control (Elish, 2019). The organization protects the image of technical reliability by treating the person nearest the failure as its author.
 
-If I use AI for a sketch, inspiration, organizing thoughts or checking my own assumptions, the stakes are different than when I use it near a decision about a person, money, health, work, conflict or reputation. The higher the stakes, the weaker a fluent answer is as support.
+Bainbridge identified a related irony decades earlier. Automation can remove routine involvement and then demand that a human take over during rare, difficult failures, precisely when their situational knowledge may be weakest (Bainbridge, 1983). Parasuraman and Riley add that automation abuse can begin with designers and managers who define the operator's role as a by-product of the technology (Parasuraman & Riley, 1997).
 
-A model answer should be treated as material for work, not as the end of the process. Where facts matter, sources outside the model are needed. Where relationships, diagnosis, therapy, law or professional responsibility are involved, AI should not be presented as a substitute. In institutions, the question of effectiveness has to be joined to the question of explanation, contestability and error repair.
+Both errors are possible:
 
-This is not an argument against using AI. If work with this technology is to be useful, we have to learn how to use it without giving it what it should not carry for us. Responsibility does not end with the user. We also need products, procedures and risk-management frames that leave room for explanation, contestability and error repair.
+- responsibility disappears upward and outward behind "the AI";
+- blame collapses downward onto an operator with little practical authority.
 
-In the language of risk-management frameworks such as the NIST AI Risk Management Framework, problems have to be named, measured, limited and assigned to concrete processes. In military and public contexts, one more requirement appears: the human being cannot disappear from the chain of responsibility just because a decision passed through a system.
+Meaningful human control is meant to resist both. Santoni de Sio and van den Hoven distinguish **tracking**, where a system responds to relevant human reasons and facts, from **tracing**, where outcomes can be connected to sufficiently informed humans along the design and operation chain (Santoni de Sio & van den Hoven, 2018). Control is not a decorative human presence. It requires a route from reasons to system behavior and from outcomes back to accountable human roles.
 
-Not every automation is abdication. Not every conversation with a model is an escape from people. Not every answer is dangerous. But each of these situations can become a problem if we too easily confuse support with replacement. That is why [calibrated trust](/concepts/calibrated-trust/) and [Human-AI Interaction](/concepts/human-ai-interaction/) are not add-ons to the discussion about AI. They are ways to keep the human being in a place where they can still ask, check and answer.
+## Hypothetical case: the retention score
 
-Perhaps the most important question about AI is not: will the machine become human? It is: what will human beings allow themselves to stop doing when an answer, image, recommendation or decision is always available?
+The following case is hypothetical.
 
-We do not need to fear every use of AI. We should fear the moment when convenience begins to look like judgment, and judgment no longer has a human owner.
+A large organization buys an AI system to identify employees at risk of leaving. The stated goal is retention. The vendor trains the model on historical personnel data. Management turns [decision support](/concepts/decision-support/) into a rule for a scarce development budget: employees with a low predicted chance of staying receive fewer training opportunities because the investment is judged less likely to return.
+
+An employee is denied a place on a specialist course. Their manager sees only a risk band and a short explanation generated by the system. The manager has ten minutes to review dozens of cases and is evaluated on budget compliance. An appeal exists, but employees are not told that the score affected the decision.
+
+Later, the organization discovers that career breaks and changes in working hours are associated with higher predicted attrition. The pattern does not prove intentional discrimination by any individual. It also does not make "the model" a complete answer.
+
+Different questions attach to different roles:
+
+- **Goal:** executives chose retention and return on training investment as priorities.
+- **Design:** the vendor and internal data team chose variables, targets and explanations.
+- **Deployment:** management decided that a prediction should influence access to development.
+- **Control:** reviewers formally could override, but lacked time, context and incentives to do so.
+- **Approval:** the manager turned a score into an individual decision.
+- **Visibility:** the employee could not contest a factor they were not told existed.
+- **Repair:** the institution must investigate impact, notify affected people, review past decisions and change the process.
+
+No single bullet settles moral or legal responsibility. The case shows why "AI denied the course" is both causally incomplete and institutionally useful. The phrase hides the choices that made a prediction actionable. It also shows why blaming the manager alone would be inadequate when the organization designed review as a rubber stamp.
+
+## A responsibility-tracing protocol
+
+The following six-part protocol is a reading and governance aid, not a validated instrument.
+
+<section class="practice-block" data-qa="practice-block">
+  <p class="practice-block__label">Responsibility-tracing protocol</p>
+  <h2>Trace the path from goal to consequence</h2>
+  <ol>
+    <li><strong>Goal:</strong> Who defined what the system should optimize, predict or produce? Which values were converted into metrics?</li>
+    <li><strong>Capability and limits:</strong> What was known about performance, uncertainty, affected groups and foreseeable failure modes?</li>
+    <li><strong>Control:</strong> Who could change the rule, reject the output, pause deployment or override the action? Did they have time, competence and authority?</li>
+    <li><strong>Decision:</strong> Who transformed the model output into an action affecting another person?</li>
+    <li><strong>Visibility and contestability:</strong> Could affected people understand the role of AI, question the result and reach someone able to change it?</li>
+    <li><strong>Repair:</strong> Who must investigate, disclose, correct, compensate where appropriate and prevent recurrence?</li>
+  </ol>
+  <p>The purpose is not to find one person to blame for every failure. It is to prevent goals, control and repair duties from disappearing inside the phrase "the system decided."</p>
+
+  <div class="prompt-example prompt-example--better" data-copyable-prompt>
+    <div class="prompt-example__header">
+      <p class="prompt-example__label">Example prompt</p>
+      <button class="prompt-example__copy" type="button" aria-label="Copy example prompt" data-copy-label="Copy" data-copied-label="Copied">Copy</button>
+    </div>
+    <pre class="prompt-example__body"><code data-prompt-text>Analyze this AI-supported decision as a sociotechnical process. Separate the goal, model output, human approval, practical control, foreseeable limits, impact on affected people and duty to repair. Do not treat the AI as a conscious moral agent and do not assume that the nearest operator had meaningful control.</code></pre>
+  </div>
+</section>
+
+The protocol changes the unit of analysis. Instead of asking only whether the model was accurate, it asks how accuracy became authority. Instead of asking whether a human clicked approve, it asks whether rejection was a real option. Instead of ending with fault, it keeps forward-looking responsibility visible: who can make the system safer and repair what happened?
+
+## Implications for design and governance
+
+Good governance should make agency easier to see before a failure, not only reconstruct it afterward. NIST's AI Risk Management Framework organizes work across governance, mapping, measurement and management and addresses organizations that design, develop, deploy or use AI (National Institute of Standards and Technology, 2023). It is voluntary guidance, not law or proof that a control works.
+
+The article's evidence suggests several practical priorities:
+
+1. Record the objective, threshold and trade-offs that make an output actionable.
+2. Separate model performance from the policy decision to use the model in a particular context.
+3. Give reviewers enough information, time, competence and authority to disagree.
+4. Tell affected people when AI materially shaped a decision and provide a route to contest it.
+5. Assign investigation and repair duties before deployment rather than improvising them after harm.
+
+Meaningful human control also requires designing the system to respond to relevant reasons, not merely placing a person beside it. A reviewer who cannot inspect provenance, see uncertainty or alter the outcome may carry responsibility without agency. A workflow that rewards agreement can also make [automation bias](/concepts/automation-bias/) harder to resist. Conversely, a senior institution can retain responsibility even when no executive touched an individual output, because it selected and maintained the process.
+
+## Limits of the argument
+
+This is a conceptual essay based on a selective narrative synthesis. It does not estimate how often people use AI to avoid responsibility, how frequently observers blame machines or whether the three-part framework predicts behavior. The labels amplifier, moral buffer and moral alibi have not been validated as psychological constructs.
+
+Much of the empirical evidence uses online samples, behavioral games or vignettes. Effects found in moral dilemmas, autonomous vehicles, bail decisions or workplace scenarios may not generalize to everyday use of language models. Some recent delegation studies were published in 2025 and 2026; replication across settings, cultures and system designs remains important.
+
+Attribution studies describe what people judge, not what they should judge. Philosophical accounts disagree about whether responsibility gaps are genuine, how responsibility should be distributed and what conditions make control sufficient. This essay does not resolve those debates or provide legal conclusions.
+
+The argument also has a misuse risk. A powerful institution could invoke complexity and unpredictability to avoid duties it should have anticipated. An observer could invoke human responsibility to blame a worker who lacked practical control. The protocol cannot settle those cases by itself. It makes the relevant questions harder to hide.
+
+Finally, AI can improve decisions, reveal patterns, support consistency and reduce some forms of arbitrary human judgment. Calling attention to responsibility is not an argument for rejecting automation. It is an argument for preserving visible authorship of goals and decisions when technology becomes part of [Human-AI Interaction](/concepts/human-ai-interaction/).
+
+## Conclusion
+
+The fear of AI is not simply fear of ourselves. Systems have properties that matter: they can be opaque, scalable, adaptive and difficult to inspect. They can contribute to outcomes no one person fully specified. A serious account should not reduce technical risk to human character.
+
+But the opposite reduction is just as weak. A machine-centered story can make institutions look passive and choices look inevitable. It can turn a goal into an output, an output into a decision and a decision into something that merely happened. The sentence "the system decided" is often where the analysis should begin, not end.
+
+Current AI can amplify what people and institutions pursue. It can create distance from consequences. It can become an alibi when technology is used to obscure who chose, approved and could have intervened. It can also create genuine uncertainty and leave a low-level human holding responsibility without control.
+
+The mature question is therefore not whether the human or the machine is responsible in the abstract. It is which contribution, duty and capacity belong to which actor in this particular system. A model can produce the recommendation before anyone has seen the whole route from goal to consequence. Responsibility begins with rebuilding that route through intention, design, control, approval, impact and repair.
+
+We should fear not only what AI may do, but also the moment when it allows us to believe that it was no longer us who did it.
 
 ## Sources and further reading
 
-- Brundage, M., Avin, S., Clark, J., Toner, H., Eckersley, P., et al. (2018). *The malicious use of artificial intelligence: Forecasting, prevention, and mitigation*. https://doi.org/10.17863/CAM.22520
-- UK National Cyber Security Centre. (2025). *Impact of AI on cyber threat from now to 2027*. https://www.ncsc.gov.uk/report/impact-ai-cyber-threat-now-2027
-- Sedova, K., McNeill, C., Johnson, A., Joshi, A., & Wulkan, I. (2021). *AI and the future of disinformation campaigns: Part 1: The RICHDATA framework*. Center for Security and Emerging Technology. https://doi.org/10.51593/2021CA005
-- Freedom House. (2023). *Freedom on the Net 2023: The repressive power of artificial intelligence*. https://freedomhouse.org/report/freedom-net/2023/repressive-power-artificial-intelligence
-- Grand-Clément, S. (2023). *Artificial intelligence beyond weapons: Application and impact of AI in the military domain*. UNIDIR. https://unidir.org/publication/artificial-intelligence-beyond-weapons-application-and-impact-of-ai-in-the-military-domain/
-- Bo, M., Bruun, L., & Boulanin, V. (2022). *Retaining human responsibility in the development and use of autonomous weapon systems: On accountability for violations of international humanitarian law involving AWS*. SIPRI. https://doi.org/10.55163/AHBC1664
-- Tabassi, E. (2023). *Artificial intelligence risk management framework (AI RMF 1.0)* (NIST AI 100-1). National Institute of Standards and Technology. https://doi.org/10.6028/NIST.AI.100-1
-- Lee, J. D., & See, K. A. (2004). Trust in automation: Designing for appropriate reliance. *Human Factors, 46*(1), 50-80. https://doi.org/10.1518/hfes.46.1.50_30392
-- Risko, E. F., & Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive Sciences, 20*(9), 676-688. https://doi.org/10.1016/j.tics.2016.07.002
-- Ecker, U. K. H., Lewandowsky, S., Cook, J., Schmid, P., Fazio, L. K., Brashier, N., Kendeou, P., Vraga, E. K., & Amazeen, M. A. (2022). The psychological drivers of misinformation belief and its resistance to correction. *Nature Reviews Psychology, 1*, 13-29. https://doi.org/10.1038/s44159-021-00006-y
-- Selbst, A. D., Boyd, D., Friedler, S. A., Venkatasubramanian, S., & Vertesi, J. (2019). Fairness and abstraction in sociotechnical systems. In *Proceedings of the Conference on Fairness, Accountability, and Transparency* (pp. 59-68). ACM. https://doi.org/10.1145/3287560.3287598
-- Skjuve, M., Følstad, A., Fostervold, K. I., & Brandtzaeg, P. B. (2021). My chatbot companion: A study of human-chatbot relationships. *International Journal of Human-Computer Studies, 149*, Article 102601. https://doi.org/10.1016/j.ijhcs.2021.102601
+- Awad, E., Levine, S., Kleiman-Weiner, M., Dsouza, S., Tenenbaum, J. B., Shariff, A., Bonnefon, J.-F., & Rahwan, I. (2020). Drivers are blamed more than their automated cars when both make mistakes. *Nature Human Behaviour, 4*, 134-143. https://doi.org/10.1038/s41562-019-0762-8
+- Bainbridge, L. (1983). Ironies of automation. *Automatica, 19*(6), 775-779. https://doi.org/10.1016/0005-1098(83)90046-8
+- Bandura, A. (2002). Selective moral disengagement in the exercise of moral agency. *Journal of Moral Education, 31*(2), 101-119. https://doi.org/10.1080/0305724022014322
+- Brundage, M., Avin, S., Clark, J., Toner, H., Eckersley, P., Garfinkel, B., Dafoe, A., Scharre, P., Zeitzoff, T., Filar, B., Anderson, H., Roff, H., Allen, G. C., Steinhardt, J., Flynn, C., Ó hÉigeartaigh, S., Beard, S., Belfield, H., Farquhar, S., ... Amodei, D. (2018). *The malicious use of artificial intelligence: Forecasting, prevention, and mitigation*. https://doi.org/10.17863/CAM.22520
+- Elish, M. C. (2019). Moral crumple zones: Cautionary tales in human-robot interaction. *Engaging Science, Technology, and Society, 5*, 40-60. https://doi.org/10.17351/ests2019.260
+- Epley, N., Waytz, A., & Cacioppo, J. T. (2007). On seeing human: A three-factor theory of anthropomorphism. *Psychological Review, 114*(4), 864-886. https://doi.org/10.1037/0033-295X.114.4.864
+- Freisinger, E., & Schneider, S. (2025). Decoding decision delegation to artificial intelligence: A mixed-methods study on the preferences of decision-makers and decision-affected in surrogate decision contexts. *European Management Journal, 43*(6), 958-969. https://doi.org/10.1016/j.emj.2024.10.004
+- Furlough, C., Stokes, T., & Gillan, D. J. (2021). Attributing blame to robots: I. The influence of robot autonomy. *Human Factors, 63*(4), 592-602. https://doi.org/10.1177/0018720819880641
+- Gray, H. M., Gray, K., & Wegner, D. M. (2007). Dimensions of mind perception. *Science, 315*(5812), 619. https://doi.org/10.1126/science.1134475
+- Hüholt, N., & Szech, N. (2026). Trusting machines with morality - Delegating moral decisions to AI. *European Economic Review, 184*, 105255. https://doi.org/10.1016/j.euroecorev.2025.105255
+- Kneer, M., & Christen, M. (2024). Responsibility gaps and retributive dispositions: Evidence from the US, Japan and Germany. *Science and Engineering Ethics, 30*, Article 51. https://doi.org/10.1007/s11948-024-00509-w
+- Köbis, N., Rahwan, Z., Rilla, R., Supriyatno, B. I., Bersch, C., Ajaj, T., Bonnefon, J.-F., & Rahwan, I. (2025). Delegation to artificial intelligence can increase dishonest behaviour. *Nature, 646*, 126-134. https://doi.org/10.1038/s41586-025-09505-x
+- Kunda, Z. (1990). The case for motivated reasoning. *Psychological Bulletin, 108*(3), 480-498. https://doi.org/10.1037/0033-2909.108.3.480
+- Lima, G., Grgić-Hlača, N., & Cha, M. (2021). Human perceptions on moral responsibility of AI: A case study in AI-assisted bail decision-making. In *Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems* (pp. 1-17). Association for Computing Machinery. https://doi.org/10.1145/3411764.3445260
+- Longin, L., Bahrami, B., & Deroy, O. (2023). Intelligence brings responsibility - Even smart AI assistants are held responsible. *iScience, 26*(8), 107494. https://doi.org/10.1016/j.isci.2023.107494
+- Matthias, A. (2004). The responsibility gap: Ascribing responsibility for the actions of learning automata. *Ethics and Information Technology, 6*(3), 175-183. https://doi.org/10.1007/s10676-004-3422-1
+- Moore, C. (2015). Moral disengagement. *Current Opinion in Psychology, 6*, 199-204. https://doi.org/10.1016/j.copsyc.2015.07.018
+- National Institute of Standards and Technology. (2023). *Artificial intelligence risk management framework (AI RMF 1.0)* (NIST AI 100-1). https://doi.org/10.6028/NIST.AI.100-1
+- Parasuraman, R., & Riley, V. (1997). Humans and automation: Use, misuse, disuse, abuse. *Human Factors, 39*(2), 230-253. https://doi.org/10.1518/001872097778543886
+- Rubel, A., Castro, C., & Pham, A. (2019). Agency laundering and information technologies. *Ethical Theory and Moral Practice, 22*(4), 1017-1041. https://doi.org/10.1007/s10677-019-10030-w
+- Santoni de Sio, F., & van den Hoven, J. (2018). Meaningful human control over autonomous systems: A philosophical account. *Frontiers in Robotics and AI, 5*, Article 15. https://doi.org/10.3389/frobt.2018.00015
+- Selbst, A. D., Boyd, D., Friedler, S. A., Venkatasubramanian, S., & Vertesi, J. (2019). Fairness and abstraction in sociotechnical systems. In *Proceedings of the Conference on Fairness, Accountability, and Transparency* (pp. 59-68). Association for Computing Machinery. https://doi.org/10.1145/3287560.3287598
+- Shank, D. B., & DeSanti, A. (2018). Attributions of morality and mind to artificial intelligence after real-world moral violations. *Computers in Human Behavior, 86*, 401-411. https://doi.org/10.1016/j.chb.2018.05.014
+- Stuart, M. T., & Kneer, M. (2021). Guilty artificial minds: Folk attributions of mens rea and culpability to artificially intelligent agents. *Proceedings of the ACM on Human-Computer Interaction, 5*(CSCW2), Article 363, 1-27. https://doi.org/10.1145/3479507
+- Tenbrunsel, A. E., & Messick, D. M. (2004). Ethical fading: The role of self-deception in unethical behavior. *Social Justice Research, 17*(2), 223-236. https://doi.org/10.1023/B:SORE.0000027411.35832.53
+- Wagner, B. (2019). Liable, but not in control? Ensuring meaningful human agency in automated decision-making systems. *Policy & Internet, 11*(1), 104-122. https://doi.org/10.1002/poi3.198
+- Waytz, A., Heafner, J., & Epley, N. (2014). The mind in the machine: Anthropomorphism increases trust in an autonomous vehicle. *Journal of Experimental Social Psychology, 52*, 113-117. https://doi.org/10.1016/j.jesp.2014.01.005
+- Xu, L., Tian, H., Zhang, Y., & Yu, F. (2026). Shifting accountability to artificial intelligence: Delegating challenging decisions to AI for responsibility avoidance. *Journal of Business Research, 215*, 116313. https://doi.org/10.1016/j.jbusres.2026.116313

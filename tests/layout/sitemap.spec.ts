@@ -108,6 +108,24 @@ test.describe('built sitemap and RSS policy', () => {
         'https://promptedpsyche.com/articles/are-we-afraid-of-ai-or-of-ourselves/'
       )
     ).toBe(1);
+    expect(
+      countRssItemsByLink(
+        rss,
+        'https://promptedpsyche.com/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/'
+      )
+    ).toBe(1);
+    expect(
+      readRssItemByLink(
+        rss,
+        'https://promptedpsyche.com/articles/are-we-afraid-of-ai-or-of-ourselves/'
+      )
+    ).toContain('<pubDate>Sat, 04 Jul 2026');
+    expect(
+      readRssItemByLink(
+        rss,
+        'https://promptedpsyche.com/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/'
+      )
+    ).toContain('<pubDate>Sat, 04 Jul 2026');
   });
 
   test('keeps X-Robots-Tag scoped to tag archives after launch', () => {

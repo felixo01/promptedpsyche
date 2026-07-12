@@ -323,3 +323,20 @@ A DOI does not mean quality, review or peer-reviewed status by itself. It must n
 - RSS and sitemap should include only public content according to the existing filters.
 - No private strategy, source-check notes or operational planning material was copied into the public article.
 - DOI is still not used. Do not add placeholder DOI text.
+
+## AI fear article research revision - 2026-07-12
+
+The existing PL/EN article pair was rebuilt without changing its titles, slugs, original publication date, author, translation key or hero image:
+
+- EN: `Are we afraid of AI, or of ourselves?`
+- PL: `Czy boimy się AI, czy boimy się samych siebie?`
+- `publishedAt`: `2026-07-04`
+- `updatedAt`: `2026-07-12`
+
+The new edition is a research-informed conceptual essay and narrative synthesis about moral disengagement, delegation, anthropomorphism, responsibility attribution and institutional accountability. Its three-part framework - AI as amplifier, moral buffer and moral alibi - is explicitly interpretive and not presented as a validated construct or scale.
+
+The final bibliography contains 28 verified sources: 26 peer-reviewed publications and two reports, with no preprints. The article also preserves the counterargument around genuine responsibility gaps, symbolic human oversight and moral crumple zones.
+
+No DOI, DOI placeholder, Zenodo record or PDF claim was added. Existing indexing, RSS, sitemap, rights-notice, citation and draft-safety behavior remain unchanged.
+
+On 2026-07-12, this revision also received a final internal claim-level scientific audit, bibliographic audit, bilingual terminology audit and EN/PL equivalence audit. This was editorial quality assurance, not external peer review or scientific validation.

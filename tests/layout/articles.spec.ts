@@ -708,7 +708,7 @@ test.describe('published articles', () => {
     expect(overflowingBoxes).toEqual([]);
   });
 
-  test('renders the AI fears Polish article with sources, concepts and safe language fallback', async ({ page }) => {
+  test('renders the revised AI fears Polish article with research boundaries and responsibility tracing', async ({ page }) => {
     await page.goto(aiFearsPolishArticleRoute);
 
     await expect(page.locator('.content-header h1')).toHaveText(aiFearsPolishArticleTitle);
@@ -717,25 +717,36 @@ test.describe('published articles', () => {
     await expect(inBrief.locator('summary.in-brief__summary')).toHaveText('W skrócie');
     await inBrief.locator('summary').click();
     await expect(inBrief.locator('.in-brief__body')).toBeVisible();
-    await expect(inBrief).toContainText('Lęk przed AI ma realne powody');
+    await expect(inBrief).toContainText('Opowieść o samodzielnie działającej, złej AI');
+    await expect(inBrief).toContainText('W ograniczonych zadaniach eksperymentalnych');
     await expect(page.locator('body')).not.toContainText('TL;DR');
-    await expect(page.locator('.prose')).toContainText('Gdy złe intencje dostają skalę');
-    await expect(page.locator('.prose')).toContainText('Informacja, której trudniej zaufać');
-    await expect(page.locator('.prose')).toContainText('Wojna, przemoc i automatyzacja decyzji');
-    await expect(page.locator('.prose')).toContainText('Jak nie oddać odpowiedzialności');
+    await expect(page.locator('.prose')).toContainText('Abstrakt');
+    await expect(page.locator('.prose')).toContainText('Zakres i metoda');
+    await expect(page.locator('.prose')).toContainText(
+      'AI jako wzmacniacz, bufor moralny i moralne alibi'
+    );
+    await expect(page.locator('.prose')).toContainText('Przypadek hipotetyczny: wskaźnik odejścia');
+    await expect(page.locator('.prose')).toContainText('Protokół śledzenia odpowiedzialności');
+    await expect(page.locator('.prose')).toContainText('Ograniczenia argumentu');
     await expect(page.locator('.prose')).toContainText('Źródła i dalsza lektura');
-    await expect(page.locator('.prose')).toContainText('Brundage');
-    await expect(page.locator('.prose')).toContainText('UK National Cyber Security Centre');
-    await expect(page.locator('.prose')).toContainText('Center for Security and Emerging Technology');
+    await expect(page.locator('.prose')).toContainText('Köbis');
+    await expect(page.locator('.prose')).toContainText('Bandura');
+    await expect(page.locator('.prose')).toContainText('Elish');
     await expect(page.locator('.prose')).toContainText('National Institute of Standards and Technology');
-    await expect(page.locator('.prose li')).toHaveCount(12);
+    const sourcesHeading = page.getByRole('heading', { name: 'Źródła i dalsza lektura' });
+    await expect(sourcesHeading.locator('xpath=following-sibling::ul[1]/li')).toHaveCount(28);
     await expect(page.locator('[data-qa="article-byline"]')).toContainText('Autor: Feliks Mamczur');
     await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
       `${aiFearsPolishArticleTitle} Prompted Psyche. https://promptedpsyche.com${aiFearsPolishArticleRoute}`
     );
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+      'Mamczur, F. (2026, 4 lipca)'
+    );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
+    await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
+    await expect(page.locator('[data-qa="article-byline"]')).toContainText('Aktualizacja: 12 lipca 2026');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'Wszystkie prawa zastrzeżone'
     );
@@ -744,27 +755,27 @@ test.describe('published articles', () => {
       '/images/articles/human-ai-workflow-judgment.webp'
     );
     await expect(page.locator('.article-hero-figure figcaption')).toContainText(
-      'Lęk przed AI nie dotyczy tylko maszyny'
+      'AI może wpływać na skutek'
     );
     await expect(page.locator('[data-qa="article-audio"]')).toHaveCount(0);
     await expect(page.locator('audio')).toHaveCount(0);
-    await expect(page.locator('[data-qa="practice-block"]')).toHaveCount(0);
-    await expect(page.locator('.prompt-example')).toHaveCount(0);
+    await expect(page.locator('[data-qa="practice-block"]')).toHaveCount(1);
+    await expect(page.locator('.prompt-example')).toHaveCount(1);
+    await expect(page.getByRole('button', { name: 'Kopiuj przykładowy prompt' })).toBeVisible();
     await expect(page.locator('.content-tags a[href="/pl/tags/ai-i-czlowiek/"]')).toBeVisible();
-    await expect(page.locator('.content-tags a[href="/pl/tags/zaufanie-do-ai/"]')).toBeVisible();
     await expect(page.locator('.content-tags a[href="/pl/tags/odpowiedzialnosc/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/pl/tags/psychologia-moralnosci/"]')).toBeVisible();
     await expect(page.locator('.content-tags a[href="/pl/tags/human-ai-interaction/"]')).toBeVisible();
-    await expect(page.locator('.content-tags a[href="/pl/tags/decyzje/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/pl/tags/podejmowanie-decyzji/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/pl/tags/zarzadzanie-ai/"]')).toBeVisible();
 
     const conceptLinks = page.locator('.prose a[href^="/pl/concepts/"]');
-    await expect(conceptLinks).toHaveCount(8);
-    await expect(page.locator('.prose a[href="/pl/concepts/model-output/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/oparcie-odpowiedzi-na-zrodlach/"]')).toBeVisible();
+    await expect(conceptLinks).toHaveCount(6);
     await expect(page.locator('.prose a[href="/pl/concepts/sprawczosc-czlowieka/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/antropomorfizacja/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/nadzor-ze-strony-czlowieka/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/pl/concepts/wspomaganie-decyzji/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/blad-automatyzacji/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/cognitive-offloading/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/nadmierne-poleganie-na-ai/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/calibrated-trust/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/human-ai-interaction/"]')).toBeVisible();
     await expect(page.locator(`.language-switcher a[href="${aiFearsEnglishArticleRoute}"]`)).toBeVisible();
     await expect(page.locator('body')).not.toContainText('Working notes');
@@ -775,9 +786,22 @@ test.describe('published articles', () => {
     await expect(page.locator('body')).not.toContainText('AI ma świadomość');
     await expect(page.locator('body')).not.toContainText('terapia przez AI');
     await expect(page.locator('body')).not.toContainText('automatyczna diagnoza');
+    await expect(page.locator('body')).not.toContainText('Samotność znajduje interfejs');
+    await expect(page.locator('.prose')).toContainText(
+      'Nie stanowią zwalidowanych konstruktów, narzędzia diagnostycznego ani skali.'
+    );
+    await expect(page.locator('.prose')).toContainText('mechanizmy moralnego odłączenia');
+    await expect(page.locator('.prose')).toContainText(
+      'nie będąc podmiotami moralnymi w ludzkim sensie'
+    );
+    await expect(page.locator('.prose')).toContainText(
+      'Powinniśmy bać się nie tylko tego, co AI może zrobić'
+    );
+    await expect(page.locator('.prose')).not.toContainText('ludzkiego życia moralnego');
+    await expect(page.locator('.prose')).not.toContainText('Ten recenzowany esej');
   });
 
-  test('renders the AI fears English article with sources, concepts and language alternate', async ({ page }) => {
+  test('renders the revised AI fears English article with research boundaries and responsibility tracing', async ({ page }) => {
     await page.goto(aiFearsEnglishArticleRoute);
 
     await expect(page.locator('.content-header h1')).toHaveText(aiFearsEnglishArticleTitle);
@@ -786,25 +810,36 @@ test.describe('published articles', () => {
     await expect(inBrief.locator('summary.in-brief__summary')).toHaveText('TL;DR');
     await inBrief.locator('summary').click();
     await expect(inBrief.locator('.in-brief__body')).toBeVisible();
-    await expect(inBrief).toContainText('Fear of AI has real reasons');
+    await expect(inBrief).toContainText('The story of an independently evil AI');
+    await expect(inBrief).toContainText('In bounded experimental tasks');
     await expect(page.locator('body')).not.toContainText('W skrócie');
-    await expect(page.locator('.prose')).toContainText('When harmful intentions get scale');
-    await expect(page.locator('.prose')).toContainText('Information that becomes harder to trust');
-    await expect(page.locator('.prose')).toContainText('War, violence and automated decisions');
-    await expect(page.locator('.prose')).toContainText('How not to give away responsibility');
+    await expect(page.locator('.prose')).toContainText('Abstract');
+    await expect(page.locator('.prose')).toContainText('Scope and method');
+    await expect(page.locator('.prose')).toContainText(
+      'AI as amplifier, moral buffer and moral alibi'
+    );
+    await expect(page.locator('.prose')).toContainText('Hypothetical case: the retention score');
+    await expect(page.locator('.prose')).toContainText('A responsibility-tracing protocol');
+    await expect(page.locator('.prose')).toContainText('Limits of the argument');
     await expect(page.locator('.prose')).toContainText('Sources and further reading');
-    await expect(page.locator('.prose')).toContainText('Brundage');
-    await expect(page.locator('.prose')).toContainText('UK National Cyber Security Centre');
-    await expect(page.locator('.prose')).toContainText('Center for Security and Emerging Technology');
+    await expect(page.locator('.prose')).toContainText('Köbis');
+    await expect(page.locator('.prose')).toContainText('Bandura');
+    await expect(page.locator('.prose')).toContainText('Elish');
     await expect(page.locator('.prose')).toContainText('National Institute of Standards and Technology');
-    await expect(page.locator('.prose li')).toHaveCount(12);
+    const sourcesHeading = page.getByRole('heading', { name: 'Sources and further reading' });
+    await expect(sourcesHeading.locator('xpath=following-sibling::ul[1]/li')).toHaveCount(28);
     await expect(page.locator('[data-qa="article-byline"]')).toContainText('By Feliks Mamczur');
     await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
       `${aiFearsEnglishArticleTitle} Prompted Psyche. https://promptedpsyche.com${aiFearsEnglishArticleRoute}`
     );
+    await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+      'Mamczur, F. (2026, July 4)'
+    );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
+    await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
+    await expect(page.locator('[data-qa="article-byline"]')).toContainText('Updated: July 12, 2026');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'All rights reserved'
     );
@@ -814,30 +849,30 @@ test.describe('published articles', () => {
     );
     await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
       'alt',
-      'Diagram showing human work with AI as a system of context, trust, verification, cognitive load and responsibility.'
+      'Diagram of a person working with AI through context, attention, cognitive load, trust, verification and responsibility.'
     );
     await expect(page.locator('.article-hero-figure figcaption')).toContainText(
-      'Fear of AI is not only about the machine'
+      'AI can shape an outcome'
     );
     await expect(page.locator('[data-qa="article-audio"]')).toHaveCount(0);
     await expect(page.locator('audio')).toHaveCount(0);
-    await expect(page.locator('[data-qa="practice-block"]')).toHaveCount(0);
-    await expect(page.locator('.prompt-example')).toHaveCount(0);
+    await expect(page.locator('[data-qa="practice-block"]')).toHaveCount(1);
+    await expect(page.locator('.prompt-example')).toHaveCount(1);
+    await expect(page.getByRole('button', { name: 'Copy example prompt' })).toBeVisible();
     await expect(page.locator('.content-tags a[href="/tags/ai-and-humans/"]')).toBeVisible();
-    await expect(page.locator('.content-tags a[href="/tags/trust-in-ai/"]')).toBeVisible();
     await expect(page.locator('.content-tags a[href="/tags/responsibility/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/tags/moral-psychology/"]')).toBeVisible();
     await expect(page.locator('.content-tags a[href="/tags/human-ai-interaction/"]')).toBeVisible();
     await expect(page.locator('.content-tags a[href="/tags/decision-making/"]')).toBeVisible();
+    await expect(page.locator('.content-tags a[href="/tags/ai-governance/"]')).toBeVisible();
 
     const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
-    await expect(conceptLinks).toHaveCount(8);
-    await expect(page.locator('.prose a[href="/concepts/model-output/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/grounding/"]')).toBeVisible();
+    await expect(conceptLinks).toHaveCount(6);
     await expect(page.locator('.prose a[href="/concepts/human-agency/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/anthropomorphism/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/human-oversight/"]')).toBeVisible();
+    await expect(page.locator('.prose a[href="/concepts/decision-support/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/automation-bias/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/cognitive-offloading/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/overreliance/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/calibrated-trust/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/human-ai-interaction/"]')).toBeVisible();
     await expect(
       page.locator(`.language-switcher a[href="${aiFearsPolishArticleRoute}"]`)
@@ -852,6 +887,18 @@ test.describe('published articles', () => {
     await expect(page.locator('body')).not.toContainText('automatic diagnosis');
     await expect(page.locator('body')).not.toContainText('how to build');
     await expect(page.locator('body')).not.toContainText('how to attack');
+    await expect(page.locator('body')).not.toContainText('Loneliness finds an interface');
+    await expect(page.locator('.prose')).toContainText(
+      'They are not validated constructs, a diagnostic taxonomy or a scale.'
+    );
+    await expect(page.locator('.prose')).toContainText(
+      'without being moral agents in the human sense'
+    );
+    await expect(page.locator('.prose')).toContainText(
+      'We should fear not only what AI may do'
+    );
+    await expect(page.locator('.prose')).not.toContainText('human moral life');
+    await expect(page.locator('.prose')).not.toContainText('This peer-reviewed essay');
   });
 
   test('renders the AI path English article with sources, tags, concepts and language alternate', async ({ page }) => {
