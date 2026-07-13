@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import EntryLayout from '../../layouts/EntryLayout.astro';
 import { getArticleAlternates } from '../../lib/articleRoutes';
+import { withArticlePublicationMetadata } from '../../lib/articlePublicationMetadata';
 import { onlyPublicEntries, onlyPublicEntriesByLang } from '../../lib/content';
 
 export async function getStaticPaths() {
@@ -15,9 +16,10 @@ export async function getStaticPaths() {
 }
 
 const { entry, alternateLinks } = Astro.props;
+const publicationEntry = withArticlePublicationMetadata(entry, 'en');
 const { Content } = await render(entry);
 ---
 
-<EntryLayout entry={entry} label="Article" lang="en" alternateLinks={alternateLinks}>
+<EntryLayout entry={publicationEntry} label="Article" lang="en" alternateLinks={alternateLinks}>
   <Content />
 </EntryLayout>
