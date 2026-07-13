@@ -1,6 +1,8 @@
 import { expect, test, type Page } from '@playwright/test';
 
 const orcidUrl = 'https://orcid.org/0009-0001-0715-0517';
+const aiFearsEnglishDoi = '10.5281/zenodo.21340181';
+const aiFearsEnglishDoiUrl = `https://doi.org/${aiFearsEnglishDoi}`;
 const privatePatterns = /\/Users\/felix|AI SPECIALIST|ai-specialista|backstage|content\/drafts|research\//i;
 
 type JsonLd = Record<string, any>;
@@ -170,11 +172,18 @@ test.describe('author entity structured data', () => {
         sameAs: [orcidUrl]
       },
       inLanguage: 'en',
-      image: 'https://promptedpsyche.com/images/articles/ai-fear-human-mirror-social.webp'
+      image: 'https://promptedpsyche.com/images/articles/ai-fear-human-mirror-social.webp',
+      identifier: {
+        '@type': 'PropertyValue',
+        propertyID: 'DOI',
+        value: aiFearsEnglishDoi
+      },
+      sameAs: aiFearsEnglishDoiUrl,
+      license: 'https://creativecommons.org/licenses/by/4.0/',
+      version: '2.1'
     });
     expect(article?.datePublished).toMatch(/^2026-07-04T/);
     expect(article?.dateModified).toMatch(/^2026-07-13T/);
-    expect(article?.identifier).toBeUndefined();
     expect(serialized).not.toMatch(privatePatterns);
   });
 });

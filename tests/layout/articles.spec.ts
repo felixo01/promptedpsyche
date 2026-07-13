@@ -33,6 +33,8 @@ const aiPathPolishArticleTitle = 'Zaufanie w epoce gotowych odpowiedzi';
 const aiPathEnglishArticleTitle = 'Trust in the age of ready-made answers';
 const aiFearsPolishArticleTitle = 'Czy boimy się AI, czy boimy się samych siebie?';
 const aiFearsEnglishArticleTitle = 'Are we afraid of AI, or of ourselves?';
+const aiFearsEnglishDoi = '10.5281/zenodo.21340181';
+const aiFearsEnglishDoiUrl = `https://doi.org/${aiFearsEnglishDoi}`;
 const embodiedPolishArticleTitle = 'Co się zmienia, kiedy AI ma ciało?';
 const embodiedEnglishArticleTitle = 'What changes when AI has a body?';
 const aiFearsHeroImage = '/images/articles/ai-fear-human-mirror.webp';
@@ -935,16 +937,27 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      `${aiFearsEnglishArticleTitle} Prompted Psyche. https://promptedpsyche.com${aiFearsEnglishArticleRoute}`
+      `${aiFearsEnglishArticleTitle} Prompted Psyche. ${aiFearsEnglishDoiUrl}`
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
       'Mamczur, F. (2026, July 4)'
     );
-    await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
-    await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
+    const aiFearsByline = page.locator('[data-qa="article-byline"]');
+    await expect(aiFearsByline).toContainText('Citable version (v2.1):');
+    await expect(
+      aiFearsByline.getByRole('link', { name: `DOI ${aiFearsEnglishDoi}` })
+    ).toHaveAttribute('href', aiFearsEnglishDoiUrl);
+    await expect(page.locator('meta[name="citation_doi"]')).toHaveAttribute(
+      'content',
+      aiFearsEnglishDoi
+    );
     await expect(page.locator('[data-qa="article-byline"]')).toContainText('Updated: July 13, 2026');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
-      'All rights reserved'
+      'This article is licensed under CC BY 4.0'
+    );
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"] a')).toHaveAttribute(
+      'href',
+      'https://creativecommons.org/licenses/by/4.0/'
     );
     await expectAiFearsIllustrations(page, 'en');
     await expect(page.locator('[data-qa="article-audio"]')).toHaveCount(0);

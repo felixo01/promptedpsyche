@@ -53,11 +53,11 @@ Most generative-AI studies in this area measure immediate or short-term outcomes
 
 An overbroad headline does not call for an equally broad reassurance. Some of the warning signals are substantial.
 
-In a randomized field study, Hamsa Bastani and colleagues assigned nearly 1,000 high-school students to work through four mathematics sessions with unrestricted GPT, a specially designed GPT Tutor or neither tool. Unrestricted GPT improved performance during practice. On a later exam without AI, however, that group scored 17 percent below the control group (Bastani et al., 2025). The tool helped students finish the work in front of them, but that benefit did not become independent performance.
+In a randomized field study, Hamsa Bastani and colleagues assigned nearly 1,000 high-school students to work through four mathematics sessions with unrestricted GPT, a specially designed GPT Tutor or neither tool. Unrestricted GPT improved performance during practice. On a later exam without AI, however, that group scored 17 percent below the control group (Bastani et al., 2025). The tool helped students finish the work in front of them, but that benefit did not carry over to independent performance.
 
 A preprint by Grace Liu and colleagues reports three short randomized experiments involving fraction problems. Participants could use AI for part of the practice and then lost access without warning. In all three experiments, those who had previously received AI assistance solved fewer problems independently. In two experiments they also skipped more. In the first, the later solve rate was 57 percent after AI assistance and 73 percent in control. In the third, it was 76 versus 89 percent (Liu et al., 2026). This is direct evidence of a short-term cost to independent performance in those tasks, though not proof of lasting deskilling.
 
-Other studies report poorer memory for AI-assisted writing, correlations among reported AI use, offloading and critical-thinking measures, and reduced diversity across creative products. None shows that every user is losing ability. Together, they are enough to reject the assumption that a better assisted output always means better learning.
+Other studies report poorer memory for AI-assisted writing, correlations among reported AI use, offloading and critical-thinking measures (Gerlich, 2025), and reduced diversity across creative products. None shows that every user is losing ability. Together, they are enough to reject the assumption that a better assisted output always means better learning.
 
 ## "Dumber" is not one variable
 
@@ -89,9 +89,9 @@ Generative AI did not create the tension between smooth performance and learning
 
 ## AI as a substitute for the process
 
-In substitution mode, the user hands the system problem recognition, solution generation, comparison of alternatives, drafting and checking. The person provides the request and judges the product. That can be entirely rational.
+In substitution mode, the user hands the system problem recognition, solution generation, comparison of alternatives, drafting and checking. The person supplies the prompt and judges the result. That can be entirely rational.
 
-If the goal is to transform a table, prepare a first draft of a routine message or locate a syntax error, reducing effort may be the right optimization. Not every task must become a lesson. The risk appears when a completion interface is used where the goal is to develop competence, or when a person remains responsible for the output without retaining enough domain knowledge to evaluate it.
+If the goal is to transform a table, prepare a first draft of a routine message or locate a syntax error, reducing effort may be the right optimization. Not every task must become a lesson. The risk arises when a completion interface is used where the goal is to develop competence, or when a person remains responsible for the output without retaining enough domain knowledge to evaluate it.
 
 In an [earlier article about ready-made answers](/articles/trust-in-the-age-of-ready-made-answers/), I described how fluent synthesis compresses the visible path from sources to a conclusion. Here, a similar shortcut runs from problem to solution. The more stages disappear into a finished answer, the harder it becomes to know which ones the user could reproduce.
 
@@ -107,7 +107,7 @@ Such support can still be poorly calibrated. A model may reveal too much, miside
 
 The strongest design evidence does not come from placing two unrelated papers side by side. It sits inside the Bastani study. Unrestricted GPT and GPT Tutor raised supported practice performance by 48 and 127 percent relative to control. On the later unassisted exam, the unrestricted group performed worse than control, while the tutor group was statistically indistinguishable from it. GPT Tutor drew on teacher materials and common errors, gave graduated hints and restricted full solutions (Bastani et al., 2025).
 
-This is not a story about a good model and a bad model. It compares two structures of assistance in one setting. The tutor removed the observed penalty but did not create a demonstrated advantage on the later exam. That restrained result is valuable: better practice performance is not necessarily learning, and withholding ready-made solutions can protect part of the learner's work.
+This is not a story about a good model and a bad model. It compares two structures of assistance in one setting. The tutor condition did not show the penalty observed with unrestricted GPT, but it did not create a demonstrated advantage on the later exam. That restrained result is valuable: better practice performance is not necessarily learning, and withholding ready-made solutions can protect part of the learner's work.
 
 A randomized study by Greg Kestin and colleagues offers another comparison. A total of 194 students were eligible for a crossover study in an introductory Harvard physics course. The purpose-built AI tutor used topic-specific material, stepwise guidance, checks for understanding, feedback and self-pacing. Across two topics, it produced larger immediate learning gains than the compared active-learning classes while taking less median time. The study did not measure delayed retention or broad transfer, and its two topics and selective institution limit generalization (Kestin et al., 2025).
 
@@ -139,7 +139,7 @@ A productivity interface has good reason to minimize steps. The user wants the o
 
 A learning interface has a different objective. It should not automatically minimize all effort because some effort is the activity through which a skill forms. It should distinguish assistance from substitution: wait for an attempt, diagnose an error from that attempt, give small hints, ask for reasoning, return with a new variation and withdraw support.
 
-For schools and universities, this means that permission or prohibition alone says too little. Educators need to decide which stages produce an artifact and which are meant to reveal understanding or exercise transfer. For employers, the distinction matters when novices train on AI-supported work. If a new employee receives finished decisions from day one, they may produce acceptable output without building the domain model needed to notice exceptions.
+For schools and universities, this means that permission or prohibition alone says too little. Educators need to decide which stages produce an artifact and which are meant to reveal understanding or exercise transfer. For employers, the distinction matters when novices train on AI-supported work. If a new employee receives finished decisions from day one, they may produce acceptable output without building the domain understanding needed to notice exceptions.
 
 For product teams, the choice extends beyond model accuracy. It includes when the interface answers, when it asks, how much it reveals, whether it tracks the level of help and whether it tests independent transfer. These are substantive [Human-AI Interaction](/concepts/human-ai-interaction/) decisions, not a decorative layer on top of a model.
 
