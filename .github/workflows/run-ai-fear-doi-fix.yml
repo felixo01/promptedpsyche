@@ -1,0 +1,97 @@
+name: Run AI fear DOI metadata fix
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/run-ai-fear-doi-fix.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repair branch
+        uses: actions/checkout@v4
+        with:
+          ref: fix/ai-fear-doi-metadata
+          fetch-depth: 0
+
+      - name: Add publication metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          en_path = Path('src/content/articles/are-we-afraid-of-ai-or-of-ourselves.md')
+          pl_path = Path('src/content/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie.md')
+
+          en = en_path.read_text(encoding='utf-8')
+          pl = pl_path.read_text(encoding='utf-8')
+
+          en_marker = 'readingTime: "25 min read"\n'
+          en_metadata = (
+              'doi: "10.5281/zenodo.21340181"\n'
+              'doiUrl: "https://doi.org/10.5281/zenodo.21340181"\n'
+              'version: "2.1"\n'
+              'licenseName: "CC BY 4.0"\n'
+              'licenseUrl: "https://creativecommons.org/licenses/by/4.0/"\n'
+          )
+          if 'doi: "10.5281/zenodo.21340181"' not in en:
+              if en_marker not in en:
+                  raise RuntimeError('English readingTime marker not found')
+              en = en.replace(en_marker, en_marker + en_metadata, 1)
+
+          pl_marker = 'readingTime: "27 min czytania"\n'
+          pl_metadata = (
+              'relatedDoi: "10.5281/zenodo.21340181"\n'
+              'relatedDoiUrl: "https://doi.org/10.5281/zenodo.21340181"\n'
+              'relatedVersion: "2.1"\n'
+              'relatedDoiLabel: "DOI wersji angielskiej"\n'
+          )
+          if 'relatedDoi: "10.5281/zenodo.21340181"' not in pl:
+              if pl_marker not in pl:
+                  raise RuntimeError('Polish readingTime marker not found')
+              pl = pl.replace(pl_marker, pl_marker + pl_metadata, 1)
+
+          en_path.write_text(en, encoding='utf-8', newline='\n')
+          pl_path.write_text(pl, encoding='utf-8', newline='\n')
+          PY
+
+      - name: Remove branch-only trigger workflow
+        run: rm -f .github/workflows/apply-ai-fear-doi-metadata.yml
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Layout QA
+        run: npm run test:layout
+
+      - name: Verify generated metadata
+        run: |
+          grep -q 'doi: "10.5281/zenodo.21340181"' src/content/articles/are-we-afraid-of-ai-or-of-ourselves.md
+          grep -q 'version: "2.1"' src/content/articles/are-we-afraid-of-ai-or-of-ourselves.md
+          grep -q 'relatedDoi: "10.5281/zenodo.21340181"' src/content/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie.md
+          grep -q 'relatedVersion: "2.1"' src/content/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie.md
+          grep -q 'citation_doi' dist/articles/are-we-afraid-of-ai-or-of-ourselves/index.html
+          grep -q '10.5281/zenodo.21340181' dist/articles/are-we-afraid-of-ai-or-of-ourselves/index.html
+          grep -q '10.5281/zenodo.21340181' dist/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/index.html
+
+      - name: Commit repair branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add AI fear article DOI metadata"
+          git push origin HEAD:fix/ai-fear-doi-metadata
