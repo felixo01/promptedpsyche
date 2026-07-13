@@ -2567,6 +2567,7 @@ html[lang='pl'] .content-header h1 {
 
 .article-hero-figure img {
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }

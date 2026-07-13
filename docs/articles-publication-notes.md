@@ -340,3 +340,9 @@ The final bibliography contains 28 verified sources: 26 peer-reviewed publicatio
 No DOI, DOI placeholder, Zenodo record or PDF claim was added. Existing indexing, RSS, sitemap, rights-notice, citation and draft-safety behavior remain unchanged.
 
 On 2026-07-12, this revision also received a final internal claim-level scientific audit, bibliographic audit, bilingual terminology audit and EN/PL equivalence audit. This was editorial quality assurance, not external peer review or scientific validation.
+
+## Final authorial editorial pass - 2026-07-13
+
+The EN/PL article pair received a final authorial and bilingual editorial pass focused on rhythm, clarity, natural language and reducing repetition. The central argument, evidence base and 28-source bibliography were not materially changed, and the article remains a research-informed conceptual essay.
+
+DOI and PDF preparation remain separate later steps. This pass did not add a DOI, PDF or Zenodo record.
