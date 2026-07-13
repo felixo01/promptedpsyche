@@ -746,7 +746,7 @@ test.describe('published articles', () => {
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
-    await expect(page.locator('[data-qa="article-byline"]')).toContainText('Aktualizacja: 12 lipca 2026');
+    await expect(page.locator('[data-qa="article-byline"]')).toContainText('Aktualizacja: 13 lipca 2026');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'Wszystkie prawa zastrzeżone'
     );
@@ -839,7 +839,7 @@ test.describe('published articles', () => {
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
-    await expect(page.locator('[data-qa="article-byline"]')).toContainText('Updated: July 12, 2026');
+    await expect(page.locator('[data-qa="article-byline"]')).toContainText('Updated: July 13, 2026');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'All rights reserved'
     );

@@ -146,7 +146,7 @@ test.describe('author entity structured data', () => {
       image: 'https://promptedpsyche.com/images/articles/human-ai-workflow-judgment.webp'
     });
     expect(article?.datePublished).toMatch(/^2026-07-04T/);
-    expect(article?.dateModified).toMatch(/^2026-07-12T/);
+    expect(article?.dateModified).toMatch(/^2026-07-13T/);
     expect(article?.identifier).toBeUndefined();
     expect(serialized).not.toMatch(privatePatterns);
   });
@@ -173,7 +173,7 @@ test.describe('author entity structured data', () => {
       image: 'https://promptedpsyche.com/images/articles/human-ai-workflow-judgment.webp'
     });
     expect(article?.datePublished).toMatch(/^2026-07-04T/);
-    expect(article?.dateModified).toMatch(/^2026-07-12T/);
+    expect(article?.dateModified).toMatch(/^2026-07-13T/);
     expect(article?.identifier).toBeUndefined();
     expect(serialized).not.toMatch(privatePatterns);
   });
