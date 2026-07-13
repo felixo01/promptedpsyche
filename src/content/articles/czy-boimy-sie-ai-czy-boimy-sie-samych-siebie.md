@@ -18,9 +18,16 @@ inBrief:
   - "AI może zwiększać skalę realizacji celu, oddalać ludzi od konsekwencji i stawać się alibi, które pozwala człowiekowi albo instytucji przedstawić własny wybór jako decyzję systemu."
   - "W ograniczonych zadaniach eksperymentalnych ludzie czasem delegowali trudne wybory do AI częściowo po to, by uniknąć odpowiedzialności, a obserwatorzy przypisywali sztucznym agentom winę lub stany przypominające intencję. Żaden z tych wyników nie czyni AI podmiotem odpowiedzialnym moralnie."
   - "Aby ustalić odpowiedzialność, trzeba sprawdzić, kto miał kontrolę, co mógł przewidzieć i kiedy mógł interweniować. Pozwala to uniknąć zarówno ukrywania sprawczości za technologią, jak i niesprawiedliwego obwiniania operatorów niskiego szczebla."
-image: /images/articles/human-ai-workflow-judgment.webp
-imageAlt: "Diagram pokazujący pracę człowieka z AI przez kontekst, uwagę, obciążenie poznawcze, zaufanie, weryfikację i odpowiedzialność."
-imageCaption: "AI może wpływać na skutek, nie stając się jego moralnym autorem. Trudniejsze jest ustalenie, kto w całym układzie człowiek-AI wyznacza cele, sprawuje kontrolę, zatwierdza wynik i ponosi odpowiedzialność."
+image: /images/articles/ai-fear-human-mirror.webp
+imageWidth: 1600
+imageHeight: 900
+imageType: "image/webp"
+imageAlt: "Człowiek stojący naprzeciw przezroczystej postaci AI i ludzkiego odbicia, symbolizujących lęk, sprawczość i odpowiedzialność."
+imageCaption: "Lęk może skupić się na maszynie, choć za interfejsem nadal pozostają ludzkie intencje i odpowiedzialność."
+socialImage: /images/articles/ai-fear-human-mirror-social.webp
+socialImageWidth: 1200
+socialImageHeight: 630
+socialImageType: "image/webp"
 lang: "pl"
 translationKey: "ai-fears-human-self-fear"
 ---
@@ -123,6 +130,11 @@ Błąd modelu nie staje się automatycznie alibi, a samo użycie automatyzacji n
 
 Trzy role mogą się łączyć. Firma może z pomocą AI stosować politykę na większą skalę, oddzielić osoby zarządzające od pracowników dotkniętych decyzją kilkoma szczeblami pośrednimi, a później opisywać poszczególne przypadki wykluczenia jako wyniki systemu. Model uczestniczy przyczynowo w wyniku, ale instytucja nadal ma znaczenie dla oceny moralnej i praktycznego rozliczenia, ponieważ to ona wybrała taki sposób działania.
 
+<figure class="article-figure" data-qa="ai-fear-figure" data-figure="amplifier-buffer-alibi">
+  <img src="/images/articles/ai-amplifier-buffer-alibi.webp" alt="Trzyczęściowa ilustracja AI wzmacniającej cel, oddalającej człowieka od konsekwencji i stającej się widocznym obiektem obwiniania." width="1600" height="900" loading="lazy" decoding="async" />
+  <figcaption>AI może pełnić rolę wzmacniacza, bufora moralnego i moralnego alibi. Są to kategorie interpretacyjne, a nie zwalidowane konstrukty psychologiczne.</figcaption>
+</figure>
+
 ## Co naprawdę pokazują eksperymenty
 
 Najmocniejsze bezpośrednie dowody dotyczą konkretnych zadań, nie całego społeczeństwa.
@@ -150,6 +162,11 @@ Takie ukrywanie sprawczości staje się szczególnie wiarygodne, gdy cały proce
 Wagner nazywa quasi-automatyzacją sytuację, w której człowiek uczestniczy w procedurze głównie po to, aby zatwierdzić wynik automatycznego procesu. Znaczący [nadzór ze strony człowieka](/pl/concepts/nadzor-ze-strony-czlowieka/) wymaga czasu, kompetencji, odpowiednich informacji, wsparcia, uprawnień i realnej możliwości zmiany decyzji (Wagner, 2019). Podpis na końcu procedury nie jest dowodem kontroli.
 
 Odpowiedzialności instytucjonalnej nie da się ustalić przez wskazanie osoby pracującej najbliżej systemu. Trzeba prześledzić wybory w całym cyklu życia: kto zdefiniował sukces, znał ograniczenia, mógł zatrzymać system, podjął decyzję na podstawie wyniku i ma obowiązek naprawić szkodę.
+
+<figure class="article-figure" data-qa="ai-fear-figure" data-figure="decision-chain">
+  <img src="/images/articles/ai-decision-chain-behind-output.webp" alt="Pojedyncza rekomendacja AI na tle ukrytej sieci ludzi, instytucji i dróg prowadzących do decyzji." width="1600" height="900" loading="lazy" decoding="async" />
+  <figcaption>Wynik systemu może wyglądać na samodzielny, choć opiera się na celach, danych, procedurach i zatwierdzeniach wybranych przez ludzi.</figcaption>
+</figure>
 
 ## Przeciwne niebezpieczeństwo: luki i operatorzy obciążani winą
 
@@ -189,6 +206,11 @@ Każdej roli odpowiada inny zestaw pytań:
 - **Naprawa:** organizacja musi ocenić skutki, poinformować pracowników, ponownie rozpatrzyć wcześniejsze decyzje i zmienić procedurę.
 
 Żaden punkt sam nie rozstrzyga odpowiedzialności moralnej ani prawnej. Zdanie „AI odmówiła szkolenia” nie opisuje pełnego łańcucha przyczynowego, a zarazem jest wygodne dla instytucji: zasłania decyzje, przez które prognoza wpłynęła na dostęp do szkolenia. Samo obwinienie przełożonego byłoby jednak równie niewystarczające, jeśli organizacja sprowadziła jego rolę do automatycznego zatwierdzania wyników.
+
+<figure class="article-figure" data-qa="ai-fear-figure" data-figure="responsibility-tracing">
+  <img src="/images/articles/ai-responsibility-tracing.webp" alt="Droga odpowiedzialności łącząca ludzkie cele, pośrednictwo AI, zatwierdzenie przez człowieka, realne konsekwencje i możliwość odwołania." width="1600" height="900" loading="lazy" decoding="async" />
+  <figcaption>Odpowiedzialność staje się wyraźniejsza, gdy można odtworzyć drogę od celu do konsekwencji, interwencji i naprawy.</figcaption>
+</figure>
 
 ## Protokół śledzenia odpowiedzialności
 

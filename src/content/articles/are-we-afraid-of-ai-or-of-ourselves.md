@@ -18,9 +18,16 @@ inBrief:
   - "AI can amplify a goal, increase moral distance and become an alibi through which a person or institution presents its own choice as the system's decision."
   - "In bounded experimental tasks, people have sometimes delegated difficult choices to AI partly to shift responsibility, while observers have attributed blame or intention-like states to artificial agents. Neither finding makes AI a morally responsible person."
   - "Responsibility must be traced through control, foreseeability and intervention capacity, while guarding against both agency laundering and the unfair blaming of low-level operators."
-image: /images/articles/human-ai-workflow-judgment.webp
-imageAlt: "Diagram of a person working with AI through context, attention, cognitive load, trust, verification and responsibility."
-imageCaption: "AI can shape an outcome without becoming its moral author. The harder question is where goals, control, approval and responsibility remain across the human-AI system."
+image: /images/articles/ai-fear-human-mirror.webp
+imageWidth: 1600
+imageHeight: 900
+imageType: "image/webp"
+imageAlt: "A person facing a translucent AI figure and a human reflection, symbolizing fear, agency and responsibility."
+imageCaption: "Fear may settle on the machine even when human intentions and responsibility remain behind the interface."
+socialImage: /images/articles/ai-fear-human-mirror-social.webp
+socialImageWidth: 1200
+socialImageHeight: 630
+socialImageType: "image/webp"
 lang: "en"
 translationKey: "ai-fears-human-self-fear"
 ---
@@ -123,6 +130,11 @@ A model error is not automatically an alibi, and automation alone does not amoun
 
 The three roles can coexist. A company can use AI to apply a policy at greater scale, place several layers between executives and affected workers, and later describe individual exclusions as system outputs. The model matters causally. The institution remains morally and practically relevant because it chose the arrangement.
 
+<figure class="article-figure" data-qa="ai-fear-figure" data-figure="amplifier-buffer-alibi">
+  <img src="/images/articles/ai-amplifier-buffer-alibi.webp" alt="A three-part illustration of AI amplifying a goal, separating a person from consequences and becoming a visible target of blame." width="1600" height="900" loading="lazy" decoding="async" />
+  <figcaption>AI may act as an amplifier, a moral buffer and a moral alibi. These are interpretive categories, not validated psychological constructs.</figcaption>
+</figure>
+
 ## What experiments actually show
 
 The strongest direct evidence concerns bounded tasks, not society as a whole.
@@ -150,6 +162,11 @@ Agency laundering becomes especially plausible when this wider arrangement disap
 Wagner describes "quasi-automation" in which humans appear in the loop mainly to rubber-stamp an automated process. Meaningful [human oversight](/concepts/human-oversight/) requires time, competence, relevant information, support, authority and a real ability to change the decision (Wagner, 2019). A signature at the end of a workflow is not proof of control.
 
 Institutional responsibility cannot be settled by naming the nearest person. It requires tracing choices across the lifecycle: who defined success, knew the limits, could stop the system, turned the output into action and can repair harm.
+
+<figure class="article-figure" data-qa="ai-fear-figure" data-figure="decision-chain">
+  <img src="/images/articles/ai-decision-chain-behind-output.webp" alt="A single AI recommendation in front of a hidden network of people, institutions and decision paths." width="1600" height="900" loading="lazy" decoding="async" />
+  <figcaption>A system output may look self-contained even though it rests on goals, data, procedures and approvals chosen by people.</figcaption>
+</figure>
 
 ## The opposite danger: gaps and crumple zones
 
@@ -189,6 +206,11 @@ Different questions attach to different roles:
 - **Repair:** the institution must investigate impact, notify affected people, review past decisions and change the process.
 
 No single bullet settles moral or legal responsibility. The phrase "AI denied the course" is both causally incomplete and institutionally useful: it hides the choices that made a prediction actionable. Yet blaming the manager alone would also be inadequate when the organization designed review as a rubber stamp.
+
+<figure class="article-figure" data-qa="ai-fear-figure" data-figure="responsibility-tracing">
+  <img src="/images/articles/ai-responsibility-tracing.webp" alt="A responsibility path linking human goals, AI mediation, human approval, real-world consequences and a route for appeal." width="1600" height="900" loading="lazy" decoding="async" />
+  <figcaption>Responsibility becomes clearer when the path from goal to consequence, intervention and repair can be reconstructed.</figcaption>
+</figure>
 
 ## A responsibility-tracing protocol
 

@@ -143,7 +143,7 @@ test.describe('author entity structured data', () => {
         sameAs: [orcidUrl]
       },
       inLanguage: 'pl',
-      image: 'https://promptedpsyche.com/images/articles/human-ai-workflow-judgment.webp'
+      image: 'https://promptedpsyche.com/images/articles/ai-fear-human-mirror-social.webp'
     });
     expect(article?.datePublished).toMatch(/^2026-07-04T/);
     expect(article?.dateModified).toMatch(/^2026-07-13T/);
@@ -170,7 +170,7 @@ test.describe('author entity structured data', () => {
         sameAs: [orcidUrl]
       },
       inLanguage: 'en',
-      image: 'https://promptedpsyche.com/images/articles/human-ai-workflow-judgment.webp'
+      image: 'https://promptedpsyche.com/images/articles/ai-fear-human-mirror-social.webp'
     });
     expect(article?.datePublished).toMatch(/^2026-07-04T/);
     expect(article?.dateModified).toMatch(/^2026-07-13T/);

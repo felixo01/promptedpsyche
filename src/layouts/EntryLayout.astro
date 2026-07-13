@@ -18,8 +18,15 @@ interface Props {
       updatedAt?: Date;
       readingTime?: string;
       image?: string;
+      imageWidth?: number;
+      imageHeight?: number;
+      imageType?: string;
       imageAlt?: string;
       imageCaption?: string;
+      socialImage?: string;
+      socialImageWidth?: number;
+      socialImageHeight?: number;
+      socialImageType?: string;
       doi?: string;
       doiUrl?: string;
       version?: string;
@@ -63,8 +70,14 @@ const publishedLabel = lang === 'pl' ? 'Opublikowano:' : 'Published:';
 const updatedLabel = lang === 'pl' ? 'Aktualizacja:' : 'Updated:';
 const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();
 const heroImage = !isConceptEntry ? entry.data.image : undefined;
+const heroImageWidth = entry.data.imageWidth;
+const heroImageHeight = entry.data.imageHeight;
 const heroImageAlt = entry.data.imageAlt ?? entry.data.title;
 const heroImageCaption = entry.data.imageCaption;
+const socialImage = !isConceptEntry ? (entry.data.socialImage ?? heroImage) : undefined;
+const socialImageWidth = entry.data.socialImageWidth ?? (socialImage === heroImage ? heroImageWidth : undefined);
+const socialImageHeight = entry.data.socialImageHeight ?? (socialImage === heroImage ? heroImageHeight : undefined);
+const socialImageType = entry.data.socialImageType ?? (socialImage === heroImage ? entry.data.imageType : undefined);
 const doi = isArticleEntry ? entry.data.doi : undefined;
 const doiUrl = doi ? (entry.data.doiUrl ?? `https://doi.org/${doi}`) : undefined;
 const version = isArticleEntry ? entry.data.version : undefined;
@@ -113,7 +126,7 @@ const articleStructuredData = isArticleEntry
       ...(doiUrl ? { sameAs: doiUrl } : {}),
       ...(licenseUrl ? { license: licenseUrl } : {}),
       ...(version ? { version } : {}),
-      ...(heroImage ? { image: absoluteUrl(heroImage) } : {})
+      ...(socialImage ? { image: absoluteUrl(socialImage) } : {})
     }
   : undefined;
 const audioLabel = lang === 'pl' ? 'Wersja audio' : 'Audio version';
@@ -149,8 +162,11 @@ const asideLabels = isConceptEntry
 <BaseLayout
   title={entry.data.title}
   description={entry.data.description}
-  image={heroImage}
-  imageAlt={heroImage ? heroImageAlt : undefined}
+  image={socialImage}
+  imageWidth={socialImageWidth}
+  imageHeight={socialImageHeight}
+  imageType={socialImageType}
+  imageAlt={socialImage ? heroImageAlt : undefined}
   type="article"
   lang={lang}
   alternateLinks={alternateLinks}
@@ -226,6 +242,8 @@ const asideLabels = isConceptEntry
         <img
           src={heroImage}
           alt={heroImageAlt}
+          width={heroImageWidth}
+          height={heroImageHeight}
           loading="eager"
           decoding="async"
           data-qa="article-hero-image"

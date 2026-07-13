@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 
 const polishArticleRoute = '/pl/articles/nie-chodzi-tylko-o-prompt/';
 const secondPolishArticleRoute = '/pl/articles/model-nie-pamieta-model-ma-kontekst/';
@@ -33,8 +33,115 @@ const aiFearsPolishArticleTitle = 'Czy boimy się AI, czy boimy się samych sieb
 const aiFearsEnglishArticleTitle = 'Are we afraid of AI, or of ourselves?';
 const embodiedPolishArticleTitle = 'Co się zmienia, kiedy AI ma ciało?';
 const embodiedEnglishArticleTitle = 'What changes when AI has a body?';
+const aiFearsHeroImage = '/images/articles/ai-fear-human-mirror.webp';
+const aiFearsSocialImage = '/images/articles/ai-fear-human-mirror-social.webp';
+const oldAiFearsHeroImage = '/images/articles/human-ai-workflow-judgment.webp';
+const aiFearsInlineImages = [
+  {
+    id: 'amplifier-buffer-alibi',
+    src: '/images/articles/ai-amplifier-buffer-alibi.webp',
+    enAlt:
+      'A three-part illustration of AI amplifying a goal, separating a person from consequences and becoming a visible target of blame.',
+    plAlt:
+      'Trzyczęściowa ilustracja AI wzmacniającej cel, oddalającej człowieka od konsekwencji i stającej się widocznym obiektem obwiniania.',
+    enCaption:
+      'AI may act as an amplifier, a moral buffer and a moral alibi. These are interpretive categories, not validated psychological constructs.',
+    plCaption:
+      'AI może pełnić rolę wzmacniacza, bufora moralnego i moralnego alibi. Są to kategorie interpretacyjne, a nie zwalidowane konstrukty psychologiczne.'
+  },
+  {
+    id: 'decision-chain',
+    src: '/images/articles/ai-decision-chain-behind-output.webp',
+    enAlt:
+      'A single AI recommendation in front of a hidden network of people, institutions and decision paths.',
+    plAlt:
+      'Pojedyncza rekomendacja AI na tle ukrytej sieci ludzi, instytucji i dróg prowadzących do decyzji.',
+    enCaption:
+      'A system output may look self-contained even though it rests on goals, data, procedures and approvals chosen by people.',
+    plCaption:
+      'Wynik systemu może wyglądać na samodzielny, choć opiera się na celach, danych, procedurach i zatwierdzeniach wybranych przez ludzi.'
+  },
+  {
+    id: 'responsibility-tracing',
+    src: '/images/articles/ai-responsibility-tracing.webp',
+    enAlt:
+      'A responsibility path linking human goals, AI mediation, human approval, real-world consequences and a route for appeal.',
+    plAlt:
+      'Droga odpowiedzialności łącząca ludzkie cele, pośrednictwo AI, zatwierdzenie przez człowieka, realne konsekwencje i możliwość odwołania.',
+    enCaption:
+      'Responsibility becomes clearer when the path from goal to consequence, intervention and repair can be reconstructed.',
+    plCaption:
+      'Odpowiedzialność staje się wyraźniejsza, gdy można odtworzyć drogę od celu do konsekwencji, interwencji i naprawy.'
+  }
+] as const;
+
+async function expectAiFearsIllustrations(page: Page, lang: 'en' | 'pl') {
+  const heroAlt =
+    lang === 'pl'
+      ? 'Człowiek stojący naprzeciw przezroczystej postaci AI i ludzkiego odbicia, symbolizujących lęk, sprawczość i odpowiedzialność.'
+      : 'A person facing a translucent AI figure and a human reflection, symbolizing fear, agency and responsibility.';
+  const heroCaption =
+    lang === 'pl'
+      ? 'Lęk może skupić się na maszynie, choć za interfejsem nadal pozostają ludzkie intencje i odpowiedzialność.'
+      : 'Fear may settle on the machine even when human intentions and responsibility remain behind the interface.';
+  const hero = page.locator('.article-hero-figure img');
+
+  await expect(hero).toHaveAttribute('src', aiFearsHeroImage);
+  await expect(hero).toHaveAttribute('alt', heroAlt);
+  await expect(hero).toHaveAttribute('width', '1600');
+  await expect(hero).toHaveAttribute('height', '900');
+  await expect(page.locator('.article-hero-figure figcaption')).toHaveText(heroCaption);
+  const heroRatio = await hero.evaluate((element: HTMLImageElement) => {
+    const { width, height } = element.getBoundingClientRect();
+    return width / height;
+  });
+  expect(heroRatio).toBeCloseTo(16 / 9, 2);
+
+  const socialImageUrl = `https://promptedpsyche.com${aiFearsSocialImage}`;
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', socialImageUrl);
+  await expect(page.locator('meta[property="og:image:width"]')).toHaveAttribute('content', '1200');
+  await expect(page.locator('meta[property="og:image:height"]')).toHaveAttribute('content', '630');
+  await expect(page.locator('meta[property="og:image:type"]')).toHaveAttribute('content', 'image/webp');
+  await expect(page.locator('meta[property="og:image:alt"]')).toHaveAttribute('content', heroAlt);
+  await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute('content', socialImageUrl);
+  await expect(page.locator('meta[name="twitter:image:alt"]')).toHaveAttribute('content', heroAlt);
+
+  const inlineFigures = page.locator('[data-qa="ai-fear-figure"]');
+  await expect(inlineFigures).toHaveCount(3);
+
+  for (const expected of aiFearsInlineImages) {
+    const figure = page.locator(`[data-figure="${expected.id}"]`);
+    const image = figure.locator('img');
+    await expect(figure).toHaveCount(1);
+    await expect(image).toHaveAttribute('src', expected.src);
+    await expect(image).toHaveAttribute('alt', lang === 'pl' ? expected.plAlt : expected.enAlt);
+    await expect(image).toHaveAttribute('width', '1600');
+    await expect(image).toHaveAttribute('height', '900');
+    await expect(image).toHaveAttribute('loading', 'lazy');
+    await expect(image).toHaveAttribute('decoding', 'async');
+    await expect(figure.locator('figcaption')).toHaveText(
+      lang === 'pl' ? expected.plCaption : expected.enCaption
+    );
+  }
+  await expect(page.locator(`img[src="${oldAiFearsHeroImage}"]`)).toHaveCount(0);
+}
 
 test.describe('published articles', () => {
+  test('serves every AI fears article illustration as WebP', async ({ request }) => {
+    const imagePaths = [
+      aiFearsHeroImage,
+      aiFearsSocialImage,
+      ...aiFearsInlineImages.map((image) => image.src)
+    ];
+
+    for (const imagePath of imagePaths) {
+      const response = await request.get(imagePath);
+      expect(response.ok(), `${imagePath} should be available`).toBeTruthy();
+      expect(response.headers()['content-type']).toContain('image/webp');
+      expect((await response.body()).byteLength).toBeGreaterThan(0);
+    }
+  });
+
   test('shows the English article on the English articles index', async ({ page }) => {
     await page.goto('/articles/');
 
@@ -750,13 +857,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'Wszystkie prawa zastrzeżone'
     );
-    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
-      'src',
-      '/images/articles/human-ai-workflow-judgment.webp'
-    );
-    await expect(page.locator('.article-hero-figure figcaption')).toContainText(
-      'AI może wpływać na skutek'
-    );
+    await expectAiFearsIllustrations(page, 'pl');
     await expect(page.locator('[data-qa="article-audio"]')).toHaveCount(0);
     await expect(page.locator('audio')).toHaveCount(0);
     await expect(page.locator('[data-qa="practice-block"]')).toHaveCount(1);
@@ -843,17 +944,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
       'All rights reserved'
     );
-    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
-      'src',
-      '/images/articles/human-ai-workflow-judgment.webp'
-    );
-    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
-      'alt',
-      'Diagram of a person working with AI through context, attention, cognitive load, trust, verification and responsibility.'
-    );
-    await expect(page.locator('.article-hero-figure figcaption')).toContainText(
-      'AI can shape an outcome'
-    );
+    await expectAiFearsIllustrations(page, 'en');
     await expect(page.locator('[data-qa="article-audio"]')).toHaveCount(0);
     await expect(page.locator('audio')).toHaveCount(0);
     await expect(page.locator('[data-qa="practice-block"]')).toHaveCount(1);
