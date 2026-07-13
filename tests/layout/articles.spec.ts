@@ -788,7 +788,7 @@ test.describe('published articles', () => {
     await expect(page.locator('body')).not.toContainText('automatyczna diagnoza');
     await expect(page.locator('body')).not.toContainText('Samotność znajduje interfejs');
     await expect(page.locator('.prose')).toContainText(
-      'Nie stanowią zwalidowanych konstruktów, narzędzia diagnostycznego ani skali.'
+      'Nie są to zwalidowane konstrukty, narzędzie diagnostyczne ani skala.'
     );
     await expect(page.locator('.prose')).toContainText('mechanizmy moralnego odłączenia');
     await expect(page.locator('.prose')).toContainText(
