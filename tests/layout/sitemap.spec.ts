@@ -78,6 +78,8 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).toContain('/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/');
     expect(sitemap).toContain('/articles/are-we-afraid-of-ai-or-of-ourselves/');
     expect(sitemap).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
+    expect(sitemap).not.toContain('/articles/dont-ask-whether-ai-makes-us-dumber/');
+    expect(sitemap).not.toContain('/pl/articles/nie-pytaj-czy-ai-nas-oglupia/');
     expect(sitemap.match(/\/articles\/are-we-afraid-of-ai-or-of-ourselves\//g) ?? []).toHaveLength(1);
   });
 
@@ -90,6 +92,8 @@ test.describe('built sitemap and RSS policy', () => {
     expect(rss).toContain('/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/');
     expect(rss).toContain('/articles/are-we-afraid-of-ai-or-of-ourselves/');
     expect(rss).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
+    expect(rss).not.toContain('/articles/dont-ask-whether-ai-makes-us-dumber/');
+    expect(rss).not.toContain('/pl/articles/nie-pytaj-czy-ai-nas-oglupia/');
     expect(
       readRssItemByLink(
         rss,
@@ -126,6 +130,17 @@ test.describe('built sitemap and RSS policy', () => {
         'https://promptedpsyche.com/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/'
       )
     ).toContain('<pubDate>Sat, 04 Jul 2026');
+  });
+
+  test('copies the AI thinking diagram without executable or external assets', () => {
+    const svg = readDistFile('images/articles/ai-thinking-practice.svg');
+
+    expect(svg).toContain('viewBox="0 0 1600 900"');
+    expect(svg).toContain('<title id="title">');
+    expect(svg).toContain('<desc id="desc">');
+    expect(svg).not.toContain('<script');
+    expect(svg).not.toContain('<image');
+    expect(svg).not.toContain('xlink:href');
   });
 
   test('keeps X-Robots-Tag scoped to tag archives after launch', () => {

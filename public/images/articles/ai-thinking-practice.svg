@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Two routes from a problem to an outcome</title>
+  <desc id="desc">A calm editorial diagram comparing a short route through a ready-made answer with a longer route that includes an attempt, a hint, feedback, another attempt and independent transfer.</desc>
+  <defs>
+    <pattern id="paper" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#f7f3ea"/>
+      <path d="M0 24L24 0" stroke="#e6ded0" stroke-width="0.45" opacity="0.4"/>
+    </pattern>
+    <marker id="arrow-charcoal" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2L10 6L2 10" fill="none" stroke="#26231f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-teal" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2L10 6L2 10" fill="none" stroke="#536965" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#paper)"/>
+
+  <g fill="none" stroke="#8c9893" opacity="0.28">
+    <circle cx="218" cy="450" r="128"/>
+    <circle cx="218" cy="450" r="166"/>
+    <circle cx="1380" cy="205" r="82"/>
+    <circle cx="1380" cy="205" r="116"/>
+  </g>
+
+  <g fill="#d7e1dc" opacity="0.55">
+    <circle cx="1360" cy="692" r="154"/>
+    <circle cx="510" cy="170" r="74"/>
+  </g>
+
+  <g stroke="#26231f" stroke-width="2.1" fill="#fbfaf6">
+    <rect x="110" y="360" width="216" height="180" rx="22"/>
+    <rect x="616" y="214" width="252" height="156" rx="22"/>
+    <rect x="1262" y="214" width="226" height="156" rx="22"/>
+    <rect x="1284" y="602" width="204" height="156" rx="22"/>
+  </g>
+
+  <g stroke="#26231f" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M170 405H266V495H170Z"/>
+    <path d="M194 429L242 477"/>
+    <path d="M242 429L194 477"/>
+
+    <path d="M678 258H806"/>
+    <path d="M678 292H790"/>
+    <path d="M678 326H758"/>
+    <circle cx="822" cy="326" r="7" fill="#c3944e" stroke="none"/>
+
+    <path d="M1323 290L1360 327L1428 251"/>
+    <path d="M1332 669L1366 703L1436 627"/>
+  </g>
+
+  <g fill="none" stroke="#26231f" stroke-width="2.1" marker-end="url(#arrow-charcoal)">
+    <path d="M326 408C420 308 508 290 614 290"/>
+    <path d="M870 290C1018 290 1138 290 1260 290"/>
+  </g>
+
+  <g fill="none" stroke="#536965" stroke-width="2.3" marker-end="url(#arrow-teal)">
+    <path d="M326 492C394 578 438 646 508 670"/>
+    <path d="M590 670H674"/>
+    <path d="M756 670H840"/>
+    <path d="M922 670H1006"/>
+    <path d="M1088 670H1172"/>
+    <path d="M1254 670H1282"/>
+  </g>
+
+  <g fill="#fbfaf6" stroke="#536965" stroke-width="2.2">
+    <circle cx="550" cy="670" r="40"/>
+    <circle cx="716" cy="670" r="40"/>
+    <circle cx="882" cy="670" r="40"/>
+    <circle cx="1048" cy="670" r="40"/>
+    <path d="M1213 622L1261 670L1213 718L1165 670Z"/>
+  </g>
+
+  <g fill="none" stroke="#536965" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M530 679L546 695L576 653"/>
+    <path d="M698 679C704 660 720 652 736 657"/>
+    <path d="M728 650L739 657L731 668"/>
+    <path d="M862 654H900"/>
+    <path d="M862 671H890"/>
+    <path d="M862 688H881"/>
+    <path d="M1028 679L1044 695L1074 653"/>
+    <circle cx="1213" cy="670" r="14"/>
+    <path d="M1203 670L1210 677L1224 661"/>
+  </g>
+
+  <g fill="none" stroke="#8c9893" stroke-width="1.6" stroke-dasharray="7 10">
+    <path d="M742 372C742 474 700 526 716 628"/>
+    <path d="M882 628C880 554 936 526 1048 628"/>
+    <path d="M1048 628C1090 548 1002 516 882 628"/>
+  </g>
+
+  <g fill="#536965">
+    <circle cx="326" cy="408" r="7"/>
+    <circle cx="326" cy="492" r="7"/>
+    <circle cx="614" cy="290" r="7"/>
+    <circle cx="1260" cy="290" r="7"/>
+  </g>
+
+  <g fill="#26231f" opacity="0.42">
+    <circle cx="102" cy="680" r="3"/>
+    <circle cx="132" cy="680" r="3"/>
+    <circle cx="162" cy="680" r="3"/>
+    <circle cx="102" cy="710" r="3"/>
+    <circle cx="132" cy="710" r="3"/>
+    <circle cx="162" cy="710" r="3"/>
+    <circle cx="102" cy="740" r="3"/>
+    <circle cx="132" cy="740" r="3"/>
+    <circle cx="162" cy="740" r="3"/>
+  </g>
+
+  <path d="M432 792C690 836 1042 830 1284 760" fill="none" stroke="#c3944e" stroke-width="1.5" opacity="0.5"/>
+</svg>

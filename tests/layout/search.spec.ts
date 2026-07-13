@@ -22,7 +22,9 @@ const draftTitles = [
   'AI Literacy Is Not Prompt Engineering',
   "Why People Trust AI Even When They Shouldn't",
   'We Prompt Machines. Machines Prompt Us Back',
-  'What Is Cyberpsychology of AI?'
+  'What Is Cyberpsychology of AI?',
+  "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing",
+  'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać'
 ];
 
 function countByType(items: SearchItem[], type: SearchItem['type']) {

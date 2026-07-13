@@ -18,6 +18,8 @@ const aiFearsPolishArticleRoute =
 const aiFearsEnglishArticleRoute = '/articles/are-we-afraid-of-ai-or-of-ourselves/';
 const embodiedPolishArticleRoute = '/pl/articles/co-sie-zmienia-kiedy-ai-ma-cialo/';
 const embodiedEnglishArticleRoute = '/articles/what-changes-when-ai-has-a-body/';
+const aiThinkingPolishDraftRoute = '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/';
+const aiThinkingEnglishDraftRoute = '/articles/dont-ask-whether-ai-makes-us-dumber/';
 const thirdEnglishArticleTitle =
   'AI does not read people. It helps make sense of the situation.';
 const thirdPolishArticleTitle = 'AI nie czyta ludzi. Pomaga uporządkować sytuację.';
@@ -1416,11 +1418,23 @@ test.describe('published articles', () => {
 
     await expect(page.locator('body')).not.toContainText('AI Literacy Is Not Prompt Engineering');
     await expect(page.locator('body')).not.toContainText("Why People Trust AI Even When They Shouldn't");
+    await expect(page.locator('body')).not.toContainText(
+      "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing"
+    );
+
+    await page.goto('/pl/articles/');
+    await expect(page.locator('body')).not.toContainText(
+      'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać'
+    );
 
     const aiLiteracyDraft = await request.get('/articles/ai-literacy-is-not-prompt-engineering/');
     const trustDraft = await request.get('/articles/why-people-trust-ai-even-when-they-shouldnt/');
+    const aiThinkingEnglishDraft = await request.get(aiThinkingEnglishDraftRoute);
+    const aiThinkingPolishDraft = await request.get(aiThinkingPolishDraftRoute);
 
     expect(aiLiteracyDraft.ok()).toBe(false);
     expect(trustDraft.ok()).toBe(false);
+    expect(aiThinkingEnglishDraft.ok()).toBe(false);
+    expect(aiThinkingPolishDraft.ok()).toBe(false);
   });
 });

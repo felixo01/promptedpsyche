@@ -111,6 +111,9 @@ test.describe('publication tag pages', () => {
     );
     await expect(page.locator('.tag-archive-list')).not.toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('.tag-archive-list')).not.toContainText('AI Literacy Is Not Prompt Engineering');
+    await expect(page.locator('.tag-archive-list')).not.toContainText(
+      "Don't Ask Whether AI Makes Us Dumber"
+    );
   });
 
   test('renders Polish tag archive without English publication leakage', async ({ page }) => {
@@ -128,5 +131,8 @@ test.describe('publication tag pages', () => {
     );
     await expect(page.locator('.tag-archive-list')).not.toContainText('It is not just about the prompt');
     await expect(page.locator('.tag-archive-list')).not.toContainText('AI Literacy Is Not Prompt Engineering');
+    await expect(page.locator('.tag-archive-list')).not.toContainText(
+      'Nie pytaj, czy AI nas ogłupia'
+    );
   });
 });
