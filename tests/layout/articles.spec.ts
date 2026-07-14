@@ -18,8 +18,14 @@ const aiFearsPolishArticleRoute =
 const aiFearsEnglishArticleRoute = '/articles/are-we-afraid-of-ai-or-of-ourselves/';
 const embodiedPolishArticleRoute = '/pl/articles/co-sie-zmienia-kiedy-ai-ma-cialo/';
 const embodiedEnglishArticleRoute = '/articles/what-changes-when-ai-has-a-body/';
-const aiThinkingPolishDraftRoute = '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/';
-const aiThinkingEnglishDraftRoute = '/articles/dont-ask-whether-ai-makes-us-dumber/';
+const aiThinkingPolishArticleRoute = '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/';
+const aiThinkingEnglishArticleRoute = '/articles/dont-ask-whether-ai-makes-us-dumber/';
+const aiThinkingPolishArticleTitle =
+  'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać';
+const aiThinkingEnglishArticleTitle =
+  "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing";
+const aiThinkingEnglishDoi = '10.5281/zenodo.21358687';
+const aiThinkingEnglishDoiUrl = `https://doi.org/${aiThinkingEnglishDoi}`;
 const thirdEnglishArticleTitle =
   'AI does not read people. It helps make sense of the situation.';
 const thirdPolishArticleTitle = 'AI nie czyta ludzi. Pomaga uporządkować sytuację.';
@@ -149,7 +155,7 @@ test.describe('published articles', () => {
   test('shows the English article on the English articles index', async ({ page }) => {
     await page.goto('/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(7);
+    await expect(page.locator('.entry-list article')).toHaveCount(8);
     await expect(page.locator('.entry-list')).toContainText('It is not just about the prompt');
     await expect(page.locator('.entry-list')).toContainText(
       'The model does not remember. It works with context.'
@@ -159,13 +165,15 @@ test.describe('published articles', () => {
     await expect(page.locator('.entry-list')).toContainText(aiPathEnglishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiFearsEnglishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(embodiedEnglishArticleTitle);
+    await expect(page.locator('.entry-list')).toContainText(aiThinkingEnglishArticleTitle);
     await expect(page.locator('.entry-list')).not.toContainText(oldAiPathEnglishArticleTitle);
     await expect(page.locator('.entry-list')).not.toContainText(
       'AI does not read people. It helps read context.'
     );
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(7);
+    expect(titles).toHaveLength(8);
     expect(titles).toEqual(expect.arrayContaining([
+      aiThinkingEnglishArticleTitle,
       embodiedEnglishArticleTitle,
       aiFearsEnglishArticleTitle,
       aiPathEnglishArticleTitle,
@@ -265,12 +273,13 @@ test.describe('published articles', () => {
   test('shows the Polish article on the Polish articles index', async ({ page }) => {
     await page.goto('/pl/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(7);
+    await expect(page.locator('.entry-list article')).toHaveCount(8);
     await expect(page.locator('.entry-list')).toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('.entry-list')).toContainText(mirrorPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiPathPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiFearsPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(embodiedPolishArticleTitle);
+    await expect(page.locator('.entry-list')).toContainText(aiThinkingPolishArticleTitle);
     await expect(page.locator('.entry-list')).not.toContainText(oldAiPathPolishArticleTitle);
     const titleLink = page.getByRole('link', {
       name: 'Nie chodzi tylko o prompt',
@@ -340,8 +349,9 @@ test.describe('published articles', () => {
     await page.goto('/pl/articles/');
 
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(7);
+    expect(titles).toHaveLength(8);
     expect(titles).toEqual(expect.arrayContaining([
+      aiThinkingPolishArticleTitle,
       embodiedPolishArticleTitle,
       aiFearsPolishArticleTitle,
       aiPathPolishArticleTitle,
@@ -395,6 +405,7 @@ test.describe('published articles', () => {
     await expect(page.locator('body')).not.toContainText(mirrorPolishArticleTitle);
     await expect(page.locator('body')).not.toContainText(aiPathPolishArticleTitle);
     await expect(page.locator('body')).not.toContainText(aiFearsPolishArticleTitle);
+    await expect(page.locator('body')).not.toContainText(aiThinkingPolishArticleTitle);
   });
 
   test('does not show the English article on the Polish articles index', async ({ page }) => {
@@ -410,6 +421,7 @@ test.describe('published articles', () => {
     await expect(page.locator('body')).not.toContainText(mirrorEnglishArticleTitle);
     await expect(page.locator('body')).not.toContainText(aiPathEnglishArticleTitle);
     await expect(page.locator('body')).not.toContainText(aiFearsEnglishArticleTitle);
+    await expect(page.locator('body')).not.toContainText(aiThinkingEnglishArticleTitle);
   });
 
   test('renders the English article detail page with byline, citation and rights notice', async ({ page }) => {
@@ -1517,28 +1529,103 @@ test.describe('published articles', () => {
     );
   });
 
+
+  test('renders the published AI thinking English article with DOI and localized evidence tables', async ({ page }) => {
+    await page.goto(aiThinkingEnglishArticleRoute);
+
+    await expect(page.locator('.content-header h1')).toHaveText(aiThinkingEnglishArticleTitle);
+    await expect(page.locator('[data-qa="article-byline"]')).toContainText('Published: July 14, 2026');
+    const byline = page.locator('[data-qa="article-byline"]');
+    await expect(byline).toContainText('Citable version (v1.0):');
+    await expect(byline.getByRole('link', { name: `DOI ${aiThinkingEnglishDoi}` })).toHaveAttribute(
+      'href',
+      aiThinkingEnglishDoiUrl
+    );
+    await expect(page.locator('meta[name="citation_doi"]')).toHaveAttribute(
+      'content',
+      aiThinkingEnglishDoi
+    );
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'CC BY 4.0'
+    );
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+      'src',
+      '/images/articles/ai-thinking-practice.svg'
+    );
+    await expect(page.locator('[data-qa="ai-thinking-data-table"]')).toHaveCount(4);
+    await expect(page.locator('.prose')).toContainText('Evidence map');
+    await expect(page.locator('.prose')).toContainText('What the studies actually measure');
+    await expect(page.locator('.prose')).toContainText('Direct comparisons that matter most');
+    await expect(page.locator('.prose')).toContainText('Completion interface versus learning interface');
+    await expect(
+      page.locator(`.language-switcher a[href="${aiThinkingPolishArticleRoute}"]`)
+    ).toBeVisible();
+
+    await page.setViewportSize({ width: 390, height: 900 });
+    const overflowingFigures = await page.locator('[data-qa="ai-thinking-data-table"]').evaluateAll((figures) =>
+      figures
+        .map((figure) => {
+          const rect = figure.getBoundingClientRect();
+          return rect.left < -1 || rect.right > window.innerWidth + 1;
+        })
+        .filter(Boolean)
+    );
+    expect(overflowingFigures).toEqual([]);
+  });
+
+  test('renders the published AI thinking Polish article with the English DOI and localized evidence tables', async ({ page }) => {
+    await page.goto(aiThinkingPolishArticleRoute);
+
+    await expect(page.locator('.content-header h1')).toHaveText(aiThinkingPolishArticleTitle);
+    await expect(page.locator('[data-qa="article-byline"]')).toContainText('Opublikowano: 14 lipca 2026');
+    const byline = page.locator('[data-qa="article-byline"]');
+    await expect(byline).toContainText('DOI wersji angielskiej (v1.0):');
+    await expect(byline.getByRole('link', { name: `DOI ${aiThinkingEnglishDoi}` })).toHaveAttribute(
+      'href',
+      aiThinkingEnglishDoiUrl
+    );
+    await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
+    await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+      'CC BY 4.0'
+    );
+    await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+      'src',
+      '/images/articles/ai-thinking-practice.svg'
+    );
+    await expect(page.locator('[data-qa="ai-thinking-data-table"]')).toHaveCount(4);
+    await expect(page.locator('.prose')).toContainText('Mapa materiału źródłowego');
+    await expect(page.locator('.prose')).toContainText('Co naprawdę mierzą badania');
+    await expect(page.locator('.prose')).toContainText('Najważniejsze bezpośrednie porównania');
+    await expect(page.locator('.prose')).toContainText(
+      'Interfejs ukończenia zadania a interfejs uczenia się'
+    );
+    await expect(
+      page.locator(`.language-switcher a[href="${aiThinkingEnglishArticleRoute}"]`)
+    ).toBeVisible();
+
+    await page.setViewportSize({ width: 390, height: 900 });
+    const overflowingFigures = await page.locator('[data-qa="ai-thinking-data-table"]').evaluateAll((figures) =>
+      figures
+        .map((figure) => {
+          const rect = figure.getBoundingClientRect();
+          return rect.left < -1 || rect.right > window.innerWidth + 1;
+        })
+        .filter(Boolean)
+    );
+    expect(overflowingFigures).toEqual([]);
+  });
+
   test('keeps other article drafts hidden', async ({ page, request }) => {
     await page.goto('/articles/');
 
     await expect(page.locator('body')).not.toContainText('AI Literacy Is Not Prompt Engineering');
     await expect(page.locator('body')).not.toContainText("Why People Trust AI Even When They Shouldn't");
-    await expect(page.locator('body')).not.toContainText(
-      "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing"
-    );
 
     await page.goto('/pl/articles/');
-    await expect(page.locator('body')).not.toContainText(
-      'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać'
-    );
 
     const aiLiteracyDraft = await request.get('/articles/ai-literacy-is-not-prompt-engineering/');
     const trustDraft = await request.get('/articles/why-people-trust-ai-even-when-they-shouldnt/');
-    const aiThinkingEnglishDraft = await request.get(aiThinkingEnglishDraftRoute);
-    const aiThinkingPolishDraft = await request.get(aiThinkingPolishDraftRoute);
-
     expect(aiLiteracyDraft.ok()).toBe(false);
     expect(trustDraft.ok()).toBe(false);
-    expect(aiThinkingEnglishDraft.ok()).toBe(false);
-    expect(aiThinkingPolishDraft.ok()).toBe(false);
   });
 });
