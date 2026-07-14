@@ -1,8 +1,8 @@
 ---
 title: "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing"
 description: "What current evidence says about AI, learning and independent thought, and why ready-made answers and well-designed scaffolding produce different outcomes."
-publishedAt: 2026-07-13
-draft: true
+publishedAt: 2026-07-14
+draft: false
 tags:
   - AI and humans
   - cognition
@@ -11,7 +11,12 @@ tags:
   - AI literacy
   - education
 author: "Feliks Mamczur"
-readingTime: "20 min read"
+readingTime: "22 min read"
+doi: "10.5281/zenodo.21358687"
+doiUrl: "https://doi.org/10.5281/zenodo.21358687"
+version: "1.0"
+licenseName: "CC BY 4.0"
+licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 inBrief:
   - "Current studies do not measure one outcome called becoming dumber. They examine memory, effort, persistence, learning, transfer, creativity and other distinct processes."
   - "AI can improve performance while it is available and still leave a person less able to solve a similar problem independently."
@@ -23,6 +28,74 @@ imageCaption: "Both routes can end in a completed task. Only one keeps the attem
 lang: "en"
 translationKey: "ai-thinking-practice"
 ---
+<style>
+.article-data-table {
+  margin: clamp(2.2rem, 4vw, 3rem) 0;
+}
+
+.article-data-table__scroll {
+  overflow-x: auto;
+  border-block: 1px solid var(--line-strong);
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-data-table table {
+  width: 100%;
+  min-width: 44rem;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  line-height: 1.48;
+}
+
+.article-data-table caption {
+  padding: 0.85rem 0.85rem 0.7rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.11em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.article-data-table th,
+.article-data-table td {
+  padding: 0.72rem 0.85rem;
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: top;
+}
+
+.article-data-table th {
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-weight: 650;
+  text-align: left;
+}
+
+.article-data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.article-data-table figcaption {
+  margin-top: 0.7rem;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .article-data-table table {
+    min-width: 38rem;
+    font-size: 0.82rem;
+  }
+
+  .article-data-table th,
+  .article-data-table td {
+    padding: 0.65rem 0.72rem;
+  }
+}
+</style>
 
 You use AI to solve a problem you did not know how to begin an hour ago. The system identifies the problem type, selects a method, performs the calculation and gives you a clear explanation. The answer is correct. A few minutes later, with the tool no longer available, you face a similar problem and cannot reconstruct the first step.
 
@@ -49,6 +122,25 @@ The evidence set includes laboratory experiments, randomized field studies, larg
 
 Most generative-AI studies in this area measure immediate or short-term outcomes. They tell us little about what months or years of routine use may do. That gap is not evidence that long-term effects are absent. It is a reason to keep observed results separate from plausible but untested trajectories.
 
+<figure class="article-data-table" data-qa="ai-thinking-data-table" data-table="evidence-map">
+  <div class="article-data-table__scroll">
+    <table>
+      <caption>Evidence map</caption>
+      <thead>
+        <tr><th scope="col">Source class</th><th scope="col">Count</th><th scope="col">Role in the article</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Peer-reviewed publications</td><td>15</td><td>Randomized studies, experiments, reviews, a meta-analysis and earlier learning research.</td></tr>
+        <tr><td>Preprints</td><td>5</td><td>Recent findings on writing, persistence, tutoring support, creative diversity and methodological critique.</td></tr>
+        <tr><td>Official report</td><td>1</td><td>Context for US grade 12 mathematics trends, not evidence of an AI effect.</td></tr>
+        <tr><td>Journalism</td><td>1</td><td>The public argument being examined, not a primary scientific source.</td></tr>
+        <tr><td>Total</td><td>22</td><td>A narrative evidence set that cannot be reduced to one pooled effect.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>The evidence spans different tasks, populations, time scales and outcome measures. The counts describe the source set, not the strength of one common effect.</figcaption>
+</figure>
+
 ## What Business Insider gets right
 
 An overbroad headline does not call for an equally broad reassurance. Some of the warning signals are substantial.
@@ -66,6 +158,26 @@ Intelligence is a broad family of capacities, itself measured in different ways.
 EEG activity or connectivity during a task is not a direct measure of intelligence either. Lower activity is not automatically worse. Expertise can make some work more efficient, and a recorded pattern may reflect strategy, workload or coordination rather than loss of ability. Its meaning comes from the task, the comparison and its relationship with behavior.
 
 The distinction matters when broad historical trends enter the discussion. An analysis of 394,378 US adults found declines in several cognitive subscales from 2006 to 2018 while three-dimensional rotation scores increased (Dworak et al., 2023). US grade 12 mathematics performance has also declined across assessments (National Center for Education Statistics, 2025). Both trends deserve explanation. Neither can show an effect of mass generative-AI use, which came later.
+
+<figure class="article-data-table" data-qa="ai-thinking-data-table" data-table="constructs">
+  <div class="article-data-table__scroll">
+    <table>
+      <caption>What the studies actually measure</caption>
+      <thead>
+        <tr><th scope="col">Construct</th><th scope="col">Typical question</th><th scope="col">What it does not establish by itself</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Task performance</td><td>Was the answer correct while AI was available?</td><td>Durable learning or independent competence.</td></tr>
+        <tr><td>Memory</td><td>Can a person recall content, its source or their own text?</td><td>General intelligence.</td></tr>
+        <tr><td>Effort / EEG pattern</td><td>How demanding was this task and what activity pattern accompanied it?</td><td>A direct scale of thought quality or permanent brain change.</td></tr>
+        <tr><td>Persistence</td><td>Does the person continue after difficulty or after assistance is removed?</td><td>Long-term deskilling.</td></tr>
+        <tr><td>Transfer</td><td>Can the person solve a related problem without the original support?</td><td>Performance in every other domain.</td></tr>
+        <tr><td>Creativity</td><td>How is one output rated, and how diverse is the whole collection?</td><td>One universal improvement or decline in creativity.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>"Dumber" collapses distinct variables. A responsible interpretation starts by naming the outcome that was actually measured.</figcaption>
+</figure>
 
 ## What "Your Brain on ChatGPT" actually measured
 
@@ -115,6 +227,25 @@ The *Tutor CoPilot* preprint represents a different arrangement. AI did not teac
 
 Liu and colleagues add a clue about user strategy. In their second experiment, 61 percent of AI users reported mainly asking for direct answers, 27 percent sought hints or clarification and 12 percent did not use the tool. Direct-answer users later solved fewer problems and skipped more than hint seekers. This subgroup comparison was not randomized, so it cannot show that the request style caused the difference. It is nevertheless consistent with the mechanism in Bastani: help that preserves an attempt is different from help that replaces it.
 
+<figure class="article-data-table" data-qa="ai-thinking-data-table" data-table="design-comparisons">
+  <div class="article-data-table__scroll">
+    <table>
+      <caption>Direct comparisons that matter most</caption>
+      <thead>
+        <tr><th scope="col">Study</th><th scope="col">Assistance structure</th><th scope="col">Observed result</th><th scope="col">Boundary</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Bastani et al. (2025)</td><td>Unrestricted GPT versus a tutor with graduated hints and restricted solutions.</td><td>Both improved practice; unrestricted GPT was followed by worse unassisted performance, while GPT Tutor was not.</td><td>Four high-school mathematics sessions.</td></tr>
+        <tr><td>Kestin et al. (2025)</td><td>Purpose-built tutor with topic material, feedback and checks for understanding.</td><td>Larger immediate gains than the compared active-learning classes in two physics topics.</td><td>No delayed retention or broad transfer measure.</td></tr>
+        <tr><td>Liu et al. (2026, preprint)</td><td>Short access to direct AI help followed by unassisted work.</td><td>Lower independent performance and more giving up after assistance was removed.</td><td>Brief experiments do not establish lasting deskilling.</td></tr>
+        <tr><td>Tutor CoPilot (2024, preprint)</td><td>AI suggested pedagogical strategies to human tutors.</td><td>Higher short exit-ticket mastery and more guiding questions.</td><td>No significant end-of-year mathematics gain.</td></tr>
+        <tr><td>Doshi &amp; Hauser (2024)</td><td>AI-generated ideas for short-story writing.</td><td>Higher ratings for individual stories but greater similarity across the collection.</td><td>Individual quality and collective diversity are different outcomes.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>The strongest conclusion is not that AI is good or bad for learning. It is that different structures of assistance preserve or replace different parts of the human process.</figcaption>
+</figure>
+
 ## Creativity can rise while diversity falls
 
 Creativity makes the problem of measurement especially visible. Anil Doshi and Oliver Hauser asked 293 people to write short stories. Access to AI-generated ideas increased average ratings of novelty and usefulness, particularly among writers with lower initial divergent-association scores. At the same time, AI-assisted stories became more similar to one another (Doshi & Hauser, 2024).
@@ -144,6 +275,26 @@ For schools and universities, this means that permission or prohibition alone sa
 For product teams, the choice extends beyond model accuracy. It includes when the interface answers, when it asks, how much it reveals, whether it tracks the level of help and whether it tests independent transfer. These are substantive [Human-AI Interaction](/concepts/human-ai-interaction/) decisions, not a decorative layer on top of a model.
 
 For users, the missing skill is often [metacognition](/concepts/metacognition/): knowing whether an explanation has been understood or merely recognized as fluent. It also requires [calibrated trust](/concepts/calibrated-trust/). A direct answer can be appropriate for routine execution and risky in learning, medical interpretation or a high-stakes decision.
+
+<figure class="article-data-table" data-qa="ai-thinking-data-table" data-table="interface-matrix">
+  <div class="article-data-table__scroll">
+    <table>
+      <caption>Completion interface versus learning interface</caption>
+      <thead>
+        <tr><th scope="col">Design choice</th><th scope="col">Completion objective</th><th scope="col">Learning objective</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>First response</td><td>Produce a usable answer quickly.</td><td>Wait for an initial attempt or diagnosis.</td></tr>
+        <tr><td>Level of help</td><td>Provide the complete transformation or solution.</td><td>Offer the smallest useful hint and increase help only when needed.</td></tr>
+        <tr><td>Error handling</td><td>Correct the output.</td><td>Identify the misconception and ask the learner to repair it.</td></tr>
+        <tr><td>Explanation</td><td>Make the result clear enough to use.</td><td>Require explanation in the learner's own words.</td></tr>
+        <tr><td>Success measure</td><td>Quality, speed and reliability of the finished result.</td><td>Retention, transfer and performance after support is withdrawn.</td></tr>
+        <tr><td>Human responsibility</td><td>Verify assumptions and decide whether the output is fit for use.</td><td>Retain the reasoning needed to detect errors and solve a new variation.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Productivity and learning are legitimate but different objectives. A single interface should not silently treat them as the same task.</figcaption>
+</figure>
 
 <aside class="editorial-aside editorial-aside--practice">
   <p class="editorial-aside__label">Simple test</p>

@@ -1,8 +1,8 @@
 ---
 title: "Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać"
 description: "Co obecne badania naprawdę mówią o AI, uczeniu się i myśleniu oraz dlaczego gotowa odpowiedź i dobrze zaprojektowane rusztowanie prowadzą do innych rezultatów."
-publishedAt: 2026-07-13
-draft: true
+publishedAt: 2026-07-14
+draft: false
 tags:
   - AI i człowiek
   - poznanie
@@ -11,7 +11,13 @@ tags:
   - AI literacy
   - edukacja
 author: "Feliks Mamczur"
-readingTime: "24 min czytania"
+readingTime: "27 min czytania"
+relatedDoi: "10.5281/zenodo.21358687"
+relatedDoiUrl: "https://doi.org/10.5281/zenodo.21358687"
+relatedVersion: "1.0"
+relatedDoiLabel: "DOI wersji angielskiej"
+licenseName: "CC BY 4.0"
+licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 inBrief:
   - "Obecne badania nie mierzą jednego zjawiska o nazwie ogłupienie: dotyczą między innymi pamięci, wysiłku, wytrwałości, uczenia się, transferu i kreatywności."
   - "AI może poprawić wynik podczas pracy z narzędziem, a jednocześnie pogorszyć późniejsze wykonanie podobnego zadania bez pomocy."
@@ -23,6 +29,74 @@ imageCaption: "Obie drogi mogą prowadzić do ukończonego zadania. Tylko jedna 
 lang: "pl"
 translationKey: "ai-thinking-practice"
 ---
+<style>
+.article-data-table {
+  margin: clamp(2.2rem, 4vw, 3rem) 0;
+}
+
+.article-data-table__scroll {
+  overflow-x: auto;
+  border-block: 1px solid var(--line-strong);
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-data-table table {
+  width: 100%;
+  min-width: 44rem;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  line-height: 1.48;
+}
+
+.article-data-table caption {
+  padding: 0.85rem 0.85rem 0.7rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.11em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.article-data-table th,
+.article-data-table td {
+  padding: 0.72rem 0.85rem;
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: top;
+}
+
+.article-data-table th {
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-weight: 650;
+  text-align: left;
+}
+
+.article-data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.article-data-table figcaption {
+  margin-top: 0.7rem;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .article-data-table table {
+    min-width: 38rem;
+    font-size: 0.82rem;
+  }
+
+  .article-data-table th,
+  .article-data-table td {
+    padding: 0.65rem 0.72rem;
+  }
+}
+</style>
 
 Rozwiązujesz z pomocą AI zadanie, z którym jeszcze godzinę temu nie wiedziałeś, jak zacząć. System rozpoznaje typ problemu, wybiera wzór, wykonuje obliczenia i układa klarowne wyjaśnienie. Wynik jest poprawny. Kiedy jednak kilka minut później dostajesz podobne zadanie bez dostępu do narzędzia, nie potrafisz odtworzyć pierwszego kroku.
 
@@ -49,6 +123,25 @@ Zestaw źródeł obejmuje eksperymenty laboratoryjne, randomizowane badania tere
 
 W większości badań dotyczących generatywnej AI obserwowano skutki natychmiastowe albo krótkoterminowe. Niewiele wiemy o zmianach po wielu miesiącach regularnego korzystania. Brak takich danych nie oznacza, że długoterminowego efektu nie ma. Oznacza, że trzeba oddzielić to, co już zaobserwowano, od tego, co pozostaje hipotezą.
 
+<figure class="article-data-table" data-qa="ai-thinking-data-table" data-table="evidence-map">
+  <div class="article-data-table__scroll">
+    <table>
+      <caption>Mapa materiału źródłowego</caption>
+      <thead>
+        <tr><th scope="col">Rodzaj źródła</th><th scope="col">Liczba</th><th scope="col">Rola w artykule</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Publikacje recenzowane</td><td>15</td><td>Badania randomizowane, eksperymenty, przeglądy, metaanaliza i wcześniejsza psychologia uczenia się.</td></tr>
+        <tr><td>Preprinty</td><td>5</td><td>Najnowsze wyniki dotyczące pisania, wytrwałości, wsparcia tutorów, różnorodności twórczej i krytyki metodologicznej.</td></tr>
+        <tr><td>Raport oficjalny</td><td>1</td><td>Kontekst trendów wyników matematycznych, nie dowód wpływu AI.</td></tr>
+        <tr><td>Dziennikarstwo</td><td>1</td><td>Analizowany punkt wyjścia debaty publicznej, nie pierwotny dowód naukowy.</td></tr>
+        <tr><td>Łącznie</td><td>22</td><td>Zestaw do syntezy narracyjnej, którego nie można sprowadzić do jednego wspólnego efektu.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Źródła dotyczą różnych zadań, populacji, skal czasu i miar. Liczby opisują zestaw materiału, a nie siłę jednego wspólnego efektu.</figcaption>
+</figure>
+
 ## Co Business Insider trafnie zauważa
 
 Najlepszą odpowiedzią na uproszczony nagłówek nie jest równie proste uspokojenie. Niektóre sygnały ryzyka są wyraźne.
@@ -66,6 +159,26 @@ Inteligencja opisuje szeroki zespół zdolności i sama może być mierzona na r
 Podobnie aktywność lub łączność EEG podczas zadania nie jest bezpośrednim wskaźnikiem inteligencji. Mniej aktywności nie zawsze znaczy gorzej. Doświadczony człowiek może wykonywać zadanie sprawniej, a system pomiarowy może rejestrować zmianę strategii, obciążenia albo koordynacji, nie spadek zdolności. Znaczenie wzorca zależy od zadania, porównania i związku z zachowaniem.
 
 To rozróżnienie jest szczególnie ważne, gdy do debaty włącza się trendy społeczne. Analiza 394 378 amerykańskich dorosłych wykazała spadki części wyników poznawczych między 2006 a 2018 rokiem, ale wzrost w zadaniach rotacji przestrzennej (Dworak et al., 2023). Wyniki matematyczne amerykańskich dwunastoklasistów również spadły przed i po 2019 roku (National Center for Education Statistics, 2025). Oba zjawiska mogą wymagać poważnego wyjaśnienia. Żadne nie może być dowodem skutku generatywnej AI, której masowe użycie zaczęło się później.
+
+<figure class="article-data-table" data-qa="ai-thinking-data-table" data-table="constructs">
+  <div class="article-data-table__scroll">
+    <table>
+      <caption>Co naprawdę mierzą badania</caption>
+      <thead>
+        <tr><th scope="col">Zmienna</th><th scope="col">Typowe pytanie</th><th scope="col">Czego sama nie dowodzi</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Wykonanie zadania</td><td>Czy odpowiedź była poprawna podczas dostępu do AI?</td><td>Trwałego uczenia się lub samodzielnej kompetencji.</td></tr>
+        <tr><td>Pamięć</td><td>Czy człowiek pamięta treść, jej źródło albo własny tekst?</td><td>Ogólnej inteligencji.</td></tr>
+        <tr><td>Wysiłek / wzorzec EEG</td><td>Jak wymagające było zadanie i jaki wzorzec aktywności mu towarzyszył?</td><td>Bezpośredniej jakości myślenia ani trwałej zmiany mózgu.</td></tr>
+        <tr><td>Wytrwałość</td><td>Czy osoba kontynuuje po trudności albo po odebraniu pomocy?</td><td>Długotrwałej erozji kompetencji.</td></tr>
+        <tr><td>Transfer</td><td>Czy potrafi rozwiązać podobny problem bez wcześniejszego wsparcia?</td><td>Wyniku we wszystkich innych dziedzinach.</td></tr>
+        <tr><td>Kreatywność</td><td>Jak oceniono pojedynczy rezultat i jak różnorodny jest cały zbiór?</td><td>Jednej ogólnej poprawy lub degradacji kreatywności.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Określenie „głupsi” łączy odrębne zmienne. Rzetelna interpretacja zaczyna się od nazwania tego, co faktycznie zmierzono.</figcaption>
+</figure>
 
 ## Co naprawdę pokazuje „Your Brain on ChatGPT”
 
@@ -115,6 +228,25 @@ Jeszcze inny model przedstawia preprint *Tutor CoPilot*. System nie prowadził u
 
 Preprint Liu i współautorów dodaje obserwację dotyczącą strategii użytkownika. W drugim eksperymencie 61 procent korzystających z AI deklarowało proszenie głównie o gotowe odpowiedzi, 27 procent o wskazówki lub wyjaśnienia, a 12 procent nie użyło narzędzia. Osoby proszące o odpowiedzi później rozwiązywały mniej zadań i częściej rezygnowały niż osoby szukające wskazówek. Ten podział nie był randomizowany, więc nie dowodzi, że sam styl prośby spowodował różnicę. Jest jednak zgodny z mechanizmem widocznym w badaniu Bastani: pomoc, która zachowuje próbę, różni się od pomocy, która ją zastępuje.
 
+<figure class="article-data-table" data-qa="ai-thinking-data-table" data-table="design-comparisons">
+  <div class="article-data-table__scroll">
+    <table>
+      <caption>Najważniejsze bezpośrednie porównania</caption>
+      <thead>
+        <tr><th scope="col">Badanie</th><th scope="col">Konstrukcja pomocy</th><th scope="col">Zaobserwowany wynik</th><th scope="col">Granica wniosku</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Bastani et al. (2025)</td><td>GPT bez ograniczeń kontra tutor ze stopniowanymi wskazówkami i ograniczeniem pełnych rozwiązań.</td><td>Oba warunki poprawiły ćwiczenia; po zwykłym GPT wynik bez AI był gorszy, a po GPT Tutor nie.</td><td>Cztery lekcje matematyki w szkole średniej.</td></tr>
+        <tr><td>Kestin et al. (2025)</td><td>Tutor z materiałem tematycznym, informacją zwrotną i sprawdzaniem rozumienia.</td><td>Większy natychmiastowy przyrost wiedzy niż w porównywanych zajęciach z aktywnym uczeniem się.</td><td>Brak pomiaru opóźnionej retencji i szerokiego transferu.</td></tr>
+        <tr><td>Liu et al. (2026, preprint)</td><td>Krótki dostęp do bezpośredniej pomocy AI, a potem samodzielna praca.</td><td>Gorsze wykonanie bez AI i częstsza rezygnacja po odebraniu wsparcia.</td><td>Krótkie eksperymenty nie dowodzą trwałej erozji kompetencji.</td></tr>
+        <tr><td>Tutor CoPilot (2024, preprint)</td><td>AI podpowiadała strategie pedagogiczne ludzkim korepetytorom.</td><td>Lepsze krótkie wyniki końcowe i więcej pytań naprowadzających.</td><td>Brak istotnej poprawy rocznego wyniku z matematyki.</td></tr>
+        <tr><td>Doshi i Hauser (2024)</td><td>Pomysły AI wspierające pisanie krótkich opowiadań.</td><td>Wyższe oceny pojedynczych tekstów, ale większe podobieństwo całego zbioru.</td><td>Jakość jednostkowa i różnorodność zbiorowa są innymi wynikami.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Najmocniejszy wniosek nie brzmi, że AI jest dobra albo zła dla nauki. Różne konstrukcje pomocy zachowują lub zastępują różne części ludzkiego procesu.</figcaption>
+</figure>
+
 ## Kreatywność może wzrosnąć, a różnorodność spaść
 
 Kreatywność szczególnie dobrze pokazuje, dlaczego pojedyncza etykieta nie wystarcza. Anil Doshi i Oliver Hauser poprosili 293 osoby o napisanie krótkich opowiadań. Dostęp do pomysłów wygenerowanych przez AI podniósł średnie oceny nowości i użyteczności, zwłaszcza u osób z niższym początkowym wynikiem w zadaniu mierzącym skojarzenia. Jednocześnie opowiadania wspierane przez AI stały się do siebie bardziej podobne (Doshi & Hauser, 2024).
@@ -144,6 +276,26 @@ Dla szkół i uczelni oznacza to, że sama decyzja, by dopuścić albo zakazać 
 Dla twórców produktów AI najważniejszy wybór nie sprowadza się do dokładności modelu. Dotyczy tego, kiedy interfejs odpowiada, kiedy pyta, ile pokazuje naraz, czy rejestruje zakres udzielonej pomocy i czy potrafi sprawdzić samodzielny transfer. To konkretne decyzje [Human-AI Interaction](/pl/concepts/human-ai-interaction/), nie dekoracyjna warstwa na gotowym modelu.
 
 Dla użytkownika potrzebne jest [metapoznanie](/pl/concepts/metacognition/): świadomość, czy rozumie wynik, czy tylko rozpoznaje płynne wyjaśnienie. Potrzebne jest też [skalibrowane zaufanie](/pl/concepts/calibrated-trust/), bo bezpośrednia odpowiedź może być właściwa przy rutynowym zadaniu, a niebezpieczna w nauce, interpretowaniu informacji medycznej albo podejmowaniu decyzji o poważnych konsekwencjach.
+
+<figure class="article-data-table" data-qa="ai-thinking-data-table" data-table="interface-matrix">
+  <div class="article-data-table__scroll">
+    <table>
+      <caption>Interfejs ukończenia zadania a interfejs uczenia się</caption>
+      <thead>
+        <tr><th scope="col">Decyzja projektowa</th><th scope="col">Cel: ukończenie</th><th scope="col">Cel: uczenie się</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Pierwsza reakcja</td><td>Szybko przygotować użyteczny wynik.</td><td>Poczekać na pierwszą próbę albo diagnozę.</td></tr>
+        <tr><td>Poziom pomocy</td><td>Podać pełne przekształcenie lub rozwiązanie.</td><td>Dać najmniejszą użyteczną wskazówkę i zwiększać wsparcie tylko w razie potrzeby.</td></tr>
+        <tr><td>Obsługa błędu</td><td>Poprawić rezultat.</td><td>Rozpoznać nieporozumienie i poprosić ucznia o samodzielną korektę.</td></tr>
+        <tr><td>Wyjaśnienie</td><td>Uczynić wynik wystarczająco jasnym do użycia.</td><td>Wymagać wyjaśnienia własnymi słowami.</td></tr>
+        <tr><td>Miara sukcesu</td><td>Jakość, szybkość i niezawodność ukończonego rezultatu.</td><td>Retencja, transfer i działanie po wycofaniu wsparcia.</td></tr>
+        <tr><td>Odpowiedzialność człowieka</td><td>Sprawdzić założenia i zdecydować, czy wynik nadaje się do użycia.</td><td>Zachować rozumowanie potrzebne do wykrycia błędu i rozwiązania nowego wariantu.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Produktywność i uczenie się są uzasadnionymi, ale różnymi celami. Jeden interfejs nie powinien po cichu traktować ich jak tego samego zadania.</figcaption>
+</figure>
 
 <aside class="editorial-aside editorial-aside--practice">
   <p class="editorial-aside__label">Prosty test</p>
