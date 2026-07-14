@@ -47,32 +47,6 @@ jobs:
       - name: Update publication layout tests
         run: python scripts/update_ai_thinking_tests.py
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
-
-      - name: Build site
-        run: npm run build
-
-      - name: Run layout tests
-        run: |
-          set -o pipefail
-          npm run test:layout 2>&1 | tee /tmp/ai-thinking-layout.log
-
-      - name: Upload layout test log
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: ai-thinking-layout-log
-          if-no-files-found: warn
-          retention-days: 7
-          path: /tmp/ai-thinking-layout.log
-
-      - name: Validate diff
-        run: git diff --check
-
       - name: Commit generated publication files
         run: |
           git config user.name "github-actions[bot]"
@@ -88,3 +62,34 @@ jobs:
             git commit -m "Publish AI thinking articles with DOI and evidence tables [skip ci]"
             git push origin "HEAD:${{ github.head_ref || github.ref_name }}"
           fi
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Build site
+        run: npm run build
+
+      - name: Run targeted publication layout tests
+        run: |
+          set -o pipefail
+          npx playwright test \
+            tests/layout/articles.spec.ts \
+            tests/layout/author-entity.spec.ts \
+            --project=desktop-1440 \
+            --project=mobile-390 \
+            2>&1 | tee /tmp/ai-thinking-layout.log
+
+      - name: Upload layout test log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-thinking-layout-log
+          if-no-files-found: warn
+          retention-days: 7
+          path: /tmp/ai-thinking-layout.log
+
+      - name: Validate diff
+        run: git diff --check
