@@ -71,7 +71,10 @@ test.describe('author and about routes', () => {
     await expect(page.locator('body')).not.toContainText('AI engineer');
     await expect(page.locator('body')).not.toContainText('cybersecurity expert');
     await expect(page.locator('body')).not.toContainText('clinical psychologist');
-    await expect(page.getByRole('link', { name: /^Practice$/ })).toHaveCount(0);
+    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Practice' })).toHaveAttribute(
+      'href',
+      '/practice/'
+    );
     await expectNoHorizontalOverflow(page);
   });
 
@@ -124,7 +127,10 @@ test.describe('author and about routes', () => {
     await expect(page.locator('body')).not.toContainText('inżynier AI');
     await expect(page.locator('body')).not.toContainText('ekspert cyberbezpieczeństwa');
     await expect(page.locator('body')).not.toContainText('psychologiem');
-    await expect(page.getByRole('link', { name: /^Praktyka$/ })).toHaveCount(0);
+    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Praktyka' })).toHaveAttribute(
+      'href',
+      '/pl/practice/'
+    );
     await expectNoHorizontalOverflow(page);
   });
 

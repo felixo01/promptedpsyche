@@ -1,5 +1,5 @@
 import { expect, test, type APIRequestContext } from '@playwright/test';
-import { shouldShowPractice } from '../../src/lib/features';
+import { showPractice } from '../../src/lib/features';
 
 type SearchItem = {
   title: string;
@@ -11,8 +11,6 @@ type SearchItem = {
   date?: string;
   readingTime?: string;
 };
-
-const showPractice = shouldShowPractice();
 
 const practiceTitles = [
   'Jak sprawdzić, czy odpowiedź AI ma źródła',

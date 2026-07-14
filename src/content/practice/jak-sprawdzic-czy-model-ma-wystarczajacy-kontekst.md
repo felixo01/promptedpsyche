@@ -66,7 +66,7 @@ Jeśli kontekst jest niewystarczający, powiedz to wprost. Zamiast udzielać zby
 
 Prosisz model o plan komunikacji dla zespołu, ale nie piszesz, kto jest odbiorcą, jaki jest cel i ile czasu jest dostępne. Model daje sensowną strukturę, ale po sprawdzeniu kontekstu widać, że zakłada mały zespół, spokojny termin i wspólne rozumienie problemu. To nie przekreśla odpowiedzi. Pokazuje, co trzeba dopowiedzieć, zanim plan stanie się użyteczny.
 
-Ta praktyka łączy [context window](/pl/concepts/context-window/) z [odpowiedzią modelu](/pl/concepts/model-output/). Model działa na tym, co dostał w danej interakcji. Im mniej kontekstu, tym większa potrzeba [skalibrowanego zaufania](/pl/concepts/calibrated-trust/).
+Ta praktyka łączy [okno kontekstu](/pl/concepts/context-window/) z [odpowiedzią modelu](/pl/concepts/model-output/). Model działa na tym, co dostał w danej interakcji. Im mniej kontekstu, tym większa potrzeba [skalibrowanego zaufania](/pl/concepts/calibrated-trust/).
 
 ## Krótka zasada
 

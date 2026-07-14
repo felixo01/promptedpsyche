@@ -72,7 +72,7 @@ Opis:
 
 Opisujesz sytuację: "Zespół nie odpowiada, więc projekt nie jest dla nich ważny". Model może rozdzielić fakt: zespół nie odpowiedział od dwóch dni. Założenie: brak odpowiedzi oznacza brak zaangażowania. Brakujący kontekst: czy zespół ma inne terminy, czy dostał wszystkie materiały, czy wie, czego oczekujesz. To nie rozwiązuje sytuacji, ale zmienia pierwszy ruch: zamiast osądu pojawia się pytanie.
 
-Ta praktyka łączy [epistemic vigilance](/pl/concepts/epistemic-vigilance/) z [metacognition](/pl/concepts/metacognition/). Model pomaga zobaczyć strukturę własnego odczytania, ale nie zastępuje sprawdzenia sytuacji ani odpowiedzialności człowieka.
+Ta praktyka łączy [czujność epistemiczną](/pl/concepts/epistemic-vigilance/) z [metapoznaniem](/pl/concepts/metacognition/). Model pomaga zobaczyć strukturę własnego odczytania, ale nie zastępuje sprawdzenia sytuacji ani odpowiedzialności człowieka.
 
 ## Krótka zasada
 

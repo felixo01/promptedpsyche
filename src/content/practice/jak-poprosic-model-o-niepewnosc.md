@@ -16,9 +16,9 @@ type: "practice"
 category: "Praktyka"
 ---
 
-Model może odpowiedzieć płynnie nawet wtedy, gdy brakuje mu ważnych informacji. Ta praktyka pomaga zatrzymać się przy odpowiedzi, która brzmi gotowo, i zapytać: co jest znane, co jest prawdopodobne, co jest założeniem, czego brakuje i co mogłoby zmienić wniosek.
+Model może odpowiedzieć płynnie nawet wtedy, gdy brakuje mu ważnych informacji. Ta praktyka pomaga zatrzymać się przy odpowiedzi, która brzmi jak gotowy wniosek, i zapytać: co jest znane, co jest prawdopodobne, co jest założeniem, czego brakuje i co mogłoby zmienić wniosek.
 
-Celem nie jest wymuszenie liczby pewności. Celem jest lepszy osąd: które fragmenty odpowiedzi są mocniejsze, które są robocze i co człowiek powinien sprawdzić poza modelem przed dalszym krokiem. Ten wpis dotyczy ostrożności wobec wniosku; osobna praktyka sprawdza, czy model miał wystarczający kontekst wejściowy.
+Celem nie jest wymuszenie liczbowej oceny pewności. Chodzi o lepszy osąd: które fragmenty odpowiedzi są mocniejsze, które pozostają robocze i co człowiek powinien sprawdzić poza modelem przed dalszym krokiem. Ten wpis dotyczy ostrożności wobec wniosku; osobna praktyka sprawdza, czy model miał wystarczający kontekst wejściowy.
 
 ## Kiedy to pomaga
 
@@ -67,7 +67,7 @@ Nie podawaj procentowej pewności, jeśli nie masz do tego podstaw. Zamiast tego
 
 Model rekomenduje jeden kierunek działania dla zespołu, ale użytkownik podał tylko krótki opis problemu. Po użyciu promptu widać, że odpowiedź zakłada stabilny termin, mały zespół i brak ograniczeń budżetowych. To nie znaczy, że rekomendacja jest fałszywa. Znaczy tylko, że jej użycie zależy od warunków, które trzeba najpierw dopowiedzieć albo sprawdzić.
 
-Ten prompt pomaga budować [skalibrowane zaufanie](/pl/concepts/calibrated-trust/). Zamiast traktować płynną odpowiedź jako gotowy wniosek, użytkownik widzi, które części zależą od danych, kontekstu i założeń. To także ćwiczenie [czujności epistemicznej](/pl/concepts/epistemic-vigilance/): model może porządkować materiał w ramach dostępnego [context window](/pl/concepts/context-window/), ale nie zna wszystkiego, czego człowiek nie podał.
+Ten prompt pomaga budować [skalibrowane zaufanie](/pl/concepts/calibrated-trust/). Zamiast traktować płynną odpowiedź jako gotowy wniosek, użytkownik widzi, które części zależą od danych, kontekstu i założeń. To także ćwiczenie [czujności epistemicznej](/pl/concepts/epistemic-vigilance/): model może porządkować materiał w ramach dostępnego [okna kontekstu](/pl/concepts/context-window/), ale nie zna wszystkiego, czego człowiek nie podał.
 
 ## Krótka zasada
 
