@@ -120,7 +120,7 @@ test.describe('local search', () => {
           type: 'article'
         }),
         expect.objectContaining({
-          title: 'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać',
+          title: 'Nie pytaj, czy AI nas ogłupia. Zapytaj, które sposoby myślenia przestajemy ćwiczyć',
           url: '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/',
           type: 'article'
         })
