@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - scripts/publish_ai_thinking.py
+      - scripts/update_ai_thinking_tests.py
       - src/content/articles/dont-ask-whether-ai-makes-us-dumber.md
       - src/content/articles/nie-pytaj-czy-ai-nas-oglupia.md
       - public/images/articles/ai-thinking-practice.svg
@@ -43,6 +44,9 @@ jobs:
       - name: Apply publication metadata and localized tables
         run: python scripts/publish_ai_thinking.py
 
+      - name: Update publication layout tests
+        run: python scripts/update_ai_thinking_tests.py
+
       - name: Install dependencies
         run: npm ci
 
@@ -66,7 +70,7 @@ jobs:
       - name: Validate diff
         run: git diff --check
 
-      - name: Commit generated article changes
+      - name: Commit generated publication files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
