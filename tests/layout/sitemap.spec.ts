@@ -1,8 +1,9 @@
 import { expect, test } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
+import { shouldShowPractice } from '../../src/lib/features';
 
-const showPractice = process.env.SHOW_PRACTICE === 'true';
+const showPractice = shouldShowPractice();
 
 function readDistFile(fileName: string) {
   return fs.readFileSync(path.join(process.cwd(), 'dist', fileName), 'utf8');
@@ -78,8 +79,8 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).toContain('/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/');
     expect(sitemap).toContain('/articles/are-we-afraid-of-ai-or-of-ourselves/');
     expect(sitemap).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
-    expect(sitemap).not.toContain('/articles/dont-ask-whether-ai-makes-us-dumber/');
-    expect(sitemap).not.toContain('/pl/articles/nie-pytaj-czy-ai-nas-oglupia/');
+    expect(sitemap).toContain('/articles/dont-ask-whether-ai-makes-us-dumber/');
+    expect(sitemap).toContain('/pl/articles/nie-pytaj-czy-ai-nas-oglupia/');
     expect(sitemap.match(/\/articles\/are-we-afraid-of-ai-or-of-ourselves\//g) ?? []).toHaveLength(1);
   });
 
@@ -92,8 +93,8 @@ test.describe('built sitemap and RSS policy', () => {
     expect(rss).toContain('/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/');
     expect(rss).toContain('/articles/are-we-afraid-of-ai-or-of-ourselves/');
     expect(rss).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
-    expect(rss).not.toContain('/articles/dont-ask-whether-ai-makes-us-dumber/');
-    expect(rss).not.toContain('/pl/articles/nie-pytaj-czy-ai-nas-oglupia/');
+    expect(rss).toContain('/articles/dont-ask-whether-ai-makes-us-dumber/');
+    expect(rss).toContain('/pl/articles/nie-pytaj-czy-ai-nas-oglupia/');
     expect(
       readRssItemByLink(
         rss,

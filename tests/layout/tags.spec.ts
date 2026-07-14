@@ -102,7 +102,7 @@ test.describe('publication tag pages', () => {
     await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.locator('body')).toContainText('Publications tagged with');
-    await expect(page.locator('.tag-archive-list article')).toHaveCount(8);
+    await expect(page.locator('.tag-archive-list article')).toHaveCount(9);
     await expect(page.locator('.tag-archive-list')).toContainText('Article');
     await expect(page.locator('.tag-archive-list')).toContainText('Note');
     await expect(page.locator('.tag-archive-list')).toContainText('It is not just about the prompt');
@@ -111,7 +111,7 @@ test.describe('publication tag pages', () => {
     );
     await expect(page.locator('.tag-archive-list')).not.toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('.tag-archive-list')).not.toContainText('AI Literacy Is Not Prompt Engineering');
-    await expect(page.locator('.tag-archive-list')).not.toContainText(
+    await expect(page.locator('.tag-archive-list')).toContainText(
       "Don't Ask Whether AI Makes Us Dumber"
     );
   });
@@ -122,7 +122,7 @@ test.describe('publication tag pages', () => {
     await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.locator('body')).toContainText('Publikacje oznaczone tagiem');
-    await expect(page.locator('.tag-archive-list article')).toHaveCount(8);
+    await expect(page.locator('.tag-archive-list article')).toHaveCount(9);
     await expect(page.locator('.tag-archive-list')).toContainText('Artykuł');
     await expect(page.locator('.tag-archive-list')).toContainText('Notatka');
     await expect(page.locator('.tag-archive-list')).toContainText('Nie chodzi tylko o prompt');
@@ -131,7 +131,7 @@ test.describe('publication tag pages', () => {
     );
     await expect(page.locator('.tag-archive-list')).not.toContainText('It is not just about the prompt');
     await expect(page.locator('.tag-archive-list')).not.toContainText('AI Literacy Is Not Prompt Engineering');
-    await expect(page.locator('.tag-archive-list')).not.toContainText(
+    await expect(page.locator('.tag-archive-list')).toContainText(
       'Nie pytaj, czy AI nas ogłupia'
     );
   });

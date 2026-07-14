@@ -1,6 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
+import { shouldShowPractice } from '../../src/lib/features';
 
-const showPractice = process.env.SHOW_PRACTICE === 'true';
+const showPractice = shouldShowPractice();
 
 const forbiddenPracticePhrases = [
   'Prompt library',
@@ -117,6 +118,35 @@ async function expectNoHorizontalOverflow(page: Page) {
 }
 
 test.describe('practice section', () => {
+  test('fails closed in production even when SHOW_PRACTICE is enabled', () => {
+    expect(
+      shouldShowPractice({
+        SHOW_PRACTICE: 'true',
+        VERCEL_ENV: 'production',
+        NODE_ENV: 'production'
+      })
+    ).toBe(false);
+    expect(
+      shouldShowPractice({
+        SHOW_PRACTICE: 'true',
+        NODE_ENV: 'production'
+      })
+    ).toBe(false);
+    expect(
+      shouldShowPractice({
+        SHOW_PRACTICE: 'true',
+        VERCEL_ENV: 'preview',
+        NODE_ENV: 'production'
+      })
+    ).toBe(true);
+    expect(
+      shouldShowPractice({
+        SHOW_PRACTICE: 'true',
+        NODE_ENV: 'development'
+      })
+    ).toBe(true);
+  });
+
   test('keeps practice hidden when SHOW_PRACTICE is disabled', async ({ page, request }) => {
     test.skip(showPractice, 'Production Practice safety runs with SHOW_PRACTICE disabled.');
 

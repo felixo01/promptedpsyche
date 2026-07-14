@@ -1,4 +1,5 @@
 import { expect, test, type APIRequestContext } from '@playwright/test';
+import { shouldShowPractice } from '../../src/lib/features';
 
 type SearchItem = {
   title: string;
@@ -11,7 +12,7 @@ type SearchItem = {
   readingTime?: string;
 };
 
-const showPractice = process.env.SHOW_PRACTICE === 'true';
+const showPractice = shouldShowPractice();
 
 const practiceTitles = [
   'Jak sprawdzić, czy odpowiedź AI ma źródła',
@@ -22,9 +23,7 @@ const draftTitles = [
   'AI Literacy Is Not Prompt Engineering',
   "Why People Trust AI Even When They Shouldn't",
   'We Prompt Machines. Machines Prompt Us Back',
-  'What Is Cyberpsychology of AI?',
-  "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing",
-  'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać'
+  'What Is Cyberpsychology of AI?'
 ];
 
 function countByType(items: SearchItem[], type: SearchItem['type']) {
@@ -84,8 +83,8 @@ test.describe('local search', () => {
     const plIndex = await readSearchIndex(request, '/search-index.pl.json');
     const allText = JSON.stringify([...enIndex, ...plIndex]);
 
-    expect(countByType(enIndex, 'article')).toBe(7);
-    expect(countByType(plIndex, 'article')).toBe(7);
+    expect(countByType(enIndex, 'article')).toBe(8);
+    expect(countByType(plIndex, 'article')).toBe(8);
     expect(countByType(enIndex, 'note')).toBe(4);
     expect(countByType(plIndex, 'note')).toBe(4);
     expect(countByType(enIndex, 'concept')).toBe(26);
@@ -105,6 +104,11 @@ test.describe('local search', () => {
           title: 'Are we afraid of AI, or of ourselves?',
           url: '/articles/are-we-afraid-of-ai-or-of-ourselves/',
           type: 'article'
+        }),
+        expect.objectContaining({
+          title: "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing",
+          url: '/articles/dont-ask-whether-ai-makes-us-dumber/',
+          type: 'article'
         })
       ])
     );
@@ -113,6 +117,11 @@ test.describe('local search', () => {
         expect.objectContaining({
           title: 'Czy boimy się AI, czy boimy się samych siebie?',
           url: '/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/',
+          type: 'article'
+        }),
+        expect.objectContaining({
+          title: 'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać',
+          url: '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/',
           type: 'article'
         })
       ])
