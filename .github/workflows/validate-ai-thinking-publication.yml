@@ -1,0 +1,69 @@
+name: Validate AI thinking publication
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - scripts/publish_ai_thinking.py
+      - src/content/articles/dont-ask-whether-ai-makes-us-dumber.md
+      - src/content/articles/nie-pytaj-czy-ai-nas-oglupia.md
+      - public/images/articles/ai-thinking-practice.svg
+      - package.json
+      - package-lock.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-and-validate:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out publication branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Apply publication metadata and localized tables
+        run: python scripts/publish_ai_thinking.py
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Run layout tests
+        run: npm run test:layout
+
+      - name: Validate diff
+        run: git diff --check
+
+      - name: Commit generated article changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/content/articles/dont-ask-whether-ai-makes-us-dumber.md \
+            src/content/articles/nie-pytaj-czy-ai-nas-oglupia.md
+          if git diff --cached --quiet; then
+            echo "Article files already match the publication state."
+          else
+            git commit -m "Publish AI thinking articles with DOI and evidence tables [skip ci]"
+            git push origin "HEAD:${{ github.head_ref || github.ref_name }}"
+          fi
