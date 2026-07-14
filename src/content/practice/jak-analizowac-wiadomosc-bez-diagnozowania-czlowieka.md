@@ -16,7 +16,7 @@ type: "practice"
 category: "Praktyka"
 ---
 
-AI może pomóc uporządkować trudnego maila, wiadomość od klienta albo napiętą rozmowę. Może też zbyt łatwo popchnąć użytkownika w stronę psychologizowania osoby po drugiej stronie: "manipuluje", "jest narcystyczna", "ma ukrytą intencję", "na pewno chce mnie zaatakować".
+AI może pomóc uporządkować trudną wiadomość e-mail, wypowiedź klienta albo napiętą rozmowę. Może też zbyt łatwo popchnąć użytkownika w stronę psychologizowania osoby po drugiej stronie: "manipuluje", "jest narcystyczna", "ma ukrytą intencję", "na pewno chce mnie zaatakować".
 
 Ta praktyka stawia prostą granicę: analizujemy widoczny tekst, stawkę sytuacji i brakujący kontekst, nie diagnozujemy człowieka. Celem jest przygotowanie roboczej odpowiedzi, ograniczenie dopisywania intencji i zostawienie odpowiedzialności po stronie osoby, która ostatecznie decyduje, co napisać.
 
@@ -83,10 +83,10 @@ W sprawach przemocy, przymusu, nękania, ryzyka prawnego, szkody w miejscu pracy
 
 ## Powiązane pojęcia
 
-- [AI-mediated communication](/pl/concepts/ai-mediated-communication/)
+- [Komunikacja zapośredniczona przez AI](/pl/concepts/ai-mediated-communication/)
 - [Sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/)
 - [Model mentalny](/pl/concepts/mental-model/)
-- [Model output](/pl/concepts/model-output/)
+- [Odpowiedź modelu](/pl/concepts/model-output/)
 - [Wspomaganie decyzji](/pl/concepts/wspomaganie-decyzji/)
 - [Nadmierne poleganie na AI](/pl/concepts/nadmierne-poleganie-na-ai/)
 

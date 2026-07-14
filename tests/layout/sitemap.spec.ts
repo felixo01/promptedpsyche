@@ -1,9 +1,7 @@
 import { expect, test } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
-import { shouldShowPractice } from '../../src/lib/features';
-
-const showPractice = shouldShowPractice();
+import { showPractice } from '../../src/lib/features';
 
 function readDistFile(fileName: string) {
   return fs.readFileSync(path.join(process.cwd(), 'dist', fileName), 'utf8');

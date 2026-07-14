@@ -4,10 +4,11 @@ import { slugifyTag } from './tags';
 
 type ArticleEntry = CollectionEntry<'articles'>;
 type NoteEntry = CollectionEntry<'notes'>;
+type PracticeEntry = CollectionEntry<'practice'>;
 
 export type PublicationItem = {
-  entry: ArticleEntry | NoteEntry;
-  collection: 'articles' | 'notes';
+  entry: ArticleEntry | NoteEntry | PracticeEntry;
+  collection: 'articles' | 'notes' | 'practice';
   href: string;
   kindLabel: string;
 };
@@ -21,11 +22,12 @@ export type TagPage = {
 export async function getTagPages(lang: 'en' | 'pl'): Promise<TagPage[]> {
   const articles = onlyPublicEntriesByLang(await getCollection('articles'), lang);
   const notes = onlyPublicEntriesByLang(await getCollection('notes'), lang);
+  const practice = onlyPublicEntriesByLang(await getCollection('practice'), lang);
   const tagMap = new Map<string, TagPage>();
 
   const addEntry = (
-    entry: ArticleEntry | NoteEntry,
-    collection: 'articles' | 'notes',
+    entry: ArticleEntry | NoteEntry | PracticeEntry,
+    collection: 'articles' | 'notes' | 'practice',
     basePath: string,
     kindLabel: string
   ) => {
@@ -65,6 +67,15 @@ export async function getTagPages(lang: 'en' | 'pl'): Promise<TagPage[]> {
     );
   }
 
+  for (const entry of practice) {
+    addEntry(
+      entry,
+      'practice',
+      lang === 'pl' ? '/pl/practice' : '/practice',
+      lang === 'pl' ? 'Praktyka' : 'Practice'
+    );
+  }
+
   return [...tagMap.values()]
     .map((page) => ({
       ...page,
@@ -74,4 +85,3 @@ export async function getTagPages(lang: 'en' | 'pl'): Promise<TagPage[]> {
     }))
     .sort((a, b) => a.tag.localeCompare(b.tag, lang));
 }
-

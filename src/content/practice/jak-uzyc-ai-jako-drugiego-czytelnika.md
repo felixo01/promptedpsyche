@@ -71,7 +71,7 @@ Tekst:
 
 Autor pisze krótki tekst o AI w organizacji i zakłada, że czytelnik rozumie różnicę między automatyzacją a wsparciem decyzji. Model może wskazać, że ten skrót jest jasny dla autora, ale niekoniecznie dla odbiorcy. Dobra reakcja nie polega na przyjęciu całej redakcji modelu. Lepiej dopisać jedno zdanie kontekstu własnym głosem, a potem zdecydować, czy rytm tekstu nadal działa.
 
-Ten prompt traktuje [odpowiedź modelu](/pl/concepts/model-output/) jako informację zwrotną, a nie gotowy tekst. Model może pokazać, gdzie czytelnik może się zatrzymać, ale nie wie, jaki głos, rytm i sens autor chce zachować. Praktyka wspiera [sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/): AI może zmniejszyć [cognitive load](/pl/concepts/cognitive-load/) w redakcji, ale nie zastępuje decyzji autora.
+Ten prompt traktuje [odpowiedź modelu](/pl/concepts/model-output/) jako informację zwrotną, a nie gotowy tekst. Model może pokazać, gdzie czytelnik może się zatrzymać, ale nie wie, jaki głos, rytm i sens autor chce zachować. Praktyka wspiera [sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/): AI może zmniejszyć [obciążenie poznawcze](/pl/concepts/cognitive-load/) w redakcji, ale nie zastępuje decyzji autora.
 
 ## Krótka zasada
 

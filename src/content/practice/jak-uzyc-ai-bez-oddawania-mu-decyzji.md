@@ -72,7 +72,7 @@ Na końcu zaproponuj 5 pytań, które powinienem sobie zadać przed decyzją. Ni
 
 Zastanawiasz się, czy opublikować tekst teraz, czy dopracować go jeszcze przez tydzień. Model może pomóc porównać rytm pracy, ryzyko opóźnienia, jakość argumentu i cel publikacji. Nie wie jednak, jak ważny jest moment, jaką masz relację z odbiorcami ani co jesteś gotów zaakceptować. Odpowiedź jest mapą decyzji, nie decyzją.
 
-To jest praktyka [wspomagania decyzji](/pl/concepts/wspomaganie-decyzji/) i [sprawczości człowieka](/pl/concepts/sprawczosc-czlowieka/). AI może zmniejszyć [cognitive load](/pl/concepts/cognitive-load/), ale odpowiedzialność za wybór zostaje po stronie człowieka.
+To jest praktyka [wspomagania decyzji](/pl/concepts/wspomaganie-decyzji/) i [sprawczości człowieka](/pl/concepts/sprawczosc-czlowieka/). AI może zmniejszyć [obciążenie poznawcze](/pl/concepts/cognitive-load/), ale odpowiedzialność za wybór zostaje po stronie człowieka.
 
 ## Krótka zasada
 
