@@ -455,7 +455,7 @@ test.describe('published articles', () => {
     await expect(page.locator('body')).not.toContainText(/PRZYGOTOWANE POD/i);
     await expect(page.locator('[data-qa="article-aside-label"]')).toHaveText('In this article');
 
-    const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
+    const conceptLinks = page.locator('.prose > :not(.continue-exploring) a[href^="/concepts/"]');
     await expect(conceptLinks).toHaveCount(11);
     await expect(page.locator('.prose a[href="/concepts/context-window/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/epistemic-vigilance/"]')).toBeVisible();
@@ -492,7 +492,7 @@ test.describe('published articles', () => {
     await expect(page.locator('body')).not.toContainText(/PRZYGOTOWANE POD/i);
     await expect(page.locator('[data-qa="article-aside-label"]')).toHaveText('W tekście');
 
-    const conceptLinks = page.locator('.prose a[href^="/pl/concepts/"]');
+    const conceptLinks = page.locator('.prose > :not(.continue-exploring) a[href^="/pl/concepts/"]');
     await expect(conceptLinks).toHaveCount(11);
     await expect(page.locator('.prose a[href="/pl/concepts/context-window/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/epistemic-vigilance/"]')).toBeVisible();
@@ -523,7 +523,7 @@ test.describe('published articles', () => {
     );
     await expect(page.locator('.editorial-aside')).toContainText('W praktyce');
 
-    const conceptLinks = page.locator('.prose a[href^="/pl/concepts/"]');
+    const conceptLinks = page.locator('.prose > :not(.continue-exploring) a[href^="/pl/concepts/"]');
     await expect(conceptLinks).toHaveCount(10);
     await expect(page.locator('.prose a[href="/pl/concepts/context-window/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/token/"]')).toBeVisible();
@@ -560,7 +560,7 @@ test.describe('published articles', () => {
     );
     await expect(page.locator('.editorial-aside')).toContainText('Granica');
 
-    const conceptLinks = page.locator('.prose a[href^="/pl/concepts/"]');
+    const conceptLinks = page.locator('.prose > :not(.continue-exploring) a[href^="/pl/concepts/"]');
     await expect(conceptLinks).toHaveCount(10);
     await expect(page.locator('.prose a[href="/pl/concepts/context-window/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/pl/concepts/model-output/"]')).toBeVisible();
@@ -638,7 +638,7 @@ test.describe('published articles', () => {
     );
     await expect(page.locator('.editorial-aside')).toContainText('Boundary');
 
-    const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
+    const conceptLinks = page.locator('.prose > :not(.continue-exploring) a[href^="/concepts/"]');
     await expect(conceptLinks).toHaveCount(10);
     await expect(page.locator('.prose a[href="/concepts/context-window/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/model-output/"]')).toBeVisible();
@@ -741,18 +741,18 @@ test.describe('published articles', () => {
     await expect(page.locator('.content-tags a[href="/pl/tags/nauka/"]')).toBeVisible();
     await expect(page.locator('.content-tags a[href="/pl/tags/ai-literacy/"]')).toBeVisible();
 
-    const conceptLinks = page.locator('.prose a[href^="/pl/concepts/"]');
+    const conceptLinks = page.locator('.prose > :not(.continue-exploring) a[href^="/pl/concepts/"]');
     await expect(conceptLinks).toHaveCount(10);
-    await expect(page.locator('.prose a[href="/pl/concepts/epistemic-vigilance/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/calibrated-trust/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/model-output/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/oparcie-odpowiedzi-na-zrodlach/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/halucynacja-modelu/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/nadmierne-poleganie-na-ai/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/human-ai-interaction/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/cognitive-offloading/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/ai-literacy/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/sprawczosc-czlowieka/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/epistemic-vigilance/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/calibrated-trust/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/model-output/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/oparcie-odpowiedzi-na-zrodlach/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/halucynacja-modelu/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/nadmierne-poleganie-na-ai/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/human-ai-interaction/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/cognitive-offloading/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/ai-literacy/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/sprawczosc-czlowieka/"]')).toBeVisible();
     await expect(page.locator('.prose')).toContainText('Źródła i dalsza lektura');
     await expect(page.locator('h2:has-text("Źródła i dalsza lektura") + ul > li')).toHaveCount(18);
     await expect(
@@ -886,14 +886,14 @@ test.describe('published articles', () => {
     await expect(page.locator('.content-tags a[href="/pl/tags/podejmowanie-decyzji/"]')).toBeVisible();
     await expect(page.locator('.content-tags a[href="/pl/tags/zarzadzanie-ai/"]')).toBeVisible();
 
-    const conceptLinks = page.locator('.prose a[href^="/pl/concepts/"]');
+    const conceptLinks = page.locator('.prose > :not(.continue-exploring) a[href^="/pl/concepts/"]');
     await expect(conceptLinks).toHaveCount(6);
-    await expect(page.locator('.prose a[href="/pl/concepts/sprawczosc-czlowieka/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/antropomorfizacja/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/nadzor-ze-strony-czlowieka/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/wspomaganie-decyzji/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/blad-automatyzacji/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/pl/concepts/human-ai-interaction/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/sprawczosc-czlowieka/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/antropomorfizacja/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/nadzor-ze-strony-czlowieka/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/wspomaganie-decyzji/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/blad-automatyzacji/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/pl/concepts/human-ai-interaction/"]')).toBeVisible();
     await expect(page.locator(`.language-switcher a[href="${aiFearsEnglishArticleRoute}"]`)).toBeVisible();
     await expect(page.locator('body')).not.toContainText('Working notes');
     await expect(page.locator('body')).not.toContainText('Source pack');
@@ -984,14 +984,14 @@ test.describe('published articles', () => {
     await expect(page.locator('.content-tags a[href="/tags/decision-making/"]')).toBeVisible();
     await expect(page.locator('.content-tags a[href="/tags/ai-governance/"]')).toBeVisible();
 
-    const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
+    const conceptLinks = page.locator('.prose > :not(.continue-exploring) a[href^="/concepts/"]');
     await expect(conceptLinks).toHaveCount(6);
-    await expect(page.locator('.prose a[href="/concepts/human-agency/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/anthropomorphism/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/human-oversight/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/decision-support/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/automation-bias/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/human-ai-interaction/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/human-agency/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/anthropomorphism/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/human-oversight/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/decision-support/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/automation-bias/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/human-ai-interaction/"]')).toBeVisible();
     await expect(
       page.locator(`.language-switcher a[href="${aiFearsPolishArticleRoute}"]`)
     ).toBeVisible();
@@ -1074,18 +1074,18 @@ test.describe('published articles', () => {
     await expect(page.locator('.content-tags a[href="/tags/science/"]')).toBeVisible();
     await expect(page.locator('.content-tags a[href="/tags/ai-literacy/"]')).toBeVisible();
 
-    const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
+    const conceptLinks = page.locator('.prose > :not(.continue-exploring) a[href^="/concepts/"]');
     await expect(conceptLinks).toHaveCount(10);
-    await expect(page.locator('.prose a[href="/concepts/epistemic-vigilance/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/calibrated-trust/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/model-output/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/grounding/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/hallucination/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/overreliance/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/human-ai-interaction/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/cognitive-offloading/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/ai-literacy/"]')).toBeVisible();
-    await expect(page.locator('.prose a[href="/concepts/human-agency/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/epistemic-vigilance/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/calibrated-trust/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/model-output/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/grounding/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/hallucination/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/overreliance/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/human-ai-interaction/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/cognitive-offloading/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/ai-literacy/"]')).toBeVisible();
+    await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/human-agency/"]')).toBeVisible();
     await expect(page.locator('.prose')).toContainText('Sources and further reading');
     await expect(page.locator('h2:has-text("Sources and further reading") + ul > li')).toHaveCount(18);
     await expect(
@@ -1456,7 +1456,7 @@ test.describe('published articles', () => {
     );
     await expect(page.locator('.editorial-aside')).toContainText('In practice');
 
-    const conceptLinks = page.locator('.prose a[href^="/concepts/"]');
+    const conceptLinks = page.locator('.prose > :not(.continue-exploring) a[href^="/concepts/"]');
     await expect(conceptLinks).toHaveCount(10);
     await expect(page.locator('.prose a[href="/concepts/context-window/"]')).toBeVisible();
     await expect(page.locator('.prose a[href="/concepts/token/"]')).toBeVisible();

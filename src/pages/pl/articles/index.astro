@@ -25,6 +25,12 @@ const articles = sortByDateDesc(onlyPublicEntriesByLang(await getCollection('art
       </p>
     </header>
 
+    <aside class="topic-discovery-callout" aria-label="Przeglądaj artykuły według obszaru">
+      <p class="small-label">Przewodniki tematyczne</p>
+      <p>Przejdź uporządkowaną ścieżką przez zaufanie, myślenie, sprawczość i odpowiedzialność.</p>
+      <a class="text-link" href="/pl/topics/">Przeglądaj obszary</a>
+    </aside>
+
     <EntryList
       entries={articles}
       basePath="/pl/articles"

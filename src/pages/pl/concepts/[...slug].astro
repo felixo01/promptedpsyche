@@ -4,6 +4,7 @@ import EntryLayout from '../../../layouts/EntryLayout.astro';
 import { getConceptAlternates, getConceptSlug } from '../../../lib/conceptRoutes';
 import { sortConceptsForIndex } from '../../../lib/conceptOrder';
 import { onlyPublicEntries, onlyPublicEntriesByLang } from '../../../lib/content';
+import { getExplorationLinks } from '../../../lib/topics';
 
 export async function getStaticPaths() {
   const publicConcepts = onlyPublicEntries(await getCollection('concepts'));
@@ -26,13 +27,21 @@ export async function getStaticPaths() {
 }
 
 const { entry, alternateLinks, relatedConcepts } = Astro.props;
+const explorationLinks = getExplorationLinks('concept', entry.data.translationKey, 'pl');
 const { Content } = await render(entry);
 ---
 
-<EntryLayout entry={entry} label="Pojęcie" lang="pl" alternateLinks={alternateLinks} showPublishedAt={false}>
+<EntryLayout
+  entry={entry}
+  label="Pojęcie"
+  lang="pl"
+  alternateLinks={alternateLinks}
+  showPublishedAt={false}
+  explorationLinks={explorationLinks}
+>
   <Content />
   {
-    relatedConcepts.length > 0 && (
+    explorationLinks.length === 0 && relatedConcepts.length > 0 && (
       <section class="related-concepts" aria-labelledby="related-concepts-title">
         <p class="small-label">Powiązane pojęcia</p>
         <h2 id="related-concepts-title">Czytaj dalej w słowniku</h2>

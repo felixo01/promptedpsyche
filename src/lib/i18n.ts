@@ -21,6 +21,10 @@ const routePairs: RoutePair[] = [
   { en: '/concepts/', pl: '/pl/concepts/' },
   { en: '/practice/', pl: '/pl/practice/' },
   { en: '/projects/', pl: '/pl/projects/' },
+  { en: '/topics/', pl: '/pl/topics/' },
+  { en: '/topics/trust-in-ai/', pl: '/pl/topics/zaufanie-do-ai/' },
+  { en: '/topics/ai-and-cognition/', pl: '/pl/topics/ai-i-myslenie/' },
+  { en: '/topics/human-agency-and-responsibility/', pl: '/pl/topics/sprawczosc-i-odpowiedzialnosc/' },
   { en: '/search/', pl: '/pl/search/' }
 ];
 
