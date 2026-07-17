@@ -6,6 +6,7 @@ import EntryLayout from '../../../layouts/EntryLayout.astro';
 import { onlyEntriesByLang, sortByDateDesc } from '../../../lib/content';
 import { showPractice } from '../../../lib/features';
 import { getPracticeAlternates } from '../../../lib/practiceRoutes';
+import { getExplorationLinks } from '../../../lib/topics';
 
 type PracticeEntry = CollectionEntry<'practice'>;
 
@@ -48,6 +49,9 @@ const { pageKind, entries = [], entry, alternateLinks } = Astro.props as {
 
 const rendered = entry ? await render(entry) : undefined;
 const Content = rendered?.Content;
+const explorationLinks = entry
+  ? getExplorationLinks('practice', entry.data.translationKey, 'pl')
+  : [];
 ---
 
 {
@@ -57,6 +61,7 @@ const Content = rendered?.Content;
       label="Praktyka"
       lang="pl"
       alternateLinks={alternateLinks}
+      explorationLinks={explorationLinks}
     >
       {Content && <Content />}
     </EntryLayout>

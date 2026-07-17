@@ -1,12 +1,14 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import InBrief from '../components/InBrief.astro';
+import ContinueExploring from '../components/ContinueExploring.astro';
 import RightsNotice from '../components/RightsNotice.astro';
 import SuggestedCitation from '../components/SuggestedCitation.astro';
 import TagList from '../components/TagList.astro';
 import { formatDate } from '../lib/content';
 import type { AlternateLinks, Locale } from '../lib/i18n';
 import { absoluteUrl, getAuthorEntity, getAuthorUrl, site } from '../lib/site';
+import type { TopicResource } from '../lib/topics';
 
 interface Props {
   entry: {
@@ -47,6 +49,7 @@ interface Props {
   robots?: string;
   showPublishedAt?: boolean;
   showRightsNotice?: boolean;
+  explorationLinks?: TopicResource[];
 }
 
 const {
@@ -56,7 +59,8 @@ const {
   alternateLinks,
   robots,
   showPublishedAt = true,
-  showRightsNotice = true
+  showRightsNotice = true,
+  explorationLinks = []
 } = Astro.props;
 const tags: string[] = entry.data.tags ?? [];
 const readingTime = entry.data.readingTime;
@@ -271,6 +275,7 @@ const asideLabels = isConceptEntry
 
       <div class="prose">
         <slot />
+        <ContinueExploring links={explorationLinks} lang={lang} />
         {!isConceptEntry && (
           <SuggestedCitation
             lang={lang}

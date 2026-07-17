@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getAuthorUrl } from '../lib/site';
+import {
+  getTopicAlternateLinks,
+  type TopicHub,
+  type TopicResource
+} from '../lib/topics';
+
+interface Props {
+  hub: TopicHub;
+}
+
+const { hub } = Astro.props;
+const isPl = hub.lang === 'pl';
+const alternateLinks = getTopicAlternateLinks(hub);
+const topicsPath = isPl ? '/pl/topics/' : '/topics/';
+const topicsLabel = isPl ? 'Wszystkie obszary' : 'All topics';
+const resourceLabels = isPl
+  ? { article: 'Artykuł', concept: 'Pojęcie', practice: 'Praktyka', note: 'Notatka', topic: 'Obszar' }
+  : { article: 'Article', concept: 'Concept', practice: 'Practice', note: 'Note', topic: 'Topic' };
+
+const renderResourceList = (resources: TopicResource[]) => resources;
+---
+
+<BaseLayout
+  lang={hub.lang}
+  title={hub.title}
+  description={hub.description}
+  alternateLinks={alternateLinks}
+>
+  <article class="topic-hub page-shell" data-qa="topic-hub" data-topic-id={hub.id}>
+    <header class="topic-hub__hero">
+      <div class="topic-hub__heading">
+        <p class="eyebrow">{hub.eyebrow}</p>
+        <h1>{hub.title}</h1>
+      </div>
+      <div class="topic-hub__lead">
+        {hub.introduction.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </header>
+
+    <div class="topic-hub__body">
+      <section class="topic-hub__definition" aria-labelledby="topic-definition-title">
+        <div>
+          <p class="section-kicker">{isPl ? 'Definicja obszaru' : 'Area definition'}</p>
+          <h2 id="topic-definition-title">{hub.definitionTitle}</h2>
+        </div>
+        <div class="topic-hub__copy">
+          {hub.definition.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <section class="topic-hub__orientation" aria-labelledby="topic-orientation-title">
+        <div class="topic-hub__distinctions">
+          <p class="section-kicker">{hub.distinctionsTitle}</p>
+          <dl>
+            {
+              hub.distinctions.map((item) => (
+                <div>
+                  <dt>{item.term}</dt>
+                  <dd>{item.explanation}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+        <div class="topic-hub__questions">
+          <p class="section-kicker">{hub.questionsTitle}</p>
+          <ul>
+            {hub.questions.map((question) => <li>{question}</li>)}
+          </ul>
+        </div>
+        <div class="topic-hub__orientation-copy">
+          <h2 id="topic-orientation-title">{hub.orientationTitle}</h2>
+          {hub.orientation.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <section class="topic-hub__start" aria-labelledby="topic-start-title">
+        <div>
+          <p class="section-kicker">{isPl ? 'Punkt wejścia' : 'Starting point'}</p>
+          <h2 id="topic-start-title">{hub.startTitle}</h2>
+          <p>{hub.startIntro}</p>
+        </div>
+        <a class="topic-feature" href={hub.start.href}>
+          <span>{resourceLabels[hub.start.kind]}</span>
+          <strong>{hub.start.title}</strong>
+          <p>{hub.start.description}</p>
+        </a>
+      </section>
+
+      <section class="topic-library" aria-labelledby="topic-library-title">
+        <div class="editorial-section-header">
+          <div>
+            <p class="section-kicker">{isPl ? 'Materiały' : 'Library'}</p>
+            <h2 id="topic-library-title">{isPl ? 'Poznaj temat z kilku stron' : 'Explore the topic from several angles'}</h2>
+          </div>
+          <p>
+            {isPl
+              ? 'Artykuły budują argument, pojęcia porządkują mechanizmy, a Praktyka przekłada je na konkretne działania.'
+              : 'Articles build the argument, concepts clarify the mechanisms and Practice turns them into concrete actions.'}
+          </p>
+        </div>
+
+        <div class="topic-library__groups">
+          <section class="topic-resource-group" aria-labelledby={`topic-${hub.id}-articles`}>
+            <h3 id={`topic-${hub.id}-articles`}>{hub.articlesTitle}</h3>
+            <p>{hub.articlesIntro}</p>
+            <ul class="topic-resource-list">
+              {
+                renderResourceList(hub.articles).map((item) => (
+                  <li>
+                    <a href={item.href}>{item.title}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </section>
+
+          <section class="topic-resource-group" aria-labelledby={`topic-${hub.id}-concepts`}>
+            <h3 id={`topic-${hub.id}-concepts`}>{hub.conceptsTitle}</h3>
+            <p>{hub.conceptsIntro}</p>
+            <ul class="topic-resource-list topic-resource-list--compact">
+              {
+                renderResourceList(hub.concepts).map((item) => (
+                  <li>
+                    <a href={item.href}>{item.title}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </section>
+
+          <section class="topic-resource-group" aria-labelledby={`topic-${hub.id}-practice`}>
+            <h3 id={`topic-${hub.id}-practice`}>{hub.practiceTitle}</h3>
+            <p>{hub.practiceIntro}</p>
+            <ul class="topic-resource-list">
+              {
+                renderResourceList(hub.practice).map((item) => (
+                  <li>
+                    <a href={item.href}>{item.title}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </section>
+
+          {
+            hub.notes.length > 0 && (
+              <section class="topic-resource-group" aria-labelledby={`topic-${hub.id}-notes`}>
+                <h3 id={`topic-${hub.id}-notes`}>{hub.notesTitle}</h3>
+                <p>{hub.notesIntro}</p>
+                <ul class="topic-resource-list">
+                  {renderResourceList(hub.notes).map((item) => (
+                    <li>
+                      <a href={item.href}>{item.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )
+          }
+        </div>
+      </section>
+
+      <section class="topic-reading-path" aria-labelledby="topic-reading-path-title">
+        <div>
+          <p class="section-kicker">{isPl ? 'Kolejność' : 'Sequence'}</p>
+          <h2 id="topic-reading-path-title">{hub.readingPathTitle}</h2>
+        </div>
+        <ol>
+          {
+            hub.readingPath.map((step) => (
+              <li>
+                <a href={step.resource.href}>{step.resource.title}</a>
+                <p>{step.reason}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <section class="topic-hub__connection" aria-labelledby="topic-connection-title">
+        <div>
+          <p class="section-kicker">{isPl ? 'Połączenia' : 'Connections'}</p>
+          <h2 id="topic-connection-title">{hub.connectionTitle}</h2>
+        </div>
+        <div class="topic-hub__copy">
+          {hub.connection.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <footer class="topic-hub__footer">
+        <div>
+          <p class="section-kicker">{hub.authorLabel}</p>
+          <p>{hub.authorText}</p>
+          <a class="text-link" href={getAuthorUrl(hub.lang)}>{isPl ? 'Kim jestem' : 'About the author'}</a>
+        </div>
+        <nav aria-label={isPl ? 'Nawigacja obszaru' : 'Topic navigation'}>
+          <a href={topicsPath}>{topicsLabel}</a>
+          <a href={hub.alternatePath} hreflang={isPl ? 'en' : 'pl'}>
+            {isPl ? 'Read in English' : 'Czytaj po polsku'}
+          </a>
+        </nav>
+      </footer>
+    </div>
+  </article>
+</BaseLayout>

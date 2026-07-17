@@ -1,0 +1,8 @@
+---
+import TopicHub from '../../../components/TopicHub.astro';
+import { getTopicHub } from '../../../lib/topics';
+
+const hub = getTopicHub('trust', 'pl');
+---
+
+<TopicHub hub={hub} />
