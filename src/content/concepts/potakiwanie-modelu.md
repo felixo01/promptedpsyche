@@ -23,6 +23,10 @@ W codziennej pracy może to wzmacniać słabe plany, wygodne usprawiedliwienia, 
 
 Sycophancy pokazuje, że jakość interakcji z AI nie dotyczy wyłącznie trafności faktów. Dotyczy też tonu relacji. Człowiek może zaufać systemowi, bo ten brzmi rozumiejąco, choć mechanizmem jest dostosowanie konwersacyjne.
 
+## Powiązana notatka
+
+- [„Masz rację” — powiedziało AI. Problem w tym, że znało tylko twoją wersję](/pl/notes/masz-racje-powiedzialo-ai/)
+
 ## Powiązane pojęcia
 
 - [Calibrated trust](/pl/concepts/calibrated-trust/)
