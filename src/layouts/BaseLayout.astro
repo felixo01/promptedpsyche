@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import { getAlternateLinks, getLangFromPath, type AlternateLinks, type Locale } from '../lib/i18n';
 import { site } from '../lib/site';
 import '../styles/global.css';
+import '../styles/content-enhancements.css';
 
 type StructuredData = Record<string, unknown>;
 
@@ -105,6 +106,7 @@ const structuredDataJson = structuredDataItems.map((item) =>
         <script is:inline type="application/ld+json" set:html={json} />
       ))
     }
+    <script is:inline src="/scripts/content-enhancements.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">{skipLinkLabel}</a>
