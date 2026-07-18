@@ -64,3 +64,7 @@ That question changes the role of AI. The model is no longer asked to guess some
 This is less dramatic than a fast answer about hidden intentions. It is also safer and more responsible. Human communication is not only about replying quickly. It is also about not mistaking one's own tension for knowledge about another person.
 
 The model sees text. The human has to remember the relationship that may not be present in that text.
+
+## Continue reading
+
+- [“You’re Right,” Said the AI. But It Only Knew Your Side of the Story](/notes/youre-right-said-the-ai/)
