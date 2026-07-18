@@ -64,3 +64,7 @@ Takie pytanie zmienia rolę AI. Model nie ma zgadywać czyjejś psychiki. Ma pom
 To mniej efektowne niż szybka odpowiedź o ukrytych intencjach. Jest jednak bezpieczniejsze i bardziej odpowiedzialne. W komunikacji między ludźmi nie chodzi tylko o to, żeby odpowiedzieć szybko. Chodzi o to, żeby nie pomylić własnego napięcia z wiedzą o drugiej osobie.
 
 Model widzi tekst. Człowiek musi pamiętać o relacji, której w tym tekście może nie być.
+
+## Czytaj dalej
+
+- [„Masz rację” — powiedziało AI. Problem w tym, że znało tylko twoją wersję](/pl/notes/masz-racje-powiedzialo-ai/)
