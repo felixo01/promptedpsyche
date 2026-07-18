@@ -21,7 +21,7 @@ const embodiedEnglishArticleRoute = '/articles/what-changes-when-ai-has-a-body/'
 const aiThinkingPolishArticleRoute = '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/';
 const aiThinkingEnglishArticleRoute = '/articles/dont-ask-whether-ai-makes-us-dumber/';
 const aiThinkingPolishArticleTitle =
-  'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać';
+  'Nie pytaj, czy AI nas ogłupia. Zapytaj, które sposoby myślenia przestajemy ćwiczyć';
 const aiThinkingEnglishArticleTitle =
   "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing";
 const aiThinkingEnglishDoi = '10.5281/zenodo.21358687';
@@ -1597,7 +1597,7 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose')).toContainText('Co naprawdę mierzą badania');
     await expect(page.locator('.prose')).toContainText('Najważniejsze bezpośrednie porównania');
     await expect(page.locator('.prose')).toContainText(
-      'Interfejs ukończenia zadania a interfejs uczenia się'
+      'Interfejs wykonania zadania a interfejs uczenia się'
     );
     await expect(
       page.locator(`.language-switcher a[href="${aiThinkingEnglishArticleRoute}"]`)
