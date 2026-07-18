@@ -20,11 +20,11 @@ W pracy z AI uporządkowane streszczenie może wyglądać jak gotowy wniosek. W 
 
 Celem jest mapa materiału przed decyzją, nie decyzja podjęta przez model. AI może pomóc rozdzielić warstwy informacji, ale człowiek nadal odpowiada za ocenę, kontekst i dalszy krok. Emocje też są ważną informacją o sytuacji, ale nie są tym samym co fakt, który można wskazać, zacytować albo sprawdzić.
 
-Ta praktyka dotyczy materiału: maila, notatki, raportu, transkrypcji albo odpowiedzi modelu. Jeśli chcesz sprawdzić przede wszystkim własne pierwsze odczytanie sytuacji, lepsza będzie praktyka o założeniach.
+Ta praktyka dotyczy materiału: wiadomości e-mail, notatki, raportu, transkrypcji albo odpowiedzi modelu. Jeśli chcesz sprawdzić przede wszystkim własne pierwsze odczytanie sytuacji, lepsza będzie praktyka o założeniach.
 
 ## Kiedy to pomaga
 
-- Przed decyzją opartą na mailach, notatkach, raportach albo rozmowach.
+- Przed decyzją opartą na wiadomościach e-mail, notatkach, raportach albo rozmowach.
 - Gdy materiał jest chaotyczny, emocjonalny albo obciąża poznawczo.
 - Gdy chcesz zmniejszyć pewność pierwszej interpretacji bez ignorowania emocji.
 - Gdy chcesz przygotować pytania do zespołu, klienta albo eksperta.

@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import type { Locale } from '../lib/i18n';
+import { getTopicHubs } from '../lib/topics';
+
+interface Props {
+  lang?: Locale;
+}
+
+const lang = Astro.props.lang ?? 'en';
+const isPl = lang === 'pl';
+const hubs = getTopicHubs(lang);
+const alternateLinks = {
+  en: '/topics/',
+  pl: '/pl/topics/',
+  xDefault: '/topics/'
+};
+const title = isPl ? 'Obszary' : 'Topics';
+const description = isPl
+  ? 'Przewodniki po głównych obszarach Prompted Psyche: zaufaniu do AI, myśleniu oraz sprawczości i odpowiedzialności.'
+  : 'Guides to the central Prompted Psyche topics: trust in AI, cognition, and human agency and responsibility.';
+---
+
+<BaseLayout lang={lang} title={title} description={description} alternateLinks={alternateLinks}>
+  <section class="page-shell topic-index-page" data-qa="topic-index-page">
+    <header class="page-header topic-index-page__header">
+      <div>
+        <p class="eyebrow">{isPl ? 'Mapa tematyczna' : 'Topic map'}</p>
+        <h1>{title}</h1>
+      </div>
+      <p>
+        {isPl
+          ? 'Trzy redakcyjne przewodniki łączą artykuły, pojęcia, ćwiczenia i notatki w spójne ścieżki czytania.'
+          : 'Three editorial guides connect articles, concepts, practice exercises and notes into coherent reading paths.'}
+      </p>
+    </header>
+
+    <div class="topic-index-list" aria-label={isPl ? 'Uruchomione obszary' : 'Published topics'}>
+      {
+        hubs.map((hub, index) => (
+          <article class="topic-index-card" data-qa="topic-index-card">
+            <p class="topic-index-card__number">{String(index + 1).padStart(2, '0')}</p>
+            <div>
+              <h2><a href={hub.path}>{hub.title}</a></h2>
+              <p>{hub.summary}</p>
+              <ul aria-label={isPl ? `Formaty w obszarze ${hub.title}` : `Formats in ${hub.title}`}>
+                <li>{hub.articles.length} {isPl ? 'artykuły' : 'articles'}</li>
+                <li>{hub.concepts.length} {isPl ? 'pojęć' : 'concepts'}</li>
+                <li>{hub.practice.length} {isPl ? 'ćwiczenia' : 'practice entries'}</li>
+              </ul>
+              <a class="text-link" href={hub.path}>
+                {isPl ? `Przejdź do obszaru: ${hub.title}` : `Explore the topic: ${hub.title}`}
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

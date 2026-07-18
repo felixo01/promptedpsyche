@@ -1,7 +1,4 @@
 import { expect, test, type Page } from '@playwright/test';
-import { shouldShowPractice } from '../../src/lib/features';
-
-const showPractice = shouldShowPractice();
 
 const forbiddenPracticePhrases = [
   'Prompt library',
@@ -11,7 +8,7 @@ const forbiddenPracticePhrases = [
   'Szukaj promptu'
 ];
 
-const practiceDrafts = [
+const practiceEntries = [
   {
     title: 'Jak sprawdzić, czy odpowiedź AI ma źródła',
     route: '/pl/practice/jak-sprawdzic-czy-odpowiedz-ai-ma-zrodla/'
@@ -94,17 +91,6 @@ const practiceDrafts = [
   }
 ];
 
-const publicIndexes = [
-  '/',
-  '/pl/',
-  '/articles/',
-  '/pl/articles/',
-  '/notes/',
-  '/pl/notes/',
-  '/concepts/',
-  '/pl/concepts/'
-];
-
 async function expectNoHorizontalOverflow(page: Page) {
   const overflow = await page.evaluate(() => ({
     documentScrollWidth: document.documentElement.scrollWidth,
@@ -118,64 +104,7 @@ async function expectNoHorizontalOverflow(page: Page) {
 }
 
 test.describe('practice section', () => {
-  test('fails closed in production even when SHOW_PRACTICE is enabled', () => {
-    expect(
-      shouldShowPractice({
-        SHOW_PRACTICE: 'true',
-        VERCEL_ENV: 'production',
-        NODE_ENV: 'production'
-      })
-    ).toBe(false);
-    expect(
-      shouldShowPractice({
-        SHOW_PRACTICE: 'true',
-        NODE_ENV: 'production'
-      })
-    ).toBe(false);
-    expect(
-      shouldShowPractice({
-        SHOW_PRACTICE: 'true',
-        VERCEL_ENV: 'preview',
-        NODE_ENV: 'production'
-      })
-    ).toBe(true);
-    expect(
-      shouldShowPractice({
-        SHOW_PRACTICE: 'true',
-        NODE_ENV: 'development'
-      })
-    ).toBe(true);
-  });
-
-  test('keeps practice hidden when SHOW_PRACTICE is disabled', async ({ page, request }) => {
-    test.skip(showPractice, 'Production Practice safety runs with SHOW_PRACTICE disabled.');
-
-    for (const path of publicIndexes) {
-      await page.goto(path);
-
-      await expect(page.locator('[data-qa="site-nav"]')).not.toContainText('Practice');
-      await expect(page.locator('[data-qa="site-nav"]')).not.toContainText('Praktyka');
-
-      for (const draft of practiceDrafts) {
-        await expect(page.locator('body')).not.toContainText(draft.title);
-      }
-    }
-
-    for (const draft of practiceDrafts) {
-      const response = await request.get(draft.route);
-      expect(response.ok()).toBe(false);
-    }
-
-    const enIndexResponse = await request.get('/practice/');
-    const plIndexResponse = await request.get('/pl/practice/');
-
-    expect(enIndexResponse.ok()).toBe(false);
-    expect(plIndexResponse.ok()).toBe(false);
-  });
-
-  test('renders public Practice routes when SHOW_PRACTICE is enabled', async ({ page, request }) => {
-    test.skip(!showPractice, 'Practice routes are generated only with SHOW_PRACTICE=true.');
-
+  test('renders public Practice routes in both languages', async ({ page, request }) => {
     await page.addInitScript(() => {
       Object.defineProperty(navigator, 'clipboard', {
         configurable: true,
@@ -197,18 +126,23 @@ test.describe('practice section', () => {
     expect(enEntryResponse.ok()).toBe(true);
     expect(plEntryResponse.ok()).toBe(true);
 
+    for (const entry of practiceEntries) {
+      const response = await request.get(entry.route);
+      expect(response.ok(), `${entry.title} should have a public route`).toBe(true);
+    }
+
     await page.goto('/practice/');
     await expect(page.getByRole('heading', { name: 'Practice', level: 1 })).toBeVisible();
     await expect(page.locator('.practice-index')).toBeVisible();
     await expect(
       page.getByText(
-        'Practice is a set of short, practical AI-use scenarios - not a prompt library, but a guide to using models responsibly in concrete situations.'
+        'Practice is a collection of short scenarios for working with AI more deliberately. Each entry combines an example instruction with checks, limits and questions to consider before using the result.'
       )
     ).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Choose a situation', level: 2 })).toBeVisible();
     await expect(
       page.getByText(
-        'Short, practical scenarios for working with AI more carefully - checking answers, handling sources, asking for uncertainty, reviewing text and keeping decisions human.'
+        'Work through sources, uncertainty, assumptions, counterarguments, text and decisions without handing judgment or responsibility to the model.'
       )
     ).toBeVisible();
     await expect(page.locator('.entry-list article')).toHaveCount(10);
@@ -257,13 +191,13 @@ test.describe('practice section', () => {
     await expect(page.locator('.practice-index')).toBeVisible();
     await expect(
       page.getByText(
-        'Praktyka to krótkie, praktyczne scenariusze pracy z AI - nie baza promptów, ale przewodniki po rozsądnym użyciu modeli w konkretnych sytuacjach.'
+        'Praktyka to zbiór krótkich scenariuszy uważnej pracy z AI. Każdy wpis łączy przykładowe polecenie z pytaniami kontrolnymi, ograniczeniami i wskazówkami, które warto rozważyć przed użyciem wyniku.'
       )
     ).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Wybierz sytuację', level: 2 })).toBeVisible();
     await expect(
       page.getByText(
-        'Krótkie, praktyczne scenariusze pracy z AI - sprawdzanie odpowiedzi, źródeł, niepewności, tekstów i decyzji bez oddawania modelowi odpowiedzialności.'
+        'Pracuj ze źródłami, niepewnością, założeniami, kontrargumentami, tekstem i decyzjami bez oddawania modelowi osądu ani odpowiedzialności.'
       )
     ).toBeVisible();
     await expect(page.locator('.entry-list article')).toHaveCount(10);

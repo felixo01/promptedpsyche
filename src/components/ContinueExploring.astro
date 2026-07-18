@@ -1,0 +1,33 @@
+---
+import type { Locale } from '../lib/i18n';
+import type { TopicResource } from '../lib/topics';
+
+interface Props {
+  links: TopicResource[];
+  lang?: Locale;
+}
+
+const { links, lang = 'en' } = Astro.props;
+const isPl = lang === 'pl';
+const labels = isPl
+  ? { article: 'Artykuł', concept: 'Pojęcie', practice: 'Praktyka', note: 'Notatka', topic: 'Obszar' }
+  : { article: 'Article', concept: 'Concept', practice: 'Practice', note: 'Note', topic: 'Topic' };
+---
+
+{
+  links.length > 0 && (
+    <section class="continue-exploring" data-qa="continue-exploring" aria-labelledby="continue-exploring-title">
+      <p class="small-label">{isPl ? 'Powiązane materiały' : 'Related reading'}</p>
+      <h2 id="continue-exploring-title">{isPl ? 'Czytaj dalej' : 'Continue exploring'}</h2>
+      <ul>
+        {links.map((link) => (
+          <li>
+            <span>{labels[link.kind]}</span>
+            <a href={link.href}>{link.title}</a>
+            <p>{link.description}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

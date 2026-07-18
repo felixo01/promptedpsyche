@@ -4,6 +4,7 @@ import EntryLayout from '../../layouts/EntryLayout.astro';
 import { getArticleAlternates } from '../../lib/articleRoutes';
 import { withArticlePublicationMetadata } from '../../lib/articlePublicationMetadata';
 import { onlyPublicEntries, onlyPublicEntriesByLang } from '../../lib/content';
+import { getExplorationLinks } from '../../lib/topics';
 
 export async function getStaticPaths() {
   const publicArticles = onlyPublicEntries(await getCollection('articles'));
@@ -17,9 +18,16 @@ export async function getStaticPaths() {
 
 const { entry, alternateLinks } = Astro.props;
 const publicationEntry = withArticlePublicationMetadata(entry, 'en');
+const explorationLinks = getExplorationLinks('article', entry.data.translationKey, 'en');
 const { Content } = await render(entry);
 ---
 
-<EntryLayout entry={publicationEntry} label="Article" lang="en" alternateLinks={alternateLinks}>
+<EntryLayout
+  entry={publicationEntry}
+  label="Article"
+  lang="en"
+  alternateLinks={alternateLinks}
+  explorationLinks={explorationLinks}
+>
   <Content />
 </EntryLayout>

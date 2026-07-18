@@ -75,9 +75,9 @@ Nie pytaj modelu, czy ma rację. Poproś go, żeby pokazał, co trzeba sprawdzi�
 ## Powiązane pojęcia
 
 - [Grounding: oparcie odpowiedzi na źródłach](/pl/concepts/oparcie-odpowiedzi-na-zrodlach/)
-- [Epistemic vigilance](/pl/concepts/epistemic-vigilance/)
-- [Calibrated trust](/pl/concepts/calibrated-trust/)
-- [Model output](/pl/concepts/model-output/)
+- [Epistemic vigilance (czujność epistemiczna)](/pl/concepts/epistemic-vigilance/)
+- [Skalibrowane zaufanie](/pl/concepts/calibrated-trust/)
+- [Odpowiedź modelu](/pl/concepts/model-output/)
 - [Halucynacja modelu](/pl/concepts/halucynacja-modelu/)
 
 ## Dalsza lektura

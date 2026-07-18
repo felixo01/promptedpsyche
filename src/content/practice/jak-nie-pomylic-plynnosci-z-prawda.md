@@ -79,9 +79,9 @@ Płynność jest sygnałem formy, nie dowodem prawdy. Im ważniejsza decyzja, ty
 ## Powiązane pojęcia
 
 - [Halucynacja modelu](/pl/concepts/halucynacja-modelu/)
-- [Model output](/pl/concepts/model-output/)
-- [Calibrated trust](/pl/concepts/calibrated-trust/)
-- [Epistemic vigilance](/pl/concepts/epistemic-vigilance/)
+- [Odpowiedź modelu](/pl/concepts/model-output/)
+- [Skalibrowane zaufanie](/pl/concepts/calibrated-trust/)
+- [Epistemic vigilance (czujność epistemiczna)](/pl/concepts/epistemic-vigilance/)
 - [Grounding: oparcie odpowiedzi na źródłach](/pl/concepts/oparcie-odpowiedzi-na-zrodlach/)
 - [Nadmierne poleganie na AI](/pl/concepts/nadmierne-poleganie-na-ai/)
 

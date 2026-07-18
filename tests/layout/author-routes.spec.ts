@@ -44,8 +44,13 @@ test.describe('author and about routes', () => {
     await expect(page.locator('body')).toContainText('intelligent systems');
     await expect(page.locator('body')).toContainText('Cyberpsychology remains the core');
     await expect(page.locator('body')).toContainText('Human-Machine Interaction');
-    await expect(page.locator('body')).toContainText(
-      'My earlier work with image, narrative, emotion and attention remains part of how I look at technology, but it is not the main label of this site. Visual and film projects are available at felixmamczur.com.'
+    await expect(page.locator('body')).toContainText('My background includes directing, editing and production');
+    await expect(page.locator('body')).toContainText('member of the European Film Academy');
+    await expect(page.locator('body')).toContainText('I am currently studying psychology');
+    await expect(page.locator('body')).toContainText('not as a completed professional qualification');
+    await expect(page.getByRole('link', { name: 'European Film Academy' })).toHaveAttribute(
+      'href',
+      'https://www.europeanfilmawards.eu/talent/feliks-mamczur/'
     );
     await expect(page.getByRole('link', { name: 'Visual and film projects' })).toHaveAttribute(
       'href',
@@ -55,23 +60,20 @@ test.describe('author and about routes', () => {
       'title',
       'Feliks Mamczur - visual and film projects'
     );
-    const englishBodyText = await page.locator('body').innerText();
-    expect(englishBodyText.match(/My earlier/g) ?? []).toHaveLength(1);
-    await expect(page.locator('body')).not.toContainText('You can find my earlier visual and film projects');
+    await expect(page.getByRole('link', { name: 'ORCID profile' })).toHaveAttribute(
+      'href',
+      'https://orcid.org/0009-0001-0715-0517'
+    );
     await expect(page.getByRole('link', { name: 'felixmamczur.com' })).toHaveCount(0);
     await expect(page.locator('body')).not.toContainText('film director portfolio and earlier projects');
-    await expect(page.locator('body')).not.toContainText('European Film Academy');
-    await expect(page.locator('body')).not.toContainText('I am a filmmaker');
-    await expect(page.locator('body')).not.toContainText('filmmaker');
-    await expect(page.locator('body')).not.toContainText('film director');
-    await expect(page.locator('body')).not.toContainText('director');
-    await expect(page.locator('body')).not.toContainText('film work and directing portfolio');
-    await expect(page.locator('body')).not.toContainText('studying psychology');
-    await expect(page.locator('body')).not.toContainText('psychology studies');
+    await expect(page.locator('body')).not.toContainText('I am a psychologist');
     await expect(page.locator('body')).not.toContainText('AI engineer');
     await expect(page.locator('body')).not.toContainText('cybersecurity expert');
     await expect(page.locator('body')).not.toContainText('clinical psychologist');
-    await expect(page.getByRole('link', { name: /^Practice$/ })).toHaveCount(0);
+    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Practice' })).toHaveAttribute(
+      'href',
+      '/practice/'
+    );
     await expectNoHorizontalOverflow(page);
   });
 
@@ -96,8 +98,13 @@ test.describe('author and about routes', () => {
     await expect(page.locator('body')).toContainText('inteligentnymi systemami');
     await expect(page.locator('body')).toContainText('Cyberpsychologia pozostaje rdzeniem');
     await expect(page.locator('body')).toContainText('Human-Machine Interaction');
-    await expect(page.locator('body')).toContainText(
-      'Moje wcześniejsze doświadczenie pracy z obrazem, narracją, emocją i uwagą nadal wpływa na to, jak patrzę na technologię, ale nie jest główną etykietą tej strony. Na felixmamczur.com można znaleźć projekty wizualne i filmowe.'
+    await expect(page.locator('body')).toContainText('Moje doświadczenie obejmuje reżyserię, montaż i produkcję');
+    await expect(page.locator('body')).toContainText('członkostwo w European Film Academy');
+    await expect(page.locator('body')).toContainText('Obecnie studiuję psychologię');
+    await expect(page.locator('body')).toContainText('a nie ukończoną kwalifikację zawodową');
+    await expect(page.getByRole('link', { name: 'European Film Academy' })).toHaveAttribute(
+      'href',
+      'https://www.europeanfilmawards.eu/talent/feliks-mamczur/'
     );
     await expect(page.getByRole('link', { name: 'projekty wizualne i filmowe' })).toHaveAttribute(
       'href',
@@ -107,24 +114,20 @@ test.describe('author and about routes', () => {
       'title',
       'Feliks Mamczur - projekty wizualne i filmowe'
     );
-    const polishBodyText = await page.locator('body').innerText();
-    expect(polishBodyText.match(/Moje wcześniejsze/g) ?? []).toHaveLength(1);
-    await expect(page.locator('body')).not.toContainText('Moje wcześniejsze projekty wizualne i filmowe');
+    await expect(page.getByRole('link', { name: 'profil ORCID' })).toHaveAttribute(
+      'href',
+      'https://orcid.org/0009-0001-0715-0517'
+    );
     await expect(page.getByRole('link', { name: 'felixmamczur.com' })).toHaveCount(0);
     await expect(page.locator('body')).not.toContainText('portfolio filmowe i wcześniejsze projekty');
-    await expect(page.locator('body')).not.toContainText('European Film Academy');
-    await expect(page.locator('body')).not.toContainText('Jestem reżyserem');
-    await expect(page.locator('body')).not.toContainText('reżyser');
-    await expect(page.locator('body')).not.toContainText('montażysta');
-    await expect(page.locator('body')).not.toContainText('filmowiec');
-    await expect(page.locator('body')).not.toContainText('portfolio reżyserskie');
-    await expect(page.locator('body')).not.toContainText('studiuję psychologię');
-    await expect(page.locator('body')).not.toContainText('studiuje psychologię');
-    await expect(page.locator('body')).not.toContainText('studia psychologiczne');
+    await expect(page.locator('body')).not.toContainText('Jestem psychologiem');
     await expect(page.locator('body')).not.toContainText('inżynier AI');
     await expect(page.locator('body')).not.toContainText('ekspert cyberbezpieczeństwa');
     await expect(page.locator('body')).not.toContainText('psychologiem');
-    await expect(page.getByRole('link', { name: /^Praktyka$/ })).toHaveCount(0);
+    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Praktyka' })).toHaveAttribute(
+      'href',
+      '/pl/practice/'
+    );
     await expectNoHorizontalOverflow(page);
   });
 

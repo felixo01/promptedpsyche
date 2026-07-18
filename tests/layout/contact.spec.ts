@@ -51,12 +51,12 @@ test.describe('contact pages', () => {
     test(`keeps contact copy and safety boundaries on ${route}`, async ({ page }) => {
       await page.goto(route);
 
-      const body = page.locator('body');
-      await expect(body).toContainText(expectedClosing);
-      await expect(body).not.toContainText(absentCopy);
-      await expect(body).not.toContainText('DOI');
-      await expect(body).not.toContainText('Practice');
-      await expect(body).not.toContainText('Praktyka');
+      const main = page.locator('main');
+      await expect(main).toContainText(expectedClosing);
+      await expect(main).not.toContainText(absentCopy);
+      await expect(main).not.toContainText('DOI');
+      await expect(main).not.toContainText('Practice');
+      await expect(main).not.toContainText('Praktyka');
       await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
     });
   }

@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test.describe('publication tag pages', () => {
-  test('links visible article and note tags to English tag pages', async ({ page }) => {
+  test('links visible article, note and Practice tags to English tag pages', async ({ page }) => {
     await page.goto('/articles/');
 
     const articleTag = page.locator('.entry-list .tag-list a[href="/tags/ai-and-humans/"]').first();
@@ -21,9 +21,16 @@ test.describe('publication tag pages', () => {
     await page.goto('/notes/');
     const noteTag = page.locator('.entry-list .tag-list a').first();
     await expect(noteTag).toHaveAttribute('href', /\/tags\/.+\/$/);
+
+    await page.goto('/practice/');
+    const practiceTag = page.locator('.entry-list .tag-list a[href="/tags/arguments/"]').first();
+    await expect(practiceTag).toHaveAttribute('href', '/tags/arguments/');
+    await practiceTag.click();
+    await expect(page.locator('.tag-archive-list')).toContainText('How to ask AI for a counterargument');
+    await expect(page.locator('.tag-archive-list')).toContainText('Practice');
   });
 
-  test('links visible article and note tags to Polish tag pages', async ({ page }) => {
+  test('links visible article, note and Practice tags to Polish tag pages', async ({ page }) => {
     await page.goto('/pl/articles/');
 
     const articleTag = page.locator('.entry-list .tag-list a[href="/pl/tags/ai-i-czlowiek/"]').first();
@@ -43,6 +50,13 @@ test.describe('publication tag pages', () => {
     await page.goto('/pl/notes/');
     const noteTag = page.locator('.entry-list .tag-list a').first();
     await expect(noteTag).toHaveAttribute('href', /\/pl\/tags\/.+\/$/);
+
+    await page.goto('/pl/practice/');
+    const practiceTag = page.locator('.entry-list .tag-list a[href="/pl/tags/argumenty/"]').first();
+    await expect(practiceTag).toHaveAttribute('href', '/pl/tags/argumenty/');
+    await practiceTag.click();
+    await expect(page.locator('.tag-archive-list')).toContainText('Jak poprosić AI o kontrargument');
+    await expect(page.locator('.tag-archive-list')).toContainText('Praktyka');
   });
 
   test('links detail page publication tags without changing concept detail tags', async ({ page }) => {
@@ -102,9 +116,10 @@ test.describe('publication tag pages', () => {
     await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.locator('body')).toContainText('Publications tagged with');
-    await expect(page.locator('.tag-archive-list article')).toHaveCount(9);
+    await expect(page.locator('.tag-archive-list article')).toHaveCount(19);
     await expect(page.locator('.tag-archive-list')).toContainText('Article');
     await expect(page.locator('.tag-archive-list')).toContainText('Note');
+    await expect(page.locator('.tag-archive-list')).toContainText('Practice');
     await expect(page.locator('.tag-archive-list')).toContainText('It is not just about the prompt');
     await expect(page.locator('.tag-archive-list')).toContainText(
       'Trust in the age of ready-made answers'
@@ -122,9 +137,10 @@ test.describe('publication tag pages', () => {
     await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.locator('body')).toContainText('Publikacje oznaczone tagiem');
-    await expect(page.locator('.tag-archive-list article')).toHaveCount(9);
+    await expect(page.locator('.tag-archive-list article')).toHaveCount(19);
     await expect(page.locator('.tag-archive-list')).toContainText('Artykuł');
     await expect(page.locator('.tag-archive-list')).toContainText('Notatka');
+    await expect(page.locator('.tag-archive-list')).toContainText('Praktyka');
     await expect(page.locator('.tag-archive-list')).toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('.tag-archive-list')).toContainText(
       'Zaufanie w epoce gotowych odpowiedzi'

@@ -1,9 +1,7 @@
 import { expect, test } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
-import { shouldShowPractice } from '../../src/lib/features';
-
-const showPractice = shouldShowPractice();
+import { showPractice } from '../../src/lib/features';
 
 function readDistFile(fileName: string) {
   return fs.readFileSync(path.join(process.cwd(), 'dist', fileName), 'utf8');
@@ -75,6 +73,14 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).not.toContain('/pl/author/');
     expect(sitemap).toContain('/search/');
     expect(sitemap).toContain('/pl/search/');
+    expect(sitemap).toContain('/topics/');
+    expect(sitemap).toContain('/pl/topics/');
+    expect(sitemap).toContain('/topics/trust-in-ai/');
+    expect(sitemap).toContain('/pl/topics/zaufanie-do-ai/');
+    expect(sitemap).toContain('/topics/ai-and-cognition/');
+    expect(sitemap).toContain('/pl/topics/ai-i-myslenie/');
+    expect(sitemap).toContain('/topics/human-agency-and-responsibility/');
+    expect(sitemap).toContain('/pl/topics/sprawczosc-i-odpowiedzialnosc/');
     expect(sitemap).toContain('/articles/trust-in-the-age-of-ready-made-answers/');
     expect(sitemap).toContain('/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/');
     expect(sitemap).toContain('/articles/are-we-afraid-of-ai-or-of-ourselves/');
@@ -89,6 +95,8 @@ test.describe('built sitemap and RSS policy', () => {
 
     expect(rss).not.toContain('/practice/');
     expect(rss).not.toContain('/pl/practice/');
+    expect(rss).not.toContain('/topics/');
+    expect(rss).not.toContain('/pl/topics/');
     expect(rss).toContain('/articles/trust-in-the-age-of-ready-made-answers/');
     expect(rss).toContain('/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/');
     expect(rss).toContain('/articles/are-we-afraid-of-ai-or-of-ourselves/');
