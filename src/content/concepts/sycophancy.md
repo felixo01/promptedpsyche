@@ -23,6 +23,10 @@ This matters especially in sensitive contexts. A helpful system should be able t
 
 Sycophancy shows that the quality of AI interaction is not only about accuracy. It is also about relational tone. People may trust a system because it feels understanding, when the real mechanism is conversational accommodation.
 
+## Related note
+
+- [“You’re Right,” Said the AI. But It Only Knew Your Side of the Story](/notes/youre-right-said-the-ai/)
+
 ## Related concepts
 
 - [Calibrated trust](/concepts/calibrated-trust/)
