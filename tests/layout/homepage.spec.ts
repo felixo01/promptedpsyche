@@ -9,9 +9,10 @@ test.describe('homepage hero positioning', () => {
     await page.goto('/');
 
     await expect(page.locator('[data-qa="hero-title"]')).toHaveText('The human side of AI.');
-    await expect(page.locator('[data-qa="hero-copy"]')).not.toContainText('Feliks Mamczur');
-    await expect(page.locator('body')).toContainText('The first essays and notes are now live.');
-    await expect(page.locator('body')).not.toContainText('The first article is now published.');
+    await expect(page.locator('[data-qa="hero-copy"]')).toContainText("Feliks Mamczur's platform");
+    await expect(page.locator('[data-qa="hero-copy"]')).toContainText('consulting practice for teams');
+    await expect(page.getByRole('link', { name: 'See the AI audit for teams' })).toHaveAttribute('href', '/consulting/');
+    await expect(page.locator('body')).toContainText('Three places to begin');
     await expect(page.locator('body')).not.toContainText('Human-Machine Interaction');
   });
 
@@ -19,9 +20,10 @@ test.describe('homepage hero positioning', () => {
     await page.goto('/pl/');
 
     await expect(page.locator('[data-qa="hero-title"]')).toHaveText('Ludzka strona AI.');
-    await expect(page.locator('[data-qa="hero-copy"]')).not.toContainText('Feliks Mamczur');
-    await expect(page.locator('body')).toContainText('Pierwsze eseje i notatki są już dostępne.');
-    await expect(page.locator('body')).not.toContainText('Pierwszy artykuł jest już dostępny.');
+    await expect(page.locator('[data-qa="hero-copy"]')).toContainText('platforma Feliksa Mamczura');
+    await expect(page.locator('[data-qa="hero-copy"]')).toContainText('miejsce konsultingu dla zespołów');
+    await expect(page.getByRole('link', { name: 'Zobacz audyt AI dla zespołów' })).toHaveAttribute('href', '/pl/consulting/');
+    await expect(page.locator('body')).toContainText('Trzy ważne punkty wyjścia');
     await expect(page.locator('body')).not.toContainText('Human-Machine Interaction');
   });
 
@@ -32,7 +34,7 @@ test.describe('homepage hero positioning', () => {
       const visibleText = await page.locator('body').innerText();
       const matches = visibleText.match(/Feliks Mamczur/g) ?? [];
 
-      expect(matches.length).toBeLessThanOrEqual(3);
+      expect(matches.length).toBeLessThanOrEqual(4);
     }
   });
 

@@ -6,12 +6,12 @@ const mailto = `mailto:${email}`;
 const contactSafetyCases = [
   {
     route: '/contact/',
-    expectedClosing: 'I try to respond thoughtfully',
+    expectedClosing: 'I will use that context to assess',
     absentCopy: 'I reply when I can realistically help'
   },
   {
     route: '/pl/contact/',
-    expectedClosing: 'Staram się odpowiadać na wiadomości możliwie uważnie',
+    expectedClosing: 'Na podstawie tego kontekstu ocenię',
     absentCopy: 'Odpowiadam wtedy, kiedy mogę realnie pomóc'
   }
 ];
@@ -26,10 +26,11 @@ test.describe('contact pages', () => {
     await expect(emailCard).toBeVisible();
     await expect(emailCard).toContainText(email);
     await expect(emailLink).toHaveAttribute('href', mailto);
-    await expect(page.getByRole('link', { name: 'Send an email' })).toHaveAttribute(
+    await expect(page.getByRole('link', { name: 'Write about your team' })).toHaveAttribute(
       'href',
-      mailto
+      /^mailto:humanai\.lab\.edu@gmail\.com\?subject=/
     );
+    await expect(page.locator('[data-qa="contact-guidance-list"] li')).toHaveCount(5);
   });
 
   test('shows direct email access on the Polish contact page', async ({ page }) => {
@@ -41,10 +42,11 @@ test.describe('contact pages', () => {
     await expect(emailCard).toBeVisible();
     await expect(emailCard).toContainText(email);
     await expect(emailLink).toHaveAttribute('href', mailto);
-    await expect(page.getByRole('link', { name: 'Napisz e-mail' })).toHaveAttribute(
+    await expect(page.getByRole('link', { name: 'Opisz swój zespół' })).toHaveAttribute(
       'href',
-      mailto
+      /^mailto:humanai\.lab\.edu@gmail\.com\?subject=/
     );
+    await expect(page.locator('[data-qa="contact-guidance-list"] li')).toHaveCount(5);
   });
 
   for (const { route, expectedClosing, absentCopy } of contactSafetyCases) {

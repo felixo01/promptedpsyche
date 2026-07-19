@@ -1,11 +1,32 @@
 ---
+import { getCollection } from 'astro:content';
 import VisualPlate from '../components/VisualPlate.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getArticlePath } from '../lib/articleRoutes';
+import { onlyPublicEntriesByLang } from '../lib/content';
+import { getNotePath } from '../lib/noteRoutes';
+
+const publicArticles = onlyPublicEntriesByLang(await getCollection('articles'), 'en');
+const publicNotes = onlyPublicEntriesByLang(await getCollection('notes'), 'en');
+const conflictNote = publicNotes.find((entry) => entry.data.translationKey === 'ai-sycophancy-conflict');
+const thinkingArticle = publicArticles.find((entry) => entry.data.translationKey === 'ai-thinking-practice');
+const trustArticle = publicArticles.find((entry) => entry.data.translationKey === 'ai-path-to-knowledge');
+const startHereEntries = [
+  ...(conflictNote
+    ? [{ entry: conflictNote, label: 'Research note', cta: 'Read the note', href: getNotePath(conflictNote, 'en') }]
+    : []),
+  ...(thinkingArticle
+    ? [{ entry: thinkingArticle, label: 'Article', cta: 'Read the article', href: getArticlePath(thinkingArticle, 'en') }]
+    : []),
+  ...(trustArticle
+    ? [{ entry: trustArticle, label: 'Article', cta: 'Read the article', href: getArticlePath(trustArticle, 'en') }]
+    : [])
+];
 ---
 
 <BaseLayout
   title="The human side of AI"
-  description="Prompted Psyche is Feliks Mamczur's author-led platform on how artificial intelligence affects cognition, trust, communication, creativity and work."
+  description="Prompted Psyche is Feliks Mamczur's platform on the human side of AI, combining research-informed writing with AI use audits for creative and marketing teams."
   image="/images/social/prompted-psyche-home-social-1200x630.png"
 >
   <div>
@@ -14,68 +35,62 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="eyebrow">AI - Cognitive Psychology - Human-AI Interaction</p>
         <h1 id="home-title" data-qa="hero-title">The human side of AI.</h1>
         <p class="lede">
-          Prompted Psyche is an independent publication on how artificial intelligence
-          affects cognition, trust, communication, creativity and work.
+          AI is changing how we think, make decisions, communicate and work.
         </p>
         <p class="hero-subnote">
-          It brings together articles, notes and concepts about AI not only as a
-          tool, but as a technology that changes attention, decisions, language,
-          emotion and responsibility.
+          Prompted Psyche is Feliks Mamczur's platform about the human side of AI
+          and a consulting practice for teams that want to use AI more deliberately
+          and responsibly.
         </p>
         <div class="hero-actions" aria-label="Main actions">
-          <a href="/articles/">Articles</a>
-          <a href="/about/">Author</a>
+          <a href="/consulting/" data-qa="home-audit-cta" data-cta="home-audit">See the AI audit for teams</a>
+          <a href="#start-here" data-qa="home-reading-cta">Start with essential reading</a>
         </div>
       </div>
 
       <aside class="hero-sidecar" data-qa="hero-sidecar" aria-label="What is Prompted Psyche?">
         <VisualPlate variant="field-map" class="hero-visual hero-visual-large" />
         <div class="hero-note">
-          <p class="small-label">What is Prompted Psyche?</p>
+          <p class="small-label">Publication and applied work</p>
           <p>
-            An independent publication platform on the human side of AI: articles,
-            notes and concepts about what happens when people begin to use AI, trust
-            its outputs and fold it into thinking and work.
+            Research-informed writing provides the perspective. The AI Use Audit
+            applies it to real workflows in creative, marketing and communication
+            teams.
           </p>
-          <ul class="identity-list" aria-label="Publication formats">
+          <ul class="identity-list" aria-label="Prompted Psyche formats">
             <li>Articles</li>
             <li>Notes</li>
-            <li>Concepts</li>
+            <li>Team audit</li>
           </ul>
         </div>
       </aside>
     </section>
 
-    <section class="home-section home-writing" aria-labelledby="writing-title">
+    <section id="start-here" class="home-section home-writing home-start" aria-labelledby="writing-title" data-qa="home-start-here">
       <div class="editorial-section-header">
         <div>
-          <p class="section-kicker">Writing</p>
-          <h2 id="writing-title">Writing that organizes AI work</h2>
+          <p class="section-kicker">Start here</p>
+          <h2 id="writing-title">Three places to begin</h2>
         </div>
         <p>
-          The first essays and notes are now live. Start with texts on prompts,
-          context, AI as a mirror and trust in ready-made answers.
+          Begin with model agreement in conflict, the habits of thinking we stop
+          practising, and the trust we place in ready-made answers.
         </p>
       </div>
 
-      <div class="home-writing-grid" aria-label="Publication sections">
-        <article class="writing-card" data-qa="writing-card">
-          <p class="entry-index">Articles</p>
-          <h3>Articles</h3>
-          <p>
-            Longer essays and analyses on the psychological, communicative and
-            cultural consequences of AI use.
-          </p>
-          <a class="text-link" href="/articles/">Go to articles</a>
-        </article>
-        <article class="writing-card" data-qa="writing-card">
-          <p class="entry-index">Notes</p>
-          <h3>Notes</h3>
-          <p>
-            Shorter observations, definitions and research directions.
-          </p>
-          <a class="text-link" href="/notes/">Go to notes</a>
-        </article>
+      <div class="home-start-grid" aria-label="Recommended publications" data-qa="start-here-list">
+        {startHereEntries.map((item) => (
+          <article class="writing-card start-here-card" data-qa="start-here-entry">
+            <p class="entry-index">{item.label}</p>
+            <h3>{item.entry.data.title}</h3>
+            <p>{item.entry.data.description}</p>
+            <a class="text-link" href={item.href}>{item.cta}</a>
+          </article>
+        ))}
+      </div>
+      <div class="home-start-footer">
+        <a class="text-link" href="/articles/">Browse all articles</a>
+        <a class="text-link" href="/notes/">Browse all notes</a>
       </div>
     </section>
 
@@ -123,14 +138,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     >
       <div>
         <p class="section-kicker">Consulting</p>
-        <h2 id="consulting-title">Applied in organizations</h2>
+        <h2 id="consulting-title">AI Use Audit for Teams</h2>
       </div>
       <div class="compact-feature-copy">
         <p>
-          I help teams make AI use more deliberate: where it supports work, and where
-          it requires principles, verification and responsibility.
+          For creative, marketing and communication teams that already use
+          generative AI and need clearer rules for verification, trust and
+          responsibility.
         </p>
-        <a class="text-link" href="/consulting/">Consulting</a>
+        <a class="text-link" href="/consulting/">See the audit</a>
       </div>
     </section>
   </div>

@@ -146,9 +146,14 @@ test.describe('published articles', () => {
 
     for (const imagePath of imagePaths) {
       const response = await request.get(imagePath);
+      const body = await response.body();
+      const contentType = response.headers()['content-type'];
+
       expect(response.ok(), `${imagePath} should be available`).toBeTruthy();
-      expect(response.headers()['content-type']).toContain('image/webp');
-      expect((await response.body()).byteLength).toBeGreaterThan(0);
+      expect(contentType).toMatch(/^(image\/webp|application\/octet-stream)(;|$)/);
+      expect(body.subarray(0, 4).toString('ascii')).toBe('RIFF');
+      expect(body.subarray(8, 12).toString('ascii')).toBe('WEBP');
+      expect(body.byteLength).toBeGreaterThan(0);
     }
   });
 

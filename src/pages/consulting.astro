@@ -3,185 +3,216 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Consulting"
-  description="Consulting and workshops on responsible AI use in work, communication, decisions and team processes."
+  title="AI Use Audit for Creative and Marketing Teams"
+  description="A practical audit of how creative, marketing and communication teams use AI, where verification or ownership is unclear, and which working principles need attention."
 >
-  <div class="lovable-page">
-    <header class="lovable-page-hero consulting-hero">
+  <div class="lovable-page consulting-page">
+    <header class="lovable-page-hero consulting-hero consulting-audit-hero" data-qa="consulting-hero">
       <div class="lovable-container">
         <div class="consulting-hero-grid">
           <div>
-            <p class="eyebrow">Consulting</p>
-            <h1>Consulting</h1>
+            <p class="eyebrow">Consulting for creative and marketing teams</p>
+            <h1>AI Use Audit for Teams</h1>
             <p class="lede">
-              I help people and teams work with AI more deliberately: ask better
-              questions, verify outputs, design processes and keep responsibility
-              for decisions with humans.
+              AI can make work faster while also increasing the risk of weak
+              verification, poor decisions and unclear ownership. I help creative,
+              marketing and communication teams examine how they actually use AI
+              and decide which working principles need to be clarified.
             </p>
+            <div class="consulting-actions consulting-hero-actions" aria-label="Audit actions">
+              <a
+                class="hero-button hero-button-primary"
+                href="/contact/"
+                data-qa="consulting-hero-contact"
+                data-cta="audit-contact"
+              >
+                <span aria-hidden="true"></span>
+                Describe your team and AI use
+              </a>
+              <a
+                class="hero-button hero-button-secondary"
+                href="#audit-process"
+                data-qa="consulting-hero-process"
+              >
+                See how the audit works
+              </a>
+            </div>
           </div>
           <aside class="consulting-side-note">
-            <p class="small-label">Approach</p>
+            <p class="small-label">The focus</p>
             <p>
-              I do not start with a tool or a list of prompts. First we need to see
-              where AI enters the work, what it can genuinely support and where it
-              creates false certainty, overreliance or blurred responsibility. My
-              perspective combines Human-AI Interaction, cyberpsychology and practical
-              work with tools, sources, repositories and review workflows.
+              This is not general AI consulting, company automation or prompt
+              training. The audit focuses on human judgment, sources, trust,
+              communication and responsibility in workflows that already involve
+              generative AI.
             </p>
           </aside>
         </div>
       </div>
     </header>
 
-    <section class="lovable-section" aria-labelledby="audience-title">
+    <section class="lovable-section" aria-labelledby="audit-audience-title">
       <div class="lovable-container outcome-grid">
         <div>
           <p class="eyebrow">Who it is for</p>
-          <h2 id="audience-title">For people and teams that want to use AI more carefully</h2>
+          <h2 id="audit-audience-title">When an AI use audit is useful</h2>
         </div>
-        <ul class="outcome-list">
-          <li>creators, editors and communication teams working with text, image or narrative</li>
-          <li>companies and teams already using AI without shared verification rules</li>
-          <li>people designing processes, content, decisions and communication with AI support</li>
-          <li>organizations building AI literacy without hype or prompt tricks</li>
-          <li>leaders who want to understand the risks of overreliance on models</li>
-          <li>teams that need to connect human judgment with model outputs</li>
+        <ul class="outcome-list" data-qa="audit-audience-list">
+          <li>The team uses ChatGPT, Copilot, Claude or other models without shared rules.</li>
+          <li>AI-generated or AI-assisted material reaches clients or external audiences.</li>
+          <li>It is unclear who verifies an output and owns the final decision.</li>
+          <li>People share sensitive, confidential or poorly organized material with models.</li>
+          <li>AI supports the reading of briefs, messages, recommendations or decisions.</li>
+          <li>Fluent model answers are accepted without checking their sources or assumptions.</li>
+          <li>Different people use AI in completely different ways across the same process.</li>
         </ul>
       </div>
     </section>
 
-    <section class="lovable-section tinted-section" aria-labelledby="services-title">
+    <section class="lovable-section tinted-section" aria-labelledby="audit-scope-title">
       <div class="lovable-container">
         <div class="lovable-section-header">
-          <h2 id="services-title">What I help with</h2>
+          <h2 id="audit-scope-title">What we examine</h2>
           <p>
-            I work with real tasks and examples from the process. The aim is for AI
-            to support thinking, communication and decisions without replacing human
-            judgment.
+            The audit follows a real workflow from input to final material. It does
+            not depend on one model provider or a single tool.
           </p>
         </div>
-        <ol class="lovable-service-list">
-          <li>
+        <ol class="lovable-service-list audit-area-list" data-qa="audit-area-list">
+          <li data-qa="audit-area">
             <span>01</span>
-            <h3>Human-AI workflow audit</h3>
-            <p>I map where a team already uses AI, what material enters the model, what works and where verification is missing.</p>
+            <h3>Where AI enters the process</h3>
+            <p>Tasks, handoffs, decisions and deliverables in which a model already plays a role.</p>
           </li>
-          <li>
+          <li data-qa="audit-area">
             <span>02</span>
-            <h3>Practical AI workflow design</h3>
-            <p>I help define what a model can prepare, what needs checking and how context, sources, text and review should move through the process.</p>
+            <h3>Inputs and privacy</h3>
+            <p>What people provide to models, how sensitive that material is and whether boundaries are understood.</p>
           </li>
-          <li>
+          <li data-qa="audit-area">
             <span>03</span>
-            <h3>AI literacy workshops</h3>
-            <p>I build shared language around context, sources, model output, trust, limits and responsibility.</p>
+            <h3>Sources and verification</h3>
+            <p>Where claims, summaries and generated material come from, and who checks them before use.</p>
           </li>
-          <li>
+          <li data-qa="audit-area">
             <span>04</span>
-            <h3>AI communication and trust audit</h3>
-            <p>I help teams see how AI changes writing, information assessment, recommendations, trust and team conversation.</p>
+            <h3>Decision and output ownership</h3>
+            <p>Who approves the result, who can question it and who remains accountable for consequences.</p>
           </li>
-          <li>
+          <li data-qa="audit-area">
             <span>05</span>
-            <h3>Context and source practices</h3>
-            <p>I help clarify rules for data, repositories, sources, citation, metadata, quality control and responsibility for the result.</p>
+            <h3>Trust in model outputs</h3>
+            <p>Where fluency, speed or confidence may be mistaken for reliability.</p>
           </li>
-          <li>
+          <li data-qa="audit-area">
             <span>06</span>
-            <h3>Risk analysis</h3>
-            <p>I identify places where overreliance, false certainty, missing sources or delegated decisions can appear.</p>
+            <h3>Communication, interpretation and sycophancy</h3>
+            <p>How a model frames messages, reinforces assumptions or turns one account into an apparent verdict.</p>
+          </li>
+          <li data-qa="audit-area">
+            <span>07</span>
+            <h3>Human control</h3>
+            <p>Whether people can pause, inspect, challenge and revise the process before a result is used.</p>
+          </li>
+          <li data-qa="audit-area">
+            <span>08</span>
+            <h3>Rules the team can actually use</h3>
+            <p>Simple principles, review points and ownership rules that fit everyday work.</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="lovable-section" aria-labelledby="situations-title">
+    <section
+      id="audit-process"
+      class="lovable-section process-section"
+      aria-labelledby="audit-process-title"
+      data-qa="audit-process"
+    >
       <div class="lovable-container">
         <div class="compact-heading">
-          <p class="eyebrow">Signals</p>
-          <h2 id="situations-title">When it makes sense to talk</h2>
+          <p class="eyebrow">Process</p>
+          <h2 id="audit-process-title">How the audit works</h2>
+          <p>
+            The exact scope depends on team size and the number of workflows being
+            examined. The process stays focused on a small set of real cases rather
+            than an abstract catalogue of tools.
+          </p>
         </div>
-        <ol class="lovable-numbered-list">
-          <li>A team uses AI, but has no shared way to verify outputs.</li>
-          <li>AI speeds up work, but the line between support and risk is unclear.</li>
-          <li>People copy model answers without checking sources, assumptions and gaps.</li>
-          <li>Source material, context, repository work or review steps are scattered across tools.</li>
-          <li>Decisions start to rely on fluent answers rather than the underlying material.</li>
-          <li>AI-assisted communication becomes faster, but less accountable.</li>
-          <li>You want a workflow that strengthens people instead of replacing them.</li>
+        <ol class="process-line process-line-detailed audit-process-list" aria-label="AI use audit process">
+          <li data-qa="audit-process-step"><small>01</small><strong>Opening conversation</strong><span>Goals, team context and the questions that need a clearer answer.</span></li>
+          <li data-qa="audit-process-step"><small>02</small><strong>Case selection</strong><span>A few real workflows or use cases that matter to the team.</span></li>
+          <li data-qa="audit-process-step"><small>03</small><strong>Use analysis</strong><span>Inputs, model outputs, checks, handoffs and decisions.</span></li>
+          <li data-qa="audit-process-step"><small>04</small><strong>Risk map</strong><span>Verification gaps and places where responsibility is unclear.</span></li>
+          <li data-qa="audit-process-step"><small>05</small><strong>Recommendations</strong><span>Prioritized principles and practical changes for the selected workflows.</span></li>
+          <li data-qa="audit-process-step"><small>06</small><strong>Review session</strong><span>A meeting or workshop to discuss the findings with the team.</span></li>
         </ol>
       </div>
     </section>
 
-    <section class="lovable-section" aria-labelledby="collaboration-title">
+    <section class="lovable-section tinted-section" aria-labelledby="audit-outcomes-title">
       <div class="lovable-container outcome-grid">
         <div>
-          <p class="eyebrow">Collaboration</p>
-          <h2 id="collaboration-title">What can working together look like?</h2>
+          <p class="eyebrow">Deliverables</p>
+          <h2 id="audit-outcomes-title">What the team receives</h2>
         </div>
-        <div class="editorial-copy">
-          <p>
-            Working together can take the form of a one-off consultation, an AI
-            communication, trust or workflow audit, a team workshop, or longer support
-            around a project, product, content system or AI-assisted workflow. Scope
-            and pricing depend on the situation, so the best first step is a short
-            message describing the problem, team or decision you are dealing with.
-          </p>
-          <ul class="outcome-list" aria-label="Possible consulting formats">
-            <li>one-off consultation</li>
-            <li>AI communication, trust or workflow audit</li>
-            <li>team workshop</li>
-            <li>longer support around a project, product, content system or AI-assisted workflow</li>
-          </ul>
-          <p class="meta-kicker">
-            You do not need to know the exact service name. A short description of the situation is enough.
-          </p>
-        </div>
+        <ul class="outcome-list" data-qa="audit-deliverables-list">
+          <li>A map of how AI is used in the selected workflows.</li>
+          <li>A prioritized list of the most important risks.</li>
+          <li>Clear points where sources, assumptions or outputs require verification.</li>
+          <li>A proposed division of decision and review responsibility.</li>
+          <li>Recommendations for working with material, sources and communication.</li>
+          <li>A written summary that the team can return to.</li>
+          <li>A review meeting or workshop for the team.</li>
+        </ul>
       </div>
     </section>
 
-    <section class="lovable-section tinted-section process-section" aria-labelledby="process-title">
-      <div class="lovable-container">
-        <div class="compact-heading">
-          <p class="eyebrow">Working method</p>
-          <h2 id="process-title">How I work</h2>
-          <p>
-            Consulting should begin with context, not a ready-made formula. I work
-            with concrete tasks, decisions and risk points.
-          </p>
-        </div>
-        <ol class="process-line process-line-detailed" aria-label="Consulting working method">
-          <li><small>01</small><strong>Context</strong><span>where AI appears in the work and what it should actually support</span></li>
-          <li><small>02</small><strong>Goals and limits</strong><span>team needs, risks, data and realistic boundaries for AI use</span></li>
-          <li><small>03</small><strong>Process examples</strong><span>concrete tasks, texts, repositories, decisions or information flows</span></li>
-          <li><small>04</small><strong>Principles and practice</strong><span>rules, source checks, control questions and ways to verify model outputs</span></li>
-          <li><small>05</small><strong>Responsibility</strong><span>the model may support the work, but decisions and consequences stay with people</span></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="lovable-section outcome-section" aria-labelledby="boundaries-title">
+    <section class="lovable-section" aria-labelledby="audit-boundaries-title">
       <div class="lovable-container outcome-grid">
         <div>
           <p class="eyebrow">Boundaries</p>
-          <h2 id="boundaries-title">What I do not do</h2>
+          <h2 id="audit-boundaries-title">What the audit does not do</h2>
         </div>
-        <ul class="outcome-list">
-          <li>I do not diagnose people from messages, notes or workplace behavior</li>
-          <li>I do not use AI for manipulation, pressure or guessing hidden intentions</li>
-          <li>I do not promise that a model will be right or solve the problem for the team</li>
-          <li>I do not sell ready-made "magic prompts" as a substitute for thinking</li>
-          <li>I do not remove responsibility from a person, leader or organization</li>
-          <li>I do not replace legal, medical, psychological or HR support where a specialist is needed</li>
+        <ul class="outcome-list" data-qa="audit-boundaries-list">
+          <li>It is not a legal audit.</li>
+          <li>It is not a cybersecurity audit.</li>
+          <li>It does not replace a data protection specialist.</li>
+          <li>It is not a psychological assessment of employees.</li>
+          <li>It does not transfer decisions or responsibility to AI.</li>
+          <li>It does not promise to eliminate every error.</li>
         </ul>
       </div>
-      <div class="lovable-container">
-        <p class="disclaimer-line">
-          This is not technical deployment, therapy, diagnosis, legal advice or a promise of business outcomes.
-        </p>
-        <div class="consulting-actions">
-          <a class="hero-button hero-button-primary" href="/contact/"><span aria-hidden="true"></span>Ask about consulting</a>
-          <a class="hero-button hero-button-secondary" href="/concepts/">Read concepts</a>
+    </section>
+
+    <section class="lovable-section consulting-final" aria-labelledby="consulting-final-title" data-qa="consulting-final-cta">
+      <div class="lovable-container outcome-grid">
+        <div>
+          <p class="eyebrow">First step</p>
+          <h2 id="consulting-final-title">Describe the situation</h2>
+        </div>
+        <div class="editorial-copy consulting-final__copy">
+          <p>Briefly describe:</p>
+          <ul class="contact-brief-list">
+            <li>what kind of team it is,</li>
+            <li>where you already use AI,</li>
+            <li>what creates the most uncertainty.</li>
+          </ul>
+          <p>
+            Based on that context, I will reply whether an audit, a workshop or a
+            single advisory conversation makes sense for the situation.
+          </p>
+          <div class="consulting-actions">
+            <a
+              class="hero-button hero-button-primary"
+              href="/contact/"
+              data-qa="consulting-final-contact"
+              data-cta="audit-contact-final"
+            >
+              <span aria-hidden="true"></span>
+              Go to contact
+            </a>
+          </div>
         </div>
       </div>
     </section>
