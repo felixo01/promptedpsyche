@@ -46,8 +46,12 @@ test.describe('author and about routes', () => {
     await expect(page.locator('body')).toContainText('Human-Machine Interaction');
     await expect(page.locator('body')).toContainText('My background includes directing, editing and production');
     await expect(page.locator('body')).toContainText('member of the European Film Academy');
-    await expect(page.locator('body')).toContainText('I am currently studying psychology');
-    await expect(page.locator('body')).toContainText('not as a completed professional qualification');
+    await expect(page.locator('body')).toContainText(
+      'My work focuses on how AI shapes cognition, trust, social presence'
+    );
+    await expect(page.locator('body')).toContainText(
+      'I keep analysis and consulting clearly separate from clinical assessment'
+    );
     await expect(page.getByRole('link', { name: 'European Film Academy' })).toHaveAttribute(
       'href',
       'https://www.europeanfilmawards.eu/talent/feliks-mamczur/'
@@ -67,6 +71,10 @@ test.describe('author and about routes', () => {
     await expect(page.getByRole('link', { name: 'felixmamczur.com' })).toHaveCount(0);
     await expect(page.locator('body')).not.toContainText('film director portfolio and earlier projects');
     await expect(page.locator('body')).not.toContainText('I am a psychologist');
+    await expect(page.locator('body')).not.toContainText('I am currently studying psychology');
+    await expect(page.locator('body')).not.toContainText('psychology student');
+    await expect(page.locator('body')).not.toContainText('ongoing study');
+    await expect(page.locator('body')).not.toContainText('completed professional qualification');
     await expect(page.locator('body')).not.toContainText('AI engineer');
     await expect(page.locator('body')).not.toContainText('cybersecurity expert');
     await expect(page.locator('body')).not.toContainText('clinical psychologist');
@@ -100,8 +108,12 @@ test.describe('author and about routes', () => {
     await expect(page.locator('body')).toContainText('Human-Machine Interaction');
     await expect(page.locator('body')).toContainText('Moje doświadczenie obejmuje reżyserię, montaż i produkcję');
     await expect(page.locator('body')).toContainText('członkostwo w European Film Academy');
-    await expect(page.locator('body')).toContainText('Obecnie studiuję psychologię');
-    await expect(page.locator('body')).toContainText('a nie ukończoną kwalifikację zawodową');
+    await expect(page.locator('body')).toContainText(
+      'Moja praca koncentruje się na tym, jak AI wpływa na poznanie, zaufanie, obecność społeczną'
+    );
+    await expect(page.locator('body')).toContainText(
+      'Zachowuję przy tym jasną granicę między analizą i konsultingiem'
+    );
     await expect(page.getByRole('link', { name: 'European Film Academy' })).toHaveAttribute(
       'href',
       'https://www.europeanfilmawards.eu/talent/feliks-mamczur/'
@@ -121,6 +133,10 @@ test.describe('author and about routes', () => {
     await expect(page.getByRole('link', { name: 'felixmamczur.com' })).toHaveCount(0);
     await expect(page.locator('body')).not.toContainText('portfolio filmowe i wcześniejsze projekty');
     await expect(page.locator('body')).not.toContainText('Jestem psychologiem');
+    await expect(page.locator('body')).not.toContainText('Obecnie studiuję psychologię');
+    await expect(page.locator('body')).not.toContainText('studiuję psychologię');
+    await expect(page.locator('body')).not.toContainText('trwającą edukację');
+    await expect(page.locator('body')).not.toContainText('ukończoną kwalifikację zawodową');
     await expect(page.locator('body')).not.toContainText('inżynier AI');
     await expect(page.locator('body')).not.toContainText('ekspert cyberbezpieczeństwa');
     await expect(page.locator('body')).not.toContainText('psychologiem');
