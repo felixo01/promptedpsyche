@@ -73,6 +73,8 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).not.toContain('/pl/author/');
     expect(sitemap).toContain('/search/');
     expect(sitemap).toContain('/pl/search/');
+    expect(sitemap).toContain('/projects/humanai-lab/');
+    expect(sitemap).toContain('/pl/projects/humanai-lab/');
     expect(sitemap).toContain('/topics/');
     expect(sitemap).toContain('/pl/topics/');
     expect(sitemap).toContain('/topics/trust-in-ai/');

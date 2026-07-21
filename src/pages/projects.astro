@@ -78,6 +78,19 @@ const projectSections = [
     ]
   }
 ];
+
+const archivedProject = {
+  title: 'HumanAI Lab',
+  summary:
+    'A completed research project on conversational AI, trust, emotional experience and everyday decision-making.',
+  status: 'Archived · Recruitment closed',
+  boundary:
+    'Recruitment has ended, and the survey no longer accepts responses.',
+  link: {
+    href: '/projects/humanai-lab/',
+    label: 'View archived project'
+  }
+};
 ---
 
 <BaseLayout
@@ -163,6 +176,32 @@ const projectSections = [
             </section>
           ))
         }
+
+        <section
+          class="projects-section projects-section--archived"
+          aria-labelledby="archived-projects-title"
+        >
+          <div class="lovable-section-header projects-section__header">
+            <div>
+              <p class="section-kicker">Project archive</p>
+              <h2 id="archived-projects-title">Archived projects</h2>
+            </div>
+            <p>
+              Completed initiatives are kept here as public records of their scope
+              and status. They are not active recruitment pages.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card project-card--archived">
+              <p class="project-card__status">{archivedProject.status}</p>
+              <h3>{archivedProject.title}</h3>
+              <p class="project-card__summary">{archivedProject.summary}</p>
+              <p class="project-card__boundary">{archivedProject.boundary}</p>
+              <a class="text-link" href={archivedProject.link.href}>{archivedProject.link.label}</a>
+            </article>
+          </div>
+        </section>
       </div>
     </section>
 
