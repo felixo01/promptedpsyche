@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { absoluteUrl, site } from '../../../lib/site';
+
+const pageTitle = 'HumanAI Lab — archiwalny projekt badawczy';
+const pageDescription =
+  'Archiwalna strona projektu HumanAI Lab dotyczącego korzystania z chatbotów AI, zaufania, emocji i podejmowania decyzji.';
+const pagePath = '/pl/projects/humanai-lab/';
+const alternateLinks = {
+  en: '/projects/humanai-lab/',
+  pl: pagePath,
+  xDefault: '/projects/humanai-lab/'
+};
+const dateModified = '2026-07-21';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: pageTitle,
+  description: pageDescription,
+  url: absoluteUrl(pagePath),
+  inLanguage: 'pl',
+  dateModified,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: site.name,
+    url: site.url
+  },
+  about: [
+    'Konwersacyjna sztuczna inteligencja',
+    'Zaufanie do AI',
+    'Doświadczenia emocjonalne',
+    'Human–AI Interaction',
+    'Podejmowanie decyzji'
+  ]
+};
+---
+
+<BaseLayout
+  lang="pl"
+  title={pageTitle}
+  description={pageDescription}
+  image="/images/social/humanai-lab-archive-social-1200x630.png"
+  imageWidth={1200}
+  imageHeight={630}
+  imageType="image/png"
+  imageAlt="HumanAI Lab — archiwalny projekt badawczy"
+  alternateLinks={alternateLinks}
+  robots="index, follow"
+  structuredData={structuredData}
+>
+  <article class="lovable-page about-page archive-project-page">
+    <header class="about-hero archive-project-hero">
+      <div class="lovable-container about-hero__inner">
+        <div class="about-hero__copy">
+          <p class="eyebrow">Archiwalny projekt badawczy</p>
+          <h1>HumanAI Lab — archiwalny projekt badawczy</h1>
+          <p class="lede">
+            Projekt dotyczył sposobów korzystania z chatbotów AI oraz ich związku
+            z doświadczeniami emocjonalnymi, zaufaniem i codziennym
+            funkcjonowaniem użytkowników.
+          </p>
+          <p class="hero-subnote">
+            HumanAI Lab nie prowadzi już rekrutacji. Ta strona zachowuje publiczny
+            zapis zakresu i obecnego statusu zakończonego projektu.
+          </p>
+        </div>
+
+        <aside class="about-hero__aside" aria-labelledby="archive-summary-title">
+          <div class="about-summary-card archive-summary-card">
+            <h2 id="archive-summary-title">Informacja archiwalna</h2>
+            <ul>
+              <li>Projekt zakończony</li>
+              <li>Rekrutacja zamknięta</li>
+              <li>Ankieta zamknięta na odpowiedzi</li>
+              <li>Strona zachowana jako archiwum</li>
+            </ul>
+            <p class="archive-updated">
+              Ostatnia aktualizacja: <time datetime={dateModified}>21 lipca 2026</time>
+            </p>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <div class="lovable-container about-section-list archive-section-list">
+      <section class="about-section" aria-labelledby="project-status-title">
+        <div class="about-section__meta">
+          <span>01</span>
+          <p>Status</p>
+        </div>
+        <div class="about-section__body">
+          <h2 id="project-status-title">Status projektu</h2>
+          <div class="editorial-copy">
+            <p>
+              Projekt HumanAI Lab jest zakończony. Rekrutacja została zamknięta,
+              a ankieta nie przyjmuje już odpowiedzi. Strona została zachowana
+              jako publiczne archiwum zakończonego projektu.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="project-scope-title">
+        <div class="about-section__meta">
+          <span>02</span>
+          <p>Zakres</p>
+        </div>
+        <div class="about-section__body">
+          <h2 id="project-scope-title">Czego dotyczył projekt</h2>
+          <div class="editorial-copy">
+            <p>
+              Projekt obejmował codzienne korzystanie z konwersacyjnej AI oraz
+              psychologiczne aspekty interakcji człowiek–AI. Jego publicznie opisany
+              zakres dotyczył:
+            </p>
+            <ul class="archive-focus-list">
+              <li>sposobów korzystania z konwersacyjnej AI;</li>
+              <li>oceny odpowiedzi i zaufania, jakim obdarzają je użytkownicy;</li>
+              <li>emocjonalnych doświadczeń związanych z rozmowami z chatbotami;</li>
+              <li>wykorzystywania chatbotów jako wsparcia w podejmowaniu decyzji;</li>
+              <li>szerszych psychologicznych aspektów interakcji człowiek–AI.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="project-results-title">
+        <div class="about-section__meta">
+          <span>03</span>
+          <p>Zapis</p>
+        </div>
+        <div class="about-section__body">
+          <h2 id="project-results-title">Wyniki</h2>
+          <div class="editorial-copy">
+            <p>Publiczne wyniki tego projektu nie są obecnie dostępne.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="continuing-work-title">
+        <div class="about-section__meta">
+          <span>04</span>
+          <p>Dalej</p>
+        </div>
+        <div class="about-section__body">
+          <h2 id="continuing-work-title">Dalsze prace</h2>
+          <div class="editorial-copy">
+            <p>
+              Kolejne badania i publikacje dotyczące Human–AI Interaction,
+              cyberpsychologii, zaufania do AI, emocji i relacji człowiek–AI są
+              rozwijane w ramach Prompted Psyche.
+            </p>
+          </div>
+          <nav class="about-link-grid" aria-label="Poznaj dalsze prace Prompted Psyche">
+            <a href="/pl/projects/">
+              <span>Projekty</span>
+              <strong>Zobacz aktualne kierunki badawcze i praktyczne</strong>
+            </a>
+            <a href="/pl/topics/zaufanie-do-ai/">
+              <span>Obszar tematyczny</span>
+              <strong>Zaufanie do AI</strong>
+            </a>
+            <a href="/pl/topics/ai-i-myslenie/">
+              <span>Obszar tematyczny</span>
+              <strong>AI i myślenie</strong>
+            </a>
+            <a href="/pl/">
+              <span>Prompted Psyche</span>
+              <strong>Wróć na polską stronę główną</strong>
+            </a>
+          </nav>
+        </div>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

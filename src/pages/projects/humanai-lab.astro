@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { absoluteUrl, site } from '../../lib/site';
+
+const pageTitle = 'HumanAI Lab — archived research project';
+const pageDescription =
+  'Archived HumanAI Lab research project on conversational AI, trust, emotion and decision-making.';
+const pagePath = '/projects/humanai-lab/';
+const alternateLinks = {
+  en: pagePath,
+  pl: '/pl/projects/humanai-lab/',
+  xDefault: pagePath
+};
+const dateModified = '2026-07-21';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: pageTitle,
+  description: pageDescription,
+  url: absoluteUrl(pagePath),
+  inLanguage: 'en',
+  dateModified,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: site.name,
+    url: site.url
+  },
+  about: [
+    'Conversational artificial intelligence',
+    'Trust in AI',
+    'Emotional experience',
+    'Human-AI Interaction',
+    'Decision-making'
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  image="/images/social/humanai-lab-archive-social-1200x630.png"
+  imageWidth={1200}
+  imageHeight={630}
+  imageType="image/png"
+  imageAlt="HumanAI Lab — archived research project"
+  alternateLinks={alternateLinks}
+  robots="index, follow"
+  structuredData={structuredData}
+>
+  <article class="lovable-page about-page archive-project-page">
+    <header class="about-hero archive-project-hero">
+      <div class="lovable-container about-hero__inner">
+        <div class="about-hero__copy">
+          <p class="eyebrow">Archived research project</p>
+          <h1>HumanAI Lab — archived research project</h1>
+          <p class="lede">
+            The project explored how people use conversational AI and how these
+            interactions relate to emotional experience, trust and everyday
+            decision-making.
+          </p>
+          <p class="hero-subnote">
+            HumanAI Lab is no longer recruiting. This page preserves a public
+            record of the completed project’s scope and current status.
+          </p>
+        </div>
+
+        <aside class="about-hero__aside" aria-labelledby="archive-summary-title">
+          <div class="about-summary-card archive-summary-card">
+            <h2 id="archive-summary-title">Archive notice</h2>
+            <ul>
+              <li>Project completed</li>
+              <li>Recruitment closed</li>
+              <li>Survey closed to responses</li>
+              <li>Page retained as an archive</li>
+            </ul>
+            <p class="archive-updated">
+              Last updated <time datetime={dateModified}>21 July 2026</time>
+            </p>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <div class="lovable-container about-section-list archive-section-list">
+      <section class="about-section" aria-labelledby="project-status-title">
+        <div class="about-section__meta">
+          <span>01</span>
+          <p>Status</p>
+        </div>
+        <div class="about-section__body">
+          <h2 id="project-status-title">Project status</h2>
+          <div class="editorial-copy">
+            <p>
+              HumanAI Lab has concluded. Recruitment has closed, and the survey
+              no longer accepts responses. This page is retained as a public
+              archive of the completed project.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="project-scope-title">
+        <div class="about-section__meta">
+          <span>02</span>
+          <p>Scope</p>
+        </div>
+        <div class="about-section__body">
+          <h2 id="project-scope-title">What the project explored</h2>
+          <div class="editorial-copy">
+            <p>
+              The project examined everyday uses of conversational AI and the
+              psychological dimensions of human–AI interaction. Its public scope
+              included:
+            </p>
+            <ul class="archive-focus-list">
+              <li>how people use conversational AI;</li>
+              <li>how they assess and place trust in its answers;</li>
+              <li>emotional experiences associated with chatbot interactions;</li>
+              <li>how chatbots are used to support everyday decisions; and</li>
+              <li>broader psychological aspects of interaction between people and AI.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="project-results-title">
+        <div class="about-section__meta">
+          <span>03</span>
+          <p>Record</p>
+        </div>
+        <div class="about-section__body">
+          <h2 id="project-results-title">Results</h2>
+          <div class="editorial-copy">
+            <p>Public results for this project are not currently available.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="continuing-work-title">
+        <div class="about-section__meta">
+          <span>04</span>
+          <p>Next</p>
+        </div>
+        <div class="about-section__body">
+          <h2 id="continuing-work-title">Continuing work</h2>
+          <div class="editorial-copy">
+            <p>
+              Further research and publishing on Human–AI Interaction,
+              cyberpsychology, trust in AI, emotion and human–AI relationships are
+              being developed within Prompted Psyche.
+            </p>
+          </div>
+          <nav class="about-link-grid" aria-label="Continue exploring Prompted Psyche">
+            <a href="/projects/">
+              <span>Projects</span>
+              <strong>Explore current research and applied directions</strong>
+            </a>
+            <a href="/topics/trust-in-ai/">
+              <span>Topic hub</span>
+              <strong>Trust in AI</strong>
+            </a>
+            <a href="/topics/ai-and-cognition/">
+              <span>Topic hub</span>
+              <strong>AI and cognition</strong>
+            </a>
+            <a href="/">
+              <span>Prompted Psyche</span>
+              <strong>Return to the English homepage</strong>
+            </a>
+          </nav>
+        </div>
+      </section>
+    </div>
+  </article>
+</BaseLayout>
