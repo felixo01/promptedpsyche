@@ -5,7 +5,7 @@ import { site } from '../lib/site';
 const contactEmail = site.email?.trim();
 const emailSubject = encodeURIComponent('Prompted Psyche - AI work inquiry');
 const emailBody = encodeURIComponent(
-  'Team or organization:\nWhere we use AI:\nWhat we want to clarify:\nInterested in: audit / workshop / introductory conversation\nRelevant timing:'
+  'Team or organisation:\nWhere we use AI:\nWhat we want the audit to clarify:\nRelevant timing:'
 );
 const guidedMailto = contactEmail
   ? `mailto:${contactEmail}?subject=${emailSubject}&body=${emailBody}`
@@ -14,7 +14,7 @@ const guidedMailto = contactEmail
 
 <BaseLayout
   title="Contact"
-  description="Contact Feliks Mamczur about an AI use audit, workshop or advisory conversation for a creative, marketing or communication team."
+  description="Contact Feliks Mamczur about an AI Use Audit for a creative, marketing or communication team."
 >
   <div class="lovable-page contact-page">
     <header class="lovable-page-hero contact-hero">
@@ -23,9 +23,8 @@ const guidedMailto = contactEmail
           <p class="eyebrow">Contact</p>
           <h1>Get in touch</h1>
           <p class="lede">
-            For an AI use audit, workshop or introductory conversation, send a
-            short note about your team, where AI enters the work and what you want
-            to clarify.
+            If you are considering an AI Use Audit, send a short note about your
+            team, where AI enters the work and what you want to clarify.
           </p>
         </div>
 
@@ -43,7 +42,7 @@ const guidedMailto = contactEmail
                 </a>
                 <p>
                   A short, concrete description is enough. You do not need to know
-                  the exact service format before writing.
+                  the exact audit scope before writing.
                 </p>
                 <div class="contact-email-card__actions">
                   <a
@@ -73,7 +72,7 @@ const guidedMailto = contactEmail
         </div>
         <ul class="contact-list">
           <li>AI use audits for creative, marketing and communication teams</li>
-          <li>workshops and advisory conversations about responsible AI use</li>
+          <li>workshops and talks</li>
           <li>expert or media commentary</li>
           <li>research conversations and editorial collaboration</li>
           <li>projects around AI, communication, marketing and creativity</li>
@@ -91,7 +90,7 @@ const guidedMailto = contactEmail
           <li>what kind of team or organization it is</li>
           <li>where and how the team already uses AI</li>
           <li>what problem, uncertainty or responsibility gap needs attention</li>
-          <li>whether you are considering an audit, a workshop or an introductory conversation</li>
+          <li>which workflow or use case matters most</li>
           <li>any timing that matters</li>
         </ul>
       </div>
@@ -100,8 +99,8 @@ const guidedMailto = contactEmail
     <section class="contact-closing" aria-label="Response note">
       <div class="lovable-container">
         <p>
-          I will use that context to assess whether an audit, a workshop or a
-          single advisory conversation is the most useful next step.
+          I will use that context to assess whether the AI Use Audit is a useful
+          next step and what scope would be proportionate.
         </p>
       </div>
     </section>

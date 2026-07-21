@@ -25,7 +25,7 @@ const consultingCases = [
     heroCtaHref: '/contact/',
     processCta: 'See how the audit works',
     finalCta: 'Go to contact',
-    metaTitle: 'AI Use Audit for Creative and Marketing Teams | Prompted Psyche'
+    metaTitle: 'AI Use Audit for Creative, Marketing and Communication Teams | Prompted Psyche'
   },
   {
     route: '/pl/consulting/',
@@ -39,7 +39,7 @@ const consultingCases = [
     heroCtaHref: '/pl/contact/',
     processCta: 'Zobacz, jak wygląda audyt',
     finalCta: 'Przejdź do kontaktu',
-    metaTitle: 'Audyt wykorzystania AI w zespole kreatywnym lub marketingowym | Prompted Psyche'
+    metaTitle: 'Audyt wykorzystania AI w zespole kreatywnym, marketingowym lub komunikacyjnym | Prompted Psyche'
   }
 ] as const;
 
@@ -61,6 +61,9 @@ test.describe('AI use audit consulting pages', () => {
       await expect(page.locator('[data-qa="audit-audience-list"] li')).toHaveCount(7);
       await expect(page.locator('[data-qa="audit-deliverables-list"] li')).toHaveCount(7);
       await expect(page.locator('[data-qa="audit-boundaries-list"] li')).toHaveCount(6);
+      await expect(page.locator('[data-qa="audit-area-list"]')).toContainText(
+        consultingCase.route.startsWith('/pl/') ? 'Podział pracy' : 'Division of work'
+      );
 
       await expect(page.getByRole('link', { name: consultingCase.heroCta })).toHaveAttribute(
         'href',

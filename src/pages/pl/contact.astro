@@ -5,7 +5,7 @@ import { site } from '../../lib/site';
 const contactEmail = site.email?.trim();
 const emailSubject = encodeURIComponent('Prompted Psyche - zapytanie o pracę z AI');
 const emailBody = encodeURIComponent(
-  'Zespół lub organizacja:\nGdzie używamy AI:\nCo chcemy uporządkować:\nInteresuje nas: audyt / warsztat / rozmowa wstępna\nIstotny termin:'
+  'Zespół lub organizacja:\nGdzie używamy AI:\nCo audyt ma pomóc uporządkować:\nIstotny termin:'
 );
 const guidedMailto = contactEmail
   ? `mailto:${contactEmail}?subject=${emailSubject}&body=${emailBody}`
@@ -15,7 +15,7 @@ const guidedMailto = contactEmail
 <BaseLayout
   lang="pl"
   title="Kontakt"
-  description="Kontakt z Feliksem Mamczurem w sprawie audytu wykorzystania AI, warsztatu albo rozmowy konsultacyjnej dla zespołu kreatywnego, marketingowego lub komunikacyjnego."
+  description="Kontakt z Feliksem Mamczurem w sprawie audytu wykorzystania AI dla zespołu kreatywnego, marketingowego lub komunikacyjnego."
 >
   <div class="lovable-page contact-page">
     <header class="lovable-page-hero contact-hero">
@@ -24,9 +24,8 @@ const guidedMailto = contactEmail
           <p class="eyebrow">Kontakt</p>
           <h1>Napisz do mnie</h1>
           <p class="lede">
-            Jeśli interesuje cię audyt wykorzystania AI, warsztat albo rozmowa
-            wstępna, napisz krótko o zespole, miejscu używania AI i problemie,
-            który chcesz uporządkować.
+            Jeśli rozważasz audyt wykorzystania AI, napisz krótko o zespole,
+            miejscu używania AI i problemie, który chcesz uporządkować.
           </p>
         </div>
 
@@ -44,7 +43,7 @@ const guidedMailto = contactEmail
                 </a>
                 <p>
                   Wystarczy konkretny opis sytuacji. Nie musisz przed napisaniem
-                  wybierać dokładnego formatu współpracy.
+                  znać dokładnego zakresu audytu.
                 </p>
                 <div class="contact-email-card__actions">
                   <a
@@ -74,7 +73,7 @@ const guidedMailto = contactEmail
         </div>
         <ul class="contact-list">
           <li>audyt wykorzystania AI w zespole kreatywnym, marketingowym lub komunikacyjnym</li>
-          <li>warsztaty i rozmowy konsultacyjne o odpowiedzialnym używaniu AI</li>
+          <li>warsztaty i wystąpienia</li>
           <li>komentarz ekspercki lub medialny</li>
           <li>rozmowy badawcze i współpraca merytoryczna</li>
           <li>projekty z obszaru AI, komunikacji, marketingu i twórczości</li>
@@ -92,7 +91,7 @@ const guidedMailto = contactEmail
           <li>jaki to zespół lub organizacja</li>
           <li>gdzie i w jaki sposób zespół już używa AI</li>
           <li>jaki problem, niepewność albo brak odpowiedzialności chcecie uporządkować</li>
-          <li>czy interesuje was audyt, warsztat czy rozmowa wstępna</li>
+          <li>który proces lub przypadek użycia jest najważniejszy</li>
           <li>czy jest istotny termin</li>
         </ul>
       </div>
@@ -101,8 +100,8 @@ const guidedMailto = contactEmail
     <section class="contact-closing" aria-label="Informacja o odpowiedzi">
       <div class="lovable-container">
         <p>
-          Na podstawie tego kontekstu ocenię, czy najbardziej użyteczny będzie
-          audyt, warsztat czy pojedyncza rozmowa konsultacyjna.
+          Na podstawie tego kontekstu ocenię, czy audyt wykorzystania AI jest
+          właściwym krokiem i jaki zakres będzie proporcjonalny.
         </p>
       </div>
     </section>
