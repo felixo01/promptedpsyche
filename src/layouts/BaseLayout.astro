@@ -2,7 +2,7 @@
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { getAlternateLinks, getLangFromPath, type AlternateLinks, type Locale } from '../lib/i18n';
-import { site } from '../lib/site';
+import { getPublisherEntity, getWebsiteEntity, site } from '../lib/site';
 import '../styles/global.css';
 import '../styles/content-enhancements.css';
 
@@ -10,6 +10,7 @@ type StructuredData = Record<string, unknown>;
 
 interface Props {
   title?: string;
+  appendSiteName?: boolean;
   description?: string;
   image?: string;
   imageWidth?: number;
@@ -26,6 +27,7 @@ interface Props {
 
 const {
   title = site.name,
+  appendSiteName = true,
   description = site.description,
   image = '/images/social/prompted-psyche-home-social-1200x630.png',
   imageWidth,
@@ -40,7 +42,11 @@ const {
   citationDoi
 } = Astro.props;
 
-const pageTitle = title === site.name ? `${site.name} | ${site.tagline}` : `${title} | ${site.name}`;
+const pageTitle = title === site.name
+  ? `${site.name} | ${site.tagline}`
+  : appendSiteName
+    ? `${title} | ${site.name}`
+    : title;
 const canonicalUrl = new URL(Astro.url.pathname, site.url).toString();
 const imageUrl = new URL(image, site.url).toString();
 const defaultSocialImage = '/images/social/prompted-psyche-home-social-1200x630.png';
@@ -63,9 +69,16 @@ const structuredDataItems = structuredData
     ? structuredData
     : [structuredData]
   : [];
-const structuredDataJson = structuredDataItems.map((item) =>
-  JSON.stringify(item).replace(/</g, '\\u003c')
-);
+const pageStructuredDataNodes = structuredDataItems.flatMap((item) => {
+  const { ['@context']: _context, ['@graph']: graph, ...node } = item;
+
+  return Array.isArray(graph) ? (graph as StructuredData[]) : [node];
+});
+const structuredDataGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [getWebsiteEntity(), getPublisherEntity(), ...pageStructuredDataNodes]
+};
+const structuredDataJson = JSON.stringify(structuredDataGraph).replace(/</g, '\\u003c');
 ---
 
 <!doctype html>
@@ -101,11 +114,7 @@ const structuredDataJson = structuredDataItems.map((item) =>
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
     {resolvedImageAlt && <meta name="twitter:image:alt" content={resolvedImageAlt} />}
-    {
-      structuredDataJson.map((json) => (
-        <script is:inline type="application/ld+json" set:html={json} />
-      ))
-    }
+    <script is:inline type="application/ld+json" set:html={structuredDataJson} />
     <script is:inline src="/scripts/content-enhancements.js" defer></script>
   </head>
   <body>

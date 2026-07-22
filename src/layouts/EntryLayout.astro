@@ -8,7 +8,14 @@ import SuggestedCitation from '../components/SuggestedCitation.astro';
 import TagList from '../components/TagList.astro';
 import { formatDate } from '../lib/content';
 import type { AlternateLinks, Locale } from '../lib/i18n';
-import { absoluteUrl, getAuthorEntity, getAuthorUrl, site } from '../lib/site';
+import {
+  PUBLISHER_ENTITY_ID,
+  WEBSITE_ENTITY_ID,
+  absoluteUrl,
+  getAuthorEntity,
+  getAuthorUrl,
+  site
+} from '../lib/site';
 import type { TopicResource } from '../lib/topics';
 
 interface Props {
@@ -101,10 +108,14 @@ const visibleDoi = doi ?? relatedDoi;
 const visibleDoiUrl = doiUrl ?? relatedDoiUrl;
 const visibleDoiVersion = doi ? version : relatedVersion;
 const visibleDoiLabel = doi ? citableVersionLabel : relatedDoiLabel;
-const articleStructuredData = isArticleEntry
+const publicationSchemaType = isArticleEntry ? 'Article' : isNoteEntry ? 'BlogPosting' : undefined;
+const publicationEntityId = publicationSchemaType
+  ? `${canonicalUrl}${publicationSchemaType === 'Article' ? '#article' : '#blog-posting'}`
+  : undefined;
+const publicationStructuredData = publicationSchemaType
   ? {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
+      '@type': publicationSchemaType,
+      '@id': publicationEntityId,
       headline: entry.data.title,
       description: entry.data.description,
       url: canonicalUrl,
@@ -115,11 +126,12 @@ const articleStructuredData = isArticleEntry
       datePublished: entry.data.publishedAt.toISOString(),
       ...(entry.data.updatedAt ? { dateModified: entry.data.updatedAt.toISOString() } : {}),
       author: getAuthorEntity(lang),
+      publisher: {
+        '@id': PUBLISHER_ENTITY_ID
+      },
       inLanguage: lang,
       isPartOf: {
-        '@type': 'WebSite',
-        name: site.name,
-        url: site.url
+        '@id': WEBSITE_ENTITY_ID
       },
       ...(doi
         ? {
@@ -178,7 +190,7 @@ const asideLabels = isConceptEntry
   lang={lang}
   alternateLinks={alternateLinks}
   robots={robots}
-  structuredData={articleStructuredData}
+  structuredData={publicationStructuredData}
   citationDoi={doi}
 >
   <article class:list={['article-shell', isConceptEntry ? 'article-shell--concept' : 'article-shell--publication']}>

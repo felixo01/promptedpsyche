@@ -4,7 +4,7 @@ const portraitCases = [
   {
     route: '/about/',
     alt: 'Feliks Mamczur, author of Prompted Psyche',
-    title: 'About the author',
+    title: 'Feliks Mamczur',
     summaryTitle: 'In brief',
     stanceTitle: 'Starting point',
     stanceText: 'whether AI is simply good or bad',
@@ -13,7 +13,7 @@ const portraitCases = [
   {
     route: '/pl/about/',
     alt: 'Feliks Mamczur, autor Prompted Psyche',
-    title: 'Kim jestem',
+    title: 'Feliks Mamczur',
     summaryTitle: 'W skrócie',
     stanceTitle: 'Punkt wyjścia',
     stanceText: 'czy AI jest dobre czy złe',
@@ -27,9 +27,11 @@ test.describe('author portrait', () => {
       await page.goto(portraitCase.route);
 
       const portrait = page.getByRole('img', { name: portraitCase.alt });
-      test.skip((await portrait.count()) === 0, 'Author portrait file is not available yet.');
-
       await expect(portrait).toBeVisible();
+      await expect(portrait).toHaveAttribute('src', '/images/author/feliks-mamczur.png');
+      await expect(portrait).toHaveAttribute('width', '960');
+      await expect(portrait).toHaveAttribute('height', '641');
+      expect((await page.request.get('/images/author/feliks-mamczur.png')).status()).toBe(200);
 
       const viewport = page.viewportSize();
       const box = await portrait.boundingBox();
