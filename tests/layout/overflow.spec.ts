@@ -11,12 +11,14 @@ const routes = [
   '/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/',
   '/articles/trust-in-the-age-of-ready-made-answers/',
   '/articles/are-we-afraid-of-ai-or-of-ourselves/',
+  '/articles/openai-chatgpt-gpt-llm-difference/',
   '/pl/articles/nie-chodzi-tylko-o-prompt/',
   '/pl/articles/model-nie-pamieta-model-ma-kontekst/',
   '/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/',
   '/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/',
   '/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/',
   '/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/',
+  '/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/',
   '/notes/',
   '/pl/notes/',
   '/notes/fluent-does-not-mean-true/',
@@ -32,7 +34,9 @@ const routes = [
   '/concepts/epistemic-vigilance/',
   '/pl/concepts/epistemic-vigilance/',
   '/concepts/context-window/',
+  '/concepts/llm/',
   '/pl/concepts/context-window/',
+  '/pl/concepts/llm/',
   '/concepts/hallucination/',
   '/concepts/grounding/',
   '/concepts/sycophancy/',
@@ -69,6 +73,17 @@ const routes = [
   '/pl/contact/',
   '/consulting/',
   '/pl/consulting/'
+];
+
+const packageRoutes = [
+  '/concepts/',
+  '/pl/concepts/',
+  '/concepts/llm/',
+  '/pl/concepts/llm/',
+  '/articles/openai-chatgpt-gpt-llm-difference/',
+  '/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/',
+  '/topics/ai-and-cognition/',
+  '/pl/topics/ai-i-myslenie/'
 ];
 
 test.describe('layout overflow', () => {
@@ -165,4 +180,28 @@ test.describe('layout overflow', () => {
       expect(result.bodyScrollWidth).toBeLessThanOrEqual(result.innerWidth + 1);
     });
   }
+
+  test('keeps the LLM package within a 320px viewport', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile-390');
+    await page.setViewportSize({ width: 320, height: 720 });
+
+    for (const route of packageRoutes) {
+      await page.goto(route);
+      const result = await page.evaluate(() => ({
+        documentScrollWidth: document.documentElement.scrollWidth,
+        documentClientWidth: document.documentElement.clientWidth,
+        bodyScrollWidth: document.body.scrollWidth,
+        innerWidth: window.innerWidth
+      }));
+
+      expect(
+        result.documentScrollWidth,
+        `${route}\n${JSON.stringify(result, null, 2)}`
+      ).toBeLessThanOrEqual(result.documentClientWidth + 1);
+      expect(
+        result.bodyScrollWidth,
+        `${route}\n${JSON.stringify(result, null, 2)}`
+      ).toBeLessThanOrEqual(result.innerWidth + 1);
+    }
+  });
 });

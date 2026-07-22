@@ -89,6 +89,10 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
     expect(sitemap).toContain('/articles/dont-ask-whether-ai-makes-us-dumber/');
     expect(sitemap).toContain('/pl/articles/nie-pytaj-czy-ai-nas-oglupia/');
+    expect(sitemap).toContain('/articles/openai-chatgpt-gpt-llm-difference/');
+    expect(sitemap).toContain('/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/');
+    expect(sitemap).toContain('/concepts/llm/');
+    expect(sitemap).toContain('/pl/concepts/llm/');
     expect(sitemap.match(/\/articles\/are-we-afraid-of-ai-or-of-ourselves\//g) ?? []).toHaveLength(1);
   });
 
@@ -105,6 +109,14 @@ test.describe('built sitemap and RSS policy', () => {
     expect(rss).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
     expect(rss).toContain('/articles/dont-ask-whether-ai-makes-us-dumber/');
     expect(rss).toContain('/pl/articles/nie-pytaj-czy-ai-nas-oglupia/');
+    expect(rss).toContain('/articles/openai-chatgpt-gpt-llm-difference/');
+    expect(rss).toContain('/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/');
+    expect(
+      readRssItemByLink(
+        rss,
+        'https://promptedpsyche.com/articles/openai-chatgpt-gpt-llm-difference/'
+      )
+    ).toContain('<pubDate>Wed, 22 Jul 2026');
     expect(
       readRssItemByLink(
         rss,

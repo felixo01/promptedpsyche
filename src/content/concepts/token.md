@@ -28,6 +28,7 @@ For Prompted Psyche, token is a foundational term because it supports clearer th
 ## Related concepts
 
 - [AI literacy](/concepts/ai-literacy/)
+- [Large Language Model (LLM)](/concepts/llm/)
 - [Context window](/concepts/context-window/)
 - [Model output](/concepts/model-output/)
 - [Human-AI Interaction](/concepts/human-ai-interaction/)

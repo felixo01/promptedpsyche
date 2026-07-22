@@ -116,11 +116,14 @@ test.describe('publication tag pages', () => {
     await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.locator('body')).toContainText('Publications tagged with');
-    await expect(page.locator('.tag-archive-list article')).toHaveCount(19);
+    await expect(page.locator('.tag-archive-list article')).toHaveCount(20);
     await expect(page.locator('.tag-archive-list')).toContainText('Article');
     await expect(page.locator('.tag-archive-list')).toContainText('Note');
     await expect(page.locator('.tag-archive-list')).toContainText('Practice');
     await expect(page.locator('.tag-archive-list')).toContainText('It is not just about the prompt');
+    await expect(page.locator('.tag-archive-list')).toContainText(
+      'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?'
+    );
     await expect(page.locator('.tag-archive-list')).toContainText(
       'Trust in the age of ready-made answers'
     );
@@ -137,11 +140,14 @@ test.describe('publication tag pages', () => {
     await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.locator('body')).toContainText('Publikacje oznaczone tagiem');
-    await expect(page.locator('.tag-archive-list article')).toHaveCount(19);
+    await expect(page.locator('.tag-archive-list article')).toHaveCount(20);
     await expect(page.locator('.tag-archive-list')).toContainText('Artykuł');
     await expect(page.locator('.tag-archive-list')).toContainText('Notatka');
     await expect(page.locator('.tag-archive-list')).toContainText('Praktyka');
     await expect(page.locator('.tag-archive-list')).toContainText('Nie chodzi tylko o prompt');
+    await expect(page.locator('.tag-archive-list')).toContainText(
+      'OpenAI, ChatGPT, GPT i LLM - czym się różnią?'
+    );
     await expect(page.locator('.tag-archive-list')).toContainText(
       'Zaufanie w epoce gotowych odpowiedzi'
     );

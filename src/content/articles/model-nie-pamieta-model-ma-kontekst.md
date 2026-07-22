@@ -112,6 +112,8 @@ Warto odróżniać [model output](/pl/concepts/model-output/) od wiedzy. Odpowie
 
 Model nie pamięta tak jak człowiek. Model pracuje na kontekście. Dlatego dojrzała praca z AI zaczyna się nie od magicznego promptu, ale od zrozumienia, co właściwie dajemy modelowi do myślenia.
 
+Szerszą mapę modelu, produktu i organizacji pokazuje artykuł [OpenAI, ChatGPT, GPT i LLM - czym się różnią?](/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/).
+
 ## Źródła i dalsza lektura
 
 - Anthropic. (n.d.). *Context windows*. Claude Platform Docs. Retrieved July 2, 2026, from https://docs.anthropic.com/en/docs/build-with-claude/context-windows

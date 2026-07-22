@@ -95,6 +95,12 @@ const en = {
       'A practical account of context windows, apparent memory and the limits of continuity in model interaction.',
       '/articles/the-model-does-not-remember-it-works-with-context/'
     ),
+    terminology: resource(
+      'article',
+      'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?',
+      'A practical map of the organisation, product, model family and broader technology category.',
+      '/articles/openai-chatgpt-gpt-llm-difference/'
+    ),
     interpretation: resource(
       'article',
       'AI does not read people. It helps make sense of the situation',
@@ -110,6 +116,7 @@ const en = {
     overreliance: resource('concept', 'Overreliance', 'Relying on a system beyond what its performance or the situation warrants.', '/concepts/overreliance/'),
     automationBias: resource('concept', 'Automation bias', 'A tendency to favor automated suggestions and miss contradictory evidence.', '/concepts/automation-bias/'),
     aiLiteracy: resource('concept', 'AI literacy', 'Competence in understanding, evaluating and using AI with appropriate judgment.', '/concepts/ai-literacy/'),
+    llm: resource('concept', 'Large Language Model (LLM)', 'A model that learns language patterns and generates from training and current context.', '/concepts/llm/'),
     modelOutput: resource('concept', 'Model output', 'A generated response that must be interpreted as an output, not as direct access to truth.', '/concepts/model-output/'),
     offloading: resource('concept', 'Cognitive offloading', 'Moving part of a cognitive task into an external tool or action.', '/concepts/cognitive-offloading/'),
     cognitiveLoad: resource('concept', 'Cognitive load', 'The demands a task places on limited working-memory resources.', '/concepts/cognitive-load/'),
@@ -172,6 +179,12 @@ const pl = {
       'Praktyczne wyjaśnienie okna kontekstu, pozornej pamięci i granic ciągłości w rozmowie z modelem.',
       '/pl/articles/model-nie-pamieta-model-ma-kontekst/'
     ),
+    terminology: resource(
+      'article',
+      'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
+      'Praktyczna mapa organizacji, produktu, rodziny modeli i szerszej kategorii technologii.',
+      '/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/'
+    ),
     interpretation: resource(
       'article',
       'AI nie czyta ludzi. Pomaga uporządkować sytuację',
@@ -187,6 +200,7 @@ const pl = {
     overreliance: resource('concept', 'Nadmierne poleganie na AI', 'Poleganie na systemie bardziej, niż uzasadniają jego możliwości lub sytuacja.', '/pl/concepts/nadmierne-poleganie-na-ai/'),
     automationBias: resource('concept', 'Błąd automatyzacji', 'Skłonność do faworyzowania sugestii systemu i pomijania sprzecznych informacji.', '/pl/concepts/blad-automatyzacji/'),
     aiLiteracy: resource('concept', 'AI literacy', 'Kompetencje rozumienia, oceny i używania AI z odpowiednim osądem.', '/pl/concepts/ai-literacy/'),
+    llm: resource('concept', 'LLM (duży model językowy)', 'Model uczący się prawidłowości języka i generujący wynik z treningu oraz bieżącego kontekstu.', '/pl/concepts/llm/'),
     modelOutput: resource('concept', 'Odpowiedź modelu', 'Wygenerowany wynik, który trzeba interpretować jako efekt działania systemu, a nie bezpośredni dostęp do prawdy.', '/pl/concepts/model-output/'),
     offloading: resource('concept', 'Cognitive offloading', 'Przenoszenie części pracy poznawczej na zewnętrzne działanie albo narzędzie.', '/pl/concepts/cognitive-offloading/'),
     cognitiveLoad: resource('concept', 'Cognitive load (obciążenie poznawcze)', 'Wymagania, jakie zadanie stawia ograniczonym zasobom pamięci roboczej.', '/pl/concepts/cognitive-load/'),
@@ -331,10 +345,10 @@ const topicHubs: Record<Locale, TopicHub[]> = {
       start: en.articles.cognition,
       articlesTitle: 'Articles',
       articlesIntro: 'Read the main synthesis first, then use the related essays to connect cognitive practice with context and trust.',
-      articles: [en.articles.cognition, en.articles.trust, en.articles.context],
+      articles: [en.articles.cognition, en.articles.terminology, en.articles.trust, en.articles.context],
       conceptsTitle: 'Concepts',
       conceptsIntro: 'These entries distinguish cognitive demand, external support, self-monitoring and the loss of practiced capability.',
-      concepts: [en.concepts.offloading, en.concepts.cognitiveLoad, en.concepts.metacognition, en.concepts.deskilling, en.concepts.aiLiteracy, en.concepts.mentalModel],
+      concepts: [en.concepts.offloading, en.concepts.cognitiveLoad, en.concepts.metacognition, en.concepts.deskilling, en.concepts.aiLiteracy, en.concepts.llm, en.concepts.mentalModel],
       practiceTitle: 'Practice',
       practiceIntro: 'Use these scenarios to keep interpretation, resistance and authorship in the human part of the process.',
       practice: [en.practice.assumptions, en.practice.counterargument, en.practice.secondReader],
@@ -543,10 +557,10 @@ topicHubs.pl = [
     start: pl.articles.cognition,
     articlesTitle: 'Artykuły',
     articlesIntro: 'Najpierw przeczytaj główną syntezę, a później połącz praktykę poznawczą z kontekstem i zaufaniem.',
-    articles: [pl.articles.cognition, pl.articles.trust, pl.articles.context],
+    articles: [pl.articles.cognition, pl.articles.terminology, pl.articles.trust, pl.articles.context],
     conceptsTitle: 'Pojęcia',
     conceptsIntro: 'Te hasła rozdzielają wymagania poznawcze, zewnętrzne wsparcie, samokontrolę i utratę ćwiczonej zdolności.',
-    concepts: [pl.concepts.offloading, pl.concepts.cognitiveLoad, pl.concepts.metacognition, pl.concepts.deskilling, pl.concepts.aiLiteracy, pl.concepts.mentalModel],
+    concepts: [pl.concepts.offloading, pl.concepts.cognitiveLoad, pl.concepts.metacognition, pl.concepts.deskilling, pl.concepts.aiLiteracy, pl.concepts.llm, pl.concepts.mentalModel],
     practiceTitle: 'Praktyka',
     practiceIntro: 'Te scenariusze pozostawiają interpretację, opór i autorstwo po stronie człowieka.',
     practice: [pl.practice.assumptions, pl.practice.counterargument, pl.practice.secondReader],
@@ -682,6 +696,7 @@ const topicResourceIndex: Record<Locale, Record<TopicId, {
         'cognitive-load': en.concepts.cognitiveLoad,
         metacognition: en.concepts.metacognition,
         deskilling: en.concepts.deskilling,
+        llm: en.concepts.llm,
         'mental-model': en.concepts.mentalModel
       },
       practice: {
@@ -743,6 +758,7 @@ const topicResourceIndex: Record<Locale, Record<TopicId, {
         'cognitive-load': pl.concepts.cognitiveLoad,
         metacognition: pl.concepts.metacognition,
         deskilling: pl.concepts.deskilling,
+        llm: pl.concepts.llm,
         'mental-model': pl.concepts.mentalModel
       },
       practice: {

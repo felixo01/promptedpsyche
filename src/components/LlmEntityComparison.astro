@@ -1,0 +1,250 @@
+---
+type Locale = 'en' | 'pl';
+
+type Entity = {
+  term: string;
+  values: Record<Locale, [string, string, string, string]>;
+};
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const labels: Record<Locale, [string, string, string, string, string]> = {
+  en: ['Term', 'What it is', 'Example role', 'What it is not', 'How quickly it can change'],
+  pl: ['Termin', 'Czym jest', 'Przykład roli', 'Czym nie jest', 'Jak szybko może się zmieniać']
+};
+
+const entities: Entity[] = [
+  {
+    term: 'OpenAI',
+    values: {
+      en: [
+        'an organisation that conducts AI research and develops models and products',
+        'conducts research and develops models, products and systems',
+        'a model name or a synonym for ChatGPT',
+        'public structure and wording change less often than product features, but still need a dated check'
+      ],
+      pl: [
+        'organizacja prowadząca badania oraz rozwijająca modele i produkty AI',
+        'prowadzi badania oraz rozwija modele, produkty i systemy',
+        'nazwa jednego modelu ani synonim ChatGPT',
+        'struktura i publiczny opis zmieniają się rzadziej niż funkcje produktu, ale wymagają daty kontroli'
+      ]
+    }
+  },
+  {
+    term: 'ChatGPT',
+    values: {
+      en: [
+        'an OpenAI product, service and user interface',
+        'provides a conversational interface and may combine models with memory, search, files and tools',
+        'one fixed model',
+        'features, plans, interface and model selection can change often'
+      ],
+      pl: [
+        'produkt, usługa i interfejs OpenAI',
+        'udostępnia rozmowę oraz może łączyć modele z funkcją pamięci, wyszukiwaniem, plikami i narzędziami',
+        'jeden niezmienny model',
+        'funkcje, plany, interfejs i sposób doboru modeli mogą zmieniać się często'
+      ]
+    }
+  },
+  {
+    term: 'GPT',
+    values: {
+      en: [
+        'Generative Pre-trained Transformer and the name of a model family',
+        'a GPT model or family may be one component of a system',
+        'every LLM or the whole ChatGPT product',
+        'versions and capabilities can change quickly; the family-level meaning is more stable'
+      ],
+      pl: [
+        'skrót od Generative Pre-trained Transformer i nazwa rodziny modeli',
+        'model lub rodzina modeli może być jednym ze składników systemu',
+        'każdy LLM ani cały ChatGPT',
+        'wersje i możliwości modeli zmieniają się szybko; znaczenie nazwy rodziny jest stabilniejsze'
+      ]
+    }
+  },
+  {
+    term: 'LLM',
+    values: {
+      en: [
+        'the broader category of large language models',
+        'describes a type of technology that includes many model families',
+        'a brand, an application or a synonym for GPT',
+        'the core definition is durable, while scale and multimodal boundaries continue to evolve'
+      ],
+      pl: [
+        'szersza kategoria dużych modeli językowych',
+        'opisuje typ technologii, do którego należy wiele rodzin modeli',
+        'marka, aplikacja ani synonim GPT',
+        'rdzeń definicji jest trwały, ale granice skali i multimodalności ewoluują'
+      ]
+    }
+  }
+];
+---
+
+<section class="entity-comparison" data-qa="llm-entity-comparison" aria-label={lang === 'pl' ? 'Porównanie OpenAI, ChatGPT, GPT i LLM' : 'Comparison of OpenAI, ChatGPT, GPT and LLM'}>
+  <div class="entity-comparison__table">
+    <table>
+      <thead>
+        <tr>
+          {labels[lang].map((label) => <th scope="col">{label}</th>)}
+        </tr>
+      </thead>
+      <tbody>
+        {entities.map((entity) => (
+          <tr data-entity={entity.term}>
+            <th scope="row">{entity.term}</th>
+            {entity.values[lang].map((value) => <td>{value}</td>)}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="entity-comparison__cards">
+    {entities.map((entity) => (
+      <article class="entity-card" data-entity={entity.term}>
+        <p class="entity-card__term-label">{labels[lang][0]}</p>
+        <h3>{entity.term}</h3>
+        <dl>
+          {entity.values[lang].map((value, index) => (
+            <div>
+              <dt>{labels[lang][index + 1]}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .entity-comparison {
+    width: min(68rem, calc(100vw - 2rem));
+    margin-inline: 50%;
+    transform: translateX(-50%);
+  }
+
+  .entity-comparison__table {
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 0.91rem;
+    line-height: 1.48;
+  }
+
+  th,
+  td {
+    padding: 0.9rem;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+  }
+
+  tr > :last-child {
+    border-right: 0;
+  }
+
+  tbody tr:last-child > * {
+    border-bottom: 0;
+  }
+
+  thead th {
+    background: var(--accent-soft);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  thead th:first-child,
+  tbody th {
+    width: 10%;
+  }
+
+  tbody th {
+    color: var(--accent);
+    font-family: var(--font-serif);
+    font-size: 1.12rem;
+    font-weight: 600;
+  }
+
+  .entity-comparison__cards {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .entity-comparison {
+      width: 100%;
+      margin-inline: 0;
+      transform: none;
+    }
+
+    .entity-comparison__table {
+      display: none;
+    }
+
+    .entity-comparison__cards {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .entity-card {
+      padding: 1.1rem;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .entity-card__term-label,
+    .entity-card dt {
+      color: var(--text-soft);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .entity-card h3 {
+      margin-top: 0.2rem;
+      color: var(--accent);
+      font-size: 1.35rem;
+    }
+
+    .entity-card dl {
+      display: grid;
+      gap: 0;
+      margin: 0.8rem 0 0;
+    }
+
+    .entity-card dl > div {
+      padding-block: 0.8rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .entity-card dd {
+      margin: 0.3rem 0 0;
+      overflow-wrap: anywhere;
+    }
+  }
+</style>

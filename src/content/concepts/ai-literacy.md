@@ -21,6 +21,8 @@ For organizations, AI literacy is also a shared language. It helps teams discuss
 
 AI literacy is not a checklist, a prompt formula or fluency with the newest tools. It does not replace domain expertise. It should help people ask better questions about systems, evidence, accountability and the limits of automation.
 
+Understanding what a [Large Language Model (LLM)](/concepts/llm/) is provides one technical foundation for that wider literacy.
+
 ## Sources and context
 
 - European Parliament and Council of the European Union. (2024). *Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence*. *Official Journal of the European Union*. https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng

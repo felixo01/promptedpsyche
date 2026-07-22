@@ -28,6 +28,7 @@ Dla Prompted Psyche token jest pojęciem podstawowym, bo pomaga mówić o kontek
 ## Powiązane pojęcia
 
 - [AI literacy](/pl/concepts/ai-literacy/)
+- [LLM (duży model językowy)](/pl/concepts/llm/)
 - [Context window](/pl/concepts/context-window/)
 - [Model output](/pl/concepts/model-output/)
 - [Human-AI Interaction](/pl/concepts/human-ai-interaction/)
