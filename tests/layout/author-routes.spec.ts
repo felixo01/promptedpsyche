@@ -153,13 +153,18 @@ test.describe('author and about routes', () => {
   });
 
   test('keeps Polish About as the canonical author route', async ({ page }) => {
-    await page.goto('/pl/about/');
+    const response = await page.goto('/pl/about/');
 
+    expect(response?.status()).toBe(200);
     await page.keyboard.press('Tab');
     await expect(page.locator('.skip-link')).toBeFocused();
     await expect(page.locator('.skip-link')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
     await expect(page).toHaveURL(/\/pl\/about\/$/);
-    await expect(page).toHaveTitle('Feliks Mamczur - autor Prompted Psyche');
+    await expect(page).toHaveTitle('Feliks Mamczur — autor Prompted Psyche');
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+      'content',
+      'Feliks Mamczur — autor i twórca Prompted Psyche. Pisze o AI, cyberpsychologii, zaufaniu, komunikacji i ludzkiej stronie inteligentnych systemów.'
+    );
     await expect(page.getByRole('heading', { level: 1, name: 'Feliks Mamczur' })).toBeVisible();
     await expect(page.locator('.about-hero .eyebrow')).toHaveText('Autor Prompted Psyche');
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
@@ -181,20 +186,20 @@ test.describe('author and about routes', () => {
     await expect(page.locator('body')).toContainText('Nazywam się Feliks Mamczur');
     await expect(page.locator('body')).toContainText('Jestem autorem i twórcą Prompted Psyche');
     await expectStructuredAuthorIdentity(page);
-    await expect(page.locator('body')).toContainText('cyberpsychologii, Human-AI Interaction');
+    await expect(page.locator('body')).toContainText('cyberpsychologii i Human-AI Interaction');
     await expect(page.locator('body')).toContainText('inteligentnymi systemami');
-    await expect(page.locator('body')).toContainText('Cyberpsychologia pozostaje rdzeniem');
+    await expect(page.locator('body')).toContainText('Cyberpsychologia pozostaje podstawą Prompted Psyche');
     await expect(page.locator('body')).toContainText('Human-Machine Interaction');
-    await expect(page.locator('body')).toContainText('Moje doświadczenie obejmuje reżyserię, montaż i produkcję');
-    await expect(page.locator('body')).toContainText('członkostwo w European Film Academy');
+    await expect(page.locator('body')).toContainText('Pracuję jako reżyser, montażysta i producent');
+    await expect(page.locator('body')).toContainText('Jestem członkiem Europejskiej Akademii Filmowej');
     await expect(page.locator('body')).toContainText(
-      'W części wcześniejszych napisów filmowych i baz branżowych moje nazwisko występuje jako Feliks Mirosław Mamczur, Mirosław Mamczur albo Felix Mamczur. Wszystkie te zapisy dotyczą tej samej osoby.'
+      'W części wcześniejszych napisów filmowych i baz branżowych moje nazwisko występuje również jako Feliks Mirosław Mamczur, Mirosław Mamczur lub Felix Mamczur. Wszystkie te zapisy dotyczą mnie.'
     );
     await expect(page.locator('body')).toContainText(
-      'Moja praca koncentruje się na tym, jak AI wpływa na poznanie, zaufanie, obecność społeczną'
+      'Dziś łączę te doświadczenia, analizując wpływ AI na poznanie, zaufanie, obecność społeczną'
     );
     await expect(page.locator('body')).toContainText(
-      'Zachowuję przy tym jasną granicę między analizą i konsultingiem'
+      'Wyraźnie oddzielam analizę i konsulting od diagnozy'
     );
     await expect(page.locator('a.inline-text-link[href="https://www.europeanfilmawards.eu/talent/feliks-mamczur/"]')).toHaveAttribute(
       'href',
@@ -206,7 +211,7 @@ test.describe('author and about routes', () => {
     );
     await expect(page.getByRole('link', { name: 'projekty wizualne i filmowe' })).toHaveAttribute(
       'title',
-      'Feliks Mamczur - projekty wizualne i filmowe'
+      'Feliks Mamczur — projekty wizualne i filmowe'
     );
     await expect(page.getByRole('link', { name: 'profil ORCID' })).toHaveAttribute(
       'href',

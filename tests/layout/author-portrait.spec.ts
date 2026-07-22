@@ -4,6 +4,7 @@ const portraitCases = [
   {
     route: '/about/',
     alt: 'Feliks Mamczur, author of Prompted Psyche',
+    caption: 'Feliks Mamczur - author of Prompted Psyche',
     title: 'Feliks Mamczur',
     summaryTitle: 'In brief',
     stanceTitle: 'Starting point',
@@ -13,10 +14,11 @@ const portraitCases = [
   {
     route: '/pl/about/',
     alt: 'Feliks Mamczur, autor Prompted Psyche',
+    caption: 'Feliks Mamczur — autor Prompted Psyche',
     title: 'Feliks Mamczur',
     summaryTitle: 'W skrócie',
     stanceTitle: 'Punkt wyjścia',
-    stanceText: 'czy AI jest dobre czy złe',
+    stanceText: 'czy AI jest dobre, czy złe',
     communicationTitle: 'Doświadczenie w komunikacji'
   }
 ];
@@ -31,6 +33,7 @@ test.describe('author portrait', () => {
       await expect(portrait).toHaveAttribute('src', '/images/author/feliks-mamczur.png');
       await expect(portrait).toHaveAttribute('width', '960');
       await expect(portrait).toHaveAttribute('height', '641');
+      await expect(page.locator('[data-qa="author-portrait"] figcaption')).toHaveText(portraitCase.caption);
       expect((await page.request.get('/images/author/feliks-mamczur.png')).status()).toBe(200);
 
       const viewport = page.viewportSize();
