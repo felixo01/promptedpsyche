@@ -77,6 +77,12 @@ const en = {
       'A careful distinction between task performance, learning, retention and transfer when AI becomes part of the process.',
       '/articles/dont-ask-whether-ai-makes-us-dumber/'
     ),
+    generativeSearch: resource(
+      'article',
+      'When Search Becomes an Answer: What Generative AI Changes About Learning',
+      'How generative search redistributes source selection, comparison and synthesis, and what that can change about learning and epistemic agency.',
+      '/articles/when-search-becomes-an-answer/'
+    ),
     agency: resource(
       'article',
       'Are we afraid of AI, or of ourselves?',
@@ -160,6 +166,12 @@ const pl = {
       'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać',
       'Ostrożne rozróżnienie między wynikiem zadania, uczeniem się, utrwaleniem wiedzy i transferem, gdy AI staje się częścią procesu.',
       '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/'
+    ),
+    generativeSearch: resource(
+      'article',
+      'Wyszukiwarka odpowiada. Co zostaje uczniowi?',
+      'Jak generatywne wyszukiwanie zmienia podział pracy przy wyborze źródeł, porównaniu i syntezie oraz co może to oznaczać dla uczenia się i sprawczości epistemicznej.',
+      '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/'
     ),
     agency: resource(
       'article',
@@ -345,7 +357,7 @@ const topicHubs: Record<Locale, TopicHub[]> = {
       start: en.articles.cognition,
       articlesTitle: 'Articles',
       articlesIntro: 'Read the main synthesis first, then use the related essays to connect cognitive practice with context and trust.',
-      articles: [en.articles.cognition, en.articles.terminology, en.articles.trust, en.articles.context],
+      articles: [en.articles.cognition, en.articles.terminology, en.articles.trust, en.articles.context, en.articles.generativeSearch],
       conceptsTitle: 'Concepts',
       conceptsIntro: 'These entries distinguish cognitive demand, external support, self-monitoring and the loss of practiced capability.',
       concepts: [en.concepts.offloading, en.concepts.cognitiveLoad, en.concepts.metacognition, en.concepts.deskilling, en.concepts.aiLiteracy, en.concepts.llm, en.concepts.mentalModel],
@@ -557,7 +569,7 @@ topicHubs.pl = [
     start: pl.articles.cognition,
     articlesTitle: 'Artykuły',
     articlesIntro: 'Najpierw przeczytaj główną syntezę, a później połącz praktykę poznawczą z kontekstem i zaufaniem.',
-    articles: [pl.articles.cognition, pl.articles.terminology, pl.articles.trust, pl.articles.context],
+    articles: [pl.articles.cognition, pl.articles.terminology, pl.articles.trust, pl.articles.context, pl.articles.generativeSearch],
     conceptsTitle: 'Pojęcia',
     conceptsIntro: 'Te hasła rozdzielają wymagania poznawcze, zewnętrzne wsparcie, samokontrolę i utratę ćwiczonej zdolności.',
     concepts: [pl.concepts.offloading, pl.concepts.cognitiveLoad, pl.concepts.metacognition, pl.concepts.deskilling, pl.concepts.aiLiteracy, pl.concepts.llm, pl.concepts.mentalModel],

@@ -91,6 +91,8 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).toContain('/pl/articles/nie-pytaj-czy-ai-nas-oglupia/');
     expect(sitemap).toContain('/articles/openai-chatgpt-gpt-llm-difference/');
     expect(sitemap).toContain('/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/');
+    expect(sitemap).toContain('/articles/when-search-becomes-an-answer/');
+    expect(sitemap).toContain('/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/');
     expect(sitemap).toContain('/concepts/llm/');
     expect(sitemap).toContain('/pl/concepts/llm/');
     expect(sitemap.match(/\/articles\/are-we-afraid-of-ai-or-of-ourselves\//g) ?? []).toHaveLength(1);
@@ -111,6 +113,20 @@ test.describe('built sitemap and RSS policy', () => {
     expect(rss).toContain('/pl/articles/nie-pytaj-czy-ai-nas-oglupia/');
     expect(rss).toContain('/articles/openai-chatgpt-gpt-llm-difference/');
     expect(rss).toContain('/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/');
+    expect(rss).toContain('/articles/when-search-becomes-an-answer/');
+    expect(rss).toContain('/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/');
+    expect(
+      readRssItemByLink(
+        rss,
+        'https://promptedpsyche.com/articles/when-search-becomes-an-answer/'
+      )
+    ).toContain('<pubDate>Wed, 22 Jul 2026');
+    expect(
+      readRssItemByLink(
+        rss,
+        'https://promptedpsyche.com/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/'
+      )
+    ).toContain('<pubDate>Wed, 22 Jul 2026');
     expect(
       readRssItemByLink(
         rss,

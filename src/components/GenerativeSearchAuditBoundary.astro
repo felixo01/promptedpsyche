@@ -1,0 +1,218 @@
+---
+type Locale = 'en' | 'pl';
+
+type BoundaryRow = {
+  shows: string;
+  doesNotShow: string;
+};
+
+interface Props {
+  lang: Locale;
+  rows: readonly BoundaryRow[];
+}
+
+const { lang, rows } = Astro.props;
+
+const copy = {
+  en: {
+    title: 'What the report can and cannot show',
+    shows: 'The report shows',
+    doesNotShow: 'The report does not show',
+    row: 'Boundary pair'
+  },
+  pl: {
+    title: 'Co raport może, a czego nie może pokazać',
+    shows: 'Raport pokazuje',
+    doesNotShow: 'Raport nie pokazuje',
+    row: 'Para granic'
+  }
+} as const;
+
+const t = copy[lang];
+---
+
+<section
+  class="audit-boundary"
+  data-qa="generative-search-audit-boundary"
+  aria-label={t.title}
+>
+  <div class="audit-boundary__table">
+    <table>
+      <caption>{t.title}</caption>
+      <thead>
+        <tr>
+          <th scope="col">{t.shows}</th>
+          <th scope="col">{t.doesNotShow}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr>
+            <td>{row.shows}</td>
+            <td>{row.doesNotShow}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="audit-boundary__cards">
+    {rows.map((row, index) => (
+      <article class="audit-boundary-card">
+        <h3 class="audit-boundary-card__title">{t.row} {index + 1}</h3>
+        <dl>
+          <div>
+            <dt>{t.shows}</dt>
+            <dd>{row.shows}</dd>
+          </div>
+          <div>
+            <dt>{t.doesNotShow}</dt>
+            <dd>{row.doesNotShow}</dd>
+          </div>
+        </dl>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .audit-boundary {
+    box-sizing: border-box;
+    width: min(66rem, calc(100vw - 2rem));
+    max-width: calc(100vw - 2rem);
+    margin-inline: 50%;
+    transform: translateX(-50%);
+    overflow-wrap: anywhere;
+  }
+
+  .audit-boundary__table {
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  caption {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--line-strong);
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  th,
+  td {
+    width: 50%;
+    padding: 0.9rem 1rem;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  tr > :last-child {
+    border-right: 0;
+  }
+
+  tbody tr:last-child > * {
+    border-bottom: 0;
+  }
+
+  thead th {
+    background: var(--accent-soft);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .audit-boundary__cards {
+    display: none;
+  }
+
+  @media (max-width: 720px) {
+    .audit-boundary {
+      width: 100%;
+      max-width: 100%;
+      margin-inline: 0;
+      transform: none;
+    }
+
+    .audit-boundary__table {
+      display: none;
+    }
+
+    .audit-boundary__cards {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .audit-boundary-card {
+      min-width: 0;
+      padding: 1rem;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .audit-boundary-card__title {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .audit-boundary-card dl {
+      display: grid;
+      gap: 0;
+      margin: 0;
+    }
+
+    .audit-boundary-card dl > div {
+      min-width: 0;
+      padding-block: 0.85rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .audit-boundary-card dl > div:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .audit-boundary-card dl > div:last-child {
+      padding-bottom: 0;
+    }
+
+    .audit-boundary-card dt {
+      color: var(--text-soft);
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-weight: 650;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+    }
+
+    .audit-boundary-card dd {
+      margin: 0.35rem 0 0;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+</style>

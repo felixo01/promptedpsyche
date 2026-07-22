@@ -81,8 +81,8 @@ test.describe('local search', () => {
     const plIndex = await readSearchIndex(request, '/search-index.pl.json');
     const allText = JSON.stringify([...enIndex, ...plIndex]);
 
-    expect(countByType(enIndex, 'article')).toBe(9);
-    expect(countByType(plIndex, 'article')).toBe(9);
+    expect(countByType(enIndex, 'article')).toBe(10);
+    expect(countByType(plIndex, 'article')).toBe(10);
     expect(countByType(enIndex, 'note')).toBe(5);
     expect(countByType(plIndex, 'note')).toBe(5);
     expect(countByType(enIndex, 'concept')).toBe(27);
@@ -95,6 +95,11 @@ test.describe('local search', () => {
     expect(plIndex.every((item) => item.language === 'pl')).toBe(true);
     expect(enIndex).toEqual(
       expect.arrayContaining([
+        expect.objectContaining({
+          title: 'When Search Becomes an Answer: What Generative AI Changes About Learning',
+          url: '/articles/when-search-becomes-an-answer/',
+          type: 'article'
+        }),
         expect.objectContaining({
           title: 'Trust in the age of ready-made answers',
           url: '/articles/trust-in-the-age-of-ready-made-answers/',
@@ -124,6 +129,11 @@ test.describe('local search', () => {
     );
     expect(plIndex).toEqual(
       expect.arrayContaining([
+        expect.objectContaining({
+          title: 'Wyszukiwarka odpowiada. Co zostaje uczniowi?',
+          url: '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/',
+          type: 'article'
+        }),
         expect.objectContaining({
           title: 'Czy boimy się AI, czy boimy się samych siebie?',
           url: '/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/',
