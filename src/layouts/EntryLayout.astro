@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import ConsultingCTA from '../components/ConsultingCTA.astro';
 import InBrief from '../components/InBrief.astro';
 import ContinueExploring from '../components/ContinueExploring.astro';
 import RightsNotice from '../components/RightsNotice.astro';
@@ -66,6 +67,8 @@ const tags: string[] = entry.data.tags ?? [];
 const readingTime = entry.data.readingTime;
 const isConceptEntry = !showPublishedAt;
 const isArticleEntry = label === 'Article' || label === 'Artykuł';
+const isNoteEntry = label === 'Note' || label === 'Notatka';
+const showConsultingCta = isArticleEntry || isNoteEntry;
 const conceptBackHref = lang === 'pl' ? '/pl/concepts/' : '/concepts/';
 const conceptBackLabel = lang === 'pl' ? 'Wróć do pojęć' : 'Back to concepts';
 const aboutHref = getAuthorUrl(lang);
@@ -276,6 +279,7 @@ const asideLabels = isConceptEntry
       <div class="prose">
         <slot />
         <ContinueExploring links={explorationLinks} lang={lang} />
+        {showConsultingCta && <ConsultingCTA lang={lang} />}
         {!isConceptEntry && (
           <SuggestedCitation
             lang={lang}

@@ -1,0 +1,59 @@
+---
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+const copy = lang === 'pl'
+  ? {
+      title: 'Korzystacie z AI w pracy zespołowej?',
+      body:
+        'Pomagam zespołom kreatywnym, marketingowym i komunikacyjnym sprawdzić, gdzie AI realnie wspiera proces, a gdzie tworzy problemy z weryfikacją, zaufaniem albo odpowiedzialnością.',
+      offerLabel: 'Zobacz audyt',
+      contactLabel: 'Opisz swoją sytuację',
+      offerHref: '/pl/consulting/',
+      contactHref: '/pl/contact/'
+    }
+  : {
+      title: 'Does your team use AI at work?',
+      body:
+        'I help creative, marketing and communication teams see where AI genuinely supports the process and where it creates problems with verification, trust or responsibility.',
+      offerLabel: 'See the audit',
+      contactLabel: 'Describe your situation',
+      offerHref: '/consulting/',
+      contactHref: '/contact/'
+    };
+const titleId = `consulting-cta-title-${lang}`;
+---
+
+<aside
+  class="consulting-cta"
+  data-qa="consulting-cta"
+  data-cta="publication-consulting"
+  aria-labelledby={titleId}
+>
+  <p class="consulting-cta__label">{lang === 'pl' ? 'Konsulting dla zespołów' : 'Consulting for teams'}</p>
+  <h2 id={titleId}>{copy.title}</h2>
+  <p>{copy.body}</p>
+  <div class="consulting-cta__actions">
+    <a
+      href={copy.offerHref}
+      class="hero-button hero-button-primary"
+      data-qa="consulting-cta-offer"
+      data-cta="consulting-offer"
+    >
+      <span aria-hidden="true"></span>
+      {copy.offerLabel}
+    </a>
+    <a
+      href={copy.contactHref}
+      class="hero-button hero-button-secondary"
+      data-qa="consulting-cta-contact"
+      data-cta="consulting-contact"
+    >
+      {copy.contactLabel}
+    </a>
+  </div>
+</aside>

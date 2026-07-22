@@ -3,11 +3,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../lib/site';
 
 const contactEmail = site.email?.trim();
+const emailSubject = encodeURIComponent('Prompted Psyche - AI work inquiry');
+const emailBody = encodeURIComponent(
+  'Team or organisation:\nWhere we use AI:\nWhat we want the audit to clarify:\nRelevant timing:'
+);
+const guidedMailto = contactEmail
+  ? `mailto:${contactEmail}?subject=${emailSubject}&body=${emailBody}`
+  : undefined;
 ---
 
 <BaseLayout
   title="Contact"
-  description="Contact Feliks Mamczur about consulting, workshops, expert commentary or projects related to AI and communication."
+  description="Contact Feliks Mamczur about an AI Use Audit for a creative, marketing or communication team."
 >
   <div class="lovable-page contact-page">
     <header class="lovable-page-hero contact-hero">
@@ -16,8 +23,8 @@ const contactEmail = site.email?.trim();
           <p class="eyebrow">Contact</p>
           <h1>Get in touch</h1>
           <p class="lede">
-            For consulting, workshops, expert commentary or projects related to AI,
-            communication and human-AI interaction, write directly.
+            If you are considering an AI Use Audit, send a short note about your
+            team, where AI enters the work and what you want to clarify.
           </p>
         </div>
 
@@ -34,13 +41,18 @@ const contactEmail = site.email?.trim();
                   {contactEmail}
                 </a>
                 <p>
-                  The easiest way is to include a few sentences about the topic,
-                  context and expected timing.
+                  A short, concrete description is enough. You do not need to know
+                  the exact audit scope before writing.
                 </p>
                 <div class="contact-email-card__actions">
-                  <a href={`mailto:${contactEmail}`} class="hero-button hero-button-primary">
+                  <a
+                    href={guidedMailto}
+                    class="hero-button hero-button-primary"
+                    data-qa="contact-guided-email"
+                    data-cta="contact-email"
+                  >
                     <span aria-hidden="true"></span>
-                    Send an email
+                    Write about your team
                   </a>
                 </div>
               </>
@@ -59,7 +71,7 @@ const contactEmail = site.email?.trim();
           <h2 id="contact-topics-title">What to write about</h2>
         </div>
         <ul class="contact-list">
-          <li>consulting and AI use in organizations</li>
+          <li>AI use audits for creative, marketing and communication teams</li>
           <li>workshops and talks</li>
           <li>expert or media commentary</li>
           <li>research conversations and editorial collaboration</li>
@@ -74,11 +86,12 @@ const contactEmail = site.email?.trim();
           <p class="eyebrow">Context</p>
           <h2 id="contact-context-title">What to include</h2>
         </div>
-        <ul class="contact-list">
-          <li>what the request is about</li>
-          <li>your organization or context</li>
-          <li>expected timing</li>
-          <li>whether it is consulting, a workshop, commentary or a conversation</li>
+        <ul class="contact-list" data-qa="contact-guidance-list">
+          <li>what kind of team or organization it is</li>
+          <li>where and how the team already uses AI</li>
+          <li>what problem, uncertainty or responsibility gap needs attention</li>
+          <li>which workflow or use case matters most</li>
+          <li>any timing that matters</li>
         </ul>
       </div>
     </section>
@@ -86,8 +99,8 @@ const contactEmail = site.email?.trim();
     <section class="contact-closing" aria-label="Response note">
       <div class="lovable-container">
         <p>
-          I try to respond thoughtfully. It helps if you include the topic,
-          context and any timing that matters.
+          I will use that context to assess whether the AI Use Audit is a useful
+          next step and what scope would be proportionate.
         </p>
       </div>
     </section>

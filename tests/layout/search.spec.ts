@@ -83,8 +83,8 @@ test.describe('local search', () => {
 
     expect(countByType(enIndex, 'article')).toBe(8);
     expect(countByType(plIndex, 'article')).toBe(8);
-    expect(countByType(enIndex, 'note')).toBe(4);
-    expect(countByType(plIndex, 'note')).toBe(4);
+    expect(countByType(enIndex, 'note')).toBe(5);
+    expect(countByType(plIndex, 'note')).toBe(5);
     expect(countByType(enIndex, 'concept')).toBe(26);
     expect(countByType(plIndex, 'concept')).toBe(26);
     expect(countByType(enIndex, 'practice')).toBe(showPractice ? 10 : 0);

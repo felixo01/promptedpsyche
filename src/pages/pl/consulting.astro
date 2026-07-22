@@ -4,185 +4,216 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout
   lang="pl"
-  title="Konsulting"
-  description="Konsulting i warsztaty o odpowiedzialnym używaniu AI w pracy, komunikacji, decyzjach i procesach zespołowych."
+  title="Audyt wykorzystania AI w zespole kreatywnym, marketingowym lub komunikacyjnym"
+  description="Praktyczny audyt sposobu używania AI w zespołach kreatywnych, marketingowych i komunikacyjnych: weryfikacja, zaufanie, odpowiedzialność i zasady pracy."
 >
-  <div class="lovable-page">
-    <header class="lovable-page-hero consulting-hero">
+  <div class="lovable-page consulting-page">
+    <header class="lovable-page-hero consulting-hero consulting-audit-hero" data-qa="consulting-hero">
       <div class="lovable-container">
         <div class="consulting-hero-grid">
           <div>
-            <p class="eyebrow">Konsulting</p>
-            <h1>Konsulting</h1>
+            <p class="eyebrow">Konsulting dla zespołów kreatywnych, marketingowych i komunikacyjnych</p>
+            <h1>Audyt wykorzystania AI w zespole</h1>
             <p class="lede">
-              Pomagam osobom i zespołom pracować z AI bardziej świadomie: lepiej
-              zadawać pytania, sprawdzać odpowiedzi, projektować procesy i nie
-              oddawać modelom odpowiedzialności za decyzje.
+              AI może przyspieszać pracę, ale równocześnie zwiększać ryzyko błędnych
+              decyzji, słabej weryfikacji i niejasnej odpowiedzialności. Pomagam
+              zespołom kreatywnym, marketingowym i komunikacyjnym sprawdzić, jak
+              naprawdę korzystają z AI i które zasady warto uporządkować.
             </p>
+            <div class="consulting-actions consulting-hero-actions" aria-label="Działania dotyczące audytu">
+              <a
+                class="hero-button hero-button-primary"
+                href="/pl/contact/"
+                data-qa="consulting-hero-contact"
+                data-cta="audit-contact"
+              >
+                <span aria-hidden="true"></span>
+                Opisz swój zespół i sposób używania AI
+              </a>
+              <a
+                class="hero-button hero-button-secondary"
+                href="#audit-process"
+                data-qa="consulting-hero-process"
+              >
+                Zobacz, jak wygląda audyt
+              </a>
+            </div>
           </div>
           <aside class="consulting-side-note">
-            <p class="small-label">Podejście</p>
+            <p class="small-label">Główna usługa</p>
             <p>
-              Nie zaczynam od narzędzia ani listy promptów. Najpierw trzeba zobaczyć,
-              gdzie AI wchodzi do pracy, co naprawdę wspiera, a gdzie tworzy ryzyko
-              fałszywej pewności, nadmiernego zaufania albo rozmycia odpowiedzialności.
-              Łączę perspektywę Human-AI Interaction i cyberpsychologii z praktyczną
-              pracą z narzędziami, źródłami, repozytoriami i procesami sprawdzania.
+              To nie jest ogólne doradztwo AI, automatyzacja firmy ani szkolenie z
+              promptów. Audyt dotyczy ludzkiej oceny, źródeł, zaufania, komunikacji
+              i odpowiedzialności w procesach, w których zespół już używa
+              generatywnej AI.
             </p>
           </aside>
         </div>
       </div>
     </header>
 
-    <section class="lovable-section" aria-labelledby="audience-title">
+    <section class="lovable-section" aria-labelledby="audit-audience-title">
       <div class="lovable-container outcome-grid">
         <div>
           <p class="eyebrow">Dla kogo</p>
-          <h2 id="audience-title">Dla osób i zespołów, które chcą używać AI uważniej</h2>
+          <h2 id="audit-audience-title">Kiedy audyt wykorzystania AI ma sens</h2>
         </div>
-        <ul class="outcome-list">
-          <li>twórcy, redakcje i zespoły komunikacji pracujące z tekstem, obrazem albo narracją</li>
-          <li>firmy i zespoły, które już używają AI, ale nie mają jasnych zasad weryfikacji</li>
-          <li>osoby projektujące procesy, treści, decyzje i komunikację z pomocą AI</li>
-          <li>organizacje rozwijające AI literacy bez hype'u i bez promptowych trików</li>
-          <li>liderzy, którzy chcą rozumieć ryzyka nadmiernego polegania na modelach</li>
-          <li>zespoły, które chcą łączyć ludzką ocenę z odpowiedziami modelu</li>
+        <ul class="outcome-list" data-qa="audit-audience-list">
+          <li>Zespół używa ChatGPT, Copilota, Claude albo innych modeli bez wspólnych zasad.</li>
+          <li>Materiały wygenerowane lub współtworzone przez AI trafiają do klientów albo odbiorców.</li>
+          <li>Nie wiadomo, kto sprawdza odpowiedź i odpowiada za finalną decyzję.</li>
+          <li>Pracownicy przekazują modelom wrażliwe, poufne albo nieuporządkowane materiały.</li>
+          <li>AI wspiera analizę briefów, wiadomości, rekomendacji albo decyzji.</li>
+          <li>Płynne odpowiedzi modeli są przyjmowane bez sprawdzania źródeł i założeń.</li>
+          <li>Różne osoby używają AI w zupełnie inny sposób w ramach tego samego procesu.</li>
         </ul>
       </div>
     </section>
 
-    <section class="lovable-section tinted-section" aria-labelledby="services-title">
+    <section class="lovable-section tinted-section" aria-labelledby="audit-scope-title">
       <div class="lovable-container">
         <div class="lovable-section-header">
-          <h2 id="services-title">W czym mogę pomóc</h2>
+          <h2 id="audit-scope-title">Co sprawdzamy</h2>
           <p>
-            Pracuję z realnymi zadaniami i przykładami z procesu. Chodzi o to, żeby
-            AI wspierała myślenie, komunikację i decyzje, ale nie zastępowała oceny
-            człowieka.
+            Audyt prowadzi przez rzeczywisty proces od materiału wejściowego do
+            finalnego wyniku. Nie zależy od jednego producenta modeli ani narzędzia.
           </p>
         </div>
-        <ol class="lovable-service-list">
-          <li>
+        <ol class="lovable-service-list audit-area-list" data-qa="audit-area-list">
+          <li data-qa="audit-area">
             <span>01</span>
-            <h3>Audyt przepływu pracy człowiek-AI</h3>
-            <p>Sprawdzam, gdzie zespół już używa AI, jaki materiał trafia do modelu, co działa i gdzie brakuje weryfikacji.</p>
+            <h3>Miejsca używania AI w procesie</h3>
+            <p>Zadania, przekazania, decyzje i materiały, przy których model już ma znaczenie.</p>
           </li>
-          <li>
+          <li data-qa="audit-area">
             <span>02</span>
-            <h3>Projektowanie praktycznych przepływów pracy z AI</h3>
-            <p>Pomagam ułożyć proces: co może przygotować model, co trzeba sprawdzić i jak przez pracę przechodzą kontekst, źródła, tekst i etapy sprawdzania.</p>
+            <h3>Dane wejściowe i prywatność</h3>
+            <p>Co trafia do modeli, jak wrażliwy jest ten materiał i czy granice są zrozumiałe.</p>
           </li>
-          <li>
+          <li data-qa="audit-area">
             <span>03</span>
-            <h3>Warsztaty AI literacy</h3>
-            <p>Buduję wspólny język pracy z AI: kontekst, źródła, odpowiedź modelu, zaufanie, ograniczenia i odpowiedzialność.</p>
+            <h3>Źródła i weryfikacja</h3>
+            <p>Skąd pochodzą twierdzenia, streszczenia i materiały oraz kto sprawdza je przed użyciem.</p>
           </li>
-          <li>
+          <li data-qa="audit-area">
             <span>04</span>
-            <h3>Audyt komunikacji i zaufania do AI</h3>
-            <p>Pomagam zobaczyć, jak AI zmienia pisanie, ocenę informacji, przygotowanie rekomendacji, zaufanie i rozmowę w zespole.</p>
+            <h3>Odpowiedzialność za decyzję i finalny materiał</h3>
+            <p>Kto zatwierdza wynik, kto może go zakwestionować i kto odpowiada za konsekwencje.</p>
           </li>
-          <li>
+          <li data-qa="audit-area">
             <span>05</span>
-            <h3>Praktyki kontekstu i źródeł</h3>
-            <p>Porządkuję reguły dotyczące danych, repozytoriów, źródeł, cytowania, metadanych, kontroli jakości i odpowiedzialności za wynik.</p>
+            <h3>Zaufanie do odpowiedzi modeli</h3>
+            <p>Gdzie płynność, szybkość albo pewny ton mogą być mylone z wiarygodnością.</p>
           </li>
-          <li>
+          <li data-qa="audit-area">
             <span>06</span>
-            <h3>Analiza ryzyka</h3>
-            <p>Wskazuję miejsca, w których pojawia się nadmierne zaufanie, fałszywa pewność, brak źródeł albo delegowanie decyzji na model.</p>
+            <h3>Komunikacja, interpretacja i potakiwanie</h3>
+            <p>Jak model ramuje wiadomości, wzmacnia założenia albo zmienia jedną wersję sytuacji w pozorny werdykt.</p>
+          </li>
+          <li data-qa="audit-area">
+            <span>07</span>
+            <h3>Podział pracy i zachowanie ludzkiej kontroli</h3>
+            <p>Które zadania może wspierać AI, które wymagają ludzkiej oceny i czy zespół może sprawdzić, zakwestionować i poprawić wynik.</p>
+          </li>
+          <li data-qa="audit-area">
+            <span>08</span>
+            <h3>Zasady możliwe do wdrożenia</h3>
+            <p>Proste reguły, punkty kontroli i podział odpowiedzialności dopasowane do codziennej pracy.</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="lovable-section" aria-labelledby="situations-title">
+    <section
+      id="audit-process"
+      class="lovable-section process-section"
+      aria-labelledby="audit-process-title"
+      data-qa="audit-process"
+    >
       <div class="lovable-container">
         <div class="compact-heading">
-          <p class="eyebrow">Sygnały</p>
-          <h2 id="situations-title">Kiedy warto porozmawiać</h2>
+          <p class="eyebrow">Proces</p>
+          <h2 id="audit-process-title">Jak wygląda audyt</h2>
+          <p>
+            Dokładny zakres zależy od wielkości zespołu i liczby analizowanych
+            procesów. Praca skupia się na kilku rzeczywistych przypadkach, a nie na
+            abstrakcyjnym katalogu narzędzi.
+          </p>
         </div>
-        <ol class="lovable-numbered-list">
-          <li>Zespół używa AI, ale nie ma wspólnych zasad sprawdzania odpowiedzi.</li>
-          <li>AI przyspiesza pracę, ale nie wiadomo, gdzie kończy się pomoc, a zaczyna ryzyko.</li>
-          <li>Ludzie kopiują odpowiedzi modelu bez sprawdzania źródeł, założeń i braków.</li>
-          <li>Materiały źródłowe, kontekst, repozytoria albo etapy sprawdzania są rozproszone między narzędziami.</li>
-          <li>Decyzje zaczynają opierać się na płynnych odpowiedziach zamiast na materiale.</li>
-          <li>Komunikacja z pomocą AI jest sprawniejsza, ale mniej odpowiedzialna.</li>
-          <li>Chcesz ułożyć proces, który wzmacnia człowieka zamiast go zastępować.</li>
+        <ol class="process-line process-line-detailed audit-process-list" aria-label="Proces audytu wykorzystania AI">
+          <li data-qa="audit-process-step"><small>01</small><strong>Rozmowa otwierająca</strong><span>Cel, kontekst zespołu i pytania wymagające uporządkowania.</span></li>
+          <li data-qa="audit-process-step"><small>02</small><strong>Wybór przypadków</strong><span>Kilka rzeczywistych procesów lub zastosowań ważnych dla zespołu.</span></li>
+          <li data-qa="audit-process-step"><small>03</small><strong>Analiza używania AI</strong><span>Dane wejściowe, odpowiedzi modeli, kontrole, przekazania i decyzje.</span></li>
+          <li data-qa="audit-process-step"><small>04</small><strong>Mapa ryzyk</strong><span>Braki w weryfikacji i miejsca niejasnej odpowiedzialności.</span></li>
+          <li data-qa="audit-process-step"><small>05</small><strong>Rekomendacje</strong><span>Priorytetowe zasady i praktyczne zmiany dla analizowanych procesów.</span></li>
+          <li data-qa="audit-process-step"><small>06</small><strong>Podsumowanie</strong><span>Spotkanie lub warsztat omawiający wnioski z zespołem.</span></li>
         </ol>
       </div>
     </section>
 
-    <section class="lovable-section" aria-labelledby="collaboration-title">
+    <section class="lovable-section tinted-section" aria-labelledby="audit-outcomes-title">
       <div class="lovable-container outcome-grid">
         <div>
-          <p class="eyebrow">Współpraca</p>
-          <h2 id="collaboration-title">Jak może wyglądać współpraca?</h2>
+          <p class="eyebrow">Rezultaty</p>
+          <h2 id="audit-outcomes-title">Co otrzymuje zespół</h2>
         </div>
-        <div class="editorial-copy">
-          <p>
-            Współpraca może mieć formę jednorazowej konsultacji, audytu komunikacji,
-            zaufania albo workflowu AI, warsztatu dla zespołu lub dłuższego wsparcia
-            przy projekcie, produkcie, systemie treści albo procesie pracy z AI.
-            Zakres i wycena zależą od sytuacji, dlatego najlepiej zacząć od krótkiej
-            wiadomości z opisem problemu, zespołu albo decyzji, którą trzeba podjąć.
-          </p>
-          <ul class="outcome-list" aria-label="Możliwe formy konsultingu">
-            <li>jednorazowa konsultacja</li>
-            <li>audyt komunikacji, zaufania albo workflowu AI</li>
-            <li>warsztat dla zespołu</li>
-            <li>dłuższe wsparcie przy projekcie, produkcie, systemie treści albo workflowie z AI</li>
-          </ul>
-          <p class="meta-kicker">
-            Nie trzeba od razu wiedzieć, jak nazwać usługę. Wystarczy opisać sytuację.
-          </p>
-        </div>
+        <ul class="outcome-list" data-qa="audit-deliverables-list">
+          <li>Mapę sposobów wykorzystania AI w wybranych procesach.</li>
+          <li>Uporządkowaną listę najważniejszych ryzyk.</li>
+          <li>Wskazanie miejsc wymagających weryfikacji źródeł, założeń albo wyników.</li>
+          <li>Propozycję podziału pracy między ludzi i AI, w tym odpowiedzialności za decyzje i sprawdzanie.</li>
+          <li>Rekomendacje dotyczące pracy z materiałami, źródłami i komunikacją.</li>
+          <li>Dokument podsumowujący, do którego zespół może wracać.</li>
+          <li>Spotkanie lub warsztat podsumowujący dla zespołu.</li>
+        </ul>
       </div>
     </section>
 
-    <section class="lovable-section tinted-section process-section" aria-labelledby="process-title">
-      <div class="lovable-container">
-        <div class="compact-heading">
-          <p class="eyebrow">Sposób pracy</p>
-          <h2 id="process-title">Jak pracuję</h2>
-          <p>
-            Konsulting powinien zaczynać się od kontekstu, nie od gotowej formuły.
-            Dlatego pracuję na konkretnych zadaniach, decyzjach i punktach ryzyka.
-          </p>
-        </div>
-        <ol class="process-line process-line-detailed" aria-label="Sposób pracy konsultingowej">
-          <li><small>01</small><strong>Kontekst</strong><span>rozpoznaję, gdzie AI pojawia się w pracy i co naprawdę ma wspierać</span></li>
-          <li><small>02</small><strong>Cele i ograniczenia</strong><span>oddzielam potrzeby zespołu, ryzyka, dane i realne granice użycia AI</span></li>
-          <li><small>03</small><strong>Przykłady z procesu</strong><span>pracuję na konkretnych zadaniach, tekstach, repozytoriach, decyzjach albo przepływach informacji</span></li>
-          <li><small>04</small><strong>Zasady i praktyki</strong><span>pomagam opisać reguły, sprawdzanie źródeł, pytania kontrolne i sposoby weryfikacji</span></li>
-          <li><small>05</small><strong>Odpowiedzialność</strong><span>model może wspierać pracę, ale decyzja i konsekwencje zostają po stronie ludzi</span></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="lovable-section outcome-section" aria-labelledby="boundaries-title">
+    <section class="lovable-section" aria-labelledby="audit-boundaries-title">
       <div class="lovable-container outcome-grid">
         <div>
           <p class="eyebrow">Granice</p>
-          <h2 id="boundaries-title">Czego nie robię</h2>
+          <h2 id="audit-boundaries-title">Czego audyt nie robi</h2>
         </div>
-        <ul class="outcome-list">
-          <li>nie diagnozuję ludzi na podstawie korespondencji, notatek ani zachowania w pracy</li>
-          <li>nie używam AI do manipulacji, presji albo zgadywania ukrytych intencji</li>
-          <li>nie obiecuję, że model będzie miał rację albo rozwiąże problem za zespół</li>
-          <li>nie sprzedaję gotowych "magicznych promptów" jako substytutu myślenia</li>
-          <li>nie zdejmuję odpowiedzialności z człowieka, lidera ani organizacji</li>
-          <li>nie zastępuję pomocy prawnej, medycznej, psychologicznej ani HR w sprawach wymagających specjalisty</li>
+        <ul class="outcome-list" data-qa="audit-boundaries-list">
+          <li>Nie jest audytem prawnym.</li>
+          <li>Nie jest audytem cyberbezpieczeństwa.</li>
+          <li>Nie zastępuje specjalisty ochrony danych.</li>
+          <li>Nie jest diagnozą psychologiczną pracowników.</li>
+          <li>Nie przenosi decyzji i odpowiedzialności na AI.</li>
+          <li>Nie obiecuje eliminacji wszystkich błędów.</li>
         </ul>
       </div>
-      <div class="lovable-container">
-        <p class="disclaimer-line">
-          To nie jest wdrożenie techniczne, terapia, diagnoza, porada prawna ani obietnica wyników biznesowych.
-        </p>
-        <div class="consulting-actions">
-          <a class="hero-button hero-button-primary" href="/pl/contact/"><span aria-hidden="true"></span>Napisz w sprawie konsultingu</a>
-          <a class="hero-button hero-button-secondary" href="/pl/concepts/">Czytaj pojęcia</a>
+    </section>
+
+    <section class="lovable-section consulting-final" aria-labelledby="consulting-final-title" data-qa="consulting-final-cta">
+      <div class="lovable-container outcome-grid">
+        <div>
+          <p class="eyebrow">Pierwszy krok</p>
+          <h2 id="consulting-final-title">Opisz swoją sytuację</h2>
+        </div>
+        <div class="editorial-copy consulting-final__copy">
+          <p>Opisz krótko:</p>
+          <ul class="contact-brief-list">
+            <li>jaki to zespół,</li>
+            <li>gdzie używacie AI,</li>
+            <li>co budzi największą niepewność.</li>
+          </ul>
+          <p>
+            Na tej podstawie odpowiem, czy audyt wykorzystania AI jest w tej
+            sytuacji właściwym krokiem i jaki zakres będzie proporcjonalny.
+          </p>
+          <div class="consulting-actions">
+            <a
+              class="hero-button hero-button-primary"
+              href="/pl/contact/"
+              data-qa="consulting-final-contact"
+              data-cta="audit-contact-final"
+            >
+              <span aria-hidden="true"></span>
+              Przejdź do kontaktu
+            </a>
+          </div>
         </div>
       </div>
     </section>

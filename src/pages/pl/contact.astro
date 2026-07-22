@@ -3,12 +3,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { site } from '../../lib/site';
 
 const contactEmail = site.email?.trim();
+const emailSubject = encodeURIComponent('Prompted Psyche - zapytanie o pracę z AI');
+const emailBody = encodeURIComponent(
+  'Zespół lub organizacja:\nGdzie używamy AI:\nCo audyt ma pomóc uporządkować:\nIstotny termin:'
+);
+const guidedMailto = contactEmail
+  ? `mailto:${contactEmail}?subject=${emailSubject}&body=${emailBody}`
+  : undefined;
 ---
 
 <BaseLayout
   lang="pl"
   title="Kontakt"
-  description="Kontakt w sprawie współpracy, konsultingu, warsztatów, komentarza eksperckiego albo projektów związanych z AI i komunikacją."
+  description="Kontakt z Feliksem Mamczurem w sprawie audytu wykorzystania AI dla zespołu kreatywnego, marketingowego lub komunikacyjnego."
 >
   <div class="lovable-page contact-page">
     <header class="lovable-page-hero contact-hero">
@@ -17,9 +24,8 @@ const contactEmail = site.email?.trim();
           <p class="eyebrow">Kontakt</p>
           <h1>Napisz do mnie</h1>
           <p class="lede">
-            Jeśli chcesz porozmawiać o współpracy, konsultingu, warsztacie,
-            komentarzu eksperckim albo projekcie związanym z AI i komunikacją,
-            napisz bezpośrednio.
+            Jeśli rozważasz audyt wykorzystania AI, napisz krótko o zespole,
+            miejscu używania AI i problemie, który chcesz uporządkować.
           </p>
         </div>
 
@@ -36,13 +42,18 @@ const contactEmail = site.email?.trim();
                   {contactEmail}
                 </a>
                 <p>
-                  Najprościej napisać kilka zdań o temacie, kontekście i
-                  oczekiwanym terminie rozmowy.
+                  Wystarczy konkretny opis sytuacji. Nie musisz przed napisaniem
+                  znać dokładnego zakresu audytu.
                 </p>
                 <div class="contact-email-card__actions">
-                  <a href={`mailto:${contactEmail}`} class="hero-button hero-button-primary">
+                  <a
+                    href={guidedMailto}
+                    class="hero-button hero-button-primary"
+                    data-qa="contact-guided-email"
+                    data-cta="contact-email"
+                  >
                     <span aria-hidden="true"></span>
-                    Napisz e-mail
+                    Opisz swój zespół
                   </a>
                 </div>
               </>
@@ -61,7 +72,7 @@ const contactEmail = site.email?.trim();
           <h2 id="contact-topics-title">W jakich sprawach</h2>
         </div>
         <ul class="contact-list">
-          <li>konsulting i uporządkowanie używania AI w organizacji</li>
+          <li>audyt wykorzystania AI w zespole kreatywnym, marketingowym lub komunikacyjnym</li>
           <li>warsztaty i wystąpienia</li>
           <li>komentarz ekspercki lub medialny</li>
           <li>rozmowy badawcze i współpraca merytoryczna</li>
@@ -76,11 +87,12 @@ const contactEmail = site.email?.trim();
           <p class="eyebrow">Kontekst</p>
           <h2 id="contact-context-title">Co warto napisać</h2>
         </div>
-        <ul class="contact-list">
-          <li>czego dotyczy sprawa</li>
-          <li>z jakiej organizacji lub kontekstu piszesz</li>
-          <li>jaki jest termin</li>
-          <li>czy chodzi o konsultację, warsztat, komentarz czy rozmowę</li>
+        <ul class="contact-list" data-qa="contact-guidance-list">
+          <li>jaki to zespół lub organizacja</li>
+          <li>gdzie i w jaki sposób zespół już używa AI</li>
+          <li>jaki problem, niepewność albo brak odpowiedzialności chcecie uporządkować</li>
+          <li>który proces lub przypadek użycia jest najważniejszy</li>
+          <li>czy jest istotny termin</li>
         </ul>
       </div>
     </section>
@@ -88,8 +100,8 @@ const contactEmail = site.email?.trim();
     <section class="contact-closing" aria-label="Informacja o odpowiedzi">
       <div class="lovable-container">
         <p>
-          Staram się odpowiadać na wiadomości możliwie uważnie. Napisz krótko,
-          czego dotyczy sprawa, w jakim jesteś kontekście i czy jest jakiś termin.
+          Na podstawie tego kontekstu ocenię, czy audyt wykorzystania AI jest
+          właściwym krokiem i jaki zakres będzie proporcjonalny.
         </p>
       </div>
     </section>

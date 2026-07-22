@@ -49,7 +49,12 @@ function isCurrentPath(href: string) {
     <nav class="site-nav" data-qa="site-nav" aria-label={activeLang === 'pl' ? 'Nawigacja główna' : 'Primary navigation'}>
       {
         navItems.map((item) => (
-          <a href={item.href} aria-current={isCurrentPath(item.href) ? 'page' : undefined}>
+          <a
+            href={item.href}
+            class:list={{ 'site-nav__consulting': item.href.endsWith('/consulting/') }}
+            data-qa={item.href.endsWith('/consulting/') ? 'consulting-nav-link' : undefined}
+            aria-current={isCurrentPath(item.href) ? 'page' : undefined}
+          >
             {item.label}
           </a>
         ))

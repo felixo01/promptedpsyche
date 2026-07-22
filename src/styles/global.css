@@ -294,6 +294,22 @@ h4,
   text-underline-offset: 0.32em;
 }
 
+.site-nav a.site-nav__consulting {
+  color: rgba(28, 25, 23, 0.82);
+  text-decoration: underline;
+  text-decoration-color: rgba(178, 132, 67, 0.7);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.32em;
+}
+
+.site-nav a:focus-visible,
+.hero-actions a:focus-visible,
+.hero-button:focus-visible,
+.text-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 0.25rem;
+}
+
 .language-switcher {
   gap: 0.3rem;
   color: rgba(28, 25, 23, 0.28);
@@ -680,6 +696,12 @@ html[lang='pl'] .home-hero h1 {
   gap: 1.5rem 2rem;
 }
 
+.home-start-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem 2rem;
+}
+
 .writing-card {
   min-width: 0;
   border-top: 1px solid var(--line-strong);
@@ -699,6 +721,29 @@ html[lang='pl'] .home-hero h1 {
   color: rgba(28, 25, 23, 0.62);
   font-size: 0.94rem;
   line-height: 1.62;
+}
+
+.start-here-card {
+  display: grid;
+  min-width: 0;
+  align-content: start;
+}
+
+.start-here-card h3 {
+  overflow-wrap: anywhere;
+}
+
+.start-here-card .text-link {
+  justify-self: start;
+}
+
+.home-start-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin-top: clamp(2.25rem, 4vw, 3.5rem);
+  border-top: 1px solid var(--line-soft);
+  padding-top: 0.25rem;
 }
 
 .home-compact-feature {
@@ -1717,6 +1762,126 @@ html[lang='pl'] .about-hero h1 {
   margin-top: 4rem;
 }
 
+.consulting-hero-actions {
+  margin-top: 2rem;
+}
+
+.consulting-hero-actions .hero-button,
+.consulting-final .hero-button {
+  max-width: 100%;
+  text-align: left;
+}
+
+.audit-area-list h3 {
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
+}
+
+.audit-process-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.audit-process-list li {
+  border-bottom: 1px solid var(--rule);
+}
+
+.audit-process-list li:nth-child(3n) {
+  border-right: 0;
+}
+
+.consulting-final {
+  border-bottom: 0;
+}
+
+.consulting-final__copy {
+  align-content: start;
+}
+
+.consulting-final__copy .consulting-actions {
+  margin-top: 1rem;
+}
+
+.contact-brief-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-brief-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  color: rgba(28, 25, 23, 0.72);
+}
+
+.contact-brief-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.42rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.consulting-cta {
+  display: grid;
+  gap: 0.85rem;
+  margin-block: clamp(3rem, 6vw, 4.5rem) 2.75rem;
+  border-block: 1px solid var(--line-strong);
+  padding-block: clamp(1.5rem, 3vw, 2rem);
+}
+
+.consulting-cta__label {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.prose .consulting-cta h2 {
+  display: block;
+  max-width: 24ch;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.15;
+  text-transform: none;
+}
+
+.consulting-cta > p:not(.consulting-cta__label) {
+  max-width: 58ch;
+  margin: 0;
+  color: rgba(28, 25, 23, 0.66);
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.consulting-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+}
+
+.prose .consulting-cta__actions a {
+  color: rgba(28, 25, 23, 0.72);
+}
+
+.prose .consulting-cta__actions .hero-button-primary {
+  color: var(--paper);
+}
+
 .concepts-page .lovable-page-hero {
   padding-block: clamp(4.5rem, 6vw, 6.25rem);
 }
@@ -1980,9 +2145,7 @@ html[lang='pl'] .about-hero h1 {
   gap: 0.9rem;
   width: min(100%, 58rem);
   border: 1px solid var(--rule);
-  background:
-    linear-gradient(135deg, rgba(61, 90, 92, 0.05), transparent 45%),
-    rgba(28, 25, 23, 0.018);
+  background: rgba(28, 25, 23, 0.018);
   padding: clamp(1.25rem, 3vw, 2.05rem);
 }
 
@@ -3938,6 +4101,7 @@ html[lang='pl'] .topic-hub__heading h1 {
 
   .entry-paths,
     .home-writing-grid,
+    .home-start-grid,
     .home-compact-feature,
     .projects-grid,
     .topic-index,
@@ -4214,6 +4378,30 @@ html[lang='pl'] .topic-hub__heading h1 {
   }
 
   .footer-utility {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-actions,
+  .consulting-actions,
+  .consulting-cta__actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+
+  .hero-actions a,
+  .consulting-actions .hero-button,
+  .consulting-cta__actions .hero-button {
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+    white-space: normal;
+  }
+
+  .home-start-footer {
     align-items: flex-start;
     flex-direction: column;
   }

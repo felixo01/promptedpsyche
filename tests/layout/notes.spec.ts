@@ -84,6 +84,16 @@ const notePairs = [
       '/concepts/calibrated-trust/',
       '/concepts/human-oversight/'
     ]
+  },
+  {
+    plTitle: '„Masz rację” — powiedziało AI. Problem w tym, że znało tylko twoją wersję',
+    enTitle: '“You’re Right,” Said the AI. But It Only Knew Your Side of the Story',
+    plRoute: '/pl/notes/masz-racje-powiedzialo-ai/',
+    enRoute: '/notes/youre-right-said-the-ai/',
+    plDate: '2026, 18 lipca',
+    enDate: '2026, July 18',
+    plConcepts: ['/pl/concepts/potakiwanie-modelu/'],
+    enConcepts: ['/concepts/sycophancy/']
   }
 ];
 
