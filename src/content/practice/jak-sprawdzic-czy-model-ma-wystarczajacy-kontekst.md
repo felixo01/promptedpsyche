@@ -81,6 +81,6 @@ Zanim użyjesz odpowiedzi, zapytaj model, jakiego kontekstu mu brakuje i które 
 
 ## Dalsza lektura
 
-- [Model nie pamięta. Model ma kontekst.](/pl/articles/model-nie-pamieta-model-ma-kontekst/)
+- [Model nie pamięta. Model ma kontekst.](/pl/notes/model-nie-pamieta-model-ma-kontekst/)
 - [Brzmi dobrze, ale to nie znaczy, że jest prawdziwe](/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/)
 - [Nie chodzi tylko o prompt](/pl/articles/nie-chodzi-tylko-o-prompt/)

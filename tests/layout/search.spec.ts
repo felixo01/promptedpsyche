@@ -81,10 +81,10 @@ test.describe('local search', () => {
     const plIndex = await readSearchIndex(request, '/search-index.pl.json');
     const allText = JSON.stringify([...enIndex, ...plIndex]);
 
-    expect(countByType(enIndex, 'article')).toBe(9);
-    expect(countByType(plIndex, 'article')).toBe(9);
-    expect(countByType(enIndex, 'note')).toBe(6);
-    expect(countByType(plIndex, 'note')).toBe(6);
+    expect(countByType(enIndex, 'article')).toBe(8);
+    expect(countByType(plIndex, 'article')).toBe(8);
+    expect(countByType(enIndex, 'note')).toBe(7);
+    expect(countByType(plIndex, 'note')).toBe(7);
     expect(countByType(enIndex, 'concept')).toBe(27);
     expect(countByType(plIndex, 'concept')).toBe(27);
     expect(countByType(enIndex, 'practice')).toBe(showPractice ? 10 : 0);
@@ -121,6 +121,11 @@ test.describe('local search', () => {
           type: 'note'
         }),
         expect.objectContaining({
+          title: 'The model does not remember. It works with context.',
+          url: '/notes/the-model-does-not-remember-it-works-with-context/',
+          type: 'note'
+        }),
+        expect.objectContaining({
           title: 'Large Language Model (LLM)',
           url: '/concepts/llm/',
           type: 'concept'
@@ -150,6 +155,11 @@ test.describe('local search', () => {
           type: 'note'
         }),
         expect.objectContaining({
+          title: 'Model nie pamięta. Model ma kontekst.',
+          url: '/pl/notes/model-nie-pamieta-model-ma-kontekst/',
+          type: 'note'
+        }),
+        expect.objectContaining({
           title: 'LLM (duży model językowy)',
           url: '/pl/concepts/llm/',
           type: 'concept'
@@ -158,6 +168,8 @@ test.describe('local search', () => {
     );
     expect(allText).not.toContain('/articles/openai-chatgpt-gpt-llm-difference/');
     expect(allText).not.toContain('/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/');
+    expect(allText).not.toContain('/articles/the-model-does-not-remember-it-works-with-context/');
+    expect(allText).not.toContain('/pl/articles/model-nie-pamieta-model-ma-kontekst/');
     expect(enIndex.map((item) => item.title)).not.toContain(
       'Czy boimy się AI, czy boimy się samych siebie?'
     );

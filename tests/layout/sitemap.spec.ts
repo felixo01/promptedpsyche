@@ -93,6 +93,10 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).toContain('/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/');
     expect(sitemap).not.toContain('/articles/openai-chatgpt-gpt-llm-difference/');
     expect(sitemap).not.toContain('/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/');
+    expect(sitemap).toContain('/notes/the-model-does-not-remember-it-works-with-context/');
+    expect(sitemap).toContain('/pl/notes/model-nie-pamieta-model-ma-kontekst/');
+    expect(sitemap).not.toContain('/articles/the-model-does-not-remember-it-works-with-context/');
+    expect(sitemap).not.toContain('/pl/articles/model-nie-pamieta-model-ma-kontekst/');
     expect(sitemap).toContain('/articles/when-search-becomes-an-answer/');
     expect(sitemap).toContain('/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/');
     expect(sitemap).toContain('/concepts/llm/');
@@ -117,6 +121,10 @@ test.describe('built sitemap and RSS policy', () => {
     expect(rss).toContain('/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/');
     expect(rss).not.toContain('/articles/openai-chatgpt-gpt-llm-difference/');
     expect(rss).not.toContain('/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/');
+    expect(rss).toContain('/notes/the-model-does-not-remember-it-works-with-context/');
+    expect(rss).toContain('/pl/notes/model-nie-pamieta-model-ma-kontekst/');
+    expect(rss).not.toContain('/articles/the-model-does-not-remember-it-works-with-context/');
+    expect(rss).not.toContain('/pl/articles/model-nie-pamieta-model-ma-kontekst/');
     expect(rss).toContain('/articles/when-search-becomes-an-answer/');
     expect(rss).toContain('/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/');
     expect(
@@ -143,6 +151,18 @@ test.describe('built sitemap and RSS policy', () => {
         'https://promptedpsyche.com/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/'
       )
     ).toContain('<pubDate>Wed, 22 Jul 2026');
+    expect(
+      readRssItemByLink(
+        rss,
+        'https://promptedpsyche.com/notes/the-model-does-not-remember-it-works-with-context/'
+      )
+    ).toContain('<pubDate>Sat, 28 Mar 2026');
+    expect(
+      readRssItemByLink(
+        rss,
+        'https://promptedpsyche.com/pl/notes/model-nie-pamieta-model-ma-kontekst/'
+      )
+    ).toContain('<pubDate>Sat, 28 Mar 2026');
     expect(
       readRssItemByLink(
         rss,
@@ -225,6 +245,16 @@ test.describe('built sitemap and RSS policy', () => {
       {
         source: '/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/',
         destination: '/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/',
+        permanent: true
+      },
+      {
+        source: '/articles/the-model-does-not-remember-it-works-with-context/',
+        destination: '/notes/the-model-does-not-remember-it-works-with-context/',
+        permanent: true
+      },
+      {
+        source: '/pl/articles/model-nie-pamieta-model-ma-kontekst/',
+        destination: '/pl/notes/model-nie-pamieta-model-ma-kontekst/',
         permanent: true
       }
     ]);

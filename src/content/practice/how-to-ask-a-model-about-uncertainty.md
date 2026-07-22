@@ -84,5 +84,5 @@ Do not ask the model for artificial certainty. Ask it to show what the answer de
 ## Further Reading
 
 - [Trust in the age of ready-made answers](/articles/trust-in-the-age-of-ready-made-answers/)
-- [The model does not remember. It works with context.](/articles/the-model-does-not-remember-it-works-with-context/)
+- [The model does not remember. It works with context.](/notes/the-model-does-not-remember-it-works-with-context/)
 - [Fluent does not mean true](/notes/fluent-does-not-mean-true/)

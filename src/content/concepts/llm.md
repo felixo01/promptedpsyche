@@ -64,7 +64,7 @@ The terms are not interchangeable. Not every transformer is an LLM, because tran
 
 A model generates from the information available in context. That context may include the user's instruction, earlier turns in a conversation, system instructions, part of a file, or the result returned by a tool. A context window sets a limit on how much information can be considered when generating a response.
 
-More room does not mean that every part will be used equally well. Research has found that the position of information inside a long context can affect performance. A memory feature in the product may supply selected information as context in later conversations. That mechanism differs both from model parameters and from the current context window.[^10] The [Context Window](/concepts/context-window/) Concept and [The Model Does Not Remember. It Works With Context.](/articles/the-model-does-not-remember-it-works-with-context/) develop this boundary in full.
+More room does not mean that every part will be used equally well. Research has found that the position of information inside a long context can affect performance. A memory feature in the product may supply selected information as context in later conversations. That mechanism differs both from model parameters and from the current context window.[^10] The [Context Window](/concepts/context-window/) Concept and [The Model Does Not Remember. It Works With Context.](/notes/the-model-does-not-remember-it-works-with-context/) develop this boundary in full.
 
 ## What an LLM does not do on its own
 

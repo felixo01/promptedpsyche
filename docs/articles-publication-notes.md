@@ -37,22 +37,22 @@ The articles link the public article layer with Concepts Wave 02. They use the c
 
 The first article is a programmatic essay, not a manifesto, sales page or prompt tutorial.
 
-## Article 02
+## Note 02
 
-The second article pair published in pre-launch mode is:
+The pair originally published as the second article is now classified as a note:
 
 - `Model nie pamięta. Model ma kontekst.`
-- URL: `/pl/articles/model-nie-pamieta-model-ma-kontekst/`
-- Source file: `src/content/articles/model-nie-pamieta-model-ma-kontekst.md`
-- Date: `2026-06-18`
-- Status: public PL article, `draft: false`
+- URL: `/pl/notes/model-nie-pamieta-model-ma-kontekst/`
+- Source file: `src/content/notes/model-nie-pamieta-model-ma-kontekst.mdx`
+- Date: `2026-03-28`
+- Status: public PL note, `draft: false`
 - `The model does not remember. It works with context.`
-- URL: `/articles/the-model-does-not-remember-it-works-with-context/`
-- Source file: `src/content/articles/the-model-does-not-remember-it-works-with-context.md`
-- Date: `2026-06-18`
-- Status: public EN article, `draft: false`
+- URL: `/notes/the-model-does-not-remember-it-works-with-context/`
+- Source file: `src/content/notes/the-model-does-not-remember-it-works-with-context.mdx`
+- Date: `2026-03-28`
+- Status: public EN note, `draft: false`
 
-This article deepens the vocabulary around:
+This note deepens the vocabulary around:
 
 - Context window
 - Token
@@ -65,7 +65,7 @@ This article deepens the vocabulary around:
 - Calibrated trust
 - Human-AI Interaction
 
-The article explains context as a practical condition of AI work. It should not present Feliks Mamczur's work as peer-reviewed research and should not add unregistered DOI identifiers.
+The note explains context as a practical condition of AI work. It should not present Feliks Mamczur's work as peer-reviewed research and should not add unregistered DOI identifiers.
 
 ## Article 03
 

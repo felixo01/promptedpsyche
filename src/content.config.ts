@@ -47,6 +47,9 @@ const notes = defineCollection({
   schema: baseSchema.extend({
     context: z.string().optional(),
     readingTime: z.string().optional(),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    imageCaption: z.string().optional(),
     lang: z.enum(['en', 'pl']).default('en'),
     translationKey: z.string().optional()
   })

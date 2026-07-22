@@ -1,10 +1,10 @@
 import { expect, test, type Page } from '@playwright/test';
 
 const polishArticleRoute = '/pl/articles/nie-chodzi-tylko-o-prompt/';
-const secondPolishArticleRoute = '/pl/articles/model-nie-pamieta-model-ma-kontekst/';
+const secondPolishArticleRoute = '/pl/notes/model-nie-pamieta-model-ma-kontekst/';
 const thirdPolishArticleRoute = '/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/';
 const englishArticleRoute = '/articles/it-is-not-just-about-the-prompt/';
-const secondEnglishArticleRoute = '/articles/the-model-does-not-remember-it-works-with-context/';
+const secondEnglishArticleRoute = '/notes/the-model-does-not-remember-it-works-with-context/';
 const thirdEnglishArticleRoute =
   '/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation/';
 const mirrorPolishArticleRoute =
@@ -168,9 +168,9 @@ test.describe('published articles', () => {
   test('shows the English article on the English articles index', async ({ page }) => {
     await page.goto('/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(9);
+    await expect(page.locator('.entry-list article')).toHaveCount(8);
     await expect(page.locator('.entry-list')).toContainText('It is not just about the prompt');
-    await expect(page.locator('.entry-list')).toContainText(
+    await expect(page.locator('.entry-list')).not.toContainText(
       'The model does not remember. It works with context.'
     );
     await expect(page.locator('.entry-list')).toContainText(thirdEnglishArticleTitle);
@@ -184,7 +184,7 @@ test.describe('published articles', () => {
       'AI does not read people. It helps read context.'
     );
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(9);
+    expect(titles).toHaveLength(8);
     expect(titles).toEqual(expect.arrayContaining([
       generativeSearchEnglishArticleTitle,
       aiThinkingEnglishArticleTitle,
@@ -193,7 +193,6 @@ test.describe('published articles', () => {
       aiPathEnglishArticleTitle,
       mirrorEnglishArticleTitle,
       thirdEnglishArticleTitle,
-      'The model does not remember. It works with context.',
       'It is not just about the prompt'
     ]));
     const titleLink = page.getByRole('link', {
@@ -211,17 +210,6 @@ test.describe('published articles', () => {
     await expect(ctaLink).toBeVisible();
     await ctaLink.focus();
     await expect(ctaLink).toBeFocused();
-
-    const secondTitleLink = page.getByRole('link', {
-      name: 'The model does not remember. It works with context.',
-      exact: true
-    });
-    const secondCtaLink = page.getByRole('link', {
-      name: 'Read article: The model does not remember. It works with context.'
-    });
-
-    await expect(secondTitleLink).toHaveAttribute('href', secondEnglishArticleRoute);
-    await expect(secondCtaLink).toHaveAttribute('href', secondEnglishArticleRoute);
 
     const thirdTitleLink = page.getByRole('link', {
       name: thirdEnglishArticleTitle,
@@ -287,7 +275,7 @@ test.describe('published articles', () => {
   test('shows the Polish article on the Polish articles index', async ({ page }) => {
     await page.goto('/pl/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(9);
+    await expect(page.locator('.entry-list article')).toHaveCount(8);
     await expect(page.locator('.entry-list')).toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('.entry-list')).toContainText(mirrorPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiPathPolishArticleTitle);
@@ -364,7 +352,7 @@ test.describe('published articles', () => {
     await page.goto('/pl/articles/');
 
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(9);
+    expect(titles).toHaveLength(8);
     expect(titles).toEqual(expect.arrayContaining([
       generativeSearchPolishArticleTitle,
       aiThinkingPolishArticleTitle,
@@ -373,7 +361,6 @@ test.describe('published articles', () => {
       aiPathPolishArticleTitle,
       mirrorPolishArticleTitle,
       thirdPolishArticleTitle,
-      'Model nie pamięta. Model ma kontekst.',
       'Nie chodzi tylko o prompt'
     ]));
     await expect(page.locator('.entry-list')).not.toContainText(
@@ -390,25 +377,6 @@ test.describe('published articles', () => {
 
     await expect(titleLink).toHaveAttribute('href', thirdPolishArticleRoute);
     await expect(ctaLink).toHaveAttribute('href', thirdPolishArticleRoute);
-    await expect(ctaLink).toBeVisible();
-  });
-
-  test('shows the second Polish article on the Polish articles index', async ({ page }) => {
-    await page.goto('/pl/articles/');
-
-    await expect(page.locator('.entry-list')).toContainText(
-      'Model nie pamięta. Model ma kontekst.'
-    );
-    const titleLink = page.getByRole('link', {
-      name: 'Model nie pamięta. Model ma kontekst.',
-      exact: true
-    });
-    const ctaLink = page.getByRole('link', {
-      name: 'Czytaj artykuł: Model nie pamięta. Model ma kontekst.'
-    });
-
-    await expect(titleLink).toHaveAttribute('href', secondPolishArticleRoute);
-    await expect(ctaLink).toHaveAttribute('href', secondPolishArticleRoute);
     await expect(ctaLink).toBeVisible();
   });
 
@@ -514,7 +482,7 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose a[href="/pl/concepts/epistemic-vigilance/"]')).toBeVisible();
   });
 
-  test('renders the second Polish article detail page with byline, citation, rights notice and concept links', async ({ page }) => {
+  test('renders the migrated Polish context note with preserved body and visual', async ({ page }) => {
     await page.goto(secondPolishArticleRoute);
 
     await expect(page.locator('.content-header h1')).toHaveText(
@@ -524,7 +492,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026, 28 marca). Model nie pamięta. Model ma kontekst. Prompted Psyche. https://promptedpsyche.com/pl/articles/model-nie-pamieta-model-ma-kontekst/'
+      'Mamczur, F. (2026, 28 marca). Model nie pamięta. Model ma kontekst. Prompted Psyche. https://promptedpsyche.com/pl/notes/model-nie-pamieta-model-ma-kontekst/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
@@ -1447,7 +1415,7 @@ test.describe('published articles', () => {
     expect(overflows).toEqual([]);
   });
 
-  test('renders the second English article detail page with byline, citation, rights notice and concept links', async ({ page }) => {
+  test('renders the migrated English context note with preserved body and visual', async ({ page }) => {
     await page.goto(secondEnglishArticleRoute);
 
     await expect(page.locator('.content-header h1')).toHaveText(
@@ -1457,7 +1425,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      'Mamczur, F. (2026, March 28). The model does not remember. It works with context. Prompted Psyche. https://promptedpsyche.com/articles/the-model-does-not-remember-it-works-with-context/'
+      'Mamczur, F. (2026, March 28). The model does not remember. It works with context. Prompted Psyche. https://promptedpsyche.com/notes/the-model-does-not-remember-it-works-with-context/'
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(

@@ -106,7 +106,16 @@ const llmNotePair = {
   enDate: '2026, July 22'
 };
 
-const allNotePairs = [...notePairs, llmNotePair];
+const contextNotePair = {
+  plTitle: 'Model nie pamięta. Model ma kontekst.',
+  enTitle: 'The model does not remember. It works with context.',
+  plRoute: '/pl/notes/model-nie-pamieta-model-ma-kontekst/',
+  enRoute: '/notes/the-model-does-not-remember-it-works-with-context/',
+  plDate: '2026, 28 marca',
+  enDate: '2026, March 28'
+};
+
+const allNotePairs = [...notePairs, llmNotePair, contextNotePair];
 
 test.describe('published notes', () => {
   test('shows public English notes on the English notes index', async ({ page }) => {
@@ -288,6 +297,95 @@ test.describe('published notes', () => {
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
         expect(overflow, `${testCase.route} at ${width}px`).toBe(false);
       }
+    }
+  });
+
+  test('publishes the context and memory explainer as Notes without changing its evidence package', async ({ page, request }) => {
+    const cases = [
+      {
+        route: contextNotePair.enRoute,
+        alternate: contextNotePair.plRoute,
+        title: contextNotePair.enTitle,
+        lang: 'en',
+        label: 'Note',
+        readingTime: '9 min read',
+        citationDate: contextNotePair.enDate,
+        bibliography: 'References',
+        caption: 'available context',
+        conceptPrefix: '/concepts/'
+      },
+      {
+        route: contextNotePair.plRoute,
+        alternate: contextNotePair.enRoute,
+        title: contextNotePair.plTitle,
+        lang: 'pl',
+        label: 'Notatka',
+        readingTime: '9 min czytania',
+        citationDate: contextNotePair.plDate,
+        bibliography: 'Źródła i dalsza lektura',
+        caption: 'dostępnym kontekście',
+        conceptPrefix: '/pl/concepts/'
+      }
+    ] as const;
+
+    for (const testCase of cases) {
+      const response = await request.get(testCase.route);
+      expect(response.ok(), testCase.route).toBe(true);
+
+      await page.goto(testCase.route);
+      await expect(page.locator('html')).toHaveAttribute('lang', testCase.lang);
+      await expect(page.locator('.eyebrow')).toHaveText(testCase.label);
+      await expect(page.locator('.content-header h1')).toHaveText(testCase.title);
+      await expect(page.locator('[data-qa="article-aside-label"]')).toHaveText(
+        testCase.lang === 'pl' ? 'W tekście' : 'In this note'
+      );
+      await expect(page.locator('[data-qa="article-byline"]')).toContainText(testCase.readingTime);
+      await expect(page.locator('[data-qa="article-byline"] time')).toHaveAttribute(
+        'datetime',
+        '2026-03-28T00:00:00.000Z'
+      );
+      await expect(page.locator('[data-qa="in-brief"] p')).toHaveCount(4);
+      await expect(page.locator('.article-hero-figure img')).toHaveAttribute(
+        'src',
+        '/images/articles/model-context-window-diagram.svg'
+      );
+      await expect(page.locator('.article-hero-figure figcaption')).toContainText(testCase.caption);
+      await expect(page.locator('.editorial-aside')).toContainText(
+        testCase.lang === 'pl' ? 'W praktyce' : 'In practice'
+      );
+      await expect(page.locator(`.prose a[href="${testCase.conceptPrefix}context-window/"]`)).toBeVisible();
+      await expect(page.locator(`.prose a[href="${testCase.conceptPrefix}token/"]`)).toBeVisible();
+      await expect(page.locator('a[data-footnote-ref]')).toHaveCount(0);
+      await expect(page.locator('.prose table')).toHaveCount(0);
+      const bibliographyHeading = page.getByRole('heading', {
+        name: testCase.bibliography,
+        exact: true
+      });
+      await expect(bibliographyHeading.locator('xpath=following-sibling::ul[1]/li')).toHaveCount(8);
+      await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
+        `Mamczur, F. (${testCase.citationDate}). ${testCase.title} Prompted Psyche. https://promptedpsyche.com${testCase.route}`
+      );
+      await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+        'href',
+        `https://promptedpsyche.com${testCase.route}`
+      );
+      await expect(
+        page.locator(`link[rel="alternate"][hreflang="${testCase.lang === 'en' ? 'pl' : 'en'}"]`)
+      ).toHaveAttribute('href', `https://promptedpsyche.com${testCase.alternate}`);
+      await expect(page.locator('link[rel="alternate"][hreflang="x-default"]')).toHaveAttribute(
+        'href',
+        `https://promptedpsyche.com${contextNotePair.enRoute}`
+      );
+
+      const structuredDataText = await page
+        .locator('script[type="application/ld+json"]')
+        .evaluateAll((scripts) => scripts.map((script) => script.textContent ?? '').join('\n'));
+      expect(structuredDataText).toContain('"@type":"BlogPosting"');
+      expect(structuredDataText).not.toContain('"@type":"Article"');
+      expect(structuredDataText).toContain('"@id":"https://promptedpsyche.com/#feliks-mamczur"');
+      expect(structuredDataText).toContain('"@id":"https://promptedpsyche.com/#publisher"');
+      expect(structuredDataText).toContain('"@id":"https://promptedpsyche.com/#website"');
     }
   });
 

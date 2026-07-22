@@ -223,12 +223,12 @@ test.describe('author entity structured data', () => {
     });
   }
 
-  test('connects all 18 public articles to the same author entity', async ({ request }, testInfo) => {
+  test('connects all 16 public articles to the same author entity', async ({ request }, testInfo) => {
     test.skip(testInfo.project.name !== 'desktop-1440');
     const entries = await readSearchEntries(request);
     const articles = entries.filter((entry) => entry.type === 'article');
 
-    expect(articles).toHaveLength(18);
+    expect(articles).toHaveLength(16);
     for (const entry of articles) {
       const response = await request.get(entry.url);
       expect(response.ok(), entry.url).toBe(true);
@@ -249,7 +249,7 @@ test.describe('author entity structured data', () => {
     const entries = await readSearchEntries(request);
     const notes = entries.filter((entry) => entry.type === 'note');
 
-    expect(notes).toHaveLength(12);
+    expect(notes).toHaveLength(14);
     for (const entry of notes) {
       const response = await request.get(entry.url);
       expect(response.ok(), entry.url).toBe(true);
