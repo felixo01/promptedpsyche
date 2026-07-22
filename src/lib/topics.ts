@@ -101,12 +101,6 @@ const en = {
       'A practical account of context windows, apparent memory and the limits of continuity in model interaction.',
       '/articles/the-model-does-not-remember-it-works-with-context/'
     ),
-    terminology: resource(
-      'article',
-      'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?',
-      'A practical map of the organisation, product, model family and broader technology category.',
-      '/articles/openai-chatgpt-gpt-llm-difference/'
-    ),
     interpretation: resource(
       'article',
       'AI does not read people. It helps make sense of the situation',
@@ -146,6 +140,12 @@ const en = {
     messageAnalysis: resource('practice', 'How to analyze a message without diagnosing a person', 'Use AI to organize textual evidence without turning an interpretation into a diagnosis.', '/practice/how-to-analyze-a-message-without-diagnosing-a-person/')
   },
   notes: {
+    terminology: resource(
+      'note',
+      'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?',
+      'A practical map of the organisation, product, model family and broader technology category.',
+      '/notes/openai-chatgpt-gpt-llm-difference/'
+    ),
     fluent: resource('note', 'Fluent does not mean true', 'A short note on why coherence and confidence are weak substitutes for verification.', '/notes/fluent-does-not-mean-true/'),
     summary: resource('note', 'A good summary is not the same as a good decision', 'Compression can support judgment, but it cannot carry the responsibility for a choice.', '/notes/a-good-summary-is-not-the-same-as-a-good-decision/'),
     text: resource('note', 'The model sees text, not the whole relationship', 'A reminder that language models work with the material provided, not with complete social reality.', '/notes/the-model-sees-text-not-the-whole-relationship/'),
@@ -191,12 +191,6 @@ const pl = {
       'Praktyczne wyjaśnienie okna kontekstu, pozornej pamięci i granic ciągłości w rozmowie z modelem.',
       '/pl/articles/model-nie-pamieta-model-ma-kontekst/'
     ),
-    terminology: resource(
-      'article',
-      'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
-      'Praktyczna mapa organizacji, produktu, rodziny modeli i szerszej kategorii technologii.',
-      '/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/'
-    ),
     interpretation: resource(
       'article',
       'AI nie czyta ludzi. Pomaga uporządkować sytuację',
@@ -236,6 +230,12 @@ const pl = {
     messageAnalysis: resource('practice', 'Jak analizować wiadomość bez diagnozowania człowieka', 'Użyj AI do uporządkowania tekstu bez zamieniania interpretacji w diagnozę.', '/pl/practice/jak-analizowac-wiadomosc-bez-diagnozowania-czlowieka/')
   },
   notes: {
+    terminology: resource(
+      'note',
+      'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
+      'Praktyczna mapa organizacji, produktu, rodziny modeli i szerszej kategorii technologii.',
+      '/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/'
+    ),
     fluent: resource('note', 'Brzmi dobrze, ale to nie znaczy, że jest prawdziwe', 'Krótka notatka o tym, dlaczego spójność i pewny ton nie zastępują weryfikacji.', '/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/'),
     summary: resource('note', 'Dobre streszczenie to jeszcze nie dobra decyzja', 'Kompresja może wspierać osąd, ale nie przejmuje odpowiedzialności za wybór.', '/pl/notes/dobre-streszczenie-to-jeszcze-nie-dobra-decyzja/'),
     text: resource('note', 'Model widzi tekst, a nie całą relację', 'Przypomnienie, że model pracuje na dostarczonym materiale, a nie na pełnej rzeczywistości społecznej.', '/pl/notes/model-widzi-tekst-nie-cala-relacje/'),
@@ -357,7 +357,7 @@ const topicHubs: Record<Locale, TopicHub[]> = {
       start: en.articles.cognition,
       articlesTitle: 'Articles',
       articlesIntro: 'Read the main synthesis first, then use the related essays to connect cognitive practice with context and trust.',
-      articles: [en.articles.cognition, en.articles.terminology, en.articles.trust, en.articles.context, en.articles.generativeSearch],
+      articles: [en.articles.cognition, en.articles.trust, en.articles.context, en.articles.generativeSearch],
       conceptsTitle: 'Concepts',
       conceptsIntro: 'These entries distinguish cognitive demand, external support, self-monitoring and the loss of practiced capability.',
       concepts: [en.concepts.offloading, en.concepts.cognitiveLoad, en.concepts.metacognition, en.concepts.deskilling, en.concepts.aiLiteracy, en.concepts.llm, en.concepts.mentalModel],
@@ -365,8 +365,8 @@ const topicHubs: Record<Locale, TopicHub[]> = {
       practiceIntro: 'Use these scenarios to keep interpretation, resistance and authorship in the human part of the process.',
       practice: [en.practice.assumptions, en.practice.counterargument, en.practice.secondReader],
       notesTitle: 'Notes',
-      notesIntro: 'Two short reminders about compression and the limits of model context.',
-      notes: [en.notes.summary, en.notes.text],
+      notesIntro: 'Use these notes to separate terminology, compression and the limits of model context.',
+      notes: [en.notes.terminology, en.notes.summary, en.notes.text],
       readingPathTitle: 'Suggested reading path',
       readingPath: [
         { resource: en.articles.cognition, reason: 'Start with the evidence and the distinction between performance and learning.' },
@@ -569,7 +569,7 @@ topicHubs.pl = [
     start: pl.articles.cognition,
     articlesTitle: 'Artykuły',
     articlesIntro: 'Najpierw przeczytaj główną syntezę, a później połącz praktykę poznawczą z kontekstem i zaufaniem.',
-    articles: [pl.articles.cognition, pl.articles.terminology, pl.articles.trust, pl.articles.context, pl.articles.generativeSearch],
+    articles: [pl.articles.cognition, pl.articles.trust, pl.articles.context, pl.articles.generativeSearch],
     conceptsTitle: 'Pojęcia',
     conceptsIntro: 'Te hasła rozdzielają wymagania poznawcze, zewnętrzne wsparcie, samokontrolę i utratę ćwiczonej zdolności.',
     concepts: [pl.concepts.offloading, pl.concepts.cognitiveLoad, pl.concepts.metacognition, pl.concepts.deskilling, pl.concepts.aiLiteracy, pl.concepts.llm, pl.concepts.mentalModel],
@@ -577,8 +577,8 @@ topicHubs.pl = [
     practiceIntro: 'Te scenariusze pozostawiają interpretację, opór i autorstwo po stronie człowieka.',
     practice: [pl.practice.assumptions, pl.practice.counterargument, pl.practice.secondReader],
     notesTitle: 'Notatki',
-    notesIntro: 'Dwa krótkie przypomnienia o kompresji i granicach kontekstu modelu.',
-    notes: [pl.notes.summary, pl.notes.text],
+    notesIntro: 'Te notatki porządkują terminologię, kompresję i granice kontekstu modelu.',
+    notes: [pl.notes.terminology, pl.notes.summary, pl.notes.text],
     readingPathTitle: 'Sugerowana ścieżka czytania',
     readingPath: [
       { resource: pl.articles.cognition, reason: 'Zacznij od dowodów i różnicy między wykonaniem zadania a uczeniem się.' },

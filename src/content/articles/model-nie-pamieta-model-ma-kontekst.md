@@ -112,7 +112,7 @@ Warto odróżniać [model output](/pl/concepts/model-output/) od wiedzy. Odpowie
 
 Model nie pamięta tak jak człowiek. Model pracuje na kontekście. Dlatego dojrzała praca z AI zaczyna się nie od magicznego promptu, ale od zrozumienia, co właściwie dajemy modelowi do myślenia.
 
-Szerszą mapę modelu, produktu i organizacji pokazuje artykuł [OpenAI, ChatGPT, GPT i LLM - czym się różnią?](/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/).
+Szerszą mapę modelu, produktu i organizacji pokazuje notatka [OpenAI, ChatGPT, GPT i LLM - czym się różnią?](/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/).
 
 ## Źródła i dalsza lektura
 

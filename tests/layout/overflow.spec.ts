@@ -11,7 +11,7 @@ const routes = [
   '/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/',
   '/articles/trust-in-the-age-of-ready-made-answers/',
   '/articles/are-we-afraid-of-ai-or-of-ourselves/',
-  '/articles/openai-chatgpt-gpt-llm-difference/',
+  '/notes/openai-chatgpt-gpt-llm-difference/',
   '/articles/when-search-becomes-an-answer/',
   '/pl/articles/nie-chodzi-tylko-o-prompt/',
   '/pl/articles/model-nie-pamieta-model-ma-kontekst/',
@@ -19,7 +19,7 @@ const routes = [
   '/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/',
   '/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/',
   '/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/',
-  '/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/',
+  '/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/',
   '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/',
   '/notes/',
   '/pl/notes/',
@@ -82,8 +82,8 @@ const packageRoutes = [
   '/pl/concepts/',
   '/concepts/llm/',
   '/pl/concepts/llm/',
-  '/articles/openai-chatgpt-gpt-llm-difference/',
-  '/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/',
+  '/notes/openai-chatgpt-gpt-llm-difference/',
+  '/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/',
   '/topics/ai-and-cognition/',
   '/pl/topics/ai-i-myslenie/'
 ];

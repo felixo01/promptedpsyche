@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/articles/openai-chatgpt-gpt-llm-difference/",
+      "destination": "/notes/openai-chatgpt-gpt-llm-difference/",
+      "permanent": true
+    },
+    {
+      "source": "/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/",
+      "destination": "/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/tags/(.*)",

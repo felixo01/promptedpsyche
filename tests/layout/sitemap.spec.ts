@@ -89,8 +89,10 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
     expect(sitemap).toContain('/articles/dont-ask-whether-ai-makes-us-dumber/');
     expect(sitemap).toContain('/pl/articles/nie-pytaj-czy-ai-nas-oglupia/');
-    expect(sitemap).toContain('/articles/openai-chatgpt-gpt-llm-difference/');
-    expect(sitemap).toContain('/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/');
+    expect(sitemap).toContain('/notes/openai-chatgpt-gpt-llm-difference/');
+    expect(sitemap).toContain('/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/');
+    expect(sitemap).not.toContain('/articles/openai-chatgpt-gpt-llm-difference/');
+    expect(sitemap).not.toContain('/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/');
     expect(sitemap).toContain('/articles/when-search-becomes-an-answer/');
     expect(sitemap).toContain('/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/');
     expect(sitemap).toContain('/concepts/llm/');
@@ -111,8 +113,10 @@ test.describe('built sitemap and RSS policy', () => {
     expect(rss).toContain('/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/');
     expect(rss).toContain('/articles/dont-ask-whether-ai-makes-us-dumber/');
     expect(rss).toContain('/pl/articles/nie-pytaj-czy-ai-nas-oglupia/');
-    expect(rss).toContain('/articles/openai-chatgpt-gpt-llm-difference/');
-    expect(rss).toContain('/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/');
+    expect(rss).toContain('/notes/openai-chatgpt-gpt-llm-difference/');
+    expect(rss).toContain('/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/');
+    expect(rss).not.toContain('/articles/openai-chatgpt-gpt-llm-difference/');
+    expect(rss).not.toContain('/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/');
     expect(rss).toContain('/articles/when-search-becomes-an-answer/');
     expect(rss).toContain('/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/');
     expect(
@@ -130,7 +134,13 @@ test.describe('built sitemap and RSS policy', () => {
     expect(
       readRssItemByLink(
         rss,
-        'https://promptedpsyche.com/articles/openai-chatgpt-gpt-llm-difference/'
+        'https://promptedpsyche.com/notes/openai-chatgpt-gpt-llm-difference/'
+      )
+    ).toContain('<pubDate>Wed, 22 Jul 2026');
+    expect(
+      readRssItemByLink(
+        rss,
+        'https://promptedpsyche.com/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/'
       )
     ).toContain('<pubDate>Wed, 22 Jul 2026');
     expect(
@@ -201,5 +211,22 @@ test.describe('built sitemap and RSS policy', () => {
     expect(robotHeaders).not.toEqual(
       expect.arrayContaining([expect.objectContaining({ source: '/(.*)' })])
     );
+  });
+
+  test('defines permanent platform redirects for the former article routes', () => {
+    const config = readVercelConfig();
+
+    expect(config.redirects).toEqual([
+      {
+        source: '/articles/openai-chatgpt-gpt-llm-difference/',
+        destination: '/notes/openai-chatgpt-gpt-llm-difference/',
+        permanent: true
+      },
+      {
+        source: '/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/',
+        destination: '/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/',
+        permanent: true
+      }
+    ]);
   });
 });

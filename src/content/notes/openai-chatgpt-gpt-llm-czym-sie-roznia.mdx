@@ -12,17 +12,24 @@ tags:
   - modele mentalne
 author: "Feliks Mamczur"
 readingTime: "11 min czytania"
-inBrief:
-  - "OpenAI jest organizacją, ChatGPT produktem, GPT rodziną modeli, a LLM szerszą kategorią."
-  - "ChatGPT może łączyć modele z kontekstem, pamięcią, wyszukiwaniem, plikami, narzędziami i innymi warstwami systemu."
-  - "Zmiana zachowania produktu nie dowodzi, że zmienił się wyłącznie model bazowy."
-  - "Rozdzielenie tych poziomów pomaga lepiej oceniać błędy, prywatność, źródła, aktualizacje i odpowiedzialność."
+context: "Notatka"
 lang: "pl"
 translationKey: "openai-chatgpt-gpt-llm-differences"
 ---
 
 import LlmEntityComparison from '../../components/LlmEntityComparison.astro';
 import LlmEntityMap from '../../components/LlmEntityMap.astro';
+import InBrief from '../../components/InBrief.astro';
+
+<InBrief
+  items={[
+    'OpenAI jest organizacją, ChatGPT produktem, GPT rodziną modeli, a LLM szerszą kategorią.',
+    'ChatGPT może łączyć modele z kontekstem, pamięcią, wyszukiwaniem, plikami, narzędziami i innymi warstwami systemu.',
+    'Zmiana zachowania produktu nie dowodzi, że zmienił się wyłącznie model bazowy.',
+    'Rozdzielenie tych poziomów pomaga lepiej oceniać błędy, prywatność, źródła, aktualizacje i odpowiedzialność.'
+  ]}
+  lang="pl"
+/>
 
 OpenAI, ChatGPT, GPT i LLM nie są czterema określeniami tej samej rzeczy. Najkrótsza mapa wygląda tak: OpenAI oferuje między innymi produkt ChatGPT. ChatGPT korzysta z modeli i innych warstw systemu. Część modeli należy do rodziny GPT. GPT jest jedną z rodzin w szerszej kategorii LLM. To relacje między poziomami, nie zestaw synonimów.[^1]
 
@@ -73,7 +80,7 @@ W ChatGPT można również tworzyć własne GPT-y, czyli skonfigurowane wersje p
 
 LLM, czyli duży model językowy, jest kategorią technologii. Obejmuje modele uczące się prawidłowości języka w dużej skali i używane do generowania lub przekształcania sekwencji tokenów. GPT jest jedną rodziną LLM, ale nie każdy LLM jest GPT. Inne organizacje i społeczności rozwijają własne rodziny modeli, a sama kategoria nie należy do jednej firmy.[^8]
 
-LLM nie jest również nazwą całego chatbota. Sam model nie musi mieć interfejsu, konta użytkownika, pamięci rozmów, dostępu do internetu ani zasad przechowywania danych. Te elementy powstają na poziomie produktu lub większego systemu. Szczegółową definicję, trening, tokeny, kontekst i relację z Transformerem rozwija Concept [LLM (duży model językowy)](/pl/concepts/llm/). Ten artykuł pozostaje przy mapie encji.
+LLM nie jest również nazwą całego chatbota. Sam model nie musi mieć interfejsu, konta użytkownika, pamięci rozmów, dostępu do internetu ani zasad przechowywania danych. Te elementy powstają na poziomie produktu lub większego systemu. Szczegółową definicję, trening, tokeny, kontekst i relację z Transformerem rozwija Concept [LLM (duży model językowy)](/pl/concepts/llm/). Ta notatka pozostaje przy mapie tych pojęć i relacji między nimi.
 
 Nie każda generatywna AI jest LLM. Modele obrazu, dźwięku lub wideo mogą należeć do innych klas, choć współczesne systemy często łączą kilka modalności. Także `foundation model` nie jest dokładnym synonimem LLM: termin podkreśla szeroki trening i możliwość adaptacji do wielu zastosowań, w tym poza językiem.[^9]
 

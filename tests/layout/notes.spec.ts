@@ -97,15 +97,26 @@ const notePairs = [
   }
 ];
 
+const llmNotePair = {
+  plTitle: 'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
+  enTitle: 'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?',
+  plRoute: '/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/',
+  enRoute: '/notes/openai-chatgpt-gpt-llm-difference/',
+  plDate: '2026, 22 lipca',
+  enDate: '2026, July 22'
+};
+
+const allNotePairs = [...notePairs, llmNotePair];
+
 test.describe('published notes', () => {
   test('shows public English notes on the English notes index', async ({ page }) => {
     await page.goto('/notes/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(notePairs.length);
+    await expect(page.locator('.entry-list article')).toHaveCount(allNotePairs.length);
     await expect(page.locator('body')).not.toContainText('Notes are in preparation.');
     await expect(page.locator('body')).not.toContainText('A good summary is not a good decision');
 
-    for (const note of notePairs) {
+    for (const note of allNotePairs) {
       await expect(page.locator('.entry-list')).toContainText(note.enTitle);
       await expect(page.locator('body')).not.toContainText(note.plTitle);
 
@@ -121,17 +132,17 @@ test.describe('published notes', () => {
     const dates = await page.locator('.entry-list time').evaluateAll((items) =>
       items.map((item) => item.getAttribute('datetime'))
     );
-    expect(new Set(dates).size).toBe(notePairs.length);
+    expect(new Set(dates).size).toBe(allNotePairs.length);
   });
 
   test('shows public Polish notes on the Polish notes index', async ({ page }) => {
     await page.goto('/pl/notes/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(notePairs.length);
+    await expect(page.locator('.entry-list article')).toHaveCount(allNotePairs.length);
     await expect(page.locator('body')).not.toContainText('Notatki są w przygotowaniu.');
     await expect(page.locator('body')).not.toContainText('Dobre streszczenie nie jest dobrą decyzją');
 
-    for (const note of notePairs) {
+    for (const note of allNotePairs) {
       await expect(page.locator('.entry-list')).toContainText(note.plTitle);
       await expect(page.locator('body')).not.toContainText(note.enTitle);
 
@@ -147,11 +158,11 @@ test.describe('published notes', () => {
     const dates = await page.locator('.entry-list time').evaluateAll((items) =>
       items.map((item) => item.getAttribute('datetime'))
     );
-    expect(new Set(dates).size).toBe(notePairs.length);
+    expect(new Set(dates).size).toBe(allNotePairs.length);
   });
 
   test('keeps matching publication dates for note counterparts', async ({ page }) => {
-    for (const note of notePairs) {
+    for (const note of allNotePairs) {
       await page.goto(note.enRoute);
       const enDate = await page.locator('[data-qa="article-byline"] time').getAttribute('datetime');
 
@@ -163,7 +174,7 @@ test.describe('published notes', () => {
   });
 
   test('does not expose Polish notes on English routes', async ({ request }) => {
-    for (const note of notePairs) {
+    for (const note of allNotePairs) {
       const leakedRoute = await request.get(note.plRoute.replace('/pl', ''));
       expect(leakedRoute.ok()).toBe(false);
     }
@@ -183,6 +194,101 @@ test.describe('published notes', () => {
     await expect(page.locator('.prompt-example--bad')).toContainText('Do not ask this');
     await expect(page.locator('.prompt-example--better')).toContainText('Better question');
     await expect(page.getByRole('button', { name: 'Copy example prompt' })).toHaveCount(2);
+  });
+
+  test('publishes the bilingual LLM explainer as Notes without changing its evidence package', async ({ page, request }) => {
+    const cases = [
+      {
+        route: llmNotePair.enRoute,
+        alternate: llmNotePair.plRoute,
+        title: llmNotePair.enTitle,
+        lang: 'en',
+        label: 'Note',
+        readingTime: '10 min read',
+        bibliography: 'Bibliography',
+        concept: '/concepts/llm/'
+      },
+      {
+        route: llmNotePair.plRoute,
+        alternate: llmNotePair.enRoute,
+        title: llmNotePair.plTitle,
+        lang: 'pl',
+        label: 'Notatka',
+        readingTime: '11 min czytania',
+        bibliography: 'Bibliografia',
+        concept: '/pl/concepts/llm/'
+      }
+    ] as const;
+
+    for (const testCase of cases) {
+      const response = await request.get(testCase.route);
+      expect(response.ok(), testCase.route).toBe(true);
+
+      await page.setViewportSize({ width: 1280, height: 900 });
+      await page.goto(testCase.route);
+
+      await expect(page.locator('html')).toHaveAttribute('lang', testCase.lang);
+      await expect(page.locator('.eyebrow')).toHaveText(testCase.label);
+      await expect(page.locator('.content-header h1')).toHaveText(testCase.title);
+      await expect(page.locator('[data-qa="article-byline"]')).toContainText(testCase.readingTime);
+      await expect(page.locator('[data-qa="article-byline"] time')).toHaveAttribute(
+        'datetime',
+        '2026-07-22T00:00:00.000Z'
+      );
+      await expect(page.locator('[data-qa="in-brief"] p')).toHaveCount(4);
+      await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
+      await expect(page.locator('[data-qa="article-byline"]')).not.toContainText('DOI');
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+        'href',
+        `https://promptedpsyche.com${testCase.route}`
+      );
+      await expect(
+        page.locator(`link[rel="alternate"][hreflang="${testCase.lang === 'en' ? 'pl' : 'en'}"]`)
+      ).toHaveAttribute('href', `https://promptedpsyche.com${testCase.alternate}`);
+      await expect(page.locator('link[rel="alternate"][hreflang="x-default"]')).toHaveAttribute(
+        'href',
+        `https://promptedpsyche.com${llmNotePair.enRoute}`
+      );
+      await expect(page.locator(`.language-switcher a[href="${testCase.alternate}"]`)).toBeVisible();
+      await expect(page.locator(`.prose a[href="${testCase.concept}"]`)).toBeVisible();
+
+      const structuredDataText = await page
+        .locator('script[type="application/ld+json"]')
+        .evaluateAll((scripts) => scripts.map((script) => script.textContent ?? '').join('\n'));
+      expect(structuredDataText).toContain('"@type":"BlogPosting"');
+      expect(structuredDataText).not.toContain('"@type":"Article"');
+      expect(structuredDataText).toContain('"@id":"https://promptedpsyche.com/#feliks-mamczur"');
+      expect(structuredDataText).toContain('"@id":"https://promptedpsyche.com/#publisher"');
+      expect(structuredDataText).toContain('"@id":"https://promptedpsyche.com/#website"');
+      expect(structuredDataText).not.toContain('"propertyID":"DOI"');
+
+      const comparison = page.locator('[data-qa="llm-entity-comparison"]');
+      await expect(comparison.locator('thead th')).toHaveCount(5);
+      await expect(comparison.locator('tbody tr')).toHaveCount(4);
+      await expect(comparison.locator('.entity-comparison__cards .entity-card')).toHaveCount(4);
+
+      const map = page.locator('[data-qa="llm-entity-map"]');
+      await expect(map.locator('[data-node="OpenAI"]')).toHaveCount(1);
+      await expect(map.locator('[data-node="ChatGPT"]')).toHaveCount(1);
+      await expect(map.locator('[data-node="GPT"]')).toHaveCount(1);
+      await expect(map.locator('[data-node="LLM"]')).toHaveCount(1);
+      await expect(map.locator('[data-qa="llm-entity-map-semantic"] dl > div')).toHaveCount(7);
+      await expect(map.locator('[data-qa="llm-entity-map-semantic"] ol > li')).toHaveCount(7);
+
+      await expect(page.locator('a[data-footnote-ref]')).toHaveCount(15);
+      await expect(page.locator('section[data-footnotes] li')).toHaveCount(15);
+      const bibliographyHeading = page.getByRole('heading', { name: testCase.bibliography, exact: true });
+      await expect(bibliographyHeading).toBeVisible();
+      await expect(bibliographyHeading.locator('xpath=following-sibling::ol[1]/li')).toHaveCount(24);
+
+      for (const width of [390, 320]) {
+        await page.setViewportSize({ width, height: 900 });
+        await expect(comparison.locator('.entity-comparison__cards .entity-card').first()).toBeVisible();
+        await expect(comparison.locator('.entity-comparison__table')).toBeHidden();
+        const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+        expect(overflow, `${testCase.route} at ${width}px`).toBe(false);
+      }
+    }
   });
 
   for (const note of notePairs) {

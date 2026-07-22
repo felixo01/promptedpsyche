@@ -171,7 +171,13 @@ const asideLabels = isConceptEntry
         label: 'W tekście',
         items: ['Kontekst', 'Źródła', 'Powiązane pojęcia']
       }
-    : {
+    : isNoteEntry
+      ? {
+          aria: 'Note information',
+          label: 'In this note',
+          items: ['Context', 'Sources', 'Related concepts']
+        }
+      : {
         aria: 'Article information',
         label: 'In this article',
         items: ['Context', 'Sources', 'Related concepts']

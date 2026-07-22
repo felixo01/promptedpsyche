@@ -12,17 +12,24 @@ tags:
   - mental models
 author: "Feliks Mamczur"
 readingTime: "10 min read"
-inBrief:
-  - "OpenAI is an organisation, ChatGPT is a product, GPT is a model family and LLM is the broader category."
-  - "ChatGPT can combine models with context, memory, search, files, tools and other system layers."
-  - "A change in product behaviour does not prove that only the underlying model changed."
-  - "Keeping these levels separate improves how we assess errors, privacy, sources, updates and responsibility."
+context: "Note"
 lang: "en"
 translationKey: "openai-chatgpt-gpt-llm-differences"
 ---
 
 import LlmEntityComparison from '../../components/LlmEntityComparison.astro';
 import LlmEntityMap from '../../components/LlmEntityMap.astro';
+import InBrief from '../../components/InBrief.astro';
+
+<InBrief
+  items={[
+    'OpenAI is an organisation, ChatGPT is a product, GPT is a model family and LLM is the broader category.',
+    'ChatGPT can combine models with context, memory, search, files, tools and other system layers.',
+    'A change in product behaviour does not prove that only the underlying model changed.',
+    'Keeping these levels separate improves how we assess errors, privacy, sources, updates and responsibility.'
+  ]}
+  lang="en"
+/>
 
 OpenAI, ChatGPT, GPT and LLM are connected, but they name different things. OpenAI is the organisation. ChatGPT is a product and interface. GPT is a family of models. LLM is the broader category to which GPT and other model families belong. The product may combine a model with context, memory, search, files, tools and other system layers.[^1]
 
@@ -38,7 +45,7 @@ This is a practical map, not a claim that the system is always a four-box stack.
 
 ## OpenAI is the organisation
 
-Sources were checked on 22 July 2026. At that time, OpenAI described itself as an `AI research and deployment company`. Its structure included OpenAI Foundation, which controlled OpenAI Group PBC.[^2] The full legal structure is not the main subject of this article. For present purposes, it is enough to say that OpenAI is an organisation that conducts AI research and develops models and products.
+Sources were checked on 22 July 2026. At that time, OpenAI described itself as an `AI research and deployment company`. Its structure included OpenAI Foundation, which controlled OpenAI Group PBC.[^2] The full legal structure is not the main subject of this note. For present purposes, it is enough to say that OpenAI is an organisation that conducts AI research and develops models and products.
 
 ChatGPT is one of those products. It is not another name for everything OpenAI does. The organisation can make a model available, change technical documentation, or develop a separate system without turning that work into a ChatGPT feature. Conversely, a ChatGPT interface change need not mean that OpenAI has created a new model family.
 
