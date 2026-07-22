@@ -54,7 +54,7 @@ const authorEntityCopy = {
   },
   pl: {
     description:
-      'Feliks Mamczur jest autorem i twórcą Prompted Psyche. Pisze i konsultuje o AI, cyberpsychologii i Human-AI Interaction, korzystając także z doświadczenia w filmie, komunikacji i pracy twórczej.',
+      'Feliks Mamczur jest autorem i twórcą Prompted Psyche. Pisze o AI, cyberpsychologii i Human-AI Interaction oraz prowadzi konsultacje w tym zakresie. Korzysta także z doświadczenia w filmie, komunikacji i pracy twórczej.',
     jobTitle: 'Autor, filmowiec i konsultant Human-AI Interaction'
   }
 } as const;

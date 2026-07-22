@@ -75,17 +75,19 @@ test.describe('author entity structured data', () => {
     {
       route: '/about/',
       profileId: 'https://promptedpsyche.com/about/#profile-page',
+      profileName: 'About Feliks Mamczur',
       lang: 'en',
       authorUrl: 'https://promptedpsyche.com/about/',
-      description: 'Feliks Mamczur is the author and founder of Prompted Psyche.',
+      description: 'Feliks Mamczur is the author and founder of Prompted Psyche. He writes and consults on AI, cyberpsychology and Human-AI Interaction, drawing on experience in film, communication and creative work.',
       jobTitle: 'Author, filmmaker and Human-AI Interaction consultant'
     },
     {
       route: '/pl/about/',
       profileId: 'https://promptedpsyche.com/pl/about/#profile-page',
+      profileName: 'Feliks Mamczur — autor Prompted Psyche',
       lang: 'pl',
       authorUrl: 'https://promptedpsyche.com/pl/about/',
-      description: 'Feliks Mamczur jest autorem i twórcą Prompted Psyche.',
+      description: 'Feliks Mamczur jest autorem i twórcą Prompted Psyche. Pisze o AI, cyberpsychologii i Human-AI Interaction oraz prowadzi konsultacje w tym zakresie. Korzysta także z doświadczenia w filmie, komunikacji i pracy twórczej.',
       jobTitle: 'Autor, filmowiec i konsultant Human-AI Interaction'
     }
   ] as const;
@@ -126,6 +128,7 @@ test.describe('author entity structured data', () => {
       expect(profilePage).toMatchObject({
         '@id': aboutCase.profileId,
         '@type': 'ProfilePage',
+        name: aboutCase.profileName,
         url: `https://promptedpsyche.com${aboutCase.route}`,
         inLanguage: aboutCase.lang,
         isPartOf: { '@id': WEBSITE_ENTITY_ID }
@@ -154,7 +157,7 @@ test.describe('author entity structured data', () => {
           url: 'https://www.europeanfilmawards.eu/talent/feliks-mamczur/'
         }
       });
-      expect(person.description).toContain(aboutCase.description);
+      expect(person.description).toBe(aboutCase.description);
       expect(person.knowsAbout).toHaveLength(8);
       expect(person.sameAs.some((url: string) => url.includes('doi.org') || url.includes('zenodo'))).toBe(false);
       expect(profilePage?.hasPart).toHaveLength(5);
