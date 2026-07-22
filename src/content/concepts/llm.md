@@ -58,7 +58,7 @@ Tokenisation is explained in detail in the [Token](/concepts/token/) Concept. Th
 
 The Transformer is a neural-network architecture introduced in 2017. Its attention mechanism allows a model to calculate how elements in a sequence relate to one another. The GPT family uses this architectural lineage.[^9]
 
-The terms are not interchangeable. Not every transformer is an LLM, because transformers are also used outside language. Not every LLM is a GPT, because GPT is one model family. A product name such as ChatGPT belongs to another layer again. The article [OpenAI, ChatGPT, GPT and LLM: What Is the Difference?](/articles/openai-chatgpt-gpt-llm-difference/) maps those levels directly.
+The terms are not interchangeable. Not every transformer is an LLM, because transformers are also used outside language. Not every LLM is a GPT, because GPT is one model family. A product name such as ChatGPT belongs to another layer again. The note [OpenAI, ChatGPT, GPT and LLM: What Is the Difference?](/notes/openai-chatgpt-gpt-llm-difference/) maps those levels directly.
 
 ## Context is not perfect memory
 

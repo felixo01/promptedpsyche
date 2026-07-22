@@ -117,7 +117,7 @@ Właśnie dlatego [Human-AI Interaction](/pl/concepts/human-ai-interaction/) nie
 
 Nie chodzi więc tylko o prompt. Chodzi o to, kto pyta, po co pyta, co rozumie z odpowiedzi i co robi z nią dalej.
 
-Artykuł [OpenAI, ChatGPT, GPT i LLM - czym się różnią?](/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/) rozdziela produkt, rodzinę modeli i kategorię technologii obecną w tej interakcji.
+Notatka [OpenAI, ChatGPT, GPT i LLM - czym się różnią?](/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/) rozdziela produkt, rodzinę modeli i kategorię technologii obecną w tej interakcji.
 
 ## Źródła i dalsza lektura
 

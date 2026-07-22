@@ -58,7 +58,7 @@ Pełne wyjaśnienie tokenizacji ma własny Concept [Token](/pl/concepts/token/).
 
 Transformer jest architekturą sieci neuronowej opisaną w 2017 roku. Mechanizm uwagi (*attention*) pozwala modelowi obliczać zależności między elementami sekwencji. Modele z rodziny GPT są oparte na architekturze typu Transformer.[^9]
 
-Nie są to jednak synonimy. Nie każdy model oparty na Transformerze jest LLM, ponieważ tę architekturę stosuje się również poza językiem. Nie każdy LLM jest GPT, ponieważ GPT jest jedną rodziną modeli. A nazwa produktu, takiego jak ChatGPT, opisuje jeszcze inną warstwę. Szerzej wyjaśnia te poziomy artykuł [OpenAI, ChatGPT, GPT i LLM - czym się różnią?](/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/).
+Nie są to jednak synonimy. Nie każdy model oparty na Transformerze jest LLM, ponieważ tę architekturę stosuje się również poza językiem. Nie każdy LLM jest GPT, ponieważ GPT jest jedną rodziną modeli. A nazwa produktu, takiego jak ChatGPT, opisuje jeszcze inną warstwę. Szerzej wyjaśnia te poziomy notatka [OpenAI, ChatGPT, GPT i LLM - czym się różnią?](/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/).
 
 ## Kontekst nie jest doskonałą pamięcią
 

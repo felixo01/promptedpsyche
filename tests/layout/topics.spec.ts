@@ -170,13 +170,15 @@ test.describe('topic hubs', () => {
     }
   });
 
-  test('adds the bilingual LLM and generative-search articles without replacing the cognition flagship', async ({ page }) => {
+  test('keeps the bilingual LLM explainer in Notes without replacing the cognition flagship', async ({ page }) => {
     const cases = [
       {
         route: '/topics/ai-and-cognition/',
         flagship: "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing",
         flagshipHref: '/articles/dont-ask-whether-ai-makes-us-dumber/',
-        article: 'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?',
+        note: 'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?',
+        noteHref: '/notes/openai-chatgpt-gpt-llm-difference/',
+        notesHeading: 'Notes',
         concept: 'Large Language Model (LLM)',
         generativeSearchArticle: 'When Search Becomes an Answer: What Generative AI Changes About Learning',
         generativeSearchHref: '/articles/when-search-becomes-an-answer/'
@@ -185,7 +187,9 @@ test.describe('topic hubs', () => {
         route: '/pl/topics/ai-i-myslenie/',
         flagship: 'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać',
         flagshipHref: '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/',
-        article: 'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
+        note: 'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
+        noteHref: '/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/',
+        notesHeading: 'Notatki',
         concept: 'LLM (duży model językowy)',
         generativeSearchArticle: 'Wyszukiwarka odpowiada. Co zostaje uczniowi?',
         generativeSearchHref: '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/'
@@ -196,7 +200,17 @@ test.describe('topic hubs', () => {
       await page.goto(testCase.route);
       await expect(page.locator('[data-qa="topic-hub"]')).toContainText(testCase.flagship);
       await expect(page.locator('.topic-feature')).toHaveAttribute('href', testCase.flagshipHref);
-      await expect(page.getByRole('link', { name: testCase.article, exact: true })).toBeVisible();
+      const notesSection = page.locator('.topic-resource-group').filter({
+        has: page.getByRole('heading', { name: testCase.notesHeading, exact: true })
+      });
+      await expect(
+        notesSection.getByRole('link', { name: testCase.note, exact: true })
+      ).toHaveAttribute('href', testCase.noteHref);
+      await expect(
+        page.locator('.topic-resource-group').filter({
+          has: page.getByRole('heading', { name: /Articles|Artykuły/, exact: true })
+        }).getByRole('link', { name: testCase.note, exact: true })
+      ).toHaveCount(0);
       await expect(page.getByRole('link', { name: testCase.concept, exact: true })).toBeVisible();
       await expect(
         page.locator('.topic-resource-group').first().getByRole('link', {

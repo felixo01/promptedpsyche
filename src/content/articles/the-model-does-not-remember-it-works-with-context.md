@@ -104,7 +104,7 @@ This is not a ritual of distrust. It is [epistemic vigilance](/concepts/epistemi
 
 The model does not remember the way a person does. It works with context. That is why mature AI work begins not with a magic prompt, but with understanding what we actually give the model to work with.
 
-For the wider map of model, product and organisation, see [OpenAI, ChatGPT, GPT and LLM: What Is the Difference?](/articles/openai-chatgpt-gpt-llm-difference/).
+For the wider map of model, product and organisation, see the note [OpenAI, ChatGPT, GPT and LLM: What Is the Difference?](/notes/openai-chatgpt-gpt-llm-difference/).
 
 ## References
 

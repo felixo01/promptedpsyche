@@ -81,10 +81,10 @@ test.describe('local search', () => {
     const plIndex = await readSearchIndex(request, '/search-index.pl.json');
     const allText = JSON.stringify([...enIndex, ...plIndex]);
 
-    expect(countByType(enIndex, 'article')).toBe(10);
-    expect(countByType(plIndex, 'article')).toBe(10);
-    expect(countByType(enIndex, 'note')).toBe(5);
-    expect(countByType(plIndex, 'note')).toBe(5);
+    expect(countByType(enIndex, 'article')).toBe(9);
+    expect(countByType(plIndex, 'article')).toBe(9);
+    expect(countByType(enIndex, 'note')).toBe(6);
+    expect(countByType(plIndex, 'note')).toBe(6);
     expect(countByType(enIndex, 'concept')).toBe(27);
     expect(countByType(plIndex, 'concept')).toBe(27);
     expect(countByType(enIndex, 'practice')).toBe(showPractice ? 10 : 0);
@@ -117,8 +117,8 @@ test.describe('local search', () => {
         }),
         expect.objectContaining({
           title: 'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?',
-          url: '/articles/openai-chatgpt-gpt-llm-difference/',
-          type: 'article'
+          url: '/notes/openai-chatgpt-gpt-llm-difference/',
+          type: 'note'
         }),
         expect.objectContaining({
           title: 'Large Language Model (LLM)',
@@ -146,8 +146,8 @@ test.describe('local search', () => {
         }),
         expect.objectContaining({
           title: 'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
-          url: '/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/',
-          type: 'article'
+          url: '/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/',
+          type: 'note'
         }),
         expect.objectContaining({
           title: 'LLM (duży model językowy)',
@@ -156,6 +156,8 @@ test.describe('local search', () => {
         })
       ])
     );
+    expect(allText).not.toContain('/articles/openai-chatgpt-gpt-llm-difference/');
+    expect(allText).not.toContain('/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/');
     expect(enIndex.map((item) => item.title)).not.toContain(
       'Czy boimy się AI, czy boimy się samych siebie?'
     );
