@@ -28,6 +28,7 @@ Zadaniem człowieka nie jest tylko promptowanie. Ważne jest też decydowanie, j
 ## Powiązane pojęcia
 
 - [Token](/pl/concepts/token/)
+- [LLM (duży model językowy)](/pl/concepts/llm/)
 - [Model output](/pl/concepts/model-output/)
 - [AI literacy](/pl/concepts/ai-literacy/)
 - [Cognitive offloading](/pl/concepts/cognitive-offloading/)

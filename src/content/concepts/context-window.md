@@ -28,6 +28,7 @@ The human task is not only to prompt. It is also to decide what context matters,
 ## Related concepts
 
 - [Token](/concepts/token/)
+- [Large Language Model (LLM)](/concepts/llm/)
 - [Model output](/concepts/model-output/)
 - [AI literacy](/concepts/ai-literacy/)
 - [Cognitive offloading](/concepts/cognitive-offloading/)

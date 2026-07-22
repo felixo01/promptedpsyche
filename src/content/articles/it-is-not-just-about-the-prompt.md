@@ -105,6 +105,8 @@ The point is not to stop teaching prompts. Better questions still matter. The po
 
 It is not just about the prompt. It is about who asks, what context is available, what the answer becomes and what people do with it next.
 
+[OpenAI, ChatGPT, GPT and LLM: What Is the Difference?](/articles/openai-chatgpt-gpt-llm-difference/) separates the product, model family and technology category behind that interaction.
+
 ## References
 
 - Anthropic. (n.d.). *Context windows*. Claude Platform Docs. Retrieved July 2, 2026, from https://platform.claude.com/docs/en/build-with-claude/context-windows

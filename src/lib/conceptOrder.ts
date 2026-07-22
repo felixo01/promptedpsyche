@@ -1,5 +1,6 @@
 const conceptOrder = [
   'ai-literacy',
+  'llm',
   'token',
   'context-window',
   'model-output',

@@ -21,6 +21,8 @@ Treating model output as something to evaluate, not merely consume, is central t
 
 "The model said it" is not a source. A fluent output is not automatically reliable, and a cautious output is not automatically useless. The important question is how the output should be checked, constrained and used in a particular task.
 
+The [Large Language Model (LLM)](/concepts/llm/) Concept explains the model layer that can generate this kind of output.
+
 ## Sources and context
 
 - Amershi, S., Weld, D., Vorvoreanu, M., Fourney, A., Nushi, B., Collisson, P., Suh, J., Iqbal, S., Bennett, P. N., Inkpen, K., Teevan, J., Kikin-Gil, R., & Horvitz, E. (2019). Guidelines for human-AI interaction. In *Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems*. Association for Computing Machinery. https://doi.org/10.1145/3290605.3300233

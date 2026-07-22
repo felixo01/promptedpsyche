@@ -1,0 +1,355 @@
+---
+type Locale = 'en' | 'pl';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const copy = {
+  en: {
+    title: 'How OpenAI, ChatGPT, GPT and LLM relate',
+    openai: 'organisation developing AI research, models and products',
+    chatgpt: 'product, service and interface',
+    chatgptNote: 'may use different models or systems',
+    gpt: 'model family',
+    llm: 'broader model category',
+    features: 'product features: memory, search, files and tools',
+    otherOpenAi: 'other OpenAI products, systems and API',
+    otherLlm: 'other LLM families',
+    relations: [
+      ['OpenAI', 'develops and offers', 'ChatGPT'],
+      ['OpenAI', 'develops model family', 'GPT'],
+      ['OpenAI', 'also develops and offers', 'other OpenAI products, systems and API'],
+      ['ChatGPT', 'may use models from this family', 'GPT'],
+      ['ChatGPT', 'may combine models with these product or system layers', 'product features'],
+      ['GPT', 'one family within this category', 'LLM'],
+      ['Other LLM families', 'other families within this category', 'LLM']
+    ],
+    caption: 'OpenAI, ChatGPT, GPT and LLM name different levels. ChatGPT is a product that can combine models with system features; GPT is one family within the broader LLM category.',
+    alt: 'A map with four primary nodes and three smaller auxiliary fields. OpenAI develops and offers ChatGPT, the GPT model family, and other products, systems and an API. ChatGPT may use different models or systems and combine them with memory, search, files and tools. GPT and other LLM families sit within the broader large-language-model category. OpenAI and ChatGPT sit outside that category.',
+    textEquivalent: 'Text equivalent of the relationship map',
+    nodes: 'Entities and fields',
+    relationHeading: 'Labelled relations',
+    boundary: 'ChatGPT may use different models or systems; product features are not properties of every LLM.'
+  },
+  pl: {
+    title: 'Jak łączą się OpenAI, ChatGPT, GPT i LLM',
+    openai: 'organizacja prowadząca badania oraz rozwijająca modele i produkty AI',
+    chatgpt: 'produkt, usługa i interfejs',
+    chatgptNote: 'może korzystać z różnych modeli lub systemów',
+    gpt: 'rodzina modeli',
+    llm: 'szersza kategoria modeli',
+    features: 'funkcje produktu: pamięć, wyszukiwanie, pliki, narzędzia',
+    otherOpenAi: 'inne produkty, systemy i API OpenAI',
+    otherLlm: 'inne rodziny LLM',
+    relations: [
+      ['OpenAI', 'rozwija i oferuje', 'ChatGPT'],
+      ['OpenAI', 'rozwija rodzinę modeli', 'GPT'],
+      ['OpenAI', 'rozwija także', 'inne produkty, systemy i API OpenAI'],
+      ['ChatGPT', 'może korzystać z modeli tej rodziny', 'GPT'],
+      ['ChatGPT', 'może łączyć modele z tymi warstwami produktu lub systemu', 'funkcje produktu'],
+      ['GPT', 'jedna rodzina w tej kategorii', 'LLM'],
+      ['Inne rodziny LLM', 'inne rodziny w tej kategorii', 'LLM']
+    ],
+    caption: 'OpenAI, ChatGPT, GPT i LLM opisują różne poziomy. ChatGPT jest produktem, który może łączyć modele z funkcjami systemu; GPT jest jedną rodziną w szerszej kategorii LLM.',
+    alt: 'Mapa z czterema głównymi węzłami i trzema mniejszymi polami pomocniczymi. OpenAI rozwija i oferuje ChatGPT, rodzinę modeli GPT oraz inne produkty, systemy i API. ChatGPT może korzystać z różnych modeli lub systemów i łączyć je z funkcją pamięci, wyszukiwaniem, plikami i narzędziami. GPT oraz inne rodziny LLM należą do szerszej kategorii dużych modeli językowych. OpenAI i ChatGPT znajdują się poza kategorią LLM.',
+    textEquivalent: 'Tekstowy odpowiednik mapy relacji',
+    nodes: 'Encje i pola',
+    relationHeading: 'Relacje z etykietami',
+    boundary: 'ChatGPT może korzystać z różnych modeli lub systemów; funkcje produktu nie są właściwościami każdego LLM.'
+  }
+} as const;
+
+const t = copy[lang];
+---
+
+<figure class="entity-map" data-qa="llm-entity-map">
+  <h3 class="entity-map__title">{t.title}</h3>
+
+  <div class="entity-map__visual" role="img" aria-label={t.alt}>
+    <section class="map-node map-node--primary map-node--openai" data-node="OpenAI">
+      <strong>OpenAI</strong>
+      <span>{t.openai}</span>
+      <ul class="map-node__relations">
+        <li><span>{t.relations[0][1]}</span> <b aria-hidden="true">→</b> ChatGPT</li>
+        <li><span>{t.relations[1][1]}</span> <b aria-hidden="true">→</b> GPT</li>
+        <li><span>{t.relations[2][1]}</span> <b aria-hidden="true">→</b> {t.otherOpenAi}</li>
+      </ul>
+    </section>
+
+    <section class="map-node map-node--primary map-node--chatgpt" data-node="ChatGPT">
+      <strong>ChatGPT</strong>
+      <span>{t.chatgpt}</span>
+      <small>{t.chatgptNote}</small>
+      <p class="map-connector map-connector--possible">{t.relations[3][1]} <b aria-hidden="true">⇢</b> GPT</p>
+    </section>
+
+    <section class="map-node map-node--aux map-node--features" data-node="Product features">
+      <p class="map-connector map-connector--possible"><b aria-hidden="true">⇣</b> {t.relations[4][1]}</p>
+      <strong>{t.features}</strong>
+    </section>
+
+    <section class="map-node map-node--aux map-node--other-openai" data-node="Other OpenAI work">
+      <strong>{t.otherOpenAi}</strong>
+    </section>
+
+    <section class="map-category" data-node="LLM">
+      <header class="map-category__header">
+        <strong>LLM</strong>
+        <span>{t.llm}</span>
+      </header>
+      <section class="map-node map-node--primary map-node--gpt" data-node="GPT">
+        <strong>GPT</strong>
+        <span>{t.gpt}</span>
+        <small>{t.relations[5][1]}</small>
+      </section>
+      <section class="map-node map-node--aux map-node--other-llm" data-node="Other LLM families">
+        <strong>{t.otherLlm}</strong>
+        <small>{t.relations[6][1]}</small>
+      </section>
+    </section>
+
+    <p class="entity-map__boundary">{t.boundary}</p>
+  </div>
+
+  <details class="entity-map__semantic" data-qa="llm-entity-map-semantic">
+    <summary>{t.textEquivalent}</summary>
+    <h4>{t.nodes}</h4>
+    <dl>
+      <div><dt>OpenAI</dt><dd>{t.openai}</dd></div>
+      <div><dt>ChatGPT</dt><dd>{t.chatgpt}; {t.chatgptNote}</dd></div>
+      <div><dt>{t.features}</dt><dd>{lang === 'pl' ? 'mniejsze pole pomocnicze poza kategorią LLM' : 'smaller auxiliary field outside the LLM category'}</dd></div>
+      <div><dt>{t.otherOpenAi}</dt><dd>{lang === 'pl' ? 'mniejsze pole pomocnicze poza kategorią LLM' : 'smaller auxiliary field outside the LLM category'}</dd></div>
+      <div><dt>LLM</dt><dd>{t.llm}</dd></div>
+      <div><dt>GPT</dt><dd>{t.gpt}</dd></div>
+      <div><dt>{t.otherLlm}</dt><dd>{lang === 'pl' ? 'mniejsze pole pomocnicze w kategorii LLM' : 'smaller auxiliary field inside the LLM category'}</dd></div>
+    </dl>
+    <h4>{t.relationHeading}</h4>
+    <ol>
+      {t.relations.map(([from, relation, to]) => <li><strong>{from}</strong> - {relation} - <strong>{to}</strong></li>)}
+    </ol>
+  </details>
+
+  <figcaption>{t.caption}</figcaption>
+</figure>
+
+<style>
+  .entity-map {
+    width: min(66rem, calc(100vw - 2rem));
+    margin-inline: 50%;
+    padding: clamp(1rem, 2.5vw, 1.8rem);
+    transform: translateX(-50%);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--accent-soft) 38%, var(--surface));
+  }
+
+  .entity-map__title {
+    margin-bottom: 1rem;
+    font-size: clamp(1.25rem, 1.7vw, 1.65rem);
+  }
+
+  .entity-map__visual {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr) minmax(0, 1.45fr);
+    grid-template-areas:
+      "openai chatgpt llm"
+      "openai features llm"
+      "otheropen otheropen llm"
+      "boundary boundary boundary";
+    gap: 0.9rem;
+    align-items: stretch;
+  }
+
+  .map-node,
+  .map-category {
+    min-width: 0;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .map-node {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1rem;
+    overflow-wrap: anywhere;
+  }
+
+  .map-node--primary > strong,
+  .map-category__header > strong {
+    color: var(--accent);
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 1.7vw, 1.65rem);
+    font-weight: 600;
+  }
+
+  .map-node--primary > span,
+  .map-category__header > span {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .map-node--primary small,
+  .map-node--aux small {
+    font-size: 0.88rem;
+    line-height: 1.42;
+  }
+
+  .map-node--openai { grid-area: openai; }
+  .map-node--chatgpt { grid-area: chatgpt; }
+  .map-node--features { grid-area: features; }
+  .map-node--other-openai { grid-area: otheropen; }
+
+  .map-node--aux {
+    justify-content: center;
+    border-style: dotted;
+    background: color-mix(in srgb, var(--surface) 88%, var(--accent-soft));
+    font-size: 0.94rem;
+    line-height: 1.45;
+  }
+
+  .map-node__relations {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0.8rem 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.83rem;
+    line-height: 1.4;
+  }
+
+  .map-node__relations li {
+    padding-top: 0.45rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .map-node__relations span,
+  .map-connector {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+  }
+
+  .map-connector--possible {
+    margin-top: 0.5rem;
+    padding-top: 0.55rem;
+    border-top: 1px dashed var(--accent);
+  }
+
+  .map-category {
+    grid-area: llm;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 0.9rem;
+    border-width: 2px;
+  }
+
+  .map-category__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 2px solid var(--line-strong);
+  }
+
+  .map-node--gpt {
+    border-left: 0.35rem solid var(--accent);
+  }
+
+  .entity-map__boundary {
+    grid-area: boundary;
+    padding: 0.75rem 0.9rem;
+    border-left: 3px solid var(--ink);
+    background: var(--surface);
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .entity-map__semantic {
+    margin-top: 1rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--line-strong);
+    font-size: 0.95rem;
+  }
+
+  .entity-map__semantic summary {
+    cursor: pointer;
+    font-weight: 650;
+  }
+
+  .entity-map__semantic h4 {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .entity-map__semantic dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+    margin: 0.8rem 0 0;
+  }
+
+  .entity-map__semantic dl > div {
+    min-width: 0;
+    padding: 0.65rem;
+    border: 1px solid var(--line);
+  }
+
+  .entity-map__semantic dt { font-weight: 650; }
+  .entity-map__semantic dd { margin: 0.25rem 0 0; }
+  .entity-map__semantic ol { margin: 0.7rem 0 0; }
+
+  figcaption {
+    margin-top: 1rem;
+    color: var(--text-soft);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 760px) {
+    .entity-map {
+      width: 100%;
+      margin-inline: 0;
+      padding: 1rem;
+      transform: none;
+    }
+
+    .entity-map__visual {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .map-node--openai { order: 1; }
+    .map-node--chatgpt { order: 2; }
+    .map-node--features { order: 3; }
+    .map-node--other-openai { order: 4; }
+    .map-category { order: 5; }
+    .entity-map__boundary { order: 6; }
+
+    .map-node--primary > span,
+    .map-category__header > span,
+    .map-node--aux > strong {
+      font-size: 1rem;
+    }
+
+    .map-node__relations span,
+    .map-connector {
+      font-size: 0.875rem;
+    }
+
+    .entity-map__semantic dl {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .entity-map { padding: 0.8rem; }
+    .map-node,
+    .map-category { padding: 0.8rem; }
+  }
+</style>

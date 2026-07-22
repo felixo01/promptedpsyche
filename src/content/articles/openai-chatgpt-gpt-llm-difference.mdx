@@ -1,0 +1,176 @@
+---
+title: "OpenAI, ChatGPT, GPT and LLM: What Is the Difference?"
+description: "OpenAI is the organisation, ChatGPT the product, GPT a model family and LLM the wider category. Learn why those layers matter in practice."
+publishedAt: 2026-07-22
+draft: false
+tags:
+  - OpenAI
+  - ChatGPT
+  - GPT
+  - LLM
+  - AI literacy
+  - mental models
+author: "Feliks Mamczur"
+readingTime: "10 min read"
+inBrief:
+  - "OpenAI is an organisation, ChatGPT is a product, GPT is a model family and LLM is the broader category."
+  - "ChatGPT can combine models with context, memory, search, files, tools and other system layers."
+  - "A change in product behaviour does not prove that only the underlying model changed."
+  - "Keeping these levels separate improves how we assess errors, privacy, sources, updates and responsibility."
+lang: "en"
+translationKey: "openai-chatgpt-gpt-llm-differences"
+---
+
+import LlmEntityComparison from '../../components/LlmEntityComparison.astro';
+import LlmEntityMap from '../../components/LlmEntityMap.astro';
+
+OpenAI, ChatGPT, GPT and LLM are connected, but they name different things. OpenAI is the organisation. ChatGPT is a product and interface. GPT is a family of models. LLM is the broader category to which GPT and other model families belong. The product may combine a model with context, memory, search, files, tools and other system layers.[^1]
+
+In casual conversation, those boundaries disappear quickly. We say that we "asked OpenAI", call ChatGPT "the GPT", or use GPT as a generic label for any language model. The shortcuts are usually harmless until we need to explain an error, a product update, a privacy setting, or who was responsible for a decision. At that point, the layer matters.
+
+## Four names at four levels
+
+<LlmEntityComparison lang="en" />
+
+<LlmEntityMap lang="en" />
+
+This is a practical map, not a claim that the system is always a four-box stack. ChatGPT may use different models or supporting systems, and OpenAI develops more than ChatGPT. The point is to place a property at the right level, not to infer a private technical architecture from public labels.
+
+## OpenAI is the organisation
+
+Sources were checked on 22 July 2026. At that time, OpenAI described itself as an `AI research and deployment company`. Its structure included OpenAI Foundation, which controlled OpenAI Group PBC.[^2] The full legal structure is not the main subject of this article. For present purposes, it is enough to say that OpenAI is an organisation that conducts AI research and develops models and products.
+
+ChatGPT is one of those products. It is not another name for everything OpenAI does. The organisation can make a model available, change technical documentation, or develop a separate system without turning that work into a ChatGPT feature. Conversely, a ChatGPT interface change need not mean that OpenAI has created a new model family.
+
+Saying "OpenAI told me" is convenient, in the same way that people say a search engine "said" something. It becomes less useful when responsibility matters. A response was produced inside a system offered by an organisation, in response to a person's input, through particular components and rules. The organisation designed and operates parts of that system; the model generated an output; the user chose how to ask and what to do with it. Those forms of agency are related, but they are not identical.
+
+## ChatGPT is a product, not a model name
+
+ChatGPT is a service and an interaction environment. Its current overview describes capabilities beyond plain-text chat, including work with files, images, code and connected services. Availability depends on plan, device and deployment.[^3] A durable definition should not freeze that changing feature list. It should say that ChatGPT organises a user's access to models and other system capabilities.
+
+A visible response can therefore be shaped by several layers:
+
+- a model selected by the user or the system;
+- user instructions and system instructions;
+- the current context and conversation state;
+- a memory feature in the product;
+- information retrieved from the web or from files;
+- tools, safety controls and presentation rules.
+
+OpenAI's developer documentation treats models, tools and conversation state as distinct parts. Tools can bring in web data, file content or the results of external functions. Conversation state can be maintained by passing earlier messages or by using a conversation object that persists state across interactions.[^4] These documents are not a complete blueprint for consumer ChatGPT. They are enough to show why the application cannot be reduced to the weights of a single model.
+
+Depending on the configuration and task, ChatGPT may use different models, modes or additional system components. Public documentation describes automatic switching for some requests, but it does not disclose the full routing behind every response.[^5] The question "Which model does ChatGPT use?" may therefore have no lasting single answer. This passage always needs a fresh source check before publication.
+
+## GPT is a model family, with one naming trap
+
+GPT stands for *Generative Pre-trained Transformer*. OpenAI's 2018 report described generative pre-training, and later work documented the development of the family and its ability to perform tasks from context.[^6] `Generative` points to producing an output, `pre-trained` to learning before a user's request, and `Transformer` to the architectural lineage built around attention.
+
+GPT is not a synonym for ChatGPT. A model from the GPT family can be accessed through ChatGPT, used through an API, or embedded in another application. The ChatGPT product can in turn add features and system layers that the name GPT does not describe: memory settings, web search, files, system instructions and an interface.
+
+The word has a second product-specific meaning. In ChatGPT, people can create `GPTs`, also called `custom GPTs` in the English documentation: versions of ChatGPT configured for a specific purpose through instructions, knowledge and selected capabilities.[^7] Creating one does not train a new base model. As a result, "I created a GPT in ChatGPT" and "I trained a model" describe different activities.
+
+## LLM is the wider category
+
+An LLM is a large language model: a model trained at scale to learn patterns in language and generate or transform sequences of tokens. GPT is one family inside that category. Not every LLM is a GPT. Other organisations and research communities develop other model families, and the category is not owned by one company.[^8]
+
+Nor is an LLM the name of a complete chatbot. A model by itself does not necessarily provide a user account, conversation history, a product-level memory feature, web access, a retention policy or a visual interface. Those belong to a deployed system or service. The [Large Language Model (LLM)](/concepts/llm/) Concept owns the deeper explanation of training, tokens, context and the Transformer relationship. Here, the definition serves only to establish the entity boundary.
+
+LLM is also not a synonym for all generative AI. Image, audio and video generation can use other types of models, even though current systems increasingly combine modalities. `Foundation model` overlaps with LLM but is not identical either: the term emphasises broad pretraining and adaptation across downstream tasks, including tasks that are not primarily linguistic.[^9]
+
+## A behaviour change can have several causes
+
+When ChatGPT starts responding differently after an update, the natural explanation is "the model changed". That may be true, but it is only one possibility. The product may have changed model routing, system instructions, search, context assembly, a safety control, the interface, or the way results are presented.
+
+Post-training is another source of change. Research on instruction following showed that human feedback and further training can substantially alter assistant behaviour compared with a pretrained model alone.[^10] Two services using related models may therefore behave differently. Sharing a family name does not guarantee the same instructions, tools, sources, memory or product policy.
+
+This boundary matters whenever someone reviews or compares an AI service. A product comparison should identify the products being compared, the date and the configuration. A model comparison should identify the models and test conditions. If those levels are mixed, a temporary interface feature can be presented as a property of an entire model category.
+
+## Why This Distinction Matters
+
+The distinction matters because it changes how we interpret a result and where we look for evidence.
+
+### Errors and answer quality
+
+Suppose a response contains a false fact. The output alone may not reveal whether the problem came from a model limitation, a poor source returned by search, a vague instruction, missing context, or an incorrect synthesis. Language models can produce fluent falsehoods, and adding a tool or a citation does not automatically remove the risk.[^11]
+
+A user does not need to reconstruct every internal cause. They should avoid jumping from "this answer was wrong" to "every GPT is bad", or from "ChatGPT displayed sources" to "the claim must be true". The [Model Output](/concepts/model-output/) Concept provides the broader frame: an output is something to evaluate in proportion to its intended use and stakes.
+
+### Updates and service comparisons
+
+A product can change while its visible model label stays the same. A model can change while the interface looks familiar. Two services can use models from the same broad category and still differ in tools, data policy and interaction design.
+
+A fair comparison therefore keeps the levels aligned: organisation with organisation, product with product, model with model, category with category. Otherwise, one product's brand may be compared with another provider's model family, and a short-lived feature may be mistaken for something all LLMs do.
+
+### Memory, context, search and sources
+
+When ChatGPT refers to an earlier detail, people often say that "the model remembers". A closer question is whether the detail remained in current context, came from conversation history, was supplied by the product's memory feature, or arrived through another source. The memory feature in ChatGPT may provide information from earlier interactions as context. Exactly how it works depends on the current version of the product and its settings. This is not memory stored in the base model's parameters.[^12]
+
+Likewise, a response about a current event does not prove that the information was stored in model parameters. ChatGPT can search the web, and search responses can include source links.[^13] The full distinction belongs to [The Model Does Not Remember. It Works With Context.](/articles/the-model-does-not-remember-it-works-with-context/) and the [Context Window](/concepts/context-window/) Concept.
+
+### Privacy
+
+"Will the LLM remember what I type?" compresses several questions into one. What enters the current context? What remains in history? What can a memory feature carry forward? Can content later be used to improve models? The answer depends on the service, plan and settings, not on the definition of LLM.
+
+OpenAI currently documents an `Improve the model for everyone` control and a Temporary Chat option, but these are dated product facts that must be checked again before publication.[^14] The durable rule is to assess privacy at the level of the actual service and account. An architecture label does not tell us the retention or training policy.
+
+### Responsibility and agency
+
+Conversational interfaces encourage sentences such as "the AI decided" or "ChatGPT wanted to help". That language can hide the roles of product designers, the organisation deploying the system, information sources, the person writing the instruction and the person acting on the output. Responsibility may be distributed, but it does not disappear into the word `AI`.
+
+Human-AI Interaction research suggests that people need a usable picture of a system's error boundary. Average accuracy and explanations alone do not guarantee appropriate reliance.[^15] The entity map supports a better question: are we evaluating the model, a product feature, an organisational policy, or a person's use of the result?
+
+## Precision without a vocabulary test
+
+No one needs to recite the architecture in every conversation. Four language habits are enough:
+
+1. Use `OpenAI` for the organisation, its documentation, policies and product decisions.
+2. Use `ChatGPT` for the service, interface, plan, memory or search feature.
+3. Use `model from the GPT family` or `GPT model family` when referring to the technical model. Use `GPT created in ChatGPT` for a configured version of the product.
+4. Use `LLM` when a statement genuinely applies to the broader category of large language models.
+
+This precision is not a way to police everyday language. It prevents a feature of one service from becoming a supposed property of all language models, and it prevents a limitation of a model from being confused with a company's data policy.
+
+The most useful question is not merely "What is this system called?" It is "At which level does the feature, behaviour or decision I am evaluating belong?" OpenAI, ChatGPT, GPT and LLM form a connected map. Separating its levels makes it possible to reason more clearly about capabilities, errors, data, updates and responsible use.
+
+## Bibliography
+
+1. OpenAI Academy. *AI fundamentals*. Accessed 2026-07-22. https://openai.com/academy/what-is-ai/
+2. OpenAI. *About* and *Our structure*. Accessed 2026-07-22. https://openai.com/about/ ; https://openai.com/our-structure/
+3. OpenAI. *ChatGPT overview*. Accessed 2026-07-22. https://chatgpt.com/overview/
+4. OpenAI Developer Documentation. *Models*. Accessed 2026-07-22. https://developers.openai.com/api/docs/models
+5. OpenAI Developer Documentation. *Using tools*. Accessed 2026-07-22. https://developers.openai.com/api/docs/guides/tools
+6. OpenAI Developer Documentation. *Conversation state*. Accessed 2026-07-22. https://developers.openai.com/api/docs/guides/conversation-state
+7. OpenAI Help Center. *Memory FAQ*. Accessed 2026-07-22. https://help.openai.com/en/articles/8590148-memory-faq
+8. OpenAI Help Center. *ChatGPT Search*. Accessed 2026-07-22. https://help.openai.com/en/articles/9237897-chatgpt-search
+9. OpenAI Help Center. *GPTs in ChatGPT*. Accessed 2026-07-22. https://help.openai.com/en/articles/8554407-create-a-custom-gpt
+10. OpenAI Help Center. *Data Controls FAQ*. Accessed 2026-07-22. https://help.openai.com/en/articles/7730893-data-controls-faq
+11. OpenAI Help Center. *Temporary Chat FAQ*. Accessed 2026-07-22. https://help.openai.com/en/articles/8914046-temporary-chat-faq
+12. Radford, A. et al. *Improving Language Understanding by Generative Pre-Training*. OpenAI, 2018. https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
+13. OpenAI et al. *GPT-4 Technical Report*. 2023. https://arxiv.org/abs/2303.08774
+14. Vaswani, A. et al. *Attention Is All You Need*. NeurIPS, 2017. https://proceedings.neurips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html
+15. Ouyang, L. et al. *Training language models to follow instructions with human feedback*. NeurIPS, 2022. https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html
+16. NIST. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*. 2024. https://doi.org/10.6028/NIST.AI.600-1
+17. Bansal, G. et al. *Beyond Accuracy: The Role of Mental Models in Human-AI Team Performance*. HCOMP, 2019. https://doi.org/10.1609/hcomp.v7i1.5285
+18. Amershi, S. et al. *Guidelines for Human-AI Interaction*. CHI, 2019. https://doi.org/10.1145/3290605.3300233
+19. Ji, Z. et al. *Survey of Hallucination in Natural Language Generation*. ACM Computing Surveys, 2023. https://doi.org/10.1145/3571730
+20. Lee, J. D., See, K. A. *Trust in Automation: Designing for Appropriate Reliance*. Human Factors, 2004. https://doi.org/10.1518/hfes.46.1.50_30392
+21. Brown, T. B. et al. *Language Models are Few-Shot Learners*. NeurIPS, 2020. https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html
+22. Stanford Institute for Human-Centered AI. *What is a Large Language Model (LLM)?* Accessed 2026-07-22. https://hai.stanford.edu/ai-definitions/what-is-a-llm
+23. Bommasani, R. et al. *On the Opportunities and Risks of Foundation Models*. Stanford CRFM, 2021. https://arxiv.org/abs/2108.07258
+24. OpenAI Help Center. *GPT-5.6 in ChatGPT*. Accessed 2026-07-22. https://help.openai.com/en/articles/20001354
+
+[^1]: OpenAI Academy; OpenAI About; ChatGPT overview.
+[^2]: OpenAI About and *Our structure*, checked 2026-07-22.
+[^3]: ChatGPT overview, checked 2026-07-22.
+[^4]: OpenAI tool documentation; conversation state documentation.
+[^5]: OpenAI model documentation; *GPT-5.6 in ChatGPT*, checked 2026-07-22.
+[^6]: Radford et al.; Vaswani et al.; Brown et al.
+[^7]: OpenAI, *GPTs in ChatGPT*, checked 2026-07-22.
+[^8]: Stanford HAI; OpenAI Academy.
+[^9]: Bommasani et al.; OpenAI, *GPT-4 Technical Report*.
+[^10]: Ouyang et al.
+[^11]: Ji et al.; NIST; OpenAI tool documentation.
+[^12]: OpenAI, *Memory FAQ*, checked 2026-07-22.
+[^13]: OpenAI, *ChatGPT Search*, checked 2026-07-22.
+[^14]: OpenAI, *Data Controls FAQ*; *Temporary Chat FAQ*, checked 2026-07-22.
+[^15]: Bansal et al.; Amershi et al.; Lee and See.

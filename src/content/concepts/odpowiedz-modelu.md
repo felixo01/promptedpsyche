@@ -21,6 +21,8 @@ Traktowanie odpowiedzi modelu jako czegoś do oceny, a nie tylko do konsumpcji, 
 
 "Model tak powiedział" nie jest źródłem. Płynna odpowiedź nie musi być wiarygodna, a ostrożna odpowiedź nie musi być bezużyteczna. Ważne jest to, jak odpowiedź ma zostać sprawdzona, ograniczona i użyta w konkretnym zadaniu.
 
+Concept [LLM (duży model językowy)](/pl/concepts/llm/) wyjaśnia warstwę modelu, która może generować taki wynik.
+
 ## Źródła i kontekst
 
 - Amershi, S., Weld, D., Vorvoreanu, M., Fourney, A., Nushi, B., Collisson, P., Suh, J., Iqbal, S., Bennett, P. N., Inkpen, K., Teevan, J., Kikin-Gil, R., & Horvitz, E. (2019). Guidelines for human-AI interaction. In *Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems*. Association for Computing Machinery. https://doi.org/10.1145/3290605.3300233

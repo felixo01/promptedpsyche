@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 const conceptIndexRoutes = [
   {
     route: '/concepts/',
-    expectedCount: 26,
+    expectedCount: 27,
     readMore: 'Read more',
     filterTag: 'cognition',
     allLabel: 'All concepts',
@@ -11,12 +11,12 @@ const conceptIndexRoutes = [
     expectedCopy: 'A working vocabulary',
     absentCopy: 'Roboczy język pojęć',
     emptyFilterMessage: 'No concepts for this filter.',
-    requiredTitles: ['Model Output', 'Calibrated Trust', 'AI-Mediated Communication'],
+    requiredTitles: ['Large Language Model (LLM)', 'Model Output', 'Calibrated Trust', 'AI-Mediated Communication'],
     draftTitles: ['What Is Cyberpsychology of AI?', 'Human-AI Interaction: Why Companies Should Care']
   },
   {
     route: '/pl/concepts/',
-    expectedCount: 26,
+    expectedCount: 27,
     readMore: 'Czytaj dalej',
     filterTag: 'poznanie',
     allLabel: 'Wszystkie pojęcia',
@@ -26,6 +26,7 @@ const conceptIndexRoutes = [
     emptyFilterMessage: 'Brak pojęć dla tego filtra.',
     requiredTitles: [
       'Odpowiedź modelu',
+      'LLM (duży model językowy)',
       'Skalibrowane zaufanie',
       'Komunikacja zapośredniczona przez AI',
       'Grounding: oparcie odpowiedzi na źródłach',
@@ -76,8 +77,10 @@ const waveThreeDetailRoutes = [
 
 const conceptDetailRoutes = [
   '/concepts/ai-literacy/',
+  '/concepts/llm/',
   '/concepts/ai-mediated-communication/',
   '/pl/concepts/ai-literacy/',
+  '/pl/concepts/llm/',
   '/pl/concepts/ai-mediated-communication/',
   ...waveTwoDetailRoutes,
   ...waveThreeDetailRoutes
@@ -97,6 +100,12 @@ const conceptLanguageChecks = [
 ];
 
 const conceptLanguagePairs = [
+  {
+    enRoute: '/concepts/llm/',
+    plRoute: '/pl/concepts/llm/',
+    enTitle: 'Large Language Model (LLM)',
+    plTitle: 'LLM (duży model językowy)'
+  },
   {
     enRoute: '/concepts/model-output/',
     plRoute: '/pl/concepts/model-output/',
@@ -177,7 +186,7 @@ test.describe('concept cards and tags', () => {
 
       const allCards = page.locator('[data-qa="concept-card"]');
       const initialCount = await allCards.count();
-      expect(initialCount).toBeGreaterThanOrEqual(26);
+      expect(initialCount).toBeGreaterThanOrEqual(27);
 
       const tagLink = page.locator(`[data-concept-tag-link][href*="tag=${encodeURIComponent(filterTag)}"]`).first();
       await expect(tagLink).toBeVisible();
@@ -379,4 +388,25 @@ test.describe('concept cards and tags', () => {
       expect(hasOverflow).toBe(false);
     });
   }
+
+  test('orders LLM after AI literacy and before Token in both concept indexes', async ({ page }) => {
+    for (const testCase of [
+      { route: '/concepts/', literacy: 'AI Literacy', llm: 'Large Language Model (LLM)', token: 'Token' },
+      { route: '/pl/concepts/', literacy: 'AI literacy', llm: 'LLM (duży model językowy)', token: 'Token' }
+    ]) {
+      await page.goto(testCase.route);
+      const titles = await page.locator('[data-qa="concept-card"] h2').allTextContents();
+      expect(titles.indexOf(testCase.llm)).toBe(titles.indexOf(testCase.literacy) + 1);
+      expect(titles.indexOf(testCase.token)).toBe(titles.indexOf(testCase.llm) + 1);
+    }
+  });
+
+  test('keeps the LLM Concept free of the Article-only diagram and Consulting CTA', async ({ page }) => {
+    for (const route of ['/concepts/llm/', '/pl/concepts/llm/']) {
+      await page.goto(route);
+      await expect(page.locator('[data-qa="llm-entity-map"]')).toHaveCount(0);
+      await expect(page.locator('[data-qa="consulting-cta"]')).toHaveCount(0);
+      await expect(page.locator('.prose')).toContainText(/Bibliography|Bibliografia/);
+    }
+  });
 });

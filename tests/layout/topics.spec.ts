@@ -165,4 +165,28 @@ test.describe('topic hubs', () => {
       await expectNoHorizontalOverflow(page);
     }
   });
+
+  test('adds the bilingual LLM package to AI and cognition without replacing the flagship', async ({ page }) => {
+    const cases = [
+      {
+        route: '/topics/ai-and-cognition/',
+        flagship: "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing",
+        article: 'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?',
+        concept: 'Large Language Model (LLM)'
+      },
+      {
+        route: '/pl/topics/ai-i-myslenie/',
+        flagship: 'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać',
+        article: 'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
+        concept: 'LLM (duży model językowy)'
+      }
+    ];
+
+    for (const testCase of cases) {
+      await page.goto(testCase.route);
+      await expect(page.locator('[data-qa="topic-hub"]')).toContainText(testCase.flagship);
+      await expect(page.getByRole('link', { name: testCase.article, exact: true })).toBeVisible();
+      await expect(page.getByRole('link', { name: testCase.concept, exact: true })).toBeVisible();
+    }
+  });
 });

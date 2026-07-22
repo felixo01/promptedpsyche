@@ -81,12 +81,12 @@ test.describe('local search', () => {
     const plIndex = await readSearchIndex(request, '/search-index.pl.json');
     const allText = JSON.stringify([...enIndex, ...plIndex]);
 
-    expect(countByType(enIndex, 'article')).toBe(8);
-    expect(countByType(plIndex, 'article')).toBe(8);
+    expect(countByType(enIndex, 'article')).toBe(9);
+    expect(countByType(plIndex, 'article')).toBe(9);
     expect(countByType(enIndex, 'note')).toBe(5);
     expect(countByType(plIndex, 'note')).toBe(5);
-    expect(countByType(enIndex, 'concept')).toBe(26);
-    expect(countByType(plIndex, 'concept')).toBe(26);
+    expect(countByType(enIndex, 'concept')).toBe(27);
+    expect(countByType(plIndex, 'concept')).toBe(27);
     expect(countByType(enIndex, 'practice')).toBe(showPractice ? 10 : 0);
     expect(countByType(plIndex, 'practice')).toBe(showPractice ? 10 : 0);
     expect(countByType(enIndex, 'topic')).toBe(3);
@@ -109,6 +109,16 @@ test.describe('local search', () => {
           title: "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing",
           url: '/articles/dont-ask-whether-ai-makes-us-dumber/',
           type: 'article'
+        }),
+        expect.objectContaining({
+          title: 'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?',
+          url: '/articles/openai-chatgpt-gpt-llm-difference/',
+          type: 'article'
+        }),
+        expect.objectContaining({
+          title: 'Large Language Model (LLM)',
+          url: '/concepts/llm/',
+          type: 'concept'
         })
       ])
     );
@@ -123,6 +133,16 @@ test.describe('local search', () => {
           title: 'Nie pytaj, czy AI nas ogłupia. Zapytaj, które sposoby myślenia przestajemy ćwiczyć',
           url: '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/',
           type: 'article'
+        }),
+        expect.objectContaining({
+          title: 'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
+          url: '/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/',
+          type: 'article'
+        }),
+        expect.objectContaining({
+          title: 'LLM (duży model językowy)',
+          url: '/pl/concepts/llm/',
+          type: 'concept'
         })
       ])
     );

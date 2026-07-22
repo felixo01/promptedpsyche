@@ -20,6 +20,10 @@ const embodiedPolishArticleRoute = '/pl/articles/co-sie-zmienia-kiedy-ai-ma-cial
 const embodiedEnglishArticleRoute = '/articles/what-changes-when-ai-has-a-body/';
 const aiThinkingPolishArticleRoute = '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/';
 const aiThinkingEnglishArticleRoute = '/articles/dont-ask-whether-ai-makes-us-dumber/';
+const llmPolishArticleRoute = '/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/';
+const llmEnglishArticleRoute = '/articles/openai-chatgpt-gpt-llm-difference/';
+const llmPolishArticleTitle = 'OpenAI, ChatGPT, GPT i LLM - czym się różnią?';
+const llmEnglishArticleTitle = 'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?';
 const aiThinkingPolishArticleTitle =
   'Nie pytaj, czy AI nas ogłupia. Zapytaj, które sposoby myślenia przestajemy ćwiczyć';
 const aiThinkingEnglishArticleTitle =
@@ -160,7 +164,7 @@ test.describe('published articles', () => {
   test('shows the English article on the English articles index', async ({ page }) => {
     await page.goto('/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(8);
+    await expect(page.locator('.entry-list article')).toHaveCount(9);
     await expect(page.locator('.entry-list')).toContainText('It is not just about the prompt');
     await expect(page.locator('.entry-list')).toContainText(
       'The model does not remember. It works with context.'
@@ -176,9 +180,10 @@ test.describe('published articles', () => {
       'AI does not read people. It helps read context.'
     );
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(8);
+    expect(titles).toHaveLength(9);
     expect(titles).toEqual(expect.arrayContaining([
       aiThinkingEnglishArticleTitle,
+      llmEnglishArticleTitle,
       embodiedEnglishArticleTitle,
       aiFearsEnglishArticleTitle,
       aiPathEnglishArticleTitle,
@@ -278,7 +283,7 @@ test.describe('published articles', () => {
   test('shows the Polish article on the Polish articles index', async ({ page }) => {
     await page.goto('/pl/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(8);
+    await expect(page.locator('.entry-list article')).toHaveCount(9);
     await expect(page.locator('.entry-list')).toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('.entry-list')).toContainText(mirrorPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiPathPolishArticleTitle);
@@ -354,9 +359,10 @@ test.describe('published articles', () => {
     await page.goto('/pl/articles/');
 
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(8);
+    expect(titles).toHaveLength(9);
     expect(titles).toEqual(expect.arrayContaining([
       aiThinkingPolishArticleTitle,
+      llmPolishArticleTitle,
       embodiedPolishArticleTitle,
       aiFearsPolishArticleTitle,
       aiPathPolishArticleTitle,
@@ -1632,5 +1638,73 @@ test.describe('published articles', () => {
     const trustDraft = await request.get('/articles/why-people-trust-ai-even-when-they-shouldnt/');
     expect(aiLiteracyDraft.ok()).toBe(false);
     expect(trustDraft.ok()).toBe(false);
+  });
+
+  test('publishes the bilingual LLM terminology article with responsive, accessible comparisons', async ({ page, request }) => {
+    const cases = [
+      {
+        route: llmEnglishArticleRoute,
+        alternate: llmPolishArticleRoute,
+        title: llmEnglishArticleTitle,
+        lang: 'en'
+      },
+      {
+        route: llmPolishArticleRoute,
+        alternate: llmEnglishArticleRoute,
+        title: llmPolishArticleTitle,
+        lang: 'pl'
+      }
+    ] as const;
+
+    for (const testCase of cases) {
+      const response = await request.get(testCase.route);
+      expect(response.ok(), testCase.route).toBe(true);
+
+      await page.setViewportSize({ width: 1280, height: 900 });
+      await page.goto(testCase.route);
+
+      await expect(page.locator('html')).toHaveAttribute('lang', testCase.lang);
+      await expect(page.locator('.content-header h1')).toHaveText(testCase.title);
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+        'href',
+        `https://promptedpsyche.com${testCase.route}`
+      );
+      await expect(page.locator(`link[rel="alternate"][hreflang="${testCase.lang === 'en' ? 'pl' : 'en'}"]`)).toHaveAttribute(
+        'href',
+        `https://promptedpsyche.com${testCase.alternate}`
+      );
+      await expect(page.locator(`.language-switcher a[href="${testCase.alternate}"]`)).toBeVisible();
+      await expect(page.locator('[data-qa="consulting-cta"]')).toHaveCount(1);
+
+      const comparison = page.locator('[data-qa="llm-entity-comparison"]');
+      await expect(comparison.locator('thead th')).toHaveCount(5);
+      await expect(comparison.locator('tbody tr')).toHaveCount(4);
+      await expect(comparison.locator('.entity-comparison__cards .entity-card')).toHaveCount(4);
+      await expect(comparison.locator('tbody tr[data-entity="OpenAI"]')).toBeVisible();
+      await expect(comparison.locator('tbody tr[data-entity="ChatGPT"]')).toBeVisible();
+      await expect(comparison.locator('tbody tr[data-entity="GPT"]')).toBeVisible();
+      await expect(comparison.locator('tbody tr[data-entity="LLM"]')).toBeVisible();
+
+      const map = page.locator('[data-qa="llm-entity-map"]');
+      await expect(map.locator('[data-node="OpenAI"]')).toHaveCount(1);
+      await expect(map.locator('[data-node="ChatGPT"]')).toHaveCount(1);
+      await expect(map.locator('[data-node="GPT"]')).toHaveCount(1);
+      await expect(map.locator('[data-node="LLM"]')).toHaveCount(1);
+      await expect(map.locator('[data-node="Product features"]')).toHaveCount(1);
+      await expect(map.locator('[data-node="Other OpenAI work"]')).toHaveCount(1);
+      await expect(map.locator('[data-node="Other LLM families"]')).toHaveCount(1);
+      await expect(map.locator('[role="img"]')).toHaveAttribute('aria-label', /OpenAI.*ChatGPT.*GPT.*LLM/i);
+      await expect(map.locator('[data-qa="llm-entity-map-semantic"] dl > div')).toHaveCount(7);
+      await expect(map.locator('[data-qa="llm-entity-map-semantic"] ol > li')).toHaveCount(7);
+
+      for (const width of [390, 320]) {
+        await page.setViewportSize({ width, height: 900 });
+        await expect(comparison.locator('.entity-comparison__cards .entity-card').first()).toBeVisible();
+        await expect(comparison.locator('.entity-comparison__table')).toBeHidden();
+        await expect(comparison.locator('.entity-card dl > div')).toHaveCount(16);
+        const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+        expect(overflow, `${testCase.route} at ${width}px`).toBe(false);
+      }
+    }
   });
 });
