@@ -166,27 +166,42 @@ test.describe('topic hubs', () => {
     }
   });
 
-  test('adds the bilingual LLM package to AI and cognition without replacing the flagship', async ({ page }) => {
+  test('adds the bilingual LLM and generative-search articles without replacing the cognition flagship', async ({ page }) => {
     const cases = [
       {
         route: '/topics/ai-and-cognition/',
         flagship: "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing",
+        flagshipHref: '/articles/dont-ask-whether-ai-makes-us-dumber/',
         article: 'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?',
-        concept: 'Large Language Model (LLM)'
+        concept: 'Large Language Model (LLM)',
+        generativeSearchArticle: 'When Search Becomes an Answer: What Generative AI Changes About Learning',
+        generativeSearchHref: '/articles/when-search-becomes-an-answer/'
       },
       {
         route: '/pl/topics/ai-i-myslenie/',
         flagship: 'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać',
+        flagshipHref: '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/',
         article: 'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
-        concept: 'LLM (duży model językowy)'
+        concept: 'LLM (duży model językowy)',
+        generativeSearchArticle: 'Wyszukiwarka odpowiada. Co zostaje uczniowi?',
+        generativeSearchHref: '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/'
       }
     ];
 
     for (const testCase of cases) {
       await page.goto(testCase.route);
       await expect(page.locator('[data-qa="topic-hub"]')).toContainText(testCase.flagship);
+      await expect(page.locator('.topic-feature')).toHaveAttribute('href', testCase.flagshipHref);
       await expect(page.getByRole('link', { name: testCase.article, exact: true })).toBeVisible();
       await expect(page.getByRole('link', { name: testCase.concept, exact: true })).toBeVisible();
+      await expect(
+        page.locator('.topic-resource-group').first().getByRole('link', {
+          name: testCase.generativeSearchArticle,
+          exact: true
+        })
+      ).toHaveAttribute('href', testCase.generativeSearchHref);
+      await expect(page.locator('.topic-reading-path li')).toHaveCount(5);
+      await expect(page.locator(`.topic-reading-path a[href="${testCase.generativeSearchHref}"]`)).toHaveCount(0);
     }
   });
 });

@@ -116,7 +116,7 @@ test.describe('publication tag pages', () => {
     await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.locator('body')).toContainText('Publications tagged with');
-    await expect(page.locator('.tag-archive-list article')).toHaveCount(20);
+    await expect(page.locator('.tag-archive-list article')).toHaveCount(21);
     await expect(page.locator('.tag-archive-list')).toContainText('Article');
     await expect(page.locator('.tag-archive-list')).toContainText('Note');
     await expect(page.locator('.tag-archive-list')).toContainText('Practice');
@@ -132,6 +132,9 @@ test.describe('publication tag pages', () => {
     await expect(page.locator('.tag-archive-list')).toContainText(
       "Don't Ask Whether AI Makes Us Dumber"
     );
+    await expect(page.locator('.tag-archive-list')).toContainText(
+      'When Search Becomes an Answer: What Generative AI Changes About Learning'
+    );
   });
 
   test('renders Polish tag archive without English publication leakage', async ({ page }) => {
@@ -140,7 +143,7 @@ test.describe('publication tag pages', () => {
     await expect(page.locator('.page-header h1')).toHaveText('#AI literacy');
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.locator('body')).toContainText('Publikacje oznaczone tagiem');
-    await expect(page.locator('.tag-archive-list article')).toHaveCount(20);
+    await expect(page.locator('.tag-archive-list article')).toHaveCount(21);
     await expect(page.locator('.tag-archive-list')).toContainText('Artykuł');
     await expect(page.locator('.tag-archive-list')).toContainText('Notatka');
     await expect(page.locator('.tag-archive-list')).toContainText('Praktyka');
@@ -155,6 +158,9 @@ test.describe('publication tag pages', () => {
     await expect(page.locator('.tag-archive-list')).not.toContainText('AI Literacy Is Not Prompt Engineering');
     await expect(page.locator('.tag-archive-list')).toContainText(
       'Nie pytaj, czy AI nas ogłupia'
+    );
+    await expect(page.locator('.tag-archive-list')).toContainText(
+      'Wyszukiwarka odpowiada. Co zostaje uczniowi?'
     );
   });
 });

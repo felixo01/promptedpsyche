@@ -1,0 +1,260 @@
+---
+type Locale = 'en' | 'pl';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const copy = {
+  en: {
+    title: 'Two divisions of labour in search',
+    description: 'Two simplified flows. Conventional search moves from a question through source selection, comparison and user synthesis to an answer. Generative search moves from a question through system retrieval and synthesis to a ready-made answer. The model describes interface possibilities, not every user\'s behaviour.',
+    conventional: {
+      title: 'Conventional search',
+      steps: ['Question', 'Source selection', 'Comparison', 'User synthesis', 'Answer']
+    },
+    generative: {
+      title: 'Generative search',
+      steps: ['Question', 'System retrieval and synthesis', 'Ready-made answer']
+    },
+    caption: 'A simplified model of two possible divisions of labour in the interface. It does not describe every user\'s behaviour or establish an educational effect: conventional search does not guarantee source comparison, and generative search does not prevent users from opening links.'
+  },
+  pl: {
+    title: 'Dwa podziały pracy w wyszukiwaniu',
+    description: 'Dwa uproszczone przepływy. Klasyczne wyszukiwanie prowadzi od pytania przez wybór źródeł, porównanie i syntezę użytkownika do odpowiedzi. Generatywne wyszukiwanie prowadzi od pytania przez retrieval i syntezę systemu do gotowej odpowiedzi. Model opisuje możliwości interfejsu, nie zachowanie każdego użytkownika.',
+    conventional: {
+      title: 'Klasyczne wyszukiwanie',
+      steps: ['Pytanie', 'Wybór źródeł', 'Porównanie', 'Synteza użytkownika', 'Odpowiedź']
+    },
+    generative: {
+      title: 'Generatywne wyszukiwanie',
+      steps: ['Pytanie', 'Retrieval i synteza systemu', 'Gotowa odpowiedź']
+    },
+    caption: 'Uproszczony model dwóch możliwych podziałów pracy w interfejsie. Nie opisuje zachowania każdego użytkownika ani efektu edukacyjnego: klasyczne wyszukiwanie nie gwarantuje porównania źródeł, a generatywne nie wyklucza otwierania linków.'
+  }
+} as const;
+
+const t = copy[lang];
+const figureTitleId = `division-of-labour-title-${lang}`;
+const figureDescriptionId = `division-of-labour-description-${lang}`;
+---
+
+<figure
+  class="division-of-labour"
+  data-qa="generative-search-division-of-labour"
+  aria-labelledby={figureTitleId}
+  aria-describedby={figureDescriptionId}
+>
+  <h3 id={figureTitleId} class="division-of-labour__title">{t.title}</h3>
+  <p id={figureDescriptionId} class="division-of-labour__description">{t.description}</p>
+
+  <div class="division-of-labour__lanes">
+    {[t.conventional, t.generative].map((lane, laneIndex) => (
+      <section
+        class:list={[
+          'process-lane',
+          laneIndex === 0 ? 'process-lane--conventional' : 'process-lane--generative'
+        ]}
+        aria-labelledby={`division-of-labour-${lang}-lane-${laneIndex + 1}`}
+      >
+        <h4 id={`division-of-labour-${lang}-lane-${laneIndex + 1}`}>{lane.title}</h4>
+        <ol role="list" style={`--step-count: ${lane.steps.length}`}>
+          {lane.steps.map((step, stepIndex) => (
+            <li>
+              <span class="process-lane__number" aria-hidden="true">{stepIndex + 1}</span>
+              <span class="process-lane__label">{step}</span>
+              {stepIndex < lane.steps.length - 1 && (
+                <span class="process-lane__arrow" aria-hidden="true">→</span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))}
+  </div>
+
+  <figcaption>{t.caption}</figcaption>
+</figure>
+
+<style>
+  .division-of-labour {
+    box-sizing: border-box;
+    width: min(66rem, calc(100vw - 2rem));
+    max-width: calc(100vw - 2rem);
+    margin-inline: 50%;
+    padding: clamp(1rem, 2.5vw, 1.8rem);
+    transform: translateX(-50%);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--accent-soft) 30%, var(--surface));
+    overflow-wrap: anywhere;
+  }
+
+  .division-of-labour__title {
+    margin: 0;
+    font-size: clamp(1.25rem, 1.7vw, 1.65rem);
+  }
+
+  .division-of-labour__description {
+    max-width: 75ch;
+    margin: 0.65rem 0 0;
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .division-of-labour__lanes {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .process-lane {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .process-lane--generative {
+    border-style: dashed;
+  }
+
+  .process-lane h4 {
+    margin: 0 0 0.8rem;
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .process-lane ol {
+    display: grid;
+    grid-template-columns: repeat(var(--step-count), minmax(0, 1fr));
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .process-lane li {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    min-height: 4.5rem;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.75rem;
+    border: 1px solid var(--line-strong);
+    border-radius: calc(var(--radius) * 0.75);
+    background: color-mix(in srgb, var(--surface) 82%, var(--accent-soft));
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .process-lane li:last-child {
+    border-width: 2px;
+    background: color-mix(in srgb, var(--surface) 78%, var(--accent-soft));
+  }
+
+  .process-lane__number {
+    display: grid;
+    flex: 0 0 1.8rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    place-items: center;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .process-lane__label {
+    min-width: 0;
+  }
+
+  .process-lane__arrow {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 0.55rem);
+    width: 0.9rem;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 1.25rem;
+    line-height: 1;
+    text-align: center;
+  }
+
+  figcaption {
+    margin-top: 1rem;
+    color: var(--text-soft);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 800px) {
+    .division-of-labour {
+      width: 100%;
+      max-width: 100%;
+      margin-inline: 0;
+      padding: 1rem;
+      transform: none;
+    }
+
+    .division-of-labour__description {
+      font-size: 1rem;
+    }
+
+    .process-lane {
+      padding: 0.9rem;
+    }
+
+    .process-lane h4 {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .process-lane ol {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .process-lane li {
+      width: 100%;
+      min-height: 0;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    .process-lane__number {
+      font-size: 1rem;
+    }
+
+    .process-lane__arrow {
+      top: calc(100% + 0.45rem);
+      left: 50%;
+      width: auto;
+      transform: translateX(-50%) rotate(90deg);
+      font-size: 1.35rem;
+    }
+
+    figcaption {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .division-of-labour,
+    .process-lane {
+      padding: 0.8rem;
+    }
+  }
+</style>

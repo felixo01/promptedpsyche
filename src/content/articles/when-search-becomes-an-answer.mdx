@@ -1,0 +1,267 @@
+---
+title: "When Search Becomes an Answer: What Generative AI Changes About Learning"
+description: "Generative search can answer before a learner has selected sources, compared evidence or built a synthesis. What does that change about learning?"
+publishedAt: 2026-07-22
+draft: false
+tags:
+  - generative search
+  - learning
+  - education
+  - epistemic agency
+  - source evaluation
+  - Human-AI Interaction
+  - AI literacy
+author: "Feliks Mamczur"
+readingTime: "16 min read"
+doi: "10.5281/zenodo.21491639"
+doiUrl: "https://doi.org/10.5281/zenodo.21491639"
+version: "1.7"
+licenseName: "CC BY 4.0"
+licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+lang: "en"
+translationKey: "generative-search-learning"
+inBrief:
+  - "Generative search changes not only the form of an answer but also who selects sources, compares evidence and performs the synthesis."
+  - "The 2026 Common Sense Media audit shows what Google Search could do in tested US account configurations, not how real students learned over time."
+  - "Assisted task performance and durable learning are different outcomes, and the design of assistance matters."
+  - "Educational AI should be evaluated not only by answer correctness but also by the work it preserves for the learner."
+---
+
+import GenerativeSearchDivisionOfLabour from '../../components/GenerativeSearchDivisionOfLabour.astro';
+import GenerativeSearchAuditBoundary from '../../components/GenerativeSearchAuditBoundary.astro';
+
+<p class="lede article-deck">Generative search, learning and epistemic agency</p>
+
+<aside class="editorial-aside" data-qa="publication-method">
+  <strong>Method and scope.</strong> This is a research-informed conceptual essay and narrative synthesis. It uses a selective, non-systematic reading of the literature, with no preregistered search strategy or quantitative effect estimate. The Google case is a dated product study. Empirical findings, the author's interpretive framework and design proposals are distinguished throughout.
+</aside>
+
+A student types a question into a box that still looks like an ordinary search engine. Instead of several pages to choose from, they increasingly receive a ready-made answer: structured, fluent, accompanied by links and open to follow-up questions.
+
+The system still searches for material behind the interface. Google describes AI Mode as running multiple related searches and combining their results.[^1] For the user, however, search increasingly arrives as an answer rather than a set of materials.
+
+This changes more than the format of the result. It changes the division of labour. The system interprets the question, selects material and turns it into a coherent account. That can provide a quick introduction to an unfamiliar subject. It can also perform part of the work that an educational task was meant to leave with the learner.
+
+## 1. The same search box, a different kind of answer
+
+With traditional search, at least part of the route from question to conclusion remained visible. The user saw different domains, authors and formats. A list of links never forced anyone to think critically, but it left several decisions in view: what to open, what to compare and which material should support the final answer.
+
+Visible choices did not guarantee good choices. They did, however, allow a teacher to ask why a student selected one source, rejected another or resolved a disagreement. In a ready-made answer, those decisions are less visible even when links remain.
+
+Generative search moves more of this selection inside the system. The user may not see what was omitted, which source most shaped the answer or where fact gives way to interpretation. This matters in education because an assignment may be designed not merely to deliver information but to practise defining a problem, evaluating material or reasoning. The same interface can complete the assignment while bypassing the activity it was meant to teach.
+
+<GenerativeSearchDivisionOfLabour lang="en" />
+
+## 2. What Common Sense Media actually tested
+
+The starting point is an audit published in July 2026 by the Common Sense Media Youth AI Safety Institute. It examined two distinct features within Google Search: AI Overviews, which appear automatically for some queries, and AI Mode, a separate conversational mode opened by the user. The report concerns the US version of the product tested from 19 May to 1 July 2026 in the San Francisco Bay Area.[^2]
+
+The researchers used two types of Family Link-managed test accounts with SafeSearch active: actively supervised profiles representing an 11-year-old and profiles representing a 15-year-old family-group member without active parental supervision. They conducted more than 2,600 interactions across seven test plans, including school assignments, historical questions, current information, bias and synthetic media. The categories in the report's table total 2,624. The accounts were operated by auditors following prepared scenarios, not by students using Search in everyday life.
+
+<GenerativeSearchAuditBoundary
+  lang="en"
+  rows={[
+    { shows: "How AI Overviews and AI Mode answered prepared tests", doesNotShow: "How real students would behave" },
+    { shows: "Complete answers to school assignments", doesNotShow: "Whether students learned from them" },
+    { shows: "CSM's categories for cited sources", doesNotShow: "Whether students opened and evaluated them" },
+    { shows: "Differences between repeated answers", doesNotShow: "Product stability after later updates" },
+    { shows: "The US version during the audit", doesNotShow: "How other regional and language versions behave" }
+  ]}
+/>
+
+The audit is strong evidence of what the product could do in a particular configuration. It is weaker evidence about student behaviour and did not measure durable knowledge, transfer to a new task or changes after months of using generative search. It also cannot establish a lasting deterioration in learning or ability.
+
+The product status was checked again on 22 July 2026. Google's official help pages then listed Poland and Polish for both AI Overviews and AI Mode, while the current interface allowed a user to move from an AI Overview into an AI Mode conversation without losing context.[^1] This does not extend the Bay Area audit to the Polish version or alter the historical limits of the test.
+
+## 3. AI completed the assignment. What did the student practise?
+
+The clearest part of the audit concerned schoolwork. CSM submitted 180 assignments to AI Mode, half in mathematics and half in the humanities. In the configuration tested, AI Mode produced a complete answer for each of the 180 submitted assignments. The audit did not examine whether real students would use those answers or what they would learn from them.[^3]
+
+Completing a task is not the same as learning how to perform it. If a student only needs the result of an equation, a full solution can lead quickly to the right number. If the goal is to choose a method, work through the steps and notice an error, the same help takes over the central part of the exercise.
+
+Consider an assignment such as:
+
+> Compare two explanations of a historical event and justify which is better supported by sources.
+
+This is an illustrative example, not an assignment reported in the CSM audit. A complete AI answer could select the material, identify differences, assess the arguments, build the justification and write the final text. The student would receive a finished response without necessarily doing the intended work.
+
+The distinction depends on the goal. Delegation may be sensible for quick factual orientation. If the goal is to compare sources and construct a justification, however, a correct final text does not show whether the assignment served its educational purpose. Product performance and learning require separate assessment.
+
+Research by Hamsa Bastani and colleagues shows why assisted performance should be separated from independent performance. In a study involving nearly 1,000 secondary-school students at one school in Turkey, conducted across four short sessions, standard access to GPT improved results during mathematics practice, but that group performed worse in no-AI assessments administered within those sessions. A version with pedagogical safeguards reduced this effect. The study was not about Google Search and measured short-term independent performance, but it shows that better performance with a tool need not produce better performance without it.[^4]
+
+An important counterexample comes from Greg Kestin and colleagues. Across two lessons with 194 university physics students, a structured AI tutor produced better results in tests immediately after the sessions than an active-learning class. The tutor guided students rather than simply providing a final answer.[^5] The finding comes from a particular course and population, without a strong measure of how long the effect lasted. It nevertheless shows that AI itself is not the problem. The form of help and its relation to the task matter.
+
+## 4. What happens between a question and an answer
+
+When a result arrives as a finished synthesis, the earlier stages can look like an unnecessary stretch of road. Yet those stages may contain activities that matter for learning. Depending on the task, the user may need to:
+
+1. clarify what they are actually trying to find out;
+2. identify the kind of source the question requires;
+3. choose which results are worth opening;
+4. compare their scope, authorship and evidence;
+5. notice conflicts between facts or interpretations;
+6. build an answer they can justify independently;
+7. decide what remains unknown and what needs further checking.
+
+Here, epistemic agency means the ability to select sources, [evaluate them](/concepts/epistemic-vigilance/), compare claims and [justify one's own conclusions](/concepts/metacognition/). It is not a fixed personal trait or a guarantee of better learning; the term describes how much of the relevant work a tool leaves with the user.
+
+There is no reason to romanticise this process. Traditional web users also opened the first result, stopped at an extract or copied a ready-made text. Studies conducted before generative AI became widespread found that students struggled to assess authorship, the interests behind a page and the quality of its evidence.[^6] AI did not create this problem, but a ready-made synthesis may reduce occasions to make these difficulties visible and practise them.
+
+The Association of College and Research Libraries describes information literacy partly as strategic searching and judging authority in context.[^7] Beyond finding an apparent answer, a user needs to know why a source matters, what knowledge it offers and where its limits lie. Research on lateral reading - leaving the page being assessed to check it through other sources - found that professional fact-checkers used this practice more often than the other participants studied.[^8]
+
+Such practices help a user distinguish information from a justified conclusion. They also reveal that two equally polished texts may rest on evidence of very different weight.
+
+Generative search can suggest a better question, point to disagreement or surface material the user might not have found alone. The question is whether it supports evaluation or replaces it with a narrative whose construction remains largely out of sight.
+
+## 5. One answer, unequal sources
+
+In the CSM audit, the same history questions were asked again. The test plan contained 278 history prompts; CSM reported that 43% of questions repeated with identical wording returned answers that differed materially in content, depth or perspective. That does not mean that 43% were wrong: under CSM's criteria, 92% of the historical responses across AI Overviews and AI Mode were rated adequate or better.[^9] The variability instead shows how a similar tone can carry a different selection of emphasis, argument and material.
+
+CSM also analysed more than 2,100 citations. Under the organisation's coding, 29% led to user-generated-content platforms, while 30% led to sources it classified as high quality, including public institutions, universities and peer-reviewed publications. The mean was 7.71 citations per answer.[^10] User-generated material is not automatically false, and an institutional source is not always the best source for a particular question. Yet all of them can enter the same visual language of credibility: a similar tone, layout and appearance can conceal unequal source quality.
+
+The presence of citations does not remove the need to evaluate them. The reader must open a source, determine its role and ask whether it [supports the conclusion](/concepts/grounding/). Many links may make checking possible, but their number does not measure argumentative quality.
+
+Nor does a link guarantee that it supports the precise sentence beside it. A 2023 audit of four earlier generative search engines found gaps between claims and citations. It did not assess Google AI Overviews or AI Mode in 2026, but it shows why the appearance of a citation is not enough.[^11]
+
+Processing fluency is the ease with which information is perceived and understood. In a classic experiment by Rolf Reber and Norbert Schwarz, ease of reading affected judgements of truth.[^12] This offers psychological background for asking how a smooth synthesis is received, not direct evidence about [AI answers](/concepts/model-output/), children or Google Search. A professional appearance does not reveal the strength of an answer's evidence.
+
+Not every inaccuracy should be called a hallucination. A factual error, a poorly matched citation, the selection of one perspective and a changed answer after repeating a query are different problems. They call for different forms of checking.
+
+## 6. Why younger users may face a harder task
+
+Children and teenagers are neither uniform nor helpless. They differ in knowledge, experience, interests and adult support. Some move skilfully between sources, while some adults do this badly. Age alone does not determine how well someone evaluates sources.
+
+Younger users are, however, still building subject knowledge and strategies for checking information. Without topic knowledge, it is harder to spot a missing exception or incompatible interpretations. Without practice, it is harder to recognise why a university article, public document, news report and forum post serve different purposes. Research on critical evaluation online shows why these abilities matter, but does not demonstrate that every child is especially susceptible to AI.[^13]
+
+Exposure to generative summaries is already broad. In a 2026 US survey by CSM, three quarters of respondents aged 9 to 17 reported using or encountering AI summaries in search results. In Ofcom's UK study, 78% of 8- to 17-year-olds read them at least sometimes, and 46% of those readers agreed that they were always accurate.[^14] These self-reports from two countries are neither skill measures nor data about Poland. They do show that summaries are part of the everyday information environment rather than a specialist tool used only by AI enthusiasts.
+
+The issue is not presumed credulity among young people, but the availability of opportunities to practise. The ability to evaluate sources, recognise uncertainty and compare arguments develops through practice. If a system repeatedly performs these activities in the background, information becomes easier to reach but there may be less room to learn how to judge it.
+
+Responsibility therefore cannot rest solely with the individual student. The design of the tool matters, as does whether a school [clearly distinguishes tasks intended to deliver information from tasks intended to develop judgement](/concepts/ai-literacy/).
+
+## 7. A default answer versus a deliberately chosen tutor
+
+Discussions of AI in education often merge two situations: deliberately choosing a tutor or step-by-step support, and encountering a generative answer inside a tool previously known as a search engine.
+
+AI Overviews and AI Mode are not the same. According to Google's official documentation, AI Overviews are a core feature of Search and have no permanent switch. After searching, a user can select the Web filter to see a list of links without the synthesis. AI Mode remains a separate conversational mode that can be opened directly and used for follow-up questions. The current interface also allows a user to move into it from an AI Overview without losing context, making the boundary between the two features more permeable. Google describes AI Mode as running multiple related searches and combining the results into an answer with links.[^15]
+
+The choice of help is part of [Human-AI Interaction](/concepts/human-ai-interaction/). Opening a separate tutor requires an explicit step; with an automatic summary, no comparable moment of choice may be visible. No direct study shows how the automatic appearance of AI Overviews affects learning among young people, but the design question remains: does the help match the user's goal, or has the interface selected it?
+
+This is not only a matter of settings. A default answer signals what the tool treats as the normal way to reach information. If synthesis appears before sources, checking can look like an optional extra rather than part of searching.
+
+Google's scale makes it an important case, but the question applies wherever a generative answer becomes the default way of encountering knowledge.
+
+## 8. The strongest counterarguments
+
+A critique of ready-made answers can become a defence of a past that never existed. The strongest counterarguments therefore belong inside the central analysis rather than in a token paragraph at the end.
+
+**Traditional search also encouraged superficial behaviour.** A list of links did not force comparison. The difference is not that everyone once built knowledge deliberately, but that boundaries between documents were more visible. A generative answer may retain links, but its main narrative is already assembled.
+
+**Ready-made schoolwork predates AI.** Encyclopaedias, forums and answer sites have long allowed students to bypass parts of an assignment. Generative AI did not invent copying. It made a response tailored to a particular instruction more readily available inside a search tool.
+
+**AI can improve accessibility.** Simpler language, another example, translation or asking without social pressure can open difficult material. This support should not be removed in defence of effort for its own sake. The relevant distinction is between removing a barrier unrelated to the goal and performing the activity the student was meant to learn.
+
+**Not all effort supports learning.** Research on [cognitive load](/concepts/cognitive-load/) and productive failure, in which learners attempt a problem before receiving explanation, does not suggest that harder is always better. Confusion and unnecessary frustration can consume attention. Effort is useful when it serves the goal and is paired with appropriate support and feedback.[^16]
+
+**A well-designed AI tutor can support learning.** The Kestin study shifts the question from "AI or learning" to "what help, at what point and for what purpose?" A hint, guiding question and complete solution are different forms of help. A system that distinguishes them may support independence better than one that begins with a finished answer.
+
+**CSM did not measure long-term effects, and the product changes quickly.** Google spokesperson Davis Thompson told Axios that the audit used a narrow set of ambiguous and contrived queries that did not reflect typical Search use, and said the company could not recreate or verify the findings.[^17] The audit did not involve real students and cannot establish a lasting developmental effect. These limits constrain the conclusions without removing the question about the division of labour.
+
+**Moving work to a tool can be sensible.** [Cognitive offloading](/concepts/cognitive-offloading/) means entrusting some remembering or calculating to the environment or a tool. Notebooks, calculators and search engines have long done this.[^18] What matters is which work is delegated, whether the result can be evaluated and how the freed attention is used.
+
+Together, these counterarguments sharpen the central claim. There is no single effect of using AI for learning. The goal, type and timing of support, the user's knowledge and whether the learner can perform the relevant task independently once the tool is removed all matter.
+
+## 9. Designing help that does not take over the whole task
+
+The research does not provide a recipe for an educational search engine. The following four design directions require evaluation; they are not proven product features.
+
+### 1. Match the help to the goal
+
+Finding sources, understanding a subject, practising a skill and checking one's answer are different tasks. A full solution may suit one and take over another. The interface could first help the user state what they need.
+
+This choice should also be clear to the teacher setting the exercise. Otherwise the same search box may offer the same help regardless of the intended learning goal.
+
+### 2. Provide help in stages
+
+An independent attempt, hint, guiding question, partial solution and complete answer are different levels of support. Their order can preserve room for the learner's work. A questioning mode is not enough if it merely lengthens the route to the same ready-made text.
+
+### 3. Make sources visible again
+
+Users should be able to see which claim rests on which material, compare sources and notice disagreement. Quality should not be reduced to a single label that may itself be accepted without checking. The interface could instead distinguish a primary document, secondary account, news report and forum contribution.
+
+This does not require technical overload. Sources need to appear where and in a form that makes comparison easier than passive acceptance.
+
+### 4. Give users a meaningful choice
+
+Options to turn off synthesis, choose the kind of help or add a step requiring independent judgement could increase user control. The aim is neither maximum trust nor general distrust, but [appropriate reliance](/concepts/calibrated-trust/): recognising when an answer requires checking.[^19] An added step can reduce [overreliance on AI](/concepts/automation-bias/), but may reduce convenience or create an accessibility barrier.[^20] It therefore needs testing with different users and tasks, measuring correctness, durable knowledge, transfer and source-evaluation behaviour.
+
+Each direction needs evidence. Educational intent does not make a feature effective.
+
+## 10. Search as a division of labour
+
+The question raised by generative search is not only whether it produced the right answer. It is also how much of the route to that answer was completed by the system and how much remained with the user. In a straightforward information task, synthesis can save time. In a learning task, the same shortcut may bypass the stage that was the real purpose of the exercise.
+
+This is not an argument for a web without AI or for leaving students alone with difficult material. A good tool can explain, organise and guide without hiding the sources, uncertainty and decisions behind its answer. Sometimes the best help creates the conditions for the user to take the next step.
+
+As generative search develops, we need to assess two things separately: the quality of the answer and the quality of the learning process that remains in the learner's hands. The first tells us whether the system answered well. The second tells us whether the learner can still understand why an answer deserves trust, where its limits lie and how to reach an independent judgement.
+
+### For the next task
+
+The same task can serve different purposes. Before choosing the kind of help, it is useful to identify which matters most:
+
+1. **Quick orientation** - a broad view of the subject is enough.
+2. **Completing the task** - the priority is an accurate result in the required form.
+3. **Practising a skill** - working through the activity independently matters, even if it takes longer.
+4. **Independent source evaluation** - the goal is to select material, compare it and justify a conclusion.
+
+This distinction is not a diagnostic tool. It simply helps show why the same kind of answer does not suit every goal.
+
+<aside class="editorial-aside" data-qa="related-reading">
+  <strong>Related reading on Prompted Psyche.</strong> Continue with [Don't Ask Whether AI Makes Us Dumber](/articles/dont-ask-whether-ai-makes-us-dumber/), [It Is Not Just About the Prompt](/articles/it-is-not-just-about-the-prompt/) and [Trust in the Age of Ready-Made Answers](/articles/trust-in-the-age-of-ready-made-answers/).
+</aside>
+
+## References
+
+1. Common Sense Media Youth AI Safety Institute. *Google Search: AI Overview & AI Mode*. 2026. https://institute.commonsensemedia.org/sites/default/files/risk-assessments/csm-ai-risk-assessment-google-search-07142026_0.pdf
+2. Common Sense Media. *The Common Sense Media Census: AI Use by Tweens and Teens, 2026*. 2026. https://www.commonsensemedia.org/sites/default/files/research/report/2026-ai-use-by-tweens-and-teens-1.pdf
+3. Ofcom. *Children and Parents: Media Use and Attitudes Report 2025-6*. 2026. https://www.ofcom.org.uk/siteassets/resources/documents/research-and-data/media-literacy-research/children/2026-children-and-parents-report/children-and-parents-media-use-and-attitudes-report-2025-6.pdf?v=418231
+4. Google Search Help. *Find information in faster & easier ways with AI Overviews in Google Search*. Page checked on 22 July 2026. https://support.google.com/websearch/answer/14901683?hl=en
+5. Robby Stein, Google Search. *Expanding AI Overviews and introducing AI Mode*. 2025. https://blog.google/products-and-platforms/products/search/ai-mode-search/
+6. Association of College and Research Libraries. *Framework for Information Literacy for Higher Education*. 2015, adopted in 2016. https://www.ala.org/acrl/standards/ilframework
+7. Axios. *Google's AI search fails child-safety tests*. 2026. https://www.axios.com/2026/07/15/googles-ai-search-common-sense-child-safety
+8. Hamsa Bastani et al. *Generative AI without guardrails can harm learning: Evidence from high school mathematics*. 2025. https://doi.org/10.1073/pnas.2422633122
+9. Greg Kestin et al. *AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting*. 2025. https://doi.org/10.1038/s41598-025-97652-6
+10. Tanmay Sinha and Manu Kapur. *When Problem Solving Followed by Instruction Works: Evidence for Productive Failure*. 2021. https://doi.org/10.3102/00346543211019105
+11. Nicholas C. Soderstrom and Robert A. Bjork. *Learning Versus Performance: An Integrative Review*. 2015. https://doi.org/10.1177/1745691615569000
+12. John Sweller. *Cognitive load during problem solving: Effects on learning*. 1988. https://doi.org/10.1016/0364-0213(88)90023-7
+13. Evan F. Risko and Sam J. Gilbert. *Cognitive Offloading*. 2016. https://doi.org/10.1016/j.tics.2016.07.002
+14. Rolf Reber and Norbert Schwarz. *Effects of Perceptual Fluency on Judgments of Truth*. 1999. https://doi.org/10.1006/ccog.1999.0386
+15. Candice M. Mills. *Knowing When to Doubt: Developing a Critical Stance When Learning from Others*. 2013. https://doi.org/10.1037/a0029500
+16. Sam Wineburg and Sarah McGrew. *Lateral Reading and the Nature of Expertise: Reading Less and Learning More When Evaluating Digital Information*. 2019. https://doi.org/10.1177/016146811912101102
+17. Joel Breakstone et al. *Students' Civic Online Reasoning: A National Portrait*. 2021. https://doi.org/10.3102/0013189X211017495
+18. Nelson F. Liu, Tianyi Zhang and Percy Liang. *Evaluating Verifiability in Generative Search Engines*. 2023. https://doi.org/10.18653/v1/2023.findings-emnlp.467
+19. John D. Lee and Katrina A. See. *Trust in Automation: Designing for Appropriate Reliance*. 2004. https://doi.org/10.1518/hfes.46.1.50_30392
+20. Zana Buçinca, Maja Barbara Malaya and Krzysztof Z. Gajos. *To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-Assisted Decision-Making*. 2021. https://doi.org/10.1145/3449287
+21. Google Search Help. *Get AI-powered responses with AI Mode in Google Search*. Page current on 22 July 2026. https://support.google.com/websearch/answer/16011537?hl=en
+22. Elizabeth Reid, Google Search. *A new era for AI Search*. 2026. https://blog.google/products-and-platforms/products/search/search-io-2026/
+
+[^1]: Google's official description of AI Mode and its difference from traditional search: reference 5 and reference 21. Documentation of AI Overview limitations, availability and the transition into AI Mode: reference 4 and reference 22. Status checked on 22 July 2026.
+[^2]: Method, Family Link account configurations, location, dates and interaction count: reference 1, pp. 3-6. The categories in the report's table total 2,624.
+[^3]: Test of 180 school assignments: reference 1, pp. 15-16.
+[^4]: Performance during practice and short-term no-AI assessments across four sessions at one school: reference 8. The broader distinction between practice performance and durable learning: reference 11.
+[^5]: Randomised study of a structured AI tutor in a university physics course: reference 9.
+[^6]: Students' difficulties in evaluating information online: reference 17. Lateral-reading practices: reference 16.
+[^7]: Searching as strategic exploration and authority as context-dependent: reference 6.
+[^8]: Comparison of professional fact-checkers, historians and university students: reference 16.
+[^9]: Repeated history answers and their ratings: reference 1, p. 17. The figure of 278 describes the full history-prompt test plan, not the number of repetitions alone. `Materially different` and `adequate` are CSM coding categories.
+[^10]: Citation audit and source-quality categories: reference 1, p. 21. User-generated content is not treated here as synonymous with false information.
+[^11]: Audit of verifiability in four generative search engines in 2023: reference 18.
+[^12]: Experiment on perceptual fluency and judgements of truth: reference 14. This was not a study of AI or younger users.
+[^13]: Development of a critical stance towards testimony: reference 15. Students' online source evaluation: reference 17.
+[^14]: Younger people's exposure to AI summaries: reference 2 and reference 3. The data are self-reported and concern the US and the UK.
+[^15]: No permanent switch for AI Overviews, the Web filter and current availability: reference 4. Description and availability of AI Mode: reference 21. Seamless movement between the features: reference 22. Status checked on 22 July 2026.
+[^16]: Productive failure depends on its conditions: reference 10. Unhelpful cognitive load during problem solving: reference 12.
+[^17]: Google's position as reported by Axios: reference 7. Full limitations of the audit: reference 1, pp. 5-6.
+[^18]: Cognitive offloading as transferring cognitive work to the environment or a tool: reference 13.
+[^19]: Appropriate reliance rather than maximum trust as a design goal: reference 19.
+[^20]: Experiment on cognitive forcing, overreliance and the cost to user experience: reference 20.

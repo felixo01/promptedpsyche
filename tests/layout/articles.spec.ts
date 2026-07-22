@@ -22,6 +22,14 @@ const aiThinkingPolishArticleRoute = '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/
 const aiThinkingEnglishArticleRoute = '/articles/dont-ask-whether-ai-makes-us-dumber/';
 const llmPolishArticleRoute = '/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/';
 const llmEnglishArticleRoute = '/articles/openai-chatgpt-gpt-llm-difference/';
+const generativeSearchPolishArticleRoute =
+  '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/';
+const generativeSearchEnglishArticleRoute = '/articles/when-search-becomes-an-answer/';
+const generativeSearchPolishArticleTitle = 'Wyszukiwarka odpowiada. Co zostaje uczniowi?';
+const generativeSearchEnglishArticleTitle =
+  'When Search Becomes an Answer: What Generative AI Changes About Learning';
+const generativeSearchEnglishDoi = '10.5281/zenodo.21491639';
+const generativeSearchEnglishDoiUrl = `https://doi.org/${generativeSearchEnglishDoi}`;
 const llmPolishArticleTitle = 'OpenAI, ChatGPT, GPT i LLM - czym się różnią?';
 const llmEnglishArticleTitle = 'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?';
 const aiThinkingPolishArticleTitle =
@@ -164,7 +172,7 @@ test.describe('published articles', () => {
   test('shows the English article on the English articles index', async ({ page }) => {
     await page.goto('/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(9);
+    await expect(page.locator('.entry-list article')).toHaveCount(10);
     await expect(page.locator('.entry-list')).toContainText('It is not just about the prompt');
     await expect(page.locator('.entry-list')).toContainText(
       'The model does not remember. It works with context.'
@@ -180,8 +188,9 @@ test.describe('published articles', () => {
       'AI does not read people. It helps read context.'
     );
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(9);
+    expect(titles).toHaveLength(10);
     expect(titles).toEqual(expect.arrayContaining([
+      generativeSearchEnglishArticleTitle,
       aiThinkingEnglishArticleTitle,
       llmEnglishArticleTitle,
       embodiedEnglishArticleTitle,
@@ -283,13 +292,14 @@ test.describe('published articles', () => {
   test('shows the Polish article on the Polish articles index', async ({ page }) => {
     await page.goto('/pl/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(9);
+    await expect(page.locator('.entry-list article')).toHaveCount(10);
     await expect(page.locator('.entry-list')).toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('.entry-list')).toContainText(mirrorPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiPathPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiFearsPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(embodiedPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiThinkingPolishArticleTitle);
+    await expect(page.locator('.entry-list')).toContainText(generativeSearchPolishArticleTitle);
     await expect(page.locator('.entry-list')).not.toContainText(oldAiPathPolishArticleTitle);
     const titleLink = page.getByRole('link', {
       name: 'Nie chodzi tylko o prompt',
@@ -359,8 +369,9 @@ test.describe('published articles', () => {
     await page.goto('/pl/articles/');
 
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(9);
+    expect(titles).toHaveLength(10);
     expect(titles).toEqual(expect.arrayContaining([
+      generativeSearchPolishArticleTitle,
       aiThinkingPolishArticleTitle,
       llmPolishArticleTitle,
       embodiedPolishArticleTitle,
@@ -1702,6 +1713,128 @@ test.describe('published articles', () => {
         await expect(comparison.locator('.entity-comparison__cards .entity-card').first()).toBeVisible();
         await expect(comparison.locator('.entity-comparison__table')).toBeHidden();
         await expect(comparison.locator('.entity-card dl > div')).toHaveCount(16);
+        const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+        expect(overflow, `${testCase.route} at ${width}px`).toBe(false);
+      }
+    }
+  });
+
+  test('publishes the bilingual generative-search essay with DOI metadata and responsive evidence components', async ({ page, request }) => {
+    const cases = [
+      {
+        route: generativeSearchEnglishArticleRoute,
+        alternate: generativeSearchPolishArticleRoute,
+        title: generativeSearchEnglishArticleTitle,
+        deck: 'Generative search, learning and epistemic agency',
+        lang: 'en',
+        doiLabel: 'Citable version (v1.7):',
+        conventionalSteps: ['Question', 'Source selection', 'Comparison', 'User synthesis', 'Answer'],
+        generativeSteps: ['Question', 'System retrieval and synthesis', 'Ready-made answer'],
+        firstBoundary: 'How AI Overviews and AI Mode answered prepared tests',
+        lastBoundary: 'How other regional and language versions behave',
+        practicalHeading: 'For the next task',
+        hasDirectDoi: true
+      },
+      {
+        route: generativeSearchPolishArticleRoute,
+        alternate: generativeSearchEnglishArticleRoute,
+        title: generativeSearchPolishArticleTitle,
+        deck: 'O generatywnym wyszukiwaniu, źródłach i pracy potrzebnej do uczenia się',
+        lang: 'pl',
+        doiLabel: 'DOI wersji angielskiej (v1.7):',
+        conventionalSteps: ['Pytanie', 'Wybór źródeł', 'Porównanie', 'Synteza użytkownika', 'Odpowiedź'],
+        generativeSteps: ['Pytanie', 'Retrieval i synteza systemu', 'Gotowa odpowiedź'],
+        firstBoundary: 'Jak AI Overviews i AI Mode odpowiadały w testach',
+        lastBoundary: 'Działanie wersji polskiej',
+        practicalHeading: 'Do sprawdzenia przy następnym zadaniu',
+        hasDirectDoi: false
+      }
+    ] as const;
+
+    for (const testCase of cases) {
+      const response = await request.get(testCase.route);
+      expect(response.ok(), testCase.route).toBe(true);
+
+      await page.setViewportSize({ width: 1280, height: 900 });
+      await page.goto(testCase.route);
+
+      await page.keyboard.press('Tab');
+      await expect(page.locator('.skip-link')).toBeFocused();
+      await expect(page.locator('.skip-link')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+
+      await expect(page.locator('html')).toHaveAttribute('lang', testCase.lang);
+      await expect(page.locator('.content-header h1')).toHaveText(testCase.title);
+      await expect(page.locator('.article-deck')).toHaveText(testCase.deck);
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+        'href',
+        `https://promptedpsyche.com${testCase.route}`
+      );
+      await expect(
+        page.locator(`link[rel="alternate"][hreflang="${testCase.lang === 'en' ? 'pl' : 'en'}"]`)
+      ).toHaveAttribute('href', `https://promptedpsyche.com${testCase.alternate}`);
+      await expect(page.locator(`.language-switcher a[href="${testCase.alternate}"]`)).toBeVisible();
+      await expect(page.locator('[data-qa="consulting-cta"]')).toHaveCount(1);
+      await expect(page.locator('[data-qa="publication-method"]')).toContainText('narrative synthesis');
+
+      const byline = page.locator('[data-qa="article-byline"]');
+      await expect(byline).toContainText(testCase.doiLabel);
+      await expect(byline.getByRole('link', { name: `DOI ${generativeSearchEnglishDoi}` })).toHaveAttribute(
+        'href',
+        generativeSearchEnglishDoiUrl
+      );
+      await expect(page.locator('[data-qa="rights-notice"][data-variant="content"]')).toContainText(
+        'CC BY 4.0'
+      );
+
+      const structuredDataText = await page
+        .locator('script[type="application/ld+json"]')
+        .evaluateAll((scripts) => scripts.map((script) => script.textContent ?? '').join('\n'));
+      expect(structuredDataText).toContain('"@type":"Article"');
+      expect(structuredDataText).not.toContain('ScholarlyArticle');
+      if (testCase.hasDirectDoi) {
+        await expect(page.locator('meta[name="citation_doi"]')).toHaveAttribute(
+          'content',
+          generativeSearchEnglishDoi
+        );
+        expect(structuredDataText).toContain(`"value":"${generativeSearchEnglishDoi}"`);
+        expect(structuredDataText).toContain(`"sameAs":"${generativeSearchEnglishDoiUrl}"`);
+        expect(structuredDataText).toContain('"version":"1.7"');
+      } else {
+        await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
+        expect(structuredDataText).not.toContain('"propertyID":"DOI"');
+      }
+
+      const diagram = page.locator('[data-qa="generative-search-division-of-labour"]');
+      await expect(diagram).toBeVisible();
+      await expect(diagram.locator('.process-lane')).toHaveCount(2);
+      await expect(diagram.locator('.process-lane').nth(0).locator('ol > li')).toHaveCount(5);
+      await expect(diagram.locator('.process-lane').nth(1).locator('ol > li')).toHaveCount(3);
+      expect(await diagram.locator('.process-lane').nth(0).locator('.process-lane__label').allTextContents())
+        .toEqual(testCase.conventionalSteps);
+      expect(await diagram.locator('.process-lane').nth(1).locator('.process-lane__label').allTextContents())
+        .toEqual(testCase.generativeSteps);
+      await expect(diagram.locator('figcaption')).not.toBeEmpty();
+
+      const boundary = page.locator('[data-qa="generative-search-audit-boundary"]');
+      await expect(boundary.locator('.audit-boundary__table')).toBeVisible();
+      await expect(boundary.locator('thead th')).toHaveCount(2);
+      await expect(boundary.locator('tbody tr')).toHaveCount(5);
+      await expect(boundary).toContainText(testCase.firstBoundary);
+      await expect(boundary).toContainText(testCase.lastBoundary);
+      await expect(boundary.locator('.audit-boundary__cards')).toBeHidden();
+      await expect(page.getByRole('heading', { name: testCase.practicalHeading })).toBeVisible();
+
+      await page.setViewportSize({ width: 768, height: 1024 });
+      await expect(diagram.locator('.process-lane').nth(0).locator('ol')).toHaveCSS(
+        'flex-direction',
+        'column'
+      );
+
+      for (const width of [390, 320]) {
+        await page.setViewportSize({ width, height: 900 });
+        await expect(boundary.locator('.audit-boundary__table')).toBeHidden();
+        await expect(boundary.locator('.audit-boundary-card')).toHaveCount(5);
+        await expect(boundary.locator('.audit-boundary__cards')).toBeVisible();
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
         expect(overflow, `${testCase.route} at ${width}px`).toBe(false);
       }
