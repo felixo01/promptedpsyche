@@ -5,6 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getArticlePath } from '../../lib/articleRoutes';
 import { onlyPublicEntriesByLang } from '../../lib/content';
 import { getNotePath } from '../../lib/noteRoutes';
+import { getAuthorEntity } from '../../lib/site';
 
 const publicArticles = onlyPublicEntriesByLang(await getCollection('articles'), 'pl');
 const publicNotes = onlyPublicEntriesByLang(await getCollection('notes'), 'pl');
@@ -29,6 +30,7 @@ const startHereEntries = [
   title="Ludzka strona AI"
   image="/images/social/prompted-psyche-home-social-1200x630.png"
   description="Prompted Psyche to oparta na źródłach platforma publikacyjna Feliksa Mamczura o ludzkiej stronie AI, z audytem wykorzystania AI dla zespołów kreatywnych, marketingowych i komunikacyjnych."
+  structuredData={getAuthorEntity('pl')}
 >
   <div>
     <section class="home-hero home-hero-publication" aria-labelledby="home-title">

@@ -1,29 +1,51 @@
 ---
+import { getCollection } from 'astro:content';
+import AuthorPublicProfiles from '../../components/AuthorPublicProfiles.astro';
 import AuthorPortrait from '../../components/AuthorPortrait.astro';
+import SelectedPublications from '../../components/SelectedPublications.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { absoluteUrl, getAuthorEntity, site } from '../../lib/site';
+import { getSelectedAuthorPublications } from '../../lib/authorPublications';
+import { AUTHOR_ENTITY_ID, WEBSITE_ENTITY_ID, absoluteUrl, getAuthorEntity } from '../../lib/site';
 
 const pageDescription =
   'O Feliksie Mamczurze, autorze Prompted Psyche - publikacji o AI, zaufaniu, komunikacji i ludzkiej stronie inteligentnych systemów.';
+const selectedPublications = getSelectedAuthorPublications(await getCollection('articles'), 'pl');
 const profileStructuredData = {
-  '@context': 'https://schema.org',
+  '@id': absoluteUrl('/pl/about/#profile-page'),
   '@type': 'ProfilePage',
   name: 'Feliks Mamczur - autor Prompted Psyche',
   description: pageDescription,
   url: absoluteUrl('/pl/about/'),
   inLanguage: 'pl',
   isPartOf: {
-    '@type': 'WebSite',
-    name: site.name,
-    url: site.url
+    '@id': WEBSITE_ENTITY_ID
   },
-  mainEntity: getAuthorEntity('pl')
+  mainEntity: getAuthorEntity('pl'),
+  hasPart: selectedPublications.map((publication) => ({
+    '@type': 'Article',
+    headline: publication.title,
+    url: absoluteUrl(publication.href),
+    datePublished: publication.publishedAt.toISOString(),
+    author: {
+      '@id': AUTHOR_ENTITY_ID
+    },
+    ...(publication.identifierDoi
+      ? {
+          identifier: {
+            '@type': 'PropertyValue',
+            propertyID: 'DOI',
+            value: publication.identifierDoi
+          }
+        }
+      : {})
+  }))
 };
 ---
 
 <BaseLayout
   lang="pl"
-  title="Kim jestem"
+  title="Feliks Mamczur - autor Prompted Psyche"
+  appendSiteName={false}
   description={pageDescription}
   structuredData={profileStructuredData}
 >
@@ -31,17 +53,18 @@ const profileStructuredData = {
     <header class="about-hero">
       <div class="lovable-container about-hero__inner">
         <div class="about-hero__copy">
-          <p class="eyebrow">Autor</p>
-          <h1>Kim jestem</h1>
+          <p class="eyebrow">Autor Prompted Psyche</p>
+          <h1>Feliks Mamczur</h1>
           <p class="lede">
-            Prompted Psyche to miejsce, w którym piszę o tym, jak sztuczna
-            inteligencja zmienia sposób myślenia, zaufania, komunikacji, pracy,
-            twórczości i relacji z innymi ludźmi.
+            Nazywam się Feliks Mamczur. Jestem autorem i twórcą Prompted Psyche —
+            niezależnej platformy publikacyjnej o AI, cyberpsychologii i Human-AI
+            Interaction.
           </p>
           <p class="hero-subnote">
-            Nazywam się Feliks Mamczur i stworzyłem Prompted Psyche jako miejsce,
-            w którym piszę o ludzkiej stronie AI, cyberpsychologii, Human-AI
-            Interaction i inteligentnych systemów.
+            Piszę i konsultuję o tym, jak AI zmienia myślenie, zaufanie,
+            komunikację, uczenie się, twórczość i pracę. Sposób, w jaki podchodzę
+            do tych zmian, wyrasta także z doświadczenia w filmie, komunikacji
+            wizualnej i pracy twórczej.
           </p>
           <p class="hero-subnote">
             Interesuje mnie nie tylko to, co potrafią modele, ale też to, co dzieje
@@ -171,6 +194,7 @@ const profileStructuredData = {
               <a
                 class="inline-text-link"
                 href="https://www.europeanfilmawards.eu/talent/feliks-mamczur/"
+                rel="me noopener"
                 >European Film Academy</a
               >. Praca filmowa nauczyła mnie uważności na kadr, kolejność, obraz,
               emocje i sposób, w jaki odbiorca buduje znaczenie. Tę perspektywę
@@ -179,9 +203,15 @@ const profileStructuredData = {
               <a
                 class="inline-text-link"
                 href="https://felixmamczur.com/"
+                rel="me noopener"
                 title="Feliks Mamczur - projekty wizualne i filmowe"
                 >projekty wizualne i filmowe</a
               >.
+            </p>
+            <p>
+              W części wcześniejszych napisów filmowych i baz branżowych moje
+              nazwisko występuje jako Feliks Mirosław Mamczur, Mirosław Mamczur
+              albo Felix Mamczur. Wszystkie te zapisy dotyczą tej samej osoby.
             </p>
             <p>
               Moja praca koncentruje się na tym, jak AI wpływa na poznanie, zaufanie,
@@ -235,6 +265,8 @@ const profileStructuredData = {
               <strong>Słownik języka Prompted Psyche</strong>
             </a>
           </div>
+          <SelectedPublications lang="pl" publications={selectedPublications} />
+          <AuthorPublicProfiles lang="pl" />
         </div>
       </section>
 

@@ -91,7 +91,11 @@ test.describe('topic hubs', () => {
           'href',
           `https://promptedpsyche.com${topic.en}`
         );
-        await expect(page.locator('script[type="application/ld+json"]')).toHaveCount(0);
+        await expect(page.locator('script[type="application/ld+json"]')).toHaveCount(1);
+        const structuredData = await page.locator('script[type="application/ld+json"]').textContent();
+        expect(structuredData).toContain('https://promptedpsyche.com/#website');
+        expect(structuredData).toContain('https://promptedpsyche.com/#publisher');
+        expect(structuredData).not.toContain('BreadcrumbList');
 
         const wordCount = await page.locator('[data-qa="topic-hub"]').evaluate((element) =>
           (element.textContent ?? '').trim().split(/\s+/).filter(Boolean).length

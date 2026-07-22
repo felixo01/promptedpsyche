@@ -1185,8 +1185,8 @@ html[lang='pl'] .about-hero h1 {
 }
 
 .about-hero__aside .author-page-hero__media {
-  justify-self: stretch;
-  width: 100%;
+  justify-self: start;
+  width: min(100%, 420px);
 }
 
 .about-summary-card {
@@ -1312,6 +1312,121 @@ html[lang='pl'] .about-hero h1 {
 
 .about-link-grid a:hover,
 .about-link-grid a:focus-visible {
+  border-color: var(--accent);
+}
+
+.author-publication-panel,
+.author-profile-panel {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--line-strong);
+  padding-top: 1.15rem;
+}
+
+.author-publication-panel > h3,
+.author-profile-panel > h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  line-height: 1.2;
+}
+
+.author-publication-panel > ol,
+.author-profile-panel > ul {
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.author-publication-panel > ol {
+  display: grid;
+}
+
+.author-publication-panel > ol > li {
+  min-width: 0;
+  border-top: 1px solid var(--line-soft);
+  padding-block: 1.1rem;
+}
+
+.author-publication-panel > ol > li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.author-publication-panel article,
+.author-publication-panel h4 {
+  min-width: 0;
+}
+
+.author-publication-panel h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.author-publication-panel h4 a {
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.author-publication-panel article > p {
+  margin-top: 0.55rem;
+  color: rgba(28, 25, 23, 0.68);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.author-publication-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.65rem;
+  align-items: baseline;
+  margin-top: 0.65rem;
+  color: rgba(28, 25, 23, 0.52);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.035em;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.author-publication-meta a {
+  color: var(--accent);
+}
+
+.author-profile-panel > ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1rem;
+}
+
+.author-profile-panel li,
+.author-profile-panel a {
+  min-width: 0;
+}
+
+.author-profile-panel a {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  justify-content: space-between;
+  border-top: 1px solid var(--line-soft);
+  padding-top: 0.75rem;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.author-profile-panel a span:last-child {
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+
+.author-profile-panel a:hover,
+.author-profile-panel a:focus-visible {
   border-color: var(--accent);
 }
 
@@ -4051,6 +4166,10 @@ html[lang='pl'] .topic-hub__heading h1 {
   .about-link-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .author-profile-panel > ul {
+    grid-template-columns: 1fr;
   }
 
   .process-teaser {

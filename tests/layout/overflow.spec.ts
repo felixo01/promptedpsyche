@@ -88,6 +88,15 @@ const packageRoutes = [
   '/pl/topics/ai-i-myslenie/'
 ];
 
+const authorEntityRoutes = [
+  '/about/',
+  '/pl/about/',
+  '/articles/when-search-becomes-an-answer/',
+  '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/',
+  '/articles/trust-in-the-age-of-ready-made-answers/',
+  '/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/'
+];
+
 test.describe('layout overflow', () => {
   for (const route of routes) {
     test(`has no horizontal overflow on ${route}`, async ({ page }) => {
@@ -189,6 +198,32 @@ test.describe('layout overflow', () => {
 
     for (const route of packageRoutes) {
       await page.goto(route);
+      const result = await page.evaluate(() => ({
+        documentScrollWidth: document.documentElement.scrollWidth,
+        documentClientWidth: document.documentElement.clientWidth,
+        bodyScrollWidth: document.body.scrollWidth,
+        innerWidth: window.innerWidth
+      }));
+
+      expect(
+        result.documentScrollWidth,
+        `${route}\n${JSON.stringify(result, null, 2)}`
+      ).toBeLessThanOrEqual(result.documentClientWidth + 1);
+      expect(
+        result.bodyScrollWidth,
+        `${route}\n${JSON.stringify(result, null, 2)}`
+      ).toBeLessThanOrEqual(result.innerWidth + 1);
+    }
+  });
+
+  test('keeps the author entity routes within a 320px viewport', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile-390');
+    await page.setViewportSize({ width: 320, height: 900 });
+
+    for (const route of authorEntityRoutes) {
+      await page.goto(route);
+      await page.keyboard.press('Tab');
+      await expect(page.locator('.skip-link')).toBeFocused();
       const result = await page.evaluate(() => ({
         documentScrollWidth: document.documentElement.scrollWidth,
         documentClientWidth: document.documentElement.clientWidth,

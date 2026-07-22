@@ -1,0 +1,53 @@
+---
+import { formatDate } from '../lib/content';
+import type { SelectedAuthorPublication } from '../lib/authorPublications';
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  lang: Locale;
+  publications: SelectedAuthorPublication[];
+}
+
+const { lang, publications } = Astro.props;
+const copy = lang === 'pl'
+  ? {
+      heading: 'Wybrane publikacje',
+      citable: 'Wersja angielska do cytowania',
+      version: 'wersja'
+    }
+  : {
+      heading: 'Selected publications',
+      citable: 'Citable version',
+      version: 'version'
+    };
+const headingId = `selected-publications-${lang}`;
+---
+
+<section
+  class="author-publication-panel"
+  aria-labelledby={headingId}
+  data-qa="selected-publications"
+>
+  <h3 id={headingId}>{copy.heading}</h3>
+  <ol>
+    {publications.map((publication) => (
+      <li data-qa="selected-publication">
+        <article>
+          <h4><a href={publication.href}>{publication.title}</a></h4>
+          <p>{publication.description}</p>
+          <div class="author-publication-meta">
+            <time datetime={publication.publishedAt.toISOString()}>
+              {formatDate(publication.publishedAt, lang)}
+            </time>
+            <span aria-hidden="true">/</span>
+            <span>{copy.citable}:</span>
+            <a href={publication.doiUrl}>DOI {publication.doi}</a>
+            {publication.version && (
+              <span>{copy.version} {publication.version}</span>
+            )}
+          </div>
+        </article>
+      </li>
+    ))}
+  </ol>
+</section>

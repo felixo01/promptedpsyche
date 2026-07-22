@@ -5,6 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getArticlePath } from '../lib/articleRoutes';
 import { onlyPublicEntriesByLang } from '../lib/content';
 import { getNotePath } from '../lib/noteRoutes';
+import { getAuthorEntity } from '../lib/site';
 
 const publicArticles = onlyPublicEntriesByLang(await getCollection('articles'), 'en');
 const publicNotes = onlyPublicEntriesByLang(await getCollection('notes'), 'en');
@@ -28,6 +29,7 @@ const startHereEntries = [
   title="The human side of AI"
   description="Prompted Psyche is Feliks Mamczur's research-informed publishing platform on the human side of AI, with an AI Use Audit for creative, marketing and communication teams."
   image="/images/social/prompted-psyche-home-social-1200x630.png"
+  structuredData={getAuthorEntity('en')}
 >
   <div>
     <section class="home-hero home-hero-publication" aria-labelledby="home-title">
