@@ -9,6 +9,16 @@
       "source": "/pl/articles/openai-chatgpt-gpt-llm-czym-sie-roznia/",
       "destination": "/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/",
       "permanent": true
+    },
+    {
+      "source": "/articles/the-model-does-not-remember-it-works-with-context/",
+      "destination": "/notes/the-model-does-not-remember-it-works-with-context/",
+      "permanent": true
+    },
+    {
+      "source": "/pl/articles/model-nie-pamieta-model-ma-kontekst/",
+      "destination": "/pl/notes/model-nie-pamieta-model-ma-kontekst/",
+      "permanent": true
     }
   ],
   "headers": [

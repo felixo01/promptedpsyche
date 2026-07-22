@@ -89,4 +89,4 @@ Użyj AI do uporządkowania decyzji. Nie używaj AI, żeby zdjąć z siebie odpo
 
 - [Dobre streszczenie to jeszcze nie dobra decyzja](/pl/notes/dobre-streszczenie-to-jeszcze-nie-dobra-decyzja/)
 - [Nie chodzi tylko o prompt](/pl/articles/nie-chodzi-tylko-o-prompt/)
-- [Model nie pamięta. Model ma kontekst.](/pl/articles/model-nie-pamieta-model-ma-kontekst/)
+- [Model nie pamięta. Model ma kontekst.](/pl/notes/model-nie-pamieta-model-ma-kontekst/)

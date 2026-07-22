@@ -170,7 +170,7 @@ test.describe('topic hubs', () => {
     }
   });
 
-  test('keeps the bilingual LLM explainer in Notes without replacing the cognition flagship', async ({ page }) => {
+  test('keeps the bilingual explainers in Notes without replacing the cognition flagship', async ({ page }) => {
     const cases = [
       {
         route: '/topics/ai-and-cognition/',
@@ -178,6 +178,8 @@ test.describe('topic hubs', () => {
         flagshipHref: '/articles/dont-ask-whether-ai-makes-us-dumber/',
         note: 'OpenAI, ChatGPT, GPT and LLM: What Is the Difference?',
         noteHref: '/notes/openai-chatgpt-gpt-llm-difference/',
+        contextNote: 'The model does not remember. It works with context',
+        contextNoteHref: '/notes/the-model-does-not-remember-it-works-with-context/',
         notesHeading: 'Notes',
         concept: 'Large Language Model (LLM)',
         generativeSearchArticle: 'When Search Becomes an Answer: What Generative AI Changes About Learning',
@@ -189,6 +191,8 @@ test.describe('topic hubs', () => {
         flagshipHref: '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/',
         note: 'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
         noteHref: '/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/',
+        contextNote: 'Model nie pamięta. Model ma kontekst',
+        contextNoteHref: '/pl/notes/model-nie-pamieta-model-ma-kontekst/',
         notesHeading: 'Notatki',
         concept: 'LLM (duży model językowy)',
         generativeSearchArticle: 'Wyszukiwarka odpowiada. Co zostaje uczniowi?',
@@ -207,9 +211,17 @@ test.describe('topic hubs', () => {
         notesSection.getByRole('link', { name: testCase.note, exact: true })
       ).toHaveAttribute('href', testCase.noteHref);
       await expect(
+        notesSection.getByRole('link', { name: testCase.contextNote, exact: true })
+      ).toHaveAttribute('href', testCase.contextNoteHref);
+      await expect(
         page.locator('.topic-resource-group').filter({
           has: page.getByRole('heading', { name: /Articles|Artykuły/, exact: true })
         }).getByRole('link', { name: testCase.note, exact: true })
+      ).toHaveCount(0);
+      await expect(
+        page.locator('.topic-resource-group').filter({
+          has: page.getByRole('heading', { name: /Articles|Artykuły/, exact: true })
+        }).getByRole('link', { name: testCase.contextNote, exact: true })
       ).toHaveCount(0);
       await expect(page.getByRole('link', { name: testCase.concept, exact: true })).toBeVisible();
       await expect(

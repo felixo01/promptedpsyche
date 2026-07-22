@@ -95,12 +95,6 @@ const en = {
       'Why useful AI literacy begins after the first answer, with context, verification, judgment and responsibility.',
       '/articles/it-is-not-just-about-the-prompt/'
     ),
-    context: resource(
-      'article',
-      'The model does not remember. It works with context',
-      'A practical account of context windows, apparent memory and the limits of continuity in model interaction.',
-      '/articles/the-model-does-not-remember-it-works-with-context/'
-    ),
     interpretation: resource(
       'article',
       'AI does not read people. It helps make sense of the situation',
@@ -146,6 +140,12 @@ const en = {
       'A practical map of the organisation, product, model family and broader technology category.',
       '/notes/openai-chatgpt-gpt-llm-difference/'
     ),
+    context: resource(
+      'note',
+      'The model does not remember. It works with context',
+      'A practical account of context windows, apparent memory and the limits of continuity in model interaction.',
+      '/notes/the-model-does-not-remember-it-works-with-context/'
+    ),
     fluent: resource('note', 'Fluent does not mean true', 'A short note on why coherence and confidence are weak substitutes for verification.', '/notes/fluent-does-not-mean-true/'),
     summary: resource('note', 'A good summary is not the same as a good decision', 'Compression can support judgment, but it cannot carry the responsibility for a choice.', '/notes/a-good-summary-is-not-the-same-as-a-good-decision/'),
     text: resource('note', 'The model sees text, not the whole relationship', 'A reminder that language models work with the material provided, not with complete social reality.', '/notes/the-model-sees-text-not-the-whole-relationship/'),
@@ -184,12 +184,6 @@ const pl = {
       'Nie chodzi tylko o prompt',
       'Dlaczego kompetentna praca z AI zaczyna się po pierwszej odpowiedzi: od kontekstu, weryfikacji, osądu i odpowiedzialności.',
       '/pl/articles/nie-chodzi-tylko-o-prompt/'
-    ),
-    context: resource(
-      'article',
-      'Model nie pamięta. Model ma kontekst',
-      'Praktyczne wyjaśnienie okna kontekstu, pozornej pamięci i granic ciągłości w rozmowie z modelem.',
-      '/pl/articles/model-nie-pamieta-model-ma-kontekst/'
     ),
     interpretation: resource(
       'article',
@@ -235,6 +229,12 @@ const pl = {
       'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
       'Praktyczna mapa organizacji, produktu, rodziny modeli i szerszej kategorii technologii.',
       '/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/'
+    ),
+    context: resource(
+      'note',
+      'Model nie pamięta. Model ma kontekst',
+      'Praktyczne wyjaśnienie okna kontekstu, pozornej pamięci i granic ciągłości w rozmowie z modelem.',
+      '/pl/notes/model-nie-pamieta-model-ma-kontekst/'
     ),
     fluent: resource('note', 'Brzmi dobrze, ale to nie znaczy, że jest prawdziwe', 'Krótka notatka o tym, dlaczego spójność i pewny ton nie zastępują weryfikacji.', '/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/'),
     summary: resource('note', 'Dobre streszczenie to jeszcze nie dobra decyzja', 'Kompresja może wspierać osąd, ale nie przejmuje odpowiedzialności za wybór.', '/pl/notes/dobre-streszczenie-to-jeszcze-nie-dobra-decyzja/'),
@@ -357,7 +357,7 @@ const topicHubs: Record<Locale, TopicHub[]> = {
       start: en.articles.cognition,
       articlesTitle: 'Articles',
       articlesIntro: 'Read the main synthesis first, then use the related essays to connect cognitive practice with context and trust.',
-      articles: [en.articles.cognition, en.articles.trust, en.articles.context, en.articles.generativeSearch],
+      articles: [en.articles.cognition, en.articles.trust, en.articles.generativeSearch],
       conceptsTitle: 'Concepts',
       conceptsIntro: 'These entries distinguish cognitive demand, external support, self-monitoring and the loss of practiced capability.',
       concepts: [en.concepts.offloading, en.concepts.cognitiveLoad, en.concepts.metacognition, en.concepts.deskilling, en.concepts.aiLiteracy, en.concepts.llm, en.concepts.mentalModel],
@@ -366,7 +366,7 @@ const topicHubs: Record<Locale, TopicHub[]> = {
       practice: [en.practice.assumptions, en.practice.counterargument, en.practice.secondReader],
       notesTitle: 'Notes',
       notesIntro: 'Use these notes to separate terminology, compression and the limits of model context.',
-      notes: [en.notes.terminology, en.notes.summary, en.notes.text],
+      notes: [en.notes.terminology, en.notes.context, en.notes.summary, en.notes.text],
       readingPathTitle: 'Suggested reading path',
       readingPath: [
         { resource: en.articles.cognition, reason: 'Start with the evidence and the distinction between performance and learning.' },
@@ -569,7 +569,7 @@ topicHubs.pl = [
     start: pl.articles.cognition,
     articlesTitle: 'Artykuły',
     articlesIntro: 'Najpierw przeczytaj główną syntezę, a później połącz praktykę poznawczą z kontekstem i zaufaniem.',
-    articles: [pl.articles.cognition, pl.articles.trust, pl.articles.context, pl.articles.generativeSearch],
+    articles: [pl.articles.cognition, pl.articles.trust, pl.articles.generativeSearch],
     conceptsTitle: 'Pojęcia',
     conceptsIntro: 'Te hasła rozdzielają wymagania poznawcze, zewnętrzne wsparcie, samokontrolę i utratę ćwiczonej zdolności.',
     concepts: [pl.concepts.offloading, pl.concepts.cognitiveLoad, pl.concepts.metacognition, pl.concepts.deskilling, pl.concepts.aiLiteracy, pl.concepts.llm, pl.concepts.mentalModel],
@@ -578,7 +578,7 @@ topicHubs.pl = [
     practice: [pl.practice.assumptions, pl.practice.counterargument, pl.practice.secondReader],
     notesTitle: 'Notatki',
     notesIntro: 'Te notatki porządkują terminologię, kompresję i granice kontekstu modelu.',
-    notes: [pl.notes.terminology, pl.notes.summary, pl.notes.text],
+    notes: [pl.notes.terminology, pl.notes.context, pl.notes.summary, pl.notes.text],
     readingPathTitle: 'Sugerowana ścieżka czytania',
     readingPath: [
       { resource: pl.articles.cognition, reason: 'Zacznij od dowodów i różnicy między wykonaniem zadania a uczeniem się.' },

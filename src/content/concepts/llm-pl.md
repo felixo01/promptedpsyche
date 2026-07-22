@@ -64,7 +64,7 @@ Nie są to jednak synonimy. Nie każdy model oparty na Transformerze jest LLM, p
 
 Model generuje odpowiedź na podstawie informacji dostępnych w kontekście. Może to obejmować instrukcję użytkownika, wcześniejsze fragmenty rozmowy, instrukcje systemowe, zawartość pliku albo wyniki działania narzędzia. Okno kontekstowe określa, ile informacji może zostać uwzględnione podczas tworzenia danej odpowiedzi.
 
-Więcej miejsca nie oznacza jednak, że model wykorzysta każdy fragment równie dobrze. Badania pokazały, że pozycja informacji w długim kontekście może wpływać na wynik. Funkcja pamięci w produkcie może z kolei dostarczać wybrane informacje do przyszłych rozmów. Jest to inny mechanizm niż parametry modelu i inny niż bieżące okno kontekstowe.[^10] Pełne rozróżnienie rozwija Concept [Context Window](/pl/concepts/context-window/) oraz artykuł [Model nie pamięta. Model ma kontekst.](/pl/articles/model-nie-pamieta-model-ma-kontekst/).
+Więcej miejsca nie oznacza jednak, że model wykorzysta każdy fragment równie dobrze. Badania pokazały, że pozycja informacji w długim kontekście może wpływać na wynik. Funkcja pamięci w produkcie może z kolei dostarczać wybrane informacje do przyszłych rozmów. Jest to inny mechanizm niż parametry modelu i inny niż bieżące okno kontekstowe.[^10] Pełne rozróżnienie rozwija Concept [Context Window](/pl/concepts/context-window/) oraz notatka [Model nie pamięta. Model ma kontekst.](/pl/notes/model-nie-pamieta-model-ma-kontekst/).
 
 ## Czego LLM nie robi samodzielnie
 

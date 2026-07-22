@@ -89,4 +89,4 @@ Use AI to organize a decision. Do not use AI to remove your responsibility for c
 
 - [A good summary is not the same as a good decision](/notes/a-good-summary-is-not-the-same-as-a-good-decision/)
 - [It is not just about the prompt](/articles/it-is-not-just-about-the-prompt/)
-- [The model does not remember. It works with context.](/articles/the-model-does-not-remember-it-works-with-context/)
+- [The model does not remember. It works with context.](/notes/the-model-does-not-remember-it-works-with-context/)
