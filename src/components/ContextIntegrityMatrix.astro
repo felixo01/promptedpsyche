@@ -1,0 +1,222 @@
+---
+type MatrixColumn = {
+  key: string;
+  label: string;
+};
+
+type MatrixRow = Record<string, string>;
+
+interface Props {
+  caption: string;
+  columns: readonly MatrixColumn[];
+  rows: readonly MatrixRow[];
+  rowHeaderKey?: string;
+}
+
+const { caption, columns, rows, rowHeaderKey = columns[0]?.key } = Astro.props;
+const rowHeaderLabel = columns.find((column) => column.key === rowHeaderKey)?.label ?? columns[0]?.label ?? '';
+---
+
+<section class="context-integrity-matrix" data-qa="context-integrity-matrix" aria-label={caption}>
+  <div class="context-integrity-matrix__table">
+    <table>
+      <caption>{caption}</caption>
+      <thead>
+        <tr>
+          {columns.map((column) => <th scope="col">{column.label}</th>)}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr>
+            {columns.map((column) =>
+              column.key === rowHeaderKey ? (
+                <th scope="row">{row[column.key]}</th>
+              ) : (
+                <td>{row[column.key]}</td>
+              )
+            )}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="context-integrity-matrix__cards">
+    {rows.map((row, index) => (
+      <article class="context-integrity-card">
+        <h3 class="context-integrity-card__title">
+          {rowHeaderLabel}: {row[rowHeaderKey] || index + 1}
+        </h3>
+        <dl>
+          {columns.map((column) => (
+            <div>
+              <dt>{column.label}</dt>
+              <dd>{row[column.key]}</dd>
+            </div>
+          ))}
+        </dl>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  :global(.article-grid:has(.context-integrity-matrix)) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  :global(.article-grid:has(.context-integrity-matrix) .article-aside) {
+    display: none;
+  }
+
+  :global(.article-grid:has(.context-integrity-matrix) .prose) {
+    justify-self: center;
+  }
+
+  .context-integrity-matrix {
+    box-sizing: border-box;
+    width: min(68rem, calc(100vw - 3rem));
+    max-width: calc(100vw - 3rem);
+    margin-block: clamp(2rem, 4vw, 3rem);
+    margin-inline: 50%;
+    transform: translateX(-50%);
+    overflow-wrap: anywhere;
+  }
+
+  .context-integrity-matrix__table {
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: clamp(0.78rem, 0.3vw + 0.72rem, 0.9rem);
+    line-height: 1.5;
+  }
+
+  caption {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--line-strong);
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  th,
+  td {
+    min-width: 0;
+    padding: 0.8rem;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  tr > :last-child {
+    border-right: 0;
+  }
+
+  tbody tr:last-child > * {
+    border-bottom: 0;
+  }
+
+  thead th {
+    background: var(--accent-soft);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 650;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+  }
+
+  tbody th {
+    width: 5.2rem;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  .context-integrity-matrix__cards {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .context-integrity-matrix {
+      width: 100%;
+      max-width: 100%;
+      margin-inline: 0;
+      transform: none;
+    }
+
+    .context-integrity-matrix__table {
+      display: none;
+    }
+
+    .context-integrity-matrix__cards {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .context-integrity-card {
+      min-width: 0;
+      border: 1px solid var(--line-strong);
+      border-top: 0.2rem solid rgba(61, 90, 92, 0.5);
+      border-radius: var(--radius);
+      background: var(--surface);
+      padding: 1rem;
+    }
+
+    .context-integrity-card__title {
+      margin: 0 0 0.25rem;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .context-integrity-card dl {
+      display: grid;
+      gap: 0;
+      margin: 0;
+    }
+
+    .context-integrity-card dl > div {
+      min-width: 0;
+      border-top: 1px solid var(--line);
+      padding-block: 0.72rem;
+    }
+
+    .context-integrity-card dt {
+      color: var(--text-soft);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 650;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+    }
+
+    .context-integrity-card dd {
+      min-width: 0;
+      margin: 0.3rem 0 0;
+      font-size: 0.96rem;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .context-integrity-card {
+      padding: 0.85rem;
+    }
+  }
+</style>

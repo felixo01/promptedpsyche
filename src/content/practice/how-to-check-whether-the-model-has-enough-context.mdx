@@ -1,0 +1,379 @@
+---
+title: "How to Check Whether the Model Has the Context It Needs"
+description: "An exercise for checking whether a model still represents the goal, constraints, sources and earlier decisions accurately - without pretending to measure the technical context window."
+publishedAt: 2026-07-07
+updatedAt: 2026-07-23
+draft: false
+tags:
+  - context
+  - verification
+  - AI literacy
+  - trust
+author: "Feliks Mamczur"
+readingTime: "12 min read"
+lang: "en"
+translationKey: "practice-context-check"
+type: "practice"
+category: "Practice"
+---
+
+import ContextIntegrityMatrix from '../../components/ContextIntegrityMatrix.astro';
+import InBrief from '../../components/InBrief.astro';
+import PromptExample from '../../components/PromptExample.astro';
+
+<InBrief
+  lang="en"
+  items={[
+    'You cannot audit context reliably by asking a model only whether it remembers everything.',
+    'Start with your own checklist of goals, constraints, sources and decisions.',
+    "Compare the model's response with the source material and mark each item as present, missing, distorted or inferred.",
+    'When critical goals, constraints or decisions disappear from the response or change meaning, prepare a verified context handoff instead of continuing a confused thread.'
+  ]}
+/>
+
+You have been working with AI on a document, project or analysis for some time. The conversation now contains sources, decisions, constraints and revisions. But then the model starts returning to rejected options, changing what a constraint means, mixing sources with interpretations or filling an unspoken gap with a plausible guess.
+
+The useful question is not, “Is the context window full?” It is: **Does the model's reconstruction contain and accurately represent the information needed for this task?** A context integrity check helps answer that question by comparing the reconstruction with a checklist that you control.
+
+## 1. The situation
+
+A long conversation can contain a relevant fact without guaranteeing that the next answer will use it correctly. The model may omit the fact, distort its scope or replace it with an inference. A fluent answer can still be built from an incomplete picture of the task.
+
+A [context window](/concepts/context-window/) is a model-specific token capacity covering the input and generated output for one response. How those tokens count toward the capacity can vary by model and product, and the published limit does not guarantee that every available detail will be used equally reliably. An omission also does not prove that a token limit was reached: the cause cannot be established from the answer alone.
+
+Asking “Do you remember everything?” is therefore not a dependable audit. A model's account of its own context is another generated response, not direct access to the product's hidden instructions, memory mechanisms, routing or complete internal state. The check needs an external reference: your source-of-truth checklist and the original materials behind it.
+
+## 2. Goal of the exercise
+
+The goal is to check whether the model still represents the information required for the task accurately, and to prepare a concise context handoff when the current conversation is no longer a reliable basis for further work.
+
+**Time:** 10-15 minutes. **Level:** foundational, with an advanced variant for longer projects.
+
+After completing the exercise, you should be able to:
+
+- identify the information that is critical to the task;
+- separate facts supplied in the conversation from model inferences;
+- detect an omission;
+- detect a distortion;
+- detect an unlabelled assumption;
+- decide whether a direct correction is enough;
+- decide whether the task needs a context handoff;
+- start a new thread without carrying across the clutter and contradictions of the previous conversation.
+
+The observable outcome is a completed comparison matrix and one decision: **continue**, **refresh the context** or **start a new context with a verified handoff**.
+
+## 3. What this exercise does not measure
+
+The check can show:
+
+- whether an item needed for the task appears in the response;
+- whether its meaning has been reconstructed accurately;
+- whether the answer distinguishes supplied facts from inferences;
+- whether the current conversation remains a practical working environment;
+- whether a context handoff is needed.
+
+It does **not** reveal:
+
+- the complete technical input assembled for the request;
+- the exact number of tokens used;
+- hidden system or developer instructions;
+- the complete state of a product's memory feature;
+- every retrieval or tool-routing mechanism;
+- the model's actual internal reasoning process;
+- whether the next answer will be equally accurate;
+- whether a missing item was caused only by the length of the conversation.
+
+This is a context integrity check based on observable output, not a technical inspection of the model or product.
+
+## 4. Materials
+
+You need:
+
+- an ongoing conversation or project;
+- source materials you can inspect directly;
+- a notebook, document or spreadsheet outside the chat;
+- 6-12 key context items;
+- at least one constraint;
+- at least one earlier decision;
+- at least one source;
+- at least one open question.
+
+Keep the checklist outside the model's response. The model cannot be the only place where you store the facts against which you later evaluate that same model. Do not include confidential material in a service or workspace that is not approved for it.
+
+## 5. Build a source-of-truth checklist
+
+Before testing the model, record each item in your external document. Give it an ID, type, source-of-truth statement, source and criticality. After the response, you will add an audit status in the comparison matrix.
+
+Use these seven types as a minimum coverage guide:
+
+- `G-01` - goal;
+- `T-01` - current task;
+- `C-01` - constraint;
+- `S-01` - source;
+- `D-01` - decision;
+- `O-01` - open question;
+- `N-01` - negative instruction or “do not assume”.
+
+<ContextIntegrityMatrix
+  caption="Source-of-truth checklist"
+  columns={[
+    { key: 'id', label: 'ID' },
+    { key: 'type', label: 'Type' },
+    { key: 'statement', label: 'Source-of-truth statement' },
+    { key: 'source', label: 'Source' },
+    { key: 'criticality', label: 'Criticality' }
+  ]}
+  rows={[
+    { id: 'G-01', type: 'Goal', statement: '[The outcome this project is meant to achieve]', source: '[Approved brief]', criticality: 'Critical' },
+    { id: 'T-01', type: 'Current task', statement: '[What must be produced now]', source: '[Current task note]', criticality: 'Critical' },
+    { id: 'C-01', type: 'Constraint', statement: '[A limit that must not be breached]', source: '[Requirement or policy]', criticality: 'Critical' },
+    { id: 'S-01', type: 'Source', statement: '[The source that should govern a claim]', source: '[Document and section]', criticality: 'Important' },
+    { id: 'D-01', type: 'Decision', statement: '[The current approved choice]', source: '[Decision record]', criticality: 'Important' },
+    { id: 'O-01', type: 'Open question', statement: '[A question that remains unresolved]', source: '[Working notes]', criticality: 'Supporting' },
+    { id: 'N-01', type: 'Do not assume', statement: '[A tempting assumption that is not established]', source: '[Brief or correction]', criticality: 'Critical' }
+  ]}
+  rowHeaderKey="id"
+/>
+
+Use **critical** for an item whose loss or distortion could invalidate the result, **important** for an item that materially shapes the work, and **supporting** for useful detail that does not affect the present outcome. This is an organisational heuristic, not a validated psychometric scale or scientific score.
+
+Write statements precisely enough to compare meaning, not merely keywords. “Use the July policy, not the superseded May version” is auditable; “remember the policy” is not.
+
+## 6. Run the context reconstruction
+
+Do not paste the completed checklist into the chat before the test. Ask the model to reconstruct what should already be available in the current conversation or project. The prompt is a structured example, not a command that guarantees a truthful or complete answer.
+
+<PromptExample
+  lang="en"
+  label="Context reconstruction prompt"
+  copyAriaLabel="Copy the context reconstruction prompt"
+>
+{`Using the materials available in this conversation, reconstruct the current state of the task.
+
+Do not fill gaps with guesses. When you cannot determine something, write “no basis in the available context”.
+
+Return a table with these columns:
+
+- area;
+- your reconstruction;
+- what you base the answer on;
+- confidence level;
+- what could not be determined.
+
+Include:
+
+1. the project goal;
+2. the current task;
+3. the constraints that apply;
+4. the sources we are meant to use;
+5. earlier decisions;
+6. rejected options;
+7. questions that remain open;
+8. things you should not assume.
+
+Do not claim that you can see the complete technical context. Reconstruct only what you can justify from the available materials.`}
+</PromptExample>
+
+Save the response before correcting it. If the model asks for clarification, record that too: an explicit gap is more useful than a confident invention, but it still needs to be compared with the checklist.
+
+## 7. Compare with the source material
+
+Return to your external checklist and compare every item with the model's reconstruction. Do not grade by overall impression.
+
+1. Find the matching passage in the response, if one exists.
+2. Compare its meaning, scope, conditions, priority and version with the source-of-truth statement.
+3. Record any passage or source named in the response, then verify it directly. Do not treat the model's description of its own process as evidence.
+4. Assign one status and describe the correction needed.
+
+If the response combines several checklist items, assess them separately. A correct goal does not cancel a distorted constraint. A source name appearing in the answer does not prove that the relevant passage was used.
+
+## 8. Classify each item
+
+Use exactly four statuses:
+
+### Present
+
+The information was reconstructed accurately enough and without changing its meaning.
+
+### Missing
+
+The information was needed but did not appear.
+
+### Distorted
+
+The information appeared, but its meaning, scope, condition or priority changed.
+
+### Inferred
+
+The model added something that may be reasonable but was not supplied as a fact or decision.
+
+<ContextIntegrityMatrix
+  caption="Context comparison matrix"
+  columns={[
+    { key: 'id', label: 'ID' },
+    { key: 'response', label: 'Model response' },
+    { key: 'status', label: 'Status' },
+    { key: 'correction', label: 'What needs correction' }
+  ]}
+  rows={[
+    { id: 'G-01', response: '[Accurate reconstruction of the goal]', status: 'Present', correction: '[None, or a minor wording note]' },
+    { id: 'C-01', response: '[Constraint does not appear]', status: 'Missing', correction: '[Restore the exact constraint]' },
+    { id: 'D-01', response: '[Older decision presented as current]', status: 'Distorted', correction: '[Replace it with the approved version]' },
+    { id: 'S-01', response: '[Plausible source not supplied in the project]', status: 'Inferred', correction: '[Remove or verify it independently]' }
+  ]}
+  rowHeaderKey="id"
+/>
+
+The matrix is the measurable result of the exercise. It records observable differences; it does not diagnose why the model produced them.
+
+## 9. Decide: continue, refresh or start a new context
+
+Do not turn the matrix into an arbitrary numerical score. Use the consequences of the errors.
+
+### Continue
+
+Continue when:
+
+- every critical item is present and accurate;
+- no constraint has changed meaning;
+- sources and decisions have not been confused with inferences;
+- any missing supporting item cannot affect the current result.
+
+Correct minor gaps explicitly before the next step and keep the checklist open.
+
+### Refresh the context
+
+Paste a short context handoff into the current conversation when:
+
+- important items are missing;
+- the model returns to an older version of a decision;
+- much of the reconstruction is correct but inconsistent;
+- you can identify the missing or outdated items clearly.
+
+Run a shorter reconstruction after the refresh. The handoff is useful only if the corrected state is then represented accurately.
+
+### Start a new context
+
+Start a new conversation or project thread when:
+
+- at least one critical goal or prohibition is distorted;
+- sources are repeatedly mixed with inferences;
+- you cannot establish which decision version applies;
+- corrections create further contradictions;
+- organising the conversation history would take more effort than preparing a concise handoff.
+
+A new chat does not automatically improve the work. It helps only when you carry over a structured, verified context handoff rather than the confusion of the previous thread.
+
+## 10. Context handoff
+
+A context handoff is a concise, checked record of the current state of work. It should contain the decisions that apply now, not a complete conversation history.
+
+<PromptExample
+  lang="en"
+  label="Context handoff template"
+  copyAriaLabel="Copy the context handoff template"
+>
+{`# Context handoff
+
+## Project
+[short name]
+
+## Goal
+[one paragraph]
+
+## Current task
+[what must be produced now]
+
+## Current constraints
+- C-01:
+- C-02:
+
+## Sources
+- S-01:
+- S-02:
+
+## Decisions made
+- D-01:
+- D-02:
+
+## Rejected options
+- R-01:
+
+## Open questions
+- O-01:
+
+## Do not assume
+- N-01:
+
+## Expected outcome
+[format, length, audience and quality criteria]
+
+## Status as of
+[YYYY-MM-DD]`}
+</PromptExample>
+
+Before using it:
+
+- do not accept an automatic model summary without checking it;
+- verify every critical line against your own sources;
+- include current decisions rather than the full history;
+- do not move confidential data into a service or workspace not intended for it;
+- treat the handoff as a working state, not a permanent source of truth.
+
+Paste the verified handoff at the start of the new thread, ask the model to identify ambiguities without filling them in, then verify and record any correction yourself.
+
+## 11. Quick 3-minute variant
+
+When the task is limited and low risk, check only five items:
+
+1. the goal;
+2. the current task;
+3. the most important constraint;
+4. the decision that currently applies;
+5. the main source.
+
+Ask for a compact reconstruction and mark each item **present**, **missing**, **distorted** or **inferred**. The result is a five-row comparison table and a decision to continue, refresh or start a new context. This shortcut does not replace the full check for long, expensive or high-risk work.
+
+## 12. Advanced variant
+
+For a longer project:
+
+- track 10-20 items across several source categories;
+- give decisions version numbers and record the date of the latest change;
+- name the person responsible for a decision when a team is involved;
+- keep source statements, interpretations, decisions and open issues in separate fields;
+- repeat the audit after a major change in the task;
+- retain successive handoffs in version control;
+- compare the latest reconstruction with both the current checklist and the previous verified handoff.
+
+The advanced result is a small audit trail: what changed, who approved it, which source governs it and whether the model reproduced the current version. Version history helps you recover an earlier state; it does not make an unchecked statement true.
+
+## 13. Common mistakes
+
+1. **Asking “Do you remember everything?”** A yes-or-no self-report provides no item-by-item evidence.
+2. **Treating fluency as proof of completeness.** Fluent prose can combine accurate details, omissions and guesses without signalling the boundary.
+3. **Building the checklist from the same model's summary.** This makes the answer its own reference and preserves its omissions.
+4. **Giving the model the answers before the test.** Repeating freshly pasted facts does not show that the model could have reconstructed them before they were pasted again.
+5. **Confusing product memory with current context.** A memory feature, conversation history and the material available for one response are different layers.
+6. **Treating an uploaded file as proof of use.** File availability does not show that the relevant passage was retrieved or applied.
+7. **Calling every error a context-window overflow.** An answer alone cannot establish the technical cause of an omission or distortion.
+8. **Continuing after a critical constraint is distorted.** Correct-looking sections do not make that risk harmless.
+9. **Moving the whole confused conversation into a new thread.** This carries obsolete and contradictory material forward.
+10. **Accepting a model-written handoff without checking sources.** A concise summary can reproduce the same error more efficiently.
+
+## 14. Related materials
+
+- [The model does not remember. It works with context.](/notes/the-model-does-not-remember-it-works-with-context/) explains why context, conversation history and human memory should not be treated as the same thing.
+- [Context window](/concepts/context-window/) defines the model-level limit without turning it into a guarantee of use.
+- [Token](/concepts/token/) explains the units that shape technical length limits.
+- [Large Language Model (LLM)](/concepts/llm/) places context within the wider model and product architecture.
+- [How to check whether an AI answer has sources](/practice/how-to-check-whether-an-ai-answer-has-sources/) develops the source check used here.
+- [How to separate facts from interpretations](/practice/how-to-separate-facts-from-interpretations/) helps distinguish supplied material from model inference.
+- [AI and cognition](/topics/ai-and-cognition/) connects this exercise with metacognition, cognitive offloading and the design of assistance.
+
+## 15. Sources
+
+- OpenAI. [*Models*](https://developers.openai.com/api/docs/models). OpenAI API documentation. Accessed July 23, 2026. The catalogue documents model-specific context limits; those limits can change and do not guarantee uniform use of every input detail.
+- OpenAI. [*Projects in ChatGPT*](https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt). OpenAI Help Center. Accessed July 23, 2026. This is product documentation about project chats, files, instructions and memory, not a description of a base model's full technical context.
+- OpenAI. [*Memory FAQ*](https://help.openai.com/en/articles/8590148-memory-in-chatgpt-faq). OpenAI Help Center. Accessed July 23, 2026. This describes a changeable ChatGPT product feature and should not be generalised to all models or services.
+- Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., and Liang, P. [*Lost in the Middle: How Language Models Use Long Contexts*](https://aclanthology.org/2024.tacl-1.9/). *Transactions of the Association for Computational Linguistics*, 2024. In the models and tasks evaluated, the study found that the position of relevant information in long inputs could affect performance; this does not establish a universal pattern for every system.

@@ -74,7 +74,24 @@ const routes = [
   '/contact/',
   '/pl/contact/',
   '/consulting/',
-  '/pl/consulting/'
+  '/pl/consulting/',
+  '/practice/',
+  '/pl/practice/',
+  '/practice/how-to-check-whether-the-model-has-enough-context/',
+  '/pl/practice/jak-sprawdzic-czy-model-ma-wystarczajacy-kontekst/',
+  '/topics/ai-and-cognition/',
+  '/pl/topics/ai-i-myslenie/'
+];
+
+const contextIntegrityRoutes = [
+  '/practice/how-to-check-whether-the-model-has-enough-context/',
+  '/pl/practice/jak-sprawdzic-czy-model-ma-wystarczajacy-kontekst/',
+  '/practice/',
+  '/pl/practice/',
+  '/topics/ai-and-cognition/',
+  '/pl/topics/ai-i-myslenie/',
+  '/notes/the-model-does-not-remember-it-works-with-context/',
+  '/pl/notes/model-nie-pamieta-model-ma-kontekst/'
 ];
 
 const packageRoutes = [
@@ -239,6 +256,31 @@ test.describe('layout overflow', () => {
         result.bodyScrollWidth,
         `${route}\n${JSON.stringify(result, null, 2)}`
       ).toBeLessThanOrEqual(result.innerWidth + 1);
+    }
+  });
+
+  test('keeps the Context Integrity package within a 320px viewport', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile-390');
+    await page.setViewportSize({ width: 320, height: 900 });
+
+    for (const route of contextIntegrityRoutes) {
+      await page.goto(route);
+      await page.keyboard.press('Tab');
+      await expect(page.locator('.skip-link')).toBeFocused();
+
+      const result = await page.evaluate(() => ({
+        documentScrollWidth: document.documentElement.scrollWidth,
+        documentClientWidth: document.documentElement.clientWidth,
+        bodyScrollWidth: document.body.scrollWidth,
+        innerWidth: window.innerWidth
+      }));
+
+      expect(result.documentScrollWidth, `${route}\n${JSON.stringify(result, null, 2)}`).toBeLessThanOrEqual(
+        result.documentClientWidth + 1
+      );
+      expect(result.bodyScrollWidth, `${route}\n${JSON.stringify(result, null, 2)}`).toBeLessThanOrEqual(
+        result.innerWidth + 1
+      );
     }
   });
 });

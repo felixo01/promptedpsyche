@@ -1,0 +1,372 @@
+---
+title: "Jak sprawdzić, czy model ma potrzebny kontekst"
+description: "Ćwiczenie pozwala sprawdzić, czy model nadal prawidłowo uwzględnia cel, ograniczenia, źródła i wcześniejsze decyzje - bez udawania, że mierzy techniczne okno kontekstu."
+publishedAt: 2026-07-07
+updatedAt: 2026-07-23
+draft: false
+tags:
+  - kontekst
+  - weryfikacja
+  - AI literacy
+  - zaufanie
+author: "Feliks Mamczur"
+readingTime: "12 min czytania"
+lang: "pl"
+translationKey: "practice-context-check"
+type: "practice"
+category: "Praktyka"
+---
+
+import ContextIntegrityMatrix from '../../components/ContextIntegrityMatrix.astro';
+import InBrief from '../../components/InBrief.astro';
+import PromptExample from '../../components/PromptExample.astro';
+
+<InBrief
+  lang="pl"
+  items={[
+    'Nie można wiarygodnie sprawdzić kontekstu, pytając model jedynie, czy wszystko pamięta.',
+    'Najpierw potrzebna jest własna lista celów, ograniczeń, źródeł i decyzji.',
+    'Każdy element odpowiedzi modelu porównuje się z materiałem źródłowym i oznacza jako obecny, pominięty, zniekształcony albo wywnioskowany.',
+    'Gdy krytyczne ustalenia znikają lub zmieniają znaczenie, lepiej przygotować sprawdzone przekazanie kontekstu niż kontynuować chaotyczny wątek.'
+  ]}
+/>
+
+Od dłuższego czasu pracujesz z AI nad tekstem, projektem albo analizą. W rozmowie pojawiły się źródła, decyzje, ograniczenia i poprawki. Model zaczyna jednak wracać do odrzuconych rozwiązań, zmieniać sens ustaleń albo dopowiadać rzeczy, których nie podano. Odpowiedź nadal może brzmieć spójnie, choć opiera się już na niepełnym obrazie zadania.
+
+Nie pytasz wtedy: „Czy okno kontekstu jest pełne?”. Pytasz: „Czy informacje potrzebne do tego zadania są nadal obecne i przedstawione wystarczająco dokładnie?”. To ćwiczenie pomaga odpowiedzieć na drugie pytanie przez porównanie odpowiedzi modelu z własnym materiałem źródłowym.
+
+## 1. Sytuacja
+
+Ćwiczenie przydaje się, gdy model:
+
+- pomija wcześniejsze ustalenia;
+- wraca do rozwiązania, które zostało odrzucone;
+- zmienia znaczenie ograniczenia albo warunku;
+- miesza źródła z interpretacjami;
+- przedstawia domysł jako podany fakt;
+- tworzy przekonującą odpowiedź, ale nie potrafisz ustalić, czy nadal uwzględnia aktualny stan pracy.
+
+Takie zachowanie nie dowodzi samo w sobie, że rozmowa przekroczyła limit tokenów. Może mieć różne przyczyny. Celem audytu jest uchwycenie widocznych różnic między stanem zadania a odpowiedzią, nie diagnozowanie niewidocznego mechanizmu.
+
+## 2. Cel ćwiczenia
+
+**Czas:** 10–15 minut. **Poziom:** podstawowy, z wariantem zaawansowanym.
+
+Celem jest sprawdzenie, czy model nadal prawidłowo przedstawia informacje niezbędne do wykonania zadania, oraz przygotowanie krótkiego pakietu przekazania kontekstu, gdy rozmowa przestaje być wiarygodnym miejscem dalszej pracy.
+
+Po wykonaniu ćwiczenia potrafisz:
+
+- wskazać elementy krytyczne dla zadania;
+- oddzielić fakty podane w rozmowie od wniosków modelu;
+- wykryć pominięcie, zniekształcenie i nieoznaczony domysł;
+- zdecydować, czy wystarczy korekta, czy potrzebne jest przekazanie kontekstu;
+- rozpocząć nowy wątek bez przenoszenia całego chaosu poprzedniej rozmowy.
+
+Rezultatem nie jest abstrakcyjny wynik punktowy. Powstają trzy rzeczy, które można sprawdzić: uzupełniona lista kontrolna, status każdego elementu oraz decyzja o dalszej pracy. Jeśli potrzebny jest nowy wątek, rezultatem jest także zweryfikowane przekazanie kontekstu.
+
+## 3. Czego ćwiczenie nie mierzy
+
+[Context window, czyli okno kontekstu](/pl/concepts/context-window/), oznacza techniczny limit tokenów wejściowych i wyjściowych obsługiwanych przez konkretny model. Nie gwarantuje, że każda dostępna informacja zostanie wykorzystana poprawnie. Długa rozmowa może zawierać potrzebny fakt, a odpowiedź mimo to może go pominąć, zniekształcić albo zastąpić domysłem. Znaczenie mają też sposób ułożenia materiału, właściwości modelu oraz funkcje produktu.
+
+Pytanie modelu „czy pamiętasz wszystko?” nie jest wiarygodnym audytem. Jego odpowiedź o własnym kontekście również jest wygenerowaną wypowiedzią, a nie bezpośrednim podglądem działania systemu. Dlatego potrzebujesz zewnętrznej listy kontrolnej i porównania z materiałem źródłowym.
+
+Ćwiczenie może pokazać:
+
+- czy potrzebny element pojawia się w odpowiedzi;
+- czy został odtworzony bez zmiany znaczenia;
+- czy model oddziela treść źródłową od domysłów;
+- czy bieżąca rozmowa jest nadal praktycznym środowiskiem pracy;
+- czy potrzebne jest krótkie przekazanie aktualnego stanu.
+
+Ćwiczenie nie pokazuje:
+
+- całego technicznego promptu ani ukrytych instrukcji;
+- dokładnego wykorzystania [tokenów](/pl/concepts/token/);
+- działania pamięci produktu;
+- wszystkich mechanizmów wyszukiwania informacji i doboru narzędzi;
+- rzeczywistego wewnętrznego przebiegu obliczeń modelu;
+- gwarancji, że kolejna odpowiedź będzie równie poprawna;
+- czy konkretny brak wynika wyłącznie z długości rozmowy.
+
+Nie daje też dostępu do treści, których interfejs nie ujawnia. Opis własnego działania wygenerowany przez [LLM](/pl/concepts/llm/) nie jest narzędziem diagnostycznym.
+
+## 4. Materiały
+
+Przygotuj:
+
+- trwającą rozmowę albo projekt, który chcesz sprawdzić;
+- własne materiały źródłowe;
+- notatnik, dokument lub arkusz poza czatem;
+- od 6 do 12 kluczowych elementów kontekstu;
+- co najmniej jedno ograniczenie;
+- co najmniej jedną wcześniejszą decyzję;
+- co najmniej jedno źródło;
+- co najmniej jedno pytanie otwarte.
+
+Lista kontrolna musi istnieć poza odpowiedzią modelu. Nie oceniaj odpowiedzi wyłącznie na podstawie treści wytworzonej przez ten sam model. Nie wpisuj do ćwiczenia danych poufnych, jeśli używane narzędzie i środowisko nie są do tego przeznaczone.
+
+## 5. Przygotowanie listy kontrolnej
+
+Zanim poprosisz model o odtworzenie zadania, zapisz aktualny stan zadania własnymi słowami i porównaj zapis ze źródłami. Każdemu elementowi przypisz identyfikator, typ, treść źródłową, wskazanie źródła i poziom krytyczności. Status dodasz po teście.
+
+Użyj siedmiu typów:
+
+- **G — cel:** po co istnieje projekt;
+- **T — aktualne zadanie:** co ma powstać teraz;
+- **C — ograniczenie:** warunek, którego nie wolno naruszyć;
+- **S — źródło:** materiał, na którym trzeba się opierać;
+- **D — decyzja:** ustalenie, które nadal obowiązuje;
+- **O — pytanie otwarte:** kwestia, której jeszcze nie rozstrzygnięto;
+- **N — nie zakładaj:** informacja, której model nie powinien dopowiadać.
+
+Każdy element oznacz jako **krytyczny**, **ważny** albo **pomocniczy**. To organizacyjna heurystyka, nie walidowana skala psychometryczna ani naukowa miara jakości.
+
+<ContextIntegrityMatrix
+  caption="Lista kontrolna informacji źródłowych"
+  columns={[
+    { key: 'id', label: 'ID' },
+    { key: 'type', label: 'Typ' },
+    { key: 'statement', label: 'Informacja źródłowa' },
+    { key: 'source', label: 'Skąd pochodzi' },
+    { key: 'criticality', label: 'Krytyczność' }
+  ]}
+  rows={[
+    { id: 'G-01', type: 'Cel', statement: '[cel projektu w jednym zdaniu]', source: '[opis zadania lub zatwierdzona notatka]', criticality: 'Krytyczny' },
+    { id: 'T-01', type: 'Aktualne zadanie', statement: '[co ma powstać teraz]', source: '[bieżące zlecenie]', criticality: 'Krytyczny' },
+    { id: 'C-01', type: 'Ograniczenie', statement: '[warunek, którego nie wolno naruszyć]', source: '[opis zadania, procedura lub decyzja]', criticality: 'Krytyczny' },
+    { id: 'S-01', type: 'Źródło', statement: '[materiał obowiązujący w zadaniu]', source: '[tytuł i adres lub lokalizacja]', criticality: 'Ważny' },
+    { id: 'D-01', type: 'Decyzja', statement: '[aktualna wersja decyzji]', source: '[zapis decyzji i data]', criticality: 'Ważny' },
+    { id: 'O-01', type: 'Pytanie otwarte', statement: '[kwestia nadal nierozstrzygnięta]', source: '[notatka robocza]', criticality: 'Pomocniczy' },
+    { id: 'N-01', type: 'Nie zakładaj', statement: '[czego nie wolno dopowiedzieć]', source: '[opis zadania lub jawna instrukcja]', criticality: 'Krytyczny' }
+  ]}
+  rowHeaderKey="id"
+/>
+
+Jeśli masz kilka ograniczeń, źródeł albo decyzji, dodaj C-02, S-02 lub D-02. Wpisuj zdania możliwe do porównania, nie hasła takie jak „jakość” czy „strategia”. Przy decyzji zaznacz jej aktualną wersję; stare wersje pozostaw jako odrzucone rozwiązania, a nie równorzędne ustalenia.
+
+## 6. Test odtworzenia stanu zadania
+
+Nie wklejaj teraz modelowi gotowych odpowiedzi z listy kontrolnej. Poproś o odtworzenie tego, co powinno być już dostępne w bieżącej rozmowie lub projekcie. Poniższy prompt porządkuje wynik, ale nie jest magiczną komendą i nie gwarantuje wiarygodności.
+
+<PromptExample lang="pl" label="Prompt do odtworzenia stanu zadania" copyAriaLabel="Kopiuj prompt do odtworzenia stanu zadania">
+{`Na podstawie materiałów dostępnych w tej rozmowie odtwórz aktualny stan zadania.
+
+Nie uzupełniaj braków domysłem. Gdy czegoś nie możesz ustalić, napisz „brak podstaw w dostępnym kontekście”.
+
+Zwróć tabelę z kolumnami:
+
+- obszar;
+- twoje odtworzenie;
+- na czym opierasz odpowiedź;
+- poziom pewności;
+- czego nie udało się ustalić.
+
+Uwzględnij:
+
+1. cel projektu;
+2. aktualne zadanie;
+3. obowiązujące ograniczenia;
+4. źródła, na których mamy się opierać;
+5. wcześniejsze decyzje;
+6. odrzucone rozwiązania;
+7. pytania nadal otwarte;
+8. rzeczy, których nie powinieneś zakładać.
+
+Nie deklaruj, że widzisz cały techniczny kontekst. Odtwórz tylko to, co potrafisz uzasadnić na podstawie dostępnych materiałów.`}
+</PromptExample>
+
+Nie oceniaj odpowiedzi na podstawie tego, jak płynnie i pewnie brzmi. Zachowaj ją w niezmienionej postaci, aby móc zestawić każde twierdzenie z listą.
+
+## 7. Porównanie z materiałem źródłowym
+
+Przejdź kolejno przez wszystkie identyfikatory. Przy każdym elemencie znajdź odpowiedni fragment odpowiedzi modelu, porównaj go z informacją źródłową i przypisz jeden status. Jeśli model dodał ważne twierdzenie, którego nie ma na liście, dopisz osobny wiersz i oceń je jako potencjalny domysł.
+
+<ContextIntegrityMatrix
+  caption="Macierz porównania odpowiedzi z materiałem źródłowym"
+  columns={[
+    { key: 'id', label: 'ID' },
+    { key: 'answer', label: 'Odpowiedź modelu' },
+    { key: 'status', label: 'Status' },
+    { key: 'correction', label: 'Co wymaga korekty' }
+  ]}
+  rows={[
+    { id: 'G-01', answer: '[cel odtworzony bez zmiany znaczenia]', status: 'Obecne', correction: '[bez korekty albo drobna uwaga redakcyjna]' },
+    { id: 'C-01', answer: '[ograniczenie nie pojawia się]', status: 'Pominięte', correction: '[przywróć dokładne ograniczenie]' },
+    { id: 'D-01', answer: '[stara decyzja przedstawiona jako aktualna]', status: 'Zniekształcone', correction: '[zastąp ją zatwierdzoną wersją]' },
+    { id: 'S-01', answer: '[wiarygodne źródło, którego nie podano w projekcie]', status: 'Wywnioskowane', correction: '[usuń je albo sprawdź niezależnie]' }
+  ]}
+  rowHeaderKey="id"
+/>
+
+Ćwiczenie możesz uznać za zakończone, gdy każdy element ma status, różnice są zapisane, a dalszy krok wynika z krytyczności tych różnic. Nie uśredniaj błędów: pominięte zdanie pomocnicze nie ma tej samej wagi co zniekształcony zakaz.
+
+## 8. Klasyfikacja błędów
+
+### Obecne (present)
+
+Informacja została odtworzona wystarczająco dokładnie i bez zmiany znaczenia. Skrócenie jest dopuszczalne, jeśli nie usuwa warunku, zakresu ani priorytetu.
+
+### Pominięte (missing)
+
+Informacja była potrzebna, ale nie pojawiła się w odpowiedzi. Nie zakładaj automatycznie, że przyczyną jest długość rozmowy.
+
+### Zniekształcone (distorted)
+
+Informacja pojawiła się, lecz zmieniły się jej sens, zakres, warunek albo priorytet. Przykładem jest zamiana „nie publikuj przed akceptacją” na „publikacja jest zalecana po przeglądzie”.
+
+### Wywnioskowane (inferred)
+
+Model dodał treść, która może być rozsądna, ale nie została podana jako fakt lub decyzja. Taki wniosek może być propozycją, jednak powinien być jawnie oddzielony od materiału źródłowego.
+
+Te cztery statusy opisują zgodność odpowiedzi z przygotowaną listą. Nie oceniają intencji modelu ani nie wyjaśniają technicznej przyczyny błędu.
+
+## 9. Decyzja: kontynuować, odświeżyć czy zacząć nowy kontekst
+
+Nie wyliczaj wyniku procentowego. Zastosuj regułę opartą na znaczeniu elementów.
+
+### Kontynuuj
+
+Możesz kontynuować, gdy:
+
+- wszystkie elementy krytyczne są obecne i poprawne;
+- model nie zmienił znaczenia ograniczeń;
+- źródła i decyzje nie zostały pomylone z domysłami;
+- ewentualne braki pomocnicze nie wpływają na bieżący rezultat.
+
+Najpierw popraw pojedyncze drobne różnice i poproś model o potwierdzenie zaktualizowanego zadania własnymi słowami. To nadal wymaga kontroli po kolejnej odpowiedzi.
+
+### Odśwież kontekst
+
+Wklej krótkie, sprawdzone przekazanie aktualnego stanu pracy w bieżącej rozmowie, gdy:
+
+- pomijane są ważne elementy;
+- model wraca do starych wersji decyzji;
+- informacje są poprawne osobno, ale razem tworzą niespójny obraz zadania;
+- potrafisz jasno wskazać brakujące albo błędne elementy.
+
+Po odświeżeniu ponów skrócony test dla elementów krytycznych i ważnych.
+
+### Zacznij nowy kontekst
+
+Rozpocznij nową rozmowę albo nowy wątek projektu, gdy:
+
+- choć jeden krytyczny cel lub zakaz został zniekształcony;
+- model regularnie miesza źródła z domysłami;
+- nie da się ustalić, która wersja decyzji obowiązuje;
+- kolejne korekty tworzą nowe sprzeczności;
+- uporządkowanie historii wymaga więcej pracy niż przygotowanie krótkiego przekazania.
+
+Nowy czat nie naprawia automatycznie jakości pracy. Pomaga dopiero wtedy, gdy przenosisz do niego uporządkowane, zweryfikowane informacje zamiast całej chaotycznej historii.
+
+## 10. Przekazanie kontekstu
+
+Przekazanie kontekstu (context handoff) to krótki, sprawdzony zapis aktualnego stanu pracy. Wypełnij szablon na podstawie własnej listy i źródeł, a następnie przeczytaj go przed użyciem.
+
+<PromptExample lang="pl" label="Szablon przekazania kontekstu" copyAriaLabel="Kopiuj szablon przekazania kontekstu">
+{`# Przekazanie kontekstu
+
+## Projekt
+[krótka nazwa]
+
+## Cel
+[jeden akapit]
+
+## Aktualne zadanie
+[co ma powstać teraz]
+
+## Obowiązujące ograniczenia
+- C-01:
+- C-02:
+
+## Źródła
+- S-01:
+- S-02:
+
+## Podjęte decyzje
+- D-01:
+- D-02:
+
+## Odrzucone rozwiązania
+- R-01:
+
+## Pytania otwarte
+- O-01:
+
+## Nie zakładaj
+- N-01:
+
+## Oczekiwany rezultat
+[format, długość, odbiorca, kryteria jakości]
+
+## Stan na dzień
+[YYYY-MM-DD]`}
+</PromptExample>
+
+Dobre przekazanie kontekstu:
+
+- nie powinno być automatycznym streszczeniem modelu przyjętym bez kontroli;
+- wymaga porównania z materiałami przez osobę odpowiedzialną za zadanie;
+- ma zawierać aktualne decyzje, a nie pełną historię rozmowy;
+- nie powinno zawierać danych poufnych, jeśli trafi do nieprzeznaczonego do tego środowiska;
+- jest roboczym zapisem stanu, nie trwałym źródłem prawdy.
+
+Po wklejeniu poproś model o krótkie wskazanie niejasności, ale samodzielnie rozstrzygnij je na podstawie źródeł. Jeśli powstaje nowa decyzja, dopisz ją do zewnętrznego zapisu.
+
+## 11. Wariant szybki: 3 minuty
+
+Gdy zadanie jest krótkie i ma niewielkie konsekwencje, sprawdź tylko pięć elementów:
+
+1. cel;
+2. aktualne zadanie;
+3. najważniejsze ograniczenie;
+4. obowiązującą decyzję;
+5. główne źródło.
+
+Poproś model o ich odtworzenie bez domyślania, a potem oznacz każdy element jako **obecny**, **pominięty**, **zniekształcony** albo **wywnioskowany**. Rezultatem jest pięciowierszowa tabela i decyzja: kontynuować, odświeżyć czy rozpocząć nowy wątek.
+
+Wariant szybki nie zastępuje pełnego audytu przy zadaniach długich, kosztownych albo obarczonych wysokim ryzykiem.
+
+## 12. Wariant zaawansowany
+
+W dłuższym projekcie rozszerz listę do 10–20 elementów i rozdziel:
+
+- treść źródłową;
+- interpretację;
+- decyzję;
+- pytanie otwarte.
+
+Dodaj kilka kategorii źródeł, numer wersji decyzji, datę ostatniej zmiany oraz osobę odpowiedzialną za decyzję, jeśli pracuje zespół. Powtarzaj audyt po istotnej zmianie zadania, źródeł albo ograniczeń. Kolejne przekazania zachowuj w historii wersji, aby było wiadomo, który zapis obowiązywał i co się zmieniło.
+
+Sprawdzaj osobno, czy materiał został odnaleziony, czy został użyty oraz czy wniosek rzeczywiście wynika ze źródła. Sam fakt przesłania pliku nie dowodzi, że właściwy fragment wpłynął na odpowiedź.
+
+Kolejna Practice rozwinie przygotowanie pakietu kontekstu do długich projektów.
+
+## 13. Typowe błędy
+
+1. **Pytanie „czy pamiętasz wszystko?”.** Odpowiedź modelu jest deklaracją wygenerowaną w rozmowie, nie dowodem kompletności.
+2. **Uznawanie płynności za kompletność.** Poprawny styl może ukrywać brak celu, źródła albo ograniczenia.
+3. **Budowanie listy z podsumowania tego samego modelu.** Błędy podsumowania trafiają wtedy do kryteriów oceny kolejnej odpowiedzi.
+4. **Wklejanie odpowiedzi przed testem.** Późniejsze powtórzenie podanych punktów nie sprawdza, co było dostępne wcześniej.
+5. **Mieszanie pamięci produktu z bieżącym kontekstem.** Funkcja pamięci w produkcie nie gwarantuje obecności każdego ustalenia w danej odpowiedzi.
+6. **Traktowanie przesłanego pliku jak dowodu użycia.** Obecność pliku nie pokazuje, czy właściwy fragment został odnaleziony i uwzględniony.
+7. **Przypisywanie każdego błędu limitowi okna kontekstu.** Pominięcie lub zniekształcenie nie pozwala samo w sobie ustalić technicznej przyczyny.
+8. **Kontynuowanie mimo zniekształcenia krytycznego warunku.** Kolejne odpowiedzi mogą wtedy rozwijać błędną wersję zadania.
+9. **Przenoszenie całej chaotycznej historii.** Nowy wątek staje się kopią starego problemu zamiast uporządkowanym początkiem.
+10. **Akceptowanie przekazania napisanego przez model bez sprawdzenia.** Handoff trzeba porównać z aktualnymi źródłami i decyzjami.
+
+## 14. Powiązane materiały
+
+- [Model nie pamięta. Model ma kontekst.](/pl/notes/model-nie-pamieta-model-ma-kontekst/) wyjaśnia różnicę między doświadczeniem ciągłości rozmowy a technicznym kontekstem.
+- [Context window (okno kontekstu)](/pl/concepts/context-window/) opisuje limit tokenów wejściowych i wyjściowych, które model może obsłużyć.
+- [Token](/pl/concepts/token/) pokazuje, dlaczego długości kontekstu nie mierzy się po prostu liczbą słów.
+- [LLM (duży model językowy)](/pl/concepts/llm/) oddziela model od funkcji całego produktu.
+- [Jak sprawdzić, czy odpowiedź AI ma źródła](/pl/practice/jak-sprawdzic-czy-odpowiedz-ai-ma-zrodla/) pomaga zweryfikować pochodzenie twierdzeń.
+- [Jak oddzielić fakty od interpretacji](/pl/practice/jak-oddzielic-fakty-od-interpretacji/) porządkuje warstwy materiału przed decyzją.
+- [AI i myślenie](/pl/topics/ai-i-myslenie/) łączy to ćwiczenie z szerszym tematem poznania i pracy umysłowej z AI.
+
+## 15. Źródła
+
+- [OpenAI, Models](https://developers.openai.com/api/docs/models) — oficjalny katalog modeli pokazujący, że rozmiar okna kontekstu zależy od konkretnego modelu i nie gwarantuje wykorzystania każdej informacji; dostęp: 23 lipca 2026.
+- [OpenAI, Projects in ChatGPT](https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt) — dokumentacja funkcji produktu łączącej rozmowy, pliki i instrukcje projektu; nie jest opisem uniwersalnej pamięci modelu ani technicznego okna kontekstu; dostęp: 23 lipca 2026.
+- [OpenAI, Memory FAQ](https://help.openai.com/en/articles/8590148-memory-in-chatgpt-faq) — dokumentacja pamięci jako funkcji konkretnego produktu, pomocna w odróżnieniu pamięci produktu od treści dostępnych w bieżącej rozmowie; dostęp: 23 lipca 2026.
+- [Nelson F. Liu i in., „Lost in the Middle: How Language Models Use Long Contexts”](https://aclanthology.org/2024.tacl-1.9/) — recenzowana publikacja pokazująca, że wykorzystanie informacji w długim kontekście może zależeć między innymi od jej położenia; wyników nie należy bez sprawdzenia uogólniać na każdy model i produkt; dostęp: 23 lipca 2026.

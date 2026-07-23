@@ -57,8 +57,10 @@ test.describe('built sitemap and RSS policy', () => {
       expect(sitemap).toContain('/pl/practice/');
       expect(sitemap).toContain('/practice/how-to-check-whether-an-ai-answer-has-sources/');
       expect(sitemap).toContain('/practice/how-to-check-your-assumptions-with-ai/');
+      expect(sitemap).toContain('/practice/how-to-check-whether-the-model-has-enough-context/');
       expect(sitemap).toContain('/pl/practice/jak-sprawdzic-czy-odpowiedz-ai-ma-zrodla/');
       expect(sitemap).toContain('/pl/practice/jak-sprawdzic-wlasne-zalozenia-z-pomoca-ai/');
+      expect(sitemap).toContain('/pl/practice/jak-sprawdzic-czy-model-ma-wystarczajacy-kontekst/');
       expect(sitemap.match(/https:\/\/promptedpsyche\.com\/practice\//g) ?? []).toHaveLength(11);
       expect(sitemap.match(/https:\/\/promptedpsyche\.com\/pl\/practice\//g) ?? []).toHaveLength(11);
     } else {
