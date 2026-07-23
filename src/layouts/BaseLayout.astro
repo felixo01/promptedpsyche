@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import Analytics from '@vercel/analytics/astro';
 import { getAlternateLinks, getLangFromPath, type AlternateLinks, type Locale } from '../lib/i18n';
 import { getPublisherEntity, getWebsiteEntity, site } from '../lib/site';
 import '../styles/global.css';
@@ -124,5 +125,6 @@ const structuredDataJson = JSON.stringify(structuredDataGraph).replace(/</g, '\\
       <slot />
     </main>
     <Footer lang={lang} />
+    <Analytics />
   </body>
 </html>
