@@ -14,7 +14,9 @@ type SearchItem = {
 
 const practiceTitles = [
   'Jak sprawdzić, czy odpowiedź AI ma źródła',
-  'How to check whether an AI answer has sources'
+  'How to check whether an AI answer has sources',
+  'Jak sprawdzić, czy model ma potrzebny kontekst',
+  'How to Check Whether the Model Has the Context It Needs'
 ];
 
 const draftTitles = [
@@ -184,6 +186,11 @@ test.describe('local search', () => {
             title: 'How to check whether an AI answer has sources',
             url: '/practice/how-to-check-whether-an-ai-answer-has-sources/',
             type: 'practice'
+          }),
+          expect.objectContaining({
+            title: 'How to Check Whether the Model Has the Context It Needs',
+            url: '/practice/how-to-check-whether-the-model-has-enough-context/',
+            type: 'practice'
           })
         ])
       );
@@ -193,9 +200,16 @@ test.describe('local search', () => {
             title: 'Jak sprawdzić, czy odpowiedź AI ma źródła',
             url: '/pl/practice/jak-sprawdzic-czy-odpowiedz-ai-ma-zrodla/',
             type: 'practice'
+          }),
+          expect.objectContaining({
+            title: 'Jak sprawdzić, czy model ma potrzebny kontekst',
+            url: '/pl/practice/jak-sprawdzic-czy-model-ma-wystarczajacy-kontekst/',
+            type: 'practice'
           })
         ])
       );
+      expect(enIndex.map((item) => item.title)).not.toContain('How to check whether the model has enough context');
+      expect(plIndex.map((item) => item.title)).not.toContain('Jak sprawdzić, czy model ma wystarczający kontekst');
     } else {
       for (const title of practiceTitles) {
         expect(allText).not.toContain(title);

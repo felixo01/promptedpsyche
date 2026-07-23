@@ -157,6 +157,18 @@ test.describe('topic hubs', () => {
         heading: 'Czytaj dalej',
         hub: '/pl/topics/sprawczosc-i-odpowiedzialnosc/',
         count: 3
+      },
+      {
+        route: '/practice/how-to-check-whether-the-model-has-enough-context/',
+        heading: 'Continue exploring',
+        hub: '/topics/ai-and-cognition/',
+        count: 3
+      },
+      {
+        route: '/pl/practice/jak-sprawdzic-czy-model-ma-wystarczajacy-kontekst/',
+        heading: 'Czytaj dalej',
+        hub: '/pl/topics/ai-i-myslenie/',
+        count: 3
       }
     ];
 
@@ -182,6 +194,8 @@ test.describe('topic hubs', () => {
         contextNoteHref: '/notes/the-model-does-not-remember-it-works-with-context/',
         notesHeading: 'Notes',
         concept: 'Large Language Model (LLM)',
+        contextPractice: 'How to Check Whether the Model Has the Context It Needs',
+        contextPracticeHref: '/practice/how-to-check-whether-the-model-has-enough-context/',
         generativeSearchArticle: 'When Search Becomes an Answer: What Generative AI Changes About Learning',
         generativeSearchHref: '/articles/when-search-becomes-an-answer/'
       },
@@ -195,6 +209,8 @@ test.describe('topic hubs', () => {
         contextNoteHref: '/pl/notes/model-nie-pamieta-model-ma-kontekst/',
         notesHeading: 'Notatki',
         concept: 'LLM (duży model językowy)',
+        contextPractice: 'Jak sprawdzić, czy model ma potrzebny kontekst',
+        contextPracticeHref: '/pl/practice/jak-sprawdzic-czy-model-ma-wystarczajacy-kontekst/',
         generativeSearchArticle: 'Wyszukiwarka odpowiada. Co zostaje uczniowi?',
         generativeSearchHref: '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/'
       }
@@ -224,6 +240,10 @@ test.describe('topic hubs', () => {
         }).getByRole('link', { name: testCase.contextNote, exact: true })
       ).toHaveCount(0);
       await expect(page.getByRole('link', { name: testCase.concept, exact: true })).toBeVisible();
+      await expect(page.getByRole('link', { name: testCase.contextPractice, exact: true })).toHaveAttribute(
+        'href',
+        testCase.contextPracticeHref
+      );
       await expect(
         page.locator('.topic-resource-group').first().getByRole('link', {
           name: testCase.generativeSearchArticle,

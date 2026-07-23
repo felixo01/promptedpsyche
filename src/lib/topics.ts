@@ -131,7 +131,13 @@ const en = {
     secondReader: resource('practice', 'How to use AI as a second reader', 'Keep authorship while using AI to test clarity, omissions and alternative readings.', '/practice/how-to-use-ai-as-a-second-reader/'),
     decisionOwnership: resource('practice', 'How to use AI without handing over the decision', 'Separate analysis from judgment and make the final responsibility visible.', '/practice/how-to-use-ai-without-handing-over-the-decision/'),
     factsInterpretations: resource('practice', 'How to separate facts from interpretations', 'A practical distinction for decisions built from incomplete or ambiguous material.', '/practice/how-to-separate-facts-from-interpretations/'),
-    messageAnalysis: resource('practice', 'How to analyze a message without diagnosing a person', 'Use AI to organize textual evidence without turning an interpretation into a diagnosis.', '/practice/how-to-analyze-a-message-without-diagnosing-a-person/')
+    messageAnalysis: resource('practice', 'How to analyze a message without diagnosing a person', 'Use AI to organize textual evidence without turning an interpretation into a diagnosis.', '/practice/how-to-analyze-a-message-without-diagnosing-a-person/'),
+    contextIntegrity: resource(
+      'practice',
+      'How to Check Whether the Model Has the Context It Needs',
+      'Compare a model\'s reconstruction with an external checklist of goals, constraints, sources and decisions.',
+      '/practice/how-to-check-whether-the-model-has-enough-context/'
+    )
   },
   notes: {
     terminology: resource(
@@ -221,7 +227,13 @@ const pl = {
     secondReader: resource('practice', 'Jak użyć AI jako drugiego czytelnika', 'Zachowaj autorstwo, używając AI do sprawdzania jasności, braków i alternatywnych odczytań.', '/pl/practice/jak-uzyc-ai-jako-drugiego-czytelnika/'),
     decisionOwnership: resource('practice', 'Jak użyć AI bez oddawania mu decyzji', 'Oddziel analizę od osądu i pozostaw widoczną odpowiedzialność za wybór.', '/pl/practice/jak-uzyc-ai-bez-oddawania-mu-decyzji/'),
     factsInterpretations: resource('practice', 'Jak oddzielić fakty od interpretacji', 'Praktyczne rozróżnienie dla decyzji opartych na niepełnym lub niejednoznacznym materiale.', '/pl/practice/jak-oddzielic-fakty-od-interpretacji/'),
-    messageAnalysis: resource('practice', 'Jak analizować wiadomość bez diagnozowania człowieka', 'Użyj AI do uporządkowania tekstu bez zamieniania interpretacji w diagnozę.', '/pl/practice/jak-analizowac-wiadomosc-bez-diagnozowania-czlowieka/')
+    messageAnalysis: resource('practice', 'Jak analizować wiadomość bez diagnozowania człowieka', 'Użyj AI do uporządkowania tekstu bez zamieniania interpretacji w diagnozę.', '/pl/practice/jak-analizowac-wiadomosc-bez-diagnozowania-czlowieka/'),
+    contextIntegrity: resource(
+      'practice',
+      'Jak sprawdzić, czy model ma potrzebny kontekst',
+      'Porównaj odtworzenie modelu z zewnętrzną listą celów, ograniczeń, źródeł i decyzji.',
+      '/pl/practice/jak-sprawdzic-czy-model-ma-wystarczajacy-kontekst/'
+    )
   },
   notes: {
     terminology: resource(
@@ -363,7 +375,7 @@ const topicHubs: Record<Locale, TopicHub[]> = {
       concepts: [en.concepts.offloading, en.concepts.cognitiveLoad, en.concepts.metacognition, en.concepts.deskilling, en.concepts.aiLiteracy, en.concepts.llm, en.concepts.mentalModel],
       practiceTitle: 'Practice',
       practiceIntro: 'Use these scenarios to keep interpretation, resistance and authorship in the human part of the process.',
-      practice: [en.practice.assumptions, en.practice.counterargument, en.practice.secondReader],
+      practice: [en.practice.contextIntegrity, en.practice.assumptions, en.practice.counterargument, en.practice.secondReader],
       notesTitle: 'Notes',
       notesIntro: 'Use these notes to separate terminology, compression and the limits of model context.',
       notes: [en.notes.terminology, en.notes.context, en.notes.summary, en.notes.text],
@@ -575,7 +587,7 @@ topicHubs.pl = [
     concepts: [pl.concepts.offloading, pl.concepts.cognitiveLoad, pl.concepts.metacognition, pl.concepts.deskilling, pl.concepts.aiLiteracy, pl.concepts.llm, pl.concepts.mentalModel],
     practiceTitle: 'Praktyka',
     practiceIntro: 'Te scenariusze pozostawiają interpretację, opór i autorstwo po stronie człowieka.',
-    practice: [pl.practice.assumptions, pl.practice.counterargument, pl.practice.secondReader],
+    practice: [pl.practice.contextIntegrity, pl.practice.assumptions, pl.practice.counterargument, pl.practice.secondReader],
     notesTitle: 'Notatki',
     notesIntro: 'Te notatki porządkują terminologię, kompresję i granice kontekstu modelu.',
     notes: [pl.notes.terminology, pl.notes.context, pl.notes.summary, pl.notes.text],
@@ -712,6 +724,7 @@ const topicResourceIndex: Record<Locale, Record<TopicId, {
         'mental-model': en.concepts.mentalModel
       },
       practice: {
+        'practice-context-check': en.practice.contextIntegrity,
         'practice-assumptions': en.practice.assumptions,
         'practice-counterargument': en.practice.counterargument,
         'ai-as-second-reader': en.practice.secondReader
@@ -774,6 +787,7 @@ const topicResourceIndex: Record<Locale, Record<TopicId, {
         'mental-model': pl.concepts.mentalModel
       },
       practice: {
+        'practice-context-check': pl.practice.contextIntegrity,
         'practice-assumptions': pl.practice.assumptions,
         'practice-counterargument': pl.practice.counterargument,
         'ai-as-second-reader': pl.practice.secondReader

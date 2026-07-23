@@ -46,7 +46,7 @@ const practiceEntries = [
     route: '/pl/practice/jak-uzyc-ai-bez-oddawania-mu-decyzji/'
   },
   {
-    title: 'Jak sprawdzić, czy model ma wystarczający kontekst',
+    title: 'Jak sprawdzić, czy model ma potrzebny kontekst',
     route: '/pl/practice/jak-sprawdzic-czy-model-ma-wystarczajacy-kontekst/'
   },
   {
@@ -86,7 +86,7 @@ const practiceEntries = [
     route: '/practice/how-to-use-ai-without-handing-over-the-decision/'
   },
   {
-    title: 'How to check whether the model has enough context',
+    title: 'How to Check Whether the Model Has the Context It Needs',
     route: '/practice/how-to-check-whether-the-model-has-enough-context/'
   }
 ];
