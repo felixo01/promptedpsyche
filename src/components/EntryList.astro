@@ -27,6 +27,7 @@ interface Props {
   emptyNote?: string;
   emptyIcon?: 'article' | 'note' | 'concept';
   ctaLabel?: string;
+  headingLevel?: 'h2' | 'h3';
 }
 
 const {
@@ -38,7 +39,8 @@ const {
   emptyMessage = 'Public writing is being prepared.',
   emptyNote = 'Essays, notes and concepts are being edited before they are published here.',
   emptyIcon,
-  ctaLabel
+  ctaLabel,
+  headingLevel = 'h2'
 } = Astro.props;
 ---
 
@@ -68,9 +70,15 @@ const {
               {entry.data.readingTime && <span>{entry.data.readingTime}</span>}
             </div>
             <div class="entry-body">
-              <h2>
-                <a class="entry-title-link" href={href}>{entry.data.title}</a>
-              </h2>
+              {headingLevel === 'h3' ? (
+                <h3>
+                  <a class="entry-title-link" href={href}>{entry.data.title}</a>
+                </h3>
+              ) : (
+                <h2>
+                  <a class="entry-title-link" href={href}>{entry.data.title}</a>
+                </h2>
+              )}
               <p>{entry.data.description}</p>
               {ctaLabel && (
                 <a class="entry-cta" href={href} aria-label={`${ctaLabel}: ${entry.data.title}`}>

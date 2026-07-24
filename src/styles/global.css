@@ -2438,6 +2438,66 @@ html[lang='pl'] .page-header h1 {
   max-width: 46ch;
 }
 
+.practice-start {
+  border: 1px solid var(--line-soft);
+  padding: clamp(1.5rem, 3.5vw, 2.75rem);
+  background: rgba(61, 90, 92, 0.035);
+}
+
+.practice-start .entry-list {
+  border-top: 1px solid var(--line-strong);
+}
+
+.practice-boundary {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(280px, 0.8fr);
+  gap: 2rem 5rem;
+  max-width: min(100%, 68rem);
+  margin: clamp(3.75rem, 7vw, 6rem) auto 0;
+  border-block: 1px solid var(--line-soft);
+  padding-block: clamp(2rem, 4vw, 3.5rem);
+}
+
+.practice-boundary h2 {
+  max-width: 17ch;
+  color: var(--ink);
+  font-size: var(--fs-h2);
+  line-height: 1.08;
+}
+
+.practice-boundary > div:last-child {
+  max-width: var(--measure-text);
+}
+
+.practice-boundary p:not(.section-kicker) {
+  color: rgba(28, 25, 23, 0.66);
+  line-height: 1.7;
+}
+
+.practice-boundary p + p {
+  margin-top: 1rem;
+}
+
+.practice-learning-paths {
+  margin-top: clamp(4rem, 7vw, 6rem);
+}
+
+.practice-learning-paths .practice-discovery {
+  margin-top: 0;
+}
+
+.practice-group + .practice-group {
+  margin-top: clamp(4rem, 7vw, 6rem);
+}
+
+.practice-group .entry-item h3,
+.practice-start .entry-item h3 {
+  max-width: 26ch;
+  color: var(--ink);
+  font-size: clamp(1.35rem, 1.4vw + 1rem, 1.9rem);
+  line-height: 1.1;
+}
+
 .practice-discovery .editorial-section-header {
   margin-bottom: clamp(2rem, 3.4vw, 3rem);
   border-bottom: 1px solid var(--line-soft);
@@ -4221,6 +4281,7 @@ html[lang='pl'] .topic-hub__heading h1 {
     .home-writing-grid,
     .home-start-grid,
     .home-compact-feature,
+    .practice-boundary,
     .projects-grid,
     .topic-index,
     .archive-index,

@@ -3,7 +3,7 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import EntryList from '../../components/EntryList.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import EntryLayout from '../../layouts/EntryLayout.astro';
-import { onlyEntriesByLang, sortByDateDesc } from '../../lib/content';
+import { onlyPublicEntriesByLang, sortByDateDesc } from '../../lib/content';
 import { showPractice } from '../../lib/features';
 import { getPracticeAlternates } from '../../lib/practiceRoutes';
 import { getExplorationLinks } from '../../lib/topics';
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
   }
 
   const allPractice = await getCollection('practice');
-  const entries = sortByDateDesc(onlyEntriesByLang(allPractice, 'en'));
+  const entries = sortByDateDesc(onlyPublicEntriesByLang(allPractice, 'en'));
 
   return [
     {
@@ -52,6 +52,59 @@ const Content = rendered?.Content;
 const explorationLinks = entry
   ? getExplorationLinks('practice', entry.data.translationKey, 'en')
   : [];
+
+const entriesFor = (translationKeys: string[]) =>
+  translationKeys
+    .map((translationKey) => entries.find((candidate) => candidate.data.translationKey === translationKey))
+    .filter((candidate): candidate is PracticeEntry => Boolean(candidate));
+
+const startHereEntries = entriesFor([
+  'practice-context-check',
+  'checking-ai-answer-sources',
+  'ask-model-about-uncertainty',
+  'practice-decision-ownership'
+]);
+
+const practiceGroups = [
+  {
+    id: 'give-context',
+    title: 'Give the model the context it needs',
+    description:
+      'Learn how to give an AI model context by checking whether the goal, constraints, sources and earlier decisions still remain in view.',
+    entries: entriesFor(['practice-context-check'])
+  },
+  {
+    id: 'check-answer',
+    title: 'Check the answer',
+    description:
+      'Check an AI answer by tracing its sources, making uncertainty visible and resisting the pull of confident, fluent wording.',
+    entries: entriesFor([
+      'checking-ai-answer-sources',
+      'ask-model-about-uncertainty',
+      'fluency-is-not-truth'
+    ])
+  },
+  {
+    id: 'support-thinking',
+    title: 'Use AI to support thinking, not replace it',
+    description:
+      'Use the model as a structured second reader: separate facts from interpretations, test assumptions and ask for counterarguments or alternative readings.',
+    entries: entriesFor([
+      'separate-facts-from-interpretations',
+      'practice-assumptions',
+      'practice-counterargument',
+      'ai-as-second-reader',
+      'analyze-message-without-diagnosing'
+    ])
+  },
+  {
+    id: 'keep-responsibility',
+    title: 'Keep responsibility',
+    description:
+      'Organize options, criteria and risks with AI while keeping the final choice with the person accountable for its consequences.',
+    entries: entriesFor(['practice-decision-ownership'])
+  }
+].filter((group) => group.entries.length > 0);
 ---
 
 {
@@ -68,8 +121,8 @@ const explorationLinks = entry
     </EntryLayout>
   ) : (
     <BaseLayout
-      title="Practice"
-      description="Short exercises for thinking with AI more carefully: sources, uncertainty, assumptions, counterarguments and decisions."
+      title="How to Talk to AI"
+      description="Practical exercises for giving AI context, checking sources, handling uncertainty and keeping responsibility for decisions."
       lang="en"
       alternateLinks={practiceIndexAlternates}
     >
@@ -77,34 +130,78 @@ const explorationLinks = entry
         <header class="page-header practice-index__header">
           <div>
             <p class="eyebrow">Practice</p>
-            <h1>Practice</h1>
+            <h1>How to Talk to AI</h1>
           </div>
-          <p>
-            Practice is a collection of short scenarios for working with AI more
-            deliberately. Each entry combines an example instruction with checks,
-            limits and questions to consider before using the result.
+          <p class="practice-index__intro">
+            Talking to AI well begins with a clear goal and the context the model
+            needs for the task. State relevant constraints, ask focused questions,
+            and treat the answer as material to examine rather than a verdict. Check
+            important claims and sources, look for uncertainty, and keep decisions
+            with the person responsible for their consequences. There is no single
+            magic prompt. Better results come from guiding the whole exchange:
+            providing context, iterating, verifying, and knowing when not to rely on
+            the output.
           </p>
         </header>
 
-        <section class="practice-discovery" aria-labelledby="practice-discovery-title">
+        <section class="practice-discovery practice-start" aria-labelledby="practice-start-title" data-qa="practice-start">
           <div class="editorial-section-header">
             <div>
-              <p class="section-kicker">Practice</p>
-              <h2 id="practice-discovery-title">Choose a situation</h2>
+              <p class="section-kicker">Start here</p>
+              <h2 id="practice-start-title">Four exercises for a careful first workflow</h2>
             </div>
             <p>
-              Work through sources, uncertainty, assumptions, counterarguments,
-              text and decisions without handing judgment or responsibility to the
-              model.
+              Begin with context, then learn how to check sources, expose uncertainty
+              and keep responsibility for the decision.
             </p>
           </div>
           <EntryList
-            entries={entries}
+            entries={startHereEntries}
             basePath="/practice"
             label="Practice"
-            ctaLabel="Open scenario"
+            headingLevel="h3"
           />
         </section>
+
+        <section class="practice-boundary" aria-labelledby="practice-boundary-title">
+          <div>
+            <p class="section-kicker">Working method</p>
+            <h2 id="practice-boundary-title">It is not only about the prompt</h2>
+          </div>
+          <div>
+            <p>
+              Prompt design can help you ask AI better questions, but responsible
+              work extends beyond the wording of one instruction. It includes a
+              clear goal, relevant context and constraints, suitable sources,
+              iteration, verification, an honest assessment of uncertainty and a
+              person who remains responsible for the result.
+            </p>
+            <p>
+              The exercises below show how to communicate with AI across that whole
+              process rather than search for a universal formula.
+            </p>
+          </div>
+        </section>
+
+        <div class="practice-learning-paths" data-qa="practice-learning-paths">
+          {practiceGroups.map((group) => (
+            <section class="practice-discovery practice-group" aria-labelledby={`practice-${group.id}-title`} data-practice-group={group.id}>
+              <div class="editorial-section-header">
+                <div>
+                  <p class="section-kicker">Learning path</p>
+                  <h2 id={`practice-${group.id}-title`}>{group.title}</h2>
+                </div>
+                <p>{group.description}</p>
+              </div>
+              <EntryList
+                entries={group.entries}
+                basePath="/practice"
+                label="Practice"
+                headingLevel="h3"
+              />
+            </section>
+          ))}
+        </div>
       </section>
     </BaseLayout>
   )
