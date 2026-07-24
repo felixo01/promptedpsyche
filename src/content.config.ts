@@ -37,6 +37,7 @@ const articles = defineCollection({
     licenseUrl: z.string().url().optional(),
     audioUrl: z.string().optional(),
     inBrief: z.array(z.string()).optional(),
+    scholarPrimary: z.boolean().default(false),
     lang: z.enum(['en', 'pl']).default('en'),
     translationKey: z.string().optional()
   })

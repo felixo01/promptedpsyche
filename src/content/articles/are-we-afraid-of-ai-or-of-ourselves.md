@@ -4,6 +4,7 @@ description: "A research-informed essay on how AI can amplify goals, become a mo
 publishedAt: 2026-07-04
 updatedAt: 2026-07-13
 draft: false
+scholarPrimary: true
 tags:
   - AI and humans
   - responsibility
@@ -278,33 +279,33 @@ The mature question is therefore not whether the human or the machine is respons
 
 We should fear not only what AI may do, but also the moment when it allows us to believe that it was no longer us who did it.
 
-## Sources and further reading
+## References
 
-- Awad, E., Levine, S., Kleiman-Weiner, M., Dsouza, S., Tenenbaum, J. B., Shariff, A., Bonnefon, J.-F., & Rahwan, I. (2020). Drivers are blamed more than their automated cars when both make mistakes. *Nature Human Behaviour, 4*, 134-143. https://doi.org/10.1038/s41562-019-0762-8
-- Bainbridge, L. (1983). Ironies of automation. *Automatica, 19*(6), 775-779. https://doi.org/10.1016/0005-1098(83)90046-8
-- Bandura, A. (2002). Selective moral disengagement in the exercise of moral agency. *Journal of Moral Education, 31*(2), 101-119. https://doi.org/10.1080/0305724022014322
-- Brundage, M., Avin, S., Clark, J., Toner, H., Eckersley, P., Garfinkel, B., Dafoe, A., Scharre, P., Zeitzoff, T., Filar, B., Anderson, H., Roff, H., Allen, G. C., Steinhardt, J., Flynn, C., Ó hÉigeartaigh, S., Beard, S., Belfield, H., Farquhar, S., ... Amodei, D. (2018). *The malicious use of artificial intelligence: Forecasting, prevention, and mitigation*. https://doi.org/10.17863/CAM.22520
-- Elish, M. C. (2019). Moral crumple zones: Cautionary tales in human-robot interaction. *Engaging Science, Technology, and Society, 5*, 40-60. https://doi.org/10.17351/ests2019.260
-- Epley, N., Waytz, A., & Cacioppo, J. T. (2007). On seeing human: A three-factor theory of anthropomorphism. *Psychological Review, 114*(4), 864-886. https://doi.org/10.1037/0033-295X.114.4.864
-- Freisinger, E., & Schneider, S. (2025). Decoding decision delegation to artificial intelligence: A mixed-methods study on the preferences of decision-makers and decision-affected in surrogate decision contexts. *European Management Journal, 43*(6), 958-969. https://doi.org/10.1016/j.emj.2024.10.004
-- Furlough, C., Stokes, T., & Gillan, D. J. (2021). Attributing blame to robots: I. The influence of robot autonomy. *Human Factors, 63*(4), 592-602. https://doi.org/10.1177/0018720819880641
-- Gray, H. M., Gray, K., & Wegner, D. M. (2007). Dimensions of mind perception. *Science, 315*(5812), 619. https://doi.org/10.1126/science.1134475
-- Hüholt, N., & Szech, N. (2026). Trusting machines with morality - Delegating moral decisions to AI. *European Economic Review, 184*, 105255. https://doi.org/10.1016/j.euroecorev.2025.105255
-- Kneer, M., & Christen, M. (2024). Responsibility gaps and retributive dispositions: Evidence from the US, Japan and Germany. *Science and Engineering Ethics, 30*, Article 51. https://doi.org/10.1007/s11948-024-00509-w
-- Köbis, N., Rahwan, Z., Rilla, R., Supriyatno, B. I., Bersch, C., Ajaj, T., Bonnefon, J.-F., & Rahwan, I. (2025). Delegation to artificial intelligence can increase dishonest behaviour. *Nature, 646*, 126-134. https://doi.org/10.1038/s41586-025-09505-x
-- Kunda, Z. (1990). The case for motivated reasoning. *Psychological Bulletin, 108*(3), 480-498. https://doi.org/10.1037/0033-2909.108.3.480
-- Lima, G., Grgić-Hlača, N., & Cha, M. (2021). Human perceptions on moral responsibility of AI: A case study in AI-assisted bail decision-making. In *Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems* (pp. 1-17). Association for Computing Machinery. https://doi.org/10.1145/3411764.3445260
-- Longin, L., Bahrami, B., & Deroy, O. (2023). Intelligence brings responsibility - Even smart AI assistants are held responsible. *iScience, 26*(8), 107494. https://doi.org/10.1016/j.isci.2023.107494
-- Matthias, A. (2004). The responsibility gap: Ascribing responsibility for the actions of learning automata. *Ethics and Information Technology, 6*(3), 175-183. https://doi.org/10.1007/s10676-004-3422-1
-- Moore, C. (2015). Moral disengagement. *Current Opinion in Psychology, 6*, 199-204. https://doi.org/10.1016/j.copsyc.2015.07.018
-- National Institute of Standards and Technology. (2023). *Artificial intelligence risk management framework (AI RMF 1.0)* (NIST AI 100-1). https://doi.org/10.6028/NIST.AI.100-1
-- Parasuraman, R., & Riley, V. (1997). Humans and automation: Use, misuse, disuse, abuse. *Human Factors, 39*(2), 230-253. https://doi.org/10.1518/001872097778543886
-- Rubel, A., Castro, C., & Pham, A. (2019). Agency laundering and information technologies. *Ethical Theory and Moral Practice, 22*(4), 1017-1041. https://doi.org/10.1007/s10677-019-10030-w
-- Santoni de Sio, F., & van den Hoven, J. (2018). Meaningful human control over autonomous systems: A philosophical account. *Frontiers in Robotics and AI, 5*, Article 15. https://doi.org/10.3389/frobt.2018.00015
-- Selbst, A. D., Boyd, D., Friedler, S. A., Venkatasubramanian, S., & Vertesi, J. (2019). Fairness and abstraction in sociotechnical systems. In *Proceedings of the Conference on Fairness, Accountability, and Transparency* (pp. 59-68). Association for Computing Machinery. https://doi.org/10.1145/3287560.3287598
-- Shank, D. B., & DeSanti, A. (2018). Attributions of morality and mind to artificial intelligence after real-world moral violations. *Computers in Human Behavior, 86*, 401-411. https://doi.org/10.1016/j.chb.2018.05.014
-- Stuart, M. T., & Kneer, M. (2021). Guilty artificial minds: Folk attributions of mens rea and culpability to artificially intelligent agents. *Proceedings of the ACM on Human-Computer Interaction, 5*(CSCW2), Article 363, 1-27. https://doi.org/10.1145/3479507
-- Tenbrunsel, A. E., & Messick, D. M. (2004). Ethical fading: The role of self-deception in unethical behavior. *Social Justice Research, 17*(2), 223-236. https://doi.org/10.1023/B:SORE.0000027411.35832.53
-- Wagner, B. (2019). Liable, but not in control? Ensuring meaningful human agency in automated decision-making systems. *Policy & Internet, 11*(1), 104-122. https://doi.org/10.1002/poi3.198
-- Waytz, A., Heafner, J., & Epley, N. (2014). The mind in the machine: Anthropomorphism increases trust in an autonomous vehicle. *Journal of Experimental Social Psychology, 52*, 113-117. https://doi.org/10.1016/j.jesp.2014.01.005
-- Xu, L., Tian, H., Zhang, Y., & Yu, F. (2026). Shifting accountability to artificial intelligence: Delegating challenging decisions to AI for responsibility avoidance. *Journal of Business Research, 215*, 116313. https://doi.org/10.1016/j.jbusres.2026.116313
+1. Awad, E., Levine, S., Kleiman-Weiner, M., Dsouza, S., Tenenbaum, J. B., Shariff, A., Bonnefon, J.-F., & Rahwan, I. (2020). Drivers are blamed more than their automated cars when both make mistakes. *Nature Human Behaviour, 4*, 134-143. https://doi.org/10.1038/s41562-019-0762-8
+1. Bainbridge, L. (1983). Ironies of automation. *Automatica, 19*(6), 775-779. https://doi.org/10.1016/0005-1098(83)90046-8
+1. Bandura, A. (2002). Selective moral disengagement in the exercise of moral agency. *Journal of Moral Education, 31*(2), 101-119. https://doi.org/10.1080/0305724022014322
+1. Brundage, M., Avin, S., Clark, J., Toner, H., Eckersley, P., Garfinkel, B., Dafoe, A., Scharre, P., Zeitzoff, T., Filar, B., Anderson, H., Roff, H., Allen, G. C., Steinhardt, J., Flynn, C., Ó hÉigeartaigh, S., Beard, S., Belfield, H., Farquhar, S., ... Amodei, D. (2018). *The malicious use of artificial intelligence: Forecasting, prevention, and mitigation*. https://doi.org/10.17863/CAM.22520
+1. Elish, M. C. (2019). Moral crumple zones: Cautionary tales in human-robot interaction. *Engaging Science, Technology, and Society, 5*, 40-60. https://doi.org/10.17351/ests2019.260
+1. Epley, N., Waytz, A., & Cacioppo, J. T. (2007). On seeing human: A three-factor theory of anthropomorphism. *Psychological Review, 114*(4), 864-886. https://doi.org/10.1037/0033-295X.114.4.864
+1. Freisinger, E., & Schneider, S. (2025). Decoding decision delegation to artificial intelligence: A mixed-methods study on the preferences of decision-makers and decision-affected in surrogate decision contexts. *European Management Journal, 43*(6), 958-969. https://doi.org/10.1016/j.emj.2024.10.004
+1. Furlough, C., Stokes, T., & Gillan, D. J. (2021). Attributing blame to robots: I. The influence of robot autonomy. *Human Factors, 63*(4), 592-602. https://doi.org/10.1177/0018720819880641
+1. Gray, H. M., Gray, K., & Wegner, D. M. (2007). Dimensions of mind perception. *Science, 315*(5812), 619. https://doi.org/10.1126/science.1134475
+1. Hüholt, N., & Szech, N. (2026). Trusting machines with morality - Delegating moral decisions to AI. *European Economic Review, 184*, 105255. https://doi.org/10.1016/j.euroecorev.2025.105255
+1. Kneer, M., & Christen, M. (2024). Responsibility gaps and retributive dispositions: Evidence from the US, Japan and Germany. *Science and Engineering Ethics, 30*, Article 51. https://doi.org/10.1007/s11948-024-00509-w
+1. Köbis, N., Rahwan, Z., Rilla, R., Supriyatno, B. I., Bersch, C., Ajaj, T., Bonnefon, J.-F., & Rahwan, I. (2025). Delegation to artificial intelligence can increase dishonest behaviour. *Nature, 646*, 126-134. https://doi.org/10.1038/s41586-025-09505-x
+1. Kunda, Z. (1990). The case for motivated reasoning. *Psychological Bulletin, 108*(3), 480-498. https://doi.org/10.1037/0033-2909.108.3.480
+1. Lima, G., Grgić-Hlača, N., & Cha, M. (2021). Human perceptions on moral responsibility of AI: A case study in AI-assisted bail decision-making. In *Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems* (pp. 1-17). Association for Computing Machinery. https://doi.org/10.1145/3411764.3445260
+1. Longin, L., Bahrami, B., & Deroy, O. (2023). Intelligence brings responsibility - Even smart AI assistants are held responsible. *iScience, 26*(8), 107494. https://doi.org/10.1016/j.isci.2023.107494
+1. Matthias, A. (2004). The responsibility gap: Ascribing responsibility for the actions of learning automata. *Ethics and Information Technology, 6*(3), 175-183. https://doi.org/10.1007/s10676-004-3422-1
+1. Moore, C. (2015). Moral disengagement. *Current Opinion in Psychology, 6*, 199-204. https://doi.org/10.1016/j.copsyc.2015.07.018
+1. National Institute of Standards and Technology. (2023). *Artificial intelligence risk management framework (AI RMF 1.0)* (NIST AI 100-1). https://doi.org/10.6028/NIST.AI.100-1
+1. Parasuraman, R., & Riley, V. (1997). Humans and automation: Use, misuse, disuse, abuse. *Human Factors, 39*(2), 230-253. https://doi.org/10.1518/001872097778543886
+1. Rubel, A., Castro, C., & Pham, A. (2019). Agency laundering and information technologies. *Ethical Theory and Moral Practice, 22*(4), 1017-1041. https://doi.org/10.1007/s10677-019-10030-w
+1. Santoni de Sio, F., & van den Hoven, J. (2018). Meaningful human control over autonomous systems: A philosophical account. *Frontiers in Robotics and AI, 5*, Article 15. https://doi.org/10.3389/frobt.2018.00015
+1. Selbst, A. D., Boyd, D., Friedler, S. A., Venkatasubramanian, S., & Vertesi, J. (2019). Fairness and abstraction in sociotechnical systems. In *Proceedings of the Conference on Fairness, Accountability, and Transparency* (pp. 59-68). Association for Computing Machinery. https://doi.org/10.1145/3287560.3287598
+1. Shank, D. B., & DeSanti, A. (2018). Attributions of morality and mind to artificial intelligence after real-world moral violations. *Computers in Human Behavior, 86*, 401-411. https://doi.org/10.1016/j.chb.2018.05.014
+1. Stuart, M. T., & Kneer, M. (2021). Guilty artificial minds: Folk attributions of mens rea and culpability to artificially intelligent agents. *Proceedings of the ACM on Human-Computer Interaction, 5*(CSCW2), Article 363, 1-27. https://doi.org/10.1145/3479507
+1. Tenbrunsel, A. E., & Messick, D. M. (2004). Ethical fading: The role of self-deception in unethical behavior. *Social Justice Research, 17*(2), 223-236. https://doi.org/10.1023/B:SORE.0000027411.35832.53
+1. Wagner, B. (2019). Liable, but not in control? Ensuring meaningful human agency in automated decision-making systems. *Policy & Internet, 11*(1), 104-122. https://doi.org/10.1002/poi3.198
+1. Waytz, A., Heafner, J., & Epley, N. (2014). The mind in the machine: Anthropomorphism increases trust in an autonomous vehicle. *Journal of Experimental Social Psychology, 52*, 113-117. https://doi.org/10.1016/j.jesp.2014.01.005
+1. Xu, L., Tian, H., Zhang, Y., & Yu, F. (2026). Shifting accountability to artificial intelligence: Delegating challenging decisions to AI for responsibility avoidance. *Journal of Business Research, 215*, 116313. https://doi.org/10.1016/j.jbusres.2026.116313
