@@ -3,7 +3,7 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import EntryList from '../../../components/EntryList.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import EntryLayout from '../../../layouts/EntryLayout.astro';
-import { onlyEntriesByLang, sortByDateDesc } from '../../../lib/content';
+import { onlyPublicEntriesByLang, sortByDateDesc } from '../../../lib/content';
 import { showPractice } from '../../../lib/features';
 import { getPracticeAlternates } from '../../../lib/practiceRoutes';
 import { getExplorationLinks } from '../../../lib/topics';
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
   }
 
   const allPractice = await getCollection('practice');
-  const entries = sortByDateDesc(onlyEntriesByLang(allPractice, 'pl'));
+  const entries = sortByDateDesc(onlyPublicEntriesByLang(allPractice, 'pl'));
 
   return [
     {
@@ -52,6 +52,59 @@ const Content = rendered?.Content;
 const explorationLinks = entry
   ? getExplorationLinks('practice', entry.data.translationKey, 'pl')
   : [];
+
+const entriesFor = (translationKeys: string[]) =>
+  translationKeys
+    .map((translationKey) => entries.find((candidate) => candidate.data.translationKey === translationKey))
+    .filter((candidate): candidate is PracticeEntry => Boolean(candidate));
+
+const startHereEntries = entriesFor([
+  'practice-context-check',
+  'checking-ai-answer-sources',
+  'ask-model-about-uncertainty',
+  'practice-decision-ownership'
+]);
+
+const practiceGroups = [
+  {
+    id: 'przekaz-kontekst',
+    title: 'Przekaż modelowi potrzebny kontekst',
+    description:
+      'Sprawdź, czy model nadal uwzględnia cel, ograniczenia, źródła i wcześniejsze decyzje potrzebne do wykonania zadania.',
+    entries: entriesFor(['practice-context-check'])
+  },
+  {
+    id: 'sprawdz-odpowiedz',
+    title: 'Sprawdź odpowiedź',
+    description:
+      'Sprawdź odpowiedź AI w źródłach, nazwij obszary niepewności i nie myl płynnego języka z wiarygodnością.',
+    entries: entriesFor([
+      'checking-ai-answer-sources',
+      'ask-model-about-uncertainty',
+      'fluency-is-not-truth'
+    ])
+  },
+  {
+    id: 'wspieraj-myslenie',
+    title: 'Użyj AI do myślenia, nie zamiast myślenia',
+    description:
+      'Potraktuj model jak dodatkowego czytelnika: oddziel fakty od interpretacji, sprawdź założenia i poproś o kontrargument lub inne możliwe odczytanie.',
+    entries: entriesFor([
+      'separate-facts-from-interpretations',
+      'practice-assumptions',
+      'practice-counterargument',
+      'ai-as-second-reader',
+      'analyze-message-without-diagnosing'
+    ])
+  },
+  {
+    id: 'zachowaj-odpowiedzialnosc',
+    title: 'Zachowaj odpowiedzialność',
+    description:
+      'Porządkuj z AI opcje, kryteria i ryzyka, ale pozostaw ostateczny wybór osobie, która odpowiada za jego konsekwencje.',
+    entries: entriesFor(['practice-decision-ownership'])
+  }
+].filter((group) => group.entries.length > 0);
 ---
 
 {
@@ -68,8 +121,8 @@ const explorationLinks = entry
     </EntryLayout>
   ) : (
     <BaseLayout
-      title="Praktyka"
-      description="Krótkie ćwiczenia pomagające myśleć z AI ostrożniej: źródła, niepewność, założenia, kontrargumenty i decyzje."
+      title="Jak rozmawiać ze sztuczną inteligencją"
+      description="Praktyczne ćwiczenia: jak przekazać AI kontekst, sprawdzać źródła, rozpoznawać niepewność i zachować odpowiedzialność za decyzje."
       lang="pl"
       alternateLinks={practiceIndexAlternates}
     >
@@ -77,34 +130,80 @@ const explorationLinks = entry
         <header class="page-header practice-index__header">
           <div>
             <p class="eyebrow">Praktyka</p>
-            <h1>Praktyka</h1>
+            <h1>Jak rozmawiać ze sztuczną inteligencją</h1>
           </div>
-          <p>
-            Praktyka to zbiór krótkich scenariuszy uważnej pracy z AI. Każdy wpis
-            łączy przykładowe polecenie z pytaniami kontrolnymi, ograniczeniami i
-            wskazówkami, które warto rozważyć przed użyciem wyniku.
+          <p class="practice-index__intro">
+            Dobra rozmowa z AI zaczyna się od jasnego celu i kontekstu potrzebnego w
+            danym zadaniu. Warto określić ograniczenia, zadawać precyzyjne pytania i
+            traktować odpowiedź jako materiał do sprawdzenia, nie gotowy werdykt.
+            Ważne twierdzenia i źródła trzeba weryfikować, zauważać niepewność oraz
+            nie oddawać modelowi decyzji, za które odpowiada człowiek. Nie chodzi o
+            jeden magiczny prompt. Lepsza praca wynika z prowadzenia całej wymiany:
+            przekazywania kontekstu, iteracji, sprawdzania i rozpoznawania, kiedy nie
+            polegać na odpowiedzi.
           </p>
         </header>
 
-        <section class="practice-discovery" aria-labelledby="practice-discovery-title">
+        <section class="practice-discovery practice-start" aria-labelledby="practice-start-title" data-qa="practice-start">
           <div class="editorial-section-header">
             <div>
-              <p class="section-kicker">Praktyka</p>
-              <h2 id="practice-discovery-title">Wybierz sytuację</h2>
+              <p class="section-kicker">Zacznij tutaj</p>
+              <h2 id="practice-start-title">Cztery ćwiczenia na początek</h2>
             </div>
             <p>
-              Pracuj ze źródłami, niepewnością, założeniami, kontrargumentami,
-              tekstem i decyzjami bez oddawania modelowi osądu ani odpowiedzialności.
+              Zacznij od kontekstu, a następnie naucz się sprawdzać źródła, nazywać
+              niepewność i zachowywać odpowiedzialność za decyzję.
             </p>
           </div>
           <EntryList
-            entries={entries}
+            entries={startHereEntries}
             basePath="/pl/practice"
             label="Praktyka"
             dateLocale="pl"
-            ctaLabel="Otwórz scenariusz"
+            headingLevel="h3"
           />
         </section>
+
+        <section class="practice-boundary" aria-labelledby="practice-boundary-title">
+          <div>
+            <p class="section-kicker">Sposób pracy</p>
+            <h2 id="practice-boundary-title">Nie chodzi tylko o prompt</h2>
+          </div>
+          <div>
+            <p>
+              Dobrze sformułowane polecenie pomaga zadawać AI lepsze pytania, ale
+              odpowiedzialna praca nie kończy się na jednym zdaniu. Obejmuje jasny
+              cel, potrzebny kontekst i ograniczenia, właściwe źródła, iterację,
+              weryfikację, uczciwą ocenę niepewności oraz człowieka, który nadal
+              odpowiada za rezultat.
+            </p>
+            <p>
+              Poniższe ćwiczenia pokazują, jak rozmawiać z AI w całym tym procesie,
+              zamiast szukać uniwersalnej formuły.
+            </p>
+          </div>
+        </section>
+
+        <div class="practice-learning-paths" data-qa="practice-learning-paths">
+          {practiceGroups.map((group) => (
+            <section class="practice-discovery practice-group" aria-labelledby={`practice-${group.id}-title`} data-practice-group={group.id}>
+              <div class="editorial-section-header">
+                <div>
+                  <p class="section-kicker">Ścieżka praktyczna</p>
+                  <h2 id={`practice-${group.id}-title`}>{group.title}</h2>
+                </div>
+                <p>{group.description}</p>
+              </div>
+              <EntryList
+                entries={group.entries}
+                basePath="/pl/practice"
+                label="Praktyka"
+                dateLocale="pl"
+                headingLevel="h3"
+              />
+            </section>
+          ))}
+        </div>
       </section>
     </BaseLayout>
   )
