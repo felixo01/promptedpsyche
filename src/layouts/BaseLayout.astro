@@ -9,6 +9,14 @@ import '../styles/content-enhancements.css';
 
 type StructuredData = Record<string, unknown>;
 
+interface ScholarMetadata {
+  title: string;
+  author: string;
+  publicationDate: string;
+  language: Locale;
+  doi?: string;
+}
+
 interface Props {
   title?: string;
   appendSiteName?: boolean;
@@ -23,7 +31,7 @@ interface Props {
   alternateLinks?: AlternateLinks;
   robots?: string;
   structuredData?: StructuredData | StructuredData[];
-  citationDoi?: string;
+  scholarMetadata?: ScholarMetadata;
 }
 
 const {
@@ -40,7 +48,7 @@ const {
   alternateLinks: providedAlternateLinks,
   robots,
   structuredData,
-  citationDoi
+  scholarMetadata
 } = Astro.props;
 
 const pageTitle = title === site.name
@@ -92,7 +100,17 @@ const structuredDataJson = JSON.stringify(structuredDataGraph).replace(/</g, '\\
     <meta name="description" content={description} />
     {robots && <meta name="robots" content={robots} />}
     {robots && <meta name="googlebot" content={robots} />}
-    {citationDoi && <meta name="citation_doi" content={citationDoi} />}
+    {
+      scholarMetadata && (
+        <>
+          <meta name="citation_title" content={scholarMetadata.title} />
+          <meta name="citation_author" content={scholarMetadata.author} />
+          <meta name="citation_publication_date" content={scholarMetadata.publicationDate} />
+          <meta name="citation_language" content={scholarMetadata.language} />
+          {scholarMetadata.doi && <meta name="citation_doi" content={scholarMetadata.doi} />}
+        </>
+      )
+    }
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="en" href={new URL(alternateLinks.en, site.url).toString()} />
     <link rel="alternate" hreflang="pl" href={new URL(alternateLinks.pl, site.url).toString()} />

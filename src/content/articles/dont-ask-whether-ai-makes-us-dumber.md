@@ -3,6 +3,7 @@ title: "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop 
 description: "What current evidence says about AI, learning and independent thought, and why ready-made answers and well-designed scaffolding produce different outcomes."
 publishedAt: 2026-07-14
 draft: false
+scholarPrimary: true
 tags:
   - AI and humans
   - cognition
@@ -317,48 +318,48 @@ A model can give us the solution before we have seen the route. Sometimes that i
 
 Instead of asking only whether AI makes us dumber, ask which processes we still perform, which we hand to the tool and whether [human agency](/concepts/human-agency/) remains when the help is removed. The answer will differ between a routine task, mathematics practice, essay writing and a high-stakes decision. That is why one headline-sized question cannot settle the issue.
 
-## Sources and further reading
+## References
 
-Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. *Proceedings of the National Academy of Sciences, 122*(26), e2422633122. https://doi.org/10.1073/pnas.2422633122
+1. Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. *Proceedings of the National Academy of Sciences, 122*(26), e2422633122. https://doi.org/10.1073/pnas.2422633122
 
-Dahmani, L., & Bohbot, V. D. (2020). Habitual use of GPS negatively impacts spatial memory during self-guided navigation. *Scientific Reports, 10*, 6310. https://doi.org/10.1038/s41598-020-62877-0
+1. Dahmani, L., & Bohbot, V. D. (2020). Habitual use of GPS negatively impacts spatial memory during self-guided navigation. *Scientific Reports, 10*, 6310. https://doi.org/10.1038/s41598-020-62877-0
 
-Doshi, A. R., & Hauser, O. P. (2024). Generative AI enhances individual creativity but reduces the collective diversity of novel content. *Science Advances, 10*(28), eadn5290. https://doi.org/10.1126/sciadv.adn5290
+1. Doshi, A. R., & Hauser, O. P. (2024). Generative AI enhances individual creativity but reduces the collective diversity of novel content. *Science Advances, 10*(28), eadn5290. https://doi.org/10.1126/sciadv.adn5290
 
-Dworak, E. M., Revelle, W., & Condon, D. M. (2023). Looking for Flynn effects in a recent online U.S. adult sample: Examining shifts within the SAPA Project. *Intelligence, 98*, 101734. https://doi.org/10.1016/j.intell.2023.101734
+1. Dworak, E. M., Revelle, W., & Condon, D. M. (2023). Looking for Flynn effects in a recent online U.S. adult sample: Examining shifts within the SAPA Project. *Intelligence, 98*, 101734. https://doi.org/10.1016/j.intell.2023.101734
 
-Gerlich, M. (2025). AI tools in society: Impacts on cognitive offloading and the future of critical thinking. *Societies, 15*(1), 6. https://doi.org/10.3390/soc15010006
+1. Gerlich, M. (2025). AI tools in society: Impacts on cognitive offloading and the future of critical thinking. *Societies, 15*(1), 6. https://doi.org/10.3390/soc15010006
 
-Hoover, A. (2026, July 7). Is AI making us dumber? *Business Insider*. https://www.businessinsider.com/ai-making-us-dumber-research-2026-7?IR=T
+1. Hoover, A. (2026, July 7). Is AI making us dumber? *Business Insider*. https://www.businessinsider.com/ai-making-us-dumber-research-2026-7?IR=T
 
-Kestin, G., Miller, K., Klales, A., Milbourne, T., & Ponti, G. (2025). AI tutoring outperforms in-class active learning: An RCT introducing a novel research-based design in an authentic educational setting. *Scientific Reports, 15*, 17458. https://doi.org/10.1038/s41598-025-97652-6
+1. Kestin, G., Miller, K., Klales, A., Milbourne, T., & Ponti, G. (2025). AI tutoring outperforms in-class active learning: An RCT introducing a novel research-based design in an authentic educational setting. *Scientific Reports, 15*, 17458. https://doi.org/10.1038/s41598-025-97652-6
 
-Kosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X. H., Beresnitzky, A. V., Braunstein, I., & Maes, P. (2025). *Your Brain on ChatGPT: Accumulation of cognitive debt when using an AI assistant for essay writing task* (Version 2) [Preprint]. arXiv. https://arxiv.org/abs/2506.08872
+1. Kosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X. H., Beresnitzky, A. V., Braunstein, I., & Maes, P. (2025). *Your Brain on ChatGPT: Accumulation of cognitive debt when using an AI assistant for essay writing task* (Version 2) [Preprint]. arXiv. https://arxiv.org/abs/2506.08872
 
-Liu, G., Christian, B., Dumbalska, T., Bakker, M. A., & Dubey, R. (2026). *AI assistance reduces persistence and hurts independent performance* (Version 2) [Preprint]. arXiv. https://arxiv.org/abs/2604.04721
+1. Liu, G., Christian, B., Dumbalska, T., Bakker, M. A., & Dubey, R. (2026). *AI assistance reduces persistence and hurts independent performance* (Version 2) [Preprint]. arXiv. https://arxiv.org/abs/2604.04721
 
-Mengelkoch, R. F., Adams, J. A., & Gainer, C. A. (1971). The forgetting of instrument flying skills. *Human Factors, 13*(5), 397-405. https://doi.org/10.1177/001872087101300502
+1. Mengelkoch, R. F., Adams, J. A., & Gainer, C. A. (1971). The forgetting of instrument flying skills. *Human Factors, 13*(5), 397-405. https://doi.org/10.1177/001872087101300502
 
-Moon, K., Green, A. E., & Kushlev, K. (2025). Homogenizing effect of large language models (LLMs) on creative diversity: An empirical comparison of human and ChatGPT writing. *Computers in Human Behavior: Artificial Humans, 6*, 100207. https://doi.org/10.1016/j.chbah.2025.100207
+1. Moon, K., Green, A. E., & Kushlev, K. (2025). Homogenizing effect of large language models (LLMs) on creative diversity: An empirical comparison of human and ChatGPT writing. *Computers in Human Behavior: Artificial Humans, 6*, 100207. https://doi.org/10.1016/j.chbah.2025.100207
 
-Moon, K., Kushlev, K., Bank, A., Lira Luttges, B., Viskontas, I., Kaufman, J. C., Johnson, D. R., Lee, A., Duckworth, A. L., & Green, A. E. (2026). *The creative link between words and ideas is weakening in the AI era* (Version 6) [Preprint]. PsyArXiv. https://doi.org/10.31234/osf.io/jsz58_v6
+1. Moon, K., Kushlev, K., Bank, A., Lira Luttges, B., Viskontas, I., Kaufman, J. C., Johnson, D. R., Lee, A., Duckworth, A. L., & Green, A. E. (2026). *The creative link between words and ideas is weakening in the AI era* (Version 6) [Preprint]. PsyArXiv. https://doi.org/10.31234/osf.io/jsz58_v6
 
-National Center for Education Statistics. (2025). *2024 mathematics report card at grade 12* (NCES 2024-221). https://www.nationsreportcard.gov/reports/mathematics/2024/g12/
+1. National Center for Education Statistics. (2025). *2024 mathematics report card at grade 12* (NCES 2024-221). https://www.nationsreportcard.gov/reports/mathematics/2024/g12/
 
-Renkl, A., Atkinson, R. K., Maier, U. H., & Staley, R. (2002). From example study to problem solving: Smooth transitions help learning. *The Journal of Experimental Education, 70*(4), 293-315. https://doi.org/10.1080/00220970209599510
+1. Renkl, A., Atkinson, R. K., Maier, U. H., & Staley, R. (2002). From example study to problem solving: Smooth transitions help learning. *The Journal of Experimental Education, 70*(4), 293-315. https://doi.org/10.1080/00220970209599510
 
-Risko, E. F., & Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive Sciences, 20*(9), 676-688. https://doi.org/10.1016/j.tics.2016.07.002
+1. Risko, E. F., & Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive Sciences, 20*(9), 676-688. https://doi.org/10.1016/j.tics.2016.07.002
 
-Roediger, H. L., III, & Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. *Psychological Science, 17*(3), 249-255. https://doi.org/10.1111/j.1467-9280.2006.01693.x
+1. Roediger, H. L., III, & Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. *Psychological Science, 17*(3), 249-255. https://doi.org/10.1111/j.1467-9280.2006.01693.x
 
-Sinha, T., & Kapur, M. (2021). When problem solving followed by instruction works: Evidence for productive failure. *Review of Educational Research, 91*(5), 761-798. https://doi.org/10.3102/00346543211019105
+1. Sinha, T., & Kapur, M. (2021). When problem solving followed by instruction works: Evidence for productive failure. *Review of Educational Research, 91*(5), 761-798. https://doi.org/10.3102/00346543211019105
 
-Soderstrom, N. C., & Bjork, R. A. (2015). Learning versus performance: An integrative review. *Perspectives on Psychological Science, 10*(2), 176-199. https://doi.org/10.1177/1745691615569000
+1. Soderstrom, N. C., & Bjork, R. A. (2015). Learning versus performance: An integrative review. *Perspectives on Psychological Science, 10*(2), 176-199. https://doi.org/10.1177/1745691615569000
 
-Sparrow, B., Liu, J., & Wegner, D. M. (2011). Google effects on memory: Cognitive consequences of having information at our fingertips. *Science, 333*(6043), 776-778. https://doi.org/10.1126/science.1207745
+1. Sparrow, B., Liu, J., & Wegner, D. M. (2011). Google effects on memory: Cognitive consequences of having information at our fingertips. *Science, 333*(6043), 776-778. https://doi.org/10.1126/science.1207745
 
-Stankovic, M., Hirche, E., Kollatzsch, S., & Doetsch, J. N. (2026). *Comment on: Your Brain on ChatGPT: Accumulation of cognitive debt when using an AI assistant for essay writing tasks* [Preprint]. arXiv. https://arxiv.org/abs/2601.00856
+1. Stankovic, M., Hirche, E., Kollatzsch, S., & Doetsch, J. N. (2026). *Comment on: Your Brain on ChatGPT: Accumulation of cognitive debt when using an AI assistant for essay writing tasks* [Preprint]. arXiv. https://arxiv.org/abs/2601.00856
 
-van de Pol, J., Volman, M., & Beishuizen, J. (2010). Scaffolding in teacher-student interaction: A decade of research. *Educational Psychology Review, 22*, 271-296. https://doi.org/10.1007/s10648-010-9127-6
+1. van de Pol, J., Volman, M., & Beishuizen, J. (2010). Scaffolding in teacher-student interaction: A decade of research. *Educational Psychology Review, 22*, 271-296. https://doi.org/10.1007/s10648-010-9127-6
 
-Wang, R. E., Ribeiro, A. T., Robinson, C. D., Loeb, S., & Demszky, D. (2024). *Tutor CoPilot: A human-AI approach for scaling real-time expertise* [Preprint]. arXiv. https://arxiv.org/abs/2410.03017
+1. Wang, R. E., Ribeiro, A. T., Robinson, C. D., Loeb, S., & Demszky, D. (2024). *Tutor CoPilot: A human-AI approach for scaling real-time expertise* [Preprint]. arXiv. https://arxiv.org/abs/2410.03017

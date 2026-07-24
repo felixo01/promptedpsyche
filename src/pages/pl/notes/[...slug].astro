@@ -18,6 +18,6 @@ const { entry, alternateLinks } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<EntryLayout entry={entry} label="Notatka" lang="pl" alternateLinks={alternateLinks}>
+<EntryLayout entry={entry} entryType="note" label="Notatka" lang="pl" alternateLinks={alternateLinks}>
   <Content />
 </EntryLayout>

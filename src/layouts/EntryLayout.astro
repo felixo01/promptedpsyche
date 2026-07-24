@@ -26,6 +26,7 @@ interface Props {
       author: string;
       publishedAt: Date;
       updatedAt?: Date;
+      draft: boolean;
       readingTime?: string;
       image?: string;
       imageWidth?: number;
@@ -49,32 +50,34 @@ interface Props {
       audioUrl?: string;
       inBrief?: string[];
       tags?: string[];
+      lang?: Locale;
+      scholarPrimary?: boolean;
     };
   };
+  entryType: 'article' | 'note' | 'concept' | 'practice';
   label: string;
   lang?: Locale;
   alternateLinks?: AlternateLinks;
   robots?: string;
-  showPublishedAt?: boolean;
   showRightsNotice?: boolean;
   explorationLinks?: TopicResource[];
 }
 
 const {
   entry,
+  entryType,
   label,
   lang = 'en',
   alternateLinks,
   robots,
-  showPublishedAt = true,
   showRightsNotice = true,
   explorationLinks = []
 } = Astro.props;
 const tags: string[] = entry.data.tags ?? [];
 const readingTime = entry.data.readingTime;
-const isConceptEntry = !showPublishedAt;
-const isArticleEntry = label === 'Article' || label === 'Artykuł';
-const isNoteEntry = label === 'Note' || label === 'Notatka';
+const isConceptEntry = entryType === 'concept';
+const isArticleEntry = entryType === 'article';
+const isNoteEntry = entryType === 'note';
 const showConsultingCta = isArticleEntry || isNoteEntry;
 const conceptBackHref = lang === 'pl' ? '/pl/concepts/' : '/concepts/';
 const conceptBackLabel = lang === 'pl' ? 'Wróć do pojęć' : 'Back to concepts';
@@ -103,6 +106,21 @@ const licenseName = isArticleEntry ? entry.data.licenseName : undefined;
 const licenseUrl = isArticleEntry ? entry.data.licenseUrl : undefined;
 const audioUrl = !isConceptEntry ? entry.data.audioUrl : undefined;
 const inBriefItems = isArticleEntry ? (entry.data.inBrief ?? []) : [];
+const scholarMetadata =
+  isArticleEntry &&
+  entry.data.scholarPrimary === true &&
+  entry.data.draft === false &&
+  entry.data.title &&
+  entry.data.author &&
+  entry.data.publishedAt
+    ? {
+        title: entry.data.title,
+        author: entry.data.author,
+        publicationDate: entry.data.publishedAt.toISOString().slice(0, 10).replaceAll('-', '/'),
+        language: entry.data.lang ?? lang,
+        ...(doi ? { doi } : {})
+      }
+    : undefined;
 const citableVersionLabel = lang === 'pl' ? 'Wersja do cytowania' : 'Citable version';
 const visibleDoi = doi ?? relatedDoi;
 const visibleDoiUrl = doiUrl ?? relatedDoiUrl;
@@ -197,7 +215,7 @@ const asideLabels = isConceptEntry
   alternateLinks={alternateLinks}
   robots={robots}
   structuredData={publicationStructuredData}
-  citationDoi={doi}
+  scholarMetadata={scholarMetadata}
 >
   <article class:list={['article-shell', isConceptEntry ? 'article-shell--concept' : 'article-shell--publication']}>
     <header class="content-header">

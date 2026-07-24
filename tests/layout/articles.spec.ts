@@ -922,13 +922,13 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose')).toContainText('Hypothetical case: the retention score');
     await expect(page.locator('.prose')).toContainText('A responsibility-tracing protocol');
     await expect(page.locator('.prose')).toContainText('Limits of the argument');
-    await expect(page.locator('.prose')).toContainText('Sources and further reading');
+    await expect(page.locator('.prose')).toContainText('References');
     await expect(page.locator('.prose')).toContainText('Köbis');
     await expect(page.locator('.prose')).toContainText('Bandura');
     await expect(page.locator('.prose')).toContainText('Elish');
     await expect(page.locator('.prose')).toContainText('National Institute of Standards and Technology');
-    const sourcesHeading = page.getByRole('heading', { name: 'Sources and further reading' });
-    await expect(sourcesHeading.locator('xpath=following-sibling::ul[1]/li')).toHaveCount(28);
+    const sourcesHeading = page.getByRole('heading', { name: 'References' });
+    await expect(sourcesHeading.locator('xpath=following-sibling::ol[1]/li')).toHaveCount(28);
     await expect(page.locator('[data-qa="article-byline"]')).toContainText('By Feliks Mamczur');
     await expect(page.locator('[data-qa="article-byline"] a[href="/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Suggested citation');
@@ -1070,8 +1070,8 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/cognitive-offloading/"]')).toBeVisible();
     await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/ai-literacy/"]')).toBeVisible();
     await expect(page.locator('.prose > :not(.continue-exploring) a[href="/concepts/human-agency/"]')).toBeVisible();
-    await expect(page.locator('.prose')).toContainText('Sources and further reading');
-    await expect(page.locator('h2:has-text("Sources and further reading") + ul > li')).toHaveCount(18);
+    await expect(page.locator('.prose')).toContainText('References');
+    await expect(page.locator('h2:has-text("References") + ol > li')).toHaveCount(18);
     await expect(
       page.locator(
         `.language-switcher a[href="${aiPathPolishArticleRoute}"]`
@@ -1471,10 +1471,7 @@ test.describe('published articles', () => {
       'href',
       'https://creativecommons.org/licenses/by/4.0/'
     );
-    await expect(page.locator('meta[name="citation_doi"]')).toHaveAttribute(
-      'content',
-      '10.5281/zenodo.21296384'
-    );
+    await expect(page.locator('meta[name^="citation_"]')).toHaveCount(0);
 
     const structuredDataText = await page
       .locator('script[type="application/ld+json"]')
