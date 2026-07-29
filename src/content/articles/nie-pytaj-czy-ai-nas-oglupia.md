@@ -1,6 +1,6 @@
 ---
-title: "Nie pytaj, czy AI nas ogłupia. Zapytaj, które sposoby myślenia przestajemy ćwiczyć"
-description: "Co obecne badania mówią o AI, uczeniu się i samodzielnym myśleniu oraz dlaczego gotowa odpowiedź i stopniowane wsparcie mogą prowadzić do innych wyników."
+title: "Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?"
+description: "Badania nad generatywną AI pokazują, że dobry wynik uzyskany z pomocą nie musi oznaczać, że osoba ucząca się potrafi później wykonać podobne zadanie samodzielnie. Znaczenie ma także forma wsparcia: gotowe rozwiązanie, podpowiedź lub informacja zwrotna."
 publishedAt: 2026-07-14
 draft: false
 tags:
@@ -98,17 +98,17 @@ translationKey: "ai-thinking-practice"
 }
 </style>
 
-Rozwiązujesz z pomocą AI zadanie, do którego jeszcze godzinę temu nie wiedziałeś, jak się zabrać. System rozpoznaje rodzaj problemu, wybiera metodę, wykonuje obliczenia i przygotowuje jasne wyjaśnienie. Wynik jest poprawny. Kiedy jednak kilka minut później dostajesz podobne zadanie bez dostępu do narzędzia, nie potrafisz odtworzyć pierwszego kroku.
+Osoba ucząca się rozwiązuje z pomocą AI zadanie, do którego jeszcze godzinę wcześniej nie wiedziała, jak się zabrać. System rozpoznaje rodzaj problemu, wybiera metodę, wykonuje obliczenia i przygotowuje jasne wyjaśnienie. Wynik jest poprawny. Kiedy jednak kilka minut później osoba ta dostaje podobne zadanie bez dostępu do narzędzia, nie potrafi odtworzyć pierwszego kroku.
 
-Czy AI ci pomogła? Tak. Czy się nauczyłeś? Tego nie da się stwierdzić na podstawie dobrego wyniku uzyskanego z pomocą. Wykonanie zadania i zbudowanie umiejętności mogą przez chwilę wyglądać tak samo, choć prowadzą do nich inne procesy.
+AI pomogła wykonać zadanie. Na podstawie poprawnego wyniku uzyskanego z pomocą nie można jednak stwierdzić, czy nastąpiło uczenie się. Wykonanie zadania i zbudowanie umiejętności mogą przez chwilę wyglądać tak samo, choć prowadzą do nich inne procesy.
 
-7 lipca 2026 roku Amanda Hoover opublikowała w *Business Insiderze* artykuł [*Is AI making us dumber?*](https://www.businessinsider.com/ai-making-us-dumber-research-2026-7?IR=T). Tekst zbiera niepokojące sygnały: słabsze zapamiętywanie własnej pracy, mniejszy wysiłek podczas części zadań, gorszy wynik po odebraniu AI, rezygnowanie z rozwiązania oraz większe podobieństwo prac twórczych. To nie są wymyślone problemy. Hoover uczciwie zaznacza też, że na ocenę długotrwałych skutków jest za wcześnie, a część szeroko komentowanych wyników pochodzi z preprintów.
+7 lipca 2026 roku Amanda Hoover opublikowała w *Business Insiderze* artykuł [*Is AI making us dumber?*](https://www.businessinsider.com/ai-making-us-dumber-research-2026-7?IR=T). Tekst zbiera wyniki wskazujące na słabsze zapamiętywanie własnej pracy, mniejszy wysiłek podczas części zadań, gorszy wynik po odebraniu AI, rezygnowanie z rozwiązania oraz większe podobieństwo prac twórczych. Hoover zaznacza przy tym, że na ocenę długotrwałych skutków jest za wcześnie, a część szeroko komentowanych wyników pochodzi z preprintów.
 
-Kłopot zaczyna się wtedy, gdy wszystkie te obserwacje trafiają pod jedno publicystyczne pytanie: czy AI robi z nas ludzi mniej inteligentnych? Pamięć własnego eseju, aktywność EEG podczas pisania, wytrwałość przy ułamkach, wynik na egzaminie bez AI i różnorodność opowiadań nie są różnymi termometrami tej samej cechy. To odrębne wyniki, uzyskane w innych warunkach i po różnym czasie.
+Problem pojawia się wtedy, gdy wszystkie te obserwacje ujmuje się w jednym publicystycznym pytaniu: czy AI robi z nas ludzi mniej inteligentnych? Pamięć własnego eseju, aktywność EEG podczas pisania, wytrwałość przy ułamkach, wynik na egzaminie bez AI i różnorodność opowiadań nie są miarami tej samej cechy. To odrębne wyniki, uzyskane w innych warunkach i po różnym czasie.
 
 <aside class="key-passage" data-qa="key-passage">
   <p class="key-passage__label">Kluczowy fragment</p>
-  <p>Problem nie zaczyna się wtedy, gdy AI skraca pracę. Zaczyna się wtedy, gdy interfejs nie odróżnia odpowiedzi, którą trzeba przygotować, od umiejętności, którą trzeba wyćwiczyć. Dobry wynik uzyskany z pomocą może ukrywać, że człowiek nie potrafi jeszcze samodzielnie odtworzyć prowadzącego do niego procesu.</p>
+  <p>Ryzyko nie wynika z samego skrócenia pracy przez AI, lecz z sytuacji, w której interfejs nie odróżnia odpowiedzi, którą trzeba przygotować, od umiejętności, którą trzeba wyćwiczyć. Dobry wynik uzyskany z pomocą może ukrywać, że człowiek nie potrafi jeszcze samodzielnie odtworzyć prowadzącego do niego procesu.</p>
 </aside>
 
 ## Abstrakt

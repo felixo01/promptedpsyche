@@ -157,7 +157,7 @@ test.describe('publication tag pages', () => {
     await expect(page.locator('.tag-archive-list')).not.toContainText('It is not just about the prompt');
     await expect(page.locator('.tag-archive-list')).not.toContainText('AI Literacy Is Not Prompt Engineering');
     await expect(page.locator('.tag-archive-list')).toContainText(
-      'Nie pytaj, czy AI nas ogłupia'
+      'Gotowe odpowiedzi zmieniają sposób uczenia się'
     );
     await expect(page.locator('.tag-archive-list')).toContainText(
       'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?'

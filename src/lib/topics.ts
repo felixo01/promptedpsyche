@@ -169,7 +169,7 @@ const pl = {
     ),
     cognition: resource(
       'article',
-      'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać',
+      'Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?',
       'Ostrożne rozróżnienie między wynikiem zadania, uczeniem się, utrwaleniem wiedzy i transferem, gdy AI staje się częścią procesu.',
       '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/'
     ),

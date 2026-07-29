@@ -29,7 +29,7 @@ const generativeSearchEnglishArticleTitle =
 const generativeSearchEnglishDoi = '10.5281/zenodo.21491639';
 const generativeSearchEnglishDoiUrl = `https://doi.org/${generativeSearchEnglishDoi}`;
 const aiThinkingPolishArticleTitle =
-  'Nie pytaj, czy AI nas ogłupia. Zapytaj, które sposoby myślenia przestajemy ćwiczyć';
+  'Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?';
 const aiThinkingEnglishArticleTitle =
   "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing";
 const aiThinkingEnglishDoi = '10.5281/zenodo.21358687';

@@ -201,7 +201,7 @@ test.describe('topic hubs', () => {
       },
       {
         route: '/pl/topics/ai-i-myslenie/',
-        flagship: 'Nie pytaj, czy AI nas ogłupia. Zapytaj, jakiego myślenia przestajemy używać',
+        flagship: 'Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?',
         flagshipHref: '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/',
         note: 'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
         noteHref: '/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/',
