@@ -48,7 +48,7 @@ Official records:
 | `src/content/articles/ai-literacy-is-not-prompt-engineering.mdx` | AI Literacy Is Not Prompt Engineering | Not applicable | - | OK |
 | `src/content/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje.md` | Dlaczego AI nie potrafi odczytywać ludzkich intencji - i dlaczego to dobrze | Not applicable | - | OK |
 | `src/content/articles/are-we-afraid-of-ai-or-of-ourselves.md` | Are we afraid of AI, or of ourselves? | Not applicable | - | OK |
-| `src/content/articles/co-sie-zmienia-kiedy-ai-ma-cialo.md` | Co się zmienia, kiedy AI ma ciało? | Related EN DOI: What changes when AI has a body? | `10.5281/zenodo.21296384` (related) | OK |
+| `src/content/articles/co-sie-zmienia-kiedy-ai-ma-cialo.md` | Dlaczego fizyczna obecność AI zmienia relację z człowiekiem | Related EN DOI: What changes when AI has a body? | `10.5281/zenodo.21296384` (related) | OK |
 | `src/content/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie.md` | Czy boimy się AI, czy boimy się samych siebie? | Not applicable | - | OK |
 | `src/content/articles/dont-ask-whether-ai-makes-us-dumber.md` | Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing | Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing | `10.5281/zenodo.21358687` | OK |
 | `src/content/articles/it-is-not-just-about-the-prompt.md` | It is not just about the prompt | Not applicable | - | OK |

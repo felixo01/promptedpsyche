@@ -50,7 +50,8 @@ const aiFearsPolishArticleTitle = 'Czy boimy się AI, czy boimy się samych sieb
 const aiFearsEnglishArticleTitle = 'Are we afraid of AI, or of ourselves?';
 const aiFearsEnglishDoi = '10.5281/zenodo.21340181';
 const aiFearsEnglishDoiUrl = `https://doi.org/${aiFearsEnglishDoi}`;
-const embodiedPolishArticleTitle = 'Co się zmienia, kiedy AI ma ciało?';
+const embodiedPolishArticleTitle =
+  'Dlaczego fizyczna obecność AI zmienia relację z człowiekiem';
 const embodiedEnglishArticleTitle = 'What changes when AI has a body?';
 const aiFearsHeroImage = '/images/articles/ai-fear-human-mirror.webp';
 const aiFearsSocialImage = '/images/articles/ai-fear-human-mirror-social.webp';
