@@ -314,6 +314,17 @@ The DOI field should not be displayed when no DOI exists. Do not show placeholde
 
 A DOI does not mean quality, review or peer-reviewed status by itself. It must not be used to create a false academic impression.
 
+### DOI / Zenodo title protection
+
+Before any title edit, distinguish a publication's own `doi` from a companion page's `relatedDoi`.
+
+- An English publication with a direct DOI, Zenodo bibliographic record and deposited Version of Record has a protected title. Do not change its `title`, H1, title-derived slug, `citation_title`, HTML title, structured-data headline or another identifying element without an explicit author decision. Return `BLOCKED - DOI TITLE CHANGE` and identify the protecting record.
+- A Polish companion with only `relatedDoi` does not own the English DOI. Its Polish title may be edited when the author requests it, even if the interface labels the related English DOI. Never propagate a Polish title change to the protected English title automatically.
+- Lead, abstract, body, style, corrections, references, accessibility and non-identifying SEO remain editable.
+- Report suspected mismatches; do not repair them automatically.
+
+The baseline repository audit is recorded in `docs/doi-title-protection-audit-2026-07-29.md`.
+
 ## Safety Notes
 
 - The Polish and English first article pair is public in pre-launch mode.
@@ -322,7 +333,7 @@ A DOI does not mean quality, review or peer-reviewed status by itself. It must n
 - Concept tags are interactive filters on the Concepts index.
 - RSS and sitemap should include only public content according to the existing filters.
 - No private strategy, source-check notes or operational planning material was copied into the public article.
-- DOI is still not used. Do not add placeholder DOI text.
+- Direct DOI metadata is used only for publications that own a verified DOI. Do not add placeholder DOI text or reuse a related English DOI as a Polish publication's own DOI.
 
 ## AI fear article research revision - 2026-07-12
 
