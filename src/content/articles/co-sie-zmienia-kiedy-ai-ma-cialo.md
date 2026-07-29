@@ -1,6 +1,6 @@
 ---
 title: "Dlaczego fizyczna obecność AI zmienia relację z człowiekiem"
-description: "Fizyczna obecność, głos, spojrzenie i ruch sprawiają, że system AI uczestniczy w sytuacji społecznej inaczej niż chatbot na ekranie. Zmienia to zaufanie, komunikację i sposób, w jaki oceniamy jego możliwości."
+description: "Jak fizyczna obecność, głos, spojrzenie i ruch systemu AI wpływają na zaufanie, komunikację oraz ocenę jego możliwości."
 publishedAt: 2026-07-10
 draft: false
 tags:

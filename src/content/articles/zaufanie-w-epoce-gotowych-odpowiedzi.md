@@ -1,6 +1,6 @@
 ---
 title: "Zaufanie do nauki w erze gotowych odpowiedzi"
-description: "Generatywna AI może skrócić drogę od źródeł naukowych do gotowej odpowiedzi, a zarazem ukryć pochodzenie informacji, siłę dowodów, niepewność i spory. Dlatego zaufanie trzeba opierać na możliwości odtworzenia tej drogi, nie na płynności syntezy."
+description: "Jak generatywna AI skraca drogę od źródeł naukowych do odpowiedzi i dlaczego zaufanie wymaga widocznych dowodów, niepewności oraz sporów."
 publishedAt: 2026-07-02
 updatedAt: 2026-07-10
 draft: false

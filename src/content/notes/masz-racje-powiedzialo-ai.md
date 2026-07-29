@@ -1,6 +1,6 @@
 ---
 title: "„Masz rację” — powiedziało AI. Problem w tym, że znało tylko twoją wersję"
-description: "Gdy chatbot widzi tylko jedną stronę konfliktu, wspierająca odpowiedź może zabrzmieć jak niezależny werdykt. Co badania mówią o potakiwaniu AI, odpowiedzialności i naprawie relacji."
+description: "Co badania nad potakiwaniem AI mówią o sytuacji, gdy wspierająca odpowiedź oparta na jednej wersji konfliktu brzmi jak niezależny werdykt."
 publishedAt: 2026-07-18
 draft: false
 tags:

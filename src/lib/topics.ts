@@ -544,7 +544,7 @@ topicHubs.pl = [
     path: '/pl/topics/ai-i-myslenie/',
     alternatePath: '/topics/ai-and-cognition/',
     title: 'AI i myślenie',
-    description: 'Przewodnik po AI, myśleniu i uczeniu się: wykonaniu zadania, pamięci, przenoszeniu umiejętności na nowe zadania, odciążeniu poznawczym, metapoznaniu i erozji kompetencji.',
+    description: 'Przewodnik po wpływie AI na myślenie i uczenie się: wykonanie zadań, pamięć, transfer, odciążenie poznawcze, metapoznanie i erozja kompetencji.',
     eyebrow: 'Przewodnik tematyczny',
     summary: 'Co zmienia się, gdy AI podaje odpowiedź, wspiera proces albo usuwa ćwiczenie, dzięki któremu powstaje samodzielna umiejętność.',
     introduction: [

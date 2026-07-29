@@ -1,6 +1,6 @@
 ---
 title: "Czy boimy się AI, czy boimy się samych siebie?"
-description: "Esej oparty na badaniach o tym, jak AI wzmacnia cele, staje się moralnym alibi i zasłania odpowiedzialność instytucji - z uwzględnieniem rzeczywistych granic ludzkiej kontroli."
+description: "Jak AI wzmacnia ludzkie cele, może służyć jako moralne alibi i przesłaniać odpowiedzialność instytucji, także przy ograniczonej kontroli człowieka."
 publishedAt: 2026-07-04
 updatedAt: 2026-07-13
 draft: false

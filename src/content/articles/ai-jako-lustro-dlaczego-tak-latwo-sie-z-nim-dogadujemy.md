@@ -1,6 +1,6 @@
 ---
 title: "AI jako lustro. Dlaczego tak łatwo mu ufamy?"
-description: "O tym, dlaczego płynne, dopasowane odpowiedzi AI tak łatwo budują zaufanie: nie dlatego, że model rozumie nas jak człowiek, lecz dlatego, że odbija język, ramy interpretacyjne i potrzebę sensu."
+description: "Dlaczego płynne, dopasowane odpowiedzi AI budują zaufanie oraz jak język modelu odzwierciedla ramy interpretacyjne i oczekiwania użytkownika."
 publishedAt: 2026-05-09
 draft: false
 tags:

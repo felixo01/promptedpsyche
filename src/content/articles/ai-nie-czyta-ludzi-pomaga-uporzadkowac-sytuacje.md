@@ -1,6 +1,6 @@
 ---
 title: "Dlaczego AI nie potrafi odczytywać ludzkich intencji - i dlaczego to dobrze"
-description: "Studium przypadku pokazujące granicę analizy komunikacji przez AI: model może porządkować fakty, hipotezy i brakujące informacje, ale nie ma dostępu do cudzych intencji. Uznanie tej granicy sprzyja bezpieczniejszym decyzjom."
+description: "Jak AI porządkuje fakty i hipotezy w komunikacji, dlaczego nie odczytuje cudzych intencji oraz jak ta granica wspiera bezpieczniejsze decyzje."
 publishedAt: 2026-04-17
 draft: false
 tags:

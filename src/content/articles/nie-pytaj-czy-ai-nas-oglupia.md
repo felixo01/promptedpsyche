@@ -1,6 +1,6 @@
 ---
 title: "Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?"
-description: "Badania nad generatywną AI pokazują, że dobry wynik uzyskany z pomocą nie musi oznaczać, że osoba ucząca się potrafi później wykonać podobne zadanie samodzielnie. Znaczenie ma także forma wsparcia: gotowe rozwiązanie, podpowiedź lub informacja zwrotna."
+description: "Co badania mówią o wpływie gotowych odpowiedzi AI na samodzielne wykonywanie zadań, uczenie się oraz znaczenie różnych form wsparcia."
 publishedAt: 2026-07-14
 draft: false
 tags:
