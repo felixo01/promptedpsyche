@@ -169,7 +169,7 @@ Kluczowe jest to, żeby fizyczna forma systemu nie stawała się mechanizmem per
 
 Ucieleśnionej AI nie należy ani banalizować, ani przypisywać jej z góry określonych skutków społecznych.
 
-Jest kolejnym etapem przesuwania granicy między technologią a relacją społeczną.
+Jest jednym z miejsc, w których przesuwa się granica między technologią a relacją społeczną.
 
 Warto myśleć o niej przez kilka prostych pytań.
 
@@ -185,7 +185,7 @@ Po piąte: czy człowiek zachowuje możliwość odmowy, sprawdzenia, przerwania 
 
 To są pytania bardziej praktyczne niż wielkie spory o to, czy maszyny "naprawdę" rozumieją.
 
-Bo w codziennym życiu wiele skutków pojawi się wcześniej niż filozoficzna pewność. Dziecko może polubić edukacyjnego robota. Pacjent może zaufać głosowi asystenta. Pracownik może uznać ruch maszyny za sygnał kompetencji. Starsza osoba może traktować robota jak obecność. Użytkownik może powiedzieć więcej, niż planował, bo system wydaje się cierpliwy, spokojny i nienaruszający.
+Bo w codziennym życiu wiele skutków pojawi się wcześniej niż filozoficzna pewność. Dziecko może polubić edukacyjnego robota. Pacjent może zaufać głosowi asystenta. Pracownik może uznać ruch maszyny za sygnał kompetencji. Starsza osoba może traktować robota jak obecność. Użytkownik może powiedzieć więcej, niż planował, bo system wydaje się cierpliwy, spokojny i nieosądzający.
 
 Ucieleśniona AI pokazuje, że przyszłość sztucznej inteligencji nie rozgrywa się tylko w modelach, testach porównawczych i poleceniach. Rozgrywa się także w ludzkim ciele: w uwadze, odruchach społecznych, zaufaniu, dystansie, poczuciu bycia widzianym i w granicy między narzędziem a obecnością.
 

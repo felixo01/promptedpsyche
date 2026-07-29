@@ -18,7 +18,7 @@ Odpowiedzi AI często brzmią płynnie, pewnie i logicznie. Mają porządek, dob
 
 Ta sama cecha może jednak mylić. Gdy odpowiedź brzmi dobrze, łatwo poczuć, że jest też dobrze uzasadniona. Forma zaczyna działać jak sygnał wiarygodności. Płynność sugeruje kompetencję. Spójność sugeruje podstawę. Pewny ton sugeruje, że ktoś już sprawdził sprawę za nas.
 
-W pracy z AI to szczególnie ważne, bo [model output](/pl/concepts/model-output/) nie jest wiedzą samą w sobie. Jest wynikiem działania systemu. Może być trafny, pomocny i dobrze napisany, ale może też opierać się na zbyt małej ilości informacji, niepewnym założeniu albo skrócie, który brzmi lepiej, niż powinien.
+W pracy z AI to szczególnie ważne, bo [odpowiedź modelu](/pl/concepts/model-output/) nie jest wiedzą samą w sobie. Jest wynikiem działania systemu. Może być trafna, pomocna i dobrze napisana, ale może też opierać się na niewystarczających informacjach, niepewnym założeniu albo skrócie, który brzmi lepiej, niż powinien.
 
 Najłatwiej wpaść w tę pułapkę wtedy, gdy odpowiedź pasuje do tego, co już chcieliśmy usłyszeć. Model nie musi nas wtedy przekonywać od zera. Wystarczy, że ułoży naszą intuicję w gładki tekst. To przyjemne, szybkie i wygodne. Nie powinno jednak zamykać pytania o to, na czym dana odpowiedź się opiera.
 
@@ -28,7 +28,7 @@ Dobra forma odpowiedzi nie jest dowodem prawdy. Model może pisać spójnie tak�
 
 Problemem nie jest samo używanie AI. Problem zaczyna się wtedy, gdy płynny styl zastępuje sprawdzenie. Zamiast pytać tylko "czy to brzmi dobrze?", warto zapytać "na czym to się opiera?". Zamiast traktować pewny ton jak znak pewności, lepiej potraktować go jako powód do krótkiej kontroli.
 
-Nie każda sytuacja wymaga takiej samej ostrożności. Inaczej sprawdzamy roboczy szkic maila, inaczej interpretację danych, rekomendację dla klienta albo tekst, który ma zostać opublikowany. Właśnie o to chodzi w [calibrated trust](/pl/concepts/calibrated-trust/): zaufanie powinno pasować do zadania, ryzyka i możliwych konsekwencji błędu.
+Nie każda sytuacja wymaga takiej samej ostrożności. Inaczej sprawdzamy roboczy szkic maila, inaczej interpretację danych, rekomendację dla klienta albo tekst, który ma zostać opublikowany. Właśnie o to chodzi w [skalibrowanym zaufaniu](/pl/concepts/calibrated-trust/): zaufanie powinno pasować do zadania, ryzyka i możliwych konsekwencji błędu.
 
 ## Chwila zatrzymania
 
@@ -36,9 +36,9 @@ W psychologii komunikacji pojawia się pojęcie [epistemic vigilance](/pl/concep
 
 W kontakcie z ludźmi robimy to cały czas, choć nie zawsze świadomie. Inaczej słuchamy eksperta, inaczej reklamy, inaczej plotki, inaczej szybkiej opinii znajomego. Patrzymy na źródło, intencję, sytuację i to, co może się stać, jeśli informacja okaże się błędna.
 
-W kontakcie z AI ta ostrożność łatwo się rozluźnia, bo system odpowiada bez wahania. Nie pokazuje zakłopotania, nie przerywa w pół zdania, nie daje ciałem sygnału niepewności. Może dodać zastrzeżenie, ale całość nadal często wygląda jak uporządkowana, gotowa odpowiedź.
+W kontakcie z AI ta ostrożność łatwo się rozluźnia, bo system odpowiada bez wahania. Nie pokazuje zakłopotania, nie przerywa w pół zdania, nie wysyła niewerbalnych sygnałów niepewności. Może dodać zastrzeżenie, ale całość nadal często wygląda jak uporządkowana, gotowa odpowiedź.
 
-Dlatego [AI literacy](/pl/concepts/ai-literacy/) nie polega tylko na umiejętności zadawania lepszych pytań. Obejmuje też umiejętność zatrzymania się przy odpowiedzi, która brzmi zbyt pewnie albo zbyt dobrze pasuje do naszych oczekiwań.
+Dlatego [kompetencje w pracy z AI](/pl/concepts/ai-literacy/) nie polegają tylko na umiejętności zadawania lepszych pytań. Obejmują też umiejętność zatrzymania się przy odpowiedzi, która brzmi zbyt pewnie albo zbyt dobrze pasuje do naszych oczekiwań.
 
 ## Zaufanie, które umie się zatrzymać
 

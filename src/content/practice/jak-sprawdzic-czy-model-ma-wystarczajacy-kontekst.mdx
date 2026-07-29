@@ -66,7 +66,7 @@ Rezultatem nie jest abstrakcyjny wynik punktowy. Powstają trzy rzeczy, które m
 
 ## 3. Czego ćwiczenie nie mierzy
 
-[Context window, czyli okno kontekstu](/pl/concepts/context-window/), oznacza techniczny limit tokenów wejściowych i wyjściowych obsługiwanych przez konkretny model. Nie gwarantuje, że każda dostępna informacja zostanie wykorzystana poprawnie. Długa rozmowa może zawierać potrzebny fakt, a odpowiedź mimo to może go pominąć, zniekształcić albo zastąpić domysłem. Znaczenie mają też sposób ułożenia materiału, właściwości modelu oraz funkcje produktu.
+[Okno kontekstu](/pl/concepts/context-window/) oznacza techniczny limit tokenów wejściowych i wyjściowych obsługiwanych przez konkretny model. Nie gwarantuje, że każda dostępna informacja zostanie wykorzystana poprawnie. Długa rozmowa może zawierać potrzebny fakt, a odpowiedź mimo to może go pominąć, zniekształcić albo zastąpić domysłem. Znaczenie mają też sposób ułożenia materiału, właściwości modelu oraz funkcje produktu.
 
 Pytanie modelu „czy pamiętasz wszystko?” nie jest wiarygodnym audytem. Jego odpowiedź o własnym kontekście również jest wygenerowaną wypowiedzią, a nie bezpośrednim podglądem działania systemu. Dlatego potrzebujesz zewnętrznej listy kontrolnej i porównania z materiałem źródłowym.
 
@@ -202,19 +202,19 @@ Przejdź kolejno przez wszystkie identyfikatory. Przy każdym elemencie znajdź 
 
 ## 8. Klasyfikacja błędów
 
-### Obecne (present)
+### Obecne
 
 Informacja została odtworzona wystarczająco dokładnie i bez zmiany znaczenia. Skrócenie jest dopuszczalne, jeśli nie usuwa warunku, zakresu ani priorytetu.
 
-### Pominięte (missing)
+### Pominięte
 
 Informacja była potrzebna, ale nie pojawiła się w odpowiedzi. Nie zakładaj automatycznie, że przyczyną jest długość rozmowy.
 
-### Zniekształcone (distorted)
+### Zniekształcone
 
 Informacja pojawiła się, lecz zmieniły się jej sens, zakres, warunek albo priorytet. Przykładem jest zamiana „nie publikuj przed akceptacją” na „publikacja jest zalecana po przeglądzie”.
 
-### Wywnioskowane (inferred)
+### Wywnioskowane
 
 Model dodał treść, która może być rozsądna, ale nie została podana jako fakt lub decyzja. Taki wniosek może być propozycją, jednak powinien być jawnie oddzielony od materiału źródłowego.
 
@@ -260,7 +260,7 @@ Nowy czat nie naprawia automatycznie jakości pracy. Pomaga dopiero wtedy, gdy p
 
 ## 10. Przekazanie kontekstu
 
-Przekazanie kontekstu (context handoff) to krótki, sprawdzony zapis aktualnego stanu pracy. Wypełnij szablon na podstawie własnej listy i źródeł, a następnie przeczytaj go przed użyciem.
+Przekazanie kontekstu to krótki, sprawdzony zapis aktualnego stanu pracy. Wypełnij szablon na podstawie własnej listy i źródeł, a następnie przeczytaj go przed użyciem.
 
 <PromptExample lang="pl" label="Szablon przekazania kontekstu" copyAriaLabel="Kopiuj szablon przekazania kontekstu">
 {`# Przekazanie kontekstu
@@ -339,7 +339,7 @@ Dodaj kilka kategorii źródeł, numer wersji decyzji, datę ostatniej zmiany or
 
 Sprawdzaj osobno, czy materiał został odnaleziony, czy został użyty oraz czy wniosek rzeczywiście wynika ze źródła. Sam fakt przesłania pliku nie dowodzi, że właściwy fragment wpłynął na odpowiedź.
 
-Kolejna Practice rozwinie przygotowanie pakietu kontekstu do długich projektów.
+Kolejne ćwiczenie rozwinie przygotowanie pakietu kontekstu do długich projektów.
 
 ## 13. Typowe błędy
 
@@ -352,12 +352,12 @@ Kolejna Practice rozwinie przygotowanie pakietu kontekstu do długich projektów
 7. **Przypisywanie każdego błędu limitowi okna kontekstu.** Pominięcie lub zniekształcenie nie pozwala samo w sobie ustalić technicznej przyczyny.
 8. **Kontynuowanie mimo zniekształcenia krytycznego warunku.** Kolejne odpowiedzi mogą wtedy rozwijać błędną wersję zadania.
 9. **Przenoszenie całej chaotycznej historii.** Nowy wątek staje się kopią starego problemu zamiast uporządkowanym początkiem.
-10. **Akceptowanie przekazania napisanego przez model bez sprawdzenia.** Handoff trzeba porównać z aktualnymi źródłami i decyzjami.
+10. **Akceptowanie przekazania napisanego przez model bez sprawdzenia.** Przekazanie kontekstu trzeba porównać z aktualnymi źródłami i decyzjami.
 
 ## 14. Powiązane materiały
 
 - [Model nie pamięta. Model ma kontekst.](/pl/notes/model-nie-pamieta-model-ma-kontekst/) wyjaśnia różnicę między doświadczeniem ciągłości rozmowy a technicznym kontekstem.
-- [Context window (okno kontekstu)](/pl/concepts/context-window/) opisuje limit tokenów wejściowych i wyjściowych, które model może obsłużyć.
+- [Okno kontekstu](/pl/concepts/context-window/) opisuje limit tokenów wejściowych i wyjściowych, które model może obsłużyć.
 - [Token](/pl/concepts/token/) pokazuje, dlaczego długości kontekstu nie mierzy się po prostu liczbą słów.
 - [LLM (duży model językowy)](/pl/concepts/llm/) oddziela model od funkcji całego produktu.
 - [Jak sprawdzić, czy odpowiedź AI ma źródła](/pl/practice/jak-sprawdzic-czy-odpowiedz-ai-ma-zrodla/) pomaga zweryfikować pochodzenie twierdzeń.

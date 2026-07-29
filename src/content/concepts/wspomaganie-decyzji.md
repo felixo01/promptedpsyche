@@ -11,11 +11,11 @@ routeSlug: "wspomaganie-decyzji"
 
 Wspomaganie decyzji oznacza używanie systemu do porządkowania informacji, opcji i ryzyk przy zachowaniu odpowiedzialności po stronie ludzi. W pracy z AI może obejmować streszczanie materiału, wskazywanie brakującego kontekstu, porównywanie scenariuszy, testowanie założeń albo przygotowanie alternatyw.
 
-Wspomaganie decyzji nie jest tym samym co zastąpienie decyzji. System może pomóc uporządkować pole osądu, ale nie powinien po cichu stawać się aktorem, który decyduje, co jest ważne, jaki poziom ryzyka jest akceptowalny i kto ponosi odpowiedzialność.
+Wspomaganie decyzji nie jest tym samym co zastąpienie decyzji. System może pomóc uporządkować materiał do oceny, ale nie powinien po cichu stawać się aktorem, który decyduje, co jest ważne, jaki poziom ryzyka jest akceptowalny i kto ponosi odpowiedzialność.
 
 ## Dlaczego to ważne
 
-AI bywa szczególnie przydatna przed podjęciem decyzji: może poszerzyć obraz, zakwestionować pierwszą wersję albo ujawnić założenia. Staje się ryzykowna, gdy wynik traktowany jest jak werdykt zamiast wkładu do namysłu.
+AI bywa szczególnie przydatna przed podjęciem decyzji: może poszerzyć obraz, zakwestionować pierwszą wersję albo ujawnić założenia. Staje się ryzykowna, gdy wynik traktowany jest jak werdykt zamiast elementu namysłu.
 
 Dobre wspomaganie decyzji utrzymuje granicę między rekomendacją a odpowiedzialnością. Sprawia, że dowody są możliwe do sprawdzenia, niepewność widoczna, a ludzka ocena nie jest tylko formalnym podpisem.
 
@@ -27,7 +27,7 @@ Wspomaganie decyzji jest jednym z podstawowych obszarów Human-AI Interaction. N
 
 - [Sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/)
 - [Nadzór ze strony człowieka](/pl/concepts/nadzor-ze-strony-czlowieka/)
-- [Calibrated trust](/pl/concepts/calibrated-trust/)
+- [Skalibrowane zaufanie](/pl/concepts/calibrated-trust/)
 
 ## Źródła i kontekst
 

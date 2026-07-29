@@ -52,7 +52,7 @@ W modelach autoregresyjnych, takich jak rodzina GPT, zdanie `model przewiduje ko
 
 Skrót staje się mylący, gdy ma znaczyć `model tylko zgaduje` albo `cały produkt jest rozbudowanym autouzupełnianiem`. Pojedynczy mechanizm predykcji działa wewnątrz systemu ukształtowanego przez rozległy proces treningu, dalszy trening, instrukcje, reguły generowania i czasem narzędzia. Prosta zasada wykonywana w dużej skali może prowadzić do złożonych zachowań, ale nie daje gwarancji prawdy.
 
-Pełne wyjaśnienie tokenizacji ma własny Concept [Token](/pl/concepts/token/). Tutaj ważna jest jedna konsekwencja: model pracuje na tokenach i oblicza prawdopodobieństwo kolejnych elementów odpowiedzi; nie układa jej przez wybieranie gotowego, sprawdzonego faktu z katalogu.
+Pełne wyjaśnienie tokenizacji zawiera osobne hasło [Token](/pl/concepts/token/). Tutaj ważna jest jedna konsekwencja: model pracuje na tokenach i oblicza prawdopodobieństwo kolejnych elementów odpowiedzi; nie układa jej przez wybieranie gotowego, sprawdzonego faktu z katalogu.
 
 ## Gdzie w tym wszystkim jest Transformer?
 
@@ -62,9 +62,9 @@ Nie są to jednak synonimy. Nie każdy model oparty na Transformerze jest LLM, p
 
 ## Kontekst nie jest doskonałą pamięcią
 
-Model generuje odpowiedź na podstawie informacji dostępnych w kontekście. Może to obejmować instrukcję użytkownika, wcześniejsze fragmenty rozmowy, instrukcje systemowe, zawartość pliku albo wyniki działania narzędzia. Okno kontekstowe określa, ile informacji może zostać uwzględnione podczas tworzenia danej odpowiedzi.
+Model generuje odpowiedź na podstawie informacji dostępnych w kontekście. Może to obejmować instrukcję użytkownika, wcześniejsze fragmenty rozmowy, instrukcje systemowe, zawartość pliku albo wyniki działania narzędzia. Okno kontekstu określa, ile informacji może zostać uwzględnione podczas tworzenia danej odpowiedzi.
 
-Więcej miejsca nie oznacza jednak, że model wykorzysta każdy fragment równie dobrze. Badania pokazały, że pozycja informacji w długim kontekście może wpływać na wynik. Funkcja pamięci w produkcie może z kolei dostarczać wybrane informacje do przyszłych rozmów. Jest to inny mechanizm niż parametry modelu i inny niż bieżące okno kontekstowe.[^10] Pełne rozróżnienie rozwija Concept [Context Window](/pl/concepts/context-window/) oraz notatka [Model nie pamięta. Model ma kontekst.](/pl/notes/model-nie-pamieta-model-ma-kontekst/).
+Więcej miejsca nie oznacza jednak, że model wykorzysta każdy fragment równie dobrze. Badania pokazały, że pozycja informacji w długim kontekście może wpływać na wynik. Funkcja pamięci w produkcie może z kolei dostarczać wybrane informacje do przyszłych rozmów. Jest to inny mechanizm niż parametry modelu i inny niż bieżące okno kontekstu.[^10] Pełne rozróżnienie rozwijają hasło [Okno kontekstu](/pl/concepts/context-window/) oraz notatka [Model nie pamięta. Model ma kontekst.](/pl/notes/model-nie-pamieta-model-ma-kontekst/).
 
 ## Czego LLM nie robi samodzielnie
 
@@ -76,7 +76,7 @@ LLM nie ustala też sam celu produktu, zasad przechowywania rozmów ani polityki
 
 Model jest optymalizowany do tworzenia prawdopodobnych i użytecznych sekwencji, nie do dołączania gwarancji prawdziwości do każdego zdania. Badania nad prawdziwością odpowiedzi i halucynacjami pokazują, że model może wygenerować fałszywą treść w przekonującej formie.[^12] Wyszukiwanie, pobieranie informacji i lepsze dostrajanie mogą zmniejszać część błędów, lecz nie usuwają potrzeby oceny.
 
-W praktyce ważniejsza od ogólnego pytania `czy LLM jest wiarygodny?` jest ocena konkretnego zadania. Pomysł na wariant tytułu wymaga innej kontroli niż cytat, liczba, porada medyczna lub decyzja finansowa. Concept [Model Output](/pl/concepts/model-output/) wyjaśnia status wygenerowanego wyniku, a [AI Literacy](/pl/concepts/ai-literacy/) rozwija praktykę odpowiedzialnego użycia.
+W praktyce ważniejsza od ogólnego pytania `czy LLM jest wiarygodny?` jest ocena konkretnego zadania. Pomysł na wariant tytułu wymaga innej kontroli niż cytat, liczba, porada medyczna lub decyzja finansowa. Hasło [Odpowiedź modelu](/pl/concepts/model-output/) wyjaśnia status wygenerowanego wyniku, a [Kompetencje w pracy z AI](/pl/concepts/ai-literacy/) rozwijają praktykę odpowiedzialnego użycia.
 
 ## Model mentalny, który pomaga przewidywać
 

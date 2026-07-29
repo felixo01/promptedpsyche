@@ -21,17 +21,17 @@ To pojęcie jest szczególnie użyteczne w pracy z wiedzą, edukacji i komunikac
 
 ## Perspektywa człowiek-AI
 
-Pytanie w relacji człowiek-AI nie brzmi tylko: "Czy AI pomogła?". Brzmi też: "Jaki wysiłek poznawczy zabrała, a jaki dodała?".
+Pytanie w relacji człowiek-AI nie brzmi tylko: "Czy AI pomogła?". Brzmi też: "Jaki wysiłek poznawczy ograniczyła, a jaki nałożyła?".
 
-Dobre użycie AI może zmniejszać zbędne tarcie, ale zostawiać osąd widoczny. Słabe użycie AI może ukrywać ważny wysiłek aż do późnego etapu, gdy błędy trudniej zauważyć.
+Dobre użycie AI może zmniejszać zbędne tarcie, ale pozostawiać decyzję po stronie człowieka. Słabe użycie AI może ukrywać ważny wysiłek aż do późnego etapu, gdy błędy trudniej zauważyć.
 
 ## Powiązane pojęcia
 
-- [Cognitive offloading](/pl/concepts/cognitive-offloading/)
-- [AI literacy](/pl/concepts/ai-literacy/)
-- [Model output](/pl/concepts/model-output/)
-- [Calibrated trust](/pl/concepts/calibrated-trust/)
-- [Metacognition](/pl/concepts/metacognition/)
+- [Odciążenie poznawcze](/pl/concepts/cognitive-offloading/)
+- [Kompetencje w pracy z AI](/pl/concepts/ai-literacy/)
+- [Odpowiedź modelu](/pl/concepts/model-output/)
+- [Skalibrowane zaufanie](/pl/concepts/calibrated-trust/)
+- [Metapoznanie](/pl/concepts/metacognition/)
 
 ## Źródła i kontekst
 

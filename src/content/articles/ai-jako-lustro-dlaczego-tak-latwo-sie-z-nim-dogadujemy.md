@@ -44,7 +44,7 @@ AI usuwa dużą część tego oporu. Odpowiada natychmiast. Nie okazuje znużeni
 
 To doświadczenie jest nowe nie dlatego, że ludzie wcześniej nie pisali pamiętników, nie rozmawiali z wyszukiwarkami albo nie korzystali z narzędzi do porządkowania myśli. Nowe jest połączenie trzech rzeczy: formy dialogu, płynnej odpowiedzi i poczucia, że system dopasowuje się do tonu użytkownika. W badaniach nad interakcją człowiek-komputer od dawna opisywano, że ludzie potrafią reagować społecznie na media i komputery, nawet wtedy, gdy deklaratywnie wiedzą, że nie mają do czynienia z osobą. Reeves i Nass opisali to jako „równanie mediów” (*media equation*), a badania CASA pokazywały, że komputer może uruchamiać społeczne nawyki reagowania.
 
-Dzisiejsze modele językowe nie są prostym powtórzeniem ELIZY ani dawnych chatbotów. Są bardziej elastyczne, piszą lepiej i realnie uczestniczą w codziennej pracy. Ale po stronie użytkownika działa znany mechanizm: gdy system odpowiada językiem, tonem i rytmem rozmowy, łatwo zaczynamy traktować go jak obecność społeczną.
+Dzisiejsze modele językowe nie są prostym powtórzeniem ELIZY ani dawnych chatbotów. Są bardziej elastyczne, piszą lepiej i realnie uczestniczą w codziennej pracy. Ale po stronie użytkownika działa znany mechanizm: gdy system odpowiada językiem, tonem i rytmem rozmowy, łatwo zaczynamy reagować na niego jak na obecność społeczną.
 
 Łatwość rozmowy z AI bierze się więc nie tylko z jakości odpowiedzi. Bierze się także z braku społecznego kosztu. Można pomyśleć na głos. Można przyznać się do niewiedzy. Można wkleić szkic, którego nie pokazalibyśmy jeszcze współpracownikowi. Można zapytać o coś trzeci raz, bez poczucia, że męczymy drugą osobę. Można napisać zdanie nieporadne, a dostać odpowiedź elegancką.
 
@@ -117,7 +117,7 @@ Tu zaczyna się prawdziwa siła metafory lustra. AI nie tylko odbija słowa. Odb
 
 To ma znaczenie w relacjach, pracy, zdrowiu, decyzjach i sporach. Jeżeli pracownik opisuje przełożonego wyłącznie przez pryzmat konfliktu, model może wygenerować analizę konfliktu. Jeżeli menedżer opisuje opór zespołu jako brak otwartości na zmianę, model może pomóc napisać komunikat, który jeszcze mocniej utrwala tę interpretację. Jeżeli ktoś opisuje własne zmęczenie jako dowód porażki, model może zorganizować ten język w narrację, która brzmi psychologicznie, choć wcale nie musi być najlepszym odczytaniem sytuacji.
 
-[Model poznawczy](/pl/concepts/mental-model/) użytkownika staje się wtedy podstawą odpowiedzi. AI może pomóc ten model zobaczyć, ale może go też wygładzić tak, że stanie się trudniejszy do zakwestionowania.
+[Model mentalny](/pl/concepts/mental-model/) użytkownika staje się wtedy podstawą odpowiedzi. AI może pomóc ten model zobaczyć, ale może go też wygładzić tak, że stanie się trudniejszy do zakwestionowania.
 
 Dlatego lepsze pytania do modelu powinny rozszczelniać ramę, a nie tylko ją wzmacniać. Zamiast pytać: "czy ta osoba mnie lekceważy?", można zapytać: "jakie są trzy możliwe odczytania tej wiadomości, w tym jedno najbardziej życzliwe, jedno neutralne i jedno krytyczne?". Zamiast pytać: "jak im odpisać, żeby w końcu zrozumieli?", można zapytać: "które zdania w mojej odpowiedzi mogą eskalować napięcie i jak zachować stanowczość bez niepotrzebnego nacisku?".
 
@@ -214,7 +214,7 @@ Po szóste, wracaj do rzeczywistości poza interfejsem. Jeśli sprawa dotyczy re
 
 ## Narzędzie do obserwowania własnego myślenia
 
-AI może być użytecznym lustrem. Może odbić język, który sami wnosimy do rozmowy. Może uporządkować myśli, które jeszcze nie mają formy. Może pokazać, że pytanie jest już odpowiedzią w przebraniu. Może pomóc zobaczyć założenia, których nie nazwaliśmy. Może sprawić, że chaotyczny problem stanie się bardziej możliwy do pracy.
+AI może być użytecznym lustrem. Może odbić język, który sami wnosimy do rozmowy. Może uporządkować myśli, które jeszcze nie mają formy. Może pokazać, że pytanie jest już odpowiedzią w przebraniu. Może pomóc zobaczyć założenia, których nie nazwaliśmy. Może sprawić, że chaotyczny problem stanie się łatwiejszy do przeanalizowania.
 
 Ale nie jest relacją w ludzkim sensie. Nie zna całej osoby. Nie zna całego świata sytuacji. Nie ponosi odpowiedzialności za skutki naszej decyzji. Nie pamięta życia, którego mu nie opisaliśmy. Nie ma biografii splecionej z naszą. Nie ryzykuje niczego, gdy odpowiada.
 

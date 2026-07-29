@@ -23,7 +23,7 @@ imageWidth: 1600
 imageHeight: 900
 imageType: "image/webp"
 imageAlt: "Człowiek stojący naprzeciw przezroczystej postaci AI i ludzkiego odbicia, symbolizujących lęk, sprawczość i odpowiedzialność."
-imageCaption: "Lęk może skupić się na maszynie, choć za interfejsem nadal pozostają ludzkie intencje i odpowiedzialność."
+imageCaption: "Lęk może skupić się na maszynie, choć za interfejsem nadal pozostają ludzkie cele, decyzje i odpowiedzialność."
 socialImage: /images/articles/ai-fear-human-mirror-social.webp
 socialImageWidth: 1200
 socialImageHeight: 630
@@ -102,7 +102,7 @@ AI może wzmacniać te znane mechanizmy moralnego odłączenia. W technicznym j�
 
 Delegowanie wpływa zarówno na sposób działania, jak i na późniejsze uzasadnienie własnego wyboru. Osoba działająca bezpośrednio musi zwykle wprost określić, co ma zostać zrobione; osoba wyznaczająca ogólny cel może później tłumaczyć, że nie spodziewała się metody wybranej przez maszynę. Niejednoznaczność ułatwia przyjęcie takiego wyjaśnienia. Motywowane rozumowanie nie oznacza, że człowiek potrafi uwierzyć w dowolną rzecz. Wpływa jednak na to, którą wersję uzna za wystarczającą, gdy do wyboru ma kilka pozornie wiarygodnych wyjaśnień (Kunda, 1990).
 
-Najnowsze eksperymenty pokazują, jak wygląda to w konkretnych warunkach. W dwóch badaniach obejmujących łącznie 5639 osób Hüholt i Szech stwierdzili, że uczestnicy stojący przed rzeczywistą decyzją moralną delegowali ją częściej do AI niż do innego człowieka. Autorzy powiązali ten wzorzec z przenoszeniem odpowiedzialności i interpretowaniem niejednoznacznych możliwości AI w sposób zgodny z własnym interesem (Hüholt & Szech, 2026). W ośmiu eksperymentach dotyczących decyzji bez dobrego wyjścia Xu i współautorzy stwierdzili, że unikanie odpowiedzialności pośredniczyło w związku między trudnością decyzji a delegowaniem do AI. Skłonność do delegowania malała, gdy odpowiedzialności nie dało się przenieść, i zmieniała się zależnie od postrzeganej sprawczości oraz zdolności do odczuwania, wpływu decyzji na inne osoby i jej publicznego charakteru (Xu et al., 2026).
+Najnowsze eksperymenty pokazują, jak wygląda to w konkretnych warunkach. W dwóch badaniach obejmujących łącznie 5 639 osób Hüholt i Szech stwierdzili, że uczestnicy stojący przed rzeczywistą decyzją moralną delegowali ją częściej do AI niż do innego człowieka. Autorzy powiązali ten wzorzec z przenoszeniem odpowiedzialności i interpretowaniem niejednoznacznych możliwości AI w sposób zgodny z własnym interesem (Hüholt & Szech, 2026). W ośmiu eksperymentach dotyczących decyzji bez dobrego wyjścia Xu i współautorzy stwierdzili, że unikanie odpowiedzialności pośredniczyło w związku między trudnością decyzji a delegowaniem do AI. Skłonność do delegowania malała, gdy odpowiedzialności nie dało się przenieść, i zmieniała się zależnie od postrzeganej sprawczości oraz zdolności do odczuwania, wpływu decyzji na inne osoby i jej publicznego charakteru (Xu et al., 2026).
 
 Delegowanie nie jest z definicji ucieczką. Inny wykonawca może działać szybciej, bardziej konsekwentnie albo mieć lepsze informacje. W badaniu mieszanym Freisinger i Schneider preferencje różniły się zależnie od tego, czy uczestnik podejmował decyzję o zwolnieniu pracownika, czy był nią objęty. W wywiadach uzupełniających z 21 osobami pojawiały się motywy związane z kompetencją, kontekstem, mniejszym obciążeniem i możliwością przeniesienia winy (Freisinger & Schneider, 2025). To samo działanie techniczne może więc znaczyć coś innego zależnie od sytuacji.
 
@@ -276,7 +276,7 @@ Obecna AI może zwiększać skalę działań ludzi i instytucji oraz oddalać de
 
 Dojrzała analiza nie kończy się więc na ogólnym pytaniu, czy odpowiada człowiek, czy maszyna. Trzeba ustalić, jaki udział, obowiązek i możliwość działania przypadają poszczególnym osobom i instytucjom w konkretnym systemie. Model potrafi wygenerować rekomendację, zanim ktokolwiek zobaczy pełną drogę od celu do konsekwencji. Aby ustalić odpowiedzialność, trzeba tę drogę odtworzyć: wskazać intencję, projekt, kontrolę, zatwierdzenie, wpływ i obowiązek naprawy.
 
-Powinniśmy bać się nie tylko tego, co AI może zrobić, lecz także chwili, w której pozwoli nam uwierzyć, że to już nie my zrobiliśmy.
+Ryzyko dotyczy nie tylko tego, co AI może zrobić, lecz także sytuacji, w której technologia pozwala ludziom i instytucjom przedstawiać własne działania jako decyzje systemu.
 
 ## Źródła i dalsza lektura
 

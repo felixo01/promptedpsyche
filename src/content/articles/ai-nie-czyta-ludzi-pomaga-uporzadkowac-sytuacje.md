@@ -83,7 +83,7 @@ To nie znaczy, że analiza z AI jest bezużyteczna. Przeciwnie, może być bardz
 - Co jest faktem, a co interpretacją?
 - Jakie pytania zmniejszyłyby ryzyko błędnego odczytania?
 
-Takie pytania nie zakładają, że mamy dostęp do wnętrza drugiej osoby. Pomagają zobaczyć własny [model poznawczy](/pl/concepts/mental-model/) sytuacji. Ujawniają, co dopowiadamy, co traktujemy jako oczywiste i gdzie nasza interpretacja może być zbyt szybka.
+Takie pytania nie zakładają, że mamy dostęp do wnętrza drugiej osoby. Pomagają zobaczyć własny [model mentalny](/pl/concepts/mental-model/) sytuacji. Ujawniają, co dopowiadamy, co traktujemy jako oczywiste i gdzie nasza interpretacja może być zbyt szybka.
 
 Tu przydaje się [czujność epistemiczna](/pl/concepts/epistemic-vigilance/), czyli uważność wobec informacji. W praktyce oznacza to proste zatrzymanie: skąd wiem to, co myślę, że wiem? Czy wynika to z tekstu, z wcześniejszej relacji, z moich emocji, z pozycji w projekcie czy z narracji podanej przez model? To nie jest cynizm ani paraliż decyzyjny. To higiena interpretacji.
 

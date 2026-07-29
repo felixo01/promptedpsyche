@@ -164,7 +164,7 @@ const pl = {
     trust: resource(
       'article',
       'Zaufanie do nauki w erze gotowych odpowiedzi',
-      'Esej oparty na źródłach o tym, co znika, gdy płynna odpowiedź kompresuje źródła, niepewność, spór i odpowiedzialność.',
+      'Esej oparty na źródłach o tym, co staje się mniej widoczne, gdy płynna odpowiedź skraca drogę przez źródła, niepewność, spór i odpowiedzialność.',
       '/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/'
     ),
     cognition: resource(
@@ -219,11 +219,11 @@ const pl = {
     algorithmicAuthority: resource('concept', 'Autorytet algorytmiczny', 'Wiarygodność przypisywana wynikom obliczeniowym dlatego, że wydają się systematyczne lub obiektywne.', '/pl/concepts/autorytet-algorytmiczny/')
   },
   practice: {
-    sources: resource('practice', 'Jak sprawdzić, czy odpowiedź AI ma źródła', 'Powtarzalny sposób sprawdzania twierdzeń, które przychodzą bez widocznej drogi do dowodów.', '/pl/practice/jak-sprawdzic-czy-odpowiedz-ai-ma-zrodla/'),
+    sources: resource('practice', 'Jak sprawdzić, czy odpowiedź AI ma źródła', 'Powtarzalny sposób sprawdzania twierdzeń przedstawionych bez wskazania podstawy w dowodach.', '/pl/practice/jak-sprawdzic-czy-odpowiedz-ai-ma-zrodla/'),
     uncertainty: resource('practice', 'Jak poprosić model o niepewność', 'Prompt i procedura sprawdzania założeń, ograniczeń oraz nierozstrzygniętych pytań.', '/pl/practice/jak-poprosic-model-o-niepewnosc/'),
     fluency: resource('practice', 'Jak nie pomylić płynności z prawdą', 'Krótkie ćwiczenie oddzielające dopracowany język od siły dowodów.', '/pl/practice/jak-nie-pomylic-plynnosci-z-prawda/'),
     assumptions: resource('practice', 'Jak sprawdzić własne założenia z pomocą AI', 'Użyj modelu, aby ujawnić interpretacje ukryte w opisie problemu.', '/pl/practice/jak-sprawdzic-wlasne-zalozenia-z-pomoca-ai/'),
-    counterargument: resource('practice', 'Jak poprosić AI o kontrargument', 'Zamień model w źródło uporządkowanego oporu zamiast w maszynę do przytakiwania.', '/pl/practice/jak-poprosic-ai-o-kontrargument/'),
+    counterargument: resource('practice', 'Jak poprosić AI o kontrargument', 'Użyj modelu do systematycznego formułowania zastrzeżeń zamiast potwierdzania przyjętych założeń.', '/pl/practice/jak-poprosic-ai-o-kontrargument/'),
     secondReader: resource('practice', 'Jak użyć AI jako drugiego czytelnika', 'Zachowaj autorstwo, używając AI do sprawdzania jasności, braków i alternatywnych odczytań.', '/pl/practice/jak-uzyc-ai-jako-drugiego-czytelnika/'),
     decisionOwnership: resource('practice', 'Jak użyć AI bez oddawania mu decyzji', 'Oddziel analizę od osądu i pozostaw widoczną odpowiedzialność za wybór.', '/pl/practice/jak-uzyc-ai-bez-oddawania-mu-decyzji/'),
     factsInterpretations: resource('practice', 'Jak oddzielić fakty od interpretacji', 'Praktyczne rozróżnienie dla decyzji opartych na niepełnym lub niejednoznacznym materiale.', '/pl/practice/jak-oddzielic-fakty-od-interpretacji/'),
@@ -504,14 +504,14 @@ topicHubs.pl = [
     ],
     orientationTitle: 'Jak się w tym obszarze poruszać',
     orientation: [
-      'Zacznij od konsekwencji. Eksploracja o niewielkim ryzyku może tolerować więcej niepewności niż decyzje dotyczące zdrowia, zatrudnienia, prawa albo finansów. Następnie sprawdź drogę do odpowiedzi. Oddziel to, co wygenerował model, od tego, co pochodzi ze źródeł i co dopowiedział użytkownik. Na końcu zachowaj możliwość korekty: porównania dowodów, znalezienia sporu i zmiany decyzji.',
-      'AI literacy pojawia się w całym klastrze, ponieważ dobry prompt jest dopiero początkiem. Trudniejsza kompetencja polega na rozpoznaniu, kiedy wynik wystarcza, kiedy wymaga sprawdzenia, a kiedy zadanie nie powinno być powierzane modelowi.'
+      'Zacznij od konsekwencji. Eksploracja o niewielkim ryzyku może tolerować więcej niepewności niż decyzje dotyczące zdrowia, zatrudnienia, prawa albo finansów. Następnie sprawdź drogę do odpowiedzi. Oddziel to, co wygenerował model, od tego, co pochodzi ze źródeł i co dopowiedział użytkownik. Na końcu zachowaj możliwość korekty: porównania dowodów, odszukania odmiennych stanowisk i zmiany decyzji.',
+      'Kompetencje w pracy z AI pojawiają się w całym obszarze, ponieważ dobry prompt jest dopiero początkiem. Trudniejsza kompetencja polega na rozpoznaniu, kiedy wynik wystarcza, kiedy wymaga sprawdzenia, a kiedy zadanie nie powinno być powierzane modelowi.'
     ],
     startTitle: 'Od czego zacząć',
     startIntro: 'Zacznij od głównego eseju, który pokazuje, jak generatywna AI może skrócić widoczną drogę między źródłami a wnioskiem.',
     start: pl.articles.trust,
     articlesTitle: 'Artykuły',
-    articlesIntro: 'Główny tekst porządkuje problem. Kolejne łączą go z AI literacy i poznawczymi skutkami gotowych odpowiedzi.',
+    articlesIntro: 'Główny tekst porządkuje problem. Kolejne łączą go z kompetencjami w pracy z AI i poznawczymi skutkami gotowych odpowiedzi.',
     articles: [pl.articles.trust, pl.articles.literacy, pl.articles.cognition],
     conceptsTitle: 'Pojęcia',
     conceptsIntro: 'Te hasła pozwalają rozdzielić mechanizmy, które często mieszczą się pod jednym słowem „zaufanie”.',
@@ -544,12 +544,12 @@ topicHubs.pl = [
     path: '/pl/topics/ai-i-myslenie/',
     alternatePath: '/topics/ai-and-cognition/',
     title: 'AI i myślenie',
-    description: 'Przewodnik po AI, myśleniu i uczeniu się: wykonaniu zadania, pamięci, przenoszeniu umiejętności na nowe zadania, cognitive offloading, metapoznaniu i erozji kompetencji.',
+    description: 'Przewodnik po AI, myśleniu i uczeniu się: wykonaniu zadania, pamięci, przenoszeniu umiejętności na nowe zadania, odciążeniu poznawczym, metapoznaniu i erozji kompetencji.',
     eyebrow: 'Przewodnik tematyczny',
     summary: 'Co zmienia się, gdy AI podaje odpowiedź, wspiera proces albo usuwa ćwiczenie, dzięki któremu powstaje samodzielna umiejętność.',
     introduction: [
       'W debacie publicznej często powraca pytanie, czy AI czyni ludzi mądrzejszymi albo głupszymi. Jest chwytliwe i zwykle zbyt szerokie. Ktoś może szybciej ukończyć zadanie z AI, a jednocześnie mniej się z niego nauczyć. Inna osoba może użyć podobnego systemu jako źródła stopniowanych podpowiedzi, informacji zwrotnej albo drugiego czytelnika i zachować więcej pracy potrzebnej do rozwoju samodzielnej umiejętności.',
-      'Ten przewodnik porządkuje materiały Prompted Psyche wokół węższego pytania: jaki rodzaj myślenia pozostaje po stronie człowieka? Oddziela bieżący wynik od uczenia się, utrwalenia wiedzy i transferu, a następnie łączy te różnice z cognitive offloading, metapoznaniem i projektowaniem pomocy.'
+      'Ten przewodnik porządkuje materiały Prompted Psyche wokół węższego pytania: jaki rodzaj myślenia pozostaje po stronie człowieka? Oddziela bieżący wynik od uczenia się, utrwalenia wiedzy i transferu, a następnie łączy te różnice z odciążeniem poznawczym, metapoznaniem i projektowaniem pomocy.'
     ],
     definitionTitle: 'Co tutaj oznacza związek AI i myślenia',
     definition: [
@@ -574,7 +574,7 @@ topicHubs.pl = [
     orientationTitle: 'Jak się w tym obszarze poruszać',
     orientation: [
       'Najpierw nazwij cel. Bezpośrednie generowanie może być właściwe przy rutynowym wykonaniu, jeśli wynik da się sprawdzić. Uczenie się wymaga innej interakcji: własnej próby, informacji zwrotnej dopasowanej do błędu, możliwości przypominania i późniejszego testu bez tej samej pomocy. W twórczości dochodzi kolejne pytanie - czy wsparcie poprawia pojedynczy efekt, ale zmniejsza różnorodność całego zbioru.',
-      'Właściwą jednostką analizy rzadko jest sam model. Jest nią cały układ: prompty, interfejs, zadanie, zachęty, wcześniejsza wiedza i sposób sprawdzania. Dlatego ten sam model w jednym procesie może zastępować pracę, a w innym służyć jako rusztowanie.'
+      'Właściwą jednostką analizy rzadko jest sam model. Jest nią cały układ: prompty, interfejs, zadanie, bodźce organizacyjne, wcześniejsza wiedza i sposób sprawdzania. Dlatego ten sam model w jednym procesie może zastępować pracę, a w innym służyć jako rusztowanie.'
     ],
     startTitle: 'Od czego zacząć',
     startIntro: 'Główny artykuł sprawdza, co obecne dowody pozwalają powiedzieć, a czego nie, bez traktowania krótkich badań jako dowodu trwałej zmiany inteligencji.',
@@ -602,7 +602,7 @@ topicHubs.pl = [
     connectionTitle: 'Jak te materiały łączą się ze sobą',
     connection: [
       'Główny artykuł wyznacza granice dowodów. Pojęcia pomagają oddzielić mechanizmy poznawcze, a Praktyka zamienia je w decyzje o tym, kiedy model odpowiada, pyta, podpowiada albo krytykuje. Notatki przypominają o dwóch ograniczeniach: streszczenie nie jest decyzją, a tekstowy kontekst nie jest całą sytuacją.',
-      'Ten klaster nie zakłada, że używanie AI jest szkodliwe. Domaga się dokładniejszego opisu interakcji. Warto pytać, które procesy chcemy delegować, które nadal trzeba ćwiczyć i po czym poznać, że wsparcie rozwinęło zdolność, a nie tylko poprawiło wynik uzyskany z pomocą.'
+      'Ten obszar nie zakłada, że używanie AI jest szkodliwe. Wymaga dokładniejszego opisu interakcji. Warto pytać, które procesy chcemy delegować, które nadal trzeba ćwiczyć i po czym poznać, że wsparcie rozwinęło zdolność, a nie tylko poprawiło wynik uzyskany z pomocą.'
     ],
     authorLabel: 'O autorze',
     authorText: 'Feliks Mamczur analizuje, jak AI zmienia uwagę, uczenie się, osąd i codzienną pracę poznawczą.'
@@ -637,12 +637,12 @@ topicHubs.pl = [
       'Kto zdefiniował cel i dopuszczalne kompromisy?',
       'Kto wybrał dane, model, próg i kontekst wdrożenia?',
       'Co osoba sprawdzająca może naprawdę zobaczyć, zakwestionować i zmienić?',
-      'Jakie zachęty premiują zgodę z automatyczną rekomendacją?',
+      'Jakie bodźce organizacyjne premiują zgodę z automatyczną rekomendacją?',
       'Kto odnosi korzyści, kto ponosi ryzyko i kto może naprawić szkodę?'
     ],
     orientationTitle: 'Jak się w tym obszarze poruszać',
     orientation: [
-      'Śledź decyzję zamiast skupiać się wyłącznie na wyniku. Zacznij od celu, a później przejdź przez zakup, dane, konfigurację modelu, interfejs, procedurę i końcowe użycie. Na każdym etapie pytaj, jakie były alternatywy i kto miał prawo spośród nich wybierać. Utrudnia to agency laundering - przedstawianie ludzkiej decyzji jako konieczności narzuconej przez maszynę.',
+      'Śledź decyzję zamiast skupiać się wyłącznie na wyniku. Zacznij od celu, a później przejdź przez zakup, dane, konfigurację modelu, interfejs, procedurę i końcowe użycie. Na każdym etapie pytaj, jakie były alternatywy i kto miał prawo spośród nich wybierać. Utrudnia to pranie sprawczości (*agency laundering*), czyli przedstawianie ludzkiej decyzji jako konieczności narzuconej przez maszynę.',
       'Następnie przyjrzyj się osobie sprawdzającej. Sam człowiek w pętli nie wystarcza, jeśli jego rola jest ceremonialna. Znacząca kontrola zależy od tego, czy rozumie system, widzi właściwe dowody i niepewność, ma wystarczająco dużo czasu oraz może zmienić wynik bez kary za sprzeciw.'
     ],
     startTitle: 'Od czego zacząć',

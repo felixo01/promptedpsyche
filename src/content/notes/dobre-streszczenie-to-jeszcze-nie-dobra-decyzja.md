@@ -26,9 +26,9 @@ Streszczenie zmniejsza chaos informacyjny, ale nie wybiera kryteriów. Może pow
 
 Może wypisać opcje. Nie bierze jednak odpowiedzialności za konsekwencje wyboru. Może pokazać, co zostało powiedziane. Nie zawsze wie, czego nie powiedziano. Może uporządkować stanowiska stron, ale nie zna wszystkich interesów, ograniczeń i ryzyk, które istnieją poza tekstem.
 
-Dlatego streszczenie jest pomocą poznawczą. W obszarze [cognitive load](/pl/concepts/cognitive-load/) może być bardzo cenne, bo odciąża uwagę i pamięć roboczą. Nie zwalnia jednak z myślenia o tym, co dalej.
+Dlatego streszczenie jest pomocą poznawczą. Ze względu na [obciążenie poznawcze](/pl/concepts/cognitive-load/) może być bardzo cenne, bo odciąża uwagę i pamięć roboczą. Nie zwalnia jednak z myślenia o tym, co dalej.
 
-To podstawowy element [AI literacy](/pl/concepts/ai-literacy/): umieć odróżnić uporządkowanie informacji od podjęcia decyzji. Model może pomóc zobaczyć materiał. Decyzja wymaga kryteriów i odpowiedzialności.
+To podstawowy element [kompetencji w pracy z AI](/pl/concepts/ai-literacy/): umiejętność odróżnienia uporządkowania informacji od podjęcia decyzji. Model może pomóc zobaczyć materiał. Decyzja wymaga kryteriów i odpowiedzialności.
 
 ## Co trzeba dodać do streszczenia
 
@@ -50,7 +50,7 @@ Potrzebna jest też [epistemic vigilance](/pl/concepts/epistemic-vigilance/). Do
 
 Niebezpiecznie robi się wtedy, gdy zaczynamy traktować uporządkowaną odpowiedź jak gotową decyzję. Model streścił argumenty, więc wybieramy pierwszą opcję. Model wskazał najczęściej powtarzający się problem, więc uznajemy go za najważniejszy. Model napisał rekomendację, więc łatwiej przestać pytać, kto właściwie bierze za nią odpowiedzialność.
 
-To nie znaczy, że AI nie może wspierać decyzji. Może. Ale wsparcie decyzji nie jest tym samym, co oddanie decyzji. [Calibrated trust](/pl/concepts/calibrated-trust/) oznacza, że ufamy modelowi w zakresie zadania, do którego się nadaje. Streszczenie i porządkowanie informacji to jedno. Odpowiedzialny wybór to coś więcej.
+To nie znaczy, że AI nie może wspierać decyzji. Może. Ale wsparcie decyzji nie jest tym samym, co oddanie decyzji. [Skalibrowane zaufanie](/pl/concepts/calibrated-trust/) oznacza, że ufamy modelowi w zakresie zadania, do którego się nadaje. Streszczenie i porządkowanie informacji to jedno. Odpowiedzialny wybór to coś więcej.
 
 W tym sensie [nadzór ze strony człowieka](/pl/concepts/nadzor-ze-strony-czlowieka/) nie jest formalnym dodatkiem. To moment, w którym ktoś musi powiedzieć: wiem, jakie kryteria stosuję, wiem, czego jeszcze nie wiem i biorę odpowiedzialność za dalszy krok.
 

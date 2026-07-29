@@ -1,6 +1,6 @@
 ---
 title: "Antropomorfizacja"
-description: "Skłonność do przypisywania systemom nie-ludzkim ludzkich cech, intencji albo uczuć."
+description: "Skłonność do przypisywania systemom nieludzkim ludzkich cech, intencji albo uczuć."
 publishedAt: 2026-07-01
 draft: false
 lang: "pl"
@@ -9,11 +9,11 @@ routeSlug: "antropomorfizacja"
 tags: ["psychologia", "komunikacja", "systemy AI"]
 ---
 
-Antropomorfizacja to skłonność do przypisywania systemom nie-ludzkim ludzkich cech, intencji albo uczuć. W kontekście AI może pojawiać się wtedy, gdy system używa języka konwersacyjnego, pamięta kontekst, odpowiada szybko albo korzysta z sygnałów społecznych.
+Antropomorfizacja to skłonność do przypisywania systemom nieludzkim ludzkich cech, intencji albo uczuć. W kontekście AI może pojawiać się wtedy, gdy system używa języka konwersacyjnego, nawiązuje do wcześniejszego kontekstu, odpowiada szybko albo korzysta z sygnałów społecznych.
 
 ## Dlaczego to ważne
 
-Antropomorfizacja może sprawiać, że systemy AI wydają się bardziej zrozumiałe, komfortowe albo emocjonalnie dostępne. Może też tworzyć oczekiwania, że system rozumie, troszczy się, pamięta albo ma intencje w większym stopniu, niż faktycznie wynika z jego działania. Ma to znaczenie dla zaufania, przywiązania, ujawniania informacji i odpowiedzialności.
+Antropomorfizacja może sprawiać, że systemy AI wydają się bardziej zrozumiałe, przystępne albo emocjonalnie dostępne. Może też tworzyć oczekiwania, że system rozumie, troszczy się, pamięta albo ma intencje w większym stopniu, niż faktycznie wynika z jego działania. Ma to znaczenie dla zaufania, przywiązania, ujawniania informacji i odpowiedzialności.
 
 Nie chodzi wyłącznie o to, że ludzie są nieracjonalni. Interfejsy mogą zapraszać do społecznej interpretacji, zwłaszcza gdy używają ludzkiego języka i rytmu rozmowy.
 

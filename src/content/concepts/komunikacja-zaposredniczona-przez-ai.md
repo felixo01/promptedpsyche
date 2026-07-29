@@ -9,7 +9,7 @@ routeSlug: "ai-mediated-communication"
 tags: ["komunikacja", "język", "kultura"]
 ---
 
-AI-mediated communication oznacza komunikację między ludźmi współtworzoną, filtrowaną albo przekształcaną przez systemy AI. Obejmuje sytuacje, w których AI szkicuje wiadomość, zmienia ton, proponuje odpowiedź, tłumaczy język albo wpływa na to, co jedna osoba widzi od drugiej.
+Komunikacja zapośredniczona przez AI oznacza komunikację między ludźmi współtworzoną, filtrowaną albo przekształcaną przez systemy AI. Obejmuje sytuacje, w których AI szkicuje wiadomość, zmienia ton, proponuje odpowiedź, tłumaczy język albo wpływa na to, co jedna osoba widzi od drugiej.
 
 ## Dlaczego to ważne
 

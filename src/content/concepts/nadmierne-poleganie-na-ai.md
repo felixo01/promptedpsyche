@@ -21,11 +21,11 @@ Właściwe poleganie na AI wymaga pytania: kiedy wynik jest wystarczający, kied
 
 ## Perspektywa człowiek-AI
 
-Nadmierne poleganie leży między zaufaniem a odpowiedzialnością. Można wiedzieć, że AI się myli, a mimo to pod presją czasu polegać na niej za bardzo.
+Nadmierne poleganie leży między zaufaniem a odpowiedzialnością. Można wiedzieć, że AI się myli, a mimo to pod presją czasu polegać na niej za bardzo. Problem dotyczy więc nie tylko przekonań, ale także nawyków, procesu pracy i rozliczalności.
 
 ## Powiązane pojęcia
 
-- [Calibrated trust](/pl/concepts/calibrated-trust/)
+- [Skalibrowane zaufanie](/pl/concepts/calibrated-trust/)
 - [Błąd automatyzacji](/pl/concepts/blad-automatyzacji/)
 - [Sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/)
 

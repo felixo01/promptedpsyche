@@ -16,7 +16,7 @@ type: "practice"
 category: "Praktyka"
 ---
 
-Dobry argument często brzmi najmocniej dla osoby, która go właśnie zbudowała. AI może pomóc zobaczyć, gdzie teza jest słabsza, gdzie zależy od założeń i co mogłoby zmienić wniosek. Nie chodzi o wygranie sporu z modelem. Chodzi o spokojny test odporności własnego myślenia.
+Dobry argument często brzmi najmocniej dla osoby, która go właśnie zbudowała. AI może pomóc zobaczyć, gdzie teza jest słabsza, gdzie zależy od założeń i co mogłoby zmienić wniosek. Nie chodzi o wygranie sporu z modelem. Chodzi o spokojne sprawdzenie własnego rozumowania.
 
 Ta praktyka jest przydatna, gdy masz pomysł, decyzję, tekst albo stanowisko i chcesz sprawdzić, jak można je uczciwie zakwestionować, zanim zaczniesz go bronić publicznie albo używać w pracy.
 

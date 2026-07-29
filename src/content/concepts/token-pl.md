@@ -11,7 +11,7 @@ tags: ["AI fundamentals", "kontekst", "Human-AI Interaction"]
 
 Token to jednostka tekstu, na której model operuje podczas przetwarzania i generowania języka. Może być słowem, częścią słowa, znakiem interpunkcyjnym albo innym wzorcem znaków, zależnie od tokenizera i modelu. Nie jest tym samym co słowo, zdanie ani jednostka znaczenia w ludzkim sensie.
 
-To pojęcie pomaga zobaczyć ukryte ograniczenie rozmowy z AI. Długie prompty, dokumenty i rozmowy są obsługiwane przez limity tokenów, a nie przez ludzkie czytanie albo pamięć.
+To pojęcie pomaga zobaczyć ukryte ograniczenie rozmowy z AI. Długie prompty, dokumenty i rozmowy ograniczają limity liczby tokenów, a nie ludzkie czytanie albo pamięć.
 
 ## Dlaczego to ważne
 
@@ -27,11 +27,11 @@ Dla Prompted Psyche token jest pojęciem podstawowym, bo pomaga mówić o kontek
 
 ## Powiązane pojęcia
 
-- [AI literacy](/pl/concepts/ai-literacy/)
+- [Kompetencje w pracy z AI](/pl/concepts/ai-literacy/)
 - [LLM (duży model językowy)](/pl/concepts/llm/)
-- [Context window](/pl/concepts/context-window/)
-- [Model output](/pl/concepts/model-output/)
-- [Human-AI Interaction](/pl/concepts/human-ai-interaction/)
+- [Okno kontekstu](/pl/concepts/context-window/)
+- [Odpowiedź modelu](/pl/concepts/model-output/)
+- [Interakcja człowiek-AI](/pl/concepts/human-ai-interaction/)
 
 ## Źródła i kontekst
 

@@ -14,7 +14,7 @@ Nadzór ze strony człowieka może znaczyć coś innego w regulacjach dotyczący
 ## Dlaczego to ważne
 
 - Oddziela formalny udział człowieka od realnej kontroli.
-- Łączy używanie AI z odpowiedzialnością, eskalacją i możliwością zatrzymania workflow.
+- Łączy używanie AI z odpowiedzialnością, eskalacją i możliwością zatrzymania procesu pracy.
 - Pomaga organizacjom pytać, kto może zakwestionować odpowiedź AI przed jej użyciem.
 - Pokazuje, że nadzór wymaga czasu, uprawnień i wystarczającego rozumienia systemu.
 

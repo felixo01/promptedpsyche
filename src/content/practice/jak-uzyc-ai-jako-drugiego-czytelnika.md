@@ -18,7 +18,7 @@ category: "Praktyka"
 
 Autor tekstu zwykle wie, co chciał powiedzieć. Właśnie dlatego łatwo przeoczyć niejasne przejścia, brakujący kontekst albo zdania, które czytelnik może zrozumieć inaczej. AI może pomóc jako drugi czytelnik, ale nie powinno przejmować autorstwa, głosu ani decyzji o sensie tekstu.
 
-Ta praktyka ustawia model jako narzędzie redakcyjnego dystansu. Ma pomóc zobaczyć możliwe reakcje czytelnika, ślepe punkty i miejsca ryzyka, a nie automatycznie wygładzić tekst do bezpiecznego stylu, który brzmi podobnie do wszystkiego.
+Ta praktyka traktuje model jako narzędzie redakcyjnego dystansu. Ma pomóc zobaczyć możliwe reakcje czytelnika, przeoczenia i miejsca ryzyka, a nie automatycznie wygładzić tekst do bezpiecznego stylu, który brzmi podobnie do wszystkiego.
 
 ## Kiedy to pomaga
 
@@ -30,7 +30,7 @@ Ta praktyka ustawia model jako narzędzie redakcyjnego dystansu. Ma pomóc zobac
 
 ## O co poprosić model
 
-Poproś o feedback w warstwach. Najpierw odbiór czytelnika, potem jasność, argument, ton i ryzyka. Dopiero na końcu ewentualne poprawki.
+Poproś o informację zwrotną w kilku warstwach. Najpierw o odbiór czytelnika, potem o jasność, argument, ton i ryzyka. Dopiero na końcu o ewentualne poprawki.
 
 ```text
 Przeczytaj mój tekst jak drugi czytelnik, nie jak autor.
@@ -65,7 +65,7 @@ Tekst:
 - Sugestie mogą osłabić autorski głos.
 - Model może zamienić tekst w bezpieczną, ogólną wypowiedź bez charakteru.
 - Autor może zaakceptować zmianę tylko dlatego, że brzmi profesjonalnie.
-- Model nie zna realnego odbiorcy, celu publikacji ani momentu, w którym tekst ma zadziałać.
+- Model nie zna realnego odbiorcy, celu ani kontekstu publikacji.
 
 ## Lepszy sposób użycia odpowiedzi
 
@@ -75,7 +75,7 @@ Ten prompt traktuje [odpowiedź modelu](/pl/concepts/model-output/) jako informa
 
 ## Krótka zasada
 
-Użyj AI, żeby zobaczyć tekst oczami drugiego czytelnika. Nie używaj AI, żeby oddać mu autorstwo.
+Użyj AI, żeby zobaczyć tekst oczami drugiego czytelnika. Nie oddawaj jednak modelowi autorstwa.
 
 ## Powiązane pojęcia
 
