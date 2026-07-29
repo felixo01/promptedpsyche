@@ -193,8 +193,8 @@ const pl = {
     ),
     interpretation: resource(
       'article',
-      'AI nie czyta ludzi. Pomaga uporządkować sytuację',
-      'Jak model może wspierać interpretację, choć nie widzi całego człowieka, relacji ani kontekstu organizacyjnego.',
+      'Dlaczego AI nie potrafi odczytywać ludzkich intencji - i dlaczego to dobrze',
+      'Model może proponować możliwe interpretacje, lecz nie potrafi wiarygodnie potwierdzić cudzych intencji. Ta granica chroni przed zamianą hipotezy w diagnozę.',
       '/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/'
     )
   },

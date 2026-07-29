@@ -121,7 +121,7 @@ The EN version is an editorial adaptation, not a literal translation. It preserv
 
 The fifth article pair published in pre-launch mode is:
 
-- `Zaufanie w epoce gotowych odpowiedzi`
+- `Zaufanie do nauki w erze gotowych odpowiedzi`
 - URL: `/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/`
 - Source file: `src/content/articles/zaufanie-w-epoce-gotowych-odpowiedzi.md`
 - Date: `2026-07-02`
