@@ -50,7 +50,7 @@ const routes = {
     title: 'Jak sprawdzić, czy model ma potrzebny kontekst',
     oldTitle: 'Jak sprawdzić, czy model ma wystarczający kontekst',
     description:
-      'Ćwiczenie pozwala sprawdzić, czy model nadal prawidłowo uwzględnia cel, ograniczenia, źródła i wcześniejsze decyzje - bez udawania, że mierzy techniczne okno kontekstu.',
+      'Ćwiczenie sprawdzające, czy model nadal uwzględnia cel, ograniczenia, źródła i wcześniejsze decyzje, bez pozornego pomiaru okna kontekstu.',
     sourceFile: 'src/content/practice/jak-sprawdzic-czy-model-ma-wystarczajacy-kontekst.mdx',
     authorRoute: '/pl/about/',
     noteRoute: '/pl/notes/model-nie-pamieta-model-ma-kontekst/',

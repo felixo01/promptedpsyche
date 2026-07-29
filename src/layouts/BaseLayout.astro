@@ -29,6 +29,7 @@ interface Props {
   type?: 'website' | 'article';
   lang?: Locale;
   alternateLinks?: AlternateLinks;
+  emitHreflang?: boolean;
   robots?: string;
   structuredData?: StructuredData | StructuredData[];
   scholarMetadata?: ScholarMetadata;
@@ -46,6 +47,7 @@ const {
   type = 'website',
   lang = getLangFromPath(Astro.url.pathname),
   alternateLinks: providedAlternateLinks,
+  emitHreflang = true,
   robots,
   structuredData,
   scholarMetadata
@@ -112,9 +114,13 @@ const structuredDataJson = JSON.stringify(structuredDataGraph).replace(/</g, '\\
       )
     }
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" hreflang="en" href={new URL(alternateLinks.en, site.url).toString()} />
-    <link rel="alternate" hreflang="pl" href={new URL(alternateLinks.pl, site.url).toString()} />
-    <link rel="alternate" hreflang="x-default" href={new URL(alternateLinks.xDefault, site.url).toString()} />
+    {emitHreflang && (
+      <>
+        <link rel="alternate" hreflang="en" href={new URL(alternateLinks.en, site.url).toString()} />
+        <link rel="alternate" hreflang="pl" href={new URL(alternateLinks.pl, site.url).toString()} />
+        <link rel="alternate" hreflang="x-default" href={new URL(alternateLinks.xDefault, site.url).toString()} />
+      </>
+    )}
     <link rel="alternate" type="application/rss+xml" title={`${site.name} RSS`} href={rssUrl} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 

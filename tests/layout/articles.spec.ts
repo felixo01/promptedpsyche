@@ -102,7 +102,7 @@ async function expectAiFearsIllustrations(page: Page, lang: 'en' | 'pl') {
       : 'A person facing a translucent AI figure and a human reflection, symbolizing fear, agency and responsibility.';
   const heroCaption =
     lang === 'pl'
-      ? 'Lęk może skupić się na maszynie, choć za interfejsem nadal pozostają ludzkie intencje i odpowiedzialność.'
+      ? 'Lęk może skupić się na maszynie, choć za interfejsem nadal pozostają ludzkie cele, decyzje i odpowiedzialność.'
       : 'Fear may settle on the machine even when human intentions and responsibility remain behind the interface.';
   const hero = page.locator('.article-hero-figure img');
 
@@ -898,7 +898,7 @@ test.describe('published articles', () => {
       'nie będąc podmiotami moralnymi w ludzkim sensie'
     );
     await expect(page.locator('.prose')).toContainText(
-      'Powinniśmy bać się nie tylko tego, co AI może zrobić'
+      'Ryzyko dotyczy nie tylko tego, co AI może zrobić'
     );
     await expect(page.locator('.prose')).not.toContainText('ludzkiego życia moralnego');
     await expect(page.locator('.prose')).not.toContainText('Ten recenzowany esej');
@@ -1182,7 +1182,7 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose')).toContainText('Lepsze pytanie');
     await expect(page.locator('.prose')).toContainText('Mini-agent');
     await expect(page.locator('.prose')).toContainText(
-      'łatwo zaczynamy traktować go jak obecność społeczną'
+      'łatwo zaczynamy reagować na niego jak na obecność społeczną'
     );
     await expect(page.locator('.prose')).not.toContainText(
       'Człowiek od dawna jest gotów czytać społeczność tam'
@@ -1626,6 +1626,7 @@ test.describe('published articles', () => {
         firstBoundary: 'How AI Overviews and AI Mode answered prepared tests',
         lastBoundary: 'How other regional and language versions behave',
         practicalHeading: 'For the next task',
+        method: 'narrative synthesis',
         hasDirectDoi: true
       },
       {
@@ -1640,6 +1641,7 @@ test.describe('published articles', () => {
         firstBoundary: 'Jak AI Overviews i AI Mode odpowiadały w testach',
         lastBoundary: 'Działanie wersji polskiej',
         practicalHeading: 'Do sprawdzenia przy następnym zadaniu',
+        method: 'synteza narracyjna',
         hasDirectDoi: false
       }
     ] as const;
@@ -1667,7 +1669,7 @@ test.describe('published articles', () => {
       ).toHaveAttribute('href', `https://promptedpsyche.com${testCase.alternate}`);
       await expect(page.locator(`.language-switcher a[href="${testCase.alternate}"]`)).toBeVisible();
       await expect(page.locator('[data-qa="consulting-cta"]')).toHaveCount(1);
-      await expect(page.locator('[data-qa="publication-method"]')).toContainText('narrative synthesis');
+      await expect(page.locator('[data-qa="publication-method"]')).toContainText(testCase.method);
 
       const byline = page.locator('[data-qa="article-byline"]');
       await expect(byline).toContainText(testCase.doiLabel);

@@ -17,14 +17,15 @@ const {
   linked = true,
   className,
   dataQa,
-  ariaLabel = 'Topics'
+  ariaLabel
 } = Astro.props;
 const tagLinkLabel = lang === 'pl' ? 'Publikacje oznaczone tagiem' : 'Publications tagged with';
+const resolvedAriaLabel = ariaLabel ?? (lang === 'pl' ? 'Tematy' : 'Topics');
 ---
 
 {
   tags.length > 0 && (
-    <ul class:list={['tag-list', className]} aria-label={ariaLabel}>
+    <ul class:list={['tag-list', className]} aria-label={resolvedAriaLabel}>
       {tags.map((tag) => (
         <li data-qa={dataQa}>
           {linked ? (
@@ -39,4 +40,3 @@ const tagLinkLabel = lang === 'pl' ? 'Publikacje oznaczone tagiem' : 'Publicatio
     </ul>
   )
 }
-
