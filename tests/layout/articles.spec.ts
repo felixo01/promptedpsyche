@@ -43,7 +43,7 @@ const oldAiPathPolishArticleTitle =
   'Od źródła do odpowiedzi. Jak AI zmienia drogę między człowiekiem a wiedzą';
 const oldAiPathEnglishArticleTitle =
   'From sources to answers: how AI changes the path between people and knowledge';
-const aiPathPolishArticleTitle = 'Zaufanie w epoce gotowych odpowiedzi';
+const aiPathPolishArticleTitle = 'Zaufanie do nauki w erze gotowych odpowiedzi';
 const aiPathEnglishArticleTitle = 'Trust in the age of ready-made answers';
 const aiFearsPolishArticleTitle = 'Czy boimy się AI, czy boimy się samych siebie?';
 const aiFearsEnglishArticleTitle = 'Are we afraid of AI, or of ourselves?';

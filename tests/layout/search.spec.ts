@@ -231,7 +231,7 @@ test.describe('local search', () => {
 
     await expect(page.getByRole('link', { name: 'Trust in the age of ready-made answers' })).toBeVisible();
     await expect(page.locator('[data-search-results]')).toContainText('Article');
-    await expect(page.locator('[data-search-results]')).not.toContainText('Zaufanie w epoce gotowych odpowiedzi');
+    await expect(page.locator('[data-search-results]')).not.toContainText('Zaufanie do nauki w erze gotowych odpowiedzi');
 
     await page.getByPlaceholder('Search by topic, concept or phrase').fill('zzzz-no-result-phrase');
     await expect(page.getByText('No results found. Try a different phrase.')).toBeVisible();

@@ -1,6 +1,6 @@
 ---
-title: "Zaufanie w epoce gotowych odpowiedzi"
-description: "Jak generatywna AI skraca drogę od źródeł do odpowiedzi i dlaczego zaufanie wymaga sprawdzania pochodzenia informacji, niepewności, sporów i ludzkiej odpowiedzialności."
+title: "Zaufanie do nauki w erze gotowych odpowiedzi"
+description: "Generatywna AI może skrócić drogę od źródeł naukowych do gotowej odpowiedzi, a zarazem ukryć pochodzenie informacji, siłę dowodów, niepewność i spory. Dlatego zaufanie trzeba opierać na możliwości odtworzenia tej drogi, nie na płynności syntezy."
 publishedAt: 2026-07-02
 updatedAt: 2026-07-10
 draft: false
@@ -29,11 +29,11 @@ lang: "pl"
 translationKey: "ai-path-to-knowledge"
 ---
 
-Zadajesz trudne pytanie i dostajesz kompletną odpowiedź, zanim zobaczysz choćby jeden dowód. Tekst brzmi spokojnie. Rozróżnia kilka możliwości, uprzedza zastrzeżenie i kończy się praktyczną rekomendacją. Nic w jego formie nie przypomina wersji roboczej. Gdy pojawiają się źródła, o ile pojawiają się w ogóle, ważna zmiana po stronie czytelnika mogła już nastąpić: niejasność ustąpiła miejsca orientacji, a orientacja zaczęła przypominać wiedzę.
+Trudne pytanie może dziś przynieść kompletną odpowiedź, zanim użytkownik zobaczy choćby jeden dowód. Tekst brzmi spokojnie. Rozróżnia kilka możliwości, uprzedza zastrzeżenie i kończy się praktyczną rekomendacją. Nic w jego formie nie przypomina wersji roboczej. Gdy pojawiają się źródła, o ile pojawiają się w ogóle, ważna zmiana po stronie czytelnika mogła już nastąpić: niejasność ustąpiła miejsca orientacji, a orientacja zaczęła przypominać wiedzę.
 
-To jedno z rzeczywistych osiągnięć generatywnej AI. Potrafi obniżyć próg wejścia w obcą dziedzinę, przełożyć specjalistyczny język na prostszy i pokazać strukturę rozproszoną w wielu dokumentach. Ten sam interfejs może jednak ukryć to, co zwykle towarzyszy wnioskowi: autora, metodę, datę, materiał dowodowy, spór oraz osobę albo instytucję odpowiedzialną za użycie wiedzy.
+Generatywna AI potrafi obniżyć próg wejścia w obcą dziedzinę, przełożyć specjalistyczny język na prostszy i pokazać strukturę rozproszoną w wielu dokumentach. Ten sam interfejs może jednak ukryć to, co zwykle towarzyszy wnioskowi: autora, metodę, datę, materiał dowodowy, spór oraz osobę albo instytucję odpowiedzialną za użycie wiedzy.
 
-Problem jest więc większy niż sporadyczne zmyślenie faktu przez model. Nawet odpowiedź poprawna faktograficznie może zmienić relację użytkownika z wiedzą, jeżeli usuwa z pola widzenia drogę, którą powstał wniosek. Odpowiedź zostaje, droga znika na dalszym planie.
+Znaczenie ma więc nie tylko sporadyczne zmyślenie faktu przez model. Nawet odpowiedź poprawna faktograficznie może zmienić relację użytkownika z wiedzą, jeżeli usuwa z pola widzenia drogę, którą powstał wniosek. W takiej sytuacji gotowa odpowiedź pozostaje widoczna, a prowadzący do niej proces schodzi na dalszy plan.
 
 <aside class="key-passage" data-qa="key-passage">
   <p class="key-passage__label">Kluczowy fragment</p>
@@ -52,15 +52,15 @@ Materiał pochodzi z kilku pól zadających podobne, lecz nieidentyczne pytania.
 
 Te nurty nie składają się na jedną ustaloną teorię generatywnej AI i wiedzy. Wyznaczają granice dla argumentu koncepcyjnego. Liczby w dalszej części odnoszę do konkretnych badań, a wnioski o działaniu interfejsu przedstawiam jako interpretacje. Artykuł Helen Pearson opublikowany w *Nature* w 2026 roku jest publicystycznym punktem wyjścia do debaty, a nie głównym dowodem empirycznym.
 
-## Zaufanie do nauki nie jest jednym przełącznikiem
+## Zaufanie do nauki ma wiele wymiarów
 
-Opowieść o globalnym kryzysie zaufania do nauki dobrze działa jako hasło, ale słabo oddaje złożoność danych. Prerejestrowane badanie prowadzone przez Viktorię Colognę i Nielsa Medego objęło 71 922 osoby z 68 krajów. Autorzy stwierdzili ogólnie umiarkowanie wysokie zaufanie do naukowców i brak powszechnego globalnego braku zaufania, przy zachowaniu istotnych różnic między krajami i grupami społecznymi. Pomiar obejmował postrzeganą kompetencję, dobrą wolę, uczciwość i otwartość. Wynik nie daje powodów do samozadowolenia, lecz nie pozwala też utrzymać prostej tezy, że ludzie na całym świecie przestali ufać naukowcom (Cologna et al., 2025).
+Teza o globalnym kryzysie zaufania do nauki nie oddaje złożoności danych. Prerejestrowane badanie prowadzone przez Viktorię Colognę i Nielsa Medego objęło 71 922 osoby z 68 krajów. Autorzy stwierdzili ogólnie umiarkowanie wysokie zaufanie do naukowców i nie znaleźli dowodów na powszechny, globalny brak zaufania, przy zachowaniu istotnych różnic między krajami i grupami społecznymi. Pomiar obejmował postrzeganą kompetencję, dobrą wolę, uczciwość i otwartość. Wynik nie wyklucza powodów do niepokoju, lecz nie pozwala też utrzymać prostej tezy, że ludzie na całym świecie przestali ufać naukowcom (Cologna et al., 2025).
 
-Brytyjski raport *Public Attitudes to Science 2025* pokazuje bardziej lokalny i ambiwalentny obraz. Ipsos przebadał 5 281 mieszkańców Wielkiej Brytanii w wieku co najmniej 16 lat między lutym a lipcem 2025 roku na zlecenie UK Research and Innovation i we współpracy z British Science Association. Duże większości nadal ceniły wkład nauki i naukowców. Jednocześnie częściej pojawiały się odpowiedzi neutralne lub niepewne, mniej osób niż w 2019 roku czuło się dobrze poinformowanych, a AI okazała się tematem silnie dzielącym. Metodę zmieniono na zbieranie danych przede wszystkim w modelu push-to-web, dlatego porównania z 2019 rokiem wymagają ostrożności (Ipsos, 2026).
+Brytyjski raport *Public Attitudes to Science 2025* pokazuje bardziej lokalny i ambiwalentny obraz. Ipsos przebadał 5 281 mieszkańców Wielkiej Brytanii w wieku co najmniej 16 lat między lutym a lipcem 2025 roku na zlecenie UK Research and Innovation i we współpracy z British Science Association. Duże większości nadal ceniły wkład nauki i naukowców. Jednocześnie częściej pojawiały się odpowiedzi neutralne lub niepewne, mniej osób niż w 2019 roku czuło się dobrze poinformowanych, a AI okazała się tematem silnie dzielącym. Dane zbierano przede wszystkim metodą kierowania respondentów do ankiety internetowej (push-to-web), dlatego porównania z 2019 rokiem wymagają ostrożności (Ipsos, 2026).
 
 Te dane kierują uwagę na różne obiekty zaufania. Można wierzyć w kompetencje naukowców, a jednocześnie wątpić w konkretną instytucję. Można uznawać wartość metody naukowej i sprzeciwiać się temu, jak rząd albo firma wykorzystuje wyniki. Można akceptować konsensus ekspertów, lecz krytycznie oceniać sposób komunikowania niepewności. Te obszary są ze sobą powiązane, ale nie są tym samym.
 
-Reportaż Pearson w *Nature* trafnie komplikuje dramatyczną narrację o kryzysie i pokazuje miejsca realnych pęknięć (Pearson, 2026). Dla tego eseju ważniejsze pytanie zaczyna się krok dalej: co dzieje się z tymi rozróżnieniami, gdy człowiek spotyka je przez interfejs mówiący jednym głosem?
+Reportaż Pearson w *Nature* trafnie komplikuje dramatyczną narrację o kryzysie i pokazuje miejsca realnych pęknięć (Pearson, 2026). W tym eseju prowadzi to do kolejnego pytania: co dzieje się z tymi rozróżnieniami, gdy docierają do człowieka za pośrednictwem interfejsu mówiącego jednym głosem?
 
 ## AI staje się pośrednikiem poznawczym
 

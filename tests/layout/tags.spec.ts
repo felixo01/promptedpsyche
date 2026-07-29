@@ -95,7 +95,7 @@ test.describe('publication tag pages', () => {
       'Trust in the age of ready-made answers'
     );
     await expect(page.locator('.tag-archive-list')).not.toContainText(
-      'Zaufanie w epoce gotowych odpowiedzi'
+      'Zaufanie do nauki w erze gotowych odpowiedzi'
     );
 
     await page.goto('/pl/tags/wiedza/');
@@ -103,7 +103,7 @@ test.describe('publication tag pages', () => {
     await expect(page.locator('.page-header h1')).toHaveText('#wiedza');
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.locator('.tag-archive-list')).toContainText(
-      'Zaufanie w epoce gotowych odpowiedzi'
+      'Zaufanie do nauki w erze gotowych odpowiedzi'
     );
     await expect(page.locator('.tag-archive-list')).not.toContainText(
       'Trust in the age of ready-made answers'
@@ -152,7 +152,7 @@ test.describe('publication tag pages', () => {
       'OpenAI, ChatGPT, GPT i LLM - czym się różnią?'
     );
     await expect(page.locator('.tag-archive-list')).toContainText(
-      'Zaufanie w epoce gotowych odpowiedzi'
+      'Zaufanie do nauki w erze gotowych odpowiedzi'
     );
     await expect(page.locator('.tag-archive-list')).not.toContainText('It is not just about the prompt');
     await expect(page.locator('.tag-archive-list')).not.toContainText('AI Literacy Is Not Prompt Engineering');

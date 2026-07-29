@@ -82,6 +82,6 @@ Nie pytaj modelu, czy ma rację. Poproś go, żeby pokazał, co trzeba sprawdzi�
 
 ## Dalsza lektura
 
-- [Zaufanie w epoce gotowych odpowiedzi](/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/)
+- [Zaufanie do nauki w erze gotowych odpowiedzi](/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/)
 - [Brzmi dobrze, ale to nie znaczy, że jest prawdziwe](/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/)
 - [Nie chodzi tylko o prompt](/pl/articles/nie-chodzi-tylko-o-prompt/)

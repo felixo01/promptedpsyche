@@ -88,5 +88,5 @@ Płynność jest sygnałem formy, nie dowodem prawdy. Im ważniejsza decyzja, ty
 ## Dalsza lektura
 
 - [Brzmi dobrze, ale to nie znaczy, że jest prawdziwe](/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/)
-- [Zaufanie w epoce gotowych odpowiedzi](/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/)
+- [Zaufanie do nauki w erze gotowych odpowiedzi](/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/)
 - [Nie chodzi tylko o prompt](/pl/articles/nie-chodzi-tylko-o-prompt/)

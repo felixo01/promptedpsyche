@@ -83,6 +83,6 @@ Nie pytaj modelu o sztuczną pewność. Poproś go, żeby pokazał, od czego zal
 
 ## Dalsza lektura
 
-- [Zaufanie w epoce gotowych odpowiedzi](/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/)
+- [Zaufanie do nauki w erze gotowych odpowiedzi](/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/)
 - [Model nie pamięta. Model ma kontekst.](/pl/notes/model-nie-pamieta-model-ma-kontekst/)
 - [Brzmi dobrze, ale to nie znaczy, że jest prawdziwe](/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/)

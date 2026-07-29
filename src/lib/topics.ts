@@ -163,7 +163,7 @@ const pl = {
   articles: {
     trust: resource(
       'article',
-      'Zaufanie w epoce gotowych odpowiedzi',
+      'Zaufanie do nauki w erze gotowych odpowiedzi',
       'Esej oparty na źródłach o tym, co znika, gdy płynna odpowiedź kompresuje źródła, niepewność, spór i odpowiedzialność.',
       '/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/'
     ),
