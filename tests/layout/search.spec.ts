@@ -137,7 +137,7 @@ test.describe('local search', () => {
     expect(plIndex).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          title: 'Wyszukiwarka odpowiada. Co zostaje uczniowi?',
+          title: 'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?',
           url: '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/',
           type: 'article'
         }),

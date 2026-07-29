@@ -175,7 +175,7 @@ const pl = {
     ),
     generativeSearch: resource(
       'article',
-      'Wyszukiwarka odpowiada. Co zostaje uczniowi?',
+      'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?',
       'Jak generatywne wyszukiwanie zmienia podział pracy przy wyborze źródeł, porównaniu i syntezie oraz co może to oznaczać dla uczenia się i sprawczości epistemicznej.',
       '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/'
     ),

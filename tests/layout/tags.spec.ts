@@ -160,7 +160,7 @@ test.describe('publication tag pages', () => {
       'Nie pytaj, czy AI nas ogłupia'
     );
     await expect(page.locator('.tag-archive-list')).toContainText(
-      'Wyszukiwarka odpowiada. Co zostaje uczniowi?'
+      'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?'
     );
   });
 });

@@ -211,7 +211,7 @@ test.describe('topic hubs', () => {
         concept: 'LLM (duży model językowy)',
         contextPractice: 'Jak sprawdzić, czy model ma potrzebny kontekst',
         contextPracticeHref: '/pl/practice/jak-sprawdzic-czy-model-ma-wystarczajacy-kontekst/',
-        generativeSearchArticle: 'Wyszukiwarka odpowiada. Co zostaje uczniowi?',
+        generativeSearchArticle: 'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?',
         generativeSearchHref: '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/'
       }
     ];

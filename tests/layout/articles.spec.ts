@@ -23,7 +23,7 @@ const aiThinkingEnglishArticleRoute = '/articles/dont-ask-whether-ai-makes-us-du
 const generativeSearchPolishArticleRoute =
   '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/';
 const generativeSearchEnglishArticleRoute = '/articles/when-search-becomes-an-answer/';
-const generativeSearchPolishArticleTitle = 'Wyszukiwarka odpowiada. Co zostaje uczniowi?';
+const generativeSearchPolishArticleTitle = 'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?';
 const generativeSearchEnglishArticleTitle =
   'When Search Becomes an Answer: What Generative AI Changes About Learning';
 const generativeSearchEnglishDoi = '10.5281/zenodo.21491639';
@@ -1634,7 +1634,7 @@ test.describe('published articles', () => {
         lang: 'pl',
         doiLabel: 'DOI wersji angielskiej (v1.7):',
         conventionalSteps: ['Pytanie', 'Wybór źródeł', 'Porównanie', 'Synteza użytkownika', 'Odpowiedź'],
-        generativeSteps: ['Pytanie', 'Retrieval i synteza systemu', 'Gotowa odpowiedź'],
+        generativeSteps: ['Pytanie', 'Wyszukanie materiałów i synteza systemu', 'Gotowa odpowiedź'],
         firstBoundary: 'Jak AI Overviews i AI Mode odpowiadały w testach',
         lastBoundary: 'Działanie wersji polskiej',
         practicalHeading: 'Do sprawdzenia przy następnym zadaniu',
