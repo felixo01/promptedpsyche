@@ -88,5 +88,5 @@ Użyj AI, żeby zobaczyć tekst oczami drugiego czytelnika. Nie używaj AI, żeb
 ## Dalsza lektura
 
 - [Nie chodzi tylko o prompt](/pl/articles/nie-chodzi-tylko-o-prompt/)
-- [AI jako lustro. Dlaczego tak łatwo się z nim dogadujemy?](/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/)
+- [AI jako lustro. Dlaczego tak łatwo mu ufamy?](/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/)
 - [Dobre streszczenie to jeszcze nie dobra decyzja](/pl/notes/dobre-streszczenie-to-jeszcze-nie-dobra-decyzja/)

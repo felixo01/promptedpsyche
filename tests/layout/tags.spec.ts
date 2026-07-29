@@ -15,7 +15,7 @@ test.describe('publication tag pages', () => {
       'AI as a mirror: why it can feel so easy to talk to'
     );
     await expect(page.locator('.tag-archive-list')).not.toContainText(
-      'AI jako lustro. Dlaczego tak łatwo się z nim dogadujemy?'
+      'AI jako lustro. Dlaczego tak łatwo mu ufamy?'
     );
 
     await page.goto('/notes/');
@@ -41,7 +41,7 @@ test.describe('publication tag pages', () => {
     await expect(page).toHaveURL(/\/pl\/tags\/ai-i-czlowiek\/$/);
     await expect(page.locator('.tag-archive-list article').first()).toBeVisible();
     await expect(page.locator('.tag-archive-list')).toContainText(
-      'AI jako lustro. Dlaczego tak łatwo się z nim dogadujemy?'
+      'AI jako lustro. Dlaczego tak łatwo mu ufamy?'
     );
     await expect(page.locator('.tag-archive-list')).not.toContainText(
       'AI as a mirror: why it can feel so easy to talk to'

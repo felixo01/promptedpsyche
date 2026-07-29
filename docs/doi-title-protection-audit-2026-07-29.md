@@ -44,7 +44,7 @@ Official records:
 | --- | --- | --- | --- | --- |
 | `src/content/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to.md` | AI as a mirror: why it can feel so easy to talk to | Not applicable | - | OK |
 | `src/content/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation.md` | AI does not read people. It helps make sense of the situation. | Not applicable | - | OK |
-| `src/content/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy.md` | AI jako lustro. Dlaczego tak łatwo się z nim dogadujemy? | Not applicable | - | OK |
+| `src/content/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy.md` | AI jako lustro. Dlaczego tak łatwo mu ufamy? | Not applicable | - | OK |
 | `src/content/articles/ai-literacy-is-not-prompt-engineering.mdx` | AI Literacy Is Not Prompt Engineering | Not applicable | - | OK |
 | `src/content/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje.md` | AI nie czyta ludzi. Pomaga uporządkować sytuację. | Not applicable | - | OK |
 | `src/content/articles/are-we-afraid-of-ai-or-of-ourselves.md` | Are we afraid of AI, or of ourselves? | Not applicable | - | OK |

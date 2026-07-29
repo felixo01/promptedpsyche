@@ -100,7 +100,7 @@ The public article includes byline, suggested citation and rights notice through
 
 The fourth article pair published in pre-launch mode is:
 
-- `AI jako lustro. Dlaczego tak łatwo się z nim dogadujemy?`
+- `AI jako lustro. Dlaczego tak łatwo mu ufamy?`
 - URL: `/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/`
 - Source file: `src/content/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy.md`
 - Date: `2026-07-03`

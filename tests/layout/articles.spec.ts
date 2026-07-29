@@ -37,7 +37,7 @@ const aiThinkingEnglishDoiUrl = `https://doi.org/${aiThinkingEnglishDoi}`;
 const thirdEnglishArticleTitle =
   'AI does not read people. It helps make sense of the situation.';
 const thirdPolishArticleTitle = 'AI nie czyta ludzi. Pomaga uporządkować sytuację.';
-const mirrorPolishArticleTitle = 'AI jako lustro. Dlaczego tak łatwo się z nim dogadujemy?';
+const mirrorPolishArticleTitle = 'AI jako lustro. Dlaczego tak łatwo mu ufamy?';
 const mirrorEnglishArticleTitle = 'AI as a mirror: why it can feel so easy to talk to';
 const oldAiPathPolishArticleTitle =
   'Od źródła do odpowiedzi. Jak AI zmienia drogę między człowiekiem a wiedzą';
@@ -1180,7 +1180,7 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose')).toContainText('Lepsze pytanie');
     await expect(page.locator('.prose')).toContainText('Mini-agent');
     await expect(page.locator('.prose')).toContainText(
-      'łatwo zaczynamy traktować to jak obecność społeczną'
+      'łatwo zaczynamy traktować go jak obecność społeczną'
     );
     await expect(page.locator('.prose')).not.toContainText(
       'Człowiek od dawna jest gotów czytać społeczność tam'
