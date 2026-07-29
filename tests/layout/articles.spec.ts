@@ -36,7 +36,8 @@ const aiThinkingEnglishDoi = '10.5281/zenodo.21358687';
 const aiThinkingEnglishDoiUrl = `https://doi.org/${aiThinkingEnglishDoi}`;
 const thirdEnglishArticleTitle =
   'AI does not read people. It helps make sense of the situation.';
-const thirdPolishArticleTitle = 'AI nie czyta ludzi. Pomaga uporządkować sytuację.';
+const thirdPolishArticleTitle =
+  'Dlaczego AI nie potrafi odczytywać ludzkich intencji - i dlaczego to dobrze';
 const mirrorPolishArticleTitle = 'AI jako lustro. Dlaczego tak łatwo mu ufamy?';
 const mirrorEnglishArticleTitle = 'AI as a mirror: why it can feel so easy to talk to';
 const oldAiPathPolishArticleTitle =
@@ -528,7 +529,7 @@ test.describe('published articles', () => {
     await expect(page.locator('[data-qa="article-byline"] a[href="/pl/about/"]')).toBeVisible();
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText('Jak cytować');
     await expect(page.locator('[data-qa="suggested-citation"]')).toContainText(
-      `${thirdPolishArticleTitle} Prompted Psyche. https://promptedpsyche.com/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/`
+      `${thirdPolishArticleTitle}. Prompted Psyche. https://promptedpsyche.com/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/`
     );
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');
     await expect(page.locator('[data-qa="suggested-citation"]')).not.toContainText('DOI');

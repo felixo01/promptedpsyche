@@ -71,7 +71,7 @@ The note explains context as a practical condition of AI work. It should not pre
 
 The third Polish article published in pre-launch mode is:
 
-- `AI nie czyta ludzi. Pomaga uporządkować sytuację.`
+- `Dlaczego AI nie potrafi odczytywać ludzkich intencji - i dlaczego to dobrze`
 - URL: `/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/`
 - Source file: `src/content/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje.md`
 - Date: `2026-07-02`
@@ -88,7 +88,7 @@ The case-study layer is explicitly composite and anonymized. It does not describ
 
 The EN version is an editorial adaptation, not a literal translation. It preserves the thesis, composite/anonymized case structure, responsibility framing and concept links while using English rhythm and phrasing.
 
-The article 03 title and slug were clarified in pre-launch/noindex mode to avoid repetition with article 02 and to make the Polish title more natural. Old PL title: `AI nie czyta ludzi. Pomaga czytać kontekst.` New PL title: `AI nie czyta ludzi. Pomaga uporządkować sytuację.` Old URLs are no longer treated as canonical because no redirect system exists in the site.
+The article 03 title and slug were clarified in pre-launch/noindex mode to avoid repetition with article 02 and to make the Polish title more natural. Original PL title: `AI nie czyta ludzi. Pomaga czytać kontekst.` Intermediate PL title: `AI nie czyta ludzi. Pomaga uporządkować sytuację.` Current PL title: `Dlaczego AI nie potrafi odczytywać ludzkich intencji - i dlaczego to dobrze`. Old URLs are no longer treated as canonical because no redirect system exists in the site.
 
 The public article includes byline, suggested citation and rights notice through the standard article layout. No DOI was added. The original article chronology is now:
 

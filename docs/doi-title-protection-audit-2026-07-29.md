@@ -46,7 +46,7 @@ Official records:
 | `src/content/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation.md` | AI does not read people. It helps make sense of the situation. | Not applicable | - | OK |
 | `src/content/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy.md` | AI jako lustro. Dlaczego tak łatwo mu ufamy? | Not applicable | - | OK |
 | `src/content/articles/ai-literacy-is-not-prompt-engineering.mdx` | AI Literacy Is Not Prompt Engineering | Not applicable | - | OK |
-| `src/content/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje.md` | AI nie czyta ludzi. Pomaga uporządkować sytuację. | Not applicable | - | OK |
+| `src/content/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje.md` | Dlaczego AI nie potrafi odczytywać ludzkich intencji - i dlaczego to dobrze | Not applicable | - | OK |
 | `src/content/articles/are-we-afraid-of-ai-or-of-ourselves.md` | Are we afraid of AI, or of ourselves? | Not applicable | - | OK |
 | `src/content/articles/co-sie-zmienia-kiedy-ai-ma-cialo.md` | Co się zmienia, kiedy AI ma ciało? | Related EN DOI: What changes when AI has a body? | `10.5281/zenodo.21296384` (related) | OK |
 | `src/content/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie.md` | Czy boimy się AI, czy boimy się samych siebie? | Not applicable | - | OK |

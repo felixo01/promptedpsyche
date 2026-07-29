@@ -92,6 +92,6 @@ W sprawach przemocy, przymusu, nękania, ryzyka prawnego, szkody w miejscu pracy
 
 ## Dalsza lektura
 
-- [AI nie czyta ludzi. Pomaga uporządkować sytuację.](/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/)
+- [Dlaczego AI nie potrafi odczytywać ludzkich intencji - i dlaczego to dobrze](/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/)
 - [Nie diagnozuj ludzi z maili](/pl/notes/nie-diagnozuj-ludzi-z-maili/)
 - [Model widzi tekst, a nie całą relację](/pl/notes/model-widzi-tekst-nie-cala-relacje/)

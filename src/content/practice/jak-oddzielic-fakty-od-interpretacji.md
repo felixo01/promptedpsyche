@@ -92,6 +92,6 @@ Najpierw oddziel to, co można wskazać, od tego, co to może znaczyć, jak to o
 
 ## Dalsza lektura
 
-- [AI nie czyta ludzi. Pomaga uporządkować sytuację.](/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/)
+- [Dlaczego AI nie potrafi odczytywać ludzkich intencji - i dlaczego to dobrze](/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/)
 - [Dobre streszczenie to jeszcze nie dobra decyzja](/pl/notes/dobre-streszczenie-to-jeszcze-nie-dobra-decyzja/)
 - [Model widzi tekst, a nie całą relację](/pl/notes/model-widzi-tekst-nie-cala-relacje/)
