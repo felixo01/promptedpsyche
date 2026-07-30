@@ -53,12 +53,12 @@ Official records:
 | `src/content/articles/dont-ask-whether-ai-makes-us-dumber.md` | Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing | Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing | `10.5281/zenodo.21358687` | OK |
 | `src/content/articles/it-is-not-just-about-the-prompt.md` | It is not just about the prompt | Not applicable | - | OK |
 | `src/content/articles/nie-chodzi-tylko-o-prompt.md` | Nie chodzi tylko o prompt | Not applicable | - | OK |
-| `src/content/articles/nie-pytaj-czy-ai-nas-oglupia.md` | Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka? | Related EN DOI: Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing | `10.5281/zenodo.21358687` (related) | OK |
+| `src/content/articles/nie-pytaj-czy-ai-nas-oglupia.md` | Kiedy AI wspiera uczenie się, a kiedy tylko wyręcza? | Related EN DOI: Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing | `10.5281/zenodo.21358687` (related) | OK |
 | `src/content/articles/trust-in-the-age-of-ready-made-answers.md` | Trust in the age of ready-made answers | Trust in the age of ready-made answers | `10.5281/zenodo.21301650` | OK |
 | `src/content/articles/what-changes-when-ai-has-a-body.md` | What changes when AI has a body? | What changes when AI has a body? | `10.5281/zenodo.21296384` | OK |
 | `src/content/articles/when-search-becomes-an-answer.mdx` | When Search Becomes an Answer: What Generative AI Changes About Learning | When Search Becomes an Answer: What Generative AI Changes About Learning | `10.5281/zenodo.21491639` | OK |
 | `src/content/articles/why-people-trust-ai-even-when-they-shouldnt.mdx` | Why People Trust AI Even When They Shouldn't | Not applicable | - | OK |
-| `src/content/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi.mdx` | Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się? | Related EN DOI: When Search Becomes an Answer: What Generative AI Changes About Learning | `10.5281/zenodo.21491639` (related) | OK |
+| `src/content/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi.mdx` | Jak zmienia się proces uczenia się, gdy wyszukiwarka podaje gotową odpowiedź? | Related EN DOI: When Search Becomes an Answer: What Generative AI Changes About Learning | `10.5281/zenodo.21491639` (related) | OK |
 | `src/content/articles/zaufanie-w-epoce-gotowych-odpowiedzi.md` | Zaufanie do nauki w erze gotowych odpowiedzi | Related EN DOI: Trust in the age of ready-made answers | `10.5281/zenodo.21301650` (related) | OK |
 | `src/content/notes/a-good-summary-is-not-the-same-as-a-good-decision.md` | A good summary is not the same as a good decision | Not applicable | - | OK |
 | `src/content/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe.md` | Brzmi dobrze, ale to nie znaczy, że jest prawdziwe | Not applicable | - | OK |

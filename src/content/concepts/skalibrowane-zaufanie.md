@@ -9,11 +9,11 @@ routeSlug: "calibrated-trust"
 tags: ["zaufanie", "decyzje", "ryzyko AI"]
 ---
 
-Calibrated trust oznacza zaufanie do systemu AI dopasowane do sytuacji, ryzyka zadania i możliwości weryfikacji. Jest pomiędzy bezkrytycznym przyjmowaniem odpowiedzi a całkowitym odrzuceniem narzędzia. Celem nie jest większe zaufanie za wszelką cenę, ale lepsze dopasowanie pewności, dowodów, zastosowania i ludzkiej odpowiedzialności.
+Skalibrowane zaufanie oznacza zaufanie do systemu AI dopasowane do sytuacji, ryzyka zadania i możliwości weryfikacji. Jest pomiędzy bezkrytycznym przyjmowaniem odpowiedzi a całkowitym odrzuceniem narzędzia. Celem nie jest większe zaufanie za wszelką cenę, ale lepsze dopasowanie pewności, dowodów, zastosowania i ludzkiej odpowiedzialności.
 
 ## Dlaczego to ważne
 
-Ludzie mogą nadmiernie polegać na AI, gdy odpowiedź jest płynna, szybka albo brzmi autorytatywnie. Mogą też zbyt szybko odrzucać przydatne systemy, gdy błędy, niepewność albo niejasny interfejs obniżają poczucie wiarygodności. Skalibrowane zaufanie pomaga pytać, w czym system jest dobry, gdzie jest kruchy i jakie sprawdzenia powinny zostać w procesie pracy.
+Ludzie mogą nadmiernie polegać na AI, gdy odpowiedź jest płynna, szybka albo brzmi autorytatywnie. Mogą też zbyt szybko odrzucać przydatne systemy, gdy błędy, niepewność albo niejasny interfejs obniżają poczucie wiarygodności. Skalibrowane zaufanie pomaga pytać, w czym system jest dobry, gdzie łatwo zawodzi i jakie mechanizmy kontroli powinny pozostać w procesie pracy.
 
 W praktyce może to oznaczać rozróżnienie, kiedy odpowiedź AI jest szkicem, kiedy sugestią, a kiedy wymaga niezależnej weryfikacji przed użyciem w decyzji.
 

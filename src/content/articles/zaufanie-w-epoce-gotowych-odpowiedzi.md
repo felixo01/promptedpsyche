@@ -1,6 +1,6 @@
 ---
 title: "Zaufanie do nauki w erze gotowych odpowiedzi"
-description: "Generatywna AI może skrócić drogę od źródeł naukowych do gotowej odpowiedzi, a zarazem ukryć pochodzenie informacji, siłę dowodów, niepewność i spory. Dlatego zaufanie trzeba opierać na możliwości odtworzenia tej drogi, nie na płynności syntezy."
+description: "Jak generatywna AI skraca drogę od źródeł naukowych do odpowiedzi i dlaczego zaufanie wymaga widocznych dowodów, niepewności oraz sporów."
 publishedAt: 2026-07-02
 updatedAt: 2026-07-10
 draft: false
@@ -46,9 +46,9 @@ Ten esej koncepcyjny oparty na badaniach analizuje, jak generatywna AI zmienia r
 
 ## Zakres i metoda
 
-Metoda jest celowo selektywna, nie wyczerpująca. Tekst nie opiera się na prerejestrowanej strategii wyszukiwania ani nie przedstawia ilościowego oszacowania efektów. Pierwszeństwo miały recenzowane badania, oficjalne raporty oraz bezpośrednio związane z tematem źródła pierwotne, które pozwalają sprawdzić twierdzenia użyte w eseju.
+Metoda jest celowo selektywna, niewyczerpująca. Tekst nie opiera się na prerejestrowanej strategii wyszukiwania ani nie przedstawia ilościowego oszacowania efektów. Pierwszeństwo miały recenzowane badania, oficjalne raporty oraz bezpośrednio związane z tematem źródła pierwotne, które pozwalają sprawdzić twierdzenia użyte w eseju.
 
-Materiał pochodzi z kilku pól zadających podobne, lecz nieidentyczne pytania. Badania zaufania publicznego pokazują, jak ludzie oceniają naukowców i instytucje. Epistemologia społeczna analizuje zależność wiedzy od świadectwa innych, ekspertów i organizacji. Badania nad wyszukiwaniem informacji i generatywnymi wyszukiwarkami analizują, czy od odpowiedzi można wrócić do materiału, który ją wspiera. Prace nad [halucynacjami modelu](/pl/concepts/halucynacja-modelu/) i zgodnością z faktami sprawdzają wierność wygenerowanego tekstu wobec źródeł. Literatura o automatyzacji i [Human-AI Interaction](/pl/concepts/human-ai-interaction/) koncentruje się na poleganiu na systemie, sygnałach interfejsu i kontroli człowieka. Badania [odciążenia poznawczego](/pl/concepts/cognitive-offloading/) i krytycznego myślenia pomagają opisać, jak zmienia się rozkład wysiłku, gdy narzędzie wykonuje część zadania.
+Materiał pochodzi z kilku pól zadających podobne, lecz nieidentyczne pytania. Badania nad zaufaniem społecznym pokazują, jak ludzie oceniają naukowców i instytucje. Epistemologia społeczna analizuje zależność wiedzy od świadectwa innych, ekspertów i organizacji. Badania nad wyszukiwaniem informacji i generatywnymi wyszukiwarkami analizują, czy od odpowiedzi można wrócić do materiału, który ją wspiera. Prace nad [halucynacjami modelu](/pl/concepts/halucynacja-modelu/) i zgodnością z faktami sprawdzają wierność wygenerowanego tekstu wobec źródeł. Literatura o automatyzacji i [Human-AI Interaction](/pl/concepts/human-ai-interaction/) koncentruje się na poleganiu na systemie, sygnałach interfejsu i kontroli człowieka. Badania [odciążenia poznawczego](/pl/concepts/cognitive-offloading/) i krytycznego myślenia pomagają opisać, jak zmienia się rozkład wysiłku, gdy narzędzie wykonuje część zadania.
 
 Te nurty nie składają się na jedną ustaloną teorię generatywnej AI i wiedzy. Wyznaczają granice dla argumentu koncepcyjnego. Liczby w dalszej części odnoszę do konkretnych badań, a wnioski o działaniu interfejsu przedstawiam jako interpretacje. Artykuł Helen Pearson opublikowany w *Nature* w 2026 roku jest publicystycznym punktem wyjścia do debaty, a nie głównym dowodem empirycznym.
 
@@ -74,7 +74,7 @@ Dlatego określenie AI jako pośrednika poznawczego jest trafniejsze niż nazywa
 
 ## Gdy droga poznawcza ulega kompresji
 
-Frazy **kompresja drogi poznawczej** używam opisowo. Nazywa ona zdarzenie na poziomie interfejsu: złożona droga przez dokumenty, dowody i spory zostaje pokazana jako jedna odpowiedź w rozmowie. Nie jest to zwalidowany konstrukt psychologiczny, termin ustalony w polskiej literaturze ani teoria przypisana temu artykułowi.
+Wyrażenia **kompresja drogi poznawczej** używam opisowo. Nazywa ono zdarzenie na poziomie interfejsu: złożona droga przez dokumenty, dowody i spory zostaje pokazana jako jedna odpowiedź w rozmowie. Nie jest to zwalidowany konstrukt psychologiczny, termin ustalony w polskiej literaturze ani teoria przypisana temu artykułowi.
 
 Kompresja nie musi oznaczać zniekształcenia. Mapy, abstrakty, wykłady i odpowiedzialne dziennikarstwo także skracają drogę przez wiedzę. Trzeba jednak zapytać, które rozróżnienia przetrwały skrót i czy użytkownik może odzyskać to, co zostało pominięte. Szczególnie ważne są cztery rodzaje kompresji.
 
@@ -116,7 +116,7 @@ To samo dotyczy odpowiedzi wyglądającej naukowo. Nagłówki, zastrzeżenia i b
 
 W 2023 roku Nelson Liu, Tianyi Zhang i Percy Liang przeprowadzili audyt czterech generatywnych wyszukiwarek. W ocenionych odpowiedziach około 51,5% wygenerowanych zdań było w pełni popartych wskazanymi źródłami, a około 74,5% odwołań rzeczywiście potwierdzało zdanie, z którym je połączono (Liu et al., 2023). Audyt dotyczył określonych systemów w określonym momencie. Nie powinien być powtarzany jako trwały wynik wszystkich współczesnych produktów.
 
-Trwalszy wniosek ma charakter pojęciowy: obecność odwołania do źródła nie jest tym samym co oparcie w dowodach. Po zobaczeniu przypisu pozostaje co najmniej siedem pytań:
+Trwalszy wniosek ma charakter pojęciowy: obecność odwołania do źródła nie jest tym samym co oparcie twierdzenia na dowodach. Po zobaczeniu przypisu pozostaje co najmniej siedem pytań:
 
 1. **Istnienie:** Czy wskazane źródło jest prawdziwe i dostępne?
 2. **Trafność:** Czy dotyczy przedmiotu twierdzenia?
@@ -167,7 +167,7 @@ Trzeba rozdzielić zaufanie, poleganie i poleganie dopasowane do możliwości sy
 
 Zobaczmy, jak zmieniają się te cechy w różnych zadaniach. Pomysły na tytuły mają niską stawkę i łatwo je odrzucić, więc płynność może wystarczyć. Streszczenie dokumentu, który użytkownik ma przed sobą, jest bardziej sprawdzalne, choć nadal może pomijać ważne treści. Wyjaśnienie nieznanego tematu naukowego wymaga kontroli źródeł, ponieważ użytkownik słabiej wykrywa pewnie brzmiący błąd. Interpretacja spornego wyniku wymaga porównania definicji, metod i alternatywnych odczytań. Porada dotycząca zdrowia, prawa, finansów lub polityki publicznej potrzebuje źródeł o odpowiednim autorytecie i osądu kompetentnego człowieka. Rekomendacja wpływająca na inną osobę dodaje obowiązek etyczny i organizacyjny, którego nie da się przekazać modelowi.
 
-Ton wygenerowanej odpowiedzi może być niemal identyczny we wszystkich sześciu sytuacjach. Poziom potrzebnej weryfikacji nie jest. [AI literacy](/pl/concepts/ai-literacy/) obejmuje zatem coś więcej niż umiejętność uzyskania przydatnej odpowiedzi. Wymaga rozpoznania zadania, zrozumienia roli systemu, oceny wyniku i zachowania [sprawczości człowieka](/pl/concepts/sprawczosc-czlowieka/) tam, gdzie decyzja ma konsekwencje (Long & Magerko, 2020).
+Ton wygenerowanej odpowiedzi może być niemal identyczny we wszystkich sześciu sytuacjach. Poziom potrzebnej weryfikacji nie jest. [Kompetencje w pracy z AI](/pl/concepts/ai-literacy/) obejmują zatem coś więcej niż umiejętność uzyskania przydatnej odpowiedzi. Wymagają rozpoznania zadania, zrozumienia roli systemu, oceny wyniku i zachowania [sprawczości człowieka](/pl/concepts/sprawczosc-czlowieka/) tam, gdzie decyzja ma konsekwencje (Long & Magerko, 2020).
 
 ## Odtwórz drogę
 
@@ -232,7 +232,7 @@ Kompresja może też pomagać. Generatywna AI ułatwia dostęp do specjalistyczn
 
 Generatywna AI może skrócić drogę od pytania do użytecznej wiedzy. Krótsza droga nie jest automatycznie drogą fałszywą, a wymaganie od każdego użytkownika odtworzenia całej pracy ekspertów podważałoby sens komunikacji i narzędzi. Korzyść jest realna, gdy odpowiedź pomaga wejść w nową dziedzinę, zrozumieć dokument albo dotrzeć do właściwych dowodów.
 
-Wygoda staje się ryzykowna, gdy równocześnie znikają pochodzenie informacji, niepewność, spór i odpowiedzialność. Użytkownik może wtedy posiadać dopracowany wniosek, nie wiedząc, jakiego rodzaju wsparcie za nim stoi i kto odpowiada za jego zastosowanie.
+Wygoda staje się ryzykowna, gdy równocześnie znikają pochodzenie informacji, niepewność, spór i odpowiedzialność. Użytkownik może wtedy mieć dopracowany wniosek, nie wiedząc, jakiego rodzaju wsparcie za nim stoi i kto odpowiada za jego zastosowanie.
 
 Model może podać nam wniosek, zanim zobaczymy drogę, która do niego prowadzi. Dojrzałe korzystanie z AI zaczyna się od rozpoznania, które wnioski można bezpiecznie wykorzystać od razu, a przy których trzeba odbudować drogę przez źródła, dowody, niepewność i odpowiedzialność.
 

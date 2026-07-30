@@ -121,7 +121,7 @@ The EN version is an editorial adaptation, not a literal translation. It preserv
 
 The fifth article pair published in pre-launch mode is:
 
-- `Zaufanie w epoce gotowych odpowiedzi`
+- `Zaufanie do nauki w erze gotowych odpowiedzi`
 - URL: `/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/`
 - Source file: `src/content/articles/zaufanie-w-epoce-gotowych-odpowiedzi.md`
 - Date: `2026-07-02`
@@ -357,3 +357,14 @@ On 2026-07-12, this revision also received a final internal claim-level scientif
 The EN/PL article pair received a final authorial and bilingual editorial pass focused on rhythm, clarity, natural language and reducing repetition. The central argument, evidence base and 28-source bibliography were not materially changed, and the article remains a research-informed conceptual essay.
 
 DOI and PDF preparation remain separate later steps. This pass did not add a DOI, PDF or Zenodo record.
+
+## Polish learning-article title differentiation - 2026-07-30
+
+Two Polish companion articles received author-approved title revisions while retaining their existing slugs, routes, publication identifiers, `translationKey` values and `relatedDoi` links:
+
+- `Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?` became `Jak zmienia się proces uczenia się, gdy wyszukiwarka podaje gotową odpowiedź?`.
+- `Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?` became `Kiedy AI wspiera uczenie się, a kiedy tylko wyręcza?`.
+
+Their descriptions and introductory framing now distinguish the two editorial roles more clearly. The generative-search article focuses on source selection, comparison of evidence, synthesis and the epistemic work left to the learner. The broader learning article focuses on task completion versus later independent performance, and on the difference between ready-made answers and scaffolding through attempts, hints, feedback and gradually withdrawn support.
+
+Both Polish files carry only `relatedDoi` references to their English counterparts. The protected English titles, direct DOI metadata, title-derived slugs and citation identifiers were not changed.

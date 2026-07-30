@@ -1,6 +1,6 @@
 ---
 title: "Nie chodzi tylko o prompt"
-description: "Prompt jest tylko widoczną częścią pracy z AI. Dojrzała kompetencja wymaga rozumienia kontekstu, ograniczeń modelu, własnego obciążenia poznawczego, zaufania i weryfikacji."
+description: "Dlaczego kompetencje w pracy z AI wykraczają poza prompt i obejmują kontekst, ograniczenia modelu, zaufanie, ocenę oraz weryfikację odpowiedzi."
 publishedAt: 2026-03-12
 draft: false
 tags:
@@ -43,7 +43,7 @@ Warto pamiętać, że modele językowe pracują na jednostkach tekstu, które w 
 
 Podobnie ważne jest [context window](/pl/concepts/context-window/), czyli limit informacji, który model może uwzględnić w danej interakcji. Jeśli w tym oknie nie ma potrzebnych danych, relacji, ograniczeń albo wcześniejszych ustaleń, model nie będzie ich stabilnie brał pod uwagę. Lepszy prompt pomaga, ale nie zastępuje zbudowania sensownego kontekstu.
 
-Dlatego kompetencja pracy z AI nie polega wyłącznie na formułowaniu poleceń. Polega także na przygotowaniu sytuacji, w której odpowiedź może być użyteczna, oraz na rozpoznaniu, kiedy użyteczna przestaje znaczyć wystarczająco dobra.
+Dlatego kompetencja pracy z AI nie polega wyłącznie na formułowaniu poleceń. Polega także na przygotowaniu sytuacji, w której odpowiedź może być użyteczna, oraz na rozpoznaniu, kiedy użyteczność odpowiedzi przestaje wystarczać.
 
 Prompt można łatwo skopiować. Kompetencji nie da się skopiować tak samo prosto. Dwie osoby mogą użyć podobnego polecenia, ale inaczej ocenić wynik, inaczej zauważyć brakujące założenia i inaczej zdecydować, co wolno z nim zrobić. Właśnie w tej różnicy zaczyna się dojrzała praca z AI.
 
@@ -53,7 +53,7 @@ To zdanie jest skrótem myślowym. Model nie "wie" w ludzkim sensie. Generuje od
 
 W praktyce często zakładamy, że system rozumie więcej, niż dostał. Wpisujemy krótkie polecenie i oczekujemy, że model domyśli się kontekstu organizacyjnego, tonu relacji, ograniczeń prawnych, historii projektu albo tego, czego nie wolno powiedzieć odbiorcy. Czasem wynik wygląda tak, jakby system naprawdę uchwycił sytuację. To bywa złudne.
 
-Tutaj pojawia się znaczenie pojęcia [mental model](/pl/concepts/mental-model/). Każdy użytkownik ma jakieś wyobrażenie o tym, jak działa AI. Jeśli ten model mentalny jest zbyt ludzki, użytkownik może traktować odpowiedź jak efekt rozumienia. Jeśli jest zbyt techniczny, może nie zauważyć, jak mocno język odpowiedzi wpływa na jego ocenę.
+Tu przydaje się pojęcie [modelu mentalnego](/pl/concepts/mental-model/). Każdy użytkownik ma jakieś wyobrażenie o tym, jak działa AI. Jeśli ten model mentalny jest zbyt ludzki, użytkownik może traktować odpowiedź jak efekt rozumienia. Jeśli jest zbyt techniczny, może nie zauważyć, jak mocno język odpowiedzi wpływa na jego ocenę.
 
 Błędny model mentalny prowadzi do nadmiernego zaufania, źle ustawionych oczekiwań i zbyt szybkiej delegacji decyzji. Użytkownik myśli, że system "pamięta", "rozumie" albo "wie", choć w praktyce operuje w granicach dostarczonego kontekstu. To nie jest drobny problem terminologiczny. Od tego zależy, czy człowiek potraktuje odpowiedź jako szkic, hipotezę, streszczenie, rekomendację czy gotowy materiał do użycia.
 
@@ -83,7 +83,7 @@ W pracy z AI łatwo skupiać się na tym, co wpisać do systemu. Czasem ważniej
   </ul>
 </aside>
 
-To są pytania metapoznawcze. [Metacognition](/pl/concepts/metacognition/) oznacza myślenie o własnym myśleniu: monitorowanie tego, co wiem, czego nie wiem, kiedy jestem pewny i kiedy powinienem zatrzymać się przed przyjęciem odpowiedzi. W kontekście AI metapoznanie jest jedną z najważniejszych warstw kompetencji, bo model często dostarcza tekst w formie, która wygląda na gotową.
+To są pytania metapoznawcze. [Metapoznanie](/pl/concepts/metacognition/) oznacza myślenie o własnym myśleniu: monitorowanie tego, co wiem, czego nie wiem, kiedy jestem pewny i kiedy powinienem zatrzymać się przed przyjęciem odpowiedzi. W kontekście AI metapoznanie jest jedną z najważniejszych warstw kompetencji, bo model często dostarcza tekst w formie, która wygląda na gotową.
 
 Bez tej samoobserwacji użytkownik może pomylić płynność z trafnością, szybkość z jakością, a zgodność tonu z wiarygodnością. Może też nie zauważyć, że w praktyce deleguje nie tylko pisanie, ale część selekcji, interpretacji i hierarchii ważności.
 
@@ -101,13 +101,13 @@ W tym miejscu warto odróżnić [model output](/pl/concepts/model-output/) od wi
 
 Podobnie zaufanie do AI nie powinno działać na zasadzie wszystko albo nic. Potrzebne jest raczej [calibrated trust](/pl/concepts/calibrated-trust/): dopasowanie poziomu zaufania do sytuacji. Inaczej traktujemy propozycję tytułu, inaczej streszczenie znanego dokumentu, inaczej interpretację danych, a jeszcze inaczej rekomendację, pod którą ktoś ma się podpisać.
 
-Tu [AI literacy](/pl/concepts/ai-literacy/) staje się czymś szerszym niż nauka promptów. To zdolność rozumienia, kiedy AI pomaga, kiedy upraszcza, kiedy przenosi wysiłek na weryfikację i kiedy wymaga zatrzymania.
+Tu [kompetencje w pracy z AI](/pl/concepts/ai-literacy/) stają się czymś szerszym niż nauka promptów. Obejmują rozumienie, kiedy AI pomaga, kiedy upraszcza, kiedy przenosi wysiłek na weryfikację i kiedy wymaga zatrzymania.
 
 ## Od promptowania do odpowiedzialnej współpracy
 
 Dojrzała praca z AI nie jest zbiorem magicznych formuł. To praktyka budowania kontekstu, zadawania pytań, sprawdzania odpowiedzi, rozpoznawania ograniczeń i brania odpowiedzialności za użycie wyniku. Prompt jest początkiem, nie końcem.
 
-W niektórych sytuacjach AI działa jak narzędzie do szybszego szkicowania. W innych staje się częścią procesu decyzyjnego, komunikacyjnego albo organizacyjnego. Wtedy liczy się nie tylko to, co wpisano w okno czatu, ale także to, jaką rolę odpowiedź otrzymała po wyjściu z tego okna.
+W niektórych sytuacjach AI działa jak narzędzie do szybszego szkicowania. W innych staje się częścią procesu decyzyjnego, komunikacyjnego albo organizacyjnego. Wtedy liczy się nie tylko to, co wpisano w okno czatu, ale także to, jaką rolę nadano odpowiedzi po wyjściu z tego okna.
 
 Dlatego organizacje nie potrzebują wyłącznie bibliotek promptów. Potrzebują także rozmowy o tym, jakie zadania można powierzać AI, jak oznaczać materiały robocze, kiedy wymagać źródeł, kiedy prosić drugą osobę o ocenę i kiedy nie używać wygenerowanej odpowiedzi mimo jej dobrej formy. Biblioteka promptów może być pomocna, ale bez tych rozróżnień łatwo staje się kolekcją formuł oderwanych od odpowiedzialności.
 

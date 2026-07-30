@@ -23,9 +23,9 @@ Ta praktyka pomaga używać AI jako narzędzia wspierającego decyzję, a nie ja
 ## Kiedy to pomaga
 
 - Gdy masz kilka możliwych opcji i trudno je porównać.
-- Gdy chcesz zobaczyć koszty, zyski i napięcia bez proszenia modelu o wyrok.
+- Gdy chcesz zobaczyć koszty, korzyści i kompromisy bez proszenia modelu o wyrok.
 - Gdy brakuje ci kryteriów albo informacji.
-- Gdy decyzja jest zwykła, odwracalna albo robocza, a nie medyczna, prawna, finansowa lub wysokiego ryzyka.
+- Gdy decyzja ma niewielką stawkę, jest odwracalna albo robocza, a nie medyczna, prawna, finansowa lub wysokiego ryzyka.
 
 ## O co poprosić model
 
@@ -43,7 +43,7 @@ Opcje, które widzę:
 Przygotuj analizę w 6 częściach:
 
 1. Możliwe opcje.
-2. Główne koszty, zyski i napięcia każdej opcji.
+2. Główne koszty, korzyści i kompromisy każdej opcji.
 3. Ryzyka i brakujące informacje.
 4. Wartości, priorytety albo kryteria, które wpływają na decyzję.
 5. Co model może pomóc uporządkować.

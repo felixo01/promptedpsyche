@@ -15,17 +15,19 @@ W pracy z AI deskilling może pojawiać się wtedy, gdy człowiek coraz rzadziej
 
 ## Dlaczego to ważne
 
-Automatyzacja może ułatwiać pracę, a jednocześnie utrudniać pozostałe ludzkie zadanie. Jeśli ludzie mają nadzorować rzadkie wyjątki, potrzebują właśnie tych kompetencji, które rutynowa automatyzacja mogła osłabić.
+Automatyzacja może ułatwiać pracę, a jednocześnie utrudniać zadania pozostające po stronie człowieka. Jeśli ludzie mają nadzorować rzadkie wyjątki, potrzebują właśnie tych kompetencji, które rutynowa automatyzacja mogła osłabić.
 
-W generatywnej AI ryzyko bywa subtelne. Człowiek nadal czuje się produktywny, ale może tracić nawyk tworzenia własnej pierwszej oceny.
+W generatywnej AI ryzyko bywa subtelne. Człowiek nadal czuje się produktywny, ale może tracić nawyk formułowania własnej wstępnej oceny.
+
+Erozja kompetencji nie jest nieunikniona. Narzędzia mogą też wspierać uczenie się, informację zwrotną i pracę na wyższym poziomie. Ryzyko pojawia się, gdy AI usuwa zbyt wiele okazji do ćwiczenia podstawowej umiejętności, zwłaszcza w rolach, w których człowiek nadal musi interweniować po błędzie systemu.
 
 ## Perspektywa człowiek-AI
 
-Deskilling dotyczy przyszłego kształtu kompetencji. Pytanie nie brzmi "czy AI ma pomagać?", tylko "które ludzkie umiejętności proces pracy powinien nadal ćwiczyć?"
+Deskilling dotyczy przyszłego kształtu kompetencji. Pytanie nie brzmi "czy AI ma pomagać?", tylko "które umiejętności człowiek powinien nadal ćwiczyć w tym procesie?"
 
 ## Powiązane pojęcia
 
-- [Cognitive offloading](/pl/concepts/cognitive-offloading/)
+- [Odciążenie poznawcze](/pl/concepts/cognitive-offloading/)
 - [Nadmierne poleganie na AI](/pl/concepts/nadmierne-poleganie-na-ai/)
 - [Sprawczość człowieka](/pl/concepts/sprawczosc-czlowieka/)
 

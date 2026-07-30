@@ -9,7 +9,7 @@ routeSlug: "ai-companions"
 tags: ["relacje", "chatboty", "emocje"]
 ---
 
-AI companions to systemy konwersacyjne używane jako źródło rozmowy, wsparcia, bliskości, rutyny albo poczucia dostępności. Nie są tym samym co terapeuta, przyjaciel ani osoba. Mogą wywoływać poczucie obecności, zrozumienia albo stałej dostępności, ale ich działanie opiera się na modelu, interfejsie i projekcie produktu.
+Określenie AI companions odnosi się do systemów konwersacyjnych używanych jako źródło rozmowy, wsparcia, bliskości, rutyny albo poczucia dostępności. Nie są tym samym co terapeuta, przyjaciel ani osoba. Mogą wywoływać poczucie obecności, zrozumienia albo stałej dostępności, ale ich działanie opiera się na modelu, interfejsie i projekcie produktu.
 
 ## Dlaczego to ważne
 

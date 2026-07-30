@@ -64,7 +64,7 @@ Nie wymyślaj publikacji, linków ani autorów. Nie udawaj, że sprawdzasz źró
 
 ## Lepszy sposób użycia odpowiedzi
 
-Model napisał w szkicu prezentacji, że konkretna metoda "zwiększa skuteczność zespołów o 30%" i że potwierdzają to badania z ostatnich lat. Dobra reakcja nie polega na poproszeniu modelu, żeby "dodał źródła". Lepiej najpierw oznaczyć tę liczbę jako twierdzenie wymagające weryfikacji, sprawdzić, czy badanie istnieje, a potem zobaczyć, czy dotyczy podobnego typu zespołu, metody i kontekstu. Dopiero wtedy warto zdecydować, czy zdanie zostaje, zostaje osłabione, czy znika.
+Model napisał w szkicu prezentacji, że konkretna metoda "zwiększa skuteczność zespołów o 30%" i że potwierdzają to badania z ostatnich lat. Dobra reakcja nie polega na poproszeniu modelu, żeby "dodał źródła". Lepiej najpierw oznaczyć tę liczbę jako twierdzenie wymagające weryfikacji, sprawdzić, czy badanie istnieje, a potem zobaczyć, czy dotyczy podobnego typu zespołu, metody i kontekstu. Dopiero wtedy warto zdecydować, czy zdanie pozostaje w tej formie, wymaga złagodzenia czy powinno zostać usunięte.
 
 Ten prompt przesuwa uwagę z gotowej [odpowiedzi modelu](/pl/concepts/model-output/) na pytanie, na czym opiera się dana informacja. To prosty trening [czujności epistemicznej](/pl/concepts/epistemic-vigilance/): nie tylko "czy to brzmi dobrze?", ale "co można sprawdzić, gdzie i przez kogo?".
 

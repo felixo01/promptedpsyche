@@ -23,15 +23,15 @@ Czujność epistemiczna nie oznacza cynicznej nieufności. Oznacza nawyk pytania
 
 Perspektywa człowiek-AI dotyczy zaufania w warunkach płynności. Odpowiedź modelu może brzmieć wiarygodnie nawet wtedy, gdy jest niepełna, niepoparta źródłem albo źle zastosowana do zadania.
 
-Czujność epistemiczna pomaga utrzymać weryfikację wewnątrz procesu komunikacji. Celem nie jest odrzucanie odpowiedzi AI z góry, ale decyzja, na jaki poziom zaufania zasługują.
+Czujność epistemiczna pomaga zachować weryfikację jako element procesu komunikacji. Celem nie jest odrzucanie odpowiedzi AI z góry, ale dopasowanie poziomu zaufania do jakości odpowiedzi i stawki zadania.
 
 ## Powiązane pojęcia
 
-- [AI literacy](/pl/concepts/ai-literacy/)
-- [Calibrated trust](/pl/concepts/calibrated-trust/)
-- [Model output](/pl/concepts/model-output/)
-- [Automation bias](/pl/concepts/blad-automatyzacji/)
-- [Metacognition](/pl/concepts/metacognition/)
+- [Kompetencje w pracy z AI](/pl/concepts/ai-literacy/)
+- [Skalibrowane zaufanie](/pl/concepts/calibrated-trust/)
+- [Odpowiedź modelu](/pl/concepts/model-output/)
+- [Błąd automatyzacji](/pl/concepts/blad-automatyzacji/)
+- [Metapoznanie](/pl/concepts/metacognition/)
 
 ## Źródła i kontekst
 

@@ -24,6 +24,7 @@ const copy = isPl
       error: 'Nie udało się załadować indeksu wyszukiwania.',
       inputLabel: 'Szukaj w publicznych treściach',
       resultCountSingular: 'wynik',
+      resultCountFew: 'wyniki',
       resultCountPlural: 'wyników',
       labels: {
         article: 'Artykuł',
@@ -47,6 +48,7 @@ const copy = isPl
       error: 'The search index could not be loaded.',
       inputLabel: 'Search public content',
       resultCountSingular: 'result',
+      resultCountFew: 'results',
       resultCountPlural: 'results',
       labels: {
         article: 'Article',
@@ -122,6 +124,7 @@ const alternateLinks = {
     loading: string;
     error: string;
     resultCountSingular: string;
+    resultCountFew: string;
     resultCountPlural: string;
     labels: Record<SearchItemType, string>;
   };
@@ -221,7 +224,16 @@ const alternateLinks = {
 
       results.hidden = false;
       results.replaceChildren(fragment);
-      const suffix = items.length === 1 ? copy.resultCountSingular : copy.resultCountPlural;
+      const lastDigit = items.length % 10;
+      const lastTwoDigits = items.length % 100;
+      const usesPolishFew =
+        locale === 'pl' && lastDigit >= 2 && lastDigit <= 4 && !(lastTwoDigits >= 12 && lastTwoDigits <= 14);
+      const suffix =
+        items.length === 1
+          ? copy.resultCountSingular
+          : usesPolishFew
+            ? copy.resultCountFew
+            : copy.resultCountPlural;
       status.textContent = `${items.length} ${suffix}`;
     };
 

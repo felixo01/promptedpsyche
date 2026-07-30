@@ -15,9 +15,9 @@ W pracy z AI metapoznanie oznacza zauważanie, kiedy odpowiedź wydaje się prze
 
 ## Dlaczego to ważne
 
-AI może generować gładkie odpowiedzi, które zmniejszają poczucie niepewności. To bywa pomocne, ale może też sprawić, że sprawdzanie wyda się zbędne. Metapoznanie pomaga zatrzymać się między otrzymaniem odpowiedzi a przyjęciem jej jako faktu, argumentu albo decyzji.
+AI może generować płynne odpowiedzi, które zmniejszają poczucie niepewności. To bywa pomocne, ale może też sprawić, że sprawdzanie wyda się zbędne. Metapoznanie pomaga zatrzymać się między otrzymaniem odpowiedzi a przyjęciem jej jako faktu, argumentu albo decyzji.
 
-Jest praktyczną częścią AI literacy, bo zachęca użytkownika do monitorowania nie tylko modelu, ale też własnej pewności i nawyków.
+Jest praktycznym elementem kompetencji w pracy z AI, bo zachęca użytkownika do monitorowania nie tylko modelu, ale też własnej pewności i nawyków.
 
 ## Perspektywa człowiek-AI
 
@@ -27,11 +27,11 @@ Metapoznanie nie rozwiązuje samo problemów ryzyka AI. Pomaga zadawać lepsze p
 
 ## Powiązane pojęcia
 
-- [AI literacy](/pl/concepts/ai-literacy/)
-- [Calibrated trust](/pl/concepts/calibrated-trust/)
-- [Cognitive load](/pl/concepts/cognitive-load/)
-- [Cognitive offloading](/pl/concepts/cognitive-offloading/)
-- [Epistemic vigilance](/pl/concepts/epistemic-vigilance/)
+- [Kompetencje w pracy z AI](/pl/concepts/ai-literacy/)
+- [Skalibrowane zaufanie](/pl/concepts/calibrated-trust/)
+- [Obciążenie poznawcze](/pl/concepts/cognitive-load/)
+- [Odciążenie poznawcze](/pl/concepts/cognitive-offloading/)
+- [Czujność epistemiczna](/pl/concepts/epistemic-vigilance/)
 
 ## Źródła i kontekst
 

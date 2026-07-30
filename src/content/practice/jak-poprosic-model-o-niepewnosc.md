@@ -16,9 +16,9 @@ type: "practice"
 category: "Praktyka"
 ---
 
-Model może odpowiedzieć płynnie nawet wtedy, gdy brakuje mu ważnych informacji. Ta praktyka pomaga zatrzymać się przy odpowiedzi, która brzmi jak gotowy wniosek, i zapytać: co jest znane, co jest prawdopodobne, co jest założeniem, czego brakuje i co mogłoby zmienić wniosek.
+Model może odpowiedzieć płynnie nawet wtedy, gdy brakuje mu ważnych informacji. Ta praktyka pomaga zatrzymać się przy odpowiedzi, która brzmi jak gotowy wniosek, i zapytać: co wiadomo, co jest prawdopodobne, co jest założeniem, czego brakuje i co mogłoby zmienić wniosek.
 
-Celem nie jest wymuszenie liczbowej oceny pewności. Chodzi o lepszy osąd: które fragmenty odpowiedzi są mocniejsze, które pozostają robocze i co człowiek powinien sprawdzić poza modelem przed dalszym krokiem. Ten wpis dotyczy ostrożności wobec wniosku; osobna praktyka sprawdza, czy model miał wystarczający kontekst wejściowy.
+Celem nie jest wymuszenie liczbowej oceny pewności. Chodzi o lepszy osąd: które fragmenty odpowiedzi są lepiej uzasadnione, które pozostają robocze i co człowiek powinien sprawdzić poza modelem przed dalszym krokiem. Ten wpis dotyczy ostrożności wobec wniosku; osobna praktyka sprawdza, czy model miał wystarczający kontekst wejściowy.
 
 ## Kiedy to pomaga
 
@@ -43,7 +43,7 @@ Podziel ją na 6 części:
 5. Co mogłoby zmienić tę odpowiedź.
 6. Co powinienem sprawdzić poza modelem albo w rozmowie z właściwą osobą przed użyciem tej odpowiedzi.
 
-Nie podawaj procentowej pewności, jeśli nie masz do tego podstaw. Zamiast tego opisz poziom ostrożności prostym językiem: wysoka ostrożność, średnia ostrożność albo niska ostrożność. Wyjaśnij, z czego ten poziom ostrożności wynika i czego nie obejmuje. Na końcu zaproponuj 5 pytań, które powinienem zadać przed dalszym krokiem.
+Nie podawaj procentowej pewności, jeśli nie masz do tego podstaw. Zamiast tego opisz poziom ostrożności prostym językiem: odpowiedź wymaga dużej, umiarkowanej albo niewielkiej ostrożności. Wyjaśnij, z czego ten poziom ostrożności wynika i czego nie obejmuje. Na końcu zaproponuj 5 pytań, które powinienem zadać przed dalszym krokiem.
 ```
 
 ## Co sprawdzić samodzielnie
@@ -52,7 +52,7 @@ Nie podawaj procentowej pewności, jeśli nie masz do tego podstaw. Zamiast tego
 - Czy brakujące informacje da się szybko uzupełnić.
 - Czy odpowiedź zależy od danych, które mogą być nieaktualne albo niepełne.
 - Czy poziom ostrożności jest opisem pomocniczym, a nie pomiarem prawdy.
-- Czy odpowiedź nie miesza braku danych z pewnością stylu.
+- Czy odpowiedź nie maskuje braku danych pewnym tonem.
 - Czy decyzja wymaga rozmowy z człowiekiem, źródła, procedury albo dodatkowego kontekstu.
 
 ## Co może pójść źle

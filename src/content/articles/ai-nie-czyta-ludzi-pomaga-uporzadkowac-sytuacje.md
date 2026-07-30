@@ -1,6 +1,6 @@
 ---
 title: "Dlaczego AI nie potrafi odczytywać ludzkich intencji - i dlaczego to dobrze"
-description: "Studium przypadku pokazujące granicę analizy komunikacji przez AI: model może porządkować fakty, hipotezy i brakujące informacje, ale nie ma dostępu do cudzych intencji. Uznanie tej granicy sprzyja bezpieczniejszym decyzjom."
+description: "Jak AI porządkuje fakty i hipotezy w komunikacji, dlaczego nie odczytuje cudzych intencji oraz jak ta granica wspiera bezpieczniejsze decyzje."
 publishedAt: 2026-04-17
 draft: false
 tags:
@@ -83,7 +83,7 @@ To nie znaczy, że analiza z AI jest bezużyteczna. Przeciwnie, może być bardz
 - Co jest faktem, a co interpretacją?
 - Jakie pytania zmniejszyłyby ryzyko błędnego odczytania?
 
-Takie pytania nie zakładają, że mamy dostęp do wnętrza drugiej osoby. Pomagają zobaczyć własny [model poznawczy](/pl/concepts/mental-model/) sytuacji. Ujawniają, co dopowiadamy, co traktujemy jako oczywiste i gdzie nasza interpretacja może być zbyt szybka.
+Takie pytania nie zakładają, że mamy dostęp do wnętrza drugiej osoby. Pomagają zobaczyć własny [model mentalny](/pl/concepts/mental-model/) sytuacji. Ujawniają, co dopowiadamy, co traktujemy jako oczywiste i gdzie nasza interpretacja może być zbyt szybka.
 
 Tu przydaje się [czujność epistemiczna](/pl/concepts/epistemic-vigilance/), czyli uważność wobec informacji. W praktyce oznacza to proste zatrzymanie: skąd wiem to, co myślę, że wiem? Czy wynika to z tekstu, z wcześniejszej relacji, z moich emocji, z pozycji w projekcie czy z narracji podanej przez model? To nie jest cynizm ani paraliż decyzyjny. To higiena interpretacji.
 

@@ -11,7 +11,7 @@ routeSlug: "oparcie-odpowiedzi-na-zrodlach"
 
 Grounding to praktyka łączenia odpowiedzi AI z konkretnymi źródłami, dokumentami, danymi albo kontekstem. W polskim użyciu nie ma jednego stabilnego odpowiednika, dlatego w Prompted Psyche używam nazwy mieszanej: grounding jako termin techniczny oraz opisowe "oparcie odpowiedzi na źródłach".
 
-W praktyce grounding może oznaczać pracę na dostarczonym dokumencie, korzystanie z wyszukiwania, przywoływanie fragmentów źródłowych, rozdzielanie dowodów od interpretacji albo jasne powiedzenie, że w podanym materiale nie ma podstaw do odpowiedzi.
+Grounding jest często omawiany w związku z generowaniem wspomaganym wyszukiwaniem (RAG), w którym model korzysta z pobranych fragmentów lub danych zewnętrznych, zamiast polegać wyłącznie na informacjach zapisanych w parametrach. W praktyce grounding może też oznaczać pracę na dostarczonym dokumencie, przywoływanie fragmentów źródłowych, rozdzielanie dowodów od interpretacji albo jasne powiedzenie, że w podanym materiale nie ma podstaw do odpowiedzi.
 
 ## Dlaczego to ważne
 
@@ -21,13 +21,13 @@ Dobrze używany grounding zmienia pytanie. Zamiast pytać tylko "czy to brzmi do
 
 ## Perspektywa człowiek-AI
 
-Grounding wzmacnia osąd wtedy, gdy kieruje uwagę na materiał źródłowy. Osłabia go wtedy, gdy źródła stają się dekoracją wiarygodności. Liczy się nie tylko to, czy odpowiedź ma źródła, ale czy człowiek umie je przeczytać wobec konkretnej tezy.
+Grounding wzmacnia osąd wtedy, gdy kieruje uwagę na materiał źródłowy. Osłabia go wtedy, gdy źródła stają się dekoracją wiarygodności. Liczy się nie tylko to, czy odpowiedź ma źródła, ale czy człowiek potrafi ocenić, co rzeczywiście potwierdzają.
 
 ## Powiązane pojęcia
 
 - [Halucynacja modelu](/pl/concepts/halucynacja-modelu/)
-- [Context window](/pl/concepts/context-window/)
-- [Model output](/pl/concepts/model-output/)
+- [Okno kontekstu](/pl/concepts/context-window/)
+- [Odpowiedź modelu](/pl/concepts/model-output/)
 
 ## Źródła i kontekst
 

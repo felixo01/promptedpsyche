@@ -9,19 +9,19 @@ routeSlug: "model-output"
 tags: ["systemy AI", "ocena odpowiedzi", "decyzje"]
 ---
 
-Model output oznacza dane wyjściowe modelu: tekst, obraz, kod, klasyfikację, rekomendację albo inny wynik wytworzony przez system AI w reakcji na dane wejściowe. Nie jest tym samym co wiedza, prawda albo osąd. Jest artefaktem powstałym w określonych warunkach: modelu, danych, instrukcji, interfejsu i kontekstu użycia.
+Odpowiedź modelu oznacza dane wyjściowe modelu: tekst, obraz, kod, klasyfikację, rekomendację albo inny wynik wytworzony przez system AI w reakcji na dane wejściowe. Nie jest tym samym co wiedza, prawda albo osąd. Jest artefaktem powstałym w określonych warunkach: modelu, danych, instrukcji, interfejsu i kontekstu użycia.
 
 ## Dlaczego to ważne
 
 Wiele interfejsów AI sprawia, że wynik wygląda jak gotowa odpowiedź. W praktyce odpowiedź modelu często wymaga interpretacji: co jest oparte na dowodach, co jest wnioskiem, czego brakuje i co zależy od promptu albo całego procesu pracy.
 
-Traktowanie odpowiedzi modelu jako czegoś do oceny, a nie tylko do konsumpcji, jest jednym z podstawowych warunków odpowiedzialnego używania AI.
+Traktowanie odpowiedzi modelu jako czegoś do oceny, a nie do bezrefleksyjnego przyjęcia, jest jednym z podstawowych warunków odpowiedzialnego używania AI.
 
 ## Czego nie upraszczać
 
 "Model tak powiedział" nie jest źródłem. Płynna odpowiedź nie musi być wiarygodna, a ostrożna odpowiedź nie musi być bezużyteczna. Ważne jest to, jak odpowiedź ma zostać sprawdzona, ograniczona i użyta w konkretnym zadaniu.
 
-Concept [LLM (duży model językowy)](/pl/concepts/llm/) wyjaśnia warstwę modelu, która może generować taki wynik.
+Hasło [LLM (duży model językowy)](/pl/concepts/llm/) wyjaśnia warstwę modelu, która może generować taki wynik.
 
 ## Źródła i kontekst
 

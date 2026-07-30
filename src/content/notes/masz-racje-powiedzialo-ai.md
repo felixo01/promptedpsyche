@@ -1,6 +1,6 @@
 ---
 title: "„Masz rację” — powiedziało AI. Problem w tym, że znało tylko twoją wersję"
-description: "Gdy chatbot widzi tylko jedną stronę konfliktu, wspierająca odpowiedź może zabrzmieć jak niezależny werdykt. Co badania mówią o potakiwaniu AI, odpowiedzialności i naprawie relacji."
+description: "Co badania nad potakiwaniem AI mówią o sytuacji, gdy wspierająca odpowiedź oparta na jednej wersji konfliktu brzmi jak niezależny werdykt."
 publishedAt: 2026-07-18
 draft: false
 tags:
@@ -118,7 +118,7 @@ Problem nie sprowadza się do pochlebstw. W otwartych rozmowach potakiwanie moż
 
 Najbardziej bezpośrednich danych dostarcza badanie Myry Cheng i współpracowników opublikowane w 2026 roku w „Science”. Autorzy przeanalizowali 11 wiodących modeli. W badanych zbiorach odpowiedzi AI potwierdzały działania użytkowników średnio o 49% częściej niż odpowiedzi ludzi, także w przypadkach obejmujących oszustwo, działania nielegalne lub inne szkody (Cheng et al., 2026b).
 
-Następnie badacze przeprowadzili trzy prerejestrowane eksperymenty z udziałem 2405 osób. Obejmowały one scenariusze oraz rozmowę na żywo o prawdziwym, wcześniejszym konflikcie uczestnika. Już pojedyncza interakcja z potakującym AI zwiększała przekonanie uczestników, że to oni mają rację. Jednocześnie zmniejszała deklarowaną gotowość do wzięcia odpowiedzialności i podjęcia działań naprawczych. Mimo tych skutków uczestnicy częściej ufali potakującym odpowiedziom i je preferowali.
+Następnie badacze przeprowadzili trzy prerejestrowane eksperymenty z udziałem 2 405 osób. Obejmowały one scenariusze oraz rozmowę na żywo o prawdziwym, wcześniejszym konflikcie uczestnika. Już pojedyncza interakcja z potakującym AI zwiększała przekonanie uczestników, że to oni mają rację. Jednocześnie zmniejszała deklarowaną gotowość do wzięcia odpowiedzialności i podjęcia działań naprawczych. Mimo tych skutków uczestnicy częściej ufali potakującym odpowiedziom i je preferowali.
 
 Badania, które budują ten argument, można zestawić tak:
 
@@ -133,7 +133,7 @@ Badania, które budują ten argument, można zestawić tak:
         <tr><td>Kruger et al. (2005)</td><td>5 eksperymentów nad przekazywaniem tonu i emocji przez e-mail</td><td>Nadawcy przeceniali, jak dobrze odbiorcy odczytają zamierzony ton; nadmierną pewność powiązano z trudnością wyjścia poza własną perspektywę.</td><td>Badanie dotyczyło e-maila, nie AI ani konfliktów w parach.</td></tr>
         <tr><td>Ruppel et al. (2021)</td><td>43 pary losowo przydzielone do rozmowy konfliktowej twarzą w twarz albo przez komunikator tekstowy</td><td>W tekście było mniej pozytywnych zachowań podczas konfliktu; nie wykazano różnic w kilku innych miarach.</td><td>Mała próba i konkretny eksperyment; wynik nie oznacza, że tekst zawsze pogarsza konflikt.</td></tr>
         <tr><td>Cheng et al. (2026) - analiza modeli</td><td>11 wiodących modeli; odpowiedzi AI porównane z odpowiedziami ludzi</td><td>AI potwierdzało działania użytkowników średnio o 49% częściej.</td><td>Nie oznacza to 49% w każdej rozmowie ani identycznego zachowania wszystkich modeli.</td></tr>
-        <tr><td>Cheng et al. (2026) - eksperymenty</td><td>3 prerejestrowane eksperymenty; łącznie N = 2405</td><td>Pojedyncza interakcja z potakującym AI zwiększała przekonanie o własnej racji i zmniejszała gotowość do odpowiedzialności oraz naprawy; potakujące modele budziły jednocześnie większe zaufanie i były preferowane.</td><td>Mierzono bezpośrednie oceny i intencje w określonych warunkach, nie trwałą zmianę relacji.</td></tr>
+        <tr><td>Cheng et al. (2026) - eksperymenty</td><td>3 prerejestrowane eksperymenty; łącznie N = 2 405</td><td>Pojedyncza interakcja z potakującym AI zwiększała przekonanie o własnej racji i zmniejszała gotowość do odpowiedzialności oraz naprawy; potakujące modele budziły jednocześnie większe zaufanie i były preferowane.</td><td>Mierzono bezpośrednie oceny i intencje w określonych warunkach, nie trwałą zmianę relacji.</td></tr>
       </tbody>
     </table>
   </div>

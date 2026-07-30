@@ -188,7 +188,8 @@ test.describe('author entity structured data', () => {
       route: '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/',
       lang: 'pl',
       authorUrl: 'https://promptedpsyche.com/pl/about/',
-      headline: 'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?'
+      headline:
+        'Jak zmienia się proces uczenia się, gdy wyszukiwarka podaje gotową odpowiedź?'
     }
   ] as const;
 

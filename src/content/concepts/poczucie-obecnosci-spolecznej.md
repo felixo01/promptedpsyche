@@ -9,7 +9,7 @@ translationKey: "social-presence"
 routeSlug: "poczucie-obecnosci-spolecznej"
 ---
 
-Poczucie obecności społecznej to wrażenie, że w zapośredniczonej interakcji obecny jest ktoś społecznie znaczący: rozmówca, partner, postać albo system reagujący jak uczestnik wymiany. W przypadku AI takie poczucie może powstawać przez tempo odpowiedzi, naturalny język, uprzejmość, głos, pamięć kontekstu w rozmowie i emocjonalne dostrojenie tonu.
+Poczucie obecności społecznej to wrażenie, że w zapośredniczonej interakcji obecny jest ktoś społecznie znaczący: rozmówca, partner, postać albo system reagujący jak uczestnik wymiany. W przypadku AI takie poczucie może powstawać przez tempo odpowiedzi, naturalny język, uprzejmość, głos, nawiązywanie do wcześniejszego kontekstu rozmowy i emocjonalne dostrojenie tonu.
 
 Poczucie obecności społecznej nie dowodzi, że system rozumie, czuje albo ma wewnętrzne życie. Opisuje doświadczenie użytkownika, a nie właściwość świadomości po stronie modelu.
 

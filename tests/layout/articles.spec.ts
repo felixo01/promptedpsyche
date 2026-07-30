@@ -23,13 +23,14 @@ const aiThinkingEnglishArticleRoute = '/articles/dont-ask-whether-ai-makes-us-du
 const generativeSearchPolishArticleRoute =
   '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/';
 const generativeSearchEnglishArticleRoute = '/articles/when-search-becomes-an-answer/';
-const generativeSearchPolishArticleTitle = 'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?';
+const generativeSearchPolishArticleTitle =
+  'Jak zmienia się proces uczenia się, gdy wyszukiwarka podaje gotową odpowiedź?';
 const generativeSearchEnglishArticleTitle =
   'When Search Becomes an Answer: What Generative AI Changes About Learning';
 const generativeSearchEnglishDoi = '10.5281/zenodo.21491639';
 const generativeSearchEnglishDoiUrl = `https://doi.org/${generativeSearchEnglishDoi}`;
 const aiThinkingPolishArticleTitle =
-  'Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?';
+  'Kiedy AI wspiera uczenie się, a kiedy tylko wyręcza?';
 const aiThinkingEnglishArticleTitle =
   "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing";
 const aiThinkingEnglishDoi = '10.5281/zenodo.21358687';
@@ -102,7 +103,7 @@ async function expectAiFearsIllustrations(page: Page, lang: 'en' | 'pl') {
       : 'A person facing a translucent AI figure and a human reflection, symbolizing fear, agency and responsibility.';
   const heroCaption =
     lang === 'pl'
-      ? 'Lęk może skupić się na maszynie, choć za interfejsem nadal pozostają ludzkie intencje i odpowiedzialność.'
+      ? 'Lęk może skupić się na maszynie, choć za interfejsem nadal pozostają ludzkie cele, decyzje i odpowiedzialność.'
       : 'Fear may settle on the machine even when human intentions and responsibility remain behind the interface.';
   const hero = page.locator('.article-hero-figure img');
 
@@ -898,7 +899,7 @@ test.describe('published articles', () => {
       'nie będąc podmiotami moralnymi w ludzkim sensie'
     );
     await expect(page.locator('.prose')).toContainText(
-      'Powinniśmy bać się nie tylko tego, co AI może zrobić'
+      'Ryzyko dotyczy nie tylko tego, co AI może zrobić'
     );
     await expect(page.locator('.prose')).not.toContainText('ludzkiego życia moralnego');
     await expect(page.locator('.prose')).not.toContainText('Ten recenzowany esej');
@@ -1182,7 +1183,7 @@ test.describe('published articles', () => {
     await expect(page.locator('.prose')).toContainText('Lepsze pytanie');
     await expect(page.locator('.prose')).toContainText('Mini-agent');
     await expect(page.locator('.prose')).toContainText(
-      'łatwo zaczynamy traktować go jak obecność społeczną'
+      'łatwo zaczynamy reagować na niego jak na obecność społeczną'
     );
     await expect(page.locator('.prose')).not.toContainText(
       'Człowiek od dawna jest gotów czytać społeczność tam'
@@ -1626,13 +1627,15 @@ test.describe('published articles', () => {
         firstBoundary: 'How AI Overviews and AI Mode answered prepared tests',
         lastBoundary: 'How other regional and language versions behave',
         practicalHeading: 'For the next task',
+        method: 'narrative synthesis',
         hasDirectDoi: true
       },
       {
         route: generativeSearchPolishArticleRoute,
         alternate: generativeSearchEnglishArticleRoute,
         title: generativeSearchPolishArticleTitle,
-        deck: 'O generatywnym wyszukiwaniu, źródłach i pracy potrzebnej do uczenia się',
+        deck:
+          'Gotowa synteza oszczędza czas, ale może też przejąć wybór źródeł, porównanie dowodów i część pracy, dzięki której uczeń buduje własny osąd.',
         lang: 'pl',
         doiLabel: 'DOI wersji angielskiej (v1.7):',
         conventionalSteps: ['Pytanie', 'Wybór źródeł', 'Porównanie', 'Synteza użytkownika', 'Odpowiedź'],
@@ -1640,6 +1643,7 @@ test.describe('published articles', () => {
         firstBoundary: 'Jak AI Overviews i AI Mode odpowiadały w testach',
         lastBoundary: 'Działanie wersji polskiej',
         practicalHeading: 'Do sprawdzenia przy następnym zadaniu',
+        method: 'synteza narracyjna',
         hasDirectDoi: false
       }
     ] as const;
@@ -1667,7 +1671,7 @@ test.describe('published articles', () => {
       ).toHaveAttribute('href', `https://promptedpsyche.com${testCase.alternate}`);
       await expect(page.locator(`.language-switcher a[href="${testCase.alternate}"]`)).toBeVisible();
       await expect(page.locator('[data-qa="consulting-cta"]')).toHaveCount(1);
-      await expect(page.locator('[data-qa="publication-method"]')).toContainText('narrative synthesis');
+      await expect(page.locator('[data-qa="publication-method"]')).toContainText(testCase.method);
 
       const byline = page.locator('[data-qa="article-byline"]');
       await expect(byline).toContainText(testCase.doiLabel);

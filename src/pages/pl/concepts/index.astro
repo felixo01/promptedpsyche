@@ -17,21 +17,27 @@ const filteredConcepts = selectedTag
   : concepts;
 const activeTagLabel =
   tags.find((tag) => normalizeTag(tag) === selectedTagNormalized) ?? selectedTag;
-const conceptCountLabel = `${filteredConcepts.length} ${
-  filteredConcepts.length === 1 ? 'hasło' : 'haseł'
-}`;
+const getConceptCountNoun = (count: number) => {
+  const lastDigit = count % 10;
+  const lastTwoDigits = count % 100;
+  if (count === 1) return 'hasło';
+  if (lastDigit >= 2 && lastDigit <= 4 && !(lastTwoDigits >= 12 && lastTwoDigits <= 14)) return 'hasła';
+  return 'haseł';
+};
+const conceptCountLabel = `${filteredConcepts.length} ${getConceptCountNoun(filteredConcepts.length)}`;
 const getTagHref = (tag: string) => `/pl/concepts/?${new URLSearchParams({ tag }).toString()}`;
 ---
 
 <BaseLayout
   lang="pl"
   title="Pojęcia"
-  description="Słownik pojęć Prompted Psyche o ludzkiej stronie AI."
+  description="Słownik Prompted Psyche: pojęcia potrzebne do rozmowy o AI, poznaniu, zaufaniu, komunikacji, odpowiedzialności i pracy człowieka z systemami."
 >
   <div
     class="lovable-page concepts-page"
     data-concept-filter-root
     data-count-singular="hasło"
+    data-count-few="hasła"
     data-count-plural="haseł"
   >
     <header class="lovable-page-hero">
@@ -125,7 +131,14 @@ const getTagHref = (tag: string) => `/pl/concepts/?${new URLSearchParams({ tag }
 
     const count = root.querySelector<HTMLElement>('[data-concept-count]');
     if (count) {
-      const suffix = visibleCount === 1 ? root.dataset.countSingular : root.dataset.countPlural;
+      const lastDigit = visibleCount % 10;
+      const lastTwoDigits = visibleCount % 100;
+      const usesFew = lastDigit >= 2 && lastDigit <= 4 && !(lastTwoDigits >= 12 && lastTwoDigits <= 14);
+      const suffix = visibleCount === 1
+        ? root.dataset.countSingular
+        : usesFew
+          ? root.dataset.countFew
+          : root.dataset.countPlural;
       count.textContent = `${visibleCount} ${suffix}`;
     }
 

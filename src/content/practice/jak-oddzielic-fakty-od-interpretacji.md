@@ -25,10 +25,10 @@ Ta praktyka dotyczy materiału: wiadomości e-mail, notatki, raportu, transkrypc
 ## Kiedy to pomaga
 
 - Przed decyzją opartą na wiadomościach e-mail, notatkach, raportach albo rozmowach.
-- Gdy materiał jest chaotyczny, emocjonalny albo obciąża poznawczo.
-- Gdy chcesz zmniejszyć pewność pierwszej interpretacji bez ignorowania emocji.
+- Gdy materiał jest chaotyczny, emocjonalny albo poznawczo obciążający.
+- Gdy chcesz poddać pierwszą interpretację krytycznej ocenie bez ignorowania emocji.
 - Gdy chcesz przygotować pytania do zespołu, klienta albo eksperta.
-- Gdy odpowiedź AI zawiera wnioski, ale nie pokazuje drogi dojścia.
+- Gdy odpowiedź AI zawiera wnioski, ale nie pokazuje sposobu ich wyprowadzenia.
 
 ## O co poprosić model
 

@@ -9,7 +9,7 @@ routeSlug: "cognitive-offloading"
 tags: ["poznanie", "praca", "używanie AI"]
 ---
 
-Cognitive offloading oznacza przenoszenie części pracy poznawczej na zewnętrzne narzędzia, systemy albo środowisko. Może obejmować zapisywanie, liczenie, wyszukiwanie, przypominanie albo generowanie szkiców z pomocą narzędzi. W kontekście AI ważne jest, żeby nie zakładać automatycznie, że każde odciążenie osłabia myślenie.
+Odciążenie poznawcze (*cognitive offloading*) oznacza przenoszenie części pracy poznawczej na zewnętrzne narzędzia, systemy albo środowisko. Może obejmować zapisywanie, liczenie, wyszukiwanie, przypominanie albo generowanie szkiców z pomocą narzędzi. W kontekście AI ważne jest, żeby nie zakładać automatycznie, że każde odciążenie osłabia myślenie.
 
 ## Dlaczego to ważne
 
@@ -20,7 +20,7 @@ Cognitive offloading oznacza przenoszenie części pracy poznawczej na zewnętrz
 
 ## Czego nie upraszczać
 
-Cognitive offloading nie jest automatyczną porażką myślenia. Nie jest też etykietą dla każdego użycia AI. Najważniejsze pytanie brzmi: jaka część pracy poznawczej przenosi się do narzędzia, co pozostaje po stronie człowieka i jakie sprawdzenia nadal są potrzebne.
+Odciążenie poznawcze nie jest automatyczną porażką myślenia. Nie jest też etykietą dla każdego użycia AI. Najważniejsze pytanie brzmi: jaka część pracy poznawczej przenosi się do narzędzia, co pozostaje po stronie człowieka i jakie sprawdzenia nadal są potrzebne.
 
 ## Źródła i kontekst
 

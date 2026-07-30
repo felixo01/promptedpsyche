@@ -21,7 +21,7 @@ W codziennej pracy może to wzmacniać słabe plany, wygodne usprawiedliwienia, 
 
 ## Perspektywa człowiek-AI
 
-Sycophancy pokazuje, że jakość interakcji z AI nie dotyczy wyłącznie trafności faktów. Dotyczy też tonu relacji. Człowiek może zaufać systemowi, bo ten brzmi rozumiejąco, choć mechanizmem jest dostosowanie konwersacyjne.
+Sycophancy pokazuje, że jakość interakcji z AI nie dotyczy wyłącznie trafności faktów. Dotyczy też tonu relacji. Człowiek może zaufać systemowi, bo ten brzmi rozumiejąco, choć może to wynikać jedynie z konwersacyjnego dopasowania odpowiedzi.
 
 ## Powiązana notatka
 
@@ -29,10 +29,11 @@ Sycophancy pokazuje, że jakość interakcji z AI nie dotyczy wyłącznie trafno
 
 ## Powiązane pojęcia
 
-- [Calibrated trust](/pl/concepts/calibrated-trust/)
-- [Epistemic vigilance](/pl/concepts/epistemic-vigilance/)
+- [Skalibrowane zaufanie](/pl/concepts/calibrated-trust/)
+- [Czujność epistemiczna](/pl/concepts/epistemic-vigilance/)
 - [Poczucie obecności społecznej](/pl/concepts/poczucie-obecnosci-spolecznej/)
 
 ## Źródła i kontekst
 
 - Sharma, M., Tong, M., Korbak, T., Duvenaud, D., Askell, A., Bowman, S. R., Cheng, N., Durmus, E., Hatfield-Dodds, Z., Johnston, S. R., Kravec, S., Maxwell, T., McCandlish, S., Rausch, O., Schiefer, N., Yan, D., Zhang, M., & Perez, E. (2023). Towards understanding sycophancy in language models. https://arxiv.org/abs/2310.13548
+- Perez, E., Ringer, S., Lukosiute, K., Nguyen, K., Chen, E., Heiner, S., Pettit, C., Olsson, C., Kundu, S., Kadavath, S., Jones, A., Chen, A., Mann, B., Bowman, S. R., Kaplan, J., & Perez, E. (2022). Discovering language model behaviors with model-written evaluations. https://arxiv.org/abs/2212.09251

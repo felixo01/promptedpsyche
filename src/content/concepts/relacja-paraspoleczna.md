@@ -11,7 +11,7 @@ routeSlug: "relacja-paraspoleczna"
 
 Relacja paraspołeczna to jednostronna więź, w której człowiek czuje związek z postacią medialną, twórcą, prezenterem, bohaterem albo personą, która nie zna go w taki sam sposób. Pojęcie pochodzi z badań nad mediami i pomaga opisywać poczucie bliskości wobec osób znanych z ekranu, radia, internetu albo kultury popularnej.
 
-AI komplikuje ten wzorzec, bo system może odpowiadać bezpośrednio. Chatbot zadaje pytania, dopasowuje język, pamięta fragmenty kontekstu rozmowy i szybko reaguje. Dlatego relacja może wydawać się mniej jednostronna, mimo że system nie odwzajemnia jej jak człowiek.
+W przypadku AI ten wzorzec staje się bardziej złożony, bo system może odpowiadać bezpośrednio. Chatbot zadaje pytania, dopasowuje język, nawiązuje do fragmentów kontekstu rozmowy i szybko reaguje. Dlatego relacja może wydawać się mniej jednostronna, mimo że system nie odwzajemnia jej jak człowiek.
 
 ## Dlaczego to ważne
 

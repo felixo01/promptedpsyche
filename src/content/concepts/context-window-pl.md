@@ -17,11 +17,11 @@ To ograniczenie techniczne, a nie trwała pamięć podobna do ludzkiej. Większe
 
 Użytkownik często doświadcza AI jako ciągłej rozmowy. Łatwo wtedy założyć, że system pamięta wszystko tak jak człowiek. W praktyce model może pracować tylko z tym, co jest dostępne w aktualnym kontekście i z tym, jak ten kontekst został ułożony.
 
-Przy długich dokumentach, researchu i pracy organizacyjnej limit kontekstu wpływa na to, co model może uwzględnić i co człowiek nadal musi sprawdzić.
+Przy długich dokumentach, pracy badawczej i pracy organizacyjnej limit kontekstu wpływa na to, co model może uwzględnić i co człowiek nadal musi sprawdzić.
 
 ## Perspektywa człowiek-AI
 
-Context window wpływa na zaufanie, bo zmienia to, co użytkownik sądzi o dostępie systemu do informacji. Jeśli ktoś zakłada, że "AI zna całą rozmowę", może nie zauważyć, co zostało pominięte, skrócone albo wypchnięte poza zakres.
+Wielkość okna kontekstu wpływa na zaufanie, bo zmienia to, co użytkownik sądzi o dostępie systemu do informacji. Jeśli ktoś zakłada, że "AI zna całą rozmowę", może nie zauważyć, co zostało pominięte, skrócone albo znalazło się poza zakresem.
 
 Zadaniem człowieka nie jest tylko promptowanie. Ważne jest też decydowanie, jaki kontekst ma znaczenie, co trzeba streścić i co wymaga niezależnej weryfikacji.
 
@@ -29,10 +29,10 @@ Zadaniem człowieka nie jest tylko promptowanie. Ważne jest też decydowanie, j
 
 - [Token](/pl/concepts/token/)
 - [LLM (duży model językowy)](/pl/concepts/llm/)
-- [Model output](/pl/concepts/model-output/)
-- [AI literacy](/pl/concepts/ai-literacy/)
-- [Cognitive offloading](/pl/concepts/cognitive-offloading/)
-- [Mental model](/pl/concepts/mental-model/)
+- [Odpowiedź modelu](/pl/concepts/model-output/)
+- [Kompetencje w pracy z AI](/pl/concepts/ai-literacy/)
+- [Odciążenie poznawcze](/pl/concepts/cognitive-offloading/)
+- [Model mentalny](/pl/concepts/mental-model/)
 
 ## Źródła i kontekst
 

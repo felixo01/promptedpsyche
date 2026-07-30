@@ -28,6 +28,7 @@ const {
   emptyLabel = label,
   emptyMessage = 'Public writing is being prepared.'
 } = Astro.props;
+const tagListLabel = basePath.startsWith('/pl') ? 'Tematy' : 'Topics';
 
 function getTagHref(tag: string) {
   return `${basePath}/?${new URLSearchParams({ tag }).toString()}`;
@@ -60,7 +61,7 @@ function getTagHref(tag: string) {
             </h2>
             <p>{entry.data.description}</p>
             {tags.length > 0 && (
-              <ul class="concept-tag-list" aria-label="Topics">
+              <ul class="concept-tag-list" aria-label={tagListLabel}>
                 {tags.map((tag) => (
                   <li data-qa="concept-tag">
                     <a

@@ -201,7 +201,7 @@ test.describe('topic hubs', () => {
       },
       {
         route: '/pl/topics/ai-i-myslenie/',
-        flagship: 'Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?',
+        flagship: 'Kiedy AI wspiera uczenie się, a kiedy tylko wyręcza?',
         flagshipHref: '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/',
         note: 'OpenAI, ChatGPT, GPT i LLM - czym się różnią?',
         noteHref: '/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/',
@@ -211,7 +211,8 @@ test.describe('topic hubs', () => {
         concept: 'LLM (duży model językowy)',
         contextPractice: 'Jak sprawdzić, czy model ma potrzebny kontekst',
         contextPracticeHref: '/pl/practice/jak-sprawdzic-czy-model-ma-wystarczajacy-kontekst/',
-        generativeSearchArticle: 'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?',
+        generativeSearchArticle:
+          'Jak zmienia się proces uczenia się, gdy wyszukiwarka podaje gotową odpowiedź?',
         generativeSearchHref: '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/'
       }
     ];

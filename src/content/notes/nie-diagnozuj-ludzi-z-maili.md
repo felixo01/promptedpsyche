@@ -28,7 +28,7 @@ Można analizować wiadomość. Można sprawdzić, które zdania są niejasne, k
 
 Czym innym jest diagnozowanie osoby. Stwierdzenia typu "ta osoba manipuluje", "jest pasywno-agresywna", "ma problem z odpowiedzialnością" albo "chce cię sprowokować" mogą brzmieć przekonująco, ale często wykraczają poza materiał, którym dysponujemy.
 
-W pracy z AI ta granica robi się łatwa do przeoczenia, bo model potrafi nazwać zachowanie bardzo płynnie. Może napisać analizę, która brzmi jak spokojna ocena eksperta. Nadal jednak pracuje na fragmencie komunikacji, nie na całym człowieku.
+W pracy z AI łatwo przeoczyć tę granicę, bo model potrafi nazwać zachowanie bardzo płynnie. Może napisać analizę, która brzmi jak spokojna ocena eksperta. Nadal jednak pracuje na fragmencie komunikacji, nie na całym człowieku.
 
 ## AI może pomóc inaczej
 
@@ -36,11 +36,11 @@ Lepsze użycie AI nie polega na tym, żeby wydać werdykt o nadawcy. Polega na t
 
 Model może pomóc oddzielić fakty od interpretacji. Może wypisać możliwe odczytania wiadomości. Może wskazać, czego nie wiemy. Może sprawdzić, czy nasza odpowiedź nie eskaluje napięcia. Może zaproponować pytania doprecyzowujące, które zmniejszają ryzyko błędnego odczytania.
 
-To szczególnie ważne w [AI-mediated communication](/pl/concepts/ai-mediated-communication/), czyli komunikacji między ludźmi wspieranej lub przekształcanej przez systemy AI. Jeśli model pomaga nam pisać odpowiedź, wpływa na ton rozmowy. Tym bardziej trzeba pilnować, czy nie wzmacnia naszej pierwszej, emocjonalnej interpretacji.
+To szczególnie ważne w [komunikacji zapośredniczonej przez AI](/pl/concepts/ai-mediated-communication/), czyli komunikacji między ludźmi wspieranej lub przekształcanej przez systemy AI. Jeśli model pomaga nam pisać odpowiedź, wpływa na ton rozmowy. Tym bardziej trzeba pilnować, czy nie wzmacnia naszej pierwszej, emocjonalnej interpretacji.
 
-Pomaga tu [calibrated trust](/pl/concepts/calibrated-trust/): zaufanie dopasowane do sytuacji. Można zaufać modelowi przy porządkowaniu argumentów bardziej niż przy ocenie czyjejś intencji. Można użyć go do sprawdzenia klarowności tekstu, ale nie jako narzędzia do psychologicznego portretu nadawcy.
+Pomaga tu [skalibrowane zaufanie](/pl/concepts/calibrated-trust/), czyli zaufanie dopasowane do sytuacji. Można zaufać modelowi przy porządkowaniu argumentów bardziej niż przy ocenie czyjejś intencji. Można użyć go do sprawdzenia klarowności tekstu, ale nie jako narzędzia do psychologicznego portretu nadawcy.
 
-[Epistemic vigilance](/pl/concepts/epistemic-vigilance/) dodaje jeszcze jedno pytanie: czy ta interpretacja wynika z wiadomości, czy z mojej reakcji na wiadomość? To proste zatrzymanie często wystarcza, żeby odpowiedź była bardziej odpowiedzialna.
+[Czujność epistemiczna](/pl/concepts/epistemic-vigilance/) dodaje jeszcze jedno pytanie: czy ta interpretacja wynika z wiadomości, czy z mojej reakcji na wiadomość? To proste zatrzymanie często wystarcza, żeby odpowiedź była bardziej odpowiedzialna.
 
 ## Granica
 

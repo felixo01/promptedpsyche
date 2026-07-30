@@ -15,11 +15,11 @@ Sprawczość może słabnąć nawet wtedy, gdy formalnie człowiek pozostaje "w 
 
 ## Dlaczego to ważne
 
-AI często obiecuje szybkość i uproszczenie. To są realne korzyści, ale mogą przesuwać osąd poza osobę korzystającą z narzędzia. Zachowanie sprawczości oznacza projektowanie pracy tak, aby ludzie mieli czas, prawo i kompetencje do oceny.
+Narzędzia AI są często przedstawiane jako sposób na przyspieszenie i uproszczenie pracy. To są realne korzyści, ale mogą ograniczać udział osoby korzystającej z narzędzia w ocenie. Zachowanie sprawczości oznacza projektowanie pracy tak, aby ludzie mieli czas, prawo i kompetencje do oceny.
 
 ## Perspektywa człowiek-AI
 
-Sprawczość człowieka nie jest postawą antytechnologiczną. To warunek, w którym technologia pozostaje narzędziem, a człowiek nie staje się tylko biernym zatwierdzającym. Celem nie jest odrzucanie AI, lecz utrzymanie ludzkiego osądu tam, gdzie ma znaczenie.
+Sprawczość człowieka nie jest postawą antytechnologiczną. To warunek tego, by technologia pozostawała narzędziem, a człowiek nie stawał się tylko biernym zatwierdzającym. Celem nie jest odrzucanie AI, lecz utrzymanie ludzkiego osądu tam, gdzie ma znaczenie.
 
 ## Powiązane pojęcia
 

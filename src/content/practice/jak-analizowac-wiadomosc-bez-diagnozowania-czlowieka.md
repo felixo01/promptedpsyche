@@ -1,6 +1,6 @@
 ---
 title: "Jak analizować wiadomość bez diagnozowania człowieka"
-description: "Praktyka porządkowania trudnej wiadomości z AI bez diagnozowania nadawcy, czytania intencji ani oddawania modelowi odpowiedzialności za odpowiedź."
+description: "Praktyka porządkowania trudnej wiadomości z AI bez diagnozowania nadawcy, odgadywania intencji ani oddawania modelowi odpowiedzialności za odpowiedź."
 publishedAt: 2026-07-03
 draft: false
 tags:
@@ -18,7 +18,7 @@ category: "Praktyka"
 
 AI może pomóc uporządkować trudną wiadomość e-mail, wypowiedź klienta albo napiętą rozmowę. Może też zbyt łatwo popchnąć użytkownika w stronę psychologizowania osoby po drugiej stronie: "manipuluje", "jest narcystyczna", "ma ukrytą intencję", "na pewno chce mnie zaatakować".
 
-Ta praktyka stawia prostą granicę: analizujemy widoczny tekst, stawkę sytuacji i brakujący kontekst, nie diagnozujemy człowieka. Celem jest przygotowanie roboczej odpowiedzi, ograniczenie dopisywania intencji i zostawienie odpowiedzialności po stronie osoby, która ostatecznie decyduje, co napisać.
+Ta praktyka stawia prostą granicę: analizujemy widoczny tekst, wagę sytuacji i brakujący kontekst, nie diagnozujemy człowieka. Celem jest przygotowanie roboczej odpowiedzi, ograniczenie dopisywania intencji i pozostawienie odpowiedzialności po stronie osoby, która ostatecznie decyduje, co napisać.
 
 To pomaga przygotować reakcję, ale nie ustala, co ktoś "naprawdę" miał na myśli.
 
@@ -79,7 +79,7 @@ Ta praktyka jest ważna w [komunikacji zapośredniczonej przez AI](/pl/concepts/
 
 Użyj AI, żeby zobaczyć tekst, możliwe odczytania i brakujący kontekst. Nie używaj AI, żeby rozstrzygnąć, jaki ktoś "naprawdę" jest, co "naprawdę" czuje albo jaką ma ukrytą intencję.
 
-W sprawach przemocy, przymusu, nękania, ryzyka prawnego, szkody w miejscu pracy, pilnego zagrożenia albo silnego konfliktu potrzebne są właściwe procedury i ludzie, nie tylko AI.
+W sprawach przemocy, przymusu, nękania, ryzyka prawnego, problemów w miejscu pracy, pilnego zagrożenia albo silnego konfliktu potrzebne są właściwe procedury i ludzie, nie tylko AI.
 
 ## Powiązane pojęcia
 

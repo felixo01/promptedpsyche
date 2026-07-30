@@ -24,7 +24,7 @@ AI może pomóc. Może uporządkować możliwe odczytania, nazwać niejasne miej
 
 Mail jest fragmentem sytuacji. Komentarz w dokumencie jest fragmentem sytuacji. Wiadomość na czacie też jest fragmentem sytuacji. Nawet jeśli wygląda na kompletną, zwykle nie zawiera pełnej historii współpracy, tonu spotkań, wcześniejszych ustaleń, układu organizacyjnego ani tego, czego nikt nie powiedział wprost.
 
-Model pracuje w granicach [context window](/pl/concepts/context-window/). To znaczy, że jego odpowiedź zależy od tekstu, który dostał, od instrukcji użytkownika i od dostępnego kontekstu. Jeśli czegoś nie ma w tym materiale, model może to najwyżej zasugerować jako hipotezę. Nie może tego wiedzieć.
+Model pracuje w granicach [okna kontekstu](/pl/concepts/context-window/). To znaczy, że jego odpowiedź zależy od tekstu, który dostał, od instrukcji użytkownika i od dostępnego kontekstu. Jeśli czegoś nie ma w tym materiale, model może to najwyżej zasugerować jako hipotezę. Nie może tego wiedzieć.
 
 Dlatego [model output](/pl/concepts/model-output/) w analizie korespondencji trzeba traktować jako pomoc w myśleniu, nie jako prawdę o relacji. Odpowiedź może brzmieć pewnie, spokojnie i psychologicznie. Może nawet trafić w coś ważnego. Nadal pozostaje interpretacją na podstawie ograniczonego materiału.
 
@@ -34,7 +34,7 @@ To ograniczenie jest szczególnie ważne w konfliktach. Im większe napięcie, t
 
 Największe ryzyko pojawia się wtedy, gdy spójna odpowiedź zaczyna wyglądać jak trafna odpowiedź. AI może zebrać kilka zdań, dodać prawdopodobne tło i stworzyć narrację, która brzmi jak diagnoza sytuacji. To bywa wygodne, bo zmniejsza niepewność. Ale niepewność nie znika tylko dlatego, że tekst został ładnie uporządkowany.
 
-Własny [mental model](/pl/concepts/mental-model/) sytuacji także wpływa na to, jak czytamy odpowiedź modelu. Jeśli już podejrzewamy, że ktoś unika odpowiedzialności, łatwiej przyjąć interpretację, która to potwierdza. Jeśli czujemy się atakowani, łatwiej zobaczyć atak tam, gdzie jest formalność, stres albo nieprecyzyjny styl.
+Własny [model mentalny](/pl/concepts/mental-model/) sytuacji także wpływa na to, jak czytamy odpowiedź modelu. Jeśli już podejrzewamy, że ktoś unika odpowiedzialności, łatwiej przyjąć interpretację, która to potwierdza. Jeśli czujemy się atakowani, łatwiej zobaczyć atak tam, gdzie jest formalność, stres albo nieprecyzyjny styl.
 
 Właśnie tu potrzebna jest [epistemic vigilance](/pl/concepts/epistemic-vigilance/): czujność wobec informacji i wobec własnych interpretacji. Nie chodzi o nieufność wobec wszystkiego. Chodzi o proste pytanie: skąd wiem to, co wydaje mi się oczywiste?
 

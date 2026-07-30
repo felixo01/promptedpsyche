@@ -74,7 +74,7 @@ Ten prompt pomaga rozdzielić jakość językową od statusu poznawczego [odpowi
 
 ## Krótka zasada
 
-Płynność jest sygnałem formy, nie dowodem prawdy. Im ważniejsza decyzja, tym szybciej sprawdzanie musi wyjść poza model.
+Płynność jest sygnałem formy, nie dowodem prawdy. Im ważniejsza decyzja, tym szybciej trzeba sięgnąć do źródeł poza rozmową z modelem.
 
 ## Powiązane pojęcia
 

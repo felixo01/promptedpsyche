@@ -27,11 +27,11 @@ W organizacjach znaczenie ma także wspólny model mentalny. Zespoły potrzebuj�
 
 ## Powiązane pojęcia
 
-- [AI literacy](/pl/concepts/ai-literacy/)
-- [Calibrated trust](/pl/concepts/calibrated-trust/)
+- [Kompetencje w pracy z AI](/pl/concepts/ai-literacy/)
+- [Skalibrowane zaufanie](/pl/concepts/calibrated-trust/)
 - [Anthropomorphism](/pl/concepts/antropomorfizacja/)
-- [Context window](/pl/concepts/context-window/)
-- [Model output](/pl/concepts/model-output/)
+- [Okno kontekstu](/pl/concepts/context-window/)
+- [Odpowiedź modelu](/pl/concepts/model-output/)
 
 ## Źródła i kontekst
 

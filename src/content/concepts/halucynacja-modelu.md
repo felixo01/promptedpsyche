@@ -9,9 +9,9 @@ translationKey: "hallucination"
 routeSlug: "halucynacja-modelu"
 ---
 
-Halucynacja modelu to sytuacja, w której system AI generuje odpowiedź brzmiącą wiarygodnie, ale częściowo albo całkowicie nieopartą na dostępnych danych. Może to być zmyślony fakt, nieistniejące źródło, błędne streszczenie, fałszywa nazwa, pozorna przyczyna albo pewne siebie uogólnienie.
+Halucynacja modelu to sytuacja, w której system AI generuje odpowiedź brzmiącą wiarygodnie, ale częściowo albo całkowicie nieopartą na dostępnych danych. Może to być zmyślony fakt, nieistniejące źródło, błędne streszczenie, fałszywa nazwa, pozorna przyczyna albo kategoryczne uogólnienie.
 
-To pojęcie jest użyteczne, ale wymaga ostrożności. Halucynacja modelu nie jest halucynacją człowieka w sensie klinicznym. Model nie widzi, nie wierzy i nie ma przeżyć. Generuje tekst na podstawie wzorców, kontekstu i prawdopodobieństwa. Problem polega na tym, że odpowiedź może wyglądać na gotową poznawczo, zanim została naprawdę sprawdzona.
+To pojęcie jest użyteczne, ale wymaga ostrożności. Halucynacja modelu nie jest halucynacją człowieka w sensie klinicznym. Model nie widzi, nie wierzy i nie ma przeżyć. Generuje tekst na podstawie wzorców, kontekstu i prawdopodobieństwa. Problem polega na tym, że odpowiedź może wyglądać na w pełni uzasadnioną, zanim została naprawdę sprawdzona.
 
 ## Dlaczego to ważne
 
@@ -25,8 +25,8 @@ Halucynacja modelu pokazuje, że ludzie oceniają nie tylko fakty. Reagują też
 
 ## Powiązane pojęcia
 
-- [Model output](/pl/concepts/model-output/)
-- [Epistemic vigilance](/pl/concepts/epistemic-vigilance/)
+- [Odpowiedź modelu](/pl/concepts/model-output/)
+- [Czujność epistemiczna](/pl/concepts/epistemic-vigilance/)
 - [Grounding: oparcie odpowiedzi na źródłach](/pl/concepts/oparcie-odpowiedzi-na-zrodlach/)
 
 ## Źródła i kontekst

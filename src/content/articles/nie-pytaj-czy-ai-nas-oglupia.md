@@ -1,6 +1,6 @@
 ---
-title: "Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?"
-description: "Badania nad generatywną AI pokazują, że dobry wynik uzyskany z pomocą nie musi oznaczać, że osoba ucząca się potrafi później wykonać podobne zadanie samodzielnie. Znaczenie ma także forma wsparcia: gotowe rozwiązanie, podpowiedź lub informacja zwrotna."
+title: "Kiedy AI wspiera uczenie się, a kiedy tylko wyręcza?"
+description: "Kiedy pomoc AI wspiera uczenie się przez własną próbę, podpowiedzi i informację zwrotną, a kiedy gotowa odpowiedź poprawia tylko bieżący wynik."
 publishedAt: 2026-07-14
 draft: false
 tags:
@@ -150,7 +150,7 @@ W randomizowanym badaniu terenowym Hamsy Bastani i współautorów prawie tysią
 
 Preprint Grace Liu i współautorów opisuje trzy krótkie randomizowane eksperymenty z zadaniami na ułamkach. Uczestnicy mogli używać AI podczas części ćwiczeń, a następnie bez uprzedzenia tracili dostęp do narzędzia. We wszystkich trzech eksperymentach grupa korzystająca wcześniej z AI rozwiązywała mniej zadań na etapie samodzielnym. W dwóch częściej je pomijała. W jednym eksperymencie odsetek poprawnych rozwiązań po odebraniu pomocy wyniósł 57 procent w grupie AI i 73 procent w grupie kontrolnej. W trzecim było to 76 i 89 procent (Liu et al., 2026). To bezpośredni sygnał krótkoterminowego pogorszenia samodzielnego wykonania, ale nie dowód trwałej erozji kompetencji.
 
-Inne prace pokazują słabsze zapamiętywanie własnego tekstu, związki między deklarowanym użyciem AI, odciążeniem poznawczym i wynikami miar krytycznego myślenia (Gerlich, 2025), a także większe podobieństwo materiałów twórczych. Te wyniki nie pozwalają powiedzieć, że każdy użytkownik traci zdolności. Wystarczają jednak, by odrzucić wygodne założenie, że dobra odpowiedź zawsze oznacza skuteczne uczenie się.
+Inne prace pokazują słabsze zapamiętywanie własnego tekstu, związki między deklarowanym użyciem AI, odciążeniem poznawczym i wynikami w miarach krytycznego myślenia (Gerlich, 2025), a także większe podobieństwo materiałów twórczych. Te wyniki nie pozwalają powiedzieć, że każdy użytkownik traci zdolności. Wystarczają jednak, by odrzucić wygodne założenie, że dobra odpowiedź zawsze oznacza skuteczne uczenie się.
 
 ## Słowo „głupsi” nie opisuje jednej zmiennej
 
@@ -244,7 +244,7 @@ Preprint Liu i współautorów dodaje obserwację dotyczącą strategii użytkow
       </tbody>
     </table>
   </div>
-  <figcaption>Najlepiej uzasadniony wniosek nie brzmi, że AI jest dobra albo zła dla nauki. Różne sposoby udzielania pomocy zachowują lub zastępują różne części ludzkiej pracy.</figcaption>
+  <figcaption>Najlepiej uzasadniony wniosek nie brzmi, że AI jest dobra albo zła dla uczenia się. Różne sposoby udzielania pomocy zachowują lub zastępują różne części ludzkiej pracy.</figcaption>
 </figure>
 
 ## Kreatywność może wzrosnąć, a różnorodność spaść

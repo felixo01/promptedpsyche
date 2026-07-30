@@ -14,8 +14,8 @@ Błąd automatyzacji nie oznacza, że ludzie zawsze ślepo ufają systemom. Chod
 ## Dlaczego to ważne
 
 - Pomaga opisać ryzyko zbyt szybkiego przyjęcia sugestii systemu.
-- Łączy AI literacy, nadzór ze strony człowieka i calibrated trust.
-- Pokazuje, że ryzyko wynika nie tylko z systemu, ale także z relacji między osobą, zadaniem i workflow.
+- Łączy kompetencje w pracy z AI, nadzór ze strony człowieka i skalibrowane zaufanie.
+- Pokazuje, że ryzyko wynika nie tylko z systemu, ale także z relacji między osobą, zadaniem i procesem pracy.
 - Jest szczególnie ważny, gdy odpowiedź AI wpływa na decyzję o większej stawce.
 
 ## Czego nie upraszczać

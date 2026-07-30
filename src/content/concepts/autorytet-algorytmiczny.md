@@ -19,15 +19,16 @@ Autorytet algorytmiczny może pomagać, jeśli porządkuje dane, wzorce i wspól
 
 ## Perspektywa człowiek-AI
 
-Ludzka strona autorytetu algorytmicznego nie zawsze wygląda jak ślepe posłuszeństwo. Częściej są to drobne akty uległości: mniejszy opór wobec rekomendacji, mniej pytań o podstawy albo poczucie, że system już wykonał trudne myślenie.
+Ludzka strona autorytetu algorytmicznego nie zawsze wygląda jak ślepe posłuszeństwo. Częściej przejawia się jako mniejsza skłonność do kwestionowania rekomendacji, rzadsze pytania o podstawy albo poczucie, że system już wykonał trudne myślenie.
 
 ## Powiązane pojęcia
 
-- [Calibrated trust](/pl/concepts/calibrated-trust/)
+- [Skalibrowane zaufanie](/pl/concepts/calibrated-trust/)
 - [Wspomaganie decyzji](/pl/concepts/wspomaganie-decyzji/)
-- [Epistemic vigilance](/pl/concepts/epistemic-vigilance/)
+- [Czujność epistemiczna](/pl/concepts/epistemic-vigilance/)
 
 ## Źródła i kontekst
 
 - Shirky, C. (2009). A speculative post on the idea of algorithmic authority. https://stoweboyd.medium.com/a-speculative-post-on-the-idea-of-algorithmic-authority-clay-shirky-c248019a0921
+- Logg, J. M., Minson, J. A., & Moore, D. A. (2019). Algorithm appreciation: People prefer algorithmic to human judgment. *Organizational Behavior and Human Decision Processes, 151*, 90-103. https://doi.org/10.1016/j.obhdp.2018.12.005
 - Kreft, J. (2019). *Władza algorytmów. U źródeł potęgi Google i Facebooka.* Wydawnictwo Uniwersytetu Jagiellońskiego. https://wuj.pl/ksiazka/wladza-algorytmow-u-zrodel-potegi-google-i-facebooka
