@@ -137,7 +137,8 @@ test.describe('local search', () => {
     expect(plIndex).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          title: 'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?',
+          title:
+            'Jak zmienia się proces uczenia się, gdy wyszukiwarka podaje gotową odpowiedź?',
           url: '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/',
           type: 'article'
         }),
@@ -147,7 +148,7 @@ test.describe('local search', () => {
           type: 'article'
         }),
         expect.objectContaining({
-          title: 'Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?',
+          title: 'Kiedy AI wspiera uczenie się, a kiedy tylko wyręcza?',
           url: '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/',
           type: 'article'
         }),

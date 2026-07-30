@@ -23,13 +23,14 @@ const aiThinkingEnglishArticleRoute = '/articles/dont-ask-whether-ai-makes-us-du
 const generativeSearchPolishArticleRoute =
   '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/';
 const generativeSearchEnglishArticleRoute = '/articles/when-search-becomes-an-answer/';
-const generativeSearchPolishArticleTitle = 'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?';
+const generativeSearchPolishArticleTitle =
+  'Jak zmienia się proces uczenia się, gdy wyszukiwarka podaje gotową odpowiedź?';
 const generativeSearchEnglishArticleTitle =
   'When Search Becomes an Answer: What Generative AI Changes About Learning';
 const generativeSearchEnglishDoi = '10.5281/zenodo.21491639';
 const generativeSearchEnglishDoiUrl = `https://doi.org/${generativeSearchEnglishDoi}`;
 const aiThinkingPolishArticleTitle =
-  'Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?';
+  'Kiedy AI wspiera uczenie się, a kiedy tylko wyręcza?';
 const aiThinkingEnglishArticleTitle =
   "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing";
 const aiThinkingEnglishDoi = '10.5281/zenodo.21358687';
@@ -1633,7 +1634,8 @@ test.describe('published articles', () => {
         route: generativeSearchPolishArticleRoute,
         alternate: generativeSearchEnglishArticleRoute,
         title: generativeSearchPolishArticleTitle,
-        deck: 'O generatywnym wyszukiwaniu, źródłach i pracy potrzebnej do uczenia się',
+        deck:
+          'Gotowa synteza oszczędza czas, ale może też przejąć wybór źródeł, porównanie dowodów i część pracy, dzięki której uczeń buduje własny osąd.',
         lang: 'pl',
         doiLabel: 'DOI wersji angielskiej (v1.7):',
         conventionalSteps: ['Pytanie', 'Wybór źródeł', 'Porównanie', 'Synteza użytkownika', 'Odpowiedź'],

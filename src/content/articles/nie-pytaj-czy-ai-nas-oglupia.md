@@ -1,6 +1,6 @@
 ---
-title: "Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?"
-description: "Co badania mówią o wpływie gotowych odpowiedzi AI na samodzielne wykonywanie zadań, uczenie się oraz znaczenie różnych form wsparcia."
+title: "Kiedy AI wspiera uczenie się, a kiedy tylko wyręcza?"
+description: "Kiedy pomoc AI wspiera uczenie się przez własną próbę, podpowiedzi i informację zwrotną, a kiedy gotowa odpowiedź poprawia tylko bieżący wynik."
 publishedAt: 2026-07-14
 draft: false
 tags:

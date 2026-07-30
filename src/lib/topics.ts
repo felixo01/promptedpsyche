@@ -169,13 +169,13 @@ const pl = {
     ),
     cognition: resource(
       'article',
-      'Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?',
-      'Ostrożne rozróżnienie między wynikiem zadania, uczeniem się, utrwaleniem wiedzy i transferem, gdy AI staje się częścią procesu.',
+      'Kiedy AI wspiera uczenie się, a kiedy tylko wyręcza?',
+      'Co badania pokazują o różnicy między wykonaniem zadania a uczeniem się oraz o roli podpowiedzi, informacji zwrotnej i wycofywania wsparcia.',
       '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/'
     ),
     generativeSearch: resource(
       'article',
-      'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?',
+      'Jak zmienia się proces uczenia się, gdy wyszukiwarka podaje gotową odpowiedź?',
       'Jak generatywne wyszukiwanie zmienia podział pracy przy wyborze źródeł, porównaniu i syntezie oraz co może to oznaczać dla uczenia się i sprawczości epistemicznej.',
       '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/'
     ),
