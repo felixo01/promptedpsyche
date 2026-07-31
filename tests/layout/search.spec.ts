@@ -22,6 +22,8 @@ const practiceTitles = [
 const draftTitles = [
   'AI Literacy Is Not Prompt Engineering',
   "Why People Trust AI Even When They Shouldn't",
+  'Who Had the Final Say? Authorship in AI-Assisted Creative Work',
+  'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI',
   'We Prompt Machines. Machines Prompt Us Back',
   'What Is Cyberpsychology of AI?'
 ];

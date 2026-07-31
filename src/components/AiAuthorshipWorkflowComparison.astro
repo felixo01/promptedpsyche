@@ -1,0 +1,285 @@
+---
+type Locale = 'en' | 'pl';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const copy = {
+  en: {
+    title: 'Two AI-assisted workflows',
+    description:
+      'Two bundled scenarios from the study, shown as sequences of decisions and actions.',
+    lanes: [
+      {
+        title: 'Human-directed workflow',
+        steps: ['original idea', 'AI-generated alternatives', 'selection', 'substantial revision', 'final decision']
+      },
+      {
+        title: 'Near-final AI output',
+        steps: ['short brief', 'first AI output', 'minor edits', 'submission']
+      }
+    ],
+    caption:
+      'Both workflows involve AI, but they differ in idea origin, selection, revision and final decision authority.',
+    caveat:
+      'The diagram represents two bundled vignettes used in the study. It is not a validated model of authorship and does not isolate the causal effect of any single component.',
+    source: 'Source: Supplementary Appendix A, section A8.'
+  },
+  pl: {
+    title: 'Dwa sposoby pracy z AI',
+    description:
+      'Dwa złożone scenariusze z badania, przedstawione jako sekwencje decyzji i działań.',
+    lanes: [
+      {
+        title: 'Proces kierowany przez człowieka',
+        steps: ['własny pomysł', 'warianty AI', 'selekcja', 'istotna rewizja', 'finalna decyzja']
+      },
+      {
+        title: 'Niemal gotowy wynik AI',
+        steps: ['krótki brief', 'pierwszy wynik AI', 'drobne poprawki', 'przekazanie pracy']
+      }
+    ],
+    caption:
+      'Oba sposoby pracy obejmują AI, ale różnią się źródłem pomysłu, selekcją, zakresem zmian i finalną władzą decyzyjną.',
+    caveat:
+      'Schemat odtwarza dwa złożone scenariusze wykorzystane w badaniu. Nie jest zwalidowanym modelem autorstwa i nie pokazuje osobnych skutków przyczynowych każdego elementu.',
+    source: 'Źródło: Supplementary Appendix A, sekcja A8.'
+  }
+} as const;
+
+const t = copy[lang];
+const titleId = `ai-authorship-workflow-title-${lang}`;
+const descriptionId = `ai-authorship-workflow-description-${lang}`;
+---
+
+<figure
+  class="workflow-comparison"
+  data-qa="ai-authorship-workflow-comparison"
+  aria-labelledby={titleId}
+  aria-describedby={descriptionId}
+>
+  <h3 id={titleId}>{t.title}</h3>
+  <p id={descriptionId} class="workflow-comparison__description">{t.description}</p>
+
+  <div class="workflow-comparison__lanes">
+    {t.lanes.map((lane, laneIndex) => (
+      <section
+        class:list={[
+          'workflow-lane',
+          laneIndex === 0 ? 'workflow-lane--human' : 'workflow-lane--near-final'
+        ]}
+        aria-labelledby={`ai-authorship-workflow-${lang}-${laneIndex + 1}`}
+      >
+        <h4 id={`ai-authorship-workflow-${lang}-${laneIndex + 1}`}>{lane.title}</h4>
+        <ol role="list" style={`--step-count: ${lane.steps.length}`}>
+          {lane.steps.map((step, stepIndex) => (
+            <li>
+              <span class="workflow-lane__marker" aria-hidden="true">{stepIndex + 1}</span>
+              <span class="workflow-lane__label">{step}</span>
+              {stepIndex < lane.steps.length - 1 && (
+                <span class="workflow-lane__arrow" aria-hidden="true">→</span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))}
+  </div>
+
+  <figcaption>
+    <span>{t.caption}</span>
+    <span class="workflow-comparison__caveat">{t.caveat}</span>
+    <span class="workflow-comparison__source">{t.source}</span>
+  </figcaption>
+</figure>
+
+<style>
+  .workflow-comparison {
+    box-sizing: border-box;
+    width: min(66rem, calc(100vw - 2rem));
+    max-width: calc(100vw - 2rem);
+    margin-block: 2.6rem;
+    margin-inline: 50%;
+    padding: clamp(1rem, 2.5vw, 1.7rem);
+    transform: translateX(-50%);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--accent-soft) 28%, var(--surface));
+    overflow-wrap: anywhere;
+  }
+
+  .workflow-comparison h3 {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: clamp(1.3rem, 1.7vw, 1.7rem);
+    line-height: 1.25;
+  }
+
+  .workflow-comparison__description {
+    max-width: 72ch;
+    margin: 0.55rem 0 0;
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .workflow-comparison__lanes {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .workflow-lane {
+    min-width: 0;
+    border: 1px solid var(--line-strong);
+    border-left: 0.25rem solid var(--accent);
+    border-radius: var(--radius);
+    background: var(--surface);
+    padding: 1rem;
+  }
+
+  .workflow-lane--near-final {
+    border-style: dashed;
+    border-left-style: solid;
+  }
+
+  .workflow-lane h4 {
+    margin: 0 0 0.8rem;
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.035em;
+    line-height: 1.45;
+    text-transform: uppercase;
+  }
+
+  .workflow-lane ol {
+    display: grid;
+    grid-template-columns: repeat(var(--step-count), minmax(0, 1fr));
+    gap: 1.8rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .workflow-lane li {
+    position: relative;
+    display: grid;
+    min-width: 0;
+    min-height: 4.8rem;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 0.55rem;
+    border: 1px solid var(--line-strong);
+    border-radius: calc(var(--radius) * 0.75);
+    background: color-mix(in srgb, var(--surface) 83%, var(--accent-soft));
+    padding: 0.7rem;
+    font-size: 0.92rem;
+    line-height: 1.38;
+  }
+
+  .workflow-lane__marker {
+    display: grid;
+    width: 1.75rem;
+    height: 1.75rem;
+    place-items: center;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .workflow-lane--near-final .workflow-lane__marker {
+    border-radius: 0.2rem;
+  }
+
+  .workflow-lane__label {
+    min-width: 0;
+  }
+
+  .workflow-lane__arrow {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 0.45rem);
+    width: 0.9rem;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 1.2rem;
+    line-height: 1;
+    text-align: center;
+  }
+
+  figcaption {
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 1rem;
+    color: var(--text-soft);
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .workflow-comparison__caveat {
+    border-left: 0.18rem solid var(--line-strong);
+    padding-left: 0.75rem;
+  }
+
+  .workflow-comparison__source {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+  }
+
+  @media (max-width: 820px) {
+    .workflow-comparison {
+      width: 100%;
+      max-width: 100%;
+      margin-inline: 0;
+      transform: none;
+    }
+
+    .workflow-lane ol {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .workflow-lane li {
+      width: 100%;
+      min-height: 0;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    .workflow-lane__arrow {
+      top: calc(100% + 0.35rem);
+      left: 50%;
+      width: auto;
+      transform: translateX(-50%) rotate(90deg);
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .workflow-comparison,
+    .workflow-lane {
+      padding: 0.8rem;
+    }
+  }
+
+  @media print {
+    .workflow-comparison {
+      width: 100%;
+      max-width: 100%;
+      margin-inline: 0;
+      transform: none;
+      break-inside: avoid;
+      background: transparent;
+    }
+  }
+</style>
