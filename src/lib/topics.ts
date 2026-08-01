@@ -89,6 +89,12 @@ const en = {
       'An essay on causal contribution, moral agency, distributed responsibility and the institutional uses of AI as an alibi.',
       '/articles/are-we-afraid-of-ai-or-of-ourselves/'
     ),
+    authorship: resource(
+      'article',
+      'Who Had the Final Say? Authorship in AI-Assisted Creative Work',
+      'How perceived authorship differs between two AI-assisted workflows, and why direction, selection, revision and final decision authority reveal more than a percentage of AI involvement.',
+      '/articles/who-had-the-final-say-ai-authorship/'
+    ),
     literacy: resource(
       'article',
       'It is not just about the prompt',
@@ -184,6 +190,12 @@ const pl = {
       'Czy boimy się AI, czy boimy się samych siebie?',
       'Esej o udziale przyczynowym, podmiotowości moralnej, rozproszonej odpowiedzialności i instytucjonalnym użyciu AI jako alibi.',
       '/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/'
+    ),
+    authorship: resource(
+      'article',
+      'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI',
+      'Jak postrzegane autorstwo różni się między dwoma sposobami pracy z AI i dlaczego kierunek, selekcja, rewizja oraz ostatnie słowo mówią więcej niż procentowy udział narzędzia.',
+      '/pl/articles/kto-mial-ostatnie-slowo-autorstwo-ai/'
     ),
     literacy: resource(
       'article',
@@ -437,8 +449,8 @@ const topicHubs: Record<Locale, TopicHub[]> = {
       startIntro: 'The main essay develops the difference between AI as an amplifier, a moral buffer and a moral alibi, while preserving real limits of human control.',
       start: en.articles.agency,
       articlesTitle: 'Articles',
-      articlesIntro: 'The related essays extend responsibility from organizational decisions to interpretation and epistemic reliance.',
-      articles: [en.articles.agency, en.articles.interpretation, en.articles.trust],
+      articlesIntro: 'The related essays extend responsibility from organizational decisions to creative work, interpretation and epistemic reliance.',
+      articles: [en.articles.agency, en.articles.authorship, en.articles.interpretation, en.articles.trust],
       conceptsTitle: 'Concepts',
       conceptsIntro: 'These entries clarify the roles of agency, oversight, decision support and misplaced computational authority.',
       concepts: [en.concepts.humanAgency, en.concepts.humanOversight, en.concepts.decisionSupport, en.concepts.algorithmicAuthority, en.concepts.automationBias, en.concepts.overreliance],
@@ -649,8 +661,8 @@ topicHubs.pl = [
     startIntro: 'Główny esej rozwija różnicę między AI jako wzmacniaczem, buforem moralnym i moralnym alibi, nie pomijając rzeczywistych granic ludzkiej kontroli.',
     start: pl.articles.agency,
     articlesTitle: 'Artykuły',
-    articlesIntro: 'Powiązane teksty przenoszą problem odpowiedzialności z decyzji organizacyjnych na interpretację i poleganie poznawcze.',
-    articles: [pl.articles.agency, pl.articles.interpretation, pl.articles.trust],
+    articlesIntro: 'Powiązane teksty przenoszą problem odpowiedzialności z decyzji organizacyjnych na twórczość, interpretację i poleganie poznawcze.',
+    articles: [pl.articles.agency, pl.articles.authorship, pl.articles.interpretation, pl.articles.trust],
     conceptsTitle: 'Pojęcia',
     conceptsIntro: 'Te hasła wyjaśniają role sprawczości, nadzoru, wspomagania decyzji i niewłaściwie przypisywanego autorytetu obliczeniowego.',
     concepts: [pl.concepts.humanAgency, pl.concepts.humanOversight, pl.concepts.decisionSupport, pl.concepts.algorithmicAuthority, pl.concepts.automationBias, pl.concepts.overreliance],

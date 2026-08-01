@@ -120,7 +120,7 @@ Raport Brundage'a i współautorów o szkodliwych zastosowaniach opisuje, jak AI
 
 Bufor oddala osobę podejmującą decyzję od jej skutków. Może robić to na kilka sposobów: psychologicznie, gdy człowiek określa cel, ale nie formułuje każdego szkodliwego kroku; organizacyjnie, gdy jeden zespół konfiguruje system, drugi go wdraża, a trzeci rozpatruje skargi; czasowo, gdy wybory projektowe przynoszą skutki wiele miesięcy później; informacyjnie, gdy każda osoba widzi tylko fragment łańcucha.
 
-Bufor nie usuwa odpowiedzialności automatycznie, ale może osłabiać poczucie autorstwa wyniku. Mechanizmy przenoszenia i rozpraszania odpowiedzialności opisane przez Bandurę pomagają zrozumieć stronę psychologiczną. Badania nad rolą człowieka w systemach zautomatyzowanych pokazują wymiar organizacyjny: automatyzacja może obarczyć operatora odpowiedzialnością za rzadkie awarie, a jednocześnie osłabić wiedzę i wprawę potrzebne do interwencji (Bainbridge, 1983; Parasuraman & Riley, 1997).
+Bufor nie usuwa odpowiedzialności automatycznie, ale może osłabiać [poczucie autorstwa wyniku](/pl/articles/kto-mial-ostatnie-slowo-autorstwo-ai/). Mechanizmy przenoszenia i rozpraszania odpowiedzialności opisane przez Bandurę pomagają zrozumieć stronę psychologiczną. Badania nad rolą człowieka w systemach zautomatyzowanych pokazują wymiar organizacyjny: automatyzacja może obarczyć operatora odpowiedzialnością za rzadkie awarie, a jednocześnie osłabić wiedzę i wprawę potrzebne do interwencji (Bainbridge, 1983; Parasuraman & Riley, 1997).
 
 ### AI jako moralne alibi
 

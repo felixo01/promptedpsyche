@@ -75,14 +75,6 @@ const draftEntries = [
     title: "Why People Trust AI Even When They Shouldn't"
   },
   {
-    route: '/articles/who-had-the-final-say-ai-authorship/',
-    title: 'Who Had the Final Say? Authorship in AI-Assisted Creative Work'
-  },
-  {
-    route: '/pl/articles/kto-mial-ostatnie-slowo-autorstwo-ai/',
-    title: 'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI'
-  },
-  {
     route: '/notes/we-prompt-machines-machines-prompt-us-back/',
     title: 'We Prompt Machines. Machines Prompt Us Back'
   },

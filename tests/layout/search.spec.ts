@@ -22,8 +22,6 @@ const practiceTitles = [
 const draftTitles = [
   'AI Literacy Is Not Prompt Engineering',
   "Why People Trust AI Even When They Shouldn't",
-  'Who Had the Final Say? Authorship in AI-Assisted Creative Work',
-  'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI',
   'We Prompt Machines. Machines Prompt Us Back',
   'What Is Cyberpsychology of AI?'
 ];
@@ -85,8 +83,8 @@ test.describe('local search', () => {
     const plIndex = await readSearchIndex(request, '/search-index.pl.json');
     const allText = JSON.stringify([...enIndex, ...plIndex]);
 
-    expect(countByType(enIndex, 'article')).toBe(8);
-    expect(countByType(plIndex, 'article')).toBe(8);
+    expect(countByType(enIndex, 'article')).toBe(9);
+    expect(countByType(plIndex, 'article')).toBe(9);
     expect(countByType(enIndex, 'note')).toBe(7);
     expect(countByType(plIndex, 'note')).toBe(7);
     expect(countByType(enIndex, 'concept')).toBe(27);
@@ -99,6 +97,14 @@ test.describe('local search', () => {
     expect(plIndex.every((item) => item.language === 'pl')).toBe(true);
     expect(enIndex).toEqual(
       expect.arrayContaining([
+        expect.objectContaining({
+          title: 'Who Had the Final Say? Authorship in AI-Assisted Creative Work',
+          url: '/articles/who-had-the-final-say-ai-authorship/',
+          type: 'article',
+          language: 'en',
+          date: '2026-07-31',
+          readingTime: '17 min read'
+        }),
         expect.objectContaining({
           title: 'When Search Becomes an Answer: What Generative AI Changes About Learning',
           url: '/articles/when-search-becomes-an-answer/',
@@ -138,6 +144,14 @@ test.describe('local search', () => {
     );
     expect(plIndex).toEqual(
       expect.arrayContaining([
+        expect.objectContaining({
+          title: 'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI',
+          url: '/pl/articles/kto-mial-ostatnie-slowo-autorstwo-ai/',
+          type: 'article',
+          language: 'pl',
+          date: '2026-07-31',
+          readingTime: '20 min czytania'
+        }),
         expect.objectContaining({
           title: 'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?',
           url: '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/',

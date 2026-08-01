@@ -1,6 +1,9 @@
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
-import { expect, test } from '@playwright/test';
+import { readFileSync, readdirSync } from 'node:fs';
+import { join, resolve } from 'node:path';
+import { expect, test, type Page } from '@playwright/test';
+
+const siteUrl = 'https://promptedpsyche.com';
+const fallbackImage = `${siteUrl}/images/social/prompted-psyche-home-social-1200x630.png`;
 
 const files = {
   en: resolve('src/content/articles/who-had-the-final-say-ai-authorship.mdx'),
@@ -15,10 +18,51 @@ const routes = {
   pl: '/pl/articles/kto-mial-ostatnie-slowo-autorstwo-ai/'
 } as const;
 
-const titles = {
-  en: 'Who Had the Final Say? Authorship in AI-Assisted Creative Work',
-  pl: 'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI'
-} as const;
+const cases = [
+  {
+    lang: 'en',
+    route: routes.en,
+    alternate: routes.pl,
+    title: 'Who Had the Final Say? Authorship in AI-Assisted Creative Work',
+    description:
+      "The controversy over Olga Tokarczuk's use of AI exposed the limits of a binary label. A preregistered study of 429 adults suggests that authorship is better discussed through direction, selection, revision, and final decision authority than through a supposed percentage of AI contribution.",
+    closing:
+      'AI can generate the final sentence. A human should still have the final say - even if it is simply: “No. Try again.”',
+    index: '/articles/',
+    searchIndex: '/search-index.en.json',
+    hub: '/topics/human-agency-and-responsibility/',
+    practice: '/practice/how-to-use-ai-as-a-second-reader/',
+    practiceAnchor: 'Authorship in AI-assisted creative work',
+    fear: '/articles/are-we-afraid-of-ai-or-of-ourselves/',
+    fearAnchor: 'felt authorship of an outcome',
+    tag: '/tags/ai-and-humans/'
+  },
+  {
+    lang: 'pl',
+    route: routes.pl,
+    alternate: routes.en,
+    title: 'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI',
+    description:
+      'Burza wokół wypowiedzi Olgi Tokarczuk pokazała, jak szybko informacja o AI zmienia się w wyrok: „to już nie twoja praca”. Badanie 429 osób nie wyznacza granicy autorstwa, ale pomaga zobaczyć, dlaczego sam deklarowany udział AI nie wystarcza do opisania pracy twórczej.',
+    closing:
+      'AI może wygenerować ostatnie zdanie. Człowiek powinien mieć ostatnie słowo - choćby brzmiało ono: „nie, jeszcze raz”.',
+    index: '/pl/articles/',
+    searchIndex: '/search-index.pl.json',
+    hub: '/pl/topics/sprawczosc-i-odpowiedzialnosc/',
+    practice: '/pl/practice/jak-uzyc-ai-jako-drugiego-czytelnika/',
+    practiceAnchor: 'Autorstwo w twórczości wspieranej przez AI',
+    fear: '/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/',
+    fearAnchor: 'poczucie autorstwa wyniku',
+    tag: '/pl/tags/ai-i-czlowiek/'
+  }
+] as const;
+
+const researchUrls = [
+  'https://doi.org/10.5281/zenodo.21705721',
+  'https://zenodo.org/api/records/21705721/files/Beyond_AI_Share_Preprint_v1.0.pdf/content',
+  'https://zenodo.org/api/records/21705721/files/Beyond_AI_Share_Appendix_A_v1.0.pdf/content',
+  'https://doi.org/10.17605/OSF.IO/GSWN3'
+] as const;
 
 function read(path: string) {
   return readFileSync(path, 'utf8');
@@ -31,12 +75,33 @@ function frontmatter(path: string) {
   return match?.[1] ?? '';
 }
 
-test.describe('bilingual AI authorship draft', () => {
-  test('keeps both localized entries paired, non-scholarly and asset-free', () => {
+function readBuiltSitemap() {
+  const distPath = resolve('dist');
+  return readdirSync(distPath)
+    .filter((fileName) => /^sitemap-\d+\.xml$/.test(fileName))
+    .map((fileName) => readFileSync(join(distPath, fileName), 'utf8'))
+    .join('\n');
+}
+
+async function expectNoHorizontalOverflow(page: Page) {
+  const dimensions = await page.evaluate(() => ({
+    documentWidth: document.documentElement.scrollWidth,
+    viewportWidth: document.documentElement.clientWidth,
+    bodyWidth: document.body.scrollWidth,
+    innerWidth: window.innerWidth
+  }));
+
+  expect(dimensions.documentWidth).toBeLessThanOrEqual(dimensions.viewportWidth + 1);
+  expect(dimensions.bodyWidth).toBeLessThanOrEqual(dimensions.innerWidth + 1);
+}
+
+test.describe('bilingual AI authorship publication', () => {
+  test('publishes both localized entries together without Scholar or article DOI metadata', () => {
     for (const [lang, path] of Object.entries({ en: files.en, pl: files.pl })) {
       const metadata = frontmatter(path);
 
-      expect(metadata).toMatch(/^draft: true$/m);
+      expect(metadata).toMatch(/^publishedAt: 2026-07-31$/m);
+      expect(metadata).toMatch(/^draft: false$/m);
       expect(metadata).toMatch(/^scholarPrimary: false$/m);
       expect(metadata).toMatch(/^translationKey: "ai-authorship-final-say"$/m);
       expect(metadata).toMatch(new RegExp(`^lang: "${lang}"$`, 'm'));
@@ -45,54 +110,229 @@ test.describe('bilingual AI authorship draft', () => {
     }
   });
 
-  test('keeps both draft routes out of every public surface', async ({ request }) => {
-    const responses = await Promise.all([
-      request.get(routes.en),
-      request.get(routes.pl),
-      request.get('/articles/'),
-      request.get('/pl/articles/'),
-      request.get('/search-index.en.json'),
-      request.get('/search-index.pl.json'),
-      request.get('/rss.xml'),
-      request.get('/topics/human-agency-and-responsibility/'),
-      request.get('/pl/topics/sprawczosc-i-odpowiedzialnosc/')
-    ]);
+  for (const article of cases) {
+    test(`renders the ${article.lang.toUpperCase()} article with its full publication contract`, async ({ page }) => {
+      const response = await page.goto(article.route);
+      expect(response?.status()).toBe(200);
 
-    expect(responses[0].status()).toBe(404);
-    expect(responses[1].status()).toBe(404);
+      await expect(page.locator('html')).toHaveAttribute('lang', article.lang);
+      await expect(page.getByRole('heading', { name: article.title, level: 1 })).toBeVisible();
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+        'href',
+        `${siteUrl}${article.route}`
+      );
+      await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute(
+        'href',
+        `${siteUrl}${routes.en}`
+      );
+      await expect(page.locator('link[rel="alternate"][hreflang="pl"]')).toHaveAttribute(
+        'href',
+        `${siteUrl}${routes.pl}`
+      );
+      await expect(page.locator('link[rel="alternate"][hreflang="x-default"]')).toHaveAttribute(
+        'href',
+        `${siteUrl}${routes.en}`
+      );
+      await expect(
+        page.locator('[data-qa="language-switcher"]').getByRole('link', {
+          name: article.lang === 'en' ? 'PL' : 'EN'
+        })
+      ).toHaveAttribute('href', article.alternate);
 
-    const publicText = (await Promise.all(responses.slice(2).map((response) => response.text()))).join('\n');
-    for (const title of Object.values(titles)) {
-      expect(publicText).not.toContain(title);
-    }
-    for (const route of Object.values(routes)) {
-      expect(publicText).not.toContain(route);
+      await expect(page.locator('meta[name^="citation_"]')).toHaveCount(0);
+      const structuredData = JSON.parse(
+        (await page.locator('script[type="application/ld+json"]').textContent()) ?? '{}'
+      ) as { '@graph'?: Array<Record<string, unknown>> };
+      const graph = structuredData['@graph'] ?? [];
+      const articleNode = graph.find((node) => node['@type'] === 'Article');
+      expect(articleNode).toBeDefined();
+      expect(articleNode).toMatchObject({
+        '@type': 'Article',
+        headline: article.title,
+        description: article.description,
+        url: `${siteUrl}${article.route}`,
+        datePublished: '2026-07-31T00:00:00.000Z',
+        inLanguage: article.lang,
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `${siteUrl}${article.route}`
+        },
+        author: { name: 'Feliks Mamczur' },
+        publisher: { '@id': `${siteUrl}/#publisher` }
+      });
+      expect(articleNode).not.toHaveProperty('identifier');
+      expect(articleNode).not.toHaveProperty('sameAs');
+      expect(articleNode).not.toHaveProperty('image');
+      expect(JSON.stringify(graph)).not.toContain('ScholarlyArticle');
+
+      await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+        'content',
+        fallbackImage
+      );
+      await expect(page.locator('meta[property="og:image:width"]')).toHaveAttribute('content', '1200');
+      await expect(page.locator('meta[property="og:image:height"]')).toHaveAttribute('content', '630');
+      await expect(page.locator('meta[property="og:image:type"]')).toHaveAttribute('content', 'image/png');
+      await expect(page.locator('meta[property="og:image:alt"]')).toHaveAttribute(
+        'content',
+        'Prompted Psyche - The human side of AI'
+      );
+      await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute(
+        'content',
+        fallbackImage
+      );
+
+      const materials = page.locator('[data-qa="research-materials"]');
+      await expect(materials).toBeVisible();
+      const materialLinks = await materials.locator('a').evaluateAll((links) =>
+        links.map((link) => link.getAttribute('href'))
+      );
+      expect(materialLinks).toEqual(researchUrls);
+      await expect(materials.locator('a[rel~="nofollow"]')).toHaveCount(0);
+      await expect(page.locator('[data-qa="ai-authorship-workflow-comparison"]')).toBeVisible();
+      await expect(page.locator('[data-qa="ai-authorship-vignette-chart"]')).toBeVisible();
+      await expect(page.locator('[data-qa="ai-authorship-vignette-chart"] table')).toHaveCount(1);
+      await expect(page.locator('[data-qa="closing-passage"]')).toContainText(article.closing);
+    });
+  }
+
+  test('exposes both articles through indexes, search, RSS, sitemap, tags and the agency hubs', async ({ request }) => {
+    const sitemap = readBuiltSitemap();
+    const rssResponse = await request.get('/rss.xml');
+    expect(rssResponse.ok()).toBe(true);
+    const rss = await rssResponse.text();
+
+    for (const article of cases) {
+      const [indexResponse, searchResponse, hubResponse, tagResponse] = await Promise.all([
+        request.get(article.index),
+        request.get(article.searchIndex),
+        request.get(article.hub),
+        request.get(article.tag)
+      ]);
+      for (const response of [indexResponse, searchResponse, hubResponse, tagResponse]) {
+        expect(response.ok()).toBe(true);
+      }
+
+      expect(await indexResponse.text()).toContain(article.title);
+      const searchItems = (await searchResponse.json()) as Array<{
+        title: string;
+        url: string;
+        type: string;
+        date?: string;
+      }>;
+      expect(searchItems).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            title: article.title,
+            url: article.route,
+            type: 'article',
+            date: '2026-07-31'
+          })
+        ])
+      );
+      expect(await hubResponse.text()).toContain(article.route);
+      expect(await tagResponse.text()).toContain(article.title);
+      expect(sitemap.match(new RegExp(article.route.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) ?? []).toHaveLength(1);
+
+      const absoluteUrl = `${siteUrl}${article.route}`;
+      expect(rss.match(new RegExp(`<link>${absoluteUrl}</link>`, 'g')) ?? []).toHaveLength(1);
+      const rssItem = rss.match(
+        new RegExp(`<item>[\\s\\S]*?<link>${absoluteUrl}</link>[\\s\\S]*?</item>`)
+      )?.[0];
+      expect(rssItem).toContain('<pubDate>Fri, 31 Jul 2026');
     }
   });
 
-  test('preserves the four canonical research links in crawlable markup', () => {
-    const source = read(files.materials);
-    const urls = [
-      'https://doi.org/10.5281/zenodo.21705721',
-      'https://zenodo.org/api/records/21705721/files/Beyond_AI_Share_Preprint_v1.0.pdf/content',
-      'https://zenodo.org/api/records/21705721/files/Beyond_AI_Share_Appendix_A_v1.0.pdf/content',
-      'https://doi.org/10.17605/OSF.IO/GSWN3'
-    ];
-
-    for (const url of urls) {
-      expect(source).toContain(`'${url}'`);
+  test('keeps the two curated backlink pairs natural and resolvable', async ({ page, request }) => {
+    for (const article of cases) {
+      for (const [source, anchor] of [
+        [article.practice, article.practiceAnchor],
+        [article.fear, article.fearAnchor]
+      ] as const) {
+        const response = await page.goto(source);
+        expect(response?.status()).toBe(200);
+        const link = page.getByRole('link', { name: anchor, exact: true });
+        await expect(link).toHaveAttribute('href', article.route);
+        expect((await request.get(article.route)).ok()).toBe(true);
+      }
     }
-    expect(source).toContain('<a href={doiUrl}>');
-    expect(source).toContain('<a href={preprintUrl}>');
-    expect(source).toContain('<a href={appendixUrl}>');
-    expect(source).toContain('<a href={osfUrl}>');
-    expect(source).not.toContain('nofollow');
   });
 
-  test('locks the workflow labels and all reported vignette values', () => {
+  test('keeps all internal links in both articles resolvable', async ({ page, request }) => {
+    const hrefs = new Set<string>();
+    for (const article of cases) {
+      await page.goto(article.route);
+      const articleHrefs = await page.locator('#main a[href^="/"]').evaluateAll((links) =>
+        links.map((link) => link.getAttribute('href') ?? '').filter(Boolean)
+      );
+      articleHrefs.forEach((href) => hrefs.add(href));
+    }
+
+    for (const href of hrefs) {
+      const response = await request.get(href);
+      expect(response.ok(), href).toBe(true);
+    }
+  });
+
+  for (const article of cases) {
+    test(`has no console errors or horizontal overflow on ${article.lang.toUpperCase()} publication surfaces`, async ({ page }, testInfo) => {
+      test.setTimeout(60_000);
+      const consoleErrors: string[] = [];
+      page.on('console', (message) => {
+        const text = message.text();
+        const isAstroDevAuditFailure =
+          text.includes('Astro') && text.includes("Error while running audit's match function");
+        if (message.type() === 'error' && !isAstroDevAuditFailure) consoleErrors.push(text);
+      });
+      page.on('pageerror', (error) => consoleErrors.push(error.message));
+
+      const responsiveRoutes = [
+        article.route,
+        article.index,
+        article.hub,
+        article.practice,
+        article.fear
+      ];
+      for (const route of responsiveRoutes) {
+        await page.goto(route);
+        await expectNoHorizontalOverflow(page);
+      }
+
+      if (testInfo.project.name === 'mobile-390') {
+        await page.setViewportSize({ width: 320, height: 780 });
+        for (const route of responsiveRoutes) {
+          await page.goto(route);
+          await expectNoHorizontalOverflow(page);
+        }
+      }
+
+      expect(consoleErrors).toEqual([]);
+    });
+  }
+
+  test('keeps the workflow, chart data and closing passage visible in print', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop-1440', 'One desktop print rendering is sufficient.');
+    await page.emulateMedia({ media: 'print' });
+    await page.goto(routes.en);
+
+    await expect(page.locator('[data-qa="research-materials"]')).toBeVisible();
+    await expect(page.locator('[data-qa="ai-authorship-workflow-comparison"]')).toBeVisible();
+    const chart = page.locator('[data-qa="ai-authorship-vignette-chart"]');
+    await expect(chart).toBeVisible();
+    await expect(chart.locator('figcaption')).toBeVisible();
+    await chart.locator('details').evaluate((details: HTMLDetailsElement) => {
+      details.open = true;
+    });
+    await expect(chart.locator('table')).toBeVisible();
+    await expect(page.locator('[data-qa="closing-passage"]')).toBeVisible();
+    await expectNoHorizontalOverflow(page);
+  });
+
+  test('locks the canonical research links, workflow labels and all reported vignette values', () => {
+    const materials = read(files.materials);
     const workflow = read(files.workflow);
     const chart = read(files.chart);
 
+    for (const url of researchUrls) expect(materials).toContain(`'${url}'`);
     for (const label of [
       'Human-directed workflow',
       'Near-final AI output',
@@ -110,14 +350,16 @@ test.describe('bilingual AI authorship draft', () => {
       ['3.565', '1.196', '2.720', '1.255', '.846', '.597'],
       ['3.501', '1.081', '2.665', '1.132', '.836', '.659']
     ];
-
     for (const row of rows) {
-      for (const value of row) {
-        expect(chart).toContain(`'${value}'`);
-      }
+      for (const value of row) expect(chart).toContain(`'${value}'`);
     }
-
-    for (const statistic of ['n = 428', '95% CI [.715, .956]', 't(427) = 13.628', 'p < .001', 'd_z = .659']) {
+    for (const statistic of [
+      'n = 428',
+      '95% CI [.715, .956]',
+      't(427) = 13.628',
+      'p < .001',
+      'd_z = .659'
+    ]) {
       expect(chart).toContain(statistic);
     }
   });

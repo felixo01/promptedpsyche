@@ -121,7 +121,7 @@ The malicious-use report by Brundage and colleagues describes how AI may change 
 
 A buffer increases the distance between choice and consequence. The distance is psychological when a person gives a goal rather than a concrete harmful instruction; organizational when one team configures the system, another deploys it and a third handles complaints; temporal when design choices become consequences months later; and informational when each actor sees only part of the chain.
 
-The buffer does not automatically erase responsibility, but it may weaken the felt authorship of an outcome. Bandura's displacement and diffusion mechanisms help explain the psychology. Human-factors research shows the organizational version: automation may leave operators responsible for rare failures while eroding the knowledge and practice needed to intervene (Bainbridge, 1983; Parasuraman & Riley, 1997).
+The buffer does not automatically erase responsibility, but it may weaken the [felt authorship of an outcome](/articles/who-had-the-final-say-ai-authorship/). Bandura's displacement and diffusion mechanisms help explain the psychology. Human-factors research shows the organizational version: automation may leave operators responsible for rare failures while eroding the knowledge and practice needed to intervene (Bainbridge, 1983; Parasuraman & Riley, 1997).
 
 ### AI as moral alibi
 
