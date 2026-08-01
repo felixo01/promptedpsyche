@@ -27,7 +27,7 @@ const cases = [
     description:
       "The controversy over Olga Tokarczuk's use of AI exposed the limits of a binary label. A preregistered study of 429 adults suggests that authorship is better discussed through direction, selection, revision, and final decision authority than through a supposed percentage of AI contribution.",
     closing:
-      'AI can generate the final sentence. A human should still have the final say - even if it is simply: “No. Try again.”',
+      'AI can generate content, but the final sentence should belong to the human - even if it reads: “No. Try again.”',
     index: '/articles/',
     searchIndex: '/search-index.en.json',
     hub: '/topics/human-agency-and-responsibility/',
@@ -45,7 +45,7 @@ const cases = [
     description:
       'Burza wokół wypowiedzi Olgi Tokarczuk pokazała, jak szybko informacja o AI zmienia się w wyrok: „to już nie twoja praca”. Badanie 429 osób nie wyznacza granicy autorstwa, ale pomaga zobaczyć, dlaczego sam deklarowany udział AI nie wystarcza do opisania pracy twórczej.',
     closing:
-      'AI może wygenerować ostatnie zdanie. Człowiek powinien mieć ostatnie słowo - choćby brzmiało ono: „nie, jeszcze raz”.',
+      'AI może wygenerować treść, ale to człowiek powinien mieć ostatnie zdanie - choćby brzmiało ono: „nie, jeszcze raz”.',
     index: '/pl/articles/',
     searchIndex: '/search-index.pl.json',
     hub: '/pl/topics/sprawczosc-i-odpowiedzialnosc/',
