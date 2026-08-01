@@ -31,6 +31,7 @@ The long-form standard applies to article and note detail pages. It should not c
 - H2 headings can use larger editorial serif type, a thin top rule and more top spacing.
 - H3 headings should be readable and calm, but should not dominate H2 headings.
 - Avoid huge empty gaps between sections.
+- In an editorial title, use a non-breaking space only when a short orphaned word must remain with the word that follows; do not otherwise alter the title text or force manual line breaks.
 
 ## Key Passage
 

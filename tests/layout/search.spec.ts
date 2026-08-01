@@ -145,7 +145,7 @@ test.describe('local search', () => {
     expect(plIndex).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          title: 'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI',
+          title: 'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI',
           url: '/pl/articles/kto-mial-ostatnie-slowo-autorstwo-ai/',
           type: 'article',
           language: 'pl',
