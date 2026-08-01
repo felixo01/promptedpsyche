@@ -23,6 +23,13 @@ const aiThinkingEnglishArticleRoute = '/articles/dont-ask-whether-ai-makes-us-du
 const generativeSearchPolishArticleRoute =
   '/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/';
 const generativeSearchEnglishArticleRoute = '/articles/when-search-becomes-an-answer/';
+const aiAuthorshipPolishArticleRoute =
+  '/pl/articles/kto-mial-ostatnie-slowo-autorstwo-ai/';
+const aiAuthorshipEnglishArticleRoute = '/articles/who-had-the-final-say-ai-authorship/';
+const aiAuthorshipPolishArticleTitle =
+  'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI';
+const aiAuthorshipEnglishArticleTitle =
+  'Who Had the Final Say? Authorship in AI-Assisted Creative Work';
 const generativeSearchPolishArticleTitle = 'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?';
 const generativeSearchEnglishArticleTitle =
   'When Search Becomes an Answer: What Generative AI Changes About Learning';
@@ -170,7 +177,7 @@ test.describe('published articles', () => {
   test('shows the English article on the English articles index', async ({ page }) => {
     await page.goto('/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(8);
+    await expect(page.locator('.entry-list article')).toHaveCount(9);
     await expect(page.locator('.entry-list')).toContainText('It is not just about the prompt');
     await expect(page.locator('.entry-list')).not.toContainText(
       'The model does not remember. It works with context.'
@@ -186,9 +193,11 @@ test.describe('published articles', () => {
       'AI does not read people. It helps read context.'
     );
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(8);
+    expect(titles).toHaveLength(9);
+    expect(titles[0]).toBe(aiAuthorshipEnglishArticleTitle);
     expect(titles).toEqual(expect.arrayContaining([
       generativeSearchEnglishArticleTitle,
+      aiAuthorshipEnglishArticleTitle,
       aiThinkingEnglishArticleTitle,
       embodiedEnglishArticleTitle,
       aiFearsEnglishArticleTitle,
@@ -197,6 +206,9 @@ test.describe('published articles', () => {
       thirdEnglishArticleTitle,
       'It is not just about the prompt'
     ]));
+    await expect(
+      page.getByRole('link', { name: aiAuthorshipEnglishArticleTitle, exact: true })
+    ).toHaveAttribute('href', aiAuthorshipEnglishArticleRoute);
     const titleLink = page.getByRole('link', {
       name: 'It is not just about the prompt',
       exact: true
@@ -277,7 +289,7 @@ test.describe('published articles', () => {
   test('shows the Polish article on the Polish articles index', async ({ page }) => {
     await page.goto('/pl/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(8);
+    await expect(page.locator('.entry-list article')).toHaveCount(9);
     await expect(page.locator('.entry-list')).toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('.entry-list')).toContainText(mirrorPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiPathPolishArticleTitle);
@@ -354,9 +366,11 @@ test.describe('published articles', () => {
     await page.goto('/pl/articles/');
 
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(8);
+    expect(titles).toHaveLength(9);
+    expect(titles[0]).toBe(aiAuthorshipPolishArticleTitle);
     expect(titles).toEqual(expect.arrayContaining([
       generativeSearchPolishArticleTitle,
+      aiAuthorshipPolishArticleTitle,
       aiThinkingPolishArticleTitle,
       embodiedPolishArticleTitle,
       aiFearsPolishArticleTitle,
@@ -365,6 +379,9 @@ test.describe('published articles', () => {
       thirdPolishArticleTitle,
       'Nie chodzi tylko o prompt'
     ]));
+    await expect(
+      page.getByRole('link', { name: aiAuthorshipPolishArticleTitle, exact: true })
+    ).toHaveAttribute('href', aiAuthorshipPolishArticleRoute);
     await expect(page.locator('.entry-list')).not.toContainText(
       'AI nie czyta ludzi. Pomaga czytać kontekst.'
     );

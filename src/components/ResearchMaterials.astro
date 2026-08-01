@@ -1,0 +1,296 @@
+---
+type Locale = 'en' | 'pl';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const preprintTitle =
+  'Beyond AI Share: A Preregistered Survey and Vignette Study of Perceived Control, Authorship, and Authenticity in AI-Assisted Creative Practice';
+const doiUrl = 'https://doi.org/10.5281/zenodo.21705721';
+const preprintUrl =
+  'https://zenodo.org/api/records/21705721/files/Beyond_AI_Share_Preprint_v1.0.pdf/content';
+const appendixUrl =
+  'https://zenodo.org/api/records/21705721/files/Beyond_AI_Share_Appendix_A_v1.0.pdf/content';
+const osfUrl = 'https://doi.org/10.17605/OSF.IO/GSWN3';
+
+const copy = {
+  en: {
+    title: 'Research materials',
+    preprintMeta: ['29 pages', 'Not formally peer reviewed'],
+    doiLabel: 'Open DOI record',
+    preprintLabel: 'Open preprint PDF',
+    appendixDescription:
+      'Full questionnaire, vignette wording, scoring rules, documented procedures and reporting limitations',
+    appendixLabel: 'Open Appendix A PDF',
+    osfTitle: 'OSF preregistration',
+    osfLabel: 'Open OSF preregistration',
+    note:
+      'The study was preregistered before the first recorded main-study response. The preprint has not undergone formal peer review.'
+  },
+  pl: {
+    title: 'Materiały badania',
+    preprintMeta: ['29 stron', 'Preprint bez formalnej recenzji naukowej'],
+    doiLabel: 'Otwórz rekord DOI',
+    preprintLabel: 'Pobierz preprint PDF',
+    appendixDescription:
+      'Pełny kwestionariusz, brzmienie winiet, zasady punktacji, procedury i ograniczenia dokumentacji',
+    appendixLabel: 'Pobierz Appendix A PDF',
+    osfTitle: 'Preregistration OSF',
+    osfLabel: 'Otwórz prerejestrację w OSF',
+    note:
+      'Badanie zostało prerejestrowane przed pierwszą zarejestrowaną odpowiedzią w badaniu głównym. Preprint nie przeszedł formalnej recenzji naukowej.'
+  }
+} as const;
+
+const t = copy[lang];
+const titleId = `research-materials-title-${lang}`;
+---
+
+<section class="research-materials" data-qa="research-materials" aria-labelledby={titleId}>
+  <h2 id={titleId}>{t.title}</h2>
+
+  <div class="research-materials__grid">
+    <article class="research-materials__item research-materials__item--primary">
+      <p class="research-materials__type">Preprint v1.0</p>
+      <h3>{preprintTitle}</h3>
+      <ul class="research-materials__meta" role="list">
+        {t.preprintMeta.map((item) => <li>{item}</li>)}
+      </ul>
+      <div class="research-materials__links">
+        <a href={doiUrl}>{t.doiLabel}</a>
+        <a href={preprintUrl}>{t.preprintLabel}</a>
+      </div>
+    </article>
+
+    <article class="research-materials__item">
+      <p class="research-materials__type">Supplementary Appendix A</p>
+      <p class="research-materials__pages">11 {lang === 'pl' ? 'stron' : 'pages'}</p>
+      <p>{t.appendixDescription}</p>
+      <div class="research-materials__links">
+        <a href={appendixUrl}>{t.appendixLabel}</a>
+      </div>
+    </article>
+
+    <article class="research-materials__item">
+      <p class="research-materials__type">{t.osfTitle}</p>
+      <div class="research-materials__links">
+        <a href={osfUrl}>{t.osfLabel}</a>
+      </div>
+    </article>
+  </div>
+
+  <p class="research-materials__note">{t.note}</p>
+</section>
+
+<style>
+  :global(.article-grid:has(.research-materials)) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  :global(.article-grid:has(.research-materials) .article-aside) {
+    display: none;
+  }
+
+  :global(.article-grid:has(.research-materials) .prose) {
+    justify-self: center;
+  }
+
+  .research-materials {
+    box-sizing: border-box;
+    width: min(66rem, calc(100vw - 2rem));
+    max-width: calc(100vw - 2rem);
+    margin-block: 0 3rem;
+    margin-inline: 50%;
+    padding: clamp(1rem, 2.5vw, 1.6rem);
+    transform: translateX(-50%);
+    border: 1px solid var(--line-strong);
+    border-top: 0.25rem solid var(--accent);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--accent-soft) 24%, var(--surface));
+    overflow-wrap: anywhere;
+  }
+
+  .research-materials h2 {
+    display: block;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: clamp(1.35rem, 1.4vw + 1rem, 1.8rem);
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: none;
+  }
+
+  .research-materials__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-top: 1.1rem;
+  }
+
+  .research-materials__item {
+    min-width: 0;
+    border: 1px solid var(--line-strong);
+    border-radius: calc(var(--radius) * 0.8);
+    background: var(--surface);
+    padding: 1rem;
+  }
+
+  .research-materials__type,
+  .research-materials__pages {
+    margin: 0;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.035em;
+    line-height: 1.45;
+    text-transform: uppercase;
+  }
+
+  .research-materials__pages {
+    margin-top: 0.45rem;
+    color: var(--text-soft);
+    text-transform: none;
+  }
+
+  .research-materials__item h3 {
+    margin: 0.55rem 0 0;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  .research-materials__item > p:not(.research-materials__type, .research-materials__pages) {
+    margin: 0.65rem 0 0;
+    color: var(--text-soft);
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .research-materials__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.9rem;
+    margin: 0.65rem 0 0;
+    padding: 0;
+    color: var(--text-soft);
+    font-size: 0.84rem;
+    line-height: 1.45;
+    list-style: none;
+  }
+
+  .research-materials__meta li + li::before {
+    content: '•';
+    margin-right: 0.9rem;
+    color: var(--accent);
+  }
+
+  .research-materials__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.85rem;
+    margin-top: 0.9rem;
+  }
+
+  .research-materials__links a {
+    display: inline-flex;
+    min-height: 2.65rem;
+    align-items: center;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 0.45rem 0.8rem;
+    color: var(--accent);
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    font-weight: 650;
+    line-height: 1.3;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+  }
+
+  .research-materials__links a:hover,
+  .research-materials__links a:focus-visible {
+    border-color: currentColor;
+    background: var(--accent-soft);
+  }
+
+  .research-materials__note {
+    margin: 1rem 0 0;
+    border-top: 1px solid var(--line);
+    padding-top: 0.85rem;
+    color: var(--text-soft);
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 900px) {
+    .research-materials {
+      width: 100%;
+      max-width: 100%;
+      margin-inline: 0;
+      transform: none;
+    }
+
+    .research-materials__grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .research-materials__item--primary {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .research-materials__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .research-materials__item--primary {
+      grid-column: auto;
+    }
+
+    .research-materials__links {
+      display: grid;
+    }
+
+    .research-materials__links a {
+      width: 100%;
+      box-sizing: border-box;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .research-materials__meta {
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .research-materials__meta li + li::before {
+      content: none;
+    }
+  }
+
+  @media print {
+    .research-materials {
+      width: 100%;
+      max-width: 100%;
+      margin-inline: 0;
+      transform: none;
+      break-inside: avoid;
+      background: transparent;
+    }
+
+    .research-materials__links a {
+      border: 0;
+      padding: 0;
+    }
+  }
+</style>

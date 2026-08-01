@@ -87,6 +87,7 @@ Use AI to see the text through another reader's eyes. Do not use AI to hand over
 
 ## Further Reading
 
+- [Authorship in AI-assisted creative work](/articles/who-had-the-final-say-ai-authorship/)
 - [It is not just about the prompt](/articles/it-is-not-just-about-the-prompt/)
 - [AI as a mirror: why it can feel so easy to talk to](/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/)
 - [A good summary is not the same as a good decision](/notes/a-good-summary-is-not-the-same-as-a-good-decision/)

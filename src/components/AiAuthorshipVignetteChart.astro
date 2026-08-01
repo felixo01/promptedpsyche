@@ -1,0 +1,598 @@
+---
+type Locale = 'en' | 'pl';
+
+interface Props {
+  lang: Locale;
+}
+
+interface VignetteDatum {
+  key: 'authorship' | 'authenticity' | 'control' | 'combined';
+  humanMean: string;
+  humanSd: string;
+  nearFinalMean: string;
+  nearFinalSd: string;
+  difference: string;
+  dz: string;
+}
+
+const { lang } = Astro.props;
+
+const data: VignetteDatum[] = [
+  {
+    key: 'authorship',
+    humanMean: '3.430',
+    humanSd: '1.208',
+    nearFinalMean: '2.570',
+    nearFinalSd: '1.235',
+    difference: '.860',
+    dz: '.610'
+  },
+  {
+    key: 'authenticity',
+    humanMean: '3.507',
+    humanSd: '1.172',
+    nearFinalMean: '2.706',
+    nearFinalSd: '1.253',
+    difference: '.801',
+    dz: '.559'
+  },
+  {
+    key: 'control',
+    humanMean: '3.565',
+    humanSd: '1.196',
+    nearFinalMean: '2.720',
+    nearFinalSd: '1.255',
+    difference: '.846',
+    dz: '.597'
+  },
+  {
+    key: 'combined',
+    humanMean: '3.501',
+    humanSd: '1.081',
+    nearFinalMean: '2.665',
+    nearFinalSd: '1.132',
+    difference: '.836',
+    dz: '.659'
+  }
+];
+
+const copy = {
+  en: {
+    title: 'How the two workflows were rated',
+    description:
+      'A paired-dot plot comparing mean ratings for the human-directed workflow and the near-final AI output on a common 1-5 scale.',
+    dimensions: {
+      authorship: 'Authorship',
+      authenticity: 'Authenticity',
+      control: 'Control',
+      combined: 'Combined index'
+    },
+    human: 'Human-directed workflow',
+    nearFinal: 'Near-final AI output',
+    scale: 'Rating scale',
+    caption:
+      'Participants rated authorship, authenticity and control more highly in the human-directed scenario. Points show mean ratings on a 1-5 scale; n = 428 complete paired responses.',
+    sdNote:
+      'Standard-deviation bars are omitted from the plot to preserve legibility; the exact SD values are provided in the data table.',
+    caveat:
+      'The scenarios differed in several bundled features. The chart does not isolate the effect of control, selection or degree of revision.',
+    combinedStats:
+      'Combined index: difference = .836, 95% CI [.715, .956], t(427) = 13.628, p < .001, d_z = .659.',
+    tableSummary: 'Show the complete data table',
+    tableCaption: 'Complete vignette comparison data; n = 428 complete paired responses; scale 1-5.',
+    dimension: 'Dimension',
+    mean: 'M',
+    sd: 'SD',
+    difference: 'Difference',
+    effect: 'd_z'
+  },
+  pl: {
+    title: 'Jak oceniono dwa sposoby pracy',
+    description:
+      'Wykres punktowy porównuje średnie oceny procesu kierowanego przez człowieka i niemal gotowego wyniku AI na wspólnej skali 1-5.',
+    dimensions: {
+      authorship: 'Autorstwo',
+      authenticity: 'Autentyczność',
+      control: 'Kontrola',
+      combined: 'Łączny indeks'
+    },
+    human: 'Proces kierowany przez człowieka',
+    nearFinal: 'Niemal gotowy wynik AI',
+    scale: 'Skala ocen',
+    caption:
+      'Uczestnicy wyżej oceniali autorstwo, autentyczność i kontrolę w scenariuszu kierowanym przez człowieka. Punkty pokazują średnie ocen na skali 1-5; n = 428 kompletnych par.',
+    sdNote:
+      'Belki odchylenia standardowego pominięto w polu wykresu dla czytelności; dokładne wartości SD znajdują się w tabeli danych.',
+    caveat:
+      'Scenariusze różniły się kilkoma cechami jednocześnie. Wykres nie pokazuje czystego wpływu kontroli, selekcji ani zakresu rewizji.',
+    combinedStats:
+      'Łączny indeks: różnica = .836, 95% CI [.715, .956], t(427) = 13.628, p < .001, d_z = .659.',
+    tableSummary: 'Pokaż pełną tabelę danych',
+    tableCaption: 'Pełne dane porównania winiet; n = 428 kompletnych par ocen; skala 1-5.',
+    dimension: 'Wymiar',
+    mean: 'M',
+    sd: 'SD',
+    difference: 'Różnica',
+    effect: 'd_z'
+  }
+} as const;
+
+const t = copy[lang];
+const titleId = `ai-authorship-chart-title-${lang}`;
+const descriptionId = `ai-authorship-chart-description-${lang}`;
+const figureCaptionId = `ai-authorship-chart-caption-${lang}`;
+const position = (value: string) => `${((Number.parseFloat(value) - 1) / 4) * 100}%`;
+---
+
+<figure
+  class="vignette-chart"
+  data-qa="ai-authorship-vignette-chart"
+  aria-labelledby={titleId}
+  aria-describedby={`${descriptionId} ${figureCaptionId}`}
+>
+  <h3 id={titleId}>{t.title}</h3>
+  <p id={descriptionId} class="vignette-chart__description">{t.description}</p>
+
+  <div class="vignette-chart__legend" aria-label={lang === 'pl' ? 'Legenda' : 'Legend'}>
+    <span><span class="vignette-chart__shape vignette-chart__shape--human" aria-hidden="true"></span>{t.human}</span>
+    <span><span class="vignette-chart__shape vignette-chart__shape--near-final" aria-hidden="true"></span>{t.nearFinal}</span>
+  </div>
+
+  <ul class="vignette-chart__screen-reader-data">
+    {data.map((row) => (
+      <li>
+        {t.dimensions[row.key]}: {t.human} M {row.humanMean}, SD {row.humanSd}; {t.nearFinal} M {row.nearFinalMean}, SD {row.nearFinalSd}; {t.difference} {row.difference}; {t.effect} {row.dz}.
+      </li>
+    ))}
+  </ul>
+
+  <div class="vignette-chart__plot" aria-hidden="true">
+    {data.map((row) => (
+      <div class="vignette-chart__row">
+        <p class="vignette-chart__dimension">{t.dimensions[row.key]}</p>
+        <div class="vignette-chart__rail">
+          <span class="vignette-chart__baseline"></span>
+          {[0, 25, 50, 75, 100].map((tick) => (
+            <span class="vignette-chart__gridline" style={`--tick: ${tick}%`}></span>
+          ))}
+          <span
+            class="vignette-chart__connector"
+            style={`--start: ${position(row.nearFinalMean)}; --end: ${position(row.humanMean)}`}
+          ></span>
+          <span
+            class="vignette-chart__point vignette-chart__point--near-final"
+            style={`--position: ${position(row.nearFinalMean)}`}
+          >
+            <span>{row.nearFinalMean}</span>
+          </span>
+          <span
+            class="vignette-chart__point vignette-chart__point--human"
+            style={`--position: ${position(row.humanMean)}`}
+          >
+            <span>{row.humanMean}</span>
+          </span>
+        </div>
+      </div>
+    ))}
+
+    <div class="vignette-chart__axis">
+      <span class="vignette-chart__axis-label">{t.scale}</span>
+      <div class="vignette-chart__ticks" aria-hidden="true">
+        {[1, 2, 3, 4, 5].map((tick) => <span>{tick}</span>)}
+      </div>
+    </div>
+  </div>
+
+  <figcaption id={figureCaptionId}>
+    <span>{t.caption}</span>
+    <span>{t.sdNote}</span>
+    <span class="vignette-chart__caveat">{t.caveat}</span>
+    <span class="vignette-chart__statistics">{t.combinedStats}</span>
+  </figcaption>
+
+  <details class="vignette-chart__data">
+    <summary>{t.tableSummary}</summary>
+    <div class="vignette-chart__table-wrap">
+      <table>
+        <caption>{t.tableCaption}</caption>
+        <thead>
+          <tr>
+            <th rowspan="2" scope="col">{t.dimension}</th>
+            <th colspan="2" scope="colgroup">{t.human}</th>
+            <th colspan="2" scope="colgroup">{t.nearFinal}</th>
+            <th rowspan="2" scope="col">{t.difference}</th>
+            <th rowspan="2" scope="col">{t.effect}</th>
+          </tr>
+          <tr>
+            <th scope="col">{t.mean}</th>
+            <th scope="col">{t.sd}</th>
+            <th scope="col">{t.mean}</th>
+            <th scope="col">{t.sd}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row) => (
+            <tr>
+              <th scope="row">{t.dimensions[row.key]}</th>
+              <td>{row.humanMean}</td>
+              <td>{row.humanSd}</td>
+              <td>{row.nearFinalMean}</td>
+              <td>{row.nearFinalSd}</td>
+              <td>{row.difference}</td>
+              <td>{row.dz}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </details>
+</figure>
+
+<style>
+  .vignette-chart {
+    box-sizing: border-box;
+    width: min(66rem, calc(100vw - 2rem));
+    max-width: calc(100vw - 2rem);
+    margin-block: 2.6rem;
+    margin-inline: 50%;
+    padding: clamp(1rem, 2.5vw, 1.7rem);
+    transform: translateX(-50%);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--surface);
+    overflow-wrap: anywhere;
+  }
+
+  .vignette-chart h3 {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: clamp(1.3rem, 1.7vw, 1.7rem);
+    line-height: 1.25;
+  }
+
+  .vignette-chart__description {
+    max-width: 74ch;
+    margin: 0.55rem 0 0;
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .vignette-chart__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.2rem;
+    margin-top: 1rem;
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+
+  .vignette-chart__legend > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .vignette-chart__shape {
+    display: inline-block;
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 0.14rem solid var(--accent);
+    background: var(--accent);
+  }
+
+  .vignette-chart__shape--human {
+    border-radius: 50%;
+  }
+
+  .vignette-chart__shape--near-final {
+    border-radius: 0.12rem;
+    background: var(--surface);
+  }
+
+  .vignette-chart__screen-reader-data {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .vignette-chart__plot {
+    display: grid;
+    gap: 1.15rem;
+    margin-top: 1.45rem;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding-block: 1.2rem 0.9rem;
+  }
+
+  .vignette-chart__row,
+  .vignette-chart__axis {
+    display: grid;
+    grid-template-columns: minmax(8.5rem, 0.28fr) minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .vignette-chart__dimension,
+  .vignette-chart__axis-label {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .vignette-chart__rail {
+    position: relative;
+    min-width: 0;
+    height: 3rem;
+    margin-inline: 1.9rem;
+  }
+
+  .vignette-chart__baseline,
+  .vignette-chart__gridline,
+  .vignette-chart__connector {
+    position: absolute;
+    display: block;
+  }
+
+  .vignette-chart__baseline {
+    top: 50%;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: var(--line-strong);
+  }
+
+  .vignette-chart__gridline {
+    top: 0.2rem;
+    bottom: 0.2rem;
+    left: var(--tick);
+    width: 1px;
+    background: var(--line);
+  }
+
+  .vignette-chart__connector {
+    top: calc(50% - 1px);
+    left: var(--start);
+    width: calc(var(--end) - var(--start));
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .vignette-chart__point {
+    position: absolute;
+    top: 50%;
+    left: var(--position);
+    display: grid;
+    width: 1.15rem;
+    height: 1.15rem;
+    place-items: center;
+    transform: translate(-50%, -50%);
+    border: 0.16rem solid var(--accent);
+    background: var(--surface);
+    color: var(--ink);
+  }
+
+  .vignette-chart__point--human {
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .vignette-chart__point--near-final {
+    border-radius: 0.12rem;
+  }
+
+  .vignette-chart__point > span {
+    position: absolute;
+    bottom: calc(100% + 0.25rem);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid var(--line);
+    border-radius: 0.2rem;
+    background: var(--surface);
+    padding: 0.05rem 0.22rem;
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+
+  .vignette-chart__axis {
+    align-items: start;
+  }
+
+  .vignette-chart__axis-label {
+    color: var(--text-soft);
+    font-weight: 600;
+  }
+
+  .vignette-chart__ticks {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-inline: 1.55rem;
+    color: var(--text-soft);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+  }
+
+  .vignette-chart__ticks span {
+    text-align: center;
+  }
+
+  .vignette-chart__ticks span:first-child {
+    text-align: left;
+  }
+
+  .vignette-chart__ticks span:last-child {
+    text-align: right;
+  }
+
+  figcaption {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    color: var(--text-soft);
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .vignette-chart__caveat {
+    border-left: 0.18rem solid var(--line-strong);
+    padding-left: 0.75rem;
+  }
+
+  .vignette-chart__statistics {
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+
+  .vignette-chart__data {
+    margin-top: 1rem;
+    border-top: 1px solid var(--line);
+    padding-top: 0.8rem;
+  }
+
+  .vignette-chart__data summary {
+    width: fit-content;
+    cursor: pointer;
+    color: var(--accent);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 650;
+  }
+
+  .vignette-chart__table-wrap {
+    max-width: 100%;
+    margin-top: 0.8rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+  }
+
+  table {
+    width: 100%;
+    min-width: 46rem;
+    border-collapse: collapse;
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  caption {
+    padding: 0.7rem;
+    border: 1px solid var(--line-strong);
+    border-bottom: 0;
+    font-family: var(--font-serif);
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  th,
+  td {
+    border: 1px solid var(--line-strong);
+    padding: 0.55rem;
+    text-align: right;
+    vertical-align: middle;
+  }
+
+  thead th {
+    background: var(--accent-soft);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+  }
+
+  thead tr:first-child th:not(:first-child) {
+    text-align: center;
+  }
+
+  tbody th,
+  thead th:first-child {
+    text-align: left;
+  }
+
+  @media (max-width: 820px) {
+    .vignette-chart {
+      width: 100%;
+      max-width: 100%;
+      margin-inline: 0;
+      transform: none;
+    }
+
+    .vignette-chart__row,
+    .vignette-chart__axis {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.45rem;
+    }
+
+    .vignette-chart__rail {
+      margin-inline: 1.55rem;
+    }
+
+    .vignette-chart__axis-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+
+    .vignette-chart__ticks {
+      margin-inline: 1.25rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .vignette-chart {
+      padding: 0.8rem;
+    }
+
+    .vignette-chart__legend {
+      display: grid;
+    }
+
+    .vignette-chart__rail {
+      margin-inline: 1.35rem;
+    }
+  }
+
+  @media print {
+    .vignette-chart {
+      width: 100%;
+      max-width: 100%;
+      margin-inline: 0;
+      transform: none;
+      break-inside: avoid;
+    }
+
+    .vignette-chart__data > :not(summary) {
+      display: block !important;
+    }
+
+    .vignette-chart__data summary {
+      display: none;
+    }
+
+    .vignette-chart__table-wrap {
+      overflow: visible;
+    }
+
+    table {
+      min-width: 0;
+      font-size: 7pt;
+    }
+  }
+</style>
