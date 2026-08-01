@@ -31,6 +31,13 @@ const cases = [
       "The controversy over Olga Tokarczuk's use of AI exposed the limits of a binary label. A preregistered study of 429 adults suggests that authorship is better discussed through direction, selection, revision, and final decision authority than through a supposed percentage of AI contribution.",
     closing:
       'AI can generate content, but the final sentence should belong to the human - even if it reads: “No. Try again.”',
+    inBriefLabel: 'TL;DR',
+    inBrief: [
+      'In a study of 429 adults, self-reported AI involvement was not related to perceived authorship in the predicted way.',
+      'Perceived control had a small positive association with perceived authorship, but the correlational design does not establish causality.',
+      'Participants rated a human-directed workflow more highly than accepting a near-final AI output, although the vignettes differed on several features at once.',
+      'Authorship is better discussed through direction, selection, revision, and responsibility than through a percentage of AI involvement. Article 50 of the AI Act strengthens transparency duties but does not establish a test of authorship.'
+    ],
     legalLabel: 'Legal update - obligations apply from 2 August 2026',
     regulationUrl: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689',
     legalPhrases: [
@@ -59,6 +66,13 @@ const cases = [
       'Burza wokół wypowiedzi Olgi Tokarczuk pokazała, jak szybko informacja o AI zmienia się w wyrok: „to już nie twoja praca”. Badanie 429 osób nie wyznacza granicy autorstwa, ale pomaga zobaczyć, dlaczego sam deklarowany udział AI nie wystarcza do opisania pracy twórczej.',
     closing:
       'AI może wygenerować treść, ale to człowiek powinien mieć ostatnie zdanie - choćby brzmiało ono: „nie, jeszcze raz”.',
+    inBriefLabel: 'W skrócie',
+    inBrief: [
+      'W badaniu 429 osób sam deklarowany udział AI nie wiązał się z poczuciem autorstwa w przewidywany sposób.',
+      'Postrzegana kontrola miała mały dodatni związek z poczuciem autorstwa, ale korelacja nie rozstrzyga przyczynowości.',
+      'Uczestnicy wyżej oceniali proces kierowany przez człowieka niż przyjęcie niemal gotowego wyniku AI, choć winiety różniły się kilkoma cechami naraz.',
+      'Autorstwo lepiej opisywać przez kierunek, selekcję, rewizję i odpowiedzialność niż przez procentowy udział AI. Artykuł 50 AI Act wzmacnia obowiązki przejrzystości, ale nie ustanawia testu autorstwa.'
+    ],
     legalLabel: 'Aktualizacja prawna - obowiązki od 2 sierpnia 2026',
     regulationUrl: 'https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32024R1689',
     legalPhrases: [
@@ -224,6 +238,21 @@ test.describe('bilingual AI authorship publication', () => {
       await expect(page.locator('[data-qa="ai-authorship-vignette-chart"] table')).toHaveCount(1);
       await expect(page.locator('[data-qa="closing-passage"]')).toContainText(article.closing);
 
+      const inBrief = page.locator('[data-qa="in-brief"]');
+      const inBriefSummary = inBrief.locator('summary.in-brief__summary');
+      await expect(inBrief).toHaveCount(1);
+      await expect(inBriefSummary).toHaveText(article.inBriefLabel);
+      await expect(inBrief).not.toHaveAttribute('open', '');
+      await inBriefSummary.focus();
+      await expect(inBriefSummary).toBeFocused();
+      await inBriefSummary.press('Enter');
+      await expect(inBrief).toHaveAttribute('open', '');
+      const inBriefParagraphs = inBrief.locator('.in-brief__body > p');
+      await expect(inBriefParagraphs).toHaveCount(4);
+      await expect(inBriefParagraphs).toHaveText(article.inBrief);
+      await inBriefSummary.press('Space');
+      await expect(inBrief).not.toHaveAttribute('open', '');
+
       const legalUpdate = page.locator('[data-qa="ai-act-article-50-update"]');
       await expect(legalUpdate).toBeVisible();
       await expect(legalUpdate.locator('.editorial-aside__label')).toHaveText(article.legalLabel);
@@ -284,6 +313,33 @@ test.describe('bilingual AI authorship publication', () => {
 
       expect(measurement, `${width}px`).toEqual({ found: true, sameLine: true, clipped: false });
       await expectNoHorizontalOverflow(page);
+    }
+  });
+
+  test('keeps both in-brief disclosures usable without overflow at every required width', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop-1440', 'One browser project covers the explicit viewport matrix.');
+
+    for (const article of cases) {
+      for (const width of [1440, 1280, 390, 320]) {
+        await page.setViewportSize({ width, height: width <= 390 ? 780 : 900 });
+        await page.goto(article.route);
+        const inBrief = page.locator('[data-qa="in-brief"]');
+        const summary = inBrief.locator('summary');
+        await expect(summary).toHaveText(article.inBriefLabel);
+        await summary.focus();
+        await summary.press('Enter');
+        await expect(inBrief).toHaveAttribute('open', '');
+        await expect(inBrief.locator('.in-brief__body > p')).toHaveCount(4);
+        const rect = await inBrief.evaluate((element) => {
+          const box = element.getBoundingClientRect();
+          return { left: box.left, right: box.right, viewport: document.documentElement.clientWidth };
+        });
+        expect(rect.left, `${article.lang} ${width}px left`).toBeGreaterThanOrEqual(-1);
+        expect(rect.right, `${article.lang} ${width}px right`).toBeLessThanOrEqual(rect.viewport + 1);
+        await expectNoHorizontalOverflow(page);
+        await summary.press('Space');
+        await expect(inBrief).not.toHaveAttribute('open', '');
+      }
     }
   });
 
