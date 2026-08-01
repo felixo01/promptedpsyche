@@ -217,7 +217,13 @@ const asideLabels = isConceptEntry
   structuredData={publicationStructuredData}
   scholarMetadata={scholarMetadata}
 >
-  <article class:list={['article-shell', isConceptEntry ? 'article-shell--concept' : 'article-shell--publication']}>
+  <article
+    class:list={[
+      'article-shell',
+      isConceptEntry ? 'article-shell--concept' : 'article-shell--publication',
+      entryType !== 'concept' ? `article-shell--${entryType}` : null
+    ]}
+  >
     <header class="content-header">
       <div class="content-header-inner">
         {
