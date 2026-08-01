@@ -4,6 +4,9 @@ import { expect, test, type Page } from '@playwright/test';
 
 const siteUrl = 'https://promptedpsyche.com';
 const fallbackImage = `${siteUrl}/images/social/prompted-psyche-home-social-1200x630.png`;
+const updatedAt = '2026-08-01';
+const guidelinesUrl =
+  'https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems';
 
 const files = {
   en: resolve('src/content/articles/who-had-the-final-say-ai-authorship.mdx'),
@@ -28,6 +31,16 @@ const cases = [
       "The controversy over Olga Tokarczuk's use of AI exposed the limits of a binary label. A preregistered study of 429 adults suggests that authorship is better discussed through direction, selection, revision, and final decision authority than through a supposed percentage of AI contribution.",
     closing:
       'AI can generate content, but the final sentence should belong to the human - even if it reads: “No. Try again.”',
+    legalLabel: 'Legal update - obligations apply from 2 August 2026',
+    regulationUrl: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689',
+    legalPhrases: [
+      'machine-readable format',
+      'human review or editorial control',
+      'holds editorial responsibility',
+      'evidently artistic, creative, satirical, or fictional work',
+      'not a legal test of authorship',
+      '2 December 2026'
+    ],
     index: '/articles/',
     searchIndex: '/search-index.en.json',
     hub: '/topics/human-agency-and-responsibility/',
@@ -41,11 +54,21 @@ const cases = [
     lang: 'pl',
     route: routes.pl,
     alternate: routes.en,
-    title: 'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI',
+    title: 'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI',
     description:
       'Burza wokół wypowiedzi Olgi Tokarczuk pokazała, jak szybko informacja o AI zmienia się w wyrok: „to już nie twoja praca”. Badanie 429 osób nie wyznacza granicy autorstwa, ale pomaga zobaczyć, dlaczego sam deklarowany udział AI nie wystarcza do opisania pracy twórczej.',
     closing:
       'AI może wygenerować treść, ale to człowiek powinien mieć ostatnie zdanie - choćby brzmiało ono: „nie, jeszcze raz”.',
+    legalLabel: 'Aktualizacja prawna - obowiązki od 2 sierpnia 2026',
+    regulationUrl: 'https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32024R1689',
+    legalPhrases: [
+      'odczytu maszynowego',
+      'weryfikację przez człowieka lub kontrolę redakcyjną',
+      'ponosi odpowiedzialność redakcyjną',
+      'ewidentnie artystycznego, twórczego, satyrycznego lub fikcyjnego',
+      'nie ustanawiają prawnego testu autorstwa',
+      '2 grudnia 2026'
+    ],
     index: '/pl/articles/',
     searchIndex: '/search-index.pl.json',
     hub: '/pl/topics/sprawczosc-i-odpowiedzialnosc/',
@@ -101,6 +124,7 @@ test.describe('bilingual AI authorship publication', () => {
       const metadata = frontmatter(path);
 
       expect(metadata).toMatch(/^publishedAt: 2026-07-31$/m);
+      expect(metadata).toMatch(new RegExp(`^updatedAt: ${updatedAt}$`, 'm'));
       expect(metadata).toMatch(/^draft: false$/m);
       expect(metadata).toMatch(/^scholarPrimary: false$/m);
       expect(metadata).toMatch(/^translationKey: "ai-authorship-final-say"$/m);
@@ -108,6 +132,12 @@ test.describe('bilingual AI authorship publication', () => {
       expect(metadata).not.toMatch(/^(?:doi|doiUrl|relatedDoi|relatedDoiUrl|version):/m);
       expect(metadata).not.toMatch(/^(?:image|imageAlt|imageCaption|socialImage):/m);
     }
+
+    const polishSource = read(files.pl);
+    expect(polishSource).toContain('O\u00a0autorstwie');
+    expect(polishSource).not.toContain('O autorstwie');
+    expect(polishSource).not.toMatch(/AI Act.{0,80}wszedł w życie 2 sierpnia 2026/is);
+    expect(read(files.en)).not.toMatch(/AI Act.{0,80}entered into force (?:on )?2 August 2026/is);
   });
 
   for (const article of cases) {
@@ -152,6 +182,7 @@ test.describe('bilingual AI authorship publication', () => {
         description: article.description,
         url: `${siteUrl}${article.route}`,
         datePublished: '2026-07-31T00:00:00.000Z',
+        dateModified: `${updatedAt}T00:00:00.000Z`,
         inLanguage: article.lang,
         mainEntityOfPage: {
           '@type': 'WebPage',
@@ -192,8 +223,69 @@ test.describe('bilingual AI authorship publication', () => {
       await expect(page.locator('[data-qa="ai-authorship-vignette-chart"]')).toBeVisible();
       await expect(page.locator('[data-qa="ai-authorship-vignette-chart"] table')).toHaveCount(1);
       await expect(page.locator('[data-qa="closing-passage"]')).toContainText(article.closing);
+
+      const legalUpdate = page.locator('[data-qa="ai-act-article-50-update"]');
+      await expect(legalUpdate).toBeVisible();
+      await expect(legalUpdate.locator('.editorial-aside__label')).toHaveText(article.legalLabel);
+      for (const phrase of article.legalPhrases) await expect(legalUpdate).toContainText(phrase);
+      await expect(legalUpdate.locator(`a[href="${article.regulationUrl}"]`)).toHaveCount(1);
+      await expect(legalUpdate.locator(`a[href="${guidelinesUrl}"]`)).toHaveCount(1);
     });
   }
+
+  test('keeps the Polish title orphan fix intact and visible at every required width', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop-1440', 'One browser project covers the explicit viewport matrix.');
+
+    for (const width of [1920, 1600, 1440, 1280, 1024, 768, 390, 320]) {
+      await page.setViewportSize({ width, height: width <= 390 ? 780 : 900 });
+      await page.goto(routes.pl);
+      const heading = page.getByRole('heading', { level: 1 });
+      await expect(heading).toBeVisible();
+      await expect(heading).toContainText('O\u00a0autorstwie');
+
+      const measurement = await heading.evaluate((element) => {
+        const target = 'O\u00a0autorstwie';
+        const text = element.textContent ?? '';
+        const start = text.indexOf(target);
+        if (start < 0) return { found: false, sameLine: false, clipped: true };
+
+        const rectForCharacter = (offset: number) => {
+          const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+          let traversed = 0;
+          let node = walker.nextNode();
+          while (node) {
+            const length = node.textContent?.length ?? 0;
+            if (offset < traversed + length) {
+              const range = document.createRange();
+              const localOffset = offset - traversed;
+              range.setStart(node, localOffset);
+              range.setEnd(node, localOffset + 1);
+              return range.getBoundingClientRect();
+            }
+            traversed += length;
+            node = walker.nextNode();
+          }
+          return null;
+        };
+
+        const first = rectForCharacter(start);
+        const nextWord = rectForCharacter(start + 2);
+        const headingRect = element.getBoundingClientRect();
+        return {
+          found: true,
+          sameLine: Boolean(first && nextWord && Math.abs(first.top - nextWord.top) < 1),
+          clipped:
+            headingRect.left < -1 ||
+            headingRect.right > document.documentElement.clientWidth + 1 ||
+            headingRect.width <= 0 ||
+            headingRect.height <= 0
+        };
+      });
+
+      expect(measurement, `${width}px`).toEqual({ found: true, sameLine: true, clipped: false });
+      await expectNoHorizontalOverflow(page);
+    }
+  });
 
   test('exposes both articles through indexes, search, RSS, sitemap, tags and the agency hubs', async ({ request }) => {
     const sitemap = readBuiltSitemap();

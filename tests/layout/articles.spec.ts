@@ -27,7 +27,7 @@ const aiAuthorshipPolishArticleRoute =
   '/pl/articles/kto-mial-ostatnie-slowo-autorstwo-ai/';
 const aiAuthorshipEnglishArticleRoute = '/articles/who-had-the-final-say-ai-authorship/';
 const aiAuthorshipPolishArticleTitle =
-  'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI';
+  'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI';
 const aiAuthorshipEnglishArticleTitle =
   'Who Had the Final Say? Authorship in AI-Assisted Creative Work';
 const generativeSearchPolishArticleTitle = 'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?';
