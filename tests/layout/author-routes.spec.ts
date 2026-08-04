@@ -2,6 +2,7 @@ import { expect, test, type Page } from '@playwright/test';
 
 const publicProfileUrls = [
   'https://orcid.org/0009-0001-0715-0517',
+  'https://scholar.google.com/citations?user=8YbwkOEAAAAJ',
   'https://felixmamczur.com/',
   'https://www.europeanfilmawards.eu/talent/feliks-mamczur/',
   'https://www.filmpolski.pl/fp/index.php/1199894',
@@ -128,7 +129,7 @@ test.describe('author and about routes', () => {
     await expect(page.getByRole('heading', { level: 3, name: 'Selected publications' })).toBeVisible();
     await expectSelectedPublications(page, selectedPublicationUrls.en);
     await expect(page.getByRole('heading', { level: 3, name: 'Public profiles' })).toBeVisible();
-    await expect(page.locator('[data-qa="author-public-profiles"] a')).toHaveCount(7);
+    await expect(page.locator('[data-qa="author-public-profiles"] a')).toHaveCount(8);
     expect(await page.locator('[data-qa="author-public-profiles"] a').evaluateAll((links) =>
       links.map((link) => link.getAttribute('href'))
     )).toEqual(publicProfileUrls);
@@ -222,7 +223,7 @@ test.describe('author and about routes', () => {
     await expect(page.getByRole('heading', { level: 3, name: 'Wybrane publikacje' })).toBeVisible();
     await expectSelectedPublications(page, selectedPublicationUrls.pl);
     await expect(page.getByRole('heading', { level: 3, name: 'Profile publiczne' })).toBeVisible();
-    await expect(page.locator('[data-qa="author-public-profiles"] a')).toHaveCount(7);
+    await expect(page.locator('[data-qa="author-public-profiles"] a')).toHaveCount(8);
     expect(await page.locator('[data-qa="author-public-profiles"] a').evaluateAll((links) =>
       links.map((link) => link.getAttribute('href'))
     )).toEqual(publicProfileUrls);

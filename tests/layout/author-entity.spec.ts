@@ -6,6 +6,7 @@ const PUBLISHER_ENTITY_ID = 'https://promptedpsyche.com/#publisher';
 const alternateNames = ['Feliks Mirosław Mamczur', 'Mirosław Mamczur', 'Felix Mamczur'];
 const sameAs = [
   'https://orcid.org/0009-0001-0715-0517',
+  'https://scholar.google.com/citations?user=8YbwkOEAAAAJ',
   'https://felixmamczur.com/',
   'https://www.europeanfilmawards.eu/talent/feliks-mamczur/',
   'https://www.filmpolski.pl/fp/index.php/1199894',

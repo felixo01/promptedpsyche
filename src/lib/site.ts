@@ -19,6 +19,10 @@ export const authorPublicProfiles = [
     label: { en: 'ORCID', pl: 'ORCID' }
   },
   {
+    url: 'https://scholar.google.com/citations?user=8YbwkOEAAAAJ',
+    label: { en: 'Google Scholar', pl: 'Google Scholar' }
+  },
+  {
     url: 'https://felixmamczur.com/',
     label: { en: 'Film and visual portfolio', pl: 'Portfolio filmowe i wizualne' }
   },
