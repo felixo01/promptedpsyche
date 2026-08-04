@@ -8,12 +8,12 @@ import { getSelectedAuthorPublications } from '../lib/authorPublications';
 import { AUTHOR_ENTITY_ID, WEBSITE_ENTITY_ID, absoluteUrl, getAuthorEntity } from '../lib/site';
 
 const pageDescription =
-  'About Feliks Mamczur, author of Prompted Psyche, a publication about AI, trust, communication and the human side of intelligent systems.';
+  'Feliks Mamczur writes about AI, cyberpsychology and Human-AI Interaction through Prompted Psyche, drawing on experience in film, creative work and communication.';
 const selectedPublications = getSelectedAuthorPublications(await getCollection('articles'), 'en');
 const profileStructuredData = {
   '@id': absoluteUrl('/about/#profile-page'),
   '@type': 'ProfilePage',
-  name: 'About Feliks Mamczur',
+  name: 'Feliks Mamczur - AI, Cyberpsychology and Human-AI Interaction',
   description: pageDescription,
   url: absoluteUrl('/about/'),
   inLanguage: 'en',
@@ -43,7 +43,7 @@ const profileStructuredData = {
 ---
 
 <BaseLayout
-  title="Feliks Mamczur - author of Prompted Psyche"
+  title="Feliks Mamczur - AI, Cyberpsychology and Human-AI Interaction"
   appendSiteName={false}
   description={pageDescription}
   structuredData={profileStructuredData}

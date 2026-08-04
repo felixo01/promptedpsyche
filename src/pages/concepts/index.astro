@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 import ConceptList from '../../components/ConceptList.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { sortConceptsForIndex } from '../../lib/conceptOrder';
+import { getConceptSlug } from '../../lib/conceptRoutes';
 import { onlyPublicEntriesByLang } from '../../lib/content';
+import { absoluteUrl } from '../../lib/site';
 
 const concepts = sortConceptsForIndex(onlyPublicEntriesByLang(await getCollection('concepts'), 'en'));
 const tags = Array.from(new Set(concepts.flatMap((concept) => concept.data.tags ?? [])));
@@ -21,11 +23,26 @@ const conceptCountLabel = `${filteredConcepts.length} ${
   filteredConcepts.length === 1 ? 'entry' : 'entries'
 }`;
 const getTagHref = (tag: string) => `/concepts/?${new URLSearchParams({ tag }).toString()}`;
+const seoTitle = 'AI Psychology and Human-AI Interaction Glossary';
+const pageDescription =
+  'A glossary of AI psychology and Human-AI Interaction concepts, including cognition, trust, anthropomorphism and human-AI communication.';
+const definedTermSet = {
+  '@id': absoluteUrl('/concepts/#defined-term-set'),
+  '@type': 'DefinedTermSet',
+  name: seoTitle,
+  description: pageDescription,
+  url: absoluteUrl('/concepts/'),
+  inLanguage: 'en',
+  hasDefinedTerm: concepts.map((concept) => ({
+    '@id': absoluteUrl(`/concepts/${getConceptSlug(concept)}/#defined-term`)
+  }))
+};
 ---
 
 <BaseLayout
-  title="Concepts"
-  description="A field guide to core concepts in AI, cyberpsychology and Human-AI Interaction."
+  title={seoTitle}
+  description={pageDescription}
+  structuredData={definedTermSet}
 >
   <div
     class="lovable-page concepts-page"

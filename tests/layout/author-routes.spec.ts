@@ -70,7 +70,7 @@ test.describe('author and about routes', () => {
     await expect(page.locator('.skip-link')).toBeFocused();
     await expect(page.locator('.skip-link')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
     await expect(page).toHaveURL(/\/about\/$/);
-    await expect(page).toHaveTitle('Feliks Mamczur - author of Prompted Psyche');
+    await expect(page).toHaveTitle('Feliks Mamczur - AI, Cyberpsychology and Human-AI Interaction');
     await expect(page.getByRole('heading', { level: 1, name: 'Feliks Mamczur' })).toBeVisible();
     await expect(page.locator('.about-hero .eyebrow')).toHaveText('Author of Prompted Psyche');
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
@@ -160,10 +160,12 @@ test.describe('author and about routes', () => {
     await expect(page.locator('.skip-link')).toBeFocused();
     await expect(page.locator('.skip-link')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
     await expect(page).toHaveURL(/\/pl\/about\/$/);
-    await expect(page).toHaveTitle('Feliks Mamczur — autor Prompted Psyche');
+    await expect(page).toHaveTitle(
+      'Feliks Mamczur - psychologia AI, cyberpsychologia i Human-AI Interaction'
+    );
     await expect(page.locator('meta[name="description"]')).toHaveAttribute(
       'content',
-      'Feliks Mamczur — autor i twórca Prompted Psyche. Pisze o AI, cyberpsychologii, zaufaniu, komunikacji i ludzkiej stronie inteligentnych systemów.'
+      'Feliks Mamczur pisze w Prompted Psyche o AI, cyberpsychologii i Human-AI Interaction, korzystając z doświadczenia filmowego, twórczego i komunikacyjnego.'
     );
     await expect(page.getByRole('heading', { level: 1, name: 'Feliks Mamczur' })).toBeVisible();
     await expect(page.locator('.about-hero .eyebrow')).toHaveText('Autor Prompted Psyche');

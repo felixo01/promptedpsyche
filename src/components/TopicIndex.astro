@@ -15,10 +15,13 @@ const alternateLinks = {
   pl: '/pl/topics/',
   xDefault: '/topics/'
 };
-const title = isPl ? 'Obszary' : 'Topics';
+const headingTitle = isPl ? 'Obszary' : 'Topics';
+const title = isPl
+  ? 'Przewodniki po psychologicznych i społecznych skutkach AI'
+  : 'Guides to the Psychological and Social Effects of AI';
 const description = isPl
-  ? 'Przewodniki po głównych obszarach Prompted Psyche: zaufaniu do AI, myśleniu oraz sprawczości i odpowiedzialności.'
-  : 'Guides to the central Prompted Psyche topics: trust in AI, cognition, and human agency and responsibility.';
+  ? 'Przewodniki tematyczne po psychologicznych i społecznych skutkach AI: zaufaniu, myśleniu, sprawczości i odpowiedzialności.'
+  : 'Topic guides to the psychological and social effects of AI, including trust, cognition, human agency and responsibility.';
 ---
 
 <BaseLayout lang={lang} title={title} description={description} alternateLinks={alternateLinks}>
@@ -26,7 +29,7 @@ const description = isPl
     <header class="page-header topic-index-page__header">
       <div>
         <p class="eyebrow">{isPl ? 'Mapa tematyczna' : 'Topic map'}</p>
-        <h1>{title}</h1>
+        <h1>{headingTitle}</h1>
       </div>
       <p>
         {isPl
