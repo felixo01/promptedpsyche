@@ -8,12 +8,12 @@ import { getSelectedAuthorPublications } from '../../lib/authorPublications';
 import { AUTHOR_ENTITY_ID, WEBSITE_ENTITY_ID, absoluteUrl, getAuthorEntity } from '../../lib/site';
 
 const pageDescription =
-  'Feliks Mamczur — autor i twórca Prompted Psyche. Pisze o AI, cyberpsychologii, zaufaniu, komunikacji i ludzkiej stronie inteligentnych systemów.';
+  'Feliks Mamczur pisze w Prompted Psyche o AI, cyberpsychologii i Human-AI Interaction, korzystając z doświadczenia filmowego, twórczego i komunikacyjnego.';
 const selectedPublications = getSelectedAuthorPublications(await getCollection('articles'), 'pl');
 const profileStructuredData = {
   '@id': absoluteUrl('/pl/about/#profile-page'),
   '@type': 'ProfilePage',
-  name: 'Feliks Mamczur — autor Prompted Psyche',
+  name: 'Feliks Mamczur - psychologia AI, cyberpsychologia i Human-AI Interaction',
   description: pageDescription,
   url: absoluteUrl('/pl/about/'),
   inLanguage: 'pl',
@@ -44,7 +44,7 @@ const profileStructuredData = {
 
 <BaseLayout
   lang="pl"
-  title="Feliks Mamczur — autor Prompted Psyche"
+  title="Feliks Mamczur - psychologia AI, cyberpsychologia i Human-AI Interaction"
   appendSiteName={false}
   description={pageDescription}
   structuredData={profileStructuredData}

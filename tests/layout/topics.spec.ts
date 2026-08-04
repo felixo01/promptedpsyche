@@ -95,7 +95,7 @@ test.describe('topic hubs', () => {
         const structuredData = await page.locator('script[type="application/ld+json"]').textContent();
         expect(structuredData).toContain('https://promptedpsyche.com/#website');
         expect(structuredData).toContain('https://promptedpsyche.com/#publisher');
-        expect(structuredData).not.toContain('BreadcrumbList');
+        expect(structuredData).toContain('BreadcrumbList');
 
         const wordCount = await page.locator('[data-qa="topic-hub"]').evaluate((element) =>
           (element.textContent ?? '').trim().split(/\s+/).filter(Boolean).length

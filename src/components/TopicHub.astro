@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getAuthorUrl } from '../lib/site';
+import { absoluteUrl, getAuthorUrl } from '../lib/site';
 import {
   getTopicAlternateLinks,
   type TopicHub,
@@ -21,6 +21,30 @@ const resourceLabels = isPl
   : { article: 'Article', concept: 'Concept', practice: 'Practice', note: 'Note', topic: 'Topic' };
 
 const renderResourceList = (resources: TopicResource[]) => resources;
+const breadcrumbStructuredData = {
+  '@type': 'BreadcrumbList',
+  '@id': `${absoluteUrl(hub.path)}#breadcrumb`,
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: isPl ? 'Start' : 'Home',
+      item: absoluteUrl(isPl ? '/pl/' : '/')
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: isPl ? 'Obszary' : 'Topics',
+      item: absoluteUrl(topicsPath)
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: hub.title,
+      item: absoluteUrl(hub.path)
+    }
+  ]
+};
 ---
 
 <BaseLayout
@@ -28,6 +52,7 @@ const renderResourceList = (resources: TopicResource[]) => resources;
   title={hub.title}
   description={hub.description}
   alternateLinks={alternateLinks}
+  structuredData={breadcrumbStructuredData}
 >
   <article class="topic-hub page-shell" data-qa="topic-hub" data-topic-id={hub.id}>
     <header class="topic-hub__hero">

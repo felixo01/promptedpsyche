@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 import ConceptList from '../../../components/ConceptList.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { sortConceptsForIndex } from '../../../lib/conceptOrder';
+import { getConceptSlug } from '../../../lib/conceptRoutes';
 import { onlyPublicEntriesByLang } from '../../../lib/content';
+import { absoluteUrl } from '../../../lib/site';
 
 const concepts = sortConceptsForIndex(onlyPublicEntriesByLang(await getCollection('concepts'), 'pl'));
 const tags = Array.from(new Set(concepts.flatMap((concept) => concept.data.tags ?? [])));
@@ -21,12 +23,27 @@ const conceptCountLabel = `${filteredConcepts.length} ${
   filteredConcepts.length === 1 ? 'hasło' : 'haseł'
 }`;
 const getTagHref = (tag: string) => `/pl/concepts/?${new URLSearchParams({ tag }).toString()}`;
+const seoTitle = 'Słownik psychologii AI i relacji człowiek-AI';
+const pageDescription =
+  'Słownik pojęć z psychologii AI i Human-AI Interaction: poznania, zaufania, antropomorfizacji i komunikacji człowiek-AI.';
+const definedTermSet = {
+  '@id': absoluteUrl('/pl/concepts/#defined-term-set'),
+  '@type': 'DefinedTermSet',
+  name: seoTitle,
+  description: pageDescription,
+  url: absoluteUrl('/pl/concepts/'),
+  inLanguage: 'pl',
+  hasDefinedTerm: concepts.map((concept) => ({
+    '@id': absoluteUrl(`/pl/concepts/${getConceptSlug(concept)}/#defined-term`)
+  }))
+};
 ---
 
 <BaseLayout
   lang="pl"
-  title="Pojęcia"
-  description="Słownik pojęć Prompted Psyche o ludzkiej stronie AI."
+  title={seoTitle}
+  description={pageDescription}
+  structuredData={definedTermSet}
 >
   <div
     class="lovable-page concepts-page"

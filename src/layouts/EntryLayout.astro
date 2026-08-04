@@ -166,6 +166,66 @@ const publicationStructuredData = publicationSchemaType
       ...(socialImage ? { image: absoluteUrl(socialImage) } : {})
     }
   : undefined;
+const breadcrumbSection = {
+  article: {
+    en: { name: 'Articles', path: '/articles/' },
+    pl: { name: 'Artykuły', path: '/pl/articles/' }
+  },
+  note: {
+    en: { name: 'Notes', path: '/notes/' },
+    pl: { name: 'Notatki', path: '/pl/notes/' }
+  },
+  concept: {
+    en: { name: 'Concepts', path: '/concepts/' },
+    pl: { name: 'Pojęcia', path: '/pl/concepts/' }
+  },
+  practice: {
+    en: { name: 'Practice', path: '/practice/' },
+    pl: { name: 'Praktyka', path: '/pl/practice/' }
+  }
+}[entryType][lang];
+const breadcrumbStructuredData = {
+  '@type': 'BreadcrumbList',
+  '@id': `${canonicalUrl}#breadcrumb`,
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: lang === 'pl' ? 'Start' : 'Home',
+      item: absoluteUrl(lang === 'pl' ? '/pl/' : '/')
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: breadcrumbSection.name,
+      item: absoluteUrl(breadcrumbSection.path)
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: entry.data.title,
+      item: canonicalUrl
+    }
+  ]
+};
+const conceptStructuredData = isConceptEntry
+  ? {
+      '@type': 'DefinedTerm',
+      '@id': `${canonicalUrl}#defined-term`,
+      name: entry.data.title,
+      description: entry.data.description,
+      url: canonicalUrl,
+      inLanguage: lang,
+      inDefinedTermSet: {
+        '@id': absoluteUrl(lang === 'pl' ? '/pl/concepts/#defined-term-set' : '/concepts/#defined-term-set')
+      }
+    }
+  : undefined;
+const pageStructuredData: Record<string, unknown>[] = [
+  ...(publicationStructuredData ? [publicationStructuredData] : []),
+  breadcrumbStructuredData,
+  ...(conceptStructuredData ? [conceptStructuredData] : [])
+];
 const audioLabel = lang === 'pl' ? 'Wersja audio' : 'Audio version';
 const audioFallback =
   lang === 'pl'
@@ -214,7 +274,7 @@ const asideLabels = isConceptEntry
   lang={lang}
   alternateLinks={alternateLinks}
   robots={robots}
-  structuredData={publicationStructuredData}
+  structuredData={pageStructuredData}
   scholarMetadata={scholarMetadata}
 >
   <article
