@@ -30,7 +30,9 @@ export const beyondAiShareRecord = {
       'Is It Still My Work? Authorship, Authenticity and Control in AI-Assisted Creative Practice',
     doi: '10.17605/OSF.IO/GSWN3',
     url: 'https://doi.org/10.17605/OSF.IO/GSWN3',
-    registrationDate: '2026-06-15'
+    registrationDate: '2026-06-15',
+    registrationStatus: 'accepted',
+    accessVerifiedAt: '2026-08-04'
   },
   socialImage: '/images/social/beyond-ai-share-project-social-1200x630.png',
   dateModified: '2026-08-04'

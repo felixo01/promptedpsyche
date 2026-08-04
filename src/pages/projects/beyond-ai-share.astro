@@ -15,6 +15,10 @@ const alternateLinks = {
   xDefault: beyondAiShareRecord.paths.en
 };
 const structuredData = getBeyondAiShareStructuredData('en', pageTitle, pageDescription);
+const preregistrationStatus =
+  beyondAiShareRecord.preregistration.registrationStatus === 'accepted'
+    ? 'Accepted'
+    : beyondAiShareRecord.preregistration.registrationStatus;
 ---
 
 <BaseLayout
@@ -254,8 +258,14 @@ const structuredData = getBeyondAiShareStructuredData('en', pageTitle, pageDescr
               <p class="small-label">OSF preregistration</p>
               <h3>{beyondAiShareRecord.preregistration.title}</h3>
               <dl>
-                <div><dt>Registered</dt><dd><time datetime="2026-06-15">15 June 2026</time></dd></div>
-                <div><dt>Status</dt><dd>Public, accepted registration</dd></div>
+                <div><dt>Registered</dt><dd><time datetime={beyondAiShareRecord.preregistration.registrationDate}>15 June 2026</time></dd></div>
+                <div><dt>Registration status</dt><dd>{preregistrationStatus}</dd></div>
+                <div>
+                  <dt>Access</dt>
+                  <dd>
+                    Publicly accessible when verified on <time datetime={beyondAiShareRecord.preregistration.accessVerifiedAt}>4 August 2026</time>
+                  </dd>
+                </div>
                 <div><dt>DOI</dt><dd><a href={beyondAiShareRecord.preregistration.url}>{beyondAiShareRecord.preregistration.doi}</a></dd></div>
               </dl>
             </article>

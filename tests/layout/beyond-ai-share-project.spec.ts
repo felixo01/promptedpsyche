@@ -8,6 +8,8 @@ const authorId = `${siteUrl}/#feliks-mamczur`;
 const doi = '10.5281/zenodo.21705721';
 const doiUrl = `https://doi.org/${doi}`;
 const osfUrl = 'https://doi.org/10.17605/OSF.IO/GSWN3';
+const osfTitle =
+  'Is It Still My Work? Authorship, Authenticity and Control in AI-Assisted Creative Practice';
 const preprintTitle =
   'Beyond AI Share: A Preregistered Survey and Vignette Study of Perceived Control, Authorship, and Authenticity in AI-Assisted Creative Practice';
 const socialImage = `${siteUrl}/images/social/beyond-ai-share-project-social-1200x630.png`;
@@ -29,6 +31,12 @@ const projectPages = [
     authorHeading: 'About the author',
     preprintLabel: 'Read the preprint',
     preregistrationLabel: 'View preregistration',
+    registrationStatusLabel: 'Registration status',
+    registrationStatusValue: 'Accepted',
+    accessLabel: 'Access',
+    accessText: 'Publicly accessible when verified on 4 August 2026',
+    accessDateText: '4 August 2026',
+    legacyRegistrationStatus: 'Public, accepted registration',
     imageAlt: 'Beyond AI Share - authorship, control and authenticity in AI-assisted creativity'
   },
   {
@@ -47,6 +55,12 @@ const projectPages = [
     authorHeading: 'O autorze',
     preprintLabel: 'Przeczytaj preprint',
     preregistrationLabel: 'Zobacz prerejestrację',
+    registrationStatusLabel: 'Status rejestracji',
+    registrationStatusValue: 'Zaakceptowana',
+    accessLabel: 'Dostęp',
+    accessText: 'Publicznie dostępna podczas weryfikacji 4 sierpnia 2026',
+    accessDateText: '4 sierpnia 2026',
+    legacyRegistrationStatus: 'Publiczna, zaakceptowana rejestracja',
     imageAlt: 'Beyond AI Share - autorstwo, kontrola i autentyczność w twórczości wspomaganej przez AI'
   }
 ] as const;
@@ -94,7 +108,23 @@ test.describe('Beyond AI Share research project pages', () => {
       expect(await page.locator('dl.research-facts').count()).toBeGreaterThanOrEqual(2);
       await expect(page.locator('time[datetime="2026-07-30"]')).toHaveCount(1);
       await expect(page.locator('time[datetime="2026-06-15"]')).toHaveCount(1);
-      await expect(page.locator('time[datetime="2026-08-04"]')).toHaveCount(1);
+      await expect(page.locator('time[datetime="2026-08-04"]')).toHaveCount(2);
+
+      const preregistrationCard = page.locator('.research-record-card').filter({
+        has: page.getByRole('heading', { name: osfTitle, level: 3 })
+      });
+      await expect(preregistrationCard).toHaveCount(1);
+
+      const registrationStatusRow = preregistrationCard
+        .getByText(project.registrationStatusLabel, { exact: true })
+        .locator('..');
+      await expect(registrationStatusRow.locator('dd')).toHaveText(project.registrationStatusValue);
+
+      const accessRow = preregistrationCard.getByText(project.accessLabel, { exact: true }).locator('..');
+      await expect(accessRow.locator('dd')).toHaveText(project.accessText);
+      await expect(accessRow.locator('time')).toHaveAttribute('datetime', '2026-08-04');
+      await expect(accessRow.locator('time')).toHaveText(project.accessDateText);
+      await expect(page.getByText(project.legacyRegistrationStatus, { exact: true })).toHaveCount(0);
 
       await expect(page.getByRole('link', { name: project.preprintLabel })).toHaveAttribute('href', doiUrl);
       await expect(page.getByRole('link', { name: project.preregistrationLabel })).toHaveAttribute('href', osfUrl);
