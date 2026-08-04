@@ -19,6 +19,12 @@ export const beyondAiShareRecord = {
     doi: '10.5281/zenodo.21705721',
     url: 'https://doi.org/10.5281/zenodo.21705721',
     recordUrl: 'https://zenodo.org/records/21705721',
+    pdfUrl:
+      'https://zenodo.org/records/21705721/files/Beyond_AI_Share_Preprint_v1.0.pdf?download=1',
+    pdfFileName: 'Beyond_AI_Share_Preprint_v1.0.pdf',
+    appendixUrl:
+      'https://zenodo.org/records/21705721/files/Beyond_AI_Share_Appendix_A_v1.0.pdf?download=1',
+    appendixFileName: 'Beyond_AI_Share_Appendix_A_v1.0.pdf',
     author: 'Feliks Mamczur',
     publicationDate: '2026-07-30',
     version: '1.0',
