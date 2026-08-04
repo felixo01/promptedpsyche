@@ -3,6 +3,7 @@ import { getArticlePath } from './articleRoutes';
 import { getConceptPath } from './conceptRoutes';
 import { getNotePath } from './noteRoutes';
 import { getPracticePath } from './practiceRoutes';
+import { getProjectSearchItems } from './projects';
 import { getTopicSearchItems } from './topics';
 import {
   onlyPublicEntriesByLang,
@@ -12,7 +13,7 @@ import {
 import { sortConceptsForIndex } from './conceptOrder';
 import { showPractice } from './features';
 
-export type SearchItemType = 'article' | 'note' | 'concept' | 'practice' | 'topic';
+export type SearchItemType = 'article' | 'note' | 'concept' | 'practice' | 'topic' | 'project';
 
 export type SearchIndexItem = {
   title: string;
@@ -41,6 +42,7 @@ export async function buildSearchIndex(language: SearchLocale): Promise<SearchIn
     ? sortByDateDesc(onlyPublicEntriesByLang(await getCollection('practice'), language))
     : [];
   const topics = getTopicSearchItems(language);
+  const projects = getProjectSearchItems(language);
 
   return [
     ...articles.map((entry) => ({
@@ -79,6 +81,7 @@ export async function buildSearchIndex(language: SearchLocale): Promise<SearchIn
       tags: entry.data.tags ?? [],
       date: formatDateForIndex(entry.data.publishedAt)
     })),
-    ...topics
+    ...topics,
+    ...projects
   ];
 }

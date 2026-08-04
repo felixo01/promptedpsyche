@@ -7,7 +7,7 @@ type JsonLd = Record<string, unknown>;
 type SearchItem = {
   title: string;
   url: string;
-  type: 'article' | 'note' | 'concept' | 'practice' | 'topic';
+  type: 'article' | 'note' | 'concept' | 'practice' | 'topic' | 'project';
   language: 'en' | 'pl';
 };
 
@@ -347,7 +347,7 @@ test.describe('Google Scholar metadata hard gate', () => {
     await expect(page.locator('meta[name^="citation_"]')).toHaveCount(0);
   });
 
-  test('19-24 keep every non-primary Article, Note, Concept, Practice and Consulting page outside Scholar metadata', async ({
+  test('19-24 keep every non-primary Article, Note, Concept, Practice, Project and Consulting page outside Scholar metadata', async ({
     request
   }, testInfo) => {
     testInfo.setTimeout(120_000);
@@ -358,7 +358,8 @@ test.describe('Google Scholar metadata hard gate', () => {
       'article',
       'note',
       'concept',
-      'practice'
+      'practice',
+      'project'
     ]);
     const nonPrimaryItems = searchItems.filter(
       (item) => gatedTypes.has(item.type) && !primaryRoutes.has(item.url)

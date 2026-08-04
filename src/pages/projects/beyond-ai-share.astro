@@ -1,0 +1,345 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  beyondAiShareCitation,
+  beyondAiShareRecord,
+  getBeyondAiShareStructuredData
+} from '../../lib/beyondAiShare';
+
+const pageTitle = 'Beyond AI Share - AI-Assisted Creativity, Authorship and Control';
+const pageDescription =
+  'A preregistered study of perceived control, authorship and authenticity in AI-assisted creative practice, with results, limitations, preprint and OSF preregistration.';
+const alternateLinks = {
+  en: beyondAiShareRecord.paths.en,
+  pl: beyondAiShareRecord.paths.pl,
+  xDefault: beyondAiShareRecord.paths.en
+};
+const structuredData = getBeyondAiShareStructuredData('en', pageTitle, pageDescription);
+---
+
+<BaseLayout
+  title={pageTitle}
+  appendSiteName={false}
+  description={pageDescription}
+  image={beyondAiShareRecord.socialImage}
+  imageWidth={1200}
+  imageHeight={630}
+  imageType="image/png"
+  imageAlt="Beyond AI Share - authorship, control and authenticity in AI-assisted creativity"
+  alternateLinks={alternateLinks}
+  robots="index, follow"
+  structuredData={structuredData}
+>
+  <article class="lovable-page about-page research-project-page">
+    <nav class="lovable-container research-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li aria-current="page">Beyond AI Share</li>
+      </ol>
+    </nav>
+
+    <header class="about-hero research-project-hero">
+      <div class="lovable-container about-hero__inner">
+        <div class="about-hero__copy">
+          <p class="eyebrow">Research project</p>
+          <h1>Beyond AI Share</h1>
+          <p class="lede">
+            Beyond AI Share is a preregistered survey and paired vignette study
+            examining how people perceive control, authorship and authenticity
+            when generative AI becomes part of creative work.
+          </p>
+          <p class="hero-subnote">
+            Study 1 is complete and the preprint is public. This independent
+            research project is not currently recruiting or collecting data.
+          </p>
+          <div class="consulting-actions research-project-actions">
+            <a
+              class="hero-button hero-button-primary"
+              href={beyondAiShareRecord.preprint.url}
+            ><span aria-hidden="true"></span>Read the preprint</a>
+            <a
+              class="hero-button hero-button-secondary"
+              href={beyondAiShareRecord.preregistration.url}
+            >View preregistration</a>
+          </div>
+        </div>
+
+        <aside class="about-hero__aside" aria-labelledby="research-summary-title">
+          <div class="about-summary-card research-summary-card">
+            <h2 id="research-summary-title">At a glance</h2>
+            <dl class="research-facts">
+              <div><dt>Status</dt><dd>Study 1 completed</dd></div>
+              <div><dt>Public record</dt><dd>Preprint available and preregistered</dd></div>
+              <div><dt>Sample</dt><dd>N = 429; creator AI-user subgroup N = 164</dd></div>
+              <div><dt>Method</dt><dd>Cross-sectional online survey and paired vignette task</dd></div>
+              <div><dt>Review</dt><dd>Preprint; not peer-reviewed</dd></div>
+              <div><dt>Recruitment</dt><dd>Closed; no active recruitment</dd></div>
+            </dl>
+            <p class="research-updated">
+              Last updated <time datetime={beyondAiShareRecord.dateModified}>4 August 2026</time>
+            </p>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <div class="lovable-container about-section-list research-section-list">
+      <section class="about-section" aria-labelledby="research-question-title">
+        <div class="about-section__meta"><span>01</span><p>Question</p></div>
+        <div class="about-section__body">
+          <h2 id="research-question-title">What the study asked</h2>
+          <div class="editorial-copy">
+            <p>
+              A single estimate of how much AI contributed to a finished work
+              compresses very different creative processes into one number. A
+              person may set the direction, compare alternatives, reject outputs,
+              revise extensively and decide the final form - or accept a nearly
+              finished result after a short brief.
+            </p>
+            <p>
+              The study therefore examined declared AI share, perceived control,
+              authorship and authenticity as related but distinct judgments. It
+              asked about participants' perceptions and experiences; it did not
+              attempt to define legal authorship.
+            </p>
+            <p class="research-boundary">
+              The study did not directly test whether control matters more than
+              AI share. Its results do not support that comparative claim.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="study-design-title">
+        <div class="about-section__meta"><span>02</span><p>Method</p></div>
+        <div class="about-section__body">
+          <h2 id="study-design-title">Study design</h2>
+          <div class="editorial-copy">
+            <p>
+              Study 1 used a cross-sectional online survey administered in Polish,
+              with a paired within-person vignette component. Main-study data were
+              collected from 15 June to 5 July 2026. The study was preregistered on
+              OSF before the first recorded main-study response.
+            </p>
+            <dl class="research-facts research-facts--wide">
+              <div><dt>Total analytic sample</dt><dd>429 completed, consenting adult responses</dd></div>
+              <div><dt>Creator AI-user subgroup</dt><dd>164 participants for H1-H3</dd></div>
+              <div><dt>Vignette comparison</dt><dd>428 complete paired cases</dd></div>
+              <div><dt>Declared AI share</dt><dd>Self-report scale from 1 (none or almost none) to 5 (very large)</dd></div>
+            </dl>
+            <p>
+              The vignette task contrasted a human-directed process with acceptance
+              of a near-final generated output. The scenarios differed at the same
+              time in initial intention, selection, editing and final authority.
+              The comparison was therefore a bundled judgment task, not a factorial
+              experiment isolating direction, selection or revision.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section research-results-section" aria-labelledby="key-findings-title">
+        <div class="about-section__meta"><span>03</span><p>Results</p></div>
+        <div class="about-section__body">
+          <h2 id="key-findings-title">Key findings</h2>
+          <div class="research-results-grid">
+            <article class="research-result-card">
+              <p class="research-result-card__label">Declared AI share and authorship</p>
+              <h3>The preregistered negative association was not supported</h3>
+              <p><strong>Result.</strong> Among creator AI users, r = .141, 95% CI [-.012, .288], p = .071, N = 164.</p>
+              <p><strong>Interpretation.</strong> The observed direction was positive and the confidence interval included zero.</p>
+              <p class="research-result-card__boundary"><strong>Boundary.</strong> This is not evidence that greater AI involvement increases authorship; the authorship measure also had low reliability.</p>
+            </article>
+
+            <article class="research-result-card">
+              <p class="research-result-card__label">Perceived control and authorship</p>
+              <h3>A modest positive association supported the prediction</h3>
+              <p><strong>Result.</strong> r = .234, 95% CI [.084, .374], p = .003, N = 164. The simple regression gave b = .275, SE = .090 and R² = .055.</p>
+              <p><strong>Interpretation.</strong> Participants who reported more control also tended to report more authorship.</p>
+              <p class="research-result-card__boundary"><strong>Boundary.</strong> The correlational design cannot show which judgment comes first, and both short measures had low reliability.</p>
+            </article>
+
+            <article class="research-result-card">
+              <p class="research-result-card__label">Control as a moderator of authenticity</p>
+              <h3>The predicted buffering interaction was not supported</h3>
+              <p><strong>Result.</strong> The AI share by control interaction was b = .043, SE = .073, 95% CI [-.102, .187], p = .559, N = 164.</p>
+              <p><strong>Interpretation.</strong> The model did not establish that control weakens a harmful association between AI share and authenticity.</p>
+              <p class="research-result-card__boundary"><strong>Boundary.</strong> A positive main association for control cannot substitute for the preregistered interaction.</p>
+            </article>
+
+            <article class="research-result-card">
+              <p class="research-result-card__label">Expressive orientation and concern about AI</p>
+              <h3>The pattern was cautiously consistent with H4</h3>
+              <p><strong>Result.</strong> Expressive orientation correlated with creative identity threat, r = .341, 95% CI [.254, .422], p &lt; .001, N = 429, and with concern about a typical AI aesthetic, r = .504, p &lt; .001. It was not associated with the general authenticity score, r = .011, p = .827.</p>
+              <p><strong>Interpretation.</strong> Stronger expressive values accompanied some, but not all, AI-related concerns.</p>
+              <p class="research-result-card__boundary"><strong>Boundary.</strong> Mixed indicators, limited reliability and multiple related outcomes rule out a broad claim about authenticity.</p>
+            </article>
+
+            <article class="research-result-card research-result-card--wide">
+              <p class="research-result-card__label">Paired vignette judgments</p>
+              <h3>The human-directed workflow received higher combined ratings</h3>
+              <p><strong>Result.</strong> Human-directed use: M = 3.501, SD = 1.081. Near-final generator use: M = 2.665, SD = 1.132. Mean paired difference = .836, 95% CI [.715, .956], t(427) = 13.628, p &lt; .001, Cohen's dz = .659, N = 428.</p>
+              <p><strong>Interpretation.</strong> Participants clearly distinguished the two process descriptions across authorship, authenticity and control.</p>
+              <p class="research-result-card__boundary"><strong>Boundary.</strong> Because several features changed together, the result concerns the package of process differences and does not isolate a causal component.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="not-establish-title">
+        <div class="about-section__meta"><span>04</span><p>Boundaries</p></div>
+        <div class="about-section__body">
+          <h2 id="not-establish-title">What the results do not establish</h2>
+          <div class="editorial-copy research-limitations">
+            <ul>
+              <li>a causal effect of control, AI share or any workflow feature;</li>
+              <li>a universal threshold at which AI involvement changes authorship;</li>
+              <li>a legal definition of who counts as an author;</li>
+              <li>that control always matters more than declared AI share;</li>
+              <li>the independent effect of direction, selection, revision or veto in the bundled vignettes; or</li>
+              <li>population estimates for all creators, AI users or adults.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="limitations-title">
+        <div class="about-section__meta"><span>05</span><p>Integrity</p></div>
+        <div class="about-section__body">
+          <h2 id="limitations-title">Limitations and research integrity</h2>
+          <div class="editorial-copy research-limitations">
+            <p>
+              The sample was recruited online through non-probability outreach and
+              should be understood as a convenience sample. Reliable counts of all
+              survey views, starts and incomplete submissions were not retained, so
+              response, participation and completion rates could not be calculated.
+            </p>
+            <ul>
+              <li>The design was cross-sectional and primarily self-report.</li>
+              <li>Declared AI share was a subjective five-level estimate, not an audit of artifacts or production histories.</li>
+              <li>Reliability was low for the short authorship (alpha = .519), authenticity (.521) and control (.452) composites, and limited for identity threat (.646).</li>
+              <li>The fixed-order vignette contrast bundled multiple features and also differed in protagonist gender and task context.</li>
+              <li>Completion-time sensitivity and multiple related outcomes add further uncertainty.</li>
+              <li>The preprint has not been peer-reviewed.</li>
+            </ul>
+            <p class="research-integrity-note">
+              The study did not receive prospective research ethics committee
+              approval or a formal exemption. This is an important limitation and
+              should be considered when interpreting or reusing the findings.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="public-record-title">
+        <div class="about-section__meta"><span>06</span><p>Records</p></div>
+        <div class="about-section__body">
+          <h2 id="public-record-title">Public record and materials</h2>
+          <div class="research-record-grid">
+            <article class="research-record-card">
+              <p class="small-label">Zenodo preprint</p>
+              <h3>{beyondAiShareRecord.preprint.title}</h3>
+              <dl>
+                <div><dt>Author</dt><dd>Feliks Mamczur</dd></div>
+                <div><dt>Published</dt><dd><time datetime="2026-07-30">30 July 2026</time></dd></div>
+                <div><dt>Version</dt><dd>1.0</dd></div>
+                <div><dt>Status</dt><dd>Preprint; not peer-reviewed</dd></div>
+                <div><dt>License</dt><dd>CC BY 4.0</dd></div>
+                <div><dt>DOI</dt><dd><a href={beyondAiShareRecord.preprint.url}>{beyondAiShareRecord.preprint.doi}</a></dd></div>
+              </dl>
+            </article>
+
+            <article class="research-record-card">
+              <p class="small-label">OSF preregistration</p>
+              <h3>{beyondAiShareRecord.preregistration.title}</h3>
+              <dl>
+                <div><dt>Registered</dt><dd><time datetime="2026-06-15">15 June 2026</time></dd></div>
+                <div><dt>Status</dt><dd>Public, accepted registration</dd></div>
+                <div><dt>DOI</dt><dd><a href={beyondAiShareRecord.preregistration.url}>{beyondAiShareRecord.preregistration.doi}</a></dd></div>
+              </dl>
+            </article>
+
+            <article class="research-record-card research-record-card--wide">
+              <p class="small-label">Other public materials</p>
+              <h3>Appendix and preregistration materials</h3>
+              <p>
+                The Zenodo record includes the preprint and Appendix A. The public
+                OSF registration includes preregistration materials and a codebook.
+                The de-identified quantitative dataset and analysis scripts were not
+                public at the time of the preprint.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="citation-title">
+        <div class="about-section__meta"><span>07</span><p>Citation</p></div>
+        <div class="about-section__body">
+          <h2 id="citation-title">How to cite the preprint</h2>
+          <div class="research-citation" role="note">
+            <p>{beyondAiShareCitation}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="next-research-title">
+        <div class="about-section__meta"><span>08</span><p>Next</p></div>
+        <div class="about-section__body">
+          <h2 id="next-research-title">Next research</h2>
+          <div class="editorial-copy">
+            <p>
+              The project identifies questions for prospective research rather
+              than a settled standard. A future study should separate direction,
+              selection, revision, the ability to reject an output and final
+              decision authority instead of changing them together.
+            </p>
+            <p>
+              Any future recruitment would require an ethics procedure, approval
+              or formal exemption to be established in advance. No new recruitment
+              or data collection has started.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="related-reading-title">
+        <div class="about-section__meta"><span>09</span><p>Reading</p></div>
+        <div class="about-section__body">
+          <h2 id="related-reading-title">Related reading</h2>
+          <nav class="about-link-grid research-related-grid" aria-label="Related Prompted Psyche reading">
+            <a href="/articles/who-had-the-final-say-ai-authorship/">
+              <span>Research-informed article</span>
+              <strong>Who Had the Final Say? Authorship in AI-Assisted Creative Work</strong>
+            </a>
+            <a href="/articles/it-is-not-just-about-the-prompt/">
+              <span>Article</span>
+              <strong>It is not just about the prompt</strong>
+            </a>
+            <a href="/topics/human-agency-and-responsibility/">
+              <span>Topic guide</span>
+              <strong>Human agency and responsibility</strong>
+            </a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="project-author-title">
+        <div class="about-section__meta"><span>10</span><p>Author</p></div>
+        <div class="about-section__body">
+          <h2 id="project-author-title">About the author</h2>
+          <div class="editorial-copy research-author-copy">
+            <p>
+              Feliks Mamczur is an independent researcher and the founder of
+              Prompted Psyche. He writes about AI, cyberpsychology and Human-AI
+              Interaction, with a particular focus on trust, agency, creativity
+              and decision-making.
+            </p>
+            <a class="text-link" href="/about/">About Feliks Mamczur</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

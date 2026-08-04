@@ -38,6 +38,10 @@ test.describe('Projects page content', () => {
 
     await expect(page.getByRole('heading', { name: 'Projekty', level: 1 })).toBeVisible();
     await expect(page.getByText('może przechodzić w badania, narzędzia, formaty edukacyjne')).toBeVisible();
+    await expect(page.getByText('Opublikowane badania', { exact: true })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Zakończone badania z publiczną dokumentacją' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Beyond AI Share' })).toBeVisible();
+    await expect(page.getByText('Projekt badawczy · Badanie 1 zakończone')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Kierunki, które porządkują dalszą pracę' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Język dla artykułów, pojęć i praktyki' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'AI i psychoedukacja' })).toBeVisible();
@@ -46,11 +50,15 @@ test.describe('Projects page content', () => {
     await expect(page.getByRole('heading', { name: 'Słownik Prompted Psyche' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Projekty archiwalne' })).toBeVisible();
     await expect(page.getByText('Archiwalny · Rekrutacja zakończona')).toBeVisible();
-    await expect(page.locator('dt').filter({ hasText: 'Możliwy rezultat' })).toHaveCount(4);
-    await expect(page.locator('dt').filter({ hasText: 'Etap' })).toHaveCount(4);
+    await expect(page.locator('dt').filter({ hasText: 'Możliwy rezultat' })).toHaveCount(5);
+    await expect(page.locator('dt').filter({ hasText: 'Etap' })).toHaveCount(5);
     await expect(page.getByText('Nie jest terapią, diagnozą ani zamiennikiem kontaktu ze specjalistą.')).toBeVisible();
 
     await expect(page.getByRole('link', { name: 'Zobacz pojęcia' })).toHaveAttribute('href', '/pl/concepts/');
+    await expect(page.getByRole('link', { name: 'Zobacz projekt badawczy' })).toHaveAttribute(
+      'href',
+      '/pl/projects/beyond-ai-share/'
+    );
     await expect(page.getByRole('link', { name: 'Zobacz archiwum projektu' })).toHaveAttribute(
       'href',
       '/pl/projects/humanai-lab/'
@@ -64,6 +72,10 @@ test.describe('Projects page content', () => {
 
     await expect(page.getByRole('heading', { name: 'Projects', level: 1 })).toBeVisible();
     await expect(page.getByText('starts to become research, tools, educational formats')).toBeVisible();
+    await expect(page.getByText('Published research', { exact: true })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Completed studies with public records' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Beyond AI Share' })).toBeVisible();
+    await expect(page.getByText('Research project · Study 1 completed')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Directions that organize the next layer of work' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Language for articles, Concepts and practice' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'AI and psychoeducation' })).toBeVisible();
@@ -72,11 +84,15 @@ test.describe('Projects page content', () => {
     await expect(page.getByRole('heading', { name: 'Prompted Psyche Concepts' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Archived projects' })).toBeVisible();
     await expect(page.getByText('Archived · Recruitment closed')).toBeVisible();
-    await expect(page.locator('dt').filter({ hasText: 'Possible output' })).toHaveCount(4);
-    await expect(page.locator('dt').filter({ hasText: 'Stage' })).toHaveCount(4);
+    await expect(page.locator('dt').filter({ hasText: 'Possible output' })).toHaveCount(5);
+    await expect(page.locator('dt').filter({ hasText: 'Stage' })).toHaveCount(5);
     await expect(page.getByText('This is not therapy, diagnosis or a substitute for contact with a specialist.')).toBeVisible();
 
     await expect(page.getByRole('link', { name: 'Explore concepts' })).toHaveAttribute('href', '/concepts/');
+    await expect(page.getByRole('link', { name: 'View research project' })).toHaveAttribute(
+      'href',
+      '/projects/beyond-ai-share/'
+    );
     await expect(page.getByRole('link', { name: 'View archived project' })).toHaveAttribute(
       'href',
       '/projects/humanai-lab/'

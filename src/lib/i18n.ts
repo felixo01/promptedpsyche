@@ -21,6 +21,7 @@ const routePairs: RoutePair[] = [
   { en: '/concepts/', pl: '/pl/concepts/' },
   { en: '/practice/', pl: '/pl/practice/' },
   { en: '/projects/', pl: '/pl/projects/' },
+  { en: '/projects/beyond-ai-share/', pl: '/pl/projects/beyond-ai-share/' },
   { en: '/projects/humanai-lab/', pl: '/pl/projects/humanai-lab/' },
   { en: '/topics/', pl: '/pl/topics/' },
   { en: '/topics/trust-in-ai/', pl: '/pl/topics/zaufanie-do-ai/' },
