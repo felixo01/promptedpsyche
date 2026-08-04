@@ -5,7 +5,7 @@ type SearchItem = {
   title: string;
   description: string;
   url: string;
-  type: 'article' | 'note' | 'concept' | 'practice' | 'topic';
+  type: 'article' | 'note' | 'concept' | 'practice' | 'topic' | 'project';
   language: 'en' | 'pl';
   tags: string[];
   date?: string;
@@ -52,7 +52,7 @@ test.describe('local search', () => {
       'page'
     );
     await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
-    await expect(page.getByText(showPractice ? 'Search topics, articles, notes, concepts and practice exercises on Prompted Psyche.' : 'Search topics, articles, notes and concepts on Prompted Psyche.')).toBeVisible();
+    await expect(page.getByText(showPractice ? 'Search projects, topics, articles, notes, concepts and practice exercises on Prompted Psyche.' : 'Search projects, topics, articles, notes and concepts on Prompted Psyche.')).toBeVisible();
     await expect(page.locator('link[rel="alternate"][hreflang="pl"]')).toHaveAttribute(
       'href',
       'https://promptedpsyche.com/pl/search/'
@@ -71,7 +71,7 @@ test.describe('local search', () => {
       'page'
     );
     await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
-    await expect(page.getByText(showPractice ? 'Szukaj w obszarach, artykułach, notatkach, pojęciach i ćwiczeniach Prompted Psyche.' : 'Szukaj w obszarach, artykułach, notatkach i pojęciach Prompted Psyche.')).toBeVisible();
+    await expect(page.getByText(showPractice ? 'Szukaj w projektach, obszarach, artykułach, notatkach, pojęciach i ćwiczeniach Prompted Psyche.' : 'Szukaj w projektach, obszarach, artykułach, notatkach i pojęciach Prompted Psyche.')).toBeVisible();
     await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute(
       'href',
       'https://promptedpsyche.com/search/'
@@ -93,6 +93,8 @@ test.describe('local search', () => {
     expect(countByType(plIndex, 'practice')).toBe(showPractice ? 10 : 0);
     expect(countByType(enIndex, 'topic')).toBe(3);
     expect(countByType(plIndex, 'topic')).toBe(3);
+    expect(countByType(enIndex, 'project')).toBe(2);
+    expect(countByType(plIndex, 'project')).toBe(2);
     expect(enIndex.every((item) => item.language === 'en')).toBe(true);
     expect(plIndex.every((item) => item.language === 'pl')).toBe(true);
     expect(enIndex).toEqual(
@@ -139,6 +141,18 @@ test.describe('local search', () => {
           title: 'Large Language Model (LLM)',
           url: '/concepts/llm/',
           type: 'concept'
+        }),
+        expect.objectContaining({
+          title: 'Beyond AI Share',
+          url: '/projects/beyond-ai-share/',
+          type: 'project',
+          language: 'en'
+        }),
+        expect.objectContaining({
+          title: 'HumanAI Lab',
+          url: '/projects/humanai-lab/',
+          type: 'project',
+          language: 'en'
         })
       ])
     );
@@ -181,6 +195,18 @@ test.describe('local search', () => {
           title: 'LLM (duży model językowy)',
           url: '/pl/concepts/llm/',
           type: 'concept'
+        }),
+        expect.objectContaining({
+          title: 'Beyond AI Share',
+          url: '/pl/projects/beyond-ai-share/',
+          type: 'project',
+          language: 'pl'
+        }),
+        expect.objectContaining({
+          title: 'HumanAI Lab',
+          url: '/pl/projects/humanai-lab/',
+          type: 'project',
+          language: 'pl'
         })
       ])
     );
@@ -242,7 +268,7 @@ test.describe('local search', () => {
   test('runs English client search without Polish leakage', async ({ page }) => {
     await page.goto('/search/');
 
-    await expect(page.getByText(showPractice ? 'Start typing to search public topics, articles, notes, concepts and practice exercises.' : 'Start typing to search public topics, articles, notes and concepts.')).toBeVisible();
+    await expect(page.getByText(showPractice ? 'Start typing to search public projects, topics, articles, notes, concepts and practice exercises.' : 'Start typing to search public projects, topics, articles, notes and concepts.')).toBeVisible();
     await page.getByPlaceholder('Search by topic, concept or phrase').fill('trust');
 
     await expect(page.getByRole('link', { name: 'Trust in the age of ready-made answers' })).toBeVisible();
@@ -257,7 +283,7 @@ test.describe('local search', () => {
     await page.goto('/pl/search/');
 
     await expect(
-      page.getByText(showPractice ? 'Zacznij pisać, żeby przeszukać publiczne obszary, artykuły, notatki, pojęcia i ćwiczenia.' : 'Zacznij pisać, żeby przeszukać publiczne obszary, artykuły, notatki i pojęcia.')
+      page.getByText(showPractice ? 'Zacznij pisać, żeby przeszukać publiczne projekty, obszary, artykuły, notatki, pojęcia i ćwiczenia.' : 'Zacznij pisać, żeby przeszukać publiczne projekty, obszary, artykuły, notatki i pojęcia.')
     ).toBeVisible();
     await page.getByPlaceholder('Szukaj tematu, pojęcia albo frazy').fill('zrodla');
 
@@ -302,5 +328,23 @@ test.describe('local search', () => {
     await input.fill('responsibility');
     await expect(articleLink).toBeVisible();
 
+  });
+
+  test('renders bilingual project results with localized type labels', async ({ page }) => {
+    await page.goto('/search/');
+    await page.getByPlaceholder('Search by topic, concept or phrase').fill('Beyond AI Share');
+
+    const englishProject = page.getByRole('link', { name: 'Beyond AI Share' });
+    await expect(englishProject).toBeVisible();
+    await expect(englishProject).toHaveAttribute('href', '/projects/beyond-ai-share/');
+    await expect(englishProject.locator('xpath=ancestor::article[1]')).toContainText('Project');
+
+    await page.goto('/pl/search/');
+    await page.getByPlaceholder('Szukaj tematu, pojęcia albo frazy').fill('Beyond AI Share');
+
+    const polishProject = page.getByRole('link', { name: 'Beyond AI Share' });
+    await expect(polishProject).toBeVisible();
+    await expect(polishProject).toHaveAttribute('href', '/pl/projects/beyond-ai-share/');
+    await expect(polishProject.locator('xpath=ancestor::article[1]')).toContainText('Projekt');
   });
 });

@@ -13,12 +13,12 @@ const copy = isPl
   ? {
       title: 'Szukaj',
       intro: showPractice
-        ? 'Szukaj w obszarach, artykułach, notatkach, pojęciach i ćwiczeniach Prompted Psyche.'
-        : 'Szukaj w obszarach, artykułach, notatkach i pojęciach Prompted Psyche.',
+        ? 'Szukaj w projektach, obszarach, artykułach, notatkach, pojęciach i ćwiczeniach Prompted Psyche.'
+        : 'Szukaj w projektach, obszarach, artykułach, notatkach i pojęciach Prompted Psyche.',
       placeholder: 'Szukaj tematu, pojęcia albo frazy',
       empty: showPractice
-        ? 'Zacznij pisać, żeby przeszukać publiczne obszary, artykuły, notatki, pojęcia i ćwiczenia.'
-        : 'Zacznij pisać, żeby przeszukać publiczne obszary, artykuły, notatki i pojęcia.',
+        ? 'Zacznij pisać, żeby przeszukać publiczne projekty, obszary, artykuły, notatki, pojęcia i ćwiczenia.'
+        : 'Zacznij pisać, żeby przeszukać publiczne projekty, obszary, artykuły, notatki i pojęcia.',
       noResults: 'Nie znaleziono wyników. Spróbuj innej frazy.',
       loading: 'Ładowanie indeksu wyszukiwania.',
       error: 'Nie udało się załadować indeksu wyszukiwania.',
@@ -30,18 +30,19 @@ const copy = isPl
         note: 'Notatka',
         concept: 'Pojęcie',
         practice: 'Praktyka',
-        topic: 'Obszar'
+        topic: 'Obszar',
+        project: 'Projekt'
       }
     }
   : {
       title: 'Search',
       intro: showPractice
-        ? 'Search topics, articles, notes, concepts and practice exercises on Prompted Psyche.'
-        : 'Search topics, articles, notes and concepts on Prompted Psyche.',
+        ? 'Search projects, topics, articles, notes, concepts and practice exercises on Prompted Psyche.'
+        : 'Search projects, topics, articles, notes and concepts on Prompted Psyche.',
       placeholder: 'Search by topic, concept or phrase',
       empty: showPractice
-        ? 'Start typing to search public topics, articles, notes, concepts and practice exercises.'
-        : 'Start typing to search public topics, articles, notes and concepts.',
+        ? 'Start typing to search public projects, topics, articles, notes, concepts and practice exercises.'
+        : 'Start typing to search public projects, topics, articles, notes and concepts.',
       noResults: 'No results found. Try a different phrase.',
       loading: 'Loading the search index.',
       error: 'The search index could not be loaded.',
@@ -53,7 +54,8 @@ const copy = isPl
         note: 'Note',
         concept: 'Concept',
         practice: 'Practice',
-        topic: 'Topic'
+        topic: 'Topic',
+        project: 'Project'
       }
     };
 const searchIndexUrl = isPl ? '/search-index.pl.json' : '/search-index.en.json';
@@ -104,7 +106,7 @@ const alternateLinks = {
 </BaseLayout>
 
 <script>
-  type SearchItemType = 'article' | 'note' | 'concept' | 'practice' | 'topic';
+  type SearchItemType = 'article' | 'note' | 'concept' | 'practice' | 'topic' | 'project';
   type SearchItem = {
     title: string;
     description: string;

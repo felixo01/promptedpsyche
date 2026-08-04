@@ -67,6 +67,8 @@ const routes = [
   '/pl/tags/wiedza/',
   '/projects/',
   '/pl/projects/',
+  '/projects/beyond-ai-share/',
+  '/pl/projects/beyond-ai-share/',
   '/search/',
   '/pl/search/',
   '/about/',

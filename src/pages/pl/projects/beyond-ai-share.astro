@@ -1,0 +1,358 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import {
+  beyondAiShareCitation,
+  beyondAiShareRecord,
+  getBeyondAiShareStructuredData
+} from '../../../lib/beyondAiShare';
+
+const pageTitle = 'Beyond AI Share - autorstwo, kontrola i twórczość wspomagana przez AI';
+const pageDescription =
+  'Prerejestrowane badanie postrzeganej kontroli, autorstwa i autentyczności w twórczości wspomaganej przez AI, wraz z wynikami, ograniczeniami i preprintem.';
+const alternateLinks = {
+  en: beyondAiShareRecord.paths.en,
+  pl: beyondAiShareRecord.paths.pl,
+  xDefault: beyondAiShareRecord.paths.en
+};
+const structuredData = getBeyondAiShareStructuredData('pl', pageTitle, pageDescription);
+const preregistrationStatus =
+  beyondAiShareRecord.preregistration.registrationStatus === 'accepted'
+    ? 'Zaakceptowana'
+    : beyondAiShareRecord.preregistration.registrationStatus;
+---
+
+<BaseLayout
+  lang="pl"
+  title={pageTitle}
+  appendSiteName={false}
+  description={pageDescription}
+  image={beyondAiShareRecord.socialImage}
+  imageWidth={1200}
+  imageHeight={630}
+  imageType="image/png"
+  imageAlt="Beyond AI Share - autorstwo, kontrola i autentyczność w twórczości wspomaganej przez AI"
+  alternateLinks={alternateLinks}
+  robots="index, follow"
+  structuredData={structuredData}
+>
+  <article class="lovable-page about-page research-project-page">
+    <nav class="lovable-container research-breadcrumb" aria-label="Okruszki">
+      <ol>
+        <li><a href="/pl/">Start</a></li>
+        <li><a href="/pl/projects/">Projekty</a></li>
+        <li aria-current="page">Beyond AI Share</li>
+      </ol>
+    </nav>
+
+    <header class="about-hero research-project-hero">
+      <div class="lovable-container about-hero__inner">
+        <div class="about-hero__copy">
+          <p class="eyebrow">Projekt badawczy</p>
+          <h1>Beyond AI Share</h1>
+          <p class="lede">
+            Beyond AI Share to prerejestrowane badanie ankietowe z parą winiet,
+            poświęcone temu, jak ludzie postrzegają kontrolę, autorstwo i
+            autentyczność, gdy generatywna AI staje się częścią pracy twórczej.
+          </p>
+          <p class="hero-subnote">
+            Badanie 1 zostało zakończone, a preprint jest publicznie dostępny.
+            Ten niezależny projekt badawczy nie prowadzi obecnie rekrutacji ani
+            zbierania danych.
+          </p>
+          <div class="consulting-actions research-project-actions">
+            <a
+              class="hero-button hero-button-primary"
+              href={beyondAiShareRecord.preprint.url}
+            ><span aria-hidden="true"></span>Przeczytaj preprint</a>
+            <a
+              class="hero-button hero-button-secondary"
+              href={beyondAiShareRecord.preregistration.url}
+            >Zobacz prerejestrację</a>
+          </div>
+        </div>
+
+        <aside class="about-hero__aside" aria-labelledby="research-summary-title">
+          <div class="about-summary-card research-summary-card">
+            <h2 id="research-summary-title">W skrócie</h2>
+            <dl class="research-facts">
+              <div><dt>Status</dt><dd>Badanie 1 zakończone</dd></div>
+              <div><dt>Publiczny zapis</dt><dd>Preprint dostępny; badanie prerejestrowane</dd></div>
+              <div><dt>Próba</dt><dd>N = 429; podgrupa twórców używających AI N = 164</dd></div>
+              <div><dt>Metoda</dt><dd>Przekrojowe badanie online i zadanie z parą winiet</dd></div>
+              <div><dt>Recenzja</dt><dd>Preprint; bez recenzji naukowej</dd></div>
+              <div><dt>Rekrutacja</dt><dd>Zamknięta; brak aktywnej rekrutacji</dd></div>
+            </dl>
+            <p class="research-updated">
+              Ostatnia aktualizacja: <time datetime={beyondAiShareRecord.dateModified}>4 sierpnia 2026</time>
+            </p>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <div class="lovable-container about-section-list research-section-list">
+      <section class="about-section" aria-labelledby="research-question-title">
+        <div class="about-section__meta"><span>01</span><p>Pytanie</p></div>
+        <div class="about-section__body">
+          <h2 id="research-question-title">O co pytaliśmy w badaniu</h2>
+          <div class="editorial-copy">
+            <p>
+              Jedna deklaracja o tym, ile AI znalazło się w ukończonej pracy,
+              sprowadza bardzo różne procesy twórcze do jednej liczby. Człowiek
+              może wyznaczyć kierunek, porównywać warianty, odrzucać wyniki,
+              intensywnie je poprawiać i zdecydować o ostatecznej formie. Może też
+              przyjąć niemal gotowy rezultat po krótkim poleceniu.
+            </p>
+            <p>
+              Dlatego deklarowany udział AI, postrzegana kontrola, autorstwo i
+              autentyczność zostały potraktowane jako powiązane, ale odrębne oceny.
+              Badanie dotyczyło doświadczeń i sądów uczestników, a nie prawnej
+              definicji autora.
+            </p>
+            <p class="research-boundary">
+              Badanie nie porównywało bezpośrednio, czy kontrola ma większe
+              znaczenie niż udział AI. Wyniki nie pozwalają formułować takiej tezy.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="study-design-title">
+        <div class="about-section__meta"><span>02</span><p>Metoda</p></div>
+        <div class="about-section__body">
+          <h2 id="study-design-title">Schemat badania</h2>
+          <div class="editorial-copy">
+            <p>
+              Badanie 1 miało formę przekrojowej ankiety online w języku polskim
+              i zawierało zadanie z dwiema winietami ocenianymi przez te same osoby.
+              Dane głównego badania zbierano od 15 czerwca do 5 lipca 2026 roku.
+              Prerejestrację na OSF opublikowano przed pierwszą zarejestrowaną
+              odpowiedzią w badaniu głównym.
+            </p>
+            <dl class="research-facts research-facts--wide">
+              <div><dt>Pełna próba analityczna</dt><dd>429 ukończonych odpowiedzi dorosłych osób, które wyraziły zgodę</dd></div>
+              <div><dt>Twórcy używający AI</dt><dd>164 osoby w analizach H1-H3</dd></div>
+              <div><dt>Porównanie winiet</dt><dd>428 kompletnych par ocen</dd></div>
+              <div><dt>Deklarowany udział AI</dt><dd>Samoopisowa skala od 1 (brak lub niemal brak) do 5 (bardzo duży)</dd></div>
+            </dl>
+            <p>
+              Winiety zestawiały proces kierowany przez człowieka z przyjęciem
+              niemal gotowego wyniku generatora. Równocześnie zmieniały się jednak
+              początkowa intencja, sposób selekcji, zakres edycji i ostatnie słowo.
+              Było to zatem łączne zadanie oceny, a nie eksperyment czynnikowy
+              izolujący kierunek, selekcję lub rewizję.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section research-results-section" aria-labelledby="key-findings-title">
+        <div class="about-section__meta"><span>03</span><p>Wyniki</p></div>
+        <div class="about-section__body">
+          <h2 id="key-findings-title">Najważniejsze wyniki</h2>
+          <div class="research-results-grid">
+            <article class="research-result-card">
+              <p class="research-result-card__label">Deklarowany udział AI i autorstwo</p>
+              <h3>Prerejestrowany ujemny związek nie uzyskał potwierdzenia</h3>
+              <p><strong>Wynik.</strong> Wśród twórców używających AI: r = .141, 95% CI [-.012, .288], p = .071, N = 164.</p>
+              <p><strong>Interpretacja.</strong> Zaobserwowany kierunek był dodatni, a przedział ufności obejmował zero.</p>
+              <p class="research-result-card__boundary"><strong>Granica.</strong> Nie jest to dowód, że większy udział AI zwiększa poczucie autorstwa; miara autorstwa miała też niską rzetelność.</p>
+            </article>
+
+            <article class="research-result-card">
+              <p class="research-result-card__label">Postrzegana kontrola i autorstwo</p>
+              <h3>Skromny dodatni związek był zgodny z przewidywaniem</h3>
+              <p><strong>Wynik.</strong> r = .234, 95% CI [.084, .374], p = .003, N = 164. W prostej regresji b = .275, SE = .090, R² = .055.</p>
+              <p><strong>Interpretacja.</strong> Osoby deklarujące większą kontrolę częściej deklarowały też silniejsze poczucie autorstwa.</p>
+              <p class="research-result-card__boundary"><strong>Granica.</strong> Korelacja nie pokazuje, który sąd pojawia się pierwszy, a obie krótkie miary miały niską rzetelność.</p>
+            </article>
+
+            <article class="research-result-card">
+              <p class="research-result-card__label">Kontrola jako moderator autentyczności</p>
+              <h3>Przewidywana interakcja buforująca nie uzyskała potwierdzenia</h3>
+              <p><strong>Wynik.</strong> Interakcja udziału AI i kontroli: b = .043, SE = .073, 95% CI [-.102, .187], p = .559, N = 164.</p>
+              <p><strong>Interpretacja.</strong> Model nie wykazał, że kontrola osłabia negatywny związek udziału AI z autentycznością.</p>
+              <p class="research-result-card__boundary"><strong>Granica.</strong> Dodatni efekt główny kontroli nie zastępuje prerejestrowanej interakcji.</p>
+            </article>
+
+            <article class="research-result-card">
+              <p class="research-result-card__label">Orientacja ekspresyjna i obawy wobec AI</p>
+              <h3>Wzorzec ostrożnie wspierał H4</h3>
+              <p><strong>Wynik.</strong> Orientacja ekspresyjna korelowała z zagrożeniem tożsamości twórczej, r = .341, 95% CI [.254, .422], p &lt; .001, N = 429, oraz z obawą przed typową estetyką AI, r = .504, p &lt; .001. Nie wiązała się z ogólnym wynikiem autentyczności, r = .011, p = .827.</p>
+              <p><strong>Interpretacja.</strong> Silniejsze wartości ekspresyjne towarzyszyły części, ale nie wszystkim obawom związanym z AI.</p>
+              <p class="research-result-card__boundary"><strong>Granica.</strong> Mieszane wskaźniki, ograniczona rzetelność i kilka powiązanych wyników nie pozwalają na szeroką tezę o autentyczności.</p>
+            </article>
+
+            <article class="research-result-card research-result-card--wide">
+              <p class="research-result-card__label">Oceny pary winiet</p>
+              <h3>Proces kierowany przez człowieka otrzymał wyższe łączne oceny</h3>
+              <p><strong>Wynik.</strong> Użycie kierowane przez człowieka: M = 3.501, SD = 1.081. Niemal gotowy wynik generatora: M = 2.665, SD = 1.132. Średnia różnica w parach = .836, 95% CI [.715, .956], t(427) = 13.628, p &lt; .001, Cohen's dz = .659, N = 428.</p>
+              <p><strong>Interpretacja.</strong> Uczestnicy wyraźnie rozróżniali dwa opisy procesu pod względem autorstwa, autentyczności i kontroli.</p>
+              <p class="research-result-card__boundary"><strong>Granica.</strong> Ponieważ kilka cech zmieniło się jednocześnie, wynik dotyczy całego pakietu różnic i nie izoluje pojedynczego mechanizmu przyczynowego.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="not-establish-title">
+        <div class="about-section__meta"><span>04</span><p>Granice</p></div>
+        <div class="about-section__body">
+          <h2 id="not-establish-title">Czego te wyniki nie rozstrzygają</h2>
+          <div class="editorial-copy research-limitations">
+            <ul>
+              <li>przyczynowego wpływu kontroli, udziału AI ani konkretnej cechy procesu;</li>
+              <li>uniwersalnego progu, po którego przekroczeniu udział AI zmienia autorstwo;</li>
+              <li>prawnej definicji autora;</li>
+              <li>tego, że kontrola zawsze ma większe znaczenie niż deklarowany udział AI;</li>
+              <li>niezależnego wpływu kierunku, selekcji, rewizji lub prawa weta w połączonych winietach;</li>
+              <li>wyników reprezentatywnych dla wszystkich twórców, użytkowników AI lub dorosłych.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="limitations-title">
+        <div class="about-section__meta"><span>05</span><p>Rzetelność</p></div>
+        <div class="about-section__body">
+          <h2 id="limitations-title">Ograniczenia i rzetelność badawcza</h2>
+          <div class="editorial-copy research-limitations">
+            <p>
+              Uczestników pozyskiwano online metodą nieprobabilistyczną, dlatego
+              próbę należy traktować jako dogodnościową. Nie zachowano wiarygodnej
+              liczby wszystkich wyświetleń ankiety, rozpoczęć i nieukończonych
+              odpowiedzi, więc nie można obliczyć wskaźników odpowiedzi, udziału
+              ani ukończenia.
+            </p>
+            <ul>
+              <li>Badanie miało charakter przekrojowy i opierało się przede wszystkim na samoopisie.</li>
+              <li>Deklarowany udział AI był subiektywną oceną na pięciostopniowej skali, a nie audytem dzieł lub historii produkcji.</li>
+              <li>Rzetelność krótkich miar była niska dla autorstwa (alpha = .519), autentyczności (.521) i kontroli (.452), a ograniczona dla zagrożenia tożsamości (.646).</li>
+              <li>Winiety pokazano w stałej kolejności, łączyły kilka różnic i zmieniały także płeć bohatera oraz kontekst zadania.</li>
+              <li>Duże zróżnicowanie czasu ukończenia i kilka powiązanych wyników zwiększają niepewność.</li>
+              <li>Preprint nie przeszedł recenzji naukowej.</li>
+            </ul>
+            <p class="research-integrity-note">
+              Badanie nie uzyskało prospektywnej zgody komisji etycznej ani
+              formalnego zwolnienia z takiej oceny. Jest to istotne ograniczenie,
+              które należy uwzględniać przy interpretacji i wykorzystywaniu wyników.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="public-record-title">
+        <div class="about-section__meta"><span>06</span><p>Rekordy</p></div>
+        <div class="about-section__body">
+          <h2 id="public-record-title">Publiczny zapis i materiały</h2>
+          <div class="research-record-grid">
+            <article class="research-record-card">
+              <p class="small-label">Preprint na Zenodo</p>
+              <h3>{beyondAiShareRecord.preprint.title}</h3>
+              <dl>
+                <div><dt>Autor</dt><dd>Feliks Mamczur</dd></div>
+                <div><dt>Publikacja</dt><dd><time datetime="2026-07-30">30 lipca 2026</time></dd></div>
+                <div><dt>Wersja</dt><dd>1.0</dd></div>
+                <div><dt>Status</dt><dd>Preprint; bez recenzji naukowej</dd></div>
+                <div><dt>Licencja</dt><dd>CC BY 4.0</dd></div>
+                <div><dt>DOI</dt><dd><a href={beyondAiShareRecord.preprint.url}>{beyondAiShareRecord.preprint.doi}</a></dd></div>
+              </dl>
+            </article>
+
+            <article class="research-record-card">
+              <p class="small-label">Prerejestracja OSF</p>
+              <h3>{beyondAiShareRecord.preregistration.title}</h3>
+              <dl>
+                <div><dt>Rejestracja</dt><dd><time datetime={beyondAiShareRecord.preregistration.registrationDate}>15 czerwca 2026</time></dd></div>
+                <div><dt>Status rejestracji</dt><dd>{preregistrationStatus}</dd></div>
+                <div>
+                  <dt>Dostęp</dt>
+                  <dd>
+                    Publicznie dostępna podczas weryfikacji <time datetime={beyondAiShareRecord.preregistration.accessVerifiedAt}>4 sierpnia 2026</time>
+                  </dd>
+                </div>
+                <div><dt>DOI</dt><dd><a href={beyondAiShareRecord.preregistration.url}>{beyondAiShareRecord.preregistration.doi}</a></dd></div>
+              </dl>
+            </article>
+
+            <article class="research-record-card research-record-card--wide">
+              <p class="small-label">Inne publiczne materiały</p>
+              <h3>Aneks i materiały prerejestracyjne</h3>
+              <p>
+                Rekord Zenodo zawiera preprint i Appendix A. Publiczna rejestracja
+                OSF obejmuje materiały prerejestracyjne oraz codebook. Zanonimizowany
+                zbiór ilościowy i skrypty analityczne nie były publiczne w chwili
+                publikacji preprintu.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="citation-title">
+        <div class="about-section__meta"><span>07</span><p>Cytowanie</p></div>
+        <div class="about-section__body">
+          <h2 id="citation-title">Jak cytować preprint</h2>
+          <div class="research-citation" role="note">
+            <p>{beyondAiShareCitation}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="next-research-title">
+        <div class="about-section__meta"><span>08</span><p>Dalej</p></div>
+        <div class="about-section__body">
+          <h2 id="next-research-title">Dalsze badania</h2>
+          <div class="editorial-copy">
+            <p>
+              Projekt wskazuje pytania do badań prospektywnych, a nie gotowy
+              standard. Kolejne badanie powinno rozdzielić wyznaczanie kierunku,
+              selekcję, rewizję, możliwość odrzucenia wyniku i ostateczną władzę
+              decyzyjną zamiast zmieniać je równocześnie.
+            </p>
+            <p>
+              Przed przyszłą rekrutacją trzeba z góry ustalić procedurę etyczną,
+              uzyskać zgodę albo formalne zwolnienie. Nie rozpoczęto nowej
+              rekrutacji ani zbierania danych.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="related-reading-title">
+        <div class="about-section__meta"><span>09</span><p>Czytaj dalej</p></div>
+        <div class="about-section__body">
+          <h2 id="related-reading-title">Powiązane materiały</h2>
+          <nav class="about-link-grid research-related-grid" aria-label="Powiązane materiały Prompted Psyche">
+            <a href="/pl/articles/kto-mial-ostatnie-slowo-autorstwo-ai/">
+              <span>Artykuł oparty na badaniu</span>
+              <strong>Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI</strong>
+            </a>
+            <a href="/pl/articles/nie-chodzi-tylko-o-prompt/">
+              <span>Artykuł</span>
+              <strong>Nie chodzi tylko o prompt</strong>
+            </a>
+            <a href="/pl/topics/sprawczosc-i-odpowiedzialnosc/">
+              <span>Przewodnik tematyczny</span>
+              <strong>Sprawczość i odpowiedzialność</strong>
+            </a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="project-author-title">
+        <div class="about-section__meta"><span>10</span><p>Autor</p></div>
+        <div class="about-section__body">
+          <h2 id="project-author-title">O autorze</h2>
+          <div class="editorial-copy research-author-copy">
+            <p>
+              Feliks Mamczur jest niezależnym badaczem i twórcą Prompted Psyche.
+              Pisze o AI, cyberpsychologii i Human-AI Interaction, koncentrując się
+              na zaufaniu, sprawczości, twórczości i podejmowaniu decyzji.
+            </p>
+            <a class="text-link" href="/pl/about/">O Feliksie Mamczurze</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

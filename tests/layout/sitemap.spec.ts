@@ -77,6 +77,10 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).toContain('/pl/search/');
     expect(sitemap).toContain('/projects/humanai-lab/');
     expect(sitemap).toContain('/pl/projects/humanai-lab/');
+    expect(sitemap).toContain('/projects/beyond-ai-share/');
+    expect(sitemap).toContain('/pl/projects/beyond-ai-share/');
+    expect(sitemap.match(/https:\/\/promptedpsyche\.com\/projects\/beyond-ai-share\//g) ?? []).toHaveLength(1);
+    expect(sitemap.match(/https:\/\/promptedpsyche\.com\/pl\/projects\/beyond-ai-share\//g) ?? []).toHaveLength(1);
     expect(sitemap).toContain('/topics/');
     expect(sitemap).toContain('/pl/topics/');
     expect(sitemap).toContain('/topics/trust-in-ai/');
