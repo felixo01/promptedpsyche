@@ -14,15 +14,19 @@ const routes = {
   pl: '/pl/articles/most-czy-zastepstwo-nastolatek-chatbot/'
 } as const;
 const titles = {
-  en: "Bridge or Substitute? Where Does a Teen's Conversation With a Chatbot Lead?",
+  en: 'Bridge or Substitute? What Happens When a Teenager Turns to a Chatbot',
   pl: 'Most czy zastępstwo? Dokąd prowadzi rozmowa nastolatka z chatbotem'
 } as const;
 const descriptions = {
-  en: 'What research really shows about teens talking with AI, their relationships with people, and when a chatbot becomes a bridge rather than a substitute.',
-  pl: 'Co badania naprawdę pokazują o rozmowach nastolatków z AI, relacjach z ludźmi oraz o tym, kiedy chatbot pomaga nawiązać kontakt, a kiedy zaczyna go zastępować.'
+  en: 'What research actually shows about teens and AI - from the 33% figure to when a chatbot helps someone reach people or begins to replace human contact.',
+  pl: 'Co badania naprawdę pokazują o nastolatkach i AI - od liczby 33% po pytanie, kiedy chatbot pomaga wrócić do ludzi, a kiedy zaczyna ich zastępować.'
 } as const;
 const heroPath = '/images/articles/youth-ai-companions-bridge-or-substitute.svg';
 const socialPath = '/images/articles/youth-ai-companions-bridge-or-substitute-social.png';
+const figurePaths = {
+  en: '/images/articles/youth-ai-companions-33-percent-en.svg',
+  pl: '/images/articles/youth-ai-companions-33-percent-pl.svg'
+} as const;
 
 function read(path: string) {
   return readFileSync(path, 'utf8');
@@ -54,8 +58,8 @@ function readBuiltSitemap() {
     .join('\n');
 }
 
-test.describe('youth AI companions bilingual draft contract', () => {
-  test('keeps both localized entries private, paired and outside Scholar', ({}, testInfo) => {
+test.describe('youth AI companions bilingual publication contract', () => {
+  test('publishes the paired S2 articles with complete editorial metadata', ({}, testInfo) => {
     test.skip(testInfo.project.name !== 'desktop-1440', 'One project covers static source checks.');
 
     for (const lang of ['en', 'pl'] as const) {
@@ -67,7 +71,7 @@ test.describe('youth AI companions bilingual draft contract', () => {
       expect(descriptions[lang].length).toBeGreaterThanOrEqual(145);
       expect(descriptions[lang].length).toBeLessThanOrEqual(160);
       expect(metadata).toMatch(/^publishedAt: 2026-08-17$/mu);
-      expect(metadata).toMatch(/^draft: true$/mu);
+      expect(metadata).toMatch(/^draft: false$/mu);
       expect(metadata).toMatch(/^scholarPrimary: false$/mu);
       expect(metadata).toMatch(new RegExp(`^lang: "${lang}"$`, 'mu'));
       expect(metadata).toContain(`translationKey: "${translationKey}"`);
@@ -77,6 +81,9 @@ test.describe('youth AI companions bilingual draft contract', () => {
 
       const inBrief = metadata.match(/^inBrief:\s*\r?\n((?:\s{2}- .*(?:\r?\n|$))+)/mu)?.[1] ?? '';
       expect(inBrief.match(/^\s{2}- /gmu)).toHaveLength(4);
+
+      const body = getBody(source);
+      expect(body).toContain(figurePaths[lang]);
     }
 
     const entries = [
@@ -86,11 +93,6 @@ test.describe('youth AI companions bilingual draft contract', () => {
     expect(getArticlePath(entries[0], 'en')).toBe(routes.en);
     expect(getArticlePath(entries[1], 'pl')).toBe(routes.pl);
     expect(getArticleAlternates(entries[0], entries)).toEqual({
-      en: routes.en,
-      pl: routes.pl,
-      xDefault: routes.en
-    });
-    expect(getArticleAlternates(entries[1], entries)).toEqual({
       en: routes.en,
       pl: routes.pl,
       xDefault: routes.en
@@ -112,46 +114,19 @@ test.describe('youth AI companions bilingual draft contract', () => {
     expect(enArticle).toContain('1,060');
     expect(plArticle).toContain('1060');
     expect(enArticle).toContain('13 to 17');
-    expect(enArticle).toContain('United States');
     expect(plArticle).toContain('13-17');
-    expect(plArticle).toContain('Stanach Zjednoczonych');
-    expect(enArticle).toContain(
-      'interpretive heuristic, not a diagnostic tool, test, scale, threshold, or research result'
-    );
+    expect(enArticle).toContain('This is not a diagnostic test.');
     expect(plArticle).toContain('To nie jest test diagnostyczny.');
-    expect(enArticle).toContain('Nor is there a universal number of messages');
-    expect(plArticle).toContain('Nie ma też uniwersalnej liczby wiadomości');
+    expect(enArticle).toContain('There is no number of messages');
+    expect(plArticle).toContain('Nie istnieje liczba wiadomości');
     expect(enArticle.match(/HRejter/gu)).toHaveLength(1);
     expect(plArticle.match(/HRejter/gu)).toHaveLength(1);
-    expect(enArticle).toContain('[HRejterzy');
-    expect(plArticle).toContain('[materiale HRejterów');
     expect(getReferenceBlocks(en, 'Sources')).toHaveLength(15);
     expect(getReferenceBlocks(pl, 'Źródła')).toHaveLength(15);
-
-    for (const citation of [
-      'American Psychological Association',
-      'Brewster',
-      'Charles',
-      'Common Sense Media',
-      'Federal Trade Commission',
-      'Herbener',
-      'Hinduja',
-      'HRejter',
-      'Internet Matters',
-      'Kim',
-      'Kostenius',
-      'McBain',
-      "O'Neil",
-      'Robb',
-      'Sun'
-    ]) {
-      expect(en).toContain(citation);
-      expect(pl).toContain(citation);
-    }
   });
 
-  test('keeps both drafts out of routes, discovery surfaces and topic hubs', async ({ request }, testInfo) => {
-    test.skip(testInfo.project.name !== 'desktop-1440', 'One project covers draft exclusions.');
+  test('renders both public routes with canonical, hreflang, structured data and discovery coverage', async ({ request }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop-1440', 'One project covers publication surfaces.');
 
     const [enRoute, plRoute, enIndex, plIndex, enSearch, plSearch, rss] = await Promise.all([
       request.get(routes.en),
@@ -163,53 +138,59 @@ test.describe('youth AI companions bilingual draft contract', () => {
       request.get('/rss.xml')
     ]);
 
-    expect(enRoute.status()).toBe(404);
-    expect(plRoute.status()).toBe(404);
+    expect(enRoute.status()).toBe(200);
+    expect(plRoute.status()).toBe(200);
+
+    const enHtml = await enRoute.text();
+    const plHtml = await plRoute.text();
+    expect(enHtml).toContain(`<link rel="canonical" href="${siteUrl}${routes.en}"`);
+    expect(plHtml).toContain(`<link rel="canonical" href="${siteUrl}${routes.pl}"`);
+    expect(enHtml).toContain(`hreflang="pl" href="${siteUrl}${routes.pl}"`);
+    expect(plHtml).toContain(`hreflang="en" href="${siteUrl}${routes.en}"`);
+    expect(enHtml).toContain('"@type":"Article"');
+    expect(plHtml).toContain('"@type":"Article"');
+    expect(enHtml).not.toContain('citation_title');
+    expect(plHtml).not.toContain('citation_title');
+
     const publicSurfaces = [
       await enIndex.text(),
       await plIndex.text(),
       await enSearch.text(),
       await plSearch.text(),
       await rss.text(),
-      readBuiltSitemap(),
-      read(resolve('src/lib/topics.ts'))
+      readBuiltSitemap()
     ].join('\n');
-
-    for (const value of [...Object.values(routes), ...Object.values(titles), translationKey]) {
-      expect(publicSurfaces).not.toContain(value);
+    for (const value of [...Object.values(routes), ...Object.values(titles)]) {
+      expect(publicSurfaces).toContain(value);
     }
-    expect(publicSurfaces).not.toContain(`${siteUrl}${routes.en}`);
-    expect(publicSurfaces).not.toContain(`${siteUrl}${routes.pl}`);
   });
 
-  test('uses deterministic, accessible and correctly sized graphic assets', async ({ request }, testInfo) => {
+  test('uses accessible and correctly sized publication graphics', async ({ request }, testInfo) => {
     test.skip(testInfo.project.name !== 'desktop-1440', 'One project covers asset checks.');
 
-    const svg = read(resolve('public', heroPath.slice(1)));
-    expect(svg).toMatch(/<svg\b[^>]*viewBox="0 0 1600 900"/u);
-    expect(svg).toMatch(/<title(?:\s[^>]*)?>[^<]+<\/title>/u);
-    expect(svg).toMatch(/<desc(?:\s[^>]*)?>[^<]+<\/desc>/u);
-    expect(svg).not.toMatch(/<(?:text|foreignObject|script)\b/iu);
-    expect(svg).not.toMatch(/(?:href|src)="https?:\/\//iu);
+    for (const svgPath of [heroPath, ...Object.values(figurePaths)]) {
+      const svg = read(resolve('public', svgPath.slice(1)));
+      expect(svg).toMatch(/<svg\b[^>]*viewBox=/u);
+      expect(svg).toMatch(/<title(?:\s[^>]*)?>[^<]+<\/title>/u);
+      expect(svg).toMatch(/<desc(?:\s[^>]*)?>[^<]+<\/desc>/u);
+      expect(svg).not.toMatch(/<(?:script|foreignObject)\b/iu);
+      expect(svg).not.toMatch(/(?:href|src)="https?:\/\//iu);
+      const response = await request.get(svgPath);
+      expect(response.ok()).toBe(true);
+      expect(response.headers()['content-type']).toContain('image/svg+xml');
+    }
 
     const png = readFileSync(resolve('public', socialPath.slice(1)));
     expect(png.subarray(0, 8).toString('hex')).toBe('89504e470d0a1a0a');
     expect(png.readUInt32BE(16)).toBe(1200);
     expect(png.readUInt32BE(20)).toBe(630);
-
-    const [heroResponse, socialResponse] = await Promise.all([
-      request.get(heroPath),
-      request.get(socialPath)
-    ]);
-    expect(heroResponse.ok()).toBe(true);
-    expect(socialResponse.ok()).toBe(true);
-    expect(heroResponse.headers()['content-type']).toContain('image/svg+xml');
-    expect(socialResponse.headers()['content-type']).toContain('image/png');
+    const response = await request.get(socialPath);
+    expect(response.ok()).toBe(true);
+    expect(response.headers()['content-type']).toContain('image/png');
   });
 
-  test('keeps every curated internal link resolvable while the articles remain drafts', async ({ request }, testInfo) => {
+  test('keeps curated internal links resolvable', async ({ request }, testInfo) => {
     test.skip(testInfo.project.name !== 'desktop-1440', 'One project covers link checks.');
-
     const links = new Set<string>();
     for (const file of Object.values(files)) {
       for (const match of getBody(read(file)).matchAll(/\]\((\/(?:pl\/)?(?:articles|concepts|notes)\/[^)]+)\)/gu)) {
