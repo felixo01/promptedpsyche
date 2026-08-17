@@ -22,6 +22,10 @@ AI companions to systemy konwersacyjne używane jako źródło rozmowy, wsparcia
 
 AI companions nie należy opisywać jako terapii, jeśli nie uzasadnia tego konkretne źródło i kontekst produktu. Nie należy też zakładać, że takie systemy są automatycznie szkodliwe albo automatycznie korzystne. Ostrożne pytanie brzmi: jaką rolę system zaczyna pełnić w życiu człowieka.
 
+## Czytaj dalej
+
+[Most czy zastępstwo? Dokąd prowadzi rozmowa nastolatka z chatbotem](/pl/articles/most-czy-zastepstwo-nastolatek-chatbot/) przygląda się badaniom nad nastolatkami, którzy powierzają AI ważne i poważne sprawy, oraz temu, dlaczego ważniejsze od samego czatu może być to, co dzieje się później.
+
 ## Źródła i kontekst
 
 - American Psychological Association. (2026). AI chatbots and digital companions are reshaping emotional connection. *Monitor on Psychology*. https://www.apa.org/monitor/2026/01-02/trends-digital-ai-relationships-emotional-connection
