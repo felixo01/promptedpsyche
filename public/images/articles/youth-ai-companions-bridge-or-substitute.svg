@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">A late-night AI conversation branches in two directions</title>
+  <desc id="desc">A calm editorial illustration on a paper background. A glowing phone at night leads to a decision point. One path opens toward a small group of people; the other loops back into another chat bubble.</desc>
+  <defs>
+    <pattern id="paper" width="28" height="28" patternUnits="userSpaceOnUse">
+      <rect width="28" height="28" fill="#F7F3EA"/>
+      <path d="M0 28L28 0" stroke="#E6DED0" stroke-width="0.45" opacity="0.42"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FBFAF6" stop-opacity="0.98"/>
+      <stop offset="52%" stop-color="#C3944E" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#C3944E" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrowTeal" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2 2L12 7L2 12" fill="none" stroke="#536965" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrowWarm" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2 2L12 7L2 12" fill="none" stroke="#8C9893" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#paper)"/>
+  <rect x="82" y="110" width="430" height="680" rx="34" fill="#253746"/>
+  <rect x="118" y="146" width="358" height="574" rx="22" fill="#1B2A35"/>
+  <g fill="#FBFAF6" opacity="0.62"><circle cx="170" cy="205" r="3"/><circle cx="223" cy="174" r="2.5"/><circle cx="413" cy="217" r="3"/><circle cx="344" cy="185" r="2"/><circle cx="282" cy="243" r="2"/></g>
+  <circle cx="293" cy="485" r="170" fill="url(#glow)"/>
+  <rect x="215" y="325" width="156" height="300" rx="30" fill="#121A20" stroke="#FBFAF6" stroke-width="2.3"/>
+  <rect x="232" y="354" width="122" height="238" rx="18" fill="#F6F0E5"/>
+  <path d="M252 410H329A14 14 0 0 1 343 424V466A14 14 0 0 1 329 480H294L272 500L277 480H252A14 14 0 0 1 238 466V424A14 14 0 0 1 252 410Z" fill="#D7E1DC" stroke="#536965" stroke-width="2"/>
+  <path d="M258 438H320M258 455H304" stroke="#536965" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="293" cy="607" r="7" fill="#FBFAF6" opacity="0.8"/>
+  <path d="M380 480C505 480 575 465 650 450" fill="none" stroke="#C3944E" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="690" cy="445" r="52" fill="#FBFAF6" stroke="#26231F" stroke-width="2.5"/>
+  <circle cx="690" cy="445" r="8" fill="#C3944E"/>
+  <path d="M666 445H680M700 445H714" stroke="#26231F" stroke-width="2.3" stroke-linecap="round"/>
+  <path d="M735 420C845 355 930 250 1055 250C1165 250 1220 300 1308 310" fill="none" stroke="#536965" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowTeal)"/>
+  <path d="M895 330C980 245 1092 236 1185 316" fill="none" stroke="#536965" stroke-width="2" opacity="0.48"/>
+  <path d="M925 308V350M974 272V321M1024 251V300M1078 250V300M1130 268V318M1177 300V342" stroke="#536965" stroke-width="1.8" opacity="0.48"/>
+  <g fill="#FBFAF6" stroke="#26231F" stroke-width="2.3"><circle cx="1370" cy="240" r="29"/><circle cx="1434" cy="304" r="29"/><circle cx="1370" cy="368" r="29"/><circle cx="1306" cy="304" r="29"/></g>
+  <g stroke="#536965" stroke-width="2.4" fill="none"><path d="M1348 262L1328 282"/><path d="M1392 262L1412 282"/><path d="M1392 346L1412 326"/><path d="M1348 346L1328 326"/></g>
+  <circle cx="1370" cy="304" r="13" fill="#536965"/>
+  <path d="M735 470C840 525 882 650 1014 663H1085" fill="none" stroke="#8C9893" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowWarm)"/>
+  <path d="M1114 664C1114 555 1192 520 1279 546C1373 574 1399 685 1340 754C1288 815 1170 812 1118 735" fill="none" stroke="#8C9893" stroke-width="3.6" stroke-linecap="round" marker-end="url(#arrowWarm)"/>
+  <path d="M1160 627H1280A22 22 0 0 1 1302 649V713A22 22 0 0 1 1280 735H1236L1246 770L1205 735H1160A22 22 0 0 1 1138 713V649A22 22 0 0 1 1160 627Z" fill="#FBFAF6" stroke="#26231F" stroke-width="2.4"/>
+  <g fill="#8C9893"><circle cx="1186" cy="681" r="6"/><circle cx="1220" cy="681" r="6"/><circle cx="1254" cy="681" r="6"/></g>
+  <g fill="none" stroke="#26231F" stroke-width="1.4" opacity="0.18"><circle cx="730" cy="170" r="74"/><circle cx="730" cy="170" r="105"/><circle cx="1510" cy="760" r="64"/><circle cx="1510" cy="760" r="92"/></g>
+  <path d="M565 770C795 815 1030 818 1260 782" fill="none" stroke="#C3944E" stroke-width="1.8" opacity="0.42"/>
+</svg>

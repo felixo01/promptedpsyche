@@ -22,6 +22,10 @@ An AI companion is not the same as a therapist, friend or person. It is a system
 
 AI companions should not be framed as therapy unless a source and product context clearly justify that framing. They should also not be treated as automatically harmful or automatically beneficial. The careful question is what role the system begins to play in a person's life.
 
+## Read more
+
+[Bridge or Substitute? What Happens When a Teenager Turns to a Chatbot](/articles/bridge-or-substitute-teen-chatbot/) examines what research says about teenagers who bring important or serious matters to AI, and why what happens after the chat may matter more than the chat itself.
+
 ## Sources and context
 
 - American Psychological Association. (2026). AI chatbots and digital companions are reshaping emotional connection. *Monitor on Psychology*. https://www.apa.org/monitor/2026/01-02/trends-digital-ai-relationships-emotional-connection
