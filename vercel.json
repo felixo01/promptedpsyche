@@ -1,6 +1,16 @@
 {
   "redirects": [
     {
+      "source": "/articles/bridge-or-substitute-teen-chatbot/",
+      "destination": "/articles/chatbot-or-human-why-teenagers-confide-in-ai/",
+      "permanent": true
+    },
+    {
+      "source": "/pl/articles/most-czy-zastepstwo-nastolatek-chatbot/",
+      "destination": "/pl/articles/chatbot-zamiast-czlowieka-dlaczego-nastolatkowie-zwierzaja-sie-ai/",
+      "permanent": true
+    },
+    {
       "source": "/articles/openai-chatgpt-gpt-llm-difference/",
       "destination": "/notes/openai-chatgpt-gpt-llm-difference/",
       "permanent": true

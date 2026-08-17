@@ -1,5 +1,5 @@
 ---
-title: "Bridge or Substitute? What Happens When a Teenager Turns to a Chatbot"
+title: "Chatbot or Human? Why Teenagers Confide in AI"
 description: "What research actually shows about teens and AI - from the 33% figure to when a chatbot helps someone reach people or begins to replace human contact."
 publishedAt: 2026-08-17
 draft: false

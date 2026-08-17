@@ -1,5 +1,5 @@
 ---
-title: "Most czy zastępstwo? Dokąd prowadzi rozmowa nastolatka z chatbotem"
+title: "Chatbot zamiast człowieka? Dlaczego nastolatkowie zwierzają się AI"
 description: "Co badania naprawdę pokazują o nastolatkach i AI - od liczby 33% po pytanie, kiedy chatbot pomaga wrócić do ludzi, a kiedy zaczyna ich zastępować."
 publishedAt: 2026-08-17
 draft: false
