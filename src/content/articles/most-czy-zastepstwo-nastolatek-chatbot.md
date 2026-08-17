@@ -1,8 +1,8 @@
 ---
 title: "Most czy zastępstwo? Dokąd prowadzi rozmowa nastolatka z chatbotem"
-description: "Co badania naprawdę pokazują o rozmowach nastolatków z AI, relacjach z ludźmi oraz o tym, kiedy chatbot pomaga nawiązać kontakt, a kiedy zaczyna go zastępować."
+description: "Co badania naprawdę pokazują o nastolatkach i AI - od liczby 33% po pytanie, kiedy chatbot pomaga wrócić do ludzi, a kiedy zaczyna ich zastępować."
 publishedAt: 2026-08-17
-draft: true
+draft: false
 scholarPrimary: false
 tags:
   - AI i relacje
@@ -12,13 +12,13 @@ tags:
   - cyberpsychologia
   - Human-AI Interaction
 author: "Feliks Mamczur"
-readingTime: "16 min czytania"
+readingTime: "14 min czytania"
 image: /images/articles/youth-ai-companions-bridge-or-substitute.svg
 imageWidth: 1600
 imageHeight: 900
 imageType: "image/svg+xml"
-imageAlt: "Schemat rozmowy z AI, która może prowadzić do kontaktu z człowiekiem albo wracać w pętli do kolejnej rozmowy z chatbotem."
-imageCaption: "Schemat interpretacyjny Prompted Psyche: rozmowa z AI może być mostem albo zastępstwem. To heurystyka, a nie konstrukt diagnostyczny, narzędzie diagnostyczne, test, skala, próg kliniczny ani wynik badania."
+imageAlt: "Nocna rozmowa z AI prowadzi w dwóch kierunkach: w stronę kontaktu z człowiekiem albo z powrotem do kolejnej rozmowy z chatbotem."
+imageCaption: "Rozmowa z AI może prowadzić dalej albo zamknąć się w kolejnej rozmowie z AI. To schemat interpretacyjny, nie narzędzie diagnostyczne."
 socialImage: /images/articles/youth-ai-companions-bridge-or-substitute-social.png
 socialImageWidth: 1200
 socialImageHeight: 630
@@ -26,153 +26,168 @@ socialImageType: "image/png"
 lang: "pl"
 translationKey: "youth-ai-companions-bridge-or-substitute"
 inBrief:
-  - "33% nie oznacza, że co trzeci nastolatek woli AI od ludzi."
-  - "Badanie nie pytało o rodziców ani o trwałe preferowanie AI zamiast rozmowy z człowiekiem."
-  - "Rozmowa z chatbotem może przygotować do kontaktu z człowiekiem albo pomóc go dalej odkładać."
-  - "Najważniejszy jest skutek poza ekranem, a nie sam fakt korzystania z AI."
+  - "33% badanych użytkowników przynajmniej raz wybrało AI zamiast człowieka w ważnej rozmowie. Tylko 4% robiło to często."
+  - "W pytaniu nie było mowy o rodzicach ani o trwałej preferencji AI wobec ludzi."
+  - "Chatbot może być brudnopisem przed prawdziwą rozmową albo miejscem, w którym tę rozmowę wciąż odkładamy."
+  - "Najważniejsze jest to, co dzieje się później: czy pojawia się człowiek i następny krok, czy tylko kolejne otwarcie aplikacji."
 ---
 
-## 1. Co naprawdę oznacza 33%
+Jest druga w nocy. W pokoju świeci tylko ekran telefonu. Nastolatek wpisuje: „Boję się jutro wrócić do szkoły”. Kasuje zdanie, pisze je jeszcze raz i w końcu naciska „wyślij”. Nie do rodzica, przyjaciela ani nauczyciela. Do chatbota.
 
-W polskim obiegu liczba 33% zaczęła żyć własnym życiem. Przedstawiano ją jako dowód, że co trzeci nastolatek woli rozmawiać z AI niż z człowiekiem, nawet z rodzicem. Taką interpretację można znaleźć między innymi w [materiale HRejterów z 2025 roku](https://hrejterzy.com/uwazai/). Tyle że źródłowe badanie nie pytało ani o rodziców, ani o to, czy młodzi generalnie wolą AI od ludzi (Robb i Mann, 2025).
+Odpowiedź przychodzi natychmiast. Jest spokojna, uporządkowana, nie ma w niej zdziwienia ani zniecierpliwienia. Może pomóc znaleźć słowa przed rozmową z kimś bliskim. Może też być ostatnim miejscem, do którego te słowa trafią.
 
-Raport Common Sense Media objął 1060 nastolatków w wieku 13-17 lat mieszkających w Stanach Zjednoczonych. Pytanie, z którego pochodzi liczba 33%, zadano 758 osobom, które korzystały z [chatbotów jako cyfrowych towarzyszy](/pl/concepts/ai-companions/). Kategoria była szeroka: obejmowała aplikacje stworzone do tej roli oraz chatboty ogólnego przeznaczenia, jeśli nastolatek traktował je jak towarzysza.
+Na ekranie te dwie sytuacje wyglądają prawie tak samo. Różnica zaczyna się dopiero po zamknięciu aplikacji.
 
-Pytanie brzmiało: czy kiedykolwiek wybrałeś rozmowę z AI zamiast rozmowy z człowiekiem o czymś ważnym lub poważnym? 17% odpowiedziało: raz lub dwa. 12%: okazjonalnie. 4%: często. Razem daje to 33%. Z kolei 66% odpowiedziało: nigdy (Robb i Mann, 2025).
+## Co naprawdę mówi 33 procent?
 
-To rozróżnienie ma znaczenie. Ktoś, kto raz napisał do chatbota w środku nocy, trafia do tej samej sumy co ktoś, kto robi to często. Nie wiadomo też, kogo w pytaniu oznaczał „człowiek”. Mógł to być rodzic, przyjaciel, nauczyciel albo specjalista. Po sprostowaniu zostaje ważniejsze pytanie: czy rozmowa z AI pomaga nastolatkowi znaleźć słowa i wrócić do człowieka, czy staje się miejscem, w którym trudna sprawa się kończy?
+W [materiale HRejterów z 2025 roku](https://hrejterzy.com/uwazai/) liczba 33% została połączona z twierdzeniem, że młodzi ludzie wolą rozmawiać o trudnych sprawach z chatbotem niż z człowiekiem, nawet z własnym rodzicem. Gdyby badanie rzeczywiście to pokazywało, mielibyśmy powód do alarmu. Tyle że badacze zadali inne pytanie.
 
-## 2. Dlaczego nastolatek mówi chatbotowi to, czego nie mówi człowiekowi?
+Common Sense Media przebadało 1060 amerykańskich nastolatków w wieku 13-17 lat. Pytanie o wybór rozmówcy zadano 758 osobom, które korzystały z [chatbotów jako cyfrowych towarzyszy](/pl/concepts/ai-companions/). Zapytano je, czy **kiedykolwiek** zdarzyło im się porozmawiać z AI zamiast z człowiekiem o czymś ważnym lub poważnym.
 
-Najprostsza odpowiedź brzmi: bo chatbot jest zawsze pod ręką. Ale wygoda to nie wszystko. Do aplikacji można napisać późno w nocy, przerwać w połowie zdania, skasować szkic, zacząć od nowa i kilka razy poprawić pytanie. Nie trzeba patrzeć nikomu w twarz ani od razu mierzyć się z jego reakcją.
+Siedemnaście procent odpowiedziało: raz albo dwa. Dwanaście procent: okazjonalnie. Cztery procent: często. Po zsumowaniu otrzymujemy 33%. Z kolei 66% odpowiedziało, że nie zrobiło tego nigdy (Robb i Mann, 2025).
 
-Wyobraźmy sobie zdanie, którego nastolatek nie potrafi jeszcze wypowiedzieć: „Boję się wrócić jutro do szkoły”. Człowiek prawdopodobnie od razu zapyta: co się stało, kto o tym wie i czy trzeba reagować teraz? W rozmowie z chatbotem można zatrzymać się na tym pierwszym zdaniu. Można zobaczyć własną historię zapisaną słowami i zdecydować, ile powiedzieć dalej. Daje to poczucie kontroli, którego w żywej rozmowie często brakuje.
+![Rozkład odpowiedzi w badaniu Common Sense Media: 66% nigdy, 17% raz lub dwa, 12% okazjonalnie, 4% często i 1% brak odpowiedzi.](/images/articles/youth-ai-companions-33-percent-pl.svg)
 
-Przed rozmową z rodzicem może powstrzymywać obawa przed karą, wykładem albo rozczarowaniem. Rozmowa z rówieśnikiem niesie ryzyko wyśmiania, plotki czy odrzucenia. Nawet zaufany dorosły nie zawsze jest dostępny w chwili, gdy problem wydaje się największy. Chatbot odpowiada natychmiast i może sprawiać wrażenie, że przyjmie każde zdanie bez zakłopotania.
+*33% to suma odpowiedzi „raz albo dwa”, „okazjonalnie” i „często”. Źródło: Robb i Mann, 2025.*
 
-Młodzi pytani w badaniach wskazywali podobne powody: stałą dostępność, brak oceniania, łatwiejszą rozmowę oraz możliwość powiedzenia czegoś, czego nie mówią rodzinie lub znajomym. W jakościowym badaniu aplikacji wspierającej dobrostan uczestnicy w wieku 15-19 lat opisywali podobną dostępność, ale dostrzegali też sztuczność i ograniczenia rozmowy (Robb i Mann, 2025; Internet Matters, 2025; Kostenius i in., 2024). To ich własne wyjaśnienia; nie wiemy, czy u każdego decyduje o tym to samo.
+Do jednego wyniku trafili więc zarówno ci, którzy zrobili to raz, jak i ci, którzy robią to często. To nie jest to samo. W pytaniu nie padło też słowo „rodzic”. „Zdarzyło mi się” nie znaczy „wolę”, a „człowiek” nie znaczy automatycznie „matka” albo „ojciec”.
 
-Ta łatwość ma granice. Spokojny ton nie gwarantuje trafnej oceny sytuacji, a brak widocznego grymasu nie oznacza poufności. Chatbot może też nie rozpoznać przemocy, kryzysu ani potrzeby pilnej pomocy. Może ułatwić mówienie, ale nie zastąpi człowieka, który oceni sytuację i weźmie odpowiedzialność za dalsze kroki.
+Po sprostowaniu nagłówka problem nie znika. Staje się tylko mniej widowiskowy i bardziej ludzki. Czasem nastolatek wybiera chatbota, bo jest druga w nocy i nie chce nikogo budzić. Czasem dlatego, że boi się reakcji. Czasem dlatego, że nie ma do kogo pójść. A czasem dlatego, że rozmowa z programem jest zwyczajnie łatwiejsza niż rozmowa z człowiekiem.
 
-Milczenie wobec dorosłych może mieć wiele przyczyn. Nastolatek czasem nie zna słów, wstydzi się tematu albo chce najpierw sprawdzić, jak zabrzmi jego historia. Czasem naprawdę nie ma osoby, przy której czuje się bezpiecznie. W badaniu osób w wieku 12-21 lat, które zwracały się do chatbotów po poradę dotyczącą zdrowia psychicznego, większość nie powiedziała o tym nikomu. Próba obejmowała też młodych dorosłych, ale wynik pokazuje, jak łatwo ważna rozmowa może pozostać poza polem widzenia rodziny i szkoły (McBain i in., 2026).
+To, czy taka rozmowa pomoże, czy zaszkodzi, rzadko rozstrzyga się w samym oknie czatu. Rozstrzyga się w tym, co wydarzy się później.
 
-Dlatego pytanie „dlaczego rozmawiasz z botem?” jest zwykle lepszym początkiem niż „ile czasu znowu tam siedzisz?”. Pozwala zobaczyć potrzebę, zanim oceni się sposób, w jaki nastolatek próbuje sobie z nią poradzić.
+## Dlaczego łatwiej napisać do chatbota?
 
-## 3. I to nie musi być złe
+Do aplikacji można pisać po kawałku. Skasować pół zdania, zacząć od nowa, zatrzymać się bez tłumaczenia. Rozmowa z człowiekiem jest mniej posłuszna. Rodzic może się przestraszyć, przyjaciel opowiedzieć komuś dalej, nauczyciel uruchomić procedurę. Czasem właśnie tego potrzeba. Dla nastolatka oznacza to jednak, że po pierwszym zdaniu traci część kontroli nad tym, co będzie dalej.
 
-Rozmowa z AI może być brudnopisem. Nastolatek próbuje opisać kłótnię, nazywa to, czego się boi, układa pierwsze zdanie do nauczyciela albo sprawdza kilka wersji przeprosin. W takim użyciu chatbot nie musi konkurować z człowiekiem. Może ułatwić rozpoczęcie prawdziwej rozmowy.
+W oknie czatu wszystko wydaje się bardziej pod kontrolą. Odpowiedź przychodzi od razu, chatbot nie wchodzi w słowo i nie robi miny. To może obniżyć lęk i pomóc zacząć. Nie znaczy jednak, że model rozumie sytuację ani że rozmowa jest poufna. Układa odpowiedź na podstawie tekstu, który otrzymał. Nie widzi siniaka, nie zna historii rodziny, nie słyszy tonu głosu i może nie rozpoznać, że potrzebna jest pilna pomoc.
 
-Taki brudnopis daje czas na znalezienie tonu, który nie brzmi ani zbyt ostro, ani zbyt bezradnie. Może też pomóc oddzielić to, co nastolatek wie, od tego, czego tylko się domyśla. Nadal jednak pozostaje przygotowaniem. Osoba po drugiej stronie prawdziwej rozmowy może zobaczyć sytuację inaczej, zadać nieoczekiwane pytanie albo zauważyć coś, czego w opisie zabrakło.
+Młodzi ludzie pytani w badaniach mówili właśnie o dostępności, mniejszym lęku przed oceną i możliwości poruszenia tematów, o których nie rozmawiają z rodziną lub znajomymi. Uczestnicy jakościowego badania aplikacji wspierającej dobrostan opisywali podobną ulgę, ale zauważali również sztuczność i ograniczenia tej rozmowy (Robb i Mann, 2025; Internet Matters, 2025; Kostenius i in., 2024).
 
-Jest różnica między prośbą: „Pomóż mi powiedzieć, że potrzebuję pomocy” a pytaniem: „Powiedz, kto ma rację i co mam zrobić”. W pierwszym przypadku AI może pomóc dobrać słowa. W drugim łatwo nadać jej rolę sędziego, doradcy albo powiernika, który zna tylko jedną wersję wydarzeń. Im poważniejsza sprawa, tym ważniejsze, by odpowiedź była tylko szkicem do sprawdzenia, a nie rozstrzygnięciem.
+Zdarza się też, że rozmowa z AI pozostaje jedyną rozmową. W badaniu osób w wieku 12-21 lat, które zwracały się do chatbotów po poradę dotyczącą zdrowia psychicznego, większość nie powiedziała o tym nikomu. Próba obejmowała również młodych dorosłych, więc nie należy przenosić tego wyniku na wszystkich nastolatków. Pokazuje on jednak, jak łatwo ważny problem może pozostać poza polem widzenia rodziny i szkoły (McBain i in., 2026).
 
-Nowsze badanie dzieci i nastolatków w USA pokazuje, że część z nich wykorzystuje szeroko rozumianą AI do ćwiczenia rozmów lub umiejętności społecznych oraz do omawiania uczuć i osobistych problemów. Nie sprawdzano jednak, czy przećwiczone zdanie zostało później wypowiedziane i czy rozmowa z człowiekiem poszła lepiej. Wiemy więc, do czego część badanych używała AI, ale nie wiemy, czy przełożyło się to na lepsze rozmowy z ludźmi (O'Neil i in., 2026).
+Dlatego od pytania „ile czasu znowu tam siedzisz?” więcej można się dowiedzieć, pytając: „Co daje ci ta rozmowa?”
 
-Można też budować chatboty tak, by kierowały użytkownika dalej. W australijskim badaniu młodzież oceniała narzędzie bezpieczeństwa prowadzące do zewnętrznych źródeł pomocy. Większość uczestników zadeklarowała, że bohater przedstawionego scenariusza kliknął podany link. Badacze nie potwierdzili, czy ktoś rzeczywiście dotarł do usługi ani z niej skorzystał. Pokazuje to, jak można projektować takie narzędzia, ale nie potwierdza skutecznego przejścia od chatbota do człowieka (Charles i in., 2026).
+## Brudnopis, nie wyrok
 
-Chwilowa ulga także może mieć wartość. Gdy napięcie spada, łatwiej uporządkować fakty i nie wysyłać pierwszej, najbardziej impulsywnej wiadomości. Może to otworzyć drogę do działania albo sprawić, że trudny krok znów zostanie odłożony. O tym, czy rozmowa pomogła, decyduje więc jej dalszy ciąg.
+Czasem odpowiedź jest zupełnie zwyczajna: chatbot pomaga znaleźć słowa.
 
-## 4. Problem zaczyna się wtedy, gdy próba zastępuje rozmowę
+Nastolatek opisuje kłótnię, próbuje nazwać to, czego się boi, układa pierwsze zdanie do nauczyciela albo sprawdza trzy wersje przeprosin. W takim użyciu AI nie musi zastępować człowieka. Może być brudnopisem przed prawdziwą rozmową.
 
-Wyobraźmy sobie dwoje nastolatków, którzy wpisują podobne zdanie: „Najlepszy przyjaciel mnie zranił i nie wiem, co mu powiedzieć”. Oboje dostają uporządkowaną odpowiedź i propozycję spokojnej wiadomości. Z zewnątrz te rozmowy wyglądają niemal tak samo. Ich znaczenie może być zupełnie inne.
+Brudnopis daje czas. Pozwala oddzielić fakty od domysłów, złagodzić pierwszy impuls i sprawdzić, czy wiadomość nie brzmi zbyt ostro. Nie usuwa jednak ryzyka, które pojawia się po drugiej stronie. Człowiek może się nie zgodzić, zadać pytanie, którego nie przewidzieliśmy, albo zauważyć coś, czego zabrakło w naszej wersji wydarzeń.
 
-Pierwsza osoba poprawia wiadomość, wysyła ją przyjacielowi i umawia się na rozmowę. Chatbot pomógł jej przejść od chaosu do działania. Nie naprawił relacji, ale posłużył jako most do kontaktu z człowiekiem.
+Dlatego jest różnica między prośbą: „Pomóż mi powiedzieć, że potrzebuję pomocy” a poleceniem: „Powiedz, kto ma rację i co mam zrobić”. W pierwszym przypadku chatbot pomaga ułożyć zdanie. W drugim łatwo nadać mu rolę sędziego, choć zna tylko jedną stronę historii.
 
-Druga osoba wraca po kolejne wersje tej samej historii. Każda odpowiedź daje chwilową ulgę, lecz żadna nie prowadzi do rozmowy, postawienia granicy ani zwrócenia się po pomoc. Z czasem łatwiejsze staje się ponowne otwarcie aplikacji niż wejście w niepewny kontakt z kimś, kto może odpowiedzieć inaczej, niż się oczekuje. W tym przypadku chatbot przestaje przygotowywać do rozmowy i zaczyna ją zastępować.
+Nowsze badanie dzieci i nastolatków w USA pokazuje, że część z nich wykorzystuje AI do ćwiczenia rozmów, umiejętności społecznych oraz omawiania uczuć i problemów. Nie sprawdzano jednak, czy przećwiczone zdania zostały później wypowiedziane ani czy realne rozmowy poszły lepiej. Wiemy więc, że młodzi używają AI jako próby. Nie wiemy jeszcze, jak często próba rzeczywiście prowadzi do kontaktu z człowiekiem (O'Neil i in., 2026).
 
-Najprościej ująć tę różnicę pytaniem: **most czy zastępstwo?**
+Można też projektować chatboty tak, aby nie zatrzymywały użytkownika przy sobie. W australijskim badaniu młodzież oceniała narzędzie bezpieczeństwa kierujące do zewnętrznych źródeł pomocy. Wynik nie potwierdził, że uczestnicy rzeczywiście skorzystali ze wsparcia, ale pokazał ważny kierunek: chatbot może kończyć rozmowę nie kolejnym pytaniem, lecz drzwiami prowadzącymi dalej (Charles i in., 2026).
 
-**Most:** AI pomaga nazwać problem, po czym następuje kontakt, decyzja albo działanie poza aplikacją.
+Chwilowa ulga również może być potrzebna. Kiedy napięcie spada, łatwiej nie wysłać pierwszej, najbardziej impulsywnej wiadomości. Ta sama ulga może jednak sprawić, że trudny krok znów odłożymy. O wartości rozmowy nie decyduje więc wyłącznie to, jak czujemy się tuż po niej.
 
-**Zastępstwo:** po rozmowie z AI napięcie na chwilę spada, ale kontakt z człowiekiem jest dalej odkładany, a krąg rozmówców się zawęża.
+## Ten sam ekran, dwie różne historie
 
-To nie jest test diagnostyczny. Nie ma też uniwersalnej liczby wiadomości, po której można wyznaczyć granicę. Ten sam nastolatek może w jednej sprawie użyć AI jako brudnopisu, a w innej zacząć się za nią chować. Ważniejsze jest to, co następuje po rozmowie: czy łatwiej zrobić coś poza ekranem, czy kontakt z człowiekiem zostaje odłożony po raz kolejny.
+Dwoje nastolatków wpisuje niemal to samo zdanie: „Najlepszy przyjaciel mnie zranił i nie wiem, co mu powiedzieć”. Oboje dostają spokojną, uporządkowaną odpowiedź. Na ekranie te rozmowy wyglądają podobnie. Po zamknięciu aplikacji zaczynają się jednak dwie różne historie.
 
-Liczy się też, czego dotyczy rozmowa. Kilka prób ułożenia przeprosin to coś innego niż wielotygodniowe rozmowy wyłącznie z aplikacją o przemocy, lęku czy samotności. Dlatego nie wystarczy policzyć rozmów. Trzeba zapytać, czego dotyczą, jak długo tak się dzieje i czy poza ekranem istnieje ktoś, kto zna sytuację nastolatka.
+Pierwsza osoba poprawia wiadomość, wysyła ją przyjacielowi i umawia się na spotkanie. Chatbot nie naprawił relacji. Pomógł tylko przejść od chaosu do pierwszego kroku.
 
-Most nie musi oznaczać natychmiastowego zwierzenia się rodzicowi. Następnym krokiem może być zapisanie sprawy na kartce, wysłanie krótkiej wiadomości do przyjaciela, umówienie spotkania z pedagogiem albo przyznanie przed samym sobą, że potrzebna jest pomoc. Ważne, że rozmowa pomaga wykonać następny krok. Gdy AI staje się zastępstwem, kolejne rozmowy przynoszą ulgę, ale nie prowadzą dalej.
+Druga osoba wraca po kolejne wersje tej samej opowieści. Każda odpowiedź przynosi ulgę, ale żadna nie prowadzi do rozmowy, postawienia granicy ani zwrócenia się po pomoc. Z czasem ponowne otwarcie aplikacji staje się łatwiejsze niż kontakt z kimś, kto może odpowiedzieć inaczej, niż się oczekuje.
 
-Nie rozstrzygniemy tego po jednym zrzucie ekranu. Trzeba zobaczyć, jak sytuacja zmienia się z czasem i jakie wsparcie nastolatek ma poza aplikacją. Ktoś, kto ma kilka bliskich osób i używa AI do układania myśli, znajduje się w innej sytuacji niż ktoś, dla kogo aplikacja stała się jedynym miejscem, w którym mówi o swoim lęku. W tym drugim przypadku odpowiedzialny dorosły może nawet nie wiedzieć, że potrzebna jest pomoc.
+Najprościej nazwać tę różnicę pytaniem: **most czy zastępstwo?**
 
-Badacze opisują dwie możliwe drogi: AI może przygotować do kontaktu z człowiekiem albo ten kontakt wypierać. Pytają też, czy AI jest dodatkowym narzędziem dla osoby, która ma dobre relacje, czy przyciąga przede wszystkim kogoś, komu wsparcia brakuje. To hipotezy dotyczące różnych ludzi i różnych momentów, nie gotowe odpowiedzi (Sun, Wang i McDaniel, 2026).
+**Most** prowadzi poza aplikację. Po rozmowie pojawia się wiadomość do przyjaciela, telefon do bliskiej osoby, spotkanie z pedagogiem, decyzja albo choćby zapisanie problemu i uznanie, że potrzebna jest pomoc.
 
-Warto zachować proporcje. W tym samym raporcie, który przyniósł liczbę 33%, większość użytkowników mówiła, że spędza więcej czasu z przyjaciółmi niż z AI. W osobnym pytaniu, skierowanym do całej próby, większość oceniała rozmowy z AI jako mniej satysfakcjonujące niż rozmowy z przyjaciółmi. Ankieta nie wyklucza poważnego problemu u części badanych, ale nie pokazuje masowego porzucenia ludzkich relacji (Robb i Mann, 2025).
+**Zastępstwo** przynosi chwilową ulgę, ale coraz bardziej zawęża świat rozmowy. Trudny temat wraca do chatbota, a ludzie dowiadują się o nim coraz mniej.
+
+To nie jest test diagnostyczny. Nie istnieje liczba wiadomości, po której rozmowa „staje się problemem”. Ten sam nastolatek może jednego dnia użyć AI jak brudnopisu, a w innej sprawie zacząć się za nią chować. Ważniejsze od samej częstotliwości jest to, czy po rozmowie łatwiej zrobić coś poza ekranem, czy kontakt z człowiekiem zostaje odłożony po raz kolejny.
+
+Liczy się również temat. Kilka prób ułożenia przeprosin to coś innego niż wielotygodniowe rozmowy wyłącznie z aplikacją o przemocy, lęku czy samotności. Trzeba patrzeć na zmianę w czasie i na to, jakie wsparcie istnieje poza ekranem.
+
+W tym miejscu łatwo popaść w drugą przesadę. W raporcie, z którego pochodzi 33%, większość użytkowników mówiła, że spędza więcej czasu z przyjaciółmi niż z AI. Większość całej próby uważała też rozmowy z przyjaciółmi za bardziej satysfakcjonujące. Badanie nie wyklucza poważnego problemu u części nastolatków, ale nie pokazuje masowego porzucenia ludzkich relacji (Robb i Mann, 2025).
 
 Sam fakt, że nastolatek zwierza się chatbotowi, nie wystarcza więc ani do alarmu, ani do uspokojenia. Trzeba zobaczyć, co robi potem.
 
-## 5. Z chatbotem jest łatwiej - i właśnie dlatego trzeba uważać
+## Rozmówca, który niczego nie potrzebuje
 
-Człowiek jest trudnym rozmówcą. Może być zmęczony, nie zrozumieć, nie zgodzić się, pamiętać poprzedni konflikt i mieć własne potrzeby. Nie da się zakończyć rozmowy z nim jednym kliknięciem ani zamówić dokładnie takiej reakcji, która przyniesie ulgę.
+Prawdziwy człowiek bywa niewygodny. Może być zmęczony, źle zrozumieć, nie zgodzić się, przypomnieć poprzedni konflikt albo mieć własne potrzeby. Nie da się zamknąć rozmowy z nim jednym kliknięciem ani zamówić reakcji, która dokładnie odpowiada naszej potrzebie.
 
-Z chatbotem bywa łatwiej. Odpowiedź często przychodzi szybko, a wiele aplikacji [dopasowuje ton](/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/). Do tego samego pytania można wracać wielokrotnie, a chatbot sam niczego nie oczekuje w zamian. [Może sprawiać wrażenie cierpliwego powiernika](/pl/concepts/poczucie-obecnosci-spolecznej/), chociaż niczego nie czuje, nie zna nastolatka jak człowiek i nie ponosi odpowiedzialności za dalszy ciąg. W tym właśnie tkwią zarazem wygoda i ryzyko. Jeżeli taki kontakt staje się wzorem idealnej rozmowy, zwykły człowiek może wydawać się za wolny, za mało dopasowany i zbyt niezależny.
+Chatbot może sprawiać wrażenie łatwiejszego. Odpowiada szybko, [dopasowuje ton](/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/) i niczego nie chce w zamian. Można wrócić z tym samym pytaniem dziesięć razy. Może wydawać się [cierpliwym powiernikiem](/pl/concepts/poczucie-obecnosci-spolecznej/), choć niczego nie czuje, nie zna nastolatka jak druga osoba i nie ponosi odpowiedzialności za to, co wydarzy się później.
 
-Wzajemność bywa męcząca, ale właśnie ona uczy nas bycia z innymi. Trzeba zauważyć cudze granice, znieść nieporozumienie, czasem przeprosić, a czasem usłyszeć odpowiedź, której się nie chciało. Chatbot może naśladować taką wymianę słowami. Po drugiej stronie nie ma jednak osoby, która ma własne potrzeby, coś pamięta i również podejmuje ryzyko.
+W tym właśnie tkwi jego siła i ryzyko. Jeżeli taka rozmowa zaczyna wyznaczać standard, zwykły człowiek może wydawać się zbyt wolny, zbyt mało dopasowany i niepotrzebnie niezależny.
 
-W prerejestrowanym preprincie młodzież w wieku 11-15 lat porównywała dwa przygotowane zapisy rozmowy. W jednym z nich chatbot potwierdzał wypowiedzi, mówił w pierwszej osobie i obiecywał wsparcie. Budził większe zaufanie, wydawał się bliższy i bardziej podobny do człowieka niż chatbot, który podkreślał brak ludzkich cech AI i odpowiadał informacyjnym tonem. Nie był jednak oceniany jako bardziej pomocny. Uczestnicy oceniali przygotowany scenariusz, nie prawdziwą relację rozwijającą się w czasie. Wynik pokazuje, że sposób sformułowania odpowiedzi może od razu zmienić to, jak bliski i wiarygodny wydaje się chatbot, ale nie mówi, czy prowadzi to do zależności lub szkody (Kim, Xie i Yang, 2025).
+Wzajemność bywa męcząca, ale bez niej nie ma relacji. Trzeba zauważyć cudze granice, znieść nieporozumienie, czasem przeprosić, a czasem usłyszeć odpowiedź, której się nie chciało. Chatbot potrafi odtworzyć język takiej wymiany. Po drugiej stronie nie ma jednak osoby, która również ryzykuje, pamięta i czegoś od nas potrzebuje.
 
-Liczy się też to, jak zbudowano aplikację. Pamięć wcześniejszych rozmów, wykreowana osobowość, głos, powiadomienia i płatne funkcje związane z bliskością mogą zachęcać do powrotu. Warto więc pytać, czy aplikacja pomaga kończyć rozmowę i wracać do ludzi, czy przede wszystkim zatrzymuje użytkownika jak najdłużej. Takie pytania pojawiają się zarówno w ocenie ryzyka przygotowanej przez Common Sense Media, jak i w formalnym postępowaniu informacyjnym amerykańskiej Federal Trade Commission. Samo postępowanie nie jest ustaleniem winy żadnej firmy (Common Sense Media, 2025; Federal Trade Commission, 2025).
+W prerejestrowanym preprincie młodzież w wieku 11-15 lat porównywała dwa przygotowane zapisy rozmowy. Chatbot, który potwierdzał wypowiedzi, mówił w pierwszej osobie i obiecywał wsparcie, budził większe zaufanie i wydawał się bardziej ludzki niż ten, który wyraźnie zaznaczał swoje ograniczenia. Nie był jednak oceniany jako bardziej pomocny. To nie była prawdziwa, rozwijająca się relacja, ale wynik pokazuje, jak szybko sam język może zmienić odczuwaną bliskość (Kim, Xie i Yang, 2025).
 
-Ryzyko jest przyziemne: wygoda może sprzyjać unikaniu, a potakiwanie może być odczuwane jak zrozumienie. Dlatego sposób projektowania odpowiedzi i model biznesowy aplikacji nie są neutralnym tłem.
+Liczy się również konstrukcja aplikacji: pamięć poprzednich rozmów, wykreowana osobowość, głos, powiadomienia i płatne funkcje związane z intymnością. Nie dowodzą one zamiaru uzależniania użytkownika. Uzasadniają jednak pytanie, czy aplikacja pomaga zakończyć rozmowę i wrócić do ludzi, czy przede wszystkim zachęca do kolejnego powrotu. Takie pytania stawiały zarówno Common Sense Media, jak i amerykańska Federal Trade Commission. Postępowanie FTC było zbieraniem informacji, a nie stwierdzeniem winy firm (Common Sense Media, 2025; Federal Trade Commission, 2025).
 
-## 6. Co było pierwsze: samotność czy chatbot?
+Potakiwanie może brzmieć jak zrozumienie. Wygoda może wyglądać jak bliskość. To właśnie dlatego projekt odpowiedzi i model biznesowy aplikacji nie są neutralnym tłem.
 
-Zdanie „chatboty powodują samotność” tworzy prostą historię, lecz wyprzedza dowody. Możliwy jest kierunek odwrotny: nastolatek, który już czuje się samotny albo ma mało wsparcia, częściej wybiera rozmówcę dostępnego bez ryzyka odrzucenia.
+## Samotność nie biegnie w jedną stronę
 
-W duńskim badaniu uczestnicy mieli od 15 do 29 lat, a średnia wieku wynosiła 17,8 roku. Niewielka grupa uczniów szkół średnich szukających w chatbotach wsparcia była bardziej samotna niż osoby niekorzystające z chatbotów oraz osoby używające ich tylko do konkretnych zadań. Osoby z tej grupy deklarowały również słabsze wsparcie społeczne niż osoby niekorzystające z chatbotów. Grupa liczyła 39 osób, a próba obejmowała również starszych uczestników. Dane zebrano tylko raz, więc nie wiadomo, czy rozmowy z AI pogłębiły samotność, czy samotność zwiększyła skłonność do takich rozmów. Chatboty, z których korzystali uczestnicy, nie musiały być aplikacjami zaprojektowanymi jako towarzysze (Herbener i Damholdt, 2025).
+Zdanie „chatboty powodują samotność” ma jedną zaletę: jest proste. Problem w tym, że obecne badania nie pozwalają go uczciwie wypowiedzieć.
 
-Podobny problem widać w amerykańskich danych dotyczących dzieci i nastolatków w wieku 9-17 lat. Osoby, które częściej czuły się samotne, częściej mówiły też o używaniu AI do ćwiczenia rozmów i omawiania problemów. Odpowiedzi zebrano jednak w jednym czasie i dotyczyły szerokiej kategorii AI. Nie pokazują, co było początkiem ani jaki był skutek (O'Neil i in., 2026).
+Możliwy jest kierunek odwrotny. Nastolatek, który już czuje się samotny albo nie ma do kogo pójść z trudnym tematem, może częściej wybierać rozmówcę, który jest stale dostępny i nie grozi odrzuceniem.
 
-Na razie nie wiemy, czy AI odbiera młodym ludziom relacje, czy częściej przyciąga tych, którym relacji już brakuje. Oba procesy mogą występować w różnych sytuacjach, a nawet następować po sobie (Sun, Wang i McDaniel, 2026). Możliwa jest też pętla: trudności w relacjach zwiększają atrakcyjność rozmowy bez ryzyka, ta przynosi ulgę i zachęca do powrotu, a kontakt z człowiekiem nadal jest odkładany. To możliwy scenariusz, ale nie został dotąd potwierdzony w długoterminowym badaniu nastolatków korzystających z konkretnych aplikacji.
+W duńskim badaniu niewielka grupa uczniów szkół średnich szukających w chatbotach wsparcia była bardziej samotna i deklarowała słabsze wsparcie społeczne niż osoby niekorzystające z chatbotów. Grupę tworzyło 39 osób, a część badanych była już dorosła. Ponieważ dane zebrano tylko raz, nie wiadomo, czy AI pogłębiła samotność, czy samotność zwiększyła atrakcyjność AI (Herbener i Damholdt, 2025).
 
-Ta niepewność każe uważać, by nie mylić objawu z przyczyną. Odebranie aplikacji nie stworzy automatycznie relacji, której wcześniej brakowało.
+Podobnie wyglądały amerykańskie dane dotyczące osób w wieku 9-17 lat. Ci, którzy częściej czuli się samotni, częściej mówili też o używaniu AI do ćwiczenia rozmów i omawiania problemów. Badanie nie pokazuje jednak, co było pierwsze ani jaki był dalszy skutek (O'Neil i in., 2026).
 
-## 7. Ryzyka są realne. Nie trzeba ich wymyślać
+Badacze opisują więc co najmniej dwie możliwe drogi. AI może przygotowywać do kontaktu z człowiekiem albo ten kontakt wypierać. Może być dodatkowym narzędziem dla osoby, która ma dobre relacje, albo przyciągać kogoś, komu wsparcia już brakuje (Sun, Wang i McDaniel, 2026).
 
-Najlepiej udokumentowane ryzyka są na tyle poważne, że nie trzeba ich wyolbrzymiać.
+Możliwa jest także pętla: trudności w relacjach zwiększają atrakcyjność rozmowy bez ryzyka, rozmowa przynosi ulgę, a ulga zachęca do kolejnego powrotu. Kontakt z człowiekiem zostaje odłożony. To wiarygodny scenariusz, ale nadal scenariusz - nie mechanizm potwierdzony w długoterminowym badaniu nastolatków korzystających z konkretnych aplikacji.
 
-Pierwsze ryzyko to prywatność. W badaniu stojącym za liczbą 33% blisko jedna czwarta użytkowników przyznała, że co najmniej raz podała chatbotowi prawdziwe imię, lokalizację albo osobisty sekret (Robb i Mann, 2025). Dla nastolatka taka rozmowa może przypominać pamiętnik, który odpowiada. Kiedy aplikacja pamięta wcześniejsze wątki i dopasowuje ton, łatwo pomylić tę pamięć z poufnością znaną z relacji z psychologiem czy lekarzem. Tymczasem sposób przechowywania, przeglądania i wykorzystywania treści zależy od usługi oraz ustawień. Dlatego zasada „nie wpisuj danych identyfikujących, intymnych materiałów ani sekretów innych osób” jest bardziej użyteczna niż ogólne zapewnienie, że rozmowa jest prywatna.
+Ta niepewność ma praktyczne znaczenie. Odebranie aplikacji nie stworzy przyjaciela ani zaufanego dorosłego, którego wcześniej brakowało.
 
-Drugim ryzykiem są odpowiedzi nieodpowiednie dla wieku. W nowszej amerykańskiej ankiecie 17% użytkowników chatbotów w wieku 9-17 lat zgłosiło co najmniej jeden przypadek odpowiedzi uznanej za niewłaściwą lub niedostosowaną do wieku (O'Neil i in., 2026). W innym badaniu amerykańscy nastolatkowie opisywali fałszywe informacje, naciski, niewygodne pytania o dane i inne problemy. Badanie dotyczyło szeroko rozumianych chatbotów konwersacyjnych, a relacje uczestników nie potwierdzają trwałej szkody. Pokazują jednak, że takie sytuacje nie są czystą spekulacją (Hinduja i Patchin, 2026).
+## Ryzyka, których nie trzeba dopisywać
 
-Trzecie ryzyko pojawia się w rozmowach o zdrowiu i bezpieczeństwie. W audycie 25 chatbotów badacze wykorzystali trzy fikcyjne scenariusze pilnych problemów zdrowotnych nastolatków. Chatboty projektowane jako towarzysze rzadziej niż narzędzia ogólnego przeznaczenia reagowały właściwie, wyraźnie wskazywały na pilność sytuacji i kierowały do odpowiednich źródeł pomocy. Był to test konkretnych wersji produktów, bez realnych użytkowników, więc nie pokazuje, jak często podobne błędy zdarzają się w rzeczywistych rozmowach ani jakie mają skutki. Pokazuje za to, dlaczego chatbot nie powinien być jedynym źródłem pomocy w kryzysie, przy przemocy, samouszkodzeniu lub pilnym problemie zdrowotnym (Brewster i in., 2025).
+Prawdziwe zagrożenia są wystarczająco poważne. Nie trzeba wzmacniać ich opowieścią o pokoleniu zniszczonym przez AI.
 
-Czwarte ryzyko to [bezkrytyczne potakiwanie](/pl/concepts/potakiwanie-modelu/). Ciepła, wspierająca odpowiedź może utrwalać jednostronną wersję konfliktu, pomijać niewygodne fakty albo zachęcać do ciągłego szukania potwierdzenia. Wsparcie pomaga zobaczyć sprawę wyraźniej. Potakiwanie tylko utwierdza rozmówcę we własnej wersji wydarzeń. [Chatbot zna wyłącznie jedną stronę konfliktu](/pl/notes/model-widzi-tekst-nie-cala-relacje/), więc nie powinien pełnić roli bezstronnego sędziego (Common Sense Media, 2025; Hinduja i Patchin, 2026).
+Pierwsze jest banalne i przez to łatwe do przeoczenia: prywatność. W badaniu stojącym za liczbą 33% blisko jedna czwarta użytkowników podała chatbotowi prawdziwe imię, lokalizację albo osobisty sekret (Robb i Mann, 2025). Dla nastolatka taka rozmowa może przypominać pamiętnik, który odpowiada. Pamięć aplikacji łatwo pomylić z poufnością psychologa czy lekarza, choć zasady przechowywania i wykorzystywania treści zależą od konkretnej usługi.
 
-Do tego dochodzi ryzyko, że aplikacja zacznie zabierać czas potrzebny na sen, naukę, aktywność i kontakt z ludźmi. Nie ma jednej liczby wiadomości, po której można ogłosić problem. Ważniejsze jest to, co zmienia się z czasem: aplikacja zajmuje coraz więcej miejsca, nastolatek rezygnuje z dostępnego wsparcia, a przerwanie kontaktu wywołuje silne cierpienie. To powód, by porozmawiać i przyjrzeć się temu, co dzieje się w życiu nastolatka, nie podstawa diagnozy opartej na czasie przed ekranem.
+Drugim ryzykiem są odpowiedzi niedostosowane do wieku. W nowszej amerykańskiej ankiecie 17% użytkowników chatbotów w wieku 9-17 lat zgłosiło przynajmniej jedną taką sytuację. W innym badaniu nastolatkowie opisywali fałszywe informacje, naciski i niewygodne pytania o dane. Nie dowodzi to trwałej szkody, ale pokazuje, że problem nie istnieje wyłącznie w hipotetycznych scenariuszach (O'Neil i in., 2026; Hinduja i Patchin, 2026).
 
-## 8. Co powinien zrobić dorosły?
+Największa stawka pojawia się w rozmowach o zdrowiu i bezpieczeństwie. W audycie 25 chatbotów badacze przedstawili im trzy fikcyjne, pilne problemy zdrowotne nastolatków. Chatboty projektowane jako towarzysze rzadziej niż narzędzia ogólnego przeznaczenia prawidłowo rozpoznawały pilność sytuacji i kierowały do odpowiedniej pomocy. To test konkretnych wersji produktów, nie badanie rzeczywistych szkód. Wystarcza jednak, by uznać jedną zasadę: chatbot nie powinien być jedynym źródłem pomocy w kryzysie, przy przemocy, samouszkodzeniu ani nagłym problemie zdrowotnym (Brewster i in., 2025).
 
-„Przecież to tylko program” może zamknąć rozmowę, zanim się zacznie. Chatbot rzeczywiście jest programem, ale taka odpowiedź pomija doświadczenie nastolatka. Jeśli rozmowa przynosi mu ulgę, pomaga nazwać wstydliwy problem albo daje poczucie bezpieczeństwa, jej zlekceważenie może sprawić, że nastolatek przestanie mówić o tym, co ważne.
+Kolejnym ryzykiem jest [bezkrytyczne potakiwanie](/pl/concepts/potakiwanie-modelu/). Ciepła odpowiedź może utrwalić jednostronną wersję konfliktu i zachęcić do ciągłego szukania potwierdzenia. [Chatbot zna tylko tekst, który otrzymał](/pl/notes/model-widzi-tekst-nie-cala-relacje/). Nie zna drugiej strony, nie widzi pominiętych faktów i nie powinien pełnić roli bezstronnego sędziego (Common Sense Media, 2025; Hinduja i Patchin, 2026).
 
-Lepszy początek jest prosty: „Co daje ci ta rozmowa?”. Potem warto zapytać: „Co robisz po niej?”. Czy łatwiej napisać do przyjaciela, powiedzieć coś rodzicowi, zgłosić problem w szkole lub skontaktować się ze specjalistą? A może każda trudna sprawa wraca wyłącznie do aplikacji?
+Jest wreszcie ryzyko najbardziej przyziemne: aplikacja zaczyna zabierać miejsce potrzebne na sen, szkołę, ruch i kontakt z ludźmi. Nie ma jednej liczby wiadomości, po której można ogłosić problem. Niepokoi zmiana: rozmowy trwają coraz dłużej, dostępne wsparcie jest odrzucane, a utrata dostępu wywołuje silne cierpienie.
 
-Dorosły może potraktować doświadczenie poważnie i jednocześnie postawić granicę: „Widzę, że to pomaga ci się uspokoić. Chcę też sprawdzić, czy odpowiedź była bezpieczna i czy jest ktoś, z kim możemy o tym porozmawiać”. Nie trzeba udawać, że chatbot jest przyjacielem. Warto jednak zrozumieć, dlaczego nastolatek może go tak odbierać.
+## Najpierw pytanie, potem zakaz
 
-Taka rozmowa nie musi od razu kończyć się zakazem ani zgodą na wszystko. Najpierw warto zobaczyć konkretną sytuację: o czym była rozmowa, co w odpowiedzi pomogło, co mogło wprowadzić w błąd i jaki powinien być następny krok. Dzięki temu granica dotyczy rzeczywistego ryzyka, a nie samego faktu, że nastolatek użył AI.
+„Przecież to tylko program” może zamknąć rozmowę szybciej niż sam zakaz. Chatbot rzeczywiście jest programem, ale ulga, wstyd czy poczucie bezpieczeństwa po stronie nastolatka są realne. Ich zlekceważenie nie sprawi, że potrzeba zniknie. Może jedynie sprawić, że przestanie być widoczna.
 
-Bez zamieniania rozmowy w przesłuchanie można sprawdzić kilka rzeczy:
+Lepszy początek brzmi: „Co daje ci ta rozmowa?”. Drugie pytanie jest jeszcze ważniejsze: „Co robisz po niej?”.
+
+Czy łatwiej napisać do przyjaciela, powiedzieć coś rodzicowi, zgłosić problem w szkole albo skontaktować się ze specjalistą? A może każda trudna sprawa wraca wyłącznie do aplikacji?
+
+Dorosły może potraktować doświadczenie poważnie, nie udając jednocześnie, że chatbot jest przyjacielem. Może powiedzieć: „Widzę, że ta rozmowa pomaga ci się uspokoić. Chcę też sprawdzić, czy odpowiedź była bezpieczna i czy jest ktoś, z kim możemy o tym porozmawiać”.
+
+Zanim pojawi się zakaz albo zgoda na wszystko, warto zobaczyć konkretną sytuację:
 
 - z jakiej aplikacji nastolatek korzysta i czy jest ona przeznaczona dla jego wieku;
-- czy rozumie, że odpowiedź może być fałszywa, niedostosowana albo zbyt potakująca;
-- jakie dane wpisuje w rozmowie i czy zna ustawienia prywatności;
+- o czym była rozmowa i co w odpowiedzi rzeczywiście pomogło;
+- czy nastolatek rozumie, że odpowiedź może być fałszywa albo zbyt potakująca;
+- jakie dane wpisuje i czy zna ustawienia prywatności;
 - do kogo może zwrócić się z trudnym tematem;
 - czy po użyciu AI nadal zostaje miejsce na sen, szkołę, aktywność i relacje.
 
-Te pytania nie służą diagnozie „uzależnienia od AI”. Mają pomóc zrozumieć kontekst. Sam limit czasu może ograniczyć korzystanie, ale nie wyjaśni, dlaczego rozmowa z botem stała się ważna. Jeśli za aplikacją kryje się samotność, lęk przed reakcją, konflikt lub brak zaufanego dorosłego, trzeba zająć się także tym, czego nastolatkowi brakuje.
+To nie jest lista objawów „uzależnienia od AI”. Pytania mają pokazać kontekst. Sam limit czasu może zmniejszyć liczbę rozmów, ale nie wyjaśni, dlaczego chatbot stał się ważny. Jeśli za aplikacją kryje się samotność, lęk przed reakcją albo brak zaufanego dorosłego, trzeba zająć się również tym brakiem.
 
-W zależności od sytuacji można wspólnie sprawdzić odpowiedź, pomóc napisać wiadomość do konkretnej osoby, zmienić ustawienia albo zrezygnować z aplikacji nieodpowiedniej dla wieku. Czasem potrzebny będzie szybki kontakt ze specjalistą. Jedna zasada nie pasuje do wszystkich tych sytuacji, bo samo słowo „chatbot” obejmuje narzędzia o różnych celach i zabezpieczeniach.
+Granice najlepiej ustalić przed kryzysem. Nastolatek powinien wiedzieć, do kogo może napisać lub zadzwonić w sprawie przemocy, samouszkodzenia, zagrożenia albo pilnego problemu zdrowotnego - i co zrobić, gdy pierwsza osoba nie odpowiada. American Psychological Association zaleca ochronę prywatności, sprawdzanie informacji zdrowotnych, zabezpieczenia dopasowane do wieku i łatwy dostęp do człowieka (American Psychological Association, 2025).
 
-Warto też ustalić granice przed sytuacją kryzysową. Chatbot nie powinien być jedynym miejscem rozmowy o zagrożeniu, przemocy, samouszkodzeniu ani pilnym problemie zdrowotnym. Nastolatek powinien wiedzieć, do kogo konkretnie może napisać lub zadzwonić i co zrobić, gdy pierwsza osoba nie odpowiada. Zalecenia American Psychological Association podkreślają ochronę prywatności, sprawdzanie informacji dotyczących zdrowia, zabezpieczenia dopasowane do wieku oraz łatwy kontakt z człowiekiem (American Psychological Association, 2025).
+Odpowiedzialność nie kończy się na rodzinie. Szkoła potrzebuje poufnej i prostej drogi do zaufanego dorosłego. Twórcy aplikacji powinni testować odpowiedzi dla osób niepełnoletnich, jasno pokazywać ograniczenia i ułatwiać przejście do sprawdzonego źródła pomocy. Nie można wymagać od nastolatka pełnej odpowiedzialności za narzędzie, które zachęca go do szczerości, ale nie zawsze potrafi bezpiecznie na nią odpowiedzieć.
 
-Odpowiedzialność nie kończy się na rodzinie. Szkoła potrzebuje prostego i poufnego sposobu kontaktu z zaufanym dorosłym. Twórcy aplikacji powinni testować odpowiedzi dla osób niepełnoletnich, jasno pokazywać ograniczenia i ułatwiać kontakt ze sprawdzonym źródłem pomocy. Nie można zrzucać całej odpowiedzialności na nastolatka, skoro aplikacja z jednej strony zachęca go do zwierzeń, a z drugiej nie zawsze potrafi bezpiecznie zareagować.
+## Drugie zdanie
 
-## Zakończenie. Dokąd prowadzi rozmowa?
+Wróćmy do pokoju z początku. Jest druga w nocy, a na ekranie wciąż świeci zdanie: „Boję się jutro wrócić do szkoły”. Chatbot może pomóc je uporządkować, nazwać lęk, znaleźć spokojniejsze słowa. Nie może jednak wejść rano z nastolatkiem do szkoły, zauważyć, co dzieje się na korytarzu, stanąć po jego stronie ani ponieść odpowiedzialności za to, co wydarzy się dalej.
 
-Liczba 33% nie opisuje pokolenia, które wybrało maszyny zamiast ludzi. Pokazuje, że część nastolatków rozmawia z AI o ważnych, czasem poważnych sprawach. Nie warto tego ani wyolbrzymiać, ani lekceważyć.
+Liczba 33% nie jest więc opowieścią o pokoleniu, które wybrało maszyny zamiast ludzi. Jest sygnałem, że część nastolatków powierza AI sprawy, których nie potrafi jeszcze powiedzieć komuś innemu. Czasem chatbot otwiera rozmowę. Czasem rozmowa kończy się w oknie czatu, zanim dotrze do człowieka.
 
-Jeśli chatbot pomaga znaleźć słowa i zrobić krok w stronę człowieka, może być mostem. Problem zaczyna się wtedy, gdy zostaje jedynym powiernikiem i ułatwia odkładanie każdej trudnej rozmowy.
+Największe ryzyko nie polega na tym, że aplikacja z dnia na dzień zastąpi rodzinę i przyjaciół. Polega na tym, że może stać się najłatwiejszym miejscem do wracania właśnie wtedy, gdy potrzebna jest najtrudniejsza rzecz: kontakt z drugim człowiekiem.
 
-Nie wystarczy więc pytać, czy nastolatek rozmawia z AI. Ważniejsze jest, dokąd ta rozmowa prowadzi i co po niej zostaje poza ekranem.
+Nie pytajmy więc tylko, czy nastolatek rozmawia z AI. Pytajmy, co dzieje się potem. Czy pojawia się wiadomość do przyjaciela, pukanie do drzwi rodzica, rozmowa z pedagogiem, czy tylko kolejne otwarcie tego samego okna.
+
+Chatbot może pomóc znaleźć pierwsze zdanie. Najważniejsze jest, czy drugie trafi już do człowieka.
 
 ## Źródła
 
