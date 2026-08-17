@@ -6,16 +6,20 @@ import { getArticleAlternates, getArticlePath } from '../../src/lib/articleRoute
 const siteUrl = 'https://promptedpsyche.com';
 const translationKey = 'youth-ai-companions-bridge-or-substitute';
 const files = {
-  en: resolve('src/content/articles/bridge-or-substitute-teen-chatbot.md'),
-  pl: resolve('src/content/articles/most-czy-zastepstwo-nastolatek-chatbot.md')
+  en: resolve('src/content/articles/chatbot-or-human-why-teenagers-confide-in-ai.md'),
+  pl: resolve('src/content/articles/chatbot-zamiast-czlowieka-dlaczego-nastolatkowie-zwierzaja-sie-ai.md')
 } as const;
 const routes = {
+  en: '/articles/chatbot-or-human-why-teenagers-confide-in-ai/',
+  pl: '/pl/articles/chatbot-zamiast-czlowieka-dlaczego-nastolatkowie-zwierzaja-sie-ai/'
+} as const;
+const oldRoutes = {
   en: '/articles/bridge-or-substitute-teen-chatbot/',
   pl: '/pl/articles/most-czy-zastepstwo-nastolatek-chatbot/'
 } as const;
 const titles = {
-  en: 'Bridge or Substitute? What Happens When a Teenager Turns to a Chatbot',
-  pl: 'Most czy zastępstwo? Dokąd prowadzi rozmowa nastolatka z chatbotem'
+  en: 'Chatbot or Human? Why Teenagers Confide in AI',
+  pl: 'Chatbot zamiast człowieka? Dlaczego nastolatkowie zwierzają się AI'
 } as const;
 const descriptions = {
   en: 'What research actually shows about teens and AI - from the 33% figure to when a chatbot helps someone reach people or begins to replace human contact.',
@@ -87,8 +91,8 @@ test.describe('youth AI companions bilingual publication contract', () => {
     }
 
     const entries = [
-      { id: 'bridge-or-substitute-teen-chatbot', data: { lang: 'en' as const, translationKey } },
-      { id: 'most-czy-zastepstwo-nastolatek-chatbot', data: { lang: 'pl' as const, translationKey } }
+      { id: 'chatbot-or-human-why-teenagers-confide-in-ai', data: { lang: 'en' as const, translationKey } },
+      { id: 'chatbot-zamiast-czlowieka-dlaczego-nastolatkowie-zwierzaja-sie-ai', data: { lang: 'pl' as const, translationKey } }
     ];
     expect(getArticlePath(entries[0], 'en')).toBe(routes.en);
     expect(getArticlePath(entries[1], 'pl')).toBe(routes.pl);
@@ -162,6 +166,23 @@ test.describe('youth AI companions bilingual publication contract', () => {
     ].join('\n');
     for (const value of [...Object.values(routes), ...Object.values(titles)]) {
       expect(publicSurfaces).toContain(value);
+    }
+  });
+
+  test('preserves permanent redirects from the previously indexed article URLs', ({}, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop-1440', 'One project covers redirect config.');
+
+    const vercel = JSON.parse(read(resolve('vercel.json'))) as {
+      redirects?: Array<{ source: string; destination: string; permanent?: boolean }>;
+    };
+    const redirects = vercel.redirects ?? [];
+
+    for (const lang of ['en', 'pl'] as const) {
+      expect(redirects).toContainEqual({
+        source: oldRoutes[lang],
+        destination: routes[lang],
+        permanent: true
+      });
     }
   });
 

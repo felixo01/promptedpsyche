@@ -24,7 +24,7 @@ AI companions nie należy opisywać jako terapii, jeśli nie uzasadnia tego konk
 
 ## Czytaj dalej
 
-[Most czy zastępstwo? Dokąd prowadzi rozmowa nastolatka z chatbotem](/pl/articles/most-czy-zastepstwo-nastolatek-chatbot/) przygląda się badaniom nad nastolatkami, którzy powierzają AI ważne i poważne sprawy, oraz temu, dlaczego ważniejsze od samego czatu może być to, co dzieje się później.
+[Chatbot zamiast człowieka? Dlaczego nastolatkowie zwierzają się AI](/pl/articles/chatbot-zamiast-czlowieka-dlaczego-nastolatkowie-zwierzaja-sie-ai/) przygląda się badaniom nad nastolatkami, którzy powierzają AI ważne i poważne sprawy, oraz temu, dlaczego ważniejsze od samego czatu może być to, co dzieje się później.
 
 ## Źródła i kontekst
 
