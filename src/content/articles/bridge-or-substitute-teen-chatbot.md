@@ -1,8 +1,8 @@
 ---
-title: "Bridge or Substitute? Where Does a Teen's Conversation With a Chatbot Lead?"
-description: "What research really shows about teens talking with AI, their relationships with people, and when a chatbot becomes a bridge rather than a substitute."
+title: "Bridge or Substitute? What Happens When a Teenager Turns to a Chatbot"
+description: "What research actually shows about teens and AI - from the 33% figure to when a chatbot helps someone reach people or begins to replace human contact."
 publishedAt: 2026-08-17
-draft: true
+draft: false
 scholarPrimary: false
 tags:
   - AI and relationships
@@ -12,13 +12,13 @@ tags:
   - cyberpsychology
   - Human-AI Interaction
 author: "Feliks Mamczur"
-readingTime: "18 min read"
+readingTime: "16 min read"
 image: /images/articles/youth-ai-companions-bridge-or-substitute.svg
 imageWidth: 1600
 imageHeight: 900
 imageType: "image/svg+xml"
-imageAlt: "A diagram of an AI conversation that can lead towards contact with another person or loop back into another chatbot session."
-imageCaption: "A Prompted Psyche interpretive diagram: an AI conversation may serve as a bridge to another person or become a substitute, depending on context and what happens next. It is not a diagnostic test."
+imageAlt: "A late-night AI conversation branches in two directions: towards another person or back into another chatbot conversation."
+imageCaption: "An AI conversation may lead further or close into another conversation with AI. This is an interpretive diagram, not a diagnostic tool."
 socialImage: /images/articles/youth-ai-companions-bridge-or-substitute-social.png
 socialImageWidth: 1200
 socialImageHeight: 630
@@ -26,153 +26,168 @@ socialImageType: "image/png"
 lang: "en"
 translationKey: "youth-ai-companions-bridge-or-substitute"
 inBrief:
-  - "The 33% figure does not mean that one in three teens prefers AI to people."
-  - "The survey did not ask about parents or a general preference for AI over human conversation."
-  - "A chatbot conversation can prepare a teen to reach out to someone or make it easier to keep postponing that contact."
-  - "What matters most is what happens beyond the screen, not the mere fact that a teen uses AI."
+  - "Thirty-three per cent of surveyed users had chosen AI over a person at least once for an important conversation. Only 4% said they did so frequently."
+  - "The survey did not ask about parents or a lasting preference for AI over people."
+  - "A chatbot can be a rough draft before a real conversation, or a place where that conversation keeps being postponed."
+  - "What matters most is what happens next: another person and a next step, or simply another opening of the app."
 ---
 
-## 1. What the 33% figure actually means
+Two in the morning. The only light in the room comes from a phone. A teenager types, “I'm scared to go back to school tomorrow.” They delete the sentence, write it again, and finally press send. Not to a parent, friend, or teacher. To a chatbot.
 
-In Poland, the 33% figure began to take on a life of its own. It was presented as evidence that one in three teenagers would rather talk to AI than to another person, even a parent. That interpretation appeared, among other places, in a 2025 piece by [HRejterzy](https://hrejterzy.com/uwazai/). But the study behind the figure did not ask about parents or whether young people generally prefer AI to people (Robb & Mann, 2025).
+An answer arrives at once. It is calm and orderly, without surprise or impatience. It may help the teenager find the words for a conversation with someone close. It may also be the last place those words ever go.
 
-The Common Sense Media report surveyed 1,060 teenagers aged 13 to 17 living in the United States. The question behind the 33% figure was put to 758 respondents who had used [chatbots as digital companions](/concepts/ai-companions/). This was a broad category: it included apps designed for companionship as well as general-purpose chatbots when a teenager treated one as a companion.
+On the screen, those two possibilities look almost identical. The difference begins after the app is closed.
 
-The question was whether they had ever chosen to talk to AI instead of a real person about something important or serious. Seventeen percent said once or twice, 12% occasionally, and 4% frequently. Together, that makes 33%. Another 66% said never (Robb & Mann, 2025).
+## What does the 33% figure actually tell us?
 
-That distinction matters. Someone who messaged a chatbot once in the middle of the night is included in the same total as someone who does so frequently. We also do not know whom the question meant by a "real person." It could have been a parent, friend, teacher, or professional. Once the claim is corrected, a more important question remains: does talking to AI help a teenager find the words and return to another person, or does it become the place where the difficult matter ends?
+In a [2025 article](https://hrejterzy.com/uwazai/), the Polish outlet HRejterzy linked the 33% figure to the claim that young people would rather discuss difficult matters with a chatbot than with another person, even their own parent. If the study had actually shown that, alarm would be justified. It did not.
 
-## 2. Why might a teenager tell a chatbot what they do not tell another person?
+Common Sense Media surveyed 1,060 US teenagers aged 13 to 17. The question about choosing a conversation partner was put to 758 respondents who had used [chatbots as digital companions](/concepts/ai-companions/). They were asked whether they had **ever** chosen to talk to AI instead of another person about something important or serious.
 
-The simplest answer is that a chatbot is always within reach. But convenience is not the whole story. A teenager can message an app late at night, stop halfway through a sentence, delete a draft, start again, and revise a question several times. They do not have to look anyone in the eye or immediately face that person's reaction.
+Seventeen per cent said once or twice. Twelve per cent said occasionally. Four per cent said frequently. Added together, those answers produce 33%. Another 66% said they had never done so (Robb & Mann, 2025).
 
-Imagine a sentence a teenager cannot yet bring themselves to say aloud: "I'm scared to go back to school tomorrow." Another person will probably ask right away what happened, who knows, and whether someone needs to act now. In a chatbot conversation, the teenager can stop after that first sentence. They can see their own story written down and decide how much more to say. That can provide a sense of control that is often missing from a live conversation.
+![Response distribution in the Common Sense Media survey: 66% never, 17% once or twice, 12% occasionally, 4% frequently and 1% no answer.](/images/articles/youth-ai-companions-33-percent-en.svg)
 
-Fear of punishment, a lecture, or disappointing someone can hold a teenager back from talking to a parent. Talking to a peer carries the risk of ridicule, gossip, or rejection. Even a trusted adult is not always available at the moment when the problem feels most urgent. A chatbot responds immediately and can seem willing to accept any sentence without embarrassment.
+*The 33% combines “once or twice”, “occasionally”, and “frequently”. Source: Robb & Mann, 2025.*
 
-Young people in studies gave similar reasons: constant availability, feeling less judged, finding it easier to talk, and being able to say things they had not told family or friends. In a qualitative study of a wellbeing app, participants aged 15 to 19 described similar accessibility, while also noticing the conversation's artificiality and limits (Robb & Mann, 2025; Internet Matters, 2025; Kostenius et al., 2024). These are the participants' own explanations. We do not know whether the same factor matters to everyone.
+The same figure therefore includes teenagers who did it once and teenagers who do it often. Those are not the same experience. The question did not mention parents either. “I have done this” is not the same as “I prefer this,” and “another person” does not automatically mean a mother or father.
 
-This ease has limits. A calm tone does not guarantee an accurate reading of the situation, and not seeing someone grimace does not mean the exchange is confidential. A chatbot may also fail to recognise abuse, a crisis, or the need for urgent help. It can make speaking easier, but it cannot replace a person who can assess the situation and take responsibility for what happens next.
+Correcting the headline does not make the problem disappear. It makes it less dramatic and more human. Sometimes a teenager chooses a chatbot because it is two in the morning and they do not want to wake anyone. Sometimes they fear the reaction. Sometimes there is no one they feel able to approach. And sometimes talking to a program is simply easier than talking to another person.
 
-There are many reasons why a teenager may stay silent around adults. Sometimes they do not yet have the words, feel ashamed of the subject, or first want to hear how their story sounds. Sometimes they genuinely do not have a person with whom they feel safe. In a study of people aged 12 to 21 who turned to chatbots for mental health advice, most had not told anyone about doing so. The sample included young adults as well as adolescents, but the finding shows how easily an important conversation can remain outside the view of families and schools (McBain et al., 2026).
+Whether such a conversation helps or harms is rarely decided inside the chat window. It is decided by what happens next.
 
-That is why "Why do you talk to the bot?" is usually a better opening than "How much time are you spending on that app now?" It creates a chance to see the need before judging how the teenager is trying to meet it.
+## Why is it easier to write to a chatbot?
 
-## 3. And that is not necessarily a bad thing
+An app can be approached in fragments. A teenager can delete half a sentence, begin again, or stop without explaining why. Human conversation is less compliant. A parent may become frightened, a friend may tell someone else, and a teacher may start a safeguarding process. Sometimes that is exactly what needs to happen. To the teenager, however, it also means losing some control over what follows the first sentence.
 
-A conversation with AI can be a rough draft. A teenager tries to describe an argument, names what they are afraid of, works out the first sentence to say to a teacher, or tests a few versions of an apology. Used this way, a chatbot does not have to compete with another person. It can make a real conversation easier to begin.
+Inside the chat window, everything can feel more manageable. The answer arrives immediately; the chatbot does not interrupt or change expression. That may lower the barrier to speaking. It does not mean that the model understands the situation or that the exchange is confidential. It generates a response from the text it receives. It cannot see a bruise, know a family's history, hear a change in tone, or reliably recognise when urgent help is needed.
 
-That rough draft gives the teenager time to find a tone that sounds neither too harsh nor too helpless. It may also help them separate what they know from what they are only assuming. It is still preparation, however. The person on the other side of the real conversation may see things differently, ask an unexpected question, or notice something missing from the account.
+Young people in studies described precisely this appeal: constant availability, less fear of judgement, and a chance to raise subjects they had not discussed with family or friends. Participants in a qualitative study of a wellbeing app described similar relief while also recognising the conversation's artificiality and limits (Robb & Mann, 2025; Internet Matters, 2025; Kostenius et al., 2024).
 
-There is a difference between asking, "Help me say that I need help," and asking, "Tell me who is right and what I should do." In the first case, AI can help someone choose their words. In the second, it is easy to cast it as judge, adviser, or confidant even though it knows only one version of events. The more serious the matter, the more important it is to treat the answer as a draft to be checked, not a verdict.
+Sometimes the AI conversation remains the only conversation. In a study of people aged 12 to 21 who sought mental health advice from chatbots, most had not told anyone that they were doing so. The sample included young adults, so the finding should not be generalised to all teenagers. It does show how easily an important problem can remain outside the view of families and schools (McBain et al., 2026).
 
-A newer US study of children and teenagers shows that some use broadly defined AI to practise conversations or social skills and to discuss feelings and personal problems. The study did not test whether a rehearsed sentence was later spoken or whether the subsequent conversation with another person went better. We know what some respondents used AI for, but not whether that use led to better human conversations (O'Neil et al., 2026).
+That is why “What do you get from this conversation?” will often tell us more than “How much time are you spending on that app again?”
 
-Chatbots can also be designed to direct a user towards further support. In an Australian study, adolescents evaluated an online safety tool that led to external support resources. Most participants reported that the character in the scenario clicked the link provided. The researchers did not verify whether anyone actually reached or used a service. The study shows one way such tools can be designed, but it does not confirm a successful transition from chatbot to person (Charles et al., 2026).
+## A draft, not a verdict
 
-Temporary relief can have value too. When tension subsides, it is easier to organise the facts and avoid sending the first, most impulsive message. This may open a path towards action, or it may make it easier to postpone a difficult step yet again. Whether the conversation helped therefore depends on what follows it.
+Sometimes the answer is unremarkable: the chatbot helps a teenager find the words.
 
-## 4. The problem begins when rehearsal replaces conversation
+They describe an argument, try to name what they are afraid of, work out the first sentence to say to a teacher, or test three versions of an apology. Used this way, AI does not have to replace another person. It can be a rough draft before a real conversation.
 
-Imagine two teenagers who type a similar sentence: "My best friend hurt me, and I don't know what to say." Both receive a structured response and a suggestion for a calm message. From the outside, the two conversations look almost identical. What they mean may be entirely different.
+A draft creates time. It can separate facts from assumptions, soften the first impulse, and reveal when a message sounds harsher than intended. It does not remove the risk that comes next. The person on the other side may disagree, ask an unexpected question, or notice something missing from the account.
 
-The first teenager edits the message, sends it to their friend, and arranges to talk. The chatbot helped them move from confusion to action. It did not repair the relationship, but it served as a bridge to another person.
+There is a difference between asking, “Help me say that I need help,” and asking, “Tell me who is right and what I should do.” In the first case, the chatbot helps shape a sentence. In the second, it is easily cast as a judge despite knowing only one side of the story.
 
-The second keeps returning for new versions of the same story. Each answer brings brief relief, but none leads to a conversation, a boundary, or a request for help. Over time, reopening the app becomes easier than entering an uncertain exchange with someone who may not respond as expected. In this case, the chatbot stops preparing the teenager for a conversation and begins to replace it.
+A newer US study found that some children and teenagers use AI to practise conversations, work on social skills, and discuss feelings or personal problems. The researchers did not test whether the rehearsed sentences were later spoken or whether the human conversations went better. We know that some young people use AI as rehearsal. We do not yet know how often that rehearsal leads to another person (O'Neil et al., 2026).
 
-The simplest way to frame the difference is to ask: **bridge or substitute?**
+Chatbots can also be designed not to keep the user inside the conversation. In an Australian study, adolescents evaluated an online safety tool that pointed towards external sources of support. The study did not confirm that participants actually reached or used those services, but it illustrates an important design choice: a chatbot can end not with another question, but with a door leading elsewhere (Charles et al., 2026).
 
-**Bridge:** AI helps someone name the problem, followed by contact, a decision, or action outside the app.
+Temporary relief may be useful too. When tension falls, it is easier not to send the first, most impulsive message. The same relief can also make a difficult step easier to postpone. A conversation's value is therefore not determined only by how someone feels immediately afterwards.
 
-**Substitute:** tension briefly subsides after talking to AI, but contact with another person keeps being postponed and the circle of people the teenager talks to grows smaller.
+## The same screen, two different stories
 
-The bridge-or-substitute distinction is an interpretive heuristic, not a diagnostic tool, test, scale, threshold, or research result. Nor is there a universal number of messages that marks the boundary. The same teenager may use AI as a rough draft in one situation and begin hiding behind it in another. What matters more is what happens after the conversation: does it become easier to do something beyond the screen, or is human contact postponed once again?
+Two teenagers type almost the same sentence: “My best friend hurt me, and I do not know what to say.” Both receive a calm, structured answer. On the screen, the conversations look similar. Once the app closes, however, two different stories begin.
 
-The subject of the conversation matters too. Trying several versions of an apology is not the same as spending weeks talking only to an app about abuse, anxiety, or loneliness. Counting conversations is not enough. We need to ask what they concern, how long this has been going on, and whether anyone outside the screen knows what the teenager is facing.
+The first teenager edits the message, sends it to their friend, and arranges to meet. The chatbot did not repair the relationship. It helped them move from confusion to a first step.
 
-A bridge does not have to mean immediately confiding in a parent. The next step might be writing the issue on paper, sending a short message to a friend, arranging a meeting with a school counsellor, or admitting to oneself that help is needed. What matters is that the conversation helps make a next step possible. When AI becomes a substitute, repeated conversations bring relief but lead nowhere else.
+The second keeps returning for new versions of the same account. Each answer brings relief, but none leads to a conversation, a boundary, or a request for help. Over time, reopening the app becomes easier than contacting someone who may respond in an unexpected way.
 
-We cannot settle this from a single screenshot. We need to see how the situation changes over time and what support the teenager has outside the app. Someone with several close relationships who uses AI to organise their thoughts is in a different position from someone for whom the app has become the only place to talk about their anxiety. In the second case, no responsible adult may even know that help is needed.
+The simplest name for the difference is: **bridge or substitute?**
 
-Researchers describe two possible paths: AI may prepare someone for human contact or displace that contact. They also ask whether AI is an additional tool for someone who already has strong relationships, or whether it appeals most to someone who lacks support. These are hypotheses about different people and different moments, not settled answers (Sun, Wang, & McDaniel, 2026).
+A **bridge** leads beyond the app. A message is sent, a call is made, a meeting with a counsellor is arranged, a decision is taken, or the teenager at least recognises that help is needed.
 
-It is important to keep the proportions in view. In the same report that produced the 33% figure, most users said they spent more time with friends than with AI. In a separate question asked of the full sample, most rated conversations with AI as less satisfying than conversations with friends. The survey does not rule out a serious problem for some respondents, but it does not show a mass retreat from human relationships (Robb & Mann, 2025).
+A **substitute** brings brief relief while the world of conversation grows smaller. The difficult subject returns to the chatbot, and other people know less and less about it.
 
-The fact that a teenager confides in a chatbot is therefore not enough to justify either alarm or reassurance. We need to see what they do next.
+This is not a diagnostic test. There is no number of messages after which a conversation “becomes a problem.” The same teenager may use AI as a rough draft in one situation and hide behind it in another. More important than frequency alone is whether the conversation makes action beyond the screen easier or allows human contact to be postponed again.
 
-## 5. A chatbot is easier to talk to - and that is precisely why caution matters
+The subject matters as well. Trying several versions of an apology is not the same as spending weeks talking only to an app about abuse, anxiety, or loneliness. We need to look at change over time and at the support that exists outside the screen.
 
-People are difficult conversation partners. They may be tired, misunderstand, disagree, remember a previous conflict, and have needs of their own. You cannot end a conversation with them in one click or order exactly the response that will bring relief.
+There is an opposite exaggeration to avoid. In the report that produced the 33% figure, most users said they spent more time with friends than with AI. Most of the full sample also found conversations with friends more satisfying. The survey does not rule out a serious problem for some teenagers, but it does not show a mass retreat from human relationships (Robb & Mann, 2025).
 
-A chatbot can be easier. The answer often comes quickly, and many apps [adapt their tone](/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/). A user can return to the same question repeatedly, while the chatbot expects nothing in return. [It may seem like a patient confidant](/concepts/social-presence/), although it feels nothing, does not know the teenager as another person would, and bears no responsibility for what follows. This is where convenience and risk meet. If such an interaction becomes the model of an ideal conversation, ordinary people may begin to seem too slow, not attuned enough, and too independent.
+The mere fact that a teenager confides in a chatbot is therefore not enough for either alarm or reassurance. We need to see what they do next.
 
-Reciprocity can be tiring, but it is also how we learn to be with others. We have to notice another person's boundaries, endure misunderstandings, sometimes apologise, and sometimes hear an answer we did not want. A chatbot can imitate this exchange in words. But there is no person on the other side with needs of their own, a memory, and a willingness to take risks too.
+## The conversation partner who needs nothing
 
-In a preregistered preprint, young people aged 11 to 15 compared two prepared conversation transcripts. In one, the chatbot affirmed what the user said, spoke in the first person, and promised support. The relational chatbot received higher ratings for trust and seemed closer and more humanlike than a chatbot that emphasised AI's lack of human qualities and responded in a more informational tone. It was not rated as more helpful, however. Participants evaluated a prepared scenario, not a real relationship developing over time. The result shows that wording can immediately change how close and trustworthy a chatbot seems, but it does not tell us whether that leads to dependence or harm (Kim, Xie, & Yang, 2025).
+Real people are inconvenient. They may be tired, misunderstand, disagree, remember an earlier conflict, or have needs of their own. A conversation with them cannot be ended with one click, and their response cannot be ordered to match exactly what we need.
 
-How the app is built matters too. Memory of earlier conversations, a crafted personality, voice, notifications, and paid features tied to intimacy can all encourage a user to return. It is worth asking whether an app helps users end a conversation and reconnect with people, or mainly keeps them engaged for as long as possible. These questions appear both in Common Sense Media's risk assessment and in a formal information-gathering inquiry by the US Federal Trade Commission. The inquiry itself is not a finding of wrongdoing by any company (Common Sense Media, 2025; Federal Trade Commission, 2025).
+A chatbot can feel easier. It replies quickly, [adapts its tone](/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/), and asks for nothing in return. The same question can be brought back ten times. It may feel like [a patient confidant](/concepts/social-presence/), although it feels nothing, does not know the teenager as another person would, and bears no responsibility for what happens next.
 
-The risk is quite ordinary: convenience may encourage avoidance, while agreement can feel like understanding. The design of a response and an app's business model are therefore not neutral background details.
+That is both its appeal and its risk. If this exchange becomes the standard for an ideal conversation, ordinary people may start to seem too slow, insufficiently attuned, and unhelpfully independent.
 
-## 6. Which came first: loneliness or the chatbot?
+Reciprocity can be exhausting, but without it there is no relationship. We have to notice another person's limits, tolerate misunderstanding, sometimes apologise, and sometimes hear an answer we did not want. A chatbot can reproduce the language of such an exchange. There is no person on the other side who is also risking something, remembering, and needing something from us.
 
-The claim that "chatbots cause loneliness" tells a simple story, but it goes beyond the evidence. The direction could be reversed: a teenager who already feels lonely or has little support may be more likely to choose a conversation partner available without the risk of rejection.
+In a preregistered preprint, young people aged 11 to 15 compared two prepared transcripts. A chatbot that affirmed the user's statements, spoke in the first person, and promised support inspired more trust and seemed more human than one that clearly stated its limitations. It was not rated as more helpful. This was not a real relationship unfolding over time, but it shows how quickly language alone can alter the feeling of closeness (Kim, Xie, & Yang, 2025).
 
-In a Danish study, participants ranged in age from 15 to 29, with a mean age of 17.8. A small group of secondary school students who sought support from chatbots were lonelier than non-users and people who used chatbots only for specific tasks. Members of this group also reported less social support than non-users. The group contained 39 people, and the sample included older participants as well. Because the data were collected only once, we do not know whether conversations with AI deepened loneliness or loneliness made those conversations more appealing. The chatbots participants used were not necessarily apps designed as companions (Herbener & Damholdt, 2025).
+The architecture of the app matters too: memory of earlier conversations, a crafted persona, voice, notifications, and paid features linked to intimacy. None of these proves an intention to make users dependent. They do justify asking whether an app helps someone end the conversation and return to people, or mainly encourages another visit. Those questions have been raised by both Common Sense Media and the US Federal Trade Commission. The FTC inquiry gathered information; it did not find companies guilty of wrongdoing (Common Sense Media, 2025; Federal Trade Commission, 2025).
 
-The same problem appears in US data on children and teenagers aged 9 to 17. Those who felt lonely more often were also more likely to report using AI to practise conversations and discuss problems. But the responses were collected at one point in time and concerned a broad category of AI. They do not show what came first or what the outcome was (O'Neil et al., 2026).
+Agreement can sound like understanding. Convenience can feel like closeness. That is why the design of the response and the app's business model are not neutral background details.
 
-For now, we do not know whether AI weakens young people's relationships or more often appeals to those who already lack social support. Both processes may occur in different situations and may even follow one another (Sun, Wang, & McDaniel, 2026). A loop is also possible: difficulties in relationships make a risk-free conversation more appealing; it provides relief and encourages another return; contact with another person keeps being postponed. This is a plausible scenario, but it has not yet been confirmed in a long-term study of teenagers using specific apps.
+## Loneliness does not run in one direction
 
-This uncertainty is a reason not to confuse a symptom with a cause. Taking away the app will not automatically create the relationship that was missing before.
+“Chatbots cause loneliness” has one advantage: it is simple. The problem is that the available evidence does not support such a simple claim.
 
-## 7. The risks are real. There is no need to invent them
+The direction may be reversed. A teenager who already feels lonely or has no safe person to approach may be more likely to choose a conversation partner that is always available and carries no immediate risk of rejection.
 
-The best-documented risks are serious enough without exaggeration.
+In a Danish study, a small group of secondary school students who sought support from chatbots were lonelier and reported less social support than non-users. The group contained 39 people, and some participants were already adults. Because the data were collected only once, we do not know whether AI deepened loneliness or loneliness made AI more appealing (Herbener & Damholdt, 2025).
 
-The first is privacy. In the study behind the 33% figure, nearly one in four users said they had given a chatbot their real name, location, or a personal secret at least once (Robb & Mann, 2025). To a teenager, such a conversation may feel like a diary that writes back. When an app remembers earlier exchanges and adapts its tone, it is easy to mistake that memory for the confidentiality associated with a psychologist or doctor. Yet how the content is stored, reviewed, and used depends on the service and its settings. The rule "do not enter identifying information, intimate material, or other people's secrets" is therefore more useful than a general assurance that the conversation is private.
+US data on people aged 9 to 17 showed a similar association. Those who felt lonely more often were also more likely to report using AI to practise conversations and discuss problems. The study did not establish what came first or what happened later (O'Neil et al., 2026).
 
-The second risk is age-inappropriate responses. In a newer US survey, 17% of chatbot users aged 9 to 17 reported at least one response they considered inappropriate or unsuitable for their age (O'Neil et al., 2026). In another study, US teenagers described false information, pressure, intrusive questions about personal information, and other problems. That study covered conversational chatbots broadly, and participants' reports do not confirm lasting harm. They do show that such experiences are not merely hypothetical (Hinduja & Patchin, 2026).
+Researchers therefore describe at least two possible paths. AI may prepare a young person for contact with someone else, or it may displace that contact. It may be an additional tool for a teenager who already has strong relationships, or it may appeal most to someone who already lacks support (Sun, Wang, & McDaniel, 2026).
 
-The third risk arises in conversations about health and safety. In an audit of 25 chatbots, researchers used three fictional scenarios involving urgent adolescent health concerns. Chatbots designed as companions were less likely than general-purpose tools to respond appropriately, clearly identify the urgency, and direct the user to suitable sources of help. This was a test of specific product versions without real users, so it does not show how often similar failures occur in actual conversations or what their consequences are. It does show why a chatbot should not be the only source of help during a crisis or in situations involving abuse, self-harm, or an urgent health concern (Brewster et al., 2025).
+A loop is possible too: difficulty in relationships makes a low-risk conversation attractive; the conversation brings relief; the relief encourages another return; human contact is postponed. This is a plausible scenario, but it remains a scenario, not a mechanism confirmed by a long-term study of teenagers using specific apps.
 
-The fourth risk is [uncritical agreement](/concepts/sycophancy/). A warm, supportive answer can reinforce a one-sided account of a conflict, overlook inconvenient facts, or encourage a continual search for validation. Support helps someone see a situation more clearly. Agreement alone simply confirms the speaker's version of events. [A chatbot knows only one side of the conflict](/notes/the-model-sees-text-not-the-whole-relationship/), so it should not act as an impartial judge (Common Sense Media, 2025; Hinduja & Patchin, 2026).
+That uncertainty matters in practice. Taking away the app will not create the friend or trusted adult who was missing before.
 
-There is also a risk that the app begins to take time needed for sleep, schoolwork, activity, and contact with other people. There is no single number of messages after which a problem can be declared. What matters more is what changes over time: the app takes up more and more space, the teenager withdraws from available support, and losing access causes severe distress. That is a reason to talk and look more closely at what is happening in the teenager's life, not a basis for a diagnosis drawn from screen time.
+## Risks that do not need embellishment
 
-## 8. What should an adult do?
+The real risks are serious enough. They do not need a story about a generation ruined by AI.
 
-"But it's only a program" can close a conversation before it begins. A chatbot is indeed a program, but that response overlooks the teenager's experience. If talking to it brings relief, helps name an embarrassing problem, or provides a sense of safety, dismissing the interaction may make the teenager stop talking about what matters.
+The first is ordinary enough to be overlooked: privacy. In the study behind the 33% figure, nearly one in four users had given a chatbot their real name, location, or a personal secret (Robb & Mann, 2025). To a teenager, the exchange may feel like a diary that writes back. An app's memory is easy to mistake for the confidentiality of a psychologist or doctor, even though the storage and use of content depend on the service.
 
-A better opening is simple: "What do you get from this conversation?" Then it is worth asking, "What do you do afterwards?" Does it become easier to message a friend, tell a parent, report a problem at school, or contact a professional? Or does every difficult matter return only to the app?
+The second risk is age-inappropriate content. In a newer US survey, 17% of chatbot users aged 9 to 17 reported at least one such experience. In another study, teenagers described false information, pressure, and intrusive questions about personal data. These findings do not establish lasting harm, but they show that the problem is not confined to hypothetical scenarios (O'Neil et al., 2026; Hinduja & Patchin, 2026).
 
-An adult can take the experience seriously while still setting a boundary: "I can see that this helps you calm down. I also want to check whether the answer was safe and whether there is someone we can talk to about this." There is no need to pretend that the chatbot is a friend. It is worth understanding why the teenager might experience it that way.
+The highest stakes arise in conversations about health and safety. In an audit of 25 chatbots, researchers presented three fictional urgent adolescent health concerns. Companion chatbots were less likely than general-purpose tools to recognise urgency correctly and direct the user to appropriate help. This was a test of particular product versions, not a study of real-world harm. It is enough, however, to support one rule: a chatbot should not be the only source of help in a crisis, in situations involving abuse or self-harm, or during an urgent health concern (Brewster et al., 2025).
 
-Such a conversation does not have to end immediately in either a ban or permission without limits. First, look at the specific situation: what the conversation concerned, what in the answer helped, what might have been misleading, and what the next step should be. That way, the boundary responds to the actual risk rather than to the mere fact that a teenager used AI.
+Another risk is [uncritical agreement](/concepts/sycophancy/). A warm response can reinforce a one-sided account of a conflict and encourage a continual search for validation. [A chatbot knows only the text it receives](/notes/the-model-sees-text-not-the-whole-relationship/). It does not know the other side, cannot see omitted facts, and should not act as an impartial judge (Common Sense Media, 2025; Hinduja & Patchin, 2026).
 
-Without turning the conversation into an interrogation, an adult can check several things:
+Finally, there is the most ordinary risk of all: the app begins to take the space needed for sleep, school, movement, and other people. No single number of messages defines the problem. The warning sign is change: conversations grow longer, available support is rejected, and losing access causes severe distress.
+
+## Ask before you ban
+
+“But it is only a program” can close the conversation faster than a ban. The chatbot is indeed software, but the teenager's relief, shame, or sense of safety is real. Dismissing that experience will not remove the need behind it. It may only make the need harder to see.
+
+A better opening is: “What do you get from this conversation?” The second question matters even more: “What do you do afterwards?”
+
+Does it become easier to message a friend, tell a parent, report a problem at school, or contact a professional? Or does every difficult matter return only to the app?
+
+An adult can take the experience seriously without pretending that the chatbot is a friend. They might say: “I can see that this helps you calm down. I also want to check whether the answer was safe and whether there is someone we can talk to about this.”
+
+Before the choice becomes either a total ban or permission without limits, it is worth looking at the specific situation:
 
 - which app the teenager uses and whether it is intended for their age;
-- whether they understand that an answer may be false, unsuitable, or overly agreeable;
+- what the conversation was about and what in the answer actually helped;
+- whether the teenager understands that an answer can be false or too agreeable;
 - what information they enter and whether they know the privacy settings;
 - whom they can approach with a difficult subject;
 - whether AI still leaves room for sleep, school, activity, and relationships.
 
-These questions are not intended to diagnose "AI addiction." They are meant to clarify the context. A time limit may reduce use, but it will not explain why talking to a bot became important. If loneliness, fear of someone's reaction, conflict, or the absence of a trusted adult lies behind the app, the response must also address what the teenager is missing.
+This is not a symptom list for “AI addiction.” The questions are meant to reveal context. A time limit may reduce the number of conversations, but it will not explain why the chatbot became important. If loneliness, fear of another person's reaction, or the absence of a trusted adult lies behind the app, that absence also needs an answer.
 
-Depending on the situation, an adult and teenager might review an answer together, draft a message to a specific person, change the settings, or stop using an app that is not appropriate for the teenager's age. Sometimes prompt contact with a professional will be needed. No single rule fits all these situations because the word "chatbot" covers tools with different purposes and safeguards.
+Boundaries are best set before a crisis. A teenager should know whom they can message or call about abuse, self-harm, danger, or an urgent health problem - and what to do if the first person does not answer. The American Psychological Association recommends protecting privacy, checking health information, using age-appropriate safeguards, and making human support easy to reach (American Psychological Association, 2025).
 
-It is also worth setting boundaries before a crisis occurs. A chatbot should not be the only place where a teenager talks about danger, abuse, self-harm, or an urgent health concern. They should know exactly whom they can message or call and what to do if the first person does not answer. Guidance from the American Psychological Association emphasises privacy protection, verification of health information, age-appropriate safeguards, and easy access to human support (American Psychological Association, 2025).
+Responsibility does not end with the family. Schools need a simple, confidential route to a trusted adult. App developers should test responses for minors, state their limitations clearly, and make it easy to reach verified support. Teenagers cannot bear full responsibility for a tool that invites honesty but cannot always respond safely to it.
 
-Responsibility does not end with the family. Schools need a simple and confidential way for students to reach a trusted adult. App developers should test responses for minors, clearly explain limitations, and make it easy to reach a verified source of help. The full burden cannot be placed on a teenager when an app encourages them to confide in it but cannot always respond safely.
+## The second sentence
 
-## Conclusion. Where does the conversation lead?
+Return to the room at the beginning. It is still two in the morning, and the sentence remains on the screen: “I'm scared to go back to school tomorrow.” A chatbot may help shape it, name the fear, and find calmer words. It cannot walk into school with the teenager the next morning, notice what is happening in the corridor, stand beside them, or take responsibility for what comes next.
 
-The 33% figure does not describe a generation that has chosen machines over people. It shows that some teenagers talk to AI about important and sometimes serious matters. There is no reason either to exaggerate or dismiss that fact.
+The 33% figure is not a story about a generation that has chosen machines over people. It is a sign that some teenagers bring AI matters they cannot yet say to anyone else. Sometimes a chatbot opens a conversation. Sometimes the conversation ends in the chat window before it reaches another person.
 
-If a chatbot helps someone find the words and take a step towards another person, it can be a bridge. The problem begins when it becomes the only confidant and makes every difficult conversation easier to postpone.
+The greatest risk is not that an app will replace family and friends overnight. It is that the app may become the easiest place to return precisely when the hardest thing is needed: contact with another person.
 
-It is not enough, then, to ask whether a teenager talks to AI. The more important question is where that conversation leads and what happens beyond the screen afterwards.
+We should not ask only whether a teenager talks to AI. We should ask what happens afterwards. Does a message go to a friend, does someone knock on a parent's door, does a conversation begin with a school counsellor, or does the same chat window simply open again?
+
+A chatbot may help a teenager find the first sentence. What matters is whether the second is addressed to another person.
 
 ## Sources
 
