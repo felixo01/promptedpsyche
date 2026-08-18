@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
 import {
   beyondAiShareCitation,
   beyondAiShareRecord,
@@ -240,6 +241,35 @@ const preregistrationStatus =
         <div class="about-section__meta"><span>06</span><p>Records</p></div>
         <div class="about-section__body">
           <h2 id="public-record-title">Public record and materials</h2>
+          <div class="research-downloads" aria-labelledby="download-files-title">
+            <h3 id="download-files-title" class="research-downloads__title">Download files</h3>
+            <div class="research-downloads__grid">
+              <a
+                class="research-download-card"
+                href={beyondAiShareRecord.preprint.pdfUrl}
+                rel="noopener"
+              >
+                <span class="research-download-card__icon"><Icon name="pdf" /></span>
+                <span class="research-download-card__copy">
+                  <span class="research-download-card__label">Download preprint PDF</span>
+                  <span class="research-download-card__meta">Beyond AI Share, version 1.0</span>
+                </span>
+                <span class="research-download-card__type">PDF</span>
+              </a>
+              <a
+                class="research-download-card"
+                href={beyondAiShareRecord.preprint.appendixUrl}
+                rel="noopener"
+              >
+                <span class="research-download-card__icon"><Icon name="pdf" /></span>
+                <span class="research-download-card__copy">
+                  <span class="research-download-card__label">Download Appendix A</span>
+                  <span class="research-download-card__meta">Full methods and materials</span>
+                </span>
+                <span class="research-download-card__type">PDF</span>
+              </a>
+            </div>
+          </div>
           <div class="research-record-grid">
             <article class="research-record-card">
               <p class="small-label">Zenodo preprint</p>

@@ -1,4 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
+import { readdirSync } from 'node:fs';
+import { resolve } from 'node:path';
 
 type JsonLd = Record<string, any>;
 
@@ -13,6 +15,10 @@ const osfTitle =
 const preprintTitle =
   'Beyond AI Share: A Preregistered Survey and Vignette Study of Perceived Control, Authorship, and Authenticity in AI-Assisted Creative Practice';
 const socialImage = `${siteUrl}/images/social/beyond-ai-share-project-social-1200x630.png`;
+const preprintPdfFileName = 'Beyond_AI_Share_Preprint_v1.0.pdf';
+const appendixPdfFileName = 'Beyond_AI_Share_Appendix_A_v1.0.pdf';
+const preprintPdfUrl = `https://zenodo.org/records/21705721/files/${preprintPdfFileName}?download=1`;
+const appendixPdfUrl = `https://zenodo.org/records/21705721/files/${appendixPdfFileName}?download=1`;
 
 const projectPages = [
   {
@@ -29,6 +35,11 @@ const projectPages = [
     limitationsHeading: 'Limitations and research integrity',
     citationHeading: 'How to cite the preprint',
     authorHeading: 'About the author',
+    downloadsHeading: 'Download files',
+    preprintDownloadLabel: 'Download preprint PDF',
+    preprintDownloadMeta: 'Beyond AI Share, version 1.0',
+    appendixDownloadLabel: 'Download Appendix A',
+    appendixDownloadMeta: 'Full methods and materials',
     preprintLabel: 'Read the preprint',
     preregistrationLabel: 'View preregistration',
     registrationStatusLabel: 'Registration status',
@@ -53,6 +64,11 @@ const projectPages = [
     limitationsHeading: 'Ograniczenia i rzetelność badawcza',
     citationHeading: 'Jak cytować preprint',
     authorHeading: 'O autorze',
+    downloadsHeading: 'Pobierz pliki',
+    preprintDownloadLabel: 'Pobierz preprint PDF',
+    preprintDownloadMeta: 'Beyond AI Share, wersja 1.0',
+    appendixDownloadLabel: 'Pobierz Aneks A',
+    appendixDownloadMeta: 'Pełny opis metod i materiałów',
     preprintLabel: 'Przeczytaj preprint',
     preregistrationLabel: 'Zobacz prerejestrację',
     registrationStatusLabel: 'Status rejestracji',
@@ -125,6 +141,33 @@ test.describe('Beyond AI Share research project pages', () => {
       await expect(accessRow.locator('time')).toHaveAttribute('datetime', '2026-08-04');
       await expect(accessRow.locator('time')).toHaveText(project.accessDateText);
       await expect(page.getByText(project.legacyRegistrationStatus, { exact: true })).toHaveCount(0);
+
+      await expect(page.getByRole('heading', { name: project.downloadsHeading, level: 3 })).toBeVisible();
+      const downloadCards = page.locator('.research-download-card');
+      await expect(downloadCards).toHaveCount(2);
+
+      const preprintDownload = downloadCards.filter({
+        has: page.getByText(project.preprintDownloadLabel, { exact: true })
+      });
+      await expect(preprintDownload).toHaveCount(1);
+      await expect(preprintDownload).toHaveAttribute('href', preprintPdfUrl);
+      await expect(preprintDownload).toHaveAttribute('rel', 'noopener');
+      await expect(preprintDownload.getByText(project.preprintDownloadMeta, { exact: true })).toBeVisible();
+
+      const appendixDownload = downloadCards.filter({
+        has: page.getByText(project.appendixDownloadLabel, { exact: true })
+      });
+      await expect(appendixDownload).toHaveCount(1);
+      await expect(appendixDownload).toHaveAttribute('href', appendixPdfUrl);
+      await expect(appendixDownload).toHaveAttribute('rel', 'noopener');
+      await expect(appendixDownload.getByText(project.appendixDownloadMeta, { exact: true })).toBeVisible();
+
+      for (const downloadCard of [preprintDownload, appendixDownload]) {
+        await expect(downloadCard.locator('svg')).toHaveAttribute('aria-hidden', 'true');
+        await expect(downloadCard.locator('svg')).toHaveAttribute('focusable', 'false');
+        await expect(downloadCard.getByText('PDF', { exact: true })).toBeVisible();
+      }
+      await expect(page.locator('.research-download-card[href^="/"]')).toHaveCount(0);
 
       await expect(page.getByRole('link', { name: project.preprintLabel })).toHaveAttribute('href', doiUrl);
       await expect(page.getByRole('link', { name: project.preregistrationLabel })).toHaveAttribute('href', osfUrl);
@@ -240,6 +283,19 @@ test.describe('Beyond AI Share research project pages', () => {
       expect(publicContent).not.toContain('citation_doi');
     });
   }
+
+  test('does not copy the Zenodo PDFs into public assets', () => {
+    const publicFiles = readdirSync(resolve(process.cwd(), 'public'), {
+      recursive: true,
+      withFileTypes: true
+    });
+    const copiedPdfNames = publicFiles
+      .filter((entry) => entry.isFile())
+      .map((entry) => entry.name)
+      .filter((name) => [preprintPdfFileName, appendixPdfFileName].includes(name));
+
+    expect(copiedPdfNames).toEqual([]);
+  });
 
   test('switches directly between the two language versions', async ({ page }) => {
     await page.goto('/projects/beyond-ai-share/');

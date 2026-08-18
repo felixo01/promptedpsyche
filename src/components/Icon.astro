@@ -9,6 +9,7 @@ type IconName =
   | 'dialogue'
   | 'emotion'
   | 'note'
+  | 'pdf'
   | 'spark'
   | 'trust'
   | 'work';
@@ -27,6 +28,7 @@ const decorative = !label;
   viewBox="0 0 24 24"
   fill="none"
   aria-hidden={decorative ? 'true' : undefined}
+  focusable="false"
   role={decorative ? undefined : 'img'}
   aria-label={label}
 >
@@ -106,6 +108,17 @@ const decorative = !label;
         <path d="M9 9h6" />
         <path d="M9 12h6" />
         <path d="M9 15h3" />
+      </>
+    )
+  }
+  {
+    name === 'pdf' && (
+      <>
+        <path d="M7 3.5h7l3 3v14H7z" />
+        <path d="M14 3.5v3h3" />
+        <path d="M9.5 11h5" />
+        <path d="M9.5 14h5" />
+        <path d="M9.5 17h3.5" />
       </>
     )
   }
