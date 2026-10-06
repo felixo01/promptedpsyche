@@ -1,6 +1,7 @@
 import { expect, test, type APIRequestContext, type Page } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { publications as publicationRegistry } from '../../src/lib/publications';
 
 type JsonLd = Record<string, unknown>;
@@ -46,7 +47,7 @@ const scholarPublications: ScholarPublication[] = [
     updatedAt: '2026-07-10',
     doi: '10.5281/zenodo.21301650',
     pdfUrl:
-      'https://zenodo.org/records/21301650/files/feliks-mamczur-trust-in-the-age-of-ready-made-answers-v1.0-CC-BY.pdf',
+      'https://promptedpsyche.com/articles/trust-in-the-age-of-ready-made-answers/feliks-mamczur-trust-in-the-age-of-ready-made-answers-v1.0-CC-BY.pdf',
     zenodoUrl: 'https://zenodo.org/records/21301650',
     kind: 'article'
   },
@@ -60,7 +61,7 @@ const scholarPublications: ScholarPublication[] = [
     updatedAt: '2026-07-13',
     doi: '10.5281/zenodo.21340181',
     pdfUrl:
-      'https://zenodo.org/records/21340181/files/feliks-mamczur-are-we-afraid-of-ai-or-of-ourselves-v2.1.pdf',
+      'https://promptedpsyche.com/articles/are-we-afraid-of-ai-or-of-ourselves/feliks-mamczur-are-we-afraid-of-ai-or-of-ourselves-v2.1.pdf',
     zenodoUrl: 'https://zenodo.org/records/21340181',
     kind: 'article'
   },
@@ -73,7 +74,7 @@ const scholarPublications: ScholarPublication[] = [
     publishedAt: '2026-07-10',
     doi: '10.5281/zenodo.21296384',
     pdfUrl:
-      'https://zenodo.org/records/21296384/files/feliks-mamczur-what-changes-when-ai-has-a-body-v1.0-CC-BY.pdf',
+      'https://promptedpsyche.com/articles/what-changes-when-ai-has-a-body/feliks-mamczur-what-changes-when-ai-has-a-body-v1.0-CC-BY.pdf',
     zenodoUrl: 'https://zenodo.org/records/21296384',
     kind: 'article'
   },
@@ -88,7 +89,7 @@ const scholarPublications: ScholarPublication[] = [
     publishedAt: '2026-07-14',
     doi: '10.5281/zenodo.21358687',
     pdfUrl:
-      'https://zenodo.org/records/21358687/files/feliks-mamczur-dont-ask-whether-ai-makes-us-dumber-v1.0.pdf',
+      'https://promptedpsyche.com/articles/dont-ask-whether-ai-makes-us-dumber/feliks-mamczur-dont-ask-whether-ai-makes-us-dumber-v1.0.pdf',
     zenodoUrl: 'https://zenodo.org/records/21358687',
     kind: 'article'
   },
@@ -101,7 +102,7 @@ const scholarPublications: ScholarPublication[] = [
     publishedAt: '2026-07-22',
     doi: versionDoi,
     pdfUrl:
-      'https://zenodo.org/records/21491639/files/feliks-mamczur-when-search-becomes-an-answer-v1.7.pdf',
+      'https://promptedpsyche.com/articles/when-search-becomes-an-answer/feliks-mamczur-when-search-becomes-an-answer-v1.7.pdf',
     zenodoUrl: 'https://zenodo.org/records/21491639',
     kind: 'article'
   },
@@ -115,10 +116,10 @@ const scholarPublications: ScholarPublication[] = [
     updatedAt: '2026-08-04',
     doi: '10.5281/zenodo.21705721',
     pdfUrl:
-      'https://zenodo.org/records/21705721/files/Beyond_AI_Share_Preprint_v1.0.pdf',
+      'https://promptedpsyche.com/projects/beyond-ai-share/Beyond_AI_Share_Preprint_v1.0.pdf',
     zenodoUrl: 'https://zenodo.org/records/21705721',
     appendixUrl:
-      'https://zenodo.org/records/21705721/files/Beyond_AI_Share_Appendix_A_v1.0.pdf',
+      'https://promptedpsyche.com/projects/beyond-ai-share/Beyond_AI_Share_Appendix_A_v1.0.pdf',
     kind: 'preprint'
   }
 ];
@@ -308,6 +309,10 @@ test.describe('Google Scholar metadata hard gate', () => {
       await expect(page.locator('meta[name="citation_issn"]')).toHaveCount(0);
       await expect(citationPdf).toHaveCount(1);
       await expect(citationPdf).toHaveAttribute('content', publication.pdfUrl);
+      const localPdfUrl = new URL(publication.pdfUrl);
+      expect(localPdfUrl.origin).toBe(siteUrl);
+      expect(localPdfUrl.pathname.startsWith(publication.route)).toBe(true);
+      expect(localPdfUrl.pathname.endsWith('.pdf')).toBe(true);
 
       // 24 and 38. DOI is never orphaned and every allowed Scholar tag occurs exactly once.
       const citationNames = await page.locator('meta[name^="citation_"]').evaluateAll((nodes) =>
@@ -534,6 +539,38 @@ test.describe('Google Scholar metadata hard gate', () => {
         orcid: '0009-0001-0715-0517',
         pdf: { url: expected.pdfUrl }
       });
+
+      const pdfPath = path.join(
+        process.cwd(),
+        'public',
+        new URL(expected.pdfUrl).pathname.replace(/^\//u, '')
+      );
+      const pdfBytes = fs.readFileSync(pdfPath);
+      expect(pdfBytes.byteLength).toBe(registered?.pdf.size);
+      expect(`md5:${createHash('md5').update(pdfBytes).digest('hex')}`).toBe(
+        registered?.pdf.checksum
+      );
+      expect(registered?.pdf.sourceUrl).toMatch(
+        /^https:\/\/zenodo\.org\/records\/\d+\/files\/.+\.pdf$/u
+      );
+
+      if (
+        expected.appendixUrl &&
+        registered &&
+        'appendix' in registered &&
+        registered.appendix
+      ) {
+        const appendixPath = path.join(
+          process.cwd(),
+          'public',
+          new URL(expected.appendixUrl).pathname.replace(/^\//u, '')
+        );
+        const appendixBytes = fs.readFileSync(appendixPath);
+        expect(appendixBytes.byteLength).toBe(registered.appendix.size);
+        expect(`md5:${createHash('md5').update(appendixBytes).digest('hex')}`).toBe(
+          registered.appendix.checksum
+        );
+      }
 
       if (expected.sourceFile) {
         expect(readFrontmatterScalar(expected.sourceFile, 'title')).toBe(expected.title);

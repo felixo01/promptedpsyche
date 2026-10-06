@@ -11,6 +11,7 @@ export const PUBLICATION_LICENSE = {
 export type PublicationFile = {
   filename: string;
   url: string;
+  sourceUrl: string;
   checksum: `md5:${string}`;
   size: number;
 };
@@ -39,6 +40,10 @@ function zenodoFile(recordId: string, filename: string): string {
   return `${ZENODO_RECORDS_URL}/${recordId}/files/${filename}`;
 }
 
+function localPublicationFile(landingPath: string, filename: string): string {
+  return `${SITE_URL}${landingPath}${filename}`;
+}
+
 export const publications = [
   {
     title: 'Trust in the age of ready-made answers',
@@ -53,7 +58,11 @@ export const publications = [
     landingUrl: `${SITE_URL}/articles/trust-in-the-age-of-ready-made-answers/`,
     pdf: {
       filename: 'feliks-mamczur-trust-in-the-age-of-ready-made-answers-v1.0-CC-BY.pdf',
-      url: zenodoFile(
+      url: localPublicationFile(
+        '/articles/trust-in-the-age-of-ready-made-answers/',
+        'feliks-mamczur-trust-in-the-age-of-ready-made-answers-v1.0-CC-BY.pdf'
+      ),
+      sourceUrl: zenodoFile(
         '21301650',
         'feliks-mamczur-trust-in-the-age-of-ready-made-answers-v1.0-CC-BY.pdf'
       ),
@@ -78,7 +87,11 @@ export const publications = [
     landingUrl: `${SITE_URL}/articles/are-we-afraid-of-ai-or-of-ourselves/`,
     pdf: {
       filename: 'feliks-mamczur-are-we-afraid-of-ai-or-of-ourselves-v2.1.pdf',
-      url: zenodoFile(
+      url: localPublicationFile(
+        '/articles/are-we-afraid-of-ai-or-of-ourselves/',
+        'feliks-mamczur-are-we-afraid-of-ai-or-of-ourselves-v2.1.pdf'
+      ),
+      sourceUrl: zenodoFile(
         '21340181',
         'feliks-mamczur-are-we-afraid-of-ai-or-of-ourselves-v2.1.pdf'
       ),
@@ -103,7 +116,11 @@ export const publications = [
     landingUrl: `${SITE_URL}/articles/what-changes-when-ai-has-a-body/`,
     pdf: {
       filename: 'feliks-mamczur-what-changes-when-ai-has-a-body-v1.0-CC-BY.pdf',
-      url: zenodoFile(
+      url: localPublicationFile(
+        '/articles/what-changes-when-ai-has-a-body/',
+        'feliks-mamczur-what-changes-when-ai-has-a-body-v1.0-CC-BY.pdf'
+      ),
+      sourceUrl: zenodoFile(
         '21296384',
         'feliks-mamczur-what-changes-when-ai-has-a-body-v1.0-CC-BY.pdf'
       ),
@@ -128,7 +145,11 @@ export const publications = [
     landingUrl: `${SITE_URL}/articles/dont-ask-whether-ai-makes-us-dumber/`,
     pdf: {
       filename: 'feliks-mamczur-dont-ask-whether-ai-makes-us-dumber-v1.0.pdf',
-      url: zenodoFile(
+      url: localPublicationFile(
+        '/articles/dont-ask-whether-ai-makes-us-dumber/',
+        'feliks-mamczur-dont-ask-whether-ai-makes-us-dumber-v1.0.pdf'
+      ),
+      sourceUrl: zenodoFile(
         '21358687',
         'feliks-mamczur-dont-ask-whether-ai-makes-us-dumber-v1.0.pdf'
       ),
@@ -153,7 +174,11 @@ export const publications = [
     landingUrl: `${SITE_URL}/articles/when-search-becomes-an-answer/`,
     pdf: {
       filename: 'feliks-mamczur-when-search-becomes-an-answer-v1.7.pdf',
-      url: zenodoFile(
+      url: localPublicationFile(
+        '/articles/when-search-becomes-an-answer/',
+        'feliks-mamczur-when-search-becomes-an-answer-v1.7.pdf'
+      ),
+      sourceUrl: zenodoFile(
         '21491639',
         'feliks-mamczur-when-search-becomes-an-answer-v1.7.pdf'
       ),
@@ -179,13 +204,27 @@ export const publications = [
     landingUrl: `${SITE_URL}/projects/beyond-ai-share/`,
     pdf: {
       filename: 'Beyond_AI_Share_Preprint_v1.0.pdf',
-      url: zenodoFile('21705721', 'Beyond_AI_Share_Preprint_v1.0.pdf'),
+      url: localPublicationFile(
+        '/projects/beyond-ai-share/',
+        'Beyond_AI_Share_Preprint_v1.0.pdf'
+      ),
+      sourceUrl: zenodoFile(
+        '21705721',
+        'Beyond_AI_Share_Preprint_v1.0.pdf'
+      ),
       checksum: 'md5:ea3fbc1b18afc6796271f34060cbaa8c',
       size: 872670
     },
     appendix: {
       filename: 'Beyond_AI_Share_Appendix_A_v1.0.pdf',
-      url: zenodoFile('21705721', 'Beyond_AI_Share_Appendix_A_v1.0.pdf'),
+      url: localPublicationFile(
+        '/projects/beyond-ai-share/',
+        'Beyond_AI_Share_Appendix_A_v1.0.pdf'
+      ),
+      sourceUrl: zenodoFile(
+        '21705721',
+        'Beyond_AI_Share_Appendix_A_v1.0.pdf'
+      ),
       checksum: 'md5:d20f33c3f1cc8127fd594aa9f241ad40',
       size: 204254
     },

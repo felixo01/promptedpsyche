@@ -98,8 +98,8 @@ const cases = [
 
 const researchUrls = [
   'https://doi.org/10.5281/zenodo.21705721',
-  'https://zenodo.org/records/21705721/files/Beyond_AI_Share_Preprint_v1.0.pdf',
-  'https://zenodo.org/records/21705721/files/Beyond_AI_Share_Appendix_A_v1.0.pdf',
+  'https://promptedpsyche.com/projects/beyond-ai-share/Beyond_AI_Share_Preprint_v1.0.pdf',
+  'https://promptedpsyche.com/projects/beyond-ai-share/Beyond_AI_Share_Appendix_A_v1.0.pdf',
   'https://doi.org/10.17605/OSF.IO/GSWN3'
 ] as const;
 

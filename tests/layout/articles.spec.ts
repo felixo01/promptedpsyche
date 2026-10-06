@@ -1507,7 +1507,7 @@ test.describe('published articles', () => {
     );
     await expect(page.locator('meta[name="citation_pdf_url"]')).toHaveAttribute(
       'content',
-      'https://zenodo.org/records/21296384/files/feliks-mamczur-what-changes-when-ai-has-a-body-v1.0-CC-BY.pdf'
+      'https://promptedpsyche.com/articles/what-changes-when-ai-has-a-body/feliks-mamczur-what-changes-when-ai-has-a-body-v1.0-CC-BY.pdf'
     );
 
     const structuredDataText = await page
