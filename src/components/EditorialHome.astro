@@ -35,7 +35,7 @@ const research = beyondAiShareRecord;
     <div class="c2-reading-grid" data-qa="start-here-list">
       {recommended.map(({ entry, image, category }) => entry && (
         <article class="c2-recommendation" data-qa="start-here-entry">
-          <a class="c2-recommendation-image" href={getArticlePath(entry, lang)} tabindex="-1" aria-hidden="true"><EditorialImage kind={image} lang={lang} /></a>
+          <div class="c2-recommendation-image"><EditorialImage kind={image} lang={lang} /></div>
           <p class="c2-kicker">{category}</p>
           <h3><a href={getArticlePath(entry, lang)}>{entry.data.title}</a></h3>
           <p class="c2-recommendation-lead">{entry.data.description}</p>
