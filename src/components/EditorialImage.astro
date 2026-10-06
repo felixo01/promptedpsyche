@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import type { Locale } from '../lib/i18n';
+import trustImage from '../assets/editorial/c2-redesign-trust.png';
+import authorshipImage from '../assets/editorial/c2-redesign-authorship.png';
+import learningImage from '../assets/editorial/c2-redesign-learning.png';
+interface Props { kind: 'trust' | 'authorship' | 'learning'; lang: Locale; priority?: boolean; class?: string; }
+const { kind, lang, priority = false, class: className } = Astro.props;
+const source = { trust: trustImage, authorship: authorshipImage, learning: learningImage }[kind];
+const alt = {
+  trust: { pl: 'Ilustracja redakcyjna: otwarty notatnik i śliwkowe szkło w naturalnym świetle.', en: 'Editorial illustration: an open notebook and plum-coloured glass in natural light.' },
+  authorship: { pl: 'Ilustracja redakcyjna: dłonie układające i poprawiające papierowy kolaż.', en: 'Editorial illustration: hands arranging and revising a paper collage.' },
+  learning: { pl: 'Ilustracja redakcyjna: książki i puste krzesło w cichej czytelni.', en: 'Editorial illustration: books and an empty chair in a quiet reading room.' }
+}[kind][lang];
+---
+<Image src={source} alt={alt} width={Math.min(1600, source.width)} widths={[400, 800, 1200, 1600]} format="webp" quality={82}
+  sizes={kind === 'trust' ? '(max-width: 600px) calc(100vw - 40px), (max-width: 1256px) calc(100vw - 40px), 1216px' : '(max-width: 700px) calc(100vw - 40px), (max-width: 1256px) calc((100vw - 80px) / 2), 588px'}
+  loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} decoding="async" class={className} />

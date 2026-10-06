@@ -134,22 +134,28 @@ test.describe('consulting conversion path', () => {
     }
   });
 
-  test('uses three verified public entries in Start here', async ({ page }) => {
+  test('uses the two complete C2 editorial recommendations', async ({ page }) => {
     const homepageCases = [
       {
         route: '/',
         links: [
-          '/notes/youre-right-said-the-ai/',
-          '/articles/dont-ask-whether-ai-makes-us-dumber/',
-          '/articles/trust-in-the-age-of-ready-made-answers/'
+          '/articles/who-had-the-final-say-ai-authorship/',
+          '/articles/dont-ask-whether-ai-makes-us-dumber/'
+        ],
+        titles: [
+          'Who Had the Final Say? Authorship in AI-Assisted Creative Work',
+          "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing"
         ]
       },
       {
         route: '/pl/',
         links: [
-          '/pl/notes/masz-racje-powiedzialo-ai/',
-          '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/',
-          '/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/'
+          '/pl/articles/kto-mial-ostatnie-slowo-autorstwo-ai/',
+          '/pl/articles/nie-pytaj-czy-ai-nas-oglupia/'
+        ],
+        titles: [
+          'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI',
+          'Gotowe odpowiedzi zmieniają sposób uczenia się. Co mówi o tym nauka?'
         ]
       }
     ] as const;
@@ -157,10 +163,12 @@ test.describe('consulting conversion path', () => {
     for (const homepageCase of homepageCases) {
       await page.goto(homepageCase.route);
       const entries = page.locator('[data-qa="start-here-entry"]');
-      await expect(entries).toHaveCount(3);
+      await expect(entries).toHaveCount(2);
 
       for (let index = 0; index < homepageCase.links.length; index += 1) {
-        await expect(entries.nth(index).locator('a')).toHaveAttribute('href', homepageCase.links[index]);
+        await expect(entries.nth(index).getByRole('heading', { level: 3 })).toHaveText(homepageCase.titles[index]);
+        await expect(entries.nth(index).locator('h3 a')).toHaveAttribute('href', homepageCase.links[index]);
+        await expect(entries.nth(index).locator('.c2-read-link')).toHaveAttribute('href', homepageCase.links[index]);
       }
     }
   });
@@ -209,13 +217,13 @@ test.describe('consulting conversion path', () => {
     }
   });
 
-  test('keeps Consulting visibly available in both navigation languages', async ({ page }) => {
+  test('keeps Consulting visibly available in both footer languages', async ({ page }) => {
     for (const [route, href] of [
       ['/', '/consulting/'],
       ['/pl/', '/pl/consulting/']
     ] as const) {
       await page.goto(route);
-      const link = page.locator('[data-qa="consulting-nav-link"]');
+      const link = page.locator('[data-qa="site-footer"] [data-qa="consulting-nav-link"]');
       await expect(link).toBeVisible();
       await expect(link).toHaveAttribute('href', href);
       await expect(link).toHaveClass(/site-nav__consulting/);

@@ -1,6 +1,7 @@
 ---
 import { getLangFromPath, type Locale } from '../lib/i18n';
 import { site } from '../lib/site';
+import BrandMark from './BrandMark.astro';
 import RightsNotice from './RightsNotice.astro';
 
 interface Props {
@@ -16,13 +17,9 @@ const prefix = isPl ? '/pl' : '';
   <div class="footer-inner">
     <div class="footer-main">
       <div class="footer-intro">
-        <h2>
-          {isPl
-            ? 'Projekt o tym, jak AI zmienia myślenie, emocje, zaufanie, komunikację i pracę.'
-            : 'A project on how AI changes thought, emotion, trust, communication and work.'}
-        </h2>
+        <BrandMark href={`${prefix}/`} line={isPl ? 'Autorski magazyn idei o człowieku i AI.' : 'An independent magazine of ideas about people and AI.'} />
+        <p class="c2-footer-note">{isPl ? 'Myślenie, zaufanie, twórczość. Pytania, przy których warto się zatrzymać.' : 'Thinking, trust, creativity. Questions worth spending time with.'}</p>
         <div class="footer-author">
-          <span aria-hidden="true">FM</span>
           <div>
             <p>Feliks Mamczur</p>
             <a href="https://orcid.org/0009-0001-0715-0517" rel="me noopener">
@@ -36,7 +33,7 @@ const prefix = isPl ? '/pl' : '';
         <div>
           <h3>{isPl ? 'Zapytania' : 'Inquiries'}</h3>
           <ul>
-            <li><a href={`${prefix}/consulting/`}>{isPl ? 'Konsulting dla organizacji' : 'Organizational consulting'}</a></li>
+            <li><a href={`${prefix}/consulting/`} data-qa="consulting-nav-link" class="site-nav__consulting">{isPl ? 'Konsulting dla organizacji' : 'Organizational consulting'}</a></li>
             <li><a href={`${prefix}/consulting/`}>{isPl ? 'Warsztaty i wystąpienia' : 'Workshops and talks'}</a></li>
             <li><a href={`${prefix}/contact/`}>{isPl ? 'Komentarz medialny' : 'Media commentary'}</a></li>
             <li><a href={`${prefix}/contact/`}>{isPl ? 'Rozmowy badawcze' : 'Research conversations'}</a></li>
@@ -56,7 +53,6 @@ const prefix = isPl ? '/pl' : '';
     <div class="footer-utility">
       <div class="footer-bottom__meta">
         <div class="footer-bottom__identity">
-          <span aria-hidden="true">PP</span>
           <p>Prompted Psyche</p>
         </div>
         <p class="footer-version" data-qa="site-version">
@@ -65,6 +61,7 @@ const prefix = isPl ? '/pl' : '';
       </div>
       <nav aria-label={isPl ? 'Linki w stopce' : 'Footer links'}>
         <a href={`${prefix}/publications/`}>{isPl ? 'Publikacje' : 'Publications'}</a>
+        <a href={`${prefix}/notes/`}>{isPl ? 'Notatki' : 'Notes'}</a>
         <a href={`${prefix}/search/`}>{isPl ? 'Szukaj' : 'Search'}</a>
         <a href={`${prefix}/topics/`}>{isPl ? 'Obszary' : 'Topics'}</a>
         <a href={`${prefix}/concepts/`}>{isPl ? 'Pojęcia' : 'Concepts'}</a>

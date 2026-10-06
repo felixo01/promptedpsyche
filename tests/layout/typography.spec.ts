@@ -80,16 +80,22 @@ test.describe('long-form reading typography', () => {
 
         return {
           width: rect.width,
+          fontSize,
           fontFamily: style.fontFamily,
           lineHeightRatio: lineHeight / fontSize
         };
       });
 
-      expect(metrics.lineHeightRatio).toBeGreaterThanOrEqual(1.7);
+      if (route.includes('/articles/')) {
+        expect(metrics.lineHeightRatio).toBeCloseTo(1.6, 2);
+        expect(metrics.fontSize).toBe(testInfo.project.name === 'mobile-390' ? 19 : 20);
+      } else {
+        expect(metrics.lineHeightRatio).toBeGreaterThanOrEqual(1.7);
+      }
       expect(metrics.fontFamily).toContain('Newsreader');
 
       if (testInfo.project.name !== 'mobile-390') {
-        expect(metrics.width).toBeLessThanOrEqual(780);
+        expect(metrics.width).toBeLessThanOrEqual(route.includes('/articles/') ? 700 : 780);
       }
 
       const firstH2 = prose.locator('h2').first();

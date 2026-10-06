@@ -12,7 +12,7 @@ const strategicPages = [
     pair: '/pl/',
     xDefault: '/',
     lang: 'en',
-    h1: 'The human side of AI.',
+    h1: 'Trust in the age of ready-made answers',
     title: 'AI Psychology, Cyberpsychology and Human-AI Interaction | Prompted Psyche'
   },
   {
@@ -20,7 +20,7 @@ const strategicPages = [
     pair: '/',
     xDefault: '/',
     lang: 'pl',
-    h1: 'Ludzka strona AI.',
+    h1: 'Zaufanie do nauki w erze gotowych odpowiedzi',
     title: 'Psychologia AI, cyberpsychologia i Human-AI Interaction | Prompted Psyche'
   },
   {

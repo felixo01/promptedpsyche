@@ -14,7 +14,6 @@ const { href, label = site.name, line = site.tagline, compact = false } = Astro.
 {
   href ? (
     <a class:list={['brand-lockup', { 'brand-lockup-compact': compact }]} href={href} aria-label={label}>
-      <span class="brand-symbol" aria-hidden="true">PP</span>
       <span class="brand-copy">
         <span class="brand-name">{site.name}</span>
         {!compact && <span class="brand-line">{line}</span>}
@@ -22,7 +21,6 @@ const { href, label = site.name, line = site.tagline, compact = false } = Astro.
     </a>
   ) : (
     <div class:list={['brand-lockup', { 'brand-lockup-compact': compact }]}>
-      <span class="brand-symbol" aria-hidden="true">PP</span>
       <span class="brand-copy">
         <span class="brand-name">{site.name}</span>
         {!compact && <span class="brand-line">{line}</span>}

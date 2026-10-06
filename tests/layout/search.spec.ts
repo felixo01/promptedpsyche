@@ -43,11 +43,13 @@ test.describe('local search', () => {
 
     await expect(page.getByRole('heading', { name: 'Search', level: 1 })).toBeVisible();
     await expect(page.getByPlaceholder('Search by topic, concept or phrase')).toBeVisible();
-    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Search' })).toHaveAttribute(
+    const englishSearchLink = page.getByRole('banner').getByRole('link', { name: 'Search', exact: true });
+    await expect(englishSearchLink).toBeVisible();
+    await expect(englishSearchLink).toHaveAttribute(
       'href',
       '/search/'
     );
-    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Search' })).toHaveAttribute(
+    await expect(englishSearchLink).toHaveAttribute(
       'aria-current',
       'page'
     );
@@ -63,11 +65,13 @@ test.describe('local search', () => {
 
     await expect(page.getByRole('heading', { name: 'Szukaj', level: 1 })).toBeVisible();
     await expect(page.getByPlaceholder('Szukaj tematu, pojęcia albo frazy')).toBeVisible();
-    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Szukaj' })).toHaveAttribute(
+    const polishSearchLink = page.getByRole('banner').getByRole('link', { name: 'Szukaj', exact: true });
+    await expect(polishSearchLink).toBeVisible();
+    await expect(polishSearchLink).toHaveAttribute(
       'href',
       '/pl/search/'
     );
-    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Szukaj' })).toHaveAttribute(
+    await expect(polishSearchLink).toHaveAttribute(
       'aria-current',
       'page'
     );

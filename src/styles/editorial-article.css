@@ -1,0 +1,400 @@
+/* C2 reading layout. Publication data and content remain owned by their existing sources. */
+.c2-article {
+  --article-measure: 43.75rem;
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.c2-article .content-header {
+  width: min(calc(100% - 2.5rem), 58rem);
+  margin-inline: auto;
+  padding: clamp(2.25rem, 5vw, 4.25rem) 0 1.8rem;
+}
+
+.c2-article .content-header-inner {
+  max-width: none;
+}
+
+.c2-article .content-header .eyebrow {
+  margin-bottom: 1.05rem;
+  color: var(--plum, #4d284c);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.c2-article .content-header h1,
+html[lang='pl'] .c2-article .content-header h1 {
+  max-width: 25ch;
+  color: var(--plum, #4d284c);
+  font-family: var(--font-serif);
+  font-size: clamp(2.7rem, 4.25vw, 3.85rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.06;
+  text-wrap: pretty;
+}
+
+.c2-article .content-header .lede {
+  max-width: 49rem;
+  margin-top: 1.35rem;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 1.6vw, 1.5rem);
+  line-height: 1.45;
+}
+
+.c2-article .article-byline {
+  gap: 0.4rem 1.15rem;
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.c2-article .article-byline p,
+.c2-article .article-byline a {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.c2-article .article-byline p + p::before {
+  content: none;
+}
+
+.c2-article .article-byline span {
+  color: var(--muted);
+}
+
+.c2-article .article-byline a {
+  color: var(--plum, #4d284c);
+}
+
+.c2-article .article-byline > p:first-child a {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.c2-article .article-byline__citable {
+  flex-basis: 100%;
+}
+
+.c2-article .article-byline__counterpart a {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  min-height: 2.75rem;
+}
+
+.c2-article .content-tags {
+  gap: 0.3rem 0.85rem;
+  margin-top: 1rem;
+}
+
+.c2-article .content-tags a {
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+}
+
+.c2-article .article-editorial-figure {
+  width: min(calc(100% - 2.5rem), 68rem);
+  height: clamp(17.5rem, 26vw, 21.25rem);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.c2-article .article-editorial-figure img,
+.c2-article .article-editorial-figure picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.c2-article .article-hero-figure {
+  width: min(calc(100% - 2.5rem), 58rem);
+  margin-inline: auto;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.c2-article .article-hero-figure img {
+  height: auto;
+  object-fit: contain;
+}
+
+.c2-article .article-hero-figure figcaption,
+.c2-article .article-figure figcaption {
+  max-width: none;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.c2-article .article-reading-tools {
+  width: min(calc(100% - 2.5rem), var(--article-measure));
+  margin: 2rem auto 0;
+}
+
+.c2-article .in-brief {
+  max-width: none;
+  margin: 0;
+  border: 0;
+  border-block: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+}
+
+.c2-article .in-brief__summary,
+.c2-article .article-contents summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  min-height: 3.25rem;
+  padding: 0.8rem 0;
+  color: var(--plum, #4d284c);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  list-style: none;
+  text-transform: none;
+}
+
+.c2-article .in-brief__summary::after {
+  color: var(--plum, #4d284c);
+}
+
+.c2-article .in-brief__body {
+  padding: 1rem 0 1.25rem;
+}
+
+.c2-article .in-brief__body p {
+  max-width: none;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.c2-article .article-contents {
+  display: block;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.c2-article .article-contents summary::-webkit-details-marker {
+  display: none;
+}
+
+.c2-article .article-contents__indicator {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.c2-article .article-contents details[open] .article-contents__indicator {
+  transform: rotate(45deg);
+}
+
+.c2-article .article-contents nav {
+  padding: 0.35rem 0 1.25rem;
+}
+
+.c2-article .article-contents__label {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.c2-article .article-contents ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 1.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.c2-article .article-contents a {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding-block: 0.4rem;
+  color: var(--ink);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.c2-article .article-contents a:hover {
+  color: var(--plum, #4d284c);
+  text-decoration: underline;
+}
+
+.c2-article.article-shell--article .article-grid {
+  display: block;
+  width: min(calc(100% - 2.5rem), var(--article-measure));
+  padding-top: 2.25rem;
+}
+
+.c2-article.article-shell--article .prose {
+  width: 100%;
+  max-width: var(--article-measure);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  text-align: left;
+  text-wrap: pretty;
+}
+
+.c2-article .prose > * + * {
+  margin-top: 1.3rem;
+}
+
+.c2-article .prose > .article-hero-figure {
+  width: 100%;
+  margin-block: 2.5rem;
+}
+
+.c2-article .prose h2 {
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1.45rem;
+  color: var(--plum, #4d284c);
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.18;
+  scroll-margin-top: 6rem;
+}
+
+.c2-article .prose h3 {
+  margin-top: 2.5rem;
+  color: var(--plum, #4d284c);
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 1.25;
+  scroll-margin-top: 6rem;
+}
+
+.c2-article .prose a {
+  color: var(--plum, #4d284c);
+  overflow-wrap: anywhere;
+  text-decoration-thickness: 1px;
+}
+
+.c2-article .prose li + li {
+  margin-top: 0.65rem;
+}
+
+.c2-article .key-passage {
+  border-left-color: var(--plum, #4d284c);
+  padding-left: 1.5rem;
+}
+
+.c2-article .key-passage__label,
+.c2-article .practice-block__label {
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+}
+
+.c2-article .key-passage p:not(.key-passage__label) {
+  color: var(--plum, #4d284c);
+  font-size: 1.5rem;
+  line-height: 1.45;
+}
+
+.c2-article .prose .suggested-citation p,
+.c2-article .prose .rights-notice {
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.c2-article .prose .continue-exploring li > span,
+.c2-article .prose .continue-exploring li p {
+  color: var(--muted);
+}
+
+@media (max-width: 767px) {
+  .c2-article .content-header {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .c2-article .content-header h1,
+  html[lang='pl'] .c2-article .content-header h1 {
+    max-width: none;
+    font-size: clamp(2.1rem, 7.6vw, 3.1rem);
+    letter-spacing: -0.018em;
+    line-height: 1.08;
+  }
+
+  .c2-article .content-header .lede {
+    margin-top: 1.15rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .c2-article .article-byline {
+    gap: 0.45rem 0.85rem;
+    font-size: 0.875rem;
+  }
+
+  .c2-article .article-byline > p:first-child {
+    flex-basis: 100%;
+  }
+
+  .c2-article .article-editorial-figure {
+    height: clamp(12rem, 52vw, 20rem);
+  }
+
+  .c2-article .article-reading-tools {
+    margin-top: 1.4rem;
+  }
+
+  .c2-article .article-contents ol {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .c2-article.article-shell--article .article-grid {
+    padding-top: 1.8rem;
+  }
+
+  .c2-article.article-shell--article .prose {
+    font-size: 1.1875rem;
+    line-height: 1.6;
+  }
+
+  .c2-article .prose h2 {
+    margin-top: 2.8rem;
+    padding-top: 1.15rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .c2-article .prose h3 {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+  }
+
+  .c2-article .key-passage {
+    padding-left: 1.1rem;
+  }
+
+  .c2-article .key-passage p:not(.key-passage__label) {
+    font-size: 1.35rem;
+  }
+}

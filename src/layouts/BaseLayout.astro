@@ -6,6 +6,7 @@ import { getAlternateLinks, getLangFromPath, type AlternateLinks, type Locale } 
 import { getPublisherEntity, getWebsiteEntity, site } from '../lib/site';
 import '../styles/global.css';
 import '../styles/content-enhancements.css';
+import '../styles/editorial-shell.css';
 
 type StructuredData = Record<string, unknown>;
 
@@ -74,6 +75,9 @@ const alternateLinks = {
   xDefault: providedAlternateLinks?.xDefault ?? providedAlternateLinks?.en ?? fallbackAlternateLinks.xDefault
 };
 const skipLinkLabel = lang === 'pl' ? 'Przejdź do treści' : 'Skip to content';
+// Vercel supplies this at build time. Preserve each page's production policy,
+// including explicit index and noindex exceptions, outside Preview deployments.
+const resolvedRobots = process.env.VERCEL_ENV === 'preview' ? 'noindex, nofollow' : robots;
 const structuredDataItems = structuredData
   ? Array.isArray(structuredData)
     ? structuredData
@@ -99,8 +103,8 @@ const structuredDataJson = JSON.stringify(structuredDataGraph).replace(/</g, '\\
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    {robots && <meta name="robots" content={robots} />}
-    {robots && <meta name="googlebot" content={robots} />}
+    {resolvedRobots && <meta name="robots" content={resolvedRobots} />}
+    {resolvedRobots && <meta name="googlebot" content={resolvedRobots} />}
     {
       scholarMetadata && (
         <>

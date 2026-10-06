@@ -208,17 +208,33 @@ test.describe('practice section', () => {
   });
 
   test('surfaces Practice from both homepages with descriptive anchors', async ({ page }) => {
-    await page.goto('/');
-    await expect(page.locator('[data-qa="home-practice"]')).toContainText('How to Talk to AI');
-    await expect(page.getByRole('link', { name: 'Explore practice' })).toHaveAttribute('href', '/practice/');
-    await expect(page.getByRole('link', { name: 'Browse all articles' })).toHaveAttribute('href', '/articles/');
-    await expect(page.getByRole('link', { name: 'Browse all notes' })).toHaveAttribute('href', '/notes/');
+    for (const indexCase of practiceIndexCases) {
+      const isPolish = indexCase.route.startsWith('/pl/');
+      const prefix = isPolish ? '/pl' : '';
+      await page.goto(`${prefix}/`);
 
-    await page.goto('/pl/');
-    await expect(page.locator('[data-qa="home-practice"]')).toContainText('Jak rozmawiać ze sztuczną inteligencją');
-    await expect(page.getByRole('link', { name: 'Przejdź do praktyki' })).toHaveAttribute('href', '/pl/practice/');
-    await expect(page.getByRole('link', { name: 'Wszystkie artykuły' })).toHaveAttribute('href', '/pl/articles/');
-    await expect(page.getByRole('link', { name: 'Wszystkie notatki' })).toHaveAttribute('href', '/pl/notes/');
+      const menu = page.getByRole('button', { name: isPolish ? 'Menu główne' : 'Main menu' });
+      if (await menu.isVisible()) {
+        await menu.focus();
+        await page.keyboard.press('Enter');
+        await expect(menu).toHaveAttribute('aria-expanded', 'true');
+      }
+
+      const nav = page.locator('[data-qa="site-nav"]');
+      const practiceLink = nav.getByRole('link', { name: isPolish ? 'Praktyka' : 'Practice', exact: true });
+      await expect(practiceLink).toBeVisible();
+      await expect(practiceLink).toHaveAttribute('href', indexCase.route);
+      await expect(nav.getByRole('link', { name: isPolish ? 'Artykuły' : 'Articles', exact: true }))
+        .toHaveAttribute('href', `${prefix}/articles/`);
+      await expect(page.getByRole('banner').getByRole('link', { name: isPolish ? 'Szukaj' : 'Search', exact: true }))
+        .toHaveAttribute('href', `${prefix}/search/`);
+
+      await expect(page.getByRole('contentinfo').getByRole('link', { name: isPolish ? 'Notatki' : 'Notes', exact: true }))
+        .toHaveAttribute('href', `${prefix}/notes/`);
+      await practiceLink.click();
+      await expect(page).toHaveURL(new RegExp(`${indexCase.route}$`));
+      await expect(page.getByRole('heading', { level: 1, name: indexCase.h1 })).toBeVisible();
+    }
   });
 
   test('keeps all public Practice routes and prompt interactions working', async ({ page, request }) => {

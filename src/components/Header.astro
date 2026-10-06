@@ -1,74 +1,68 @@
 ---
 import BrandMark from './BrandMark.astro';
-import {
-  getAlternatePath,
-  getLangFromPath,
-  getNavItems,
-  normalizePath,
-  type AlternateLinks,
-  type Locale
-} from '../lib/i18n';
+import { getAlternatePath, getLangFromPath, normalizePath, type AlternateLinks, type Locale } from '../lib/i18n';
 import { showPractice } from '../lib/features';
 import { site } from '../lib/site';
-
-interface Props {
-  lang?: Locale;
-  alternateLinks?: AlternateLinks;
-}
-
-const activeLang = Astro.props.lang ?? getLangFromPath(Astro.url.pathname);
-const providedAlternateLinks = Astro.props.alternateLinks;
-const currentPath = Astro.url.pathname;
-const normalizedCurrentPath = normalizePath(currentPath);
-const headerOrder = activeLang === 'pl'
-  ? ['/pl/articles/', '/pl/notes/', '/pl/concepts/', ...(showPractice ? ['/pl/practice/'] : []), '/pl/projects/', '/pl/about/', '/pl/consulting/', '/pl/contact/', '/pl/search/']
-  : ['/articles/', '/notes/', '/concepts/', ...(showPractice ? ['/practice/'] : []), '/projects/', '/about/', '/consulting/', '/contact/', '/search/'];
-const navItems = headerOrder
-  .map((href) => getNavItems(activeLang).find((item) => item.href === href))
-  .filter((item): item is { label: string; href: string } => Boolean(item));
-const enPath = providedAlternateLinks?.en ?? getAlternatePath(currentPath, 'en');
-const plPath = providedAlternateLinks?.pl ?? getAlternatePath(currentPath, 'pl');
-const homePath = activeLang === 'pl' ? '/pl/' : '/';
-const homeLabel = activeLang === 'pl' ? `${site.name} - strona główna` : `${site.name} home`;
-
-function isCurrentPath(href: string) {
-  const normalizedHref = normalizePath(href);
-
-  if (normalizedHref === '/' || normalizedHref === '/pl') {
-    return normalizedCurrentPath === normalizedHref;
-  }
-
-  return normalizedCurrentPath === normalizedHref || normalizedCurrentPath.startsWith(`${normalizedHref}/`);
-}
+interface Props { lang?: Locale; alternateLinks?: AlternateLinks; }
+const lang = Astro.props.lang ?? getLangFromPath(Astro.url.pathname);
+const isPl = lang === 'pl';
+const prefix = isPl ? '/pl' : '';
+const currentPath = normalizePath(Astro.url.pathname);
+const navItems = [
+  { label: isPl ? 'Artykuły' : 'Articles', href: `${prefix}/articles/` },
+  { label: isPl ? 'Badania' : 'Research', href: `${prefix}/projects/` },
+  { label: isPl ? 'Pojęcia' : 'Concepts', href: `${prefix}/concepts/` },
+  ...(showPractice ? [{ label: isPl ? 'Praktyka' : 'Practice', href: `${prefix}/practice/` }] : []),
+  { label: isPl ? 'O projekcie' : 'About', href: `${prefix}/about/` }
+];
+const enPath = Astro.props.alternateLinks?.en ?? getAlternatePath(Astro.url.pathname, 'en');
+const plPath = Astro.props.alternateLinks?.pl ?? getAlternatePath(Astro.url.pathname, 'pl');
+const isCurrent = (href: string) => currentPath === normalizePath(href) || currentPath.startsWith(`${normalizePath(href)}/`);
 ---
-
-<header class="site-header">
-  <BrandMark href={homePath} label={homeLabel} compact />
-
-  <div class="header-actions">
-    <nav class="site-nav" data-qa="site-nav" aria-label={activeLang === 'pl' ? 'Nawigacja główna' : 'Primary navigation'}>
-      {
-        navItems.map((item) => (
-          <a
-            href={item.href}
-            class:list={{ 'site-nav__consulting': item.href.endsWith('/consulting/') }}
-            data-qa={item.href.endsWith('/consulting/') ? 'consulting-nav-link' : undefined}
-            aria-current={isCurrentPath(item.href) ? 'page' : undefined}
-          >
-            {item.label}
-          </a>
-        ))
-      }
+<header class="site-header c2-header">
+  <BrandMark href={`${prefix}/`} label={isPl ? `${site.name} — strona główna` : `${site.name} home`}
+    line={isPl ? 'Badania i analizy relacji człowieka z AI' : 'Research and perspectives on the human relationship with AI'} />
+  <nav id="primary-navigation" class="site-nav c2-nav" data-qa="site-nav" aria-label={isPl ? 'Nawigacja główna' : 'Primary navigation'}>
+    {navItems.map(item => <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>)}
+  </nav>
+  <div class="c2-utilities">
+    <a class="c2-search" href={`${prefix}/search/`} aria-current={isCurrent(`${prefix}/search/`) ? 'page' : undefined} aria-label={isPl ? 'Szukaj' : 'Search'}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+    </a>
+    <nav class="language-switcher" data-qa="language-switcher" aria-label={isPl ? 'Przełącznik języka' : 'Language switcher'}>
+      <a href={enPath} lang="en" aria-current={lang === 'en' ? 'page' : undefined}>EN</a><span aria-hidden="true">/</span><a href={plPath} lang="pl" aria-current={lang === 'pl' ? 'page' : undefined}>PL</a>
     </nav>
-
-    <nav
-      class="language-switcher"
-      data-qa="language-switcher"
-      aria-label={activeLang === 'pl' ? 'Przełącznik języka' : 'Language switcher'}
-    >
-      <a href={enPath} aria-current={activeLang === 'en' ? 'page' : undefined}>EN</a>
-      <span aria-hidden="true">/</span>
-      <a href={plPath} aria-current={activeLang === 'pl' ? 'page' : undefined}>PL</a>
-    </nav>
+    <button class="c2-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label={isPl ? 'Menu główne' : 'Main menu'}>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
   </div>
 </header>
+<script>
+  const header = document.querySelector<HTMLElement>('.c2-header');
+  const toggle = header?.querySelector<HTMLButtonElement>('.c2-menu-toggle');
+  const nav = header?.querySelector<HTMLElement>('.c2-nav');
+  if (header && toggle && nav) {
+    header.dataset.enhanced = 'true';
+    const media = window.matchMedia('(max-width: 1100px)');
+    const setOpen = (open: boolean, restoreFocus = false) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      header.dataset.menuOpen = String(open);
+      nav.inert = media.matches && !open;
+      if (restoreFocus) toggle.focus();
+    };
+    setOpen(false);
+    toggle.addEventListener('click', event => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      setOpen(open);
+      if (open && event.detail === 0) nav.querySelector<HTMLAnchorElement>('a')?.focus();
+    });
+    header.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setOpen(false, true);
+    });
+    document.addEventListener('click', event => {
+      if (!header.contains(event.target as Node)) setOpen(false);
+    });
+    nav.addEventListener('click', event => { if ((event.target as HTMLElement).closest('a')) setOpen(false); });
+    media.addEventListener('change', () => setOpen(false));
+  }
+</script>

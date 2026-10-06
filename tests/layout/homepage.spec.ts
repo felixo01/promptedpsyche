@@ -4,33 +4,52 @@ const homeSocialImage =
   'https://promptedpsyche.com/images/social/prompted-psyche-home-social-1200x630.png';
 const oldDefaultSocialImage = 'https://promptedpsyche.com/images/prompted-psyche-editorial.png';
 
-test.describe('homepage hero positioning', () => {
-  test('shows the English project positioning', async ({ page }) => {
+test.describe('C2 editorial homepage', () => {
+  test('opens with the complete English trust essay', async ({ page }) => {
     await page.goto('/');
 
-    await expect(page.locator('[data-qa="hero-title"]')).toHaveText('The human side of AI.');
+    await expect(page.locator('[data-qa="hero-title"]')).toHaveText('Trust in the age of ready-made answers');
     await expect(page.locator('[data-qa="hero-copy"]')).toContainText(
-      "Feliks Mamczur's independent publishing platform"
+      'How generative AI compresses the path from sources to answers'
     );
-    await expect(page.locator('[data-qa="hero-copy"]')).toContainText('independent publishing platform');
-    await expect(page.getByRole('link', { name: 'See the AI audit for teams' })).toHaveAttribute('href', '/consulting/');
-    await expect(page.locator('.hero-actions a').first()).toHaveAttribute('href', '#start-here');
-    await expect(page.locator('body')).toContainText('Three places to begin');
+    await expect(page.locator('[data-qa="hero-copy"]')).toContainText('ESSAY · TRUST');
+    await expect(page.locator('[data-qa="hero-copy"]')).toContainText('Feliks Mamczur');
+    await expect(page.locator('[data-qa="hero-copy"]')).toContainText('18 min read');
+    await expect(page.getByRole('link', { name: 'Read the essay' })).toHaveAttribute('href', '/articles/trust-in-the-age-of-ready-made-answers/');
+    await expect(page.getByRole('heading', { name: 'Worth reading', level: 2 })).toBeVisible();
     await expect(page.locator('body')).not.toContainText('Human-Machine Interaction');
   });
 
-  test('shows the Polish project positioning', async ({ page }) => {
+  test('opens with the complete Polish trust essay', async ({ page }) => {
     await page.goto('/pl/');
 
-    await expect(page.locator('[data-qa="hero-title"]')).toHaveText('Ludzka strona AI.');
+    await expect(page.locator('[data-qa="hero-title"]')).toHaveText('Zaufanie do nauki w erze gotowych odpowiedzi');
     await expect(page.locator('[data-qa="hero-copy"]')).toContainText(
-      'niezależna platforma publikacyjna Feliksa Mamczura'
+      'Generatywna AI może skrócić drogę od źródeł naukowych do gotowej odpowiedzi'
     );
-    await expect(page.locator('[data-qa="hero-copy"]')).toContainText('niezależna platforma publikacyjna');
-    await expect(page.getByRole('link', { name: 'Zobacz audyt AI dla zespołów' })).toHaveAttribute('href', '/pl/consulting/');
-    await expect(page.locator('.hero-actions a').first()).toHaveAttribute('href', '#start-here');
-    await expect(page.locator('body')).toContainText('Trzy ważne punkty wyjścia');
+    await expect(page.locator('[data-qa="hero-copy"]')).toContainText('ESEJ · ZAUFANIE');
+    await expect(page.locator('[data-qa="hero-copy"]')).toContainText('Feliks Mamczur');
+    await expect(page.locator('[data-qa="hero-copy"]')).toContainText('22 min czytania');
+    await expect(page.getByRole('link', { name: 'Czytaj esej' })).toHaveAttribute('href', '/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/');
+    await expect(page.getByRole('heading', { name: 'Warto przeczytać', level: 2 })).toBeVisible();
     await expect(page.locator('body')).not.toContainText('Human-Machine Interaction');
+  });
+
+  test('keeps the complete research title, preprint status and source links', async ({ page }) => {
+    for (const [route, heading, status, publication, preregistration, href] of [
+      ['/', 'From the research', 'Preprint — not formally peer reviewed', 'Publication', 'Preregistration', '/projects/beyond-ai-share/'],
+      ['/pl/', 'Z badań', 'Preprint bez formalnej recenzji naukowej', 'Publikacja', 'Prerejestracja', '/pl/projects/beyond-ai-share/']
+    ]) {
+      await page.goto(route);
+      const research = page.locator('[data-qa="home-research"]');
+      await expect(research.getByRole('heading', { level: 2 })).toHaveText(heading);
+      await expect(research.getByRole('heading', { level: 3 })).toHaveText('Beyond AI Share: A Preregistered Survey and Vignette Study of Perceived Control, Authorship, and Authenticity in AI-Assisted Creative Practice');
+      await expect(research).toContainText('Feliks Mamczur');
+      await expect(research.locator('.c2-research-status')).toHaveText(status);
+      const researchLinks = research.locator('.c2-research-links');
+      await expect(researchLinks.getByRole('link', { name: publication, exact: false })).toHaveAttribute('href', href);
+      await expect(researchLinks.getByRole('link', { name: preregistration, exact: false })).toHaveAttribute('href', 'https://doi.org/10.17605/OSF.IO/GSWN3');
+    }
   });
 
   test('keeps visible author-name repetition restrained on homepages', async ({ page }) => {

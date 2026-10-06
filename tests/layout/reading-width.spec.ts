@@ -120,13 +120,14 @@ test('keeps reading width scoped by entry type across desktop and mobile', async
       }
 
       if (viewport.width >= 1024 && publicationTypes.has(entry.type)) {
-        const expectedRatio = entry.type === 'practice' ? 1.86 : 1.82;
+        const expectedRatio = entry.type === 'article' ? 1.6 : entry.type === 'practice' ? 1.86 : 1.82;
         expect(metrics.lineHeightRatio).toBeCloseTo(expectedRatio, 2);
-        if (entry.type === 'practice') {
+        if (entry.type === 'article') {
+          expect(metrics.proseFontSize).toBe(20);
+          expect(metrics.proseWidth).toBeGreaterThanOrEqual(680);
+          expect(metrics.proseWidth).toBeLessThanOrEqual(720);
+        } else if (entry.type === 'practice') {
           expect(metrics.proseWidth).toBeLessThan(650);
-        } else if (entry.hasResearchMaterials) {
-          expect(metrics.proseWidth).toBeGreaterThan(700);
-          expect(metrics.proseWidth).toBeLessThan(900);
         } else {
           expect(metrics.proseWidth).toBeGreaterThan(620);
           expect(metrics.proseWidth).toBeLessThan(750);
@@ -136,6 +137,11 @@ test('keeps reading width scoped by entry type across desktop and mobile', async
       if (viewport.width < 1024 && publicationTypes.has(entry.type)) {
         expect(metrics.proseWidth).toBeLessThanOrEqual(metrics.gridWidth + 1);
         expect(metrics.proseWidth).toBeLessThanOrEqual(viewport.width - 31);
+      }
+
+      if (viewport.width < 768 && entry.type === 'article') {
+        expect(metrics.proseFontSize).toBe(19);
+        expect(metrics.lineHeightRatio).toBeCloseTo(1.6, 2);
       }
 
       if (entry.hasResearchMaterials) {

@@ -1,0 +1,31 @@
+---
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  headings: Array<{ id: string; html: string }>;
+  lang: Locale;
+  sectionLabel: string;
+}
+
+const { headings, lang, sectionLabel } = Astro.props;
+const title = lang === 'pl' ? 'Spis treści' : 'Contents';
+---
+
+{headings.length > 0 && (
+  <aside class="article-aside article-contents" aria-label={title}>
+    <details data-qa="article-contents">
+      <summary>
+        <span>{title}</span>
+        <span class="article-contents__indicator" aria-hidden="true">+</span>
+      </summary>
+      <nav aria-label={title}>
+        <p class="article-contents__label" data-qa="article-aside-label">{sectionLabel}</p>
+        <ol>
+          {headings.map((heading) => (
+            <li><a href={`#${heading.id}`} set:html={heading.html} /></li>
+          ))}
+        </ol>
+      </nav>
+    </details>
+  </aside>
+)}

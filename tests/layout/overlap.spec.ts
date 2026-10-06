@@ -21,20 +21,22 @@ test.describe('critical element overlap', () => {
     test(`keeps homepage modules separated on ${route}`, async ({ page }) => {
       await page.goto(route);
 
+      await expect(page.locator('[data-qa="hero-copy"]')).toBeVisible();
+      await expect(page.locator('[data-qa="start-here-entry"]')).toHaveCount(2);
+      await expect(page.locator('[data-qa="home-research"]')).toBeVisible();
+
       const overlaps = await page.evaluate(() => {
         const selectors = [
-          ['hero-title', '[data-qa="hero-title"]'],
-          ['hero-sidecar', '[data-qa="hero-sidecar"]'],
-          ['writing-card-1', '[data-qa="writing-card"]:nth-of-type(1)'],
-          ['writing-card-2', '[data-qa="writing-card"]:nth-of-type(2)'],
-          ['consulting-teaser', '[data-qa="consulting-teaser"]']
+          ['hero-copy', '[data-qa="hero-copy"]'],
+          ['recommendation-1', '[data-qa="start-here-entry"]:nth-of-type(1)'],
+          ['recommendation-2', '[data-qa="start-here-entry"]:nth-of-type(2)'],
+          ['research', '[data-qa="home-research"]'],
+          ['about', '.c2-about']
         ] as const;
 
         const boxes = selectors.flatMap(([name, selector]) => {
           const element = document.querySelector(selector);
-          if (!element) {
-            return [];
-          }
+          if (!element) throw new Error(`Missing C2 module: ${name}`);
           const rect = element.getBoundingClientRect();
           return [
             {
@@ -68,6 +70,9 @@ test.describe('critical element overlap', () => {
 
     test(`does not overlap publication nav links on ${route}`, async ({ page }) => {
       await page.goto(route);
+      if ((page.viewportSize()?.width ?? 1440) <= 1100) await page.locator('.c2-menu-toggle').click();
+      await expect(page.locator('[data-qa="site-nav"]')).toBeVisible();
+      await expect(page.locator('[data-qa="site-nav"] a')).toHaveCount(5);
       const boxes = await page.locator('[data-qa="site-nav"] a').evaluateAll((links) =>
         links.map((link) => {
           const rect = link.getBoundingClientRect();

@@ -1,0 +1,2797 @@
+{
+  "snapshotCommit": "2d971cbf81fe25f1e3e3a2ff05ceb83d6f544805",
+  "representative": {
+    "/": {
+      "title": "AI Psychology, Cyberpsychology and Human-AI Interaction | Prompted Psyche",
+      "canonical": "https://promptedpsyche.com/",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://promptedpsyche.com/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://promptedpsyche.com/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "pl",
+          "href": "https://promptedpsyche.com/pl/"
+        }
+      ],
+      "description": "Feliks Mamczur examines AI psychology, cyberpsychology and Human-AI Interaction - how AI shapes thinking, trust, emotion, communication, creativity and work.",
+      "citation": [],
+      "schemaTypes": [
+        "WebSite",
+        "Organization",
+        "Person"
+      ],
+      "robots": []
+    },
+    "/pl/": {
+      "title": "Psychologia AI, cyberpsychologia i Human-AI Interaction | Prompted Psyche",
+      "canonical": "https://promptedpsyche.com/pl/",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://promptedpsyche.com/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://promptedpsyche.com/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "pl",
+          "href": "https://promptedpsyche.com/pl/"
+        }
+      ],
+      "description": "Feliks Mamczur pisze o psychologii AI, cyberpsychologii i relacji człowiek-AI - o tym, jak AI wpływa na myślenie, zaufanie, emocje, komunikację, twórczość i pracę.",
+      "citation": [],
+      "schemaTypes": [
+        "WebSite",
+        "Organization",
+        "Person"
+      ],
+      "robots": []
+    },
+    "/articles/trust-in-the-age-of-ready-made-answers/": {
+      "title": "Trust in the age of ready-made answers | Prompted Psyche",
+      "canonical": "https://promptedpsyche.com/articles/trust-in-the-age-of-ready-made-answers/",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://promptedpsyche.com/articles/trust-in-the-age-of-ready-made-answers/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://promptedpsyche.com/articles/trust-in-the-age-of-ready-made-answers/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "pl",
+          "href": "https://promptedpsyche.com/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/"
+        }
+      ],
+      "description": "How generative AI compresses the path from sources to answers, and why trust must be calibrated through provenance, uncertainty, disagreement and human responsibility.",
+      "citation": [
+        {
+          "name": "citation_doi",
+          "content": "10.5281/zenodo.21301650"
+        },
+        {
+          "name": "citation_publication_date",
+          "content": "2026/07/02"
+        },
+        {
+          "name": "citation_language",
+          "content": "en"
+        },
+        {
+          "name": "citation_author",
+          "content": "Feliks Mamczur"
+        },
+        {
+          "name": "citation_pdf_url",
+          "content": "https://promptedpsyche.com/articles/trust-in-the-age-of-ready-made-answers/feliks-mamczur-trust-in-the-age-of-ready-made-answers-v1.0-CC-BY.pdf"
+        },
+        {
+          "name": "citation_title",
+          "content": "Trust in the age of ready-made answers"
+        }
+      ],
+      "schemaTypes": [
+        "WebSite",
+        "Organization",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "robots": []
+    },
+    "/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/": {
+      "title": "Zaufanie do nauki w erze gotowych odpowiedzi | Prompted Psyche",
+      "canonical": "https://promptedpsyche.com/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://promptedpsyche.com/articles/trust-in-the-age-of-ready-made-answers/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://promptedpsyche.com/articles/trust-in-the-age-of-ready-made-answers/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "pl",
+          "href": "https://promptedpsyche.com/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/"
+        }
+      ],
+      "description": "Generatywna AI może skrócić drogę od źródeł naukowych do gotowej odpowiedzi, a zarazem ukryć pochodzenie informacji, siłę dowodów, niepewność i spory. Dlatego zaufanie trzeba opierać na możliwości odtworzenia tej drogi, nie na płynności syntezy.",
+      "citation": [],
+      "schemaTypes": [
+        "WebSite",
+        "Organization",
+        "Article",
+        "BreadcrumbList"
+      ],
+      "robots": []
+    },
+    "/projects/beyond-ai-share/": {
+      "title": "Beyond AI Share - AI-Assisted Creativity, Authorship and Control",
+      "canonical": "https://promptedpsyche.com/projects/beyond-ai-share/",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "pl",
+          "href": "https://promptedpsyche.com/pl/projects/beyond-ai-share/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://promptedpsyche.com/projects/beyond-ai-share/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://promptedpsyche.com/projects/beyond-ai-share/"
+        }
+      ],
+      "description": "A preregistered study of perceived control, authorship and authenticity in AI-assisted creative practice, with results, limitations, preprint and OSF preregistration.",
+      "citation": [
+        {
+          "name": "citation_doi",
+          "content": "10.5281/zenodo.21705721"
+        },
+        {
+          "name": "citation_publication_date",
+          "content": "2026/07/30"
+        },
+        {
+          "name": "citation_title",
+          "content": "Beyond AI Share: A Preregistered Survey and Vignette Study of Perceived Control, Authorship, and Authenticity in AI-Assisted Creative Practice"
+        },
+        {
+          "name": "citation_language",
+          "content": "en"
+        },
+        {
+          "name": "citation_author",
+          "content": "Feliks Mamczur"
+        },
+        {
+          "name": "citation_pdf_url",
+          "content": "https://promptedpsyche.com/projects/beyond-ai-share/Beyond_AI_Share_Preprint_v1.0.pdf"
+        }
+      ],
+      "schemaTypes": [
+        "WebSite",
+        "Organization",
+        "WebPage",
+        "BreadcrumbList",
+        "ResearchProject",
+        "ScholarlyArticle",
+        "Person"
+      ],
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow"
+        }
+      ]
+    },
+    "/pl/projects/beyond-ai-share/": {
+      "title": "Beyond AI Share - autorstwo, kontrola i twórczość wspomagana przez AI",
+      "canonical": "https://promptedpsyche.com/pl/projects/beyond-ai-share/",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "pl",
+          "href": "https://promptedpsyche.com/pl/projects/beyond-ai-share/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://promptedpsyche.com/projects/beyond-ai-share/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://promptedpsyche.com/projects/beyond-ai-share/"
+        }
+      ],
+      "description": "Prerejestrowane badanie postrzeganej kontroli, autorstwa i autentyczności w twórczości wspomaganej przez AI, wraz z wynikami, ograniczeniami i preprintem.",
+      "citation": [],
+      "schemaTypes": [
+        "WebSite",
+        "Organization",
+        "WebPage",
+        "BreadcrumbList",
+        "ResearchProject",
+        "ScholarlyArticle",
+        "Person"
+      ],
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow"
+        }
+      ]
+    },
+    "/search/": {
+      "title": "Search | Prompted Psyche",
+      "canonical": "https://promptedpsyche.com/search/",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "pl",
+          "href": "https://promptedpsyche.com/pl/search/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://promptedpsyche.com/search/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://promptedpsyche.com/search/"
+        }
+      ],
+      "description": "Search projects, topics, articles, notes, concepts and practice exercises on Prompted Psyche.",
+      "citation": [],
+      "schemaTypes": [
+        "WebSite",
+        "Organization"
+      ],
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ]
+    },
+    "/tags/ai/": {
+      "title": "Tag: AI | Prompted Psyche",
+      "canonical": "https://promptedpsyche.com/tags/ai/",
+      "alternates": [
+        {
+          "rel": "alternate",
+          "hreflang": "pl",
+          "href": "https://promptedpsyche.com/pl/articles/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "en",
+          "href": "https://promptedpsyche.com/tags/ai/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://promptedpsyche.com/tags/ai/"
+        }
+      ],
+      "description": "Publications tagged with AI.",
+      "citation": [],
+      "schemaTypes": [
+        "WebSite",
+        "Organization"
+      ],
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ]
+    }
+  },
+  "content": {
+    "count": 113,
+    "sha256": "26746da78ddf9ed18d70923888949ce81d95746401c861d6836121b5c35b8f65"
+  },
+  "configuration": {
+    "astro.config.mjs": "a1022905afe81a854aed1566a1676038e699932669083a02c0a3c5458536a31c",
+    "vercel.json": "b5b8f24bc2536845d39bf3f88d30769746621f4d8300c372a6e80c5dc3888c2c",
+    "src/content.config.ts": "cbc3376210de419d148de79a993a9e65fdc5f0f64bb49dc06f820eec61312f8f",
+    "src/lib/publications.ts": "ef3904380b48561d5a51e607ea084b8b733e9b95a21ba8ac491bdf10b966384a"
+  },
+  "outputs": {
+    "robots.txt": "11aeddea5d80b25fe016e6c1168939f01b4fe2a3231d03dd257e4c372b19bf61",
+    "rss.xml": "4e2422c6dbf5194b4e40f68ca521ffdae44914e0ac7dc5c263e96adadb0466bf",
+    "search-index.en.json": "a48ccb1a794c80f1b5133705434f29120a31667271643b1b71f30f6f461c22c5",
+    "search-index.pl.json": "57ff9600452c57d026bcba891c5fbc68467cb9b3901f202721562cd858731c10",
+    "sitemap-0.xml": "61e7d9a65bd7f2cb813837be57cdc6a62bd034a3c53f9be3a45cb3e12d727ab5",
+    "sitemap-index.xml": "ee51e951c507a0bf1c47190b2de21caa2e826634892480d9efbb1f0c81f99852"
+  },
+  "pages": {
+    "/about/": {
+      "head": "c93f83b0281a1a0dd8c2e204c4a1dc2caa651129ee367a6deb8d63a6a4b28403",
+      "schema": "ac2f17e631ce1b9979e32311c76f7a808ffefeb4e8c1cc6d2a7d03fcfdf9bacc",
+      "robots": [],
+      "redirect": false
+    },
+    "/articles/ai-as-a-mirror-why-it-can-feel-so-easy-to-talk-to/": {
+      "head": "d025f4dae2b07cff40e2d7334be6acbe967a13fe779cea82cca6387e3eb8ead1",
+      "schema": "12746202ca2bc9fce5636bf5ddec43e7ddcdeb0f6c9c3620720dadb16072005f",
+      "robots": [],
+      "redirect": false
+    },
+    "/articles/ai-does-not-read-people-it-helps-make-sense-of-the-situation/": {
+      "head": "3ebf8a50dcda10fea2c06071a721df6d61c0dcdf43a69386730876f425c31d1e",
+      "schema": "bc5f11480a10a436d0625e60da246ac06fa79a02ad5d27c4cf5087f4e8df7de2",
+      "robots": [],
+      "redirect": false
+    },
+    "/articles/are-we-afraid-of-ai-or-of-ourselves/": {
+      "head": "dddd2b35256e9fe6419bb1631475bdebb9acd76573978ddc3915edc57e87c6d4",
+      "schema": "2898e160e62179dc9b6c37f4153e406fd1a24859822081d3c9714cfd28c98f89",
+      "robots": [],
+      "redirect": false
+    },
+    "/articles/chatbot-or-human-why-teenagers-confide-in-ai/": {
+      "head": "fe6e2280b613d718c6dbbf7f2193e71bc41cc915ee59bcb276bac4a6cbc13bde",
+      "schema": "82859559e821b4c22270fd2dc1159992f87821c1ff1fe8b2e9c55cf4a10422dc",
+      "robots": [],
+      "redirect": false
+    },
+    "/articles/dont-ask-whether-ai-makes-us-dumber/": {
+      "head": "14030d38a5526abbe2a0ed52684437441d8e5237d8cb627ec375d1c6da12a5fe",
+      "schema": "4fd02806b9a94ca305c8edbf5776d4413f9699e1b672fe28b7e42919daac6b20",
+      "robots": [],
+      "redirect": false
+    },
+    "/articles/": {
+      "head": "d42b499e7417399c975c4b4ca4207f449ef70014003a175ed96cc8eb14504cd1",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/articles/it-is-not-just-about-the-prompt/": {
+      "head": "1801b936edc6f80a9dcd4bcf61c125b175def795974e1d93ed3a2bad70da2c84",
+      "schema": "300aa4a39522438b906ec12061be32acd89420ada960db1aa8069bb9031bc1ef",
+      "robots": [],
+      "redirect": false
+    },
+    "/articles/trust-in-the-age-of-ready-made-answers/": {
+      "head": "14425672bdaec044cd269f98043ce3cdc3538802b0eae16fde78fc2b3fb0f8cc",
+      "schema": "9d0e51e62797bd7a04d7c103bd93b9eefcc6b7f9c6bcd4a1f6fd43ee4a58a405",
+      "robots": [],
+      "redirect": false
+    },
+    "/articles/what-changes-when-ai-has-a-body/": {
+      "head": "e0ab38904159ffa3df46ae40f24f92fff42f0390d1731f2160c9bfc9e8711293",
+      "schema": "0dd1c674fc4bd01a125086dbe0db8ef4d2d4b3b94447ed17f0cad541d6300034",
+      "robots": [],
+      "redirect": false
+    },
+    "/articles/when-search-becomes-an-answer/": {
+      "head": "561f05a0051c6714556ba1006781d50adab75b0566cbb6c8d38caa895a52c5fa",
+      "schema": "2d84cd05843b1810a9881d583b892c7c65257f98614daf9c0e750328ffbc5fbd",
+      "robots": [],
+      "redirect": false
+    },
+    "/articles/who-had-the-final-say-ai-authorship/": {
+      "head": "1ea3377a3b613a41ddd9baf8720c55663fd4bd5289d09d98001c696c8f41c86a",
+      "schema": "e11c364c3428920c6e528306721cbf63c9b27a8fbfff7b2dea11b4c44db0f15c",
+      "robots": [],
+      "redirect": false
+    },
+    "/author/": {
+      "head": "3e059589edb28e08d160cba04581cde635bc4eca84d24de47d460224ba16940d",
+      "schema": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex"
+        }
+      ],
+      "redirect": true
+    },
+    "/concepts/ai-companions/": {
+      "head": "efa7fccfbfd6002346401ef883f8403d930221a97148551e01fbf4de44fd34ec",
+      "schema": "688365e0d0eb10116b46fb195476881bc4794a96a8979998ae9ddf780f489285",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/ai-literacy/": {
+      "head": "34a3e6cc5e2d21b03efe3c03438599aea04b8610138c3da7dfe1485447157dbf",
+      "schema": "9a627357df24c674c420f110dfafe2639d846f2cc062b65735d5991018a2c8f0",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/ai-mediated-communication/": {
+      "head": "4201c0a113048ee5adcd1a57248c1a84320d25dd2697fadab7acc297aae82417",
+      "schema": "fa241f2447d5a008770a5cfd385e76618750edb30d82753c22d148d488952142",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/algorithmic-authority/": {
+      "head": "0fada07fca9a788696d3fd3ae8ff45a63338c761589a011f3105b3b1f1181b30",
+      "schema": "72ed67b722def7917b64722b8bcc2b533920b592a4504a7737105eba155029a0",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/anthropomorphism/": {
+      "head": "53ebe065a5ee355eb67b21279bc813e7306a376c9c725ec06536ad4b459ee9b8",
+      "schema": "15c6f4812cc2cb9e7663075bae975732afb9b11956b020e9e34be1551d703fa1",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/automation-bias/": {
+      "head": "ae0ffd43692df257eefe2b30fda2863c3266238ddbf8f8feb2c5d041a76b56de",
+      "schema": "2d0ce140db24c16556f1ecf1d8441dee0f0f5b4d76471a152cb010efe4f8ddb0",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/calibrated-trust/": {
+      "head": "d4e48201627b9b9ef8124a3ad126f702d8b7333ddc40644b63f1327cd0fff3b1",
+      "schema": "a51738a2f859e1a255553417dfce6a9bc0008a5b89e64fb2b4414759823e7e58",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/cognitive-load/": {
+      "head": "ff02feb7f3290ba996240ab7e8a1bef7ffe8cc2dbc21ae6a8afa18a1c74aa06e",
+      "schema": "7e3873abbdda24c48ca271a69c7bf0a9bd7508c318ef018973cd91d56c9467d6",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/cognitive-offloading/": {
+      "head": "ad3e7ebc75ad89ee5987fb8ec4ee4b377da94e778d3f0f14d802ba180a5f63ec",
+      "schema": "9f91c109b7060a2bb75299fcef967de2f4c2c5c89bf5bb111a042a59196c566d",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/context-window/": {
+      "head": "0eb5ef9b6e84f5c1a557b02623b0d699dee6b03acf17de4590e78ea3b85dbf6d",
+      "schema": "7550b575d195cda55200e2d3a4542fbe31756cc806d0b7781fe50ce38b7aa007",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/decision-support/": {
+      "head": "9d2406b0b1e406f9cc37b5cf050dba8fe6a1bfaced40afc60ea6a10d820ddec7",
+      "schema": "eac301b89e226dbb92eebc3aa4011b97c5bd0ecce4472d3a85d7d57450873924",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/deskilling/": {
+      "head": "7eaf5c303567b56a13d61864b730755e667634648b879439602f3ba888a2aebb",
+      "schema": "249052e0c8ccd2ad44d2181a9ea8c831168364763ec510d27ec28a0ca9cb84e3",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/epistemic-vigilance/": {
+      "head": "3fd337cf03e5da433f81170c881b1b0efdb8d32700ceca1c2bcbb4e43a8d8bec",
+      "schema": "05577bcf01acbb12e8e3231de1a22cab966d5c733a8e68cc04d56cbfa518bd33",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/grounding/": {
+      "head": "e098704943c1ee901b48924c3abf2e075bd9cbe042fcd68078b5ef5c34db25a8",
+      "schema": "0b89eec938bdedb890245b0edc63accc5535ed0d05549290e66b4dee4fdb3f5a",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/hallucination/": {
+      "head": "6d99cc02c7cef611429c1c3d00d8449cf5ced4b77615d31ae7cc51529d2bd623",
+      "schema": "b894fd2997057d4c3dafad857b272e53d52164ddf130d029375f78f5bad61d08",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/human-agency/": {
+      "head": "c410e737b75bc11da74de0529f2795aebb8e84b6f51a395a9e0b68b8fe91d5a9",
+      "schema": "7c4d26da169cd9bcb04f900282221c2dc5e1d2e38e26b8a3ca2cce164192e513",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/human-ai-interaction/": {
+      "head": "8ae35f1702e3639f44d2d7dc66cdde28e9c879b8d66b932e6544867765964c10",
+      "schema": "e0a921921d069b0a70e402470417c21f037743de7b1ff2f78432ea7720cd37cb",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/human-oversight/": {
+      "head": "7b085e8287159d04cce523a41256456933d6143ea62e5007f7a28f8e6cae472a",
+      "schema": "ff3338b4fab870f2894d77b4876689780d49e22a78d8b2782d159badda27c848",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/": {
+      "head": "7b38deb35122e4a615cc76b14f34f578e96a318e07c4747c00cbf53da5439e03",
+      "schema": "60071d625df91b4a5c9cbf44f7bf52b0ee23639a2d82a08b25f6b9e7196ca704",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/llm/": {
+      "head": "4087829cb389832952169d74aea24eecc6cf6c7cbf06af571616981b3488f944",
+      "schema": "96b1a39eb7b95c1a264b31805a2af0ed2eb4e7c82e50f028c99bdca34c7ed16b",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/mental-model/": {
+      "head": "b80b492dbd40abca979ac1960e33c4cb12fbd37110c4e020bcebbd8478927867",
+      "schema": "9c9ea158d36614584ff7c1822b3579212f9e059d095d44706573558d79815093",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/metacognition/": {
+      "head": "59fa6e894c5029561f4bcfc8f580caefec20557be6a240a416a68de9f398ff2b",
+      "schema": "e8b4284047adb400452b552df4f3c3197e1172b646b1996d177f7ac021eea2a3",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/model-output/": {
+      "head": "4725ca0d57911d0b915f59f324d3004239bd73b76c752ed0face60ff27cc6f0f",
+      "schema": "481c23a404f6562e2d0bc6d8e4649c46ea907fca32aa222d62d91b87d8aee073",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/overreliance/": {
+      "head": "99a16eb2d17f089a75120ccc364f090e9c7a34bd87f567706892101d168d6d3e",
+      "schema": "71d6fd36878385aa7b89b82018e240653cbec300969c5ec5e9895553a5875274",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/parasocial-relationship/": {
+      "head": "049c360a6998f467031c8dac464bc2095850310ff4d6c0da49b989842b797bd5",
+      "schema": "89a0e33e95974bd935ba135a9bce9d16611075dccb0399cd5419e7aeb5826245",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/social-presence/": {
+      "head": "c71e7e824f7d54bdf1277bbbf3a3dea837121fc34302c2493b1e034c3ce47017",
+      "schema": "d560d543d3a202733f0c88560162e4dfa31f86081de8b67a23ce6c71e321be5a",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/sycophancy/": {
+      "head": "3ff05fd9279b90ae9be2dd0fead1c85f5eaa257202bc64a176fa66167e7ac122",
+      "schema": "c11612e7c4cde16a03f1f7e2c87e392c106b4d4f232722fea1a7d293123521ae",
+      "robots": [],
+      "redirect": false
+    },
+    "/concepts/token/": {
+      "head": "fb5da12e8bfbf51e02d78ed585060eeddf4b254e1c03d3b8d247c0e80b49cbcd",
+      "schema": "53a3622bdd281ced3d5b67f43f8956a41eb1f73b494e4996895a57ade7492325",
+      "robots": [],
+      "redirect": false
+    },
+    "/consulting/": {
+      "head": "ae744b42e8a79505de9e007974ea4de5eb1678374148e78dabdf98fb04b2f1bf",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/contact/": {
+      "head": "91ff8b7f2c1e48b405adaba761bdc9ca40a0621d6e34d0dc836367e7dcb143a2",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/": {
+      "head": "0a011468786f651e84d5b31b91b9fe9c855b0f06f1323969873cad7d3149ce7f",
+      "schema": "d3c780f74dba81b26a6e8a866b35dff6ad6158fe9fcf51b47274d171471c4435",
+      "robots": [],
+      "redirect": false
+    },
+    "/notes/a-good-summary-is-not-the-same-as-a-good-decision/": {
+      "head": "b6be55da92b6dc8cab8f779c34db5c77773dffc4c8c8782727fb6c03f17590a6",
+      "schema": "5daec6cfc06bd1f9f3fbd9802da4936cefa0a5ee316765c94d42374567053a4c",
+      "robots": [],
+      "redirect": false
+    },
+    "/notes/do-not-diagnose-people-from-emails/": {
+      "head": "600e142b4524bc1fdab27614905101c0a4bffefe96d31833e351a1a25290b6ce",
+      "schema": "f59064d9faee4b9e01e0b8b6ad1752a67580d277484ceb838cf9a0104f3a5577",
+      "robots": [],
+      "redirect": false
+    },
+    "/notes/fluent-does-not-mean-true/": {
+      "head": "d2bdfb8cd4b2c2990909a523a3168f9d38cde1a8dc87d03e8981917d5c9f85ba",
+      "schema": "c3d3d317191708612f8ad02114fe57279e6078fa94d61780086676b6e9027dd0",
+      "robots": [],
+      "redirect": false
+    },
+    "/notes/": {
+      "head": "96a172b95eb30b3a226fcb173a60f5feb82cce48b7585621bd18d6c55cd40830",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/notes/openai-chatgpt-gpt-llm-difference/": {
+      "head": "eb5637c387789f893cd831dd407955f5af7f254f60627303ac83b65da6bb72c4",
+      "schema": "cbaebf5f44e598b4830632af6161e15c268703ded16ef108bf89def0ae3cdb89",
+      "robots": [],
+      "redirect": false
+    },
+    "/notes/the-model-does-not-remember-it-works-with-context/": {
+      "head": "5b3c33800a1a85d4d9c97990f54d497b114775eda7e29c132d44e983d38ff210",
+      "schema": "23b014b9362770038c9022556aabb9c68cc3ac115a192abda415ca912f92c955",
+      "robots": [],
+      "redirect": false
+    },
+    "/notes/the-model-sees-text-not-the-whole-relationship/": {
+      "head": "e5d7a6e2df05e7f8bbd68b8866608934c15083ce2bc91a9fe12a1e3902db9973",
+      "schema": "1931af8997373b2b7c55f269c331a462ec94b44ba8a1b43174dd63dc42d9fb45",
+      "robots": [],
+      "redirect": false
+    },
+    "/notes/youre-right-said-the-ai/": {
+      "head": "8dd7106f5b37337cf50d553306b12ef0e77f3de3477385ad0eb28f678f277fca",
+      "schema": "0400ba655073af12c36388afc9471d0bb9732da2521526658cced1edf16343c6",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/about/": {
+      "head": "850a320af8bfe56447b8b4e5dd14e967ee035bcdcea5131a5d4603382a069e96",
+      "schema": "3e1c3996508e0f3b96ae4ee2a94f83f3c215c1f6ae8a2f73e499a73516f39691",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/articles/ai-jako-lustro-dlaczego-tak-latwo-sie-z-nim-dogadujemy/": {
+      "head": "bba0416774f50fde54e6ba4a1cd7af38e4660752e941bec5b29d44c1b901863d",
+      "schema": "2d217b2447996c6a201a2ce83abd115edc08f126f07cc68d2ba938dbc926b490",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/articles/ai-nie-czyta-ludzi-pomaga-uporzadkowac-sytuacje/": {
+      "head": "267be77cca9db5fdb39f55e3b8952c57710b13138ced1ee8dfc379f661eaa563",
+      "schema": "87529a2e6cc873b972716b2c3cc51973843fd9730b8308c63e806cc7559d2879",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/articles/chatbot-zamiast-czlowieka-dlaczego-nastolatkowie-zwierzaja-sie-ai/": {
+      "head": "7602b3b06671ac7aac9c517bb86ae70dd373e30bc59e28b20adcd1ed11b6b84d",
+      "schema": "f5ed94ad9fa41f1a3a0caea7dfd52b2f69522ea27e205fdff1b6f19e4159d80e",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/articles/co-sie-zmienia-kiedy-ai-ma-cialo/": {
+      "head": "d5a25cfb5d6a9c664958f8c1f09d637b0a7b6ca48a587a53572cb880874805fb",
+      "schema": "5400256cfb9755e20ec78a3f3f4856a37b34bdea2304920b1321bae0cf40676f",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/": {
+      "head": "4bafe8ed06270ddec09f27a713e1675093a8ff48c18020d3dff464111dfac26c",
+      "schema": "30685e65cae8eef3cc71f63cb61cd968239c10219ce6ec74fb820a5a68d50649",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/articles/": {
+      "head": "dadf0851eba39c5612fb5d92ae587a3038ed78f9da03c0afedb573527bcdfdd8",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/articles/kto-mial-ostatnie-slowo-autorstwo-ai/": {
+      "head": "349ef8817d8d68880570254425e2b0a32886803f92d5e12394360ae718fcef71",
+      "schema": "ce8dbbfd122ce0c3d5ac6dc7aaad7dc41c02ef575b94cbeafd8253c13c0e8a6e",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/articles/nie-chodzi-tylko-o-prompt/": {
+      "head": "92c453605c390fc452d1a0042bc89454f1bf22a457def43e5e70f2ee5c053e06",
+      "schema": "ec4b68016271490db4fd05d8b0c6c79c551634e1f607d1a20cf89a5713d2fcb3",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/articles/nie-pytaj-czy-ai-nas-oglupia/": {
+      "head": "9ad122eb269d36b3e5f134d91511e27923e43027d187c34b13c42ed3fa96d9d4",
+      "schema": "87e66a94b4c43bf61bcb52a6b7baefda799e5a714ea145ea5097b151c4a9a0bb",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/articles/wyszukiwarka-odpowiada-co-zostaje-uczniowi/": {
+      "head": "9d76eb661961c3648e7f8e04626d05386b6f593b88f9837d304d9519e31f0bde",
+      "schema": "8134ed3f94bfd1e9664b9c725a6458eeabbcb0e2387f4cd88a5e30aa8b859a1f",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/": {
+      "head": "1a75b307095468832a35330875778ae02d40034936fe16faefc831edffe8166a",
+      "schema": "bf464eee21621bf13b3b321cc1d2ac8719f5fad274a39455401c04003aaec218",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/author/": {
+      "head": "606457a7dbfce62f0da11ca36c1e0555b415b196bcd05d14dec3e93e98d75b5a",
+      "schema": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex"
+        }
+      ],
+      "redirect": true
+    },
+    "/pl/concepts/ai-companions/": {
+      "head": "bf37ca9c7f5003bbe739ec9d98f7e522303da7858ce5200095525002eae63477",
+      "schema": "a3ac95bc7aac0fb2bceb7428082d3ea47f1108e5d1c3fecf669fb72f7e564423",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/ai-literacy/": {
+      "head": "48df96641fa41f9854adf2ec89501b70bc9357b4c4046231157ee38bcf24383f",
+      "schema": "6b0a1467917f27b2c761d18f125c2a529fa5ef6b38bbb0ada7ddd51682db6f3f",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/ai-mediated-communication/": {
+      "head": "11cb39d07188bb58af444a93ada5a40ebc097bf2243405287694d222ce05d13e",
+      "schema": "2c3b270718b562b219238a8b62466c92942dc2a23b3f6afae000b91ce2b22747",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/antropomorfizacja/": {
+      "head": "575f2d12b5454f3e4910af3e6f532d9b8b293043dcad7c925f4de0ff6e904fb8",
+      "schema": "8f2ba1193450ba7d01d0650948b52cb2c36dc59c5470886f50067f6f345e1e51",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/autorytet-algorytmiczny/": {
+      "head": "1b3cba7c608ca0fd7c5daad262677a1db08fa985df9aa9c9ae64335c3ce2a414",
+      "schema": "561e2951f5d2036bdc2687cdc200e192d319227a2310a771592d7d7f34d2f55b",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/blad-automatyzacji/": {
+      "head": "935b6ccaaed00723d5d3390d61e29199b05ceaa4057409f0083fed17f689089d",
+      "schema": "a9aa20dd54deea8ca26580f5ef44b46b255d34662b15e216c903834b4aafa028",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/calibrated-trust/": {
+      "head": "01aaea9a71949145ab34062b21010c5b66624713cf7aaedaff1e7ac6caae10de",
+      "schema": "573ecf885ca6b3986923d1496d5df6cea4ca3c39c00b4b987f41f090e0cf795e",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/cognitive-load/": {
+      "head": "1aa459feb25e8136c0d218ee9c647decff6d506f3b419517bad0c12fcd267090",
+      "schema": "366efb264cc3aaab51ea4ce4a7443587810ad8f3312d53c2412146100fc0a9f6",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/cognitive-offloading/": {
+      "head": "ae099035a2fa2d9c3e84f93f58e2d5e505e6ad73d7653c21af7db0dcef8bb818",
+      "schema": "560e0d4bc4d5d786284179ba16a63c1335c85d6c4fc4e2705759c0b082cc0d0c",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/context-window/": {
+      "head": "80622809ddebbd47a598973590d87c1dd02d4cebe4ff308eb62cde95c8bfd3a1",
+      "schema": "c1bcfbb791099d4b4bc82426cc7ce6ac007b360ffb59111cd77470a5095d4ebf",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/epistemic-vigilance/": {
+      "head": "e29590a4003974ff5d71b0322d7bb80c9b3267573d4fd33826f3eed70bb7c058",
+      "schema": "c20d42b485181a2c48d92722775a341a933183ee0e6e76b046254da0f7a866f4",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/erozja-kompetencji/": {
+      "head": "8715a6c77100a7ba6735911d05dc88eac6777400a5783c1690b3240c71444b36",
+      "schema": "6f6d380980e9f13da134ba05cb111c2c97a69334bad242b21e42063b24f88425",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/halucynacja-modelu/": {
+      "head": "9af66bf054043022650c78bc2fcb4ab29d2bf9d9f379853d571fc9ded1ed56a5",
+      "schema": "c762039c74bf21fdc46f0bcd5e234a46de183436fb31ffde05be692e4f5c4ac2",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/human-ai-interaction/": {
+      "head": "283f0e7f82ee3b2e3241df3160066a014573eb9ad55a307906aa2c6aec46ae64",
+      "schema": "7bbaa47e656398b0cb584ef982cf27fcde65c571f8649e48c8f9f10fb789d00f",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/": {
+      "head": "0436482665e84e51b94cbb4e4a23dfd751ccc76c6fd920d57ff40f53c1ca02a9",
+      "schema": "b371e68b8309fb80a01ab2f6ea8475287599f34cd72f2cb65b103ad6ba57a5f7",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/llm/": {
+      "head": "08e71e9f2a4b1783b1a567fedf01878d981a2cd10bb8466d17d02a014dcaf7f0",
+      "schema": "8513520f7597472126902201403eca6822b869b6270ca6158e28c889e706fa41",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/mental-model/": {
+      "head": "1b21333ba489f5ca10c4c630b8fc0d2e939dcebb97b41e28c18f0cade062f26d",
+      "schema": "0a2ebf4680fbe3041685509fb2dfe0271135819dccff4ba3ba3176b8fa0c4ed2",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/metacognition/": {
+      "head": "79be37947555dad259dd2c9faca2c618c7279972079f03801921a252551f8a47",
+      "schema": "1f7f532fd64479214acd1dcd4719f6645281b2df6e1294677f8cd0f4d66d6634",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/model-output/": {
+      "head": "1fe89db1aa0249f6cca0dc40e369b4d9e847cd529a04126c5e92ef24dd7a0149",
+      "schema": "64a606c03596cf11295da96ef452191b4a72cbc0d8bdca05152a48a4af0ec2cf",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/nadmierne-poleganie-na-ai/": {
+      "head": "d86f610e6cc7e3908b20ade80285d57f66d777e97211c33332037fdd8e71e430",
+      "schema": "492b19683cade7af7c7fbb95db02cd68e26b543d69426083a8f97af05bcc0c49",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/nadzor-ze-strony-czlowieka/": {
+      "head": "408e37dfe2cde689c6e03eea93932ca06f3688ebeec9f45a17d09b7b8be71077",
+      "schema": "1dfe48342342981da94b030ce55f35f03af1528eaaf06c14aa92c039d647e0c6",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/oparcie-odpowiedzi-na-zrodlach/": {
+      "head": "4e9ca5d960363897c158a409f5782dbd3cffeee777fc2b9a8c89bd42007a7d6a",
+      "schema": "36f55d6e88b0172daea2599683dd90c1c4f4a8b2c826a24153134841a34a26a1",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/poczucie-obecnosci-spolecznej/": {
+      "head": "c732d303e03cf944e97f9d72bce37f067dc4bf4109d46116bc41ace830755bc8",
+      "schema": "89ede7fd278dc8661f70b7807ddc38f178d615dffc56ebe8a648868eae59395b",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/potakiwanie-modelu/": {
+      "head": "38af701b114b2badb851fe898246b64d8da3d52a5f72c739d4c306f4610fb266",
+      "schema": "43f08c1e00396d01d98b5a59d90c8e76f95982f5eba9f26f6de44b142e0d167b",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/relacja-paraspoleczna/": {
+      "head": "9978c2a13765d12a433610785034fd9f988c3a30825a64518064a69f936b3f5f",
+      "schema": "5832d4ec255f940e6bc9ee3a5670c53eeaf15c315d503fc7acd0afb298ae1066",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/sprawczosc-czlowieka/": {
+      "head": "616eb55a4a7d14c830a8d51944bbb02af7c8eb45a7ee7ff0aea7f9d56ffb9bd6",
+      "schema": "305f050f437a18ef2eb3edb25e6e2c96e3a6a22fd4922321d6edeff7dcfc1def",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/token/": {
+      "head": "a6e990667811522b684e586dfb0a5278724ba48e02854bed3ad088890a8c02ae",
+      "schema": "8b5e99c7a36bd1c97d5ad825d2e7a2746481b0480e62c893c9561ec54db3e58c",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/concepts/wspomaganie-decyzji/": {
+      "head": "308b36458df8f4c2bd45a326459b4498ca0046610a35b68c9d2414fd5845ac05",
+      "schema": "2b4b8a484ced86a3d8a9c4d8af11e433984b904e1fdaf48a1a896ab9c88d7212",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/consulting/": {
+      "head": "fcf1661610dc769295430d3a1d8c307b2b5ff05d6556549a44ffed10eba6143e",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/contact/": {
+      "head": "f98564ca418cd5e8877c9311fe3915fa6a6289754777e3d1051c2b3c07dd7a53",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/": {
+      "head": "dc181bbe6dd7bade8216e4d5de87a865c24e69681a204b0c3f3aa6e22b5333af",
+      "schema": "92e968da14ac8a5fd52526437470a0419ea1d487632f70faf868cdbfa3cb7bc9",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/notes/brzmi-dobrze-nie-znaczy-ze-jest-prawdziwe/": {
+      "head": "97a408713f0277ae22e0d3d54f3c9bd6980fb3421ba9bd098d2233f323208414",
+      "schema": "c2c113863543b25b6c60bbc888e216d60b7964979de1caefa148b5c3ea7d5045",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/notes/dobre-streszczenie-to-jeszcze-nie-dobra-decyzja/": {
+      "head": "a1e8c6e54596825f95007e869dae96ddfb4794057cab8707849e107cf736e295",
+      "schema": "0036f7e42a033c8d487cb4cfe65aad79bd2a9edb336bdd1bbedffd400cc77071",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/notes/": {
+      "head": "7870414fe33d58c8589f7fe32c21dea265e6bf715b971d26535e68b26cfcc679",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/notes/masz-racje-powiedzialo-ai/": {
+      "head": "679164724261fb8ec3d0113fd2efafe3856482b6853b93d48321ee8151ba4a85",
+      "schema": "2fce6af6028b1213c82cabe0e790bdfa30f94b17e253f2a2a6753e608f980d38",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/notes/model-nie-pamieta-model-ma-kontekst/": {
+      "head": "fac17bfac7ce78c22ecd282945e006934ba09d678d8f1bdb00a32c92d698e8ca",
+      "schema": "2a45cdf3917eaedba88c175dc2b29bb67d36d1d837294c54adc0720adcf551d5",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/notes/model-widzi-tekst-nie-cala-relacje/": {
+      "head": "99540d28dc36b23eb948a6f11f20c74ce2c01e077e2e9c5b7a705df513c86b53",
+      "schema": "33f39e3c144b1fc6b8fbdfc050a65403367a811b4bebaffd7b9bbd9b1850acda",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/notes/nie-diagnozuj-ludzi-z-maili/": {
+      "head": "022a0154befcdee208dfc41a9aa481efe9665ff47af44a15b6465612373d308d",
+      "schema": "20a114cd29fb946f38acf26482715de7a3e7e3d05fe49b5ea103bff1a5e964fb",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/notes/openai-chatgpt-gpt-llm-czym-sie-roznia/": {
+      "head": "4fab42fd34f1dce2a966caa6cec35f149b2a08a64db2307e844b6b9a0965f7cc",
+      "schema": "7e5365cdabf77d5a6f52f5da9a8aa1c633703912fa5f19f9f77cdd0520bcde82",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/practice/": {
+      "head": "86041d1869be68b78c6c49888223d6b5df0251529fe18e477ffaf9f3c6569ef4",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/practice/jak-analizowac-wiadomosc-bez-diagnozowania-czlowieka/": {
+      "head": "b458d50d148c10ae788f16e291009f32984c5cb0a0c44a269583c2a5a61477c1",
+      "schema": "8d3adbc88610c011e05816f280def0eaf5b89d36d3d13f247cfcc98b30884aa9",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/practice/jak-nie-pomylic-plynnosci-z-prawda/": {
+      "head": "3e90ee0fbdedfe842d4dcf28fd5cb6faa01c4cfa223782a18202afbae26fb2a2",
+      "schema": "0be2e6d9ed2a1476c502f736b9bebb965ca632b35b68f7e3a16fb94a1bb39fef",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/practice/jak-oddzielic-fakty-od-interpretacji/": {
+      "head": "f9fe2b0fa98eb8cec0856cdd9a12ac814df75366ffa39809d7e8cf08f39e7f63",
+      "schema": "90c2db50807d6cb0ade4f6002f4aaa2e2b8ec3c82304c689716db1e80a52537a",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/practice/jak-poprosic-ai-o-kontrargument/": {
+      "head": "2dd8aae8c32999013f3b2c7c6ae1f44458701104913313a731f5f8f5b223bd8d",
+      "schema": "434a8efd78bc666929aca5b2b2c53fba668ff9bc648bdd1d6d27a0bcf9721fa6",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/practice/jak-poprosic-model-o-niepewnosc/": {
+      "head": "4b9e8915a64d7e92ee16bcb1428b3cdc948bba9fecb36ac9eb2c0507fc6a6b82",
+      "schema": "54658393adecce7780eb1591b853523a5f5ca78a43630121878d6b0a0de6fd56",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/practice/jak-sprawdzic-czy-model-ma-wystarczajacy-kontekst/": {
+      "head": "d6904715ad73e97d95c90056b724ea20f3d7563c0da5268f3a8a6ab5d575ad68",
+      "schema": "34cef5fe9fdc158ce02b190b4e210169d95e156dd1dce39277c2b8bc7088e39b",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/practice/jak-sprawdzic-czy-odpowiedz-ai-ma-zrodla/": {
+      "head": "62b4e9cdfb0d27062015d847d1be9436d44906dbce14ac16243a97c792a4ffeb",
+      "schema": "ef19b5e85edf74f3073ee84c2708e0de51e22d93f188195a319ac397e55590a7",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/practice/jak-sprawdzic-wlasne-zalozenia-z-pomoca-ai/": {
+      "head": "26c863546c392cd40764e46ae60a4f878a583cd9414d0548e39465e6340e4d8d",
+      "schema": "69186b666a65d22801f4f93e9dcb639431a6a7439776a903b263277a508b1979",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/practice/jak-uzyc-ai-bez-oddawania-mu-decyzji/": {
+      "head": "04303ee1c071393fe22cab8d742e4fcc9b7b9ab99ab5f82d39a620a9df0265bc",
+      "schema": "37fdd9bb55e18589ee5824709cbfa3ffb79a2ca1c389aba54cddfef325d23815",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/practice/jak-uzyc-ai-jako-drugiego-czytelnika/": {
+      "head": "b3e0a646c679a319388f966b166e4cb1a15686cd046c898346da9c2dbcb9fec7",
+      "schema": "26103c4f247ac1501571a3f5910d08b71d38c9c1d989d386ff619ca819210a86",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/projects/beyond-ai-share/": {
+      "head": "6491888f9b31a9aefeac77b15bdda07cf79201988ed66e840ba90131db89337c",
+      "schema": "4ad9d6cfb4687986c4d6fc741df56d80506790ccf9132939e39e0834bdf54191",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/projects/humanai-lab/": {
+      "head": "0466d64d0f72958ddd5c7f5130a67df1fa23e7e87bd8330a7444dfa1a7d880bc",
+      "schema": "fa3ac137a23f20016faaabf73434024c535be9ae885e4993a587f31bb20cc1c1",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/projects/": {
+      "head": "03bef1968201c31794af112ecf678c05688e4f84cfedea16c78a65954252cca0",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/publications/": {
+      "head": "2f2bef9fc7091cb97f66c8a7dde4ad3b5ee5744998e00aa69cbe82c7b31a19af",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/search/": {
+      "head": "6dacc52b97823decdb26125aa75aabdd142d29236a29fa35c6797b9ec8527fbd",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/ai-companions/": {
+      "head": "8cea4a5637c031fc4f4a4ac6a245e562950fdbc4081ee2c226dae092ff1125f8",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/ai-i-czlowiek/": {
+      "head": "dc99573943b44d024e073cd355c8a48eed7b615b5026b3d3b42a4e2a37b8fe49",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/ai-i-relacje/": {
+      "head": "f36345a31c586fd8a4d169c8a2f8351f229beed91828e298084fa183525f3452",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/ai-literacy/": {
+      "head": "af922b5eff026f3c7a71d9ecdf9fe1154337dc5c0bf86883fa8393caa4638456",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/antropomorfizacja/": {
+      "head": "aa586a8ec058e01efc54035e149228a845d677d764b6bc47866ae95d7d5bf6d9",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/argumenty/": {
+      "head": "627ee72d169559e1f3e2a79f6d98353ed77a27e8812c51359c18f925cf37b4c0",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/chatboty/": {
+      "head": "deebe547d0aa3545ee3a9c6682ed1eb8b4d1bde070b5e993eb4e6c518cd6cd41",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/chatgpt/": {
+      "head": "8f931a7503d0ba684281c9c0d7d30429cbb31b1197599f496dda8b828ac02fcf",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/context-window/": {
+      "head": "356c9bb08fc9e31eb8a755e834d61c022d92bd7992e27ff85f22469c4d69046d",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/cyberpsychologia/": {
+      "head": "c105073f5da51c05b0baba9114f0e9836bd2041a8a39aebbc31df31c917ff4f7",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/decyzje/": {
+      "head": "9dddddc654395b6c180ea6a7d5766a3ac0dc2bc4960f111306c0734ad99a81d4",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/edukacja/": {
+      "head": "b4df3cb3d8d9ecf41038902b5c5893b4d9c69a246b5c9954b2cb623727d25140",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/generatywne-wyszukiwanie/": {
+      "head": "cb0800d9340bab9199eac59dc40e278adcca37140042da1a30bd203428e67f0c",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/gpt/": {
+      "head": "3adc1287aa7672de17b5dbc648fbc3e1ab5f904bb20345aaa091603a22ce768d",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/human-ai-interaction/": {
+      "head": "aac156b5e27c4271fb66a7da08ef002e089121ffbf70cd0d894b9aa758239512",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/human-robot-interaction/": {
+      "head": "e63fa2a06a408cc06db8363aeb27a2b1e47912133d7e60703a3ecc7b9b69fa74",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/interpretacja/": {
+      "head": "e3b79795dbe7fa1c8ab47a97ffbfb1bb66b822b3ff4ccf3ddb160a8526182f36",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/komunikacja/": {
+      "head": "8e46b888d4dc5508284d098fd9236eb4efc4125290e68d40c25bcf07cb23d49b",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/konflikt/": {
+      "head": "482fd7ae9824983220720eb430467f7914504c81ea55fe0115551000356a4f07",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/kontekst/": {
+      "head": "ca0ce7e5ae1f504d1473ca90fb96744bb33d6efb796dc579433a6af13b4b9b49",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/llm/": {
+      "head": "ce06dccb82e27c6f95fad4b74a4281abbce47c1bb48259f6febd75148b6810a4",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/model-output/": {
+      "head": "c275b2e38fe6b412386a7560241ea52e2ecf797e64371d20c5a758131a81e268",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/modele-mentalne/": {
+      "head": "95afef7b6481c0fa448e506af98c96efd497ac66b94b87af14905922b23d554e",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/nastolatki/": {
+      "head": "147108919b8c68fa21de39c2a9f8528c4d44fc700d0c22db99584c51fb875521",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/nauka/": {
+      "head": "64036b5d9286fc47025bcba2341e56750131a5abfc7dea87c827b7bc0434d68a",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/niepewnosc/": {
+      "head": "23a30e6ac04e1568c81bad14b15ec86edba05d346d8929e720ccf4c41e1c796d",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/ocena-zrodel/": {
+      "head": "09b46658f83eb3ba2f3ce140620caa3388a1e16e43e8980e204241799cdd1e28",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/odpowiedzialnosc/": {
+      "head": "acfee9cd84e51aeac60bce66ce08c47ef7b4e062bf398c9670ad0fb1b7e8b68e",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/openai/": {
+      "head": "1d7cf55b3691ae1c69460cac5112dd929ba620fd1bafbaf7c87845051d0e6ecc",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/pisanie/": {
+      "head": "0643afe60365036e6975492c3678332c9972a076fa4116cc063b8a67de36b9da",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/plynnosc/": {
+      "head": "1470e275ee1b671af727be2aa32e0a42c2cd364ee23e1e51abe711f27a09db3e",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/podejmowanie-decyzji/": {
+      "head": "80b3f02c45aef84704494c2d23555df39dda26979a975992ca8ef188fba19ac1",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/potakiwanie-modelu/": {
+      "head": "183a4b6145407fc1eec261652259e5f7f517c14d0e87d400fd6281767dc1006e",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/poznanie/": {
+      "head": "f13f5917e06de0da92cfbe7bc8bc851467642b5840d0a8f2f1aa88fbc68d9ab5",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/praca-z-ai/": {
+      "head": "c327711e631135e09b07aa193007180fb4fa3266e8b8606aa1713629924e08b6",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/psychologia-moralnosci/": {
+      "head": "8d5fb08bedc6d6e7051033e5e9b7dc34f765974bf499d19175f27896158b7932",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/redakcja/": {
+      "head": "72060c8a02760dd0b530e89d9ca340667326caa4f7bdb1366147f90e928389fc",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/roboty-spoleczne/": {
+      "head": "f45226157a150aa10dacf43e1847e3751a1a990d6dde2f76b28539235fb22720",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/sprawczosc-epistemiczna/": {
+      "head": "2a3a022a2b8bc946a448b8f97f521ceca5e47753101da110d5215a5271bff796",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/sprawczosc/": {
+      "head": "5ab9fa4e5fb1ed68e5e4ccfceb69e218f06083d43ef468c191faa9ab23221404",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/sprawdzanie/": {
+      "head": "485364103595960da80cec9ab009948a45fea450fdea8874c8c989736e01b94e",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/uczenie-sie/": {
+      "head": "745e0ec57d5ce0494260f8a7d0bbec360a659ef1a0140ad8f64018a643f599b6",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/weryfikacja/": {
+      "head": "f0e834233eb87482806485d8d7163bad562574efca2d486e021d0db102bab27d",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/wiedza/": {
+      "head": "b4fe89c8a8c10802fa285d6e883d601c9d7613770b7a18f0c4970c369b103a0f",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/zalozenia/": {
+      "head": "1222032d1016684b1b9053c8a0322d7ccd202e21847c37002dffd72a23cb50fe",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/zarzadzanie-ai/": {
+      "head": "1d8c77c19f18c7d6cdabf388f70127ef60a43a061c9a9c38313cef42af49b9b1",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/zaufanie-do-ai/": {
+      "head": "64eeb5fd87584dc2fe5e2c895c44ebbf1a2fabbb9eac91bdedb1cf06b729abae",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/zaufanie/": {
+      "head": "67e1c5d76e66ac00b0aa31fe1872a6ec73571a0940f953cc8f18265fe50c10b7",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/tags/zrodla/": {
+      "head": "0d541c1896ef80db73caa647de16ed8367584daf1470cb2d7ddc76f1fe60fbc3",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/pl/topics/ai-i-myslenie/": {
+      "head": "1efecca47afa11765fc7f5a574d8952261367b6212d1e0551fcdf8096314ae5a",
+      "schema": "6505ec03f801d03d6b9bbdc67e503ea1bfbaf933620afde0402e41a487c7433a",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/topics/": {
+      "head": "5a33c132b59f994b4cce902026a82292bdda8e132e184be4ddff55e1b351f7c1",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/topics/sprawczosc-i-odpowiedzialnosc/": {
+      "head": "663ff6e83946b3ebe0ccfdabb19f111682131dce5b079343d5eac90ad72e420d",
+      "schema": "b74a774686834b4cb0f81cb5cacd7ba7d09d83a9af778fef3a6e2f36cb835ccf",
+      "robots": [],
+      "redirect": false
+    },
+    "/pl/topics/zaufanie-do-ai/": {
+      "head": "4265f8e3614c1c3ccbde499052d18a5808323bee4dead8b2b52ff58aa854a977",
+      "schema": "33a8f568ba048311919ff53dd85d8dda5a497036713299277900e944ed5dacda",
+      "robots": [],
+      "redirect": false
+    },
+    "/practice/how-not-to-confuse-fluency-with-truth/": {
+      "head": "cba5b8eedc2f5102a847d288ac450142f0f49342a9ea2e24105293274529bf67",
+      "schema": "6299b5e1b7b830120adb202aee68ecb777b7ee30264fabd00eb04cae064bede0",
+      "robots": [],
+      "redirect": false
+    },
+    "/practice/how-to-analyze-a-message-without-diagnosing-a-person/": {
+      "head": "ccfec0401b23e59130f17b67f45e4524ae9b7147259f61738642a110a7a700c5",
+      "schema": "a8ec0f6231bc86ef47994d64da2bd0d912d1da320a3e2740f4353c1f80bbe169",
+      "robots": [],
+      "redirect": false
+    },
+    "/practice/how-to-ask-a-model-about-uncertainty/": {
+      "head": "1dcf1d7676a885b7b24b5a32392b4912dc80549236437be3c8a7271dce001bdb",
+      "schema": "4f807804e8672af1e6d749dab0b0dcc43ff6004e70fda5830a13b6e06bf79f0b",
+      "robots": [],
+      "redirect": false
+    },
+    "/practice/how-to-ask-ai-for-a-counterargument/": {
+      "head": "f5387b541c8cf476f9e76efda9c00d5ce05a9ce236f143a9ff727cb95d164151",
+      "schema": "5af6a109d683afe729e3a2c4641040587ed39381f94f0690a045ab1fddcc0da6",
+      "robots": [],
+      "redirect": false
+    },
+    "/practice/how-to-check-whether-an-ai-answer-has-sources/": {
+      "head": "71a823a637f59e9f3289337803bd7c06cadd20f2ce66055c9b64466b182f9532",
+      "schema": "6aed4711ea12442c58c29425810a5c9395c512edb6b59e6755afa89a49c9d121",
+      "robots": [],
+      "redirect": false
+    },
+    "/practice/how-to-check-whether-the-model-has-enough-context/": {
+      "head": "ccdf4693f7e7fff937c238b448cbbbb68004fb4067ade5d61833fdd63a805c9a",
+      "schema": "960108fbfa53f47cc979fa341aed269f35da8229e47235abf3192be84aa47875",
+      "robots": [],
+      "redirect": false
+    },
+    "/practice/how-to-check-your-assumptions-with-ai/": {
+      "head": "cc5d26cb4a7ef8346142c2117d79cd608b88025e6586e4b6c16f9503eb2cd6cc",
+      "schema": "253b98d38af31f4e98b7f2bff4ea7bf287e44bf39a5bd42609bd03174f712aba",
+      "robots": [],
+      "redirect": false
+    },
+    "/practice/how-to-separate-facts-from-interpretations/": {
+      "head": "43503ddb8783a3487bd0faf81357270106df94212f31208070021b45d00f0f8f",
+      "schema": "104038dcd0d35111ae229dca210d05ef6dbbc5b9ee042fb5871bb6b0ac5464ca",
+      "robots": [],
+      "redirect": false
+    },
+    "/practice/how-to-use-ai-as-a-second-reader/": {
+      "head": "b3aabc2ae3c78baf12b984877337c4b99fcc391eeaab6d111cb4b7d2d170d5f2",
+      "schema": "705db5c9fc894ac54e689ea6cde6ec92357c9395922e8b56ab15799ce358adf3",
+      "robots": [],
+      "redirect": false
+    },
+    "/practice/how-to-use-ai-without-handing-over-the-decision/": {
+      "head": "93f3823cf5c0f1b74cccef487f8798b0e3d14410f5ed1b4bc8375921333a7871",
+      "schema": "d906119e76d3f46709967cf714c8f98afc87ca3accd6758597b1fda60ffae202",
+      "robots": [],
+      "redirect": false
+    },
+    "/practice/": {
+      "head": "425d7bbbe72151c8927bb245db2ce34059aeb3afdb0932c93436caa16079ede8",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/projects/beyond-ai-share/": {
+      "head": "337453e2d9d8cc71c3b1647518fef64eaa94805c9aae4d6e254c6f78a8b4136a",
+      "schema": "549870a7fd9d5126b133c566c62657a3f2944fe4e12c5fe80dc34377b74e46e3",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/projects/humanai-lab/": {
+      "head": "df385dfe59bd24666ada02e7e59f4acf620cd68b9898865fc333f9eca631036d",
+      "schema": "d019efcd56f9c30f412fc6cc8c6b0f35b04f6b50a3ff2f74b47756b0a70b7e4b",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/projects/": {
+      "head": "1c6125b9159f3f0011c76fb7bee04163a6e6e7fb579aca8bfb4fc2a8679d7825",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/publications/": {
+      "head": "ec353f08d33b0d0dc26a93ab0e79cbd7cbc8cfc9aa6286facfebbdca3506f295",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/search/": {
+      "head": "21fbb53569d1995c7402ce88bd18c39ef54e8619b84da4edcf180062a286bb77",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/agency/": {
+      "head": "a6ec3bc9f22fdc46f84b78f4fe7324b3d02957a24b8cbd9015116d40f44ecbd3",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/ai-and-humans/": {
+      "head": "08781e4249677712142cf55b1d9e82f9041356e5c604dbdce207e61eff5e436d",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/ai-and-relationships/": {
+      "head": "afbd4640c441e6f863553c6c902bf395b9509e63b731d4a09ea435240ff94564",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/ai-companions/": {
+      "head": "5ef67ecb195a0ebf85dc74cc7bc92d99815f4b4873d6b7717097359ea07932e7",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/ai-governance/": {
+      "head": "a04a4673ed74a0b0d772c25803aff1029f13685246d42f47623c6991e10ca422",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/ai-literacy/": {
+      "head": "98d013a78ed5c6308eec118b8d87f56470dd4b4ad9c1a5e0fc317cdcf1e2e0cd",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/ai-work/": {
+      "head": "fb0167e04d4db623457d7f26cf4804615c4d78c045d913e3ae4289a448cd56b0",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/ai/": {
+      "head": "acc7aad28056d712e5eb6679f9c75d263d797fd4140ea9badbae5ee18d2e0fb6",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/anthropomorphism/": {
+      "head": "cb1321770f621efde1075972ef78250b5a9260b3b786b14adf0cf364948e391e",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/arguments/": {
+      "head": "42fb22407b3b755797194d65b69ebd69aee2f7f45944bcd2789a368719fa0714",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/assumptions/": {
+      "head": "bfe7c7349903e8357db6343a8fc855ba459b366e14e8cfc0c1f0c22cc7926b3d",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/chatbots/": {
+      "head": "96dba230b5036fdaa735c19468541d4ca4af9496f644311234aa43ef15cfde6e",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/chatgpt/": {
+      "head": "5e002897a5f5eb0301201a725f30f8bc88813be274d97434b7cbe3ce53056edf",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/checking/": {
+      "head": "8089de8b6815906e156bab5b351acbf2d1f635fa7c68ff845f0d99a381bc8581",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/cognition/": {
+      "head": "3eb8fee5a8f9070fc3e37c08a5bafe22e2b4ff17ccf4456c5fecfc5799477a98",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/communication/": {
+      "head": "7a77053d4ac27e88250eacd321be6aaa30a98d15d23d4d7ecf94b8053fa5ff5c",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/conflict/": {
+      "head": "27b84a2b5118700a87b901f528f040dadcd6a7cb562d34717718b2003ebb38b4",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/context-window/": {
+      "head": "c01f2daf5dab684b00bbff50fb8162f95e6a9584580983151643de18545afcf8",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/context/": {
+      "head": "ed398544809ff6e7b09ebda2583067f9349a699db398096d11fd8b045b1e05a3",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/cyberpsychology/": {
+      "head": "afe0c2d104ad3b950b2a28a6440c660f50643f5c16432a730afbbb7592fbadc8",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/decision-making/": {
+      "head": "bc6b18aff9e95cc22c5c22cc7565e3cb5efb3b0340bcfc9ca9d377ee8f8888c5",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/decisions/": {
+      "head": "98fbffcccc50772945920b8fb4a91ea98f811b96cde323da06ed1053fae292a2",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/editing/": {
+      "head": "524b41069cdc84038f096bd5a79cc8bace8d42d5fa939e1ce2b59067d7d419ba",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/education/": {
+      "head": "8b64df81038d1a8baf88dc16c59981d2837b2af6ab268adcc12a58c2292dad4f",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/embodied-ai/": {
+      "head": "fb7a31f50f6f435c179a3ecb7c3231afe72046a841d9ff80af01ae45b4a09411",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/epistemic-agency/": {
+      "head": "7d0a24ce9cd5e70ba0ee14047c307d11cee599519ab78dc15cb4824b652a7156",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/fluency/": {
+      "head": "4324b15167ee900b6f49bbaae0c78a63212bdafa9116e9639219bd8ae64fcbb0",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/generative-search/": {
+      "head": "8068cc1afaf4d0d548007be80d42c642db5c31c0bcb393253f3ba4aebffa838c",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/gpt/": {
+      "head": "e16998cd647604b7d45bca46bba59f864ae730bd3288f37ef199422634b093d8",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/human-ai-interaction/": {
+      "head": "c575ecb16e5bdcaf96f4b4e19588a9767dba0f4bff9ff25e853e774c14c304b2",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/human-robot-interaction/": {
+      "head": "3333107ded9e1e683bc389e9e37ee3eab45cfec0ccb2c16a934d20f03f77da53",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/interpretation/": {
+      "head": "7f57dca9944abd04dabe6701c2bcde57dd126691cbc589124b75747808df2b2c",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/knowledge/": {
+      "head": "8c49ac118af3f4df7e1fcc8229a4cafb82ee6397adf9548eee95adfc2272e09e",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/learning/": {
+      "head": "7a51198f8beb6f4955f1b2164f1833291ef823b839c37d1694384ff6e175fe29",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/llm/": {
+      "head": "8e951a6fb3147efccc82ff9df0e4fd69201463061692e7819542e704c0bd00e1",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/mental-models/": {
+      "head": "0db27ef623b6c76f5dd7c36818ad425514b1e79b6befabd26a6f153898c82708",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/model-output/": {
+      "head": "64efcd64ef166457fcbba57cf4a87e88076cf7bc6c33fa03a783747820623a54",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/moral-psychology/": {
+      "head": "0600babe9128121755f9a164a87f9128c7f04ae55526b4024932b525972b5441",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/openai/": {
+      "head": "305c17cbb538606a33d78f44846140f3ed65cb18c2d226cc140bed68794c2297",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/responsibility/": {
+      "head": "b747a3ba9942186eacde4d080bc8eb544ef718fe3cb98bff202a98fcecbea0bb",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/science/": {
+      "head": "7a7b3b299e32e08f636f166431bb7a2ec4bbd9dc16c7f5359f2ef09e66d6d2ad",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/social-robots/": {
+      "head": "08a31ff630db43fc6587b36b5df119c62a84b85f78809a7e723546a89ce51b7d",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/source-evaluation/": {
+      "head": "191c056a043b18e2cfbc20f063bb8ea68bb4fb5df4d19517e5be226afea53b43",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/sources/": {
+      "head": "332a258de7c936780147ab6d182393eac824cdaf85a0c5f0300f79933655fd47",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/sycophancy/": {
+      "head": "2f94f1be059688467016db37b5a8604617b3858a09741831c4734f27ee1b319d",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/teenagers/": {
+      "head": "6352f65aaedb482bb41def6287482e991a3bcc541c66bbf90ce5308b186e04ae",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/trust-in-ai/": {
+      "head": "0334a74ac962d07f3ea1692952ae490e7d6bfaf0a7513be4b10c558cf438784e",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/trust/": {
+      "head": "70a229bdbd2b4c2a7ff194d62f3fc386ea3fd92357a29c8f77c988b97da403ed",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/uncertainty/": {
+      "head": "0ca0111237af8ffc800a507f451d31c1d3f9cc29d8f7e890994a01c944d7bfb2",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/verification/": {
+      "head": "ec3b980fa24960c7be383b601772bd19d0f2398f655b053a0e2789590044844b",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/tags/writing/": {
+      "head": "99336e50ab31ee4b88a5ec6aa1b987ff800766835706c9fbbd386c756afb02f4",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "redirect": false
+    },
+    "/topics/ai-and-cognition/": {
+      "head": "770bb9464add7838899164ffaa84e5adb9dd14b75228814dd17f8f99f6655814",
+      "schema": "e2e65dd9bedd8742281644cd5b8eb86dfc3cd39c0e915509884c79ac215165d3",
+      "robots": [],
+      "redirect": false
+    },
+    "/topics/human-agency-and-responsibility/": {
+      "head": "66c876b4bbabef4b665592bb61a4e27d4bd1da15b3979759bcad34db27d421e6",
+      "schema": "dad0f22bcda5daa25d72315c4589fb8788293173e8ccefb6818d5eff7b93d30b",
+      "robots": [],
+      "redirect": false
+    },
+    "/topics/": {
+      "head": "7bf0d5c5889b5416682c88168523579116d44ded555b17582638a1f70f212d4d",
+      "schema": "d33932af43c9ed6054e3d801da2a7db900dcff0f5bb53b58312e2c716976e5f2",
+      "robots": [],
+      "redirect": false
+    },
+    "/topics/trust-in-ai/": {
+      "head": "3a29c800f4733941440ca57b5940ec8b17ba58c620f7f0b41aa647db620ecd6d",
+      "schema": "a225c3b442a1d056396aa1ba788904c73d0aab07c24c50469fb15600e41b7ddc",
+      "robots": [],
+      "redirect": false
+    }
+  }
+}

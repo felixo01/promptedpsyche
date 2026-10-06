@@ -82,7 +82,8 @@ test.describe('author and about routes', () => {
       'href',
       'https://promptedpsyche.com/pl/about/'
     );
-    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Author' })).toHaveAttribute(
+    if ((page.viewportSize()?.width ?? 1440) <= 1100) await page.locator('.c2-menu-toggle').click();
+    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'About', exact: true })).toHaveAttribute(
       'href',
       '/about/'
     );
@@ -178,7 +179,8 @@ test.describe('author and about routes', () => {
       'href',
       'https://promptedpsyche.com/about/'
     );
-    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Kim jestem' })).toHaveAttribute(
+    if ((page.viewportSize()?.width ?? 1440) <= 1100) await page.locator('.c2-menu-toggle').click();
+    await expect(page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'O projekcie', exact: true })).toHaveAttribute(
       'href',
       '/pl/about/'
     );

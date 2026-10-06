@@ -17,18 +17,28 @@ async function expectNoHorizontalOverflow(page: Page) {
 }
 
 test.describe('Projects page navigation', () => {
-  test('adds Projects to the English header', async ({ page }) => {
+  test('links Research in the English header to the Projects page', async ({ page }) => {
     await page.goto('/');
-
-    const projectsLink = page.locator('[data-qa="site-nav"] a', { hasText: 'Projects' });
+    const menu = page.getByRole('button', { name: 'Main menu' });
+    if (await menu.isVisible()) await menu.click();
+    const projectsLink = page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Research', exact: true });
+    await expect(projectsLink).toBeVisible();
     await expect(projectsLink).toHaveAttribute('href', '/projects/');
+    await projectsLink.click();
+    await expect(page).toHaveURL(/\/projects\/$/);
+    await expect(page.getByRole('heading', { name: 'Projects', level: 1 })).toBeVisible();
   });
 
-  test('adds Projekty to the Polish header', async ({ page }) => {
+  test('links Badania in the Polish header to the Projects page', async ({ page }) => {
     await page.goto('/pl/');
-
-    const projectsLink = page.locator('[data-qa="site-nav"] a', { hasText: 'Projekty' });
+    const menu = page.getByRole('button', { name: 'Menu główne' });
+    if (await menu.isVisible()) await menu.click();
+    const projectsLink = page.locator('[data-qa="site-nav"]').getByRole('link', { name: 'Badania', exact: true });
+    await expect(projectsLink).toBeVisible();
     await expect(projectsLink).toHaveAttribute('href', '/pl/projects/');
+    await projectsLink.click();
+    await expect(page).toHaveURL(/\/pl\/projects\/$/);
+    await expect(page.getByRole('heading', { name: 'Projekty', level: 1 })).toBeVisible();
   });
 });
 

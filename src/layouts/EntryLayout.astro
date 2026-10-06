@@ -6,6 +6,9 @@ import ContinueExploring from '../components/ContinueExploring.astro';
 import RightsNotice from '../components/RightsNotice.astro';
 import SuggestedCitation from '../components/SuggestedCitation.astro';
 import TagList from '../components/TagList.astro';
+import ArticleContents from '../components/ArticleContents.astro';
+import EditorialImage from '../components/EditorialImage.astro';
+import '../styles/editorial-article.css';
 import { formatDate } from '../lib/content';
 import type { AlternateLinks, Locale } from '../lib/i18n';
 import { getPublicationByLandingPath } from '../lib/publications';
@@ -78,6 +81,41 @@ const tags: string[] = entry.data.tags ?? [];
 const readingTime = entry.data.readingTime;
 const isConceptEntry = entryType === 'concept';
 const isArticleEntry = entryType === 'article';
+const isTrustArticle = isArticleEntry && [
+  '/articles/trust-in-the-age-of-ready-made-answers/',
+  '/pl/articles/zaufanie-w-epoce-gotowych-odpowiedzi/'
+].includes(`${Astro.url.pathname.replace(/\/$/, '')}/`);
+const counterpartLanguage = lang === 'pl' ? 'en' : 'pl';
+const counterpartHref = alternateLinks?.[counterpartLanguage];
+const counterpartLabel = lang === 'pl' ? 'Read in English' : 'Czytaj po polsku';
+// Render the existing slot once. Markdown headings already have IDs; raw HTML
+// headings inside editorial boxes need anchors too. Preserve every existing ID.
+const renderedArticleContent = isArticleEntry ? await Astro.slots.render('default') : '';
+const articleIds = new Set(Array.from(
+  renderedArticleContent.matchAll(/\sid\s*=\s*(["'])(.*?)\1/g),
+  (attribute) => attribute[2]
+));
+const articleHeadings: Array<{ id: string; html: string }> = [];
+let articleHeadingIndex = 0;
+const articleContent = renderedArticleContent.replace(
+  /<h2\b([^>]*)>([\s\S]*?)<\/h2>/gi,
+  (heading, attributes: string, html: string) => {
+    articleHeadingIndex += 1;
+    const existingId = attributes.match(/\sid\s*=\s*(["'])(.*?)\1/i)?.[2];
+    let id = existingId ?? `article-section-${articleHeadingIndex}`;
+    if (existingId === undefined) {
+      const baseId = id;
+      let suffix = 2;
+      while (articleIds.has(id)) id = `${baseId}-${suffix++}`;
+      articleIds.add(id);
+    }
+    articleHeadings.push({ id, html: html.replace(/<a\b[^>]*>|<\/a>/gi, '') });
+    return existingId === undefined ? `<h2${attributes} id="${id}">${html}</h2>` : heading;
+  }
+);
+const firstSectionIndex = isTrustArticle ? articleContent.search(/<h2\b/) : -1;
+const articleIntroduction = firstSectionIndex >= 0 ? articleContent.slice(0, firstSectionIndex) : '';
+const articleRemainder = firstSectionIndex >= 0 ? articleContent.slice(firstSectionIndex) : articleContent;
 const isNoteEntry = entryType === 'note';
 const showConsultingCta = isArticleEntry || isNoteEntry;
 const conceptBackHref = lang === 'pl' ? '/pl/concepts/' : '/concepts/';
@@ -314,6 +352,7 @@ const asideLabels = isConceptEntry
   <article
     class:list={[
       'article-shell',
+      isArticleEntry && 'c2-article',
       isConceptEntry ? 'article-shell--concept' : 'article-shell--publication',
       entryType !== 'concept' ? `article-shell--${entryType}` : null
     ]}
@@ -327,12 +366,11 @@ const asideLabels = isConceptEntry
               <span>{label}</span>
             </div>
           ) : (
-            <p class="eyebrow">{label}</p>
+            <p class="eyebrow">{isTrustArticle ? (lang === 'pl' ? 'Esej · Zaufanie' : 'Essay · Trust') : label}</p>
           )
         }
         <h1>{entry.data.title}</h1>
         <p class="lede">{entry.data.description}</p>
-        <InBrief items={inBriefItems} lang={lang} />
         {!isConceptEntry && (
           <div class="article-byline" data-qa="article-byline">
             <p>
@@ -355,6 +393,13 @@ const asideLabels = isConceptEntry
               </p>
             )}
             {readingTime && <p>{readingTime}</p>}
+            {isArticleEntry && counterpartHref && (
+              <p class="article-byline__counterpart">
+                <a href={counterpartHref} hreflang={counterpartLanguage} lang={counterpartLanguage}>
+                  {counterpartLabel} <span aria-hidden="true">↗</span>
+                </a>
+              </p>
+            )}
             {visibleDoi && visibleDoiUrl && (
               <p class="article-byline__citable">
                 <span>{visibleDoiLabel}{visibleDoiVersion ? ` (v${visibleDoiVersion})` : ''}:</span>{' '}
@@ -387,7 +432,13 @@ const asideLabels = isConceptEntry
       </div>
     </header>
 
-    {heroImage && (
+    {isTrustArticle && (
+      <figure class="article-editorial-figure" data-qa="article-editorial-figure">
+        <EditorialImage kind="trust" lang={lang} priority />
+      </figure>
+    )}
+
+    {heroImage && !isTrustArticle && (
       <figure class="article-hero-figure" data-qa="article-hero-figure">
         <img
           src={heroImage}
@@ -395,11 +446,19 @@ const asideLabels = isConceptEntry
           width={heroImageWidth}
           height={heroImageHeight}
           loading="eager"
+          fetchpriority="high"
           decoding="async"
           data-qa="article-hero-image"
         />
         {heroImageCaption && <figcaption>{heroImageCaption}</figcaption>}
       </figure>
+    )}
+
+    {isArticleEntry && (
+      <div class="article-reading-tools">
+        <InBrief items={inBriefItems} lang={lang} />
+        <ArticleContents headings={articleHeadings} lang={lang} sectionLabel={asideLabels.label} />
+      </div>
     )}
 
     {audioUrl && (
@@ -412,15 +471,34 @@ const asideLabels = isConceptEntry
     )}
 
     <div class="article-grid">
-      <aside class="article-aside" aria-label={asideLabels.aria}>
+      {!isArticleEntry && <aside class="article-aside" aria-label={asideLabels.aria}>
         <p class="small-label" data-qa="article-aside-label">{asideLabels.label}</p>
         <ul>
           {asideLabels.items.map((item) => <li>{item}</li>)}
         </ul>
-      </aside>
+      </aside>}
 
       <div class="prose">
-        <slot />
+        {isArticleEntry ? (
+          <>
+            <Fragment set:html={articleIntroduction} />
+            {isTrustArticle && heroImage && (
+              <figure class="article-hero-figure" data-qa="article-hero-figure">
+                <img
+                  src={heroImage}
+                  alt={heroImageAlt}
+                  width={heroImageWidth ?? 1600}
+                  height={heroImageHeight ?? 900}
+                  loading="lazy"
+                  decoding="async"
+                  data-qa="article-hero-image"
+                />
+                {heroImageCaption && <figcaption>{heroImageCaption}</figcaption>}
+              </figure>
+            )}
+            <Fragment set:html={articleRemainder} />
+          </>
+        ) : <slot />}
         <ContinueExploring links={explorationLinks} lang={lang} />
         {showConsultingCta && <ConsultingCTA lang={lang} />}
         {!isConceptEntry && (

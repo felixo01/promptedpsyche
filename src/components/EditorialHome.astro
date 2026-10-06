@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+import EditorialImage from './EditorialImage.astro';
+import { getArticlePath } from '../lib/articleRoutes';
+import { onlyPublicEntriesByLang } from '../lib/content';
+import { beyondAiShareRecord } from '../lib/beyondAiShare';
+import type { Locale } from '../lib/i18n';
+import '../styles/editorial-home.css';
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
+const isPl = lang === 'pl';
+const prefix = isPl ? '/pl' : '';
+const articles = onlyPublicEntriesByLang(await getCollection('articles'), lang);
+const trust = articles.find(entry => entry.data.translationKey === 'ai-path-to-knowledge');
+const recommended = [
+  { entry: articles.find(entry => entry.data.translationKey === 'ai-authorship-final-say'), image: 'authorship' as const, category: isPl ? 'ESEJ · TWÓRCZOŚĆ' : 'ESSAY · CREATIVITY' },
+  { entry: articles.find(entry => entry.data.translationKey === 'ai-thinking-practice'), image: 'learning' as const, category: isPl ? 'ANALIZA · UCZENIE SIĘ' : 'ANALYSIS · LEARNING' }
+];
+if (!trust || recommended.some(item => !item.entry)) throw new Error(`C2 requires the public editorial selection in ${lang}.`);
+const research = beyondAiShareRecord;
+---
+<div class="c2-home">
+  <section class="c2-cover c2-container" aria-labelledby="home-title">
+    <div class="c2-cover-image"><EditorialImage kind="trust" lang={lang} priority /></div>
+    <div class="c2-cover-copy" data-qa="hero-copy">
+      <p class="c2-kicker">{isPl ? 'ESEJ · ZAUFANIE' : 'ESSAY · TRUST'}</p>
+      <h1 id="home-title" data-qa="hero-title"><a href={getArticlePath(trust, lang)}>{trust.data.title}</a></h1>
+      <p class="c2-lead">{trust.data.description}</p>
+      <p class="c2-meta"><a href={`${prefix}/about/`}>{trust.data.author}</a><span aria-hidden="true">·</span><span>{trust.data.readingTime}</span></p>
+      <a class="c2-read-link" href={getArticlePath(trust, lang)} data-qa="home-reading-cta">{isPl ? 'Czytaj esej' : 'Read the essay'} <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+  <section class="c2-reading c2-container" aria-labelledby="writing-title" data-qa="home-start-here">
+    <div class="c2-section-heading"><h2 id="writing-title">{isPl ? 'Warto przeczytać' : 'Worth reading'}</h2><a href={`${prefix}/articles/`}>{isPl ? 'Wszystkie artykuły' : 'All articles'} <span aria-hidden="true">→</span></a></div>
+    <div class="c2-reading-grid" data-qa="start-here-list">
+      {recommended.map(({ entry, image, category }) => entry && (
+        <article class="c2-recommendation" data-qa="start-here-entry">
+          <a class="c2-recommendation-image" href={getArticlePath(entry, lang)} tabindex="-1" aria-hidden="true"><EditorialImage kind={image} lang={lang} /></a>
+          <p class="c2-kicker">{category}</p>
+          <h3><a href={getArticlePath(entry, lang)}>{entry.data.title}</a></h3>
+          <p class="c2-recommendation-lead">{entry.data.description}</p>
+          <p class="c2-meta">{entry.data.readingTime}</p>
+          <a class="c2-read-link" href={getArticlePath(entry, lang)}>{isPl ? 'Czytaj artykuł' : 'Read the article'} <span aria-hidden="true">→</span></a>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="c2-research" aria-labelledby="research-title" data-qa="home-research">
+    <div class="c2-container c2-research-inner">
+      <div class="c2-research-intro"><p class="c2-kicker">{isPl ? 'PERSPEKTYWA BADAWCZA' : 'A RESEARCH PERSPECTIVE'}</p><h2 id="research-title">{isPl ? 'Z badań' : 'From the research'}</h2><a class="c2-read-link" href={`${prefix}/publications/`}>{isPl ? 'Wszystkie publikacje' : 'All publications'} <span aria-hidden="true">→</span></a></div>
+      <article>
+        <h3><a href={research.paths[lang]}>{research.preprint.title}</a></h3>
+        <p class="c2-research-author">{research.preprint.author}</p>
+        <p class="c2-research-status">{isPl ? 'Preprint bez formalnej recenzji naukowej' : 'Preprint — not formally peer reviewed'}</p>
+        <div class="c2-research-links"><a href={research.paths[lang]}>{isPl ? 'Publikacja' : 'Publication'} <span aria-hidden="true">→</span></a><a href={research.preregistration.url}>{isPl ? 'Prerejestracja' : 'Preregistration'} <span aria-hidden="true">↗</span></a></div>
+      </article>
+    </div>
+  </section>
+  <section class="c2-about c2-container" aria-labelledby="about-title">
+    <div><p class="c2-kicker">{isPl ? 'O PROJEKCIE' : 'ABOUT THE PROJECT'}</p><h2 id="about-title">{isPl ? 'Ludzka strona AI.' : 'The human side of AI.'}</h2></div>
+    <div><p>{isPl ? 'Prompted Psyche to autorski magazyn idei o człowieku i AI. O tym, jak AI zmienia myślenie, zaufanie, twórczość i relacje — z uwagą na badania, niepewność i ludzkie doświadczenie.' : 'Prompted Psyche is an independent magazine of ideas about people and AI. On how AI changes thinking, trust, creativity and relationships — with attention to research, uncertainty and human experience.'}</p><a class="c2-read-link" href={`${prefix}/about/`}>{isPl ? 'Poznaj projekt i autora' : 'Meet the project and its author'} <span aria-hidden="true">→</span></a></div>
+  </section>
+</div>
