@@ -24,6 +24,14 @@ const preregistrationStatus =
 <BaseLayout
   title={pageTitle}
   appendSiteName={false}
+  type="article"
+  scholarMetadata={{
+    title: beyondAiShareRecord.preprint.title,
+    author: beyondAiShareRecord.preprint.author,
+    publicationDate: beyondAiShareRecord.preprint.publicationDate,
+    language: 'en',
+    doi: beyondAiShareRecord.preprint.doi
+  }}
   description={pageDescription}
   image={beyondAiShareRecord.socialImage}
   imageWidth={1200}
