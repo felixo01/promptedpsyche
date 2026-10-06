@@ -51,6 +51,7 @@ const cases = [
     index: '/articles/',
     searchIndex: '/search-index.en.json',
     hub: '/topics/human-agency-and-responsibility/',
+    project: '/projects/beyond-ai-share/',
     practice: '/practice/how-to-use-ai-as-a-second-reader/',
     practiceAnchor: 'Authorship in AI-assisted creative work',
     fear: '/articles/are-we-afraid-of-ai-or-of-ourselves/',
@@ -86,6 +87,7 @@ const cases = [
     index: '/pl/articles/',
     searchIndex: '/search-index.pl.json',
     hub: '/pl/topics/sprawczosc-i-odpowiedzialnosc/',
+    project: '/pl/projects/beyond-ai-share/',
     practice: '/pl/practice/jak-uzyc-ai-jako-drugiego-czytelnika/',
     practiceAnchor: 'Autorstwo w twórczości wspieranej przez AI',
     fear: '/pl/articles/czy-boimy-sie-ai-czy-boimy-sie-samych-siebie/',
@@ -96,8 +98,8 @@ const cases = [
 
 const researchUrls = [
   'https://doi.org/10.5281/zenodo.21705721',
-  'https://zenodo.org/api/records/21705721/files/Beyond_AI_Share_Preprint_v1.0.pdf/content',
-  'https://zenodo.org/api/records/21705721/files/Beyond_AI_Share_Appendix_A_v1.0.pdf/content',
+  'https://zenodo.org/records/21705721/files/Beyond_AI_Share_Preprint_v1.0.pdf',
+  'https://zenodo.org/records/21705721/files/Beyond_AI_Share_Appendix_A_v1.0.pdf',
   'https://doi.org/10.17605/OSF.IO/GSWN3'
 ] as const;
 
@@ -231,7 +233,7 @@ test.describe('bilingual AI authorship publication', () => {
       const materialLinks = await materials.locator('a').evaluateAll((links) =>
         links.map((link) => link.getAttribute('href'))
       );
-      expect(materialLinks).toEqual(researchUrls);
+      expect(materialLinks).toEqual([article.project, ...researchUrls]);
       await expect(materials.locator('a[rel~="nofollow"]')).toHaveCount(0);
       await expect(page.locator('[data-qa="ai-authorship-workflow-comparison"]')).toBeVisible();
       await expect(page.locator('[data-qa="ai-authorship-vignette-chart"]')).toBeVisible();
@@ -480,7 +482,10 @@ test.describe('bilingual AI authorship publication', () => {
     const workflow = read(files.workflow);
     const chart = read(files.chart);
 
-    for (const url of researchUrls) expect(materials).toContain(`'${url}'`);
+    expect(materials).toContain("getPublicationByDoi('10.5281/zenodo.21705721')");
+    expect(materials).toContain("'https://doi.org/10.17605/OSF.IO/GSWN3'");
+    expect(materials).toContain("'/projects/beyond-ai-share/'");
+    expect(materials).toContain("'/pl/projects/beyond-ai-share/'");
     for (const label of [
       'Human-directed workflow',
       'Near-final AI output',

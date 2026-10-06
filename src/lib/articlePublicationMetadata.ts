@@ -1,34 +1,46 @@
-export type PublicationLocale = 'en' | 'pl';
+import { getPublicationByTranslationKey } from './publications';
 
-const AI_FEAR_TRANSLATION_KEY = 'ai-fears-human-self-fear';
-const AI_FEAR_DOI = '10.5281/zenodo.21340181';
-const AI_FEAR_DOI_URL = `https://doi.org/${AI_FEAR_DOI}`;
-const AI_FEAR_VERSION = '2.1';
+export type PublicationLocale = 'en' | 'pl';
 
 export function withArticlePublicationMetadata<
   T extends {
     data: {
       translationKey?: string;
+      doi?: string;
+      relatedDoi?: string;
     };
   }
 >(entry: T, lang: PublicationLocale): T {
-  if (entry.data.translationKey !== AI_FEAR_TRANSLATION_KEY) {
+  const publication = getPublicationByTranslationKey(entry.data.translationKey);
+
+  if (!publication || !publication.landingPath.startsWith('/articles/')) {
     return entry;
+  }
+
+  const declaredDoi = lang === 'en' ? entry.data.doi : entry.data.relatedDoi;
+  if (declaredDoi && declaredDoi !== publication.doi) {
+    throw new Error(
+      `BLOCKED - DOI METADATA CHANGE: ${publication.zenodoRecordUrl} protects ${publication.doi}; received ${declaredDoi} for translation key ${entry.data.translationKey}.`
+    );
   }
 
   const publicationMetadata =
     lang === 'en'
       ? {
-          doi: AI_FEAR_DOI,
-          doiUrl: AI_FEAR_DOI_URL,
-          version: AI_FEAR_VERSION,
-          licenseName: 'CC BY 4.0',
-          licenseUrl: 'https://creativecommons.org/licenses/by/4.0/'
+          doi: publication.doi,
+          doiUrl: publication.doiUrl,
+          ...('version' in publication && publication.version
+            ? { version: publication.version }
+            : {}),
+          licenseName: publication.license.name,
+          licenseUrl: publication.license.url
         }
       : {
-          relatedDoi: AI_FEAR_DOI,
-          relatedDoiUrl: AI_FEAR_DOI_URL,
-          relatedVersion: AI_FEAR_VERSION,
+          relatedDoi: publication.doi,
+          relatedDoiUrl: publication.doiUrl,
+          ...('version' in publication && publication.version
+            ? { relatedVersion: publication.version }
+            : {}),
           relatedDoiLabel: 'DOI wersji angielskiej'
         };
 

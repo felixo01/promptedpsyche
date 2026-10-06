@@ -125,32 +125,27 @@ const protectedDoiPublications = [
   {
     route: '/articles/are-we-afraid-of-ai-or-of-ourselves/',
     title: 'Are we afraid of AI, or of ourselves?',
-    doi: '10.5281/zenodo.21340181',
-    scholarPrimary: true
+    doi: '10.5281/zenodo.21340181'
   },
   {
     route: '/articles/trust-in-the-age-of-ready-made-answers/',
     title: 'Trust in the age of ready-made answers',
-    doi: '10.5281/zenodo.21301650',
-    scholarPrimary: true
+    doi: '10.5281/zenodo.21301650'
   },
   {
     route: '/articles/dont-ask-whether-ai-makes-us-dumber/',
     title: "Don't Ask Whether AI Makes Us Dumber. Ask What Kind of Thinking We Stop Practicing",
-    doi: '10.5281/zenodo.21358687',
-    scholarPrimary: true
+    doi: '10.5281/zenodo.21358687'
   },
   {
     route: '/articles/what-changes-when-ai-has-a-body/',
     title: 'What changes when AI has a body?',
-    doi: '10.5281/zenodo.21296384',
-    scholarPrimary: false
+    doi: '10.5281/zenodo.21296384'
   },
   {
     route: '/articles/when-search-becomes-an-answer/',
     title: 'When Search Becomes an Answer: What Generative AI Changes About Learning',
-    doi: '10.5281/zenodo.21491639',
-    scholarPrimary: true
+    doi: '10.5281/zenodo.21491639'
   }
 ] as const;
 
@@ -312,13 +307,9 @@ test.describe('SEO intent and entity foundation', () => {
       const article = findType(graph, 'Article');
 
       await expect(page.getByRole('heading', { name: publication.title, level: 1 })).toBeVisible();
-      if (publication.scholarPrimary) {
-        await expect(page.locator('meta[name="citation_title"]')).toHaveAttribute('content', publication.title);
-        await expect(page.locator('meta[name="citation_doi"]')).toHaveAttribute('content', publication.doi);
-      } else {
-        await expect(page.locator('meta[name="citation_title"]')).toHaveCount(0);
-        await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);
-      }
+      await expect(page.locator('meta[name="citation_title"]')).toHaveAttribute('content', publication.title);
+      await expect(page.locator('meta[name="citation_doi"]')).toHaveAttribute('content', publication.doi);
+      await expect(page.locator('meta[name="citation_pdf_url"]')).toHaveCount(1);
       expect(article?.headline).toBe(publication.title);
       expect(article?.identifier).toMatchObject({ propertyID: 'DOI', value: publication.doi });
     });

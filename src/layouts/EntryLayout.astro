@@ -8,6 +8,7 @@ import SuggestedCitation from '../components/SuggestedCitation.astro';
 import TagList from '../components/TagList.astro';
 import { formatDate } from '../lib/content';
 import type { AlternateLinks, Locale } from '../lib/i18n';
+import { getPublicationByLandingPath } from '../lib/publications';
 import {
   PUBLISHER_ENTITY_ID,
   WEBSITE_ENTITY_ID,
@@ -95,30 +96,43 @@ const socialImage = !isConceptEntry ? (entry.data.socialImage ?? heroImage) : un
 const socialImageWidth = entry.data.socialImageWidth ?? (socialImage === heroImage ? heroImageWidth : undefined);
 const socialImageHeight = entry.data.socialImageHeight ?? (socialImage === heroImage ? heroImageHeight : undefined);
 const socialImageType = entry.data.socialImageType ?? (socialImage === heroImage ? entry.data.imageType : undefined);
-const doi = isArticleEntry ? entry.data.doi : undefined;
-const doiUrl = doi ? (entry.data.doiUrl ?? `https://doi.org/${doi}`) : undefined;
-const version = isArticleEntry ? entry.data.version : undefined;
+const registeredPublication =
+  isArticleEntry && lang === 'en'
+    ? getPublicationByLandingPath(Astro.url.pathname)
+    : undefined;
+if (registeredPublication && entry.data.title !== registeredPublication.title) {
+  throw new Error(
+    `BLOCKED - DOI TITLE CHANGE: ${registeredPublication.doi} protects "${registeredPublication.title}" in ${registeredPublication.zenodoRecordUrl}; received "${entry.data.title}".`
+  );
+}
+const doi = isArticleEntry ? (registeredPublication?.doi ?? entry.data.doi) : undefined;
+const doiUrl = doi
+  ? (registeredPublication?.doiUrl ?? entry.data.doiUrl ?? `https://doi.org/${doi}`)
+  : undefined;
+const version = isArticleEntry
+  ? (registeredPublication?.version ?? entry.data.version)
+  : undefined;
 const relatedDoi = isArticleEntry ? entry.data.relatedDoi : undefined;
 const relatedDoiUrl = relatedDoi ? (entry.data.relatedDoiUrl ?? `https://doi.org/${relatedDoi}`) : undefined;
 const relatedVersion = isArticleEntry ? entry.data.relatedVersion : undefined;
 const relatedDoiLabel = entry.data.relatedDoiLabel ?? (lang === 'pl' ? 'DOI wersji angielskiej' : 'English version DOI');
-const licenseName = isArticleEntry ? entry.data.licenseName : undefined;
-const licenseUrl = isArticleEntry ? entry.data.licenseUrl : undefined;
+const licenseName = isArticleEntry
+  ? (registeredPublication?.license.name ?? entry.data.licenseName)
+  : undefined;
+const licenseUrl = isArticleEntry
+  ? (registeredPublication?.license.url ?? entry.data.licenseUrl)
+  : undefined;
 const audioUrl = !isConceptEntry ? entry.data.audioUrl : undefined;
 const inBriefItems = isArticleEntry ? (entry.data.inBrief ?? []) : [];
 const scholarMetadata =
-  isArticleEntry &&
-  entry.data.scholarPrimary === true &&
-  entry.data.draft === false &&
-  entry.data.title &&
-  entry.data.author &&
-  entry.data.publishedAt
+  registeredPublication && entry.data.draft === false
     ? {
-        title: entry.data.title,
-        author: entry.data.author,
-        publicationDate: entry.data.publishedAt.toISOString().slice(0, 10).replaceAll('-', '/'),
-        language: entry.data.lang ?? lang,
-        ...(doi ? { doi } : {})
+        title: registeredPublication.title,
+        author: registeredPublication.author,
+        publicationDate: registeredPublication.publicationDate.replaceAll('-', '/'),
+        language: 'en' as const,
+        doi: registeredPublication.doi,
+        pdfUrl: registeredPublication.pdf.url
       }
     : undefined;
 const citableVersionLabel = lang === 'pl' ? 'Wersja do cytowania' : 'Citable version';
@@ -126,7 +140,11 @@ const visibleDoi = doi ?? relatedDoi;
 const visibleDoiUrl = doiUrl ?? relatedDoiUrl;
 const visibleDoiVersion = doi ? version : relatedVersion;
 const visibleDoiLabel = doi ? citableVersionLabel : relatedDoiLabel;
-const publicationSchemaType = isArticleEntry ? 'Article' : isNoteEntry ? 'BlogPosting' : undefined;
+const publicationSchemaType = isArticleEntry
+  ? 'Article'
+  : isNoteEntry
+    ? 'BlogPosting'
+    : undefined;
 const publicationEntityId = publicationSchemaType
   ? `${canonicalUrl}${publicationSchemaType === 'Article' ? '#article' : '#blog-posting'}`
   : undefined;
@@ -141,7 +159,9 @@ const publicationStructuredData = publicationSchemaType
         '@type': 'WebPage',
         '@id': canonicalUrl
       },
-      datePublished: entry.data.publishedAt.toISOString(),
+      datePublished: registeredPublication
+        ? `${registeredPublication.publicationDate}T00:00:00.000Z`
+        : entry.data.publishedAt.toISOString(),
       ...(entry.data.updatedAt ? { dateModified: entry.data.updatedAt.toISOString() } : {}),
       author: getAuthorEntity(lang),
       publisher: {
@@ -160,9 +180,23 @@ const publicationStructuredData = publicationSchemaType
             }
           }
         : {}),
-      ...(doiUrl ? { sameAs: doiUrl } : {}),
+      ...(registeredPublication
+        ? { sameAs: [registeredPublication.doiUrl, registeredPublication.zenodoRecordUrl] }
+        : doiUrl
+          ? { sameAs: doiUrl }
+          : {}),
       ...(licenseUrl ? { license: licenseUrl } : {}),
       ...(version ? { version } : {}),
+      ...(registeredPublication
+        ? {
+            encoding: {
+              '@type': 'MediaObject',
+              contentUrl: registeredPublication.pdf.url,
+              encodingFormat: 'application/pdf',
+              name: registeredPublication.pdf.filename
+            }
+          }
+        : {}),
       ...(socialImage ? { image: absoluteUrl(socialImage) } : {})
     }
   : undefined;
@@ -327,6 +361,13 @@ const asideLabels = isConceptEntry
                 <a href={visibleDoiUrl} aria-label={`DOI ${visibleDoi}`}>
                   DOI {visibleDoi}
                 </a>
+              </p>
+            )}
+            {registeredPublication && (
+              <p class="article-byline__citable" data-qa="publication-files">
+                <a href={registeredPublication.pdf.url}>Download PDF</a>
+                {' · '}
+                <a href={registeredPublication.zenodoRecordUrl}>Zenodo record</a>
               </p>
             )}
           </div>

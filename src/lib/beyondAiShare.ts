@@ -1,10 +1,17 @@
 import type { Locale } from './i18n';
+import { getPublicationByDoi } from './publications';
 import {
   AUTHOR_ENTITY_ID,
   WEBSITE_ENTITY_ID,
   absoluteUrl,
   getAuthorEntity
 } from './site';
+
+const beyondAiSharePublication = getPublicationByDoi('10.5281/zenodo.21705721');
+
+if (!beyondAiSharePublication) {
+  throw new Error('Beyond AI Share is missing from the scholarly publication registry.');
+}
 
 export const beyondAiShareRecord = {
   name: 'Beyond AI Share',
@@ -14,16 +21,22 @@ export const beyondAiShareRecord = {
   },
   projectId: absoluteUrl('/projects/beyond-ai-share/#research-project'),
   preprint: {
-    title:
-      'Beyond AI Share: A Preregistered Survey and Vignette Study of Perceived Control, Authorship, and Authenticity in AI-Assisted Creative Practice',
-    doi: '10.5281/zenodo.21705721',
-    url: 'https://doi.org/10.5281/zenodo.21705721',
-    recordUrl: 'https://zenodo.org/records/21705721',
-    author: 'Feliks Mamczur',
-    publicationDate: '2026-07-30',
-    version: '1.0',
-    licenseName: 'Creative Commons Attribution 4.0 International',
-    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/'
+    title: beyondAiSharePublication.title,
+    doi: beyondAiSharePublication.doi,
+    url: beyondAiSharePublication.doiUrl,
+    recordUrl: beyondAiSharePublication.zenodoRecordUrl,
+    landingUrl: beyondAiSharePublication.landingUrl,
+    pdfUrl: beyondAiSharePublication.pdf.url,
+    pdfFilename: beyondAiSharePublication.pdf.filename,
+    appendixUrl: beyondAiSharePublication.appendix?.url,
+    abstract: beyondAiSharePublication.abstract,
+    author: beyondAiSharePublication.author,
+    publicationDate: beyondAiSharePublication.publicationDate,
+    version: beyondAiSharePublication.version,
+    licenseName: beyondAiSharePublication.license.name,
+    licenseUrl: beyondAiSharePublication.license.url,
+    publicationType: beyondAiSharePublication.publicationType,
+    status: beyondAiSharePublication.status
   },
   preregistration: {
     title:
@@ -39,7 +52,7 @@ export const beyondAiShareRecord = {
 } as const;
 
 export const beyondAiShareCitation =
-  'Mamczur, F. (2026). Beyond AI Share: A Preregistered Survey and Vignette Study of Perceived Control, Authorship, and Authenticity in AI-Assisted Creative Practice [Preprint]. Zenodo. https://doi.org/10.5281/zenodo.21705721';
+  `Mamczur, F. (2026). ${beyondAiSharePublication.title} [Preprint]. Zenodo. ${beyondAiSharePublication.doiUrl}`;
 
 export function getBeyondAiShareStructuredData(
   lang: Locale,
@@ -50,6 +63,7 @@ export function getBeyondAiShareStructuredData(
   const pageUrl = absoluteUrl(pagePath);
   const webpageId = `${pageUrl}#webpage`;
   const breadcrumbId = `${pageUrl}#breadcrumb`;
+  const preprintId = `${beyondAiShareRecord.preprint.landingUrl}#preprint`;
   const homeName = lang === 'pl' ? 'Start' : 'Home';
   const projectsName = lang === 'pl' ? 'Projekty' : 'Projects';
   const projectsPath = lang === 'pl' ? '/pl/projects/' : '/projects/';
@@ -106,15 +120,19 @@ export function getBeyondAiShareStructuredData(
         description: pageDescription,
         url: absoluteUrl(beyondAiShareRecord.paths.en),
         founder: { '@id': AUTHOR_ENTITY_ID },
-        subjectOf: { '@id': beyondAiShareRecord.preprint.url }
+        subjectOf: { '@id': preprintId }
       },
       {
-        '@id': beyondAiShareRecord.preprint.url,
+        '@id': preprintId,
         '@type': 'ScholarlyArticle',
         name: beyondAiShareRecord.preprint.title,
         headline: beyondAiShareRecord.preprint.title,
-        url: beyondAiShareRecord.preprint.url,
-        sameAs: beyondAiShareRecord.preprint.recordUrl,
+        url: beyondAiShareRecord.preprint.landingUrl,
+        mainEntityOfPage: beyondAiShareRecord.preprint.landingUrl,
+        sameAs: [
+          beyondAiShareRecord.preprint.url,
+          beyondAiShareRecord.preprint.recordUrl
+        ],
         author: { '@id': AUTHOR_ENTITY_ID },
         datePublished: beyondAiShareRecord.preprint.publicationDate,
         inLanguage: 'en',
@@ -122,15 +140,17 @@ export function getBeyondAiShareStructuredData(
         creativeWorkStatus: 'Preprint - not peer-reviewed',
         isAccessibleForFree: true,
         license: beyondAiShareRecord.preprint.licenseUrl,
+        abstract: beyondAiShareRecord.preprint.abstract,
         identifier: {
           '@type': 'PropertyValue',
           propertyID: 'DOI',
           value: beyondAiShareRecord.preprint.doi
         },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Zenodo',
-          url: 'https://zenodo.org/'
+        encoding: {
+          '@type': 'MediaObject',
+          contentUrl: beyondAiShareRecord.preprint.pdfUrl,
+          encodingFormat: 'application/pdf',
+          name: beyondAiShareRecord.preprint.pdfFilename
         },
         about: { '@id': beyondAiShareRecord.projectId }
       },

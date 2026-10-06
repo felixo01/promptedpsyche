@@ -1,6 +1,7 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
+import { addReliableLastmod } from './src/lib/sitemap';
 
 const isTagArchive = (page) => {
   const { pathname } = new URL(page);
@@ -12,6 +13,11 @@ const isSearchIndex = (page) => {
   return pathname.startsWith('/search-index') && pathname.endsWith('.json');
 };
 
+const isSearchPage = (page) => {
+  const { pathname } = new URL(page);
+  return pathname === '/search/' || pathname === '/pl/search/';
+};
+
 export default defineConfig({
   site: 'https://promptedpsyche.com',
   redirects: {
@@ -21,7 +27,8 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) => !isTagArchive(page) && !isSearchIndex(page)
+      filter: (page) => !isTagArchive(page) && !isSearchIndex(page) && !isSearchPage(page),
+      serialize: addReliableLastmod
     })
   ],
   markdown: {

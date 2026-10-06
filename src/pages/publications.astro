@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { publications } from '../lib/publications';
+
+const alternateLinks = {
+  en: '/publications/',
+  pl: '/pl/publications/',
+  xDefault: '/publications/'
+};
+
+function formatPublicationDate(value: string) {
+  return new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC'
+  }).format(new Date(`${value}T00:00:00Z`));
+}
+---
+
+<BaseLayout
+  title="Publications"
+  description="The canonical Prompted Psyche landing pages, DOI records, deposited PDFs and Zenodo records for publications by Feliks Mamczur."
+  alternateLinks={alternateLinks}
+  robots="index, follow"
+>
+  <article class="lovable-page projects-page publications-page">
+    <header class="lovable-page-hero projects-hero">
+      <div class="lovable-container projects-hero__inner">
+        <div>
+          <p class="eyebrow">Research record</p>
+          <h1>Publications</h1>
+          <p class="lede">
+            Six publications by Feliks Mamczur with stable DOI records and deposited PDFs.
+          </p>
+          <p class="hero-subnote">
+            Each entry points to one canonical Prompted Psyche landing page and its matching
+            Zenodo record. A DOI identifies a publication version; it does not imply peer review.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section class="lovable-section" aria-labelledby="publication-list-title">
+      <div class="lovable-container">
+        <div class="lovable-section-header projects-section__header">
+          <div>
+            <p class="section-kicker">Publications</p>
+            <h2 id="publication-list-title">Canonical records</h2>
+          </div>
+          <p>Titles, dates and identifiers below follow the deposited Zenodo records.</p>
+        </div>
+
+        <div class="projects-grid publications-grid" data-qa="publication-list">
+          {publications.map((publication) => (
+            <article class="project-card publication-card" data-doi={publication.doi}>
+              <p class="project-card__status">{publication.publicationType}</p>
+              <h3>{publication.title}</h3>
+              <dl class="project-card__details publication-card__details">
+                <div>
+                  <dt>Published</dt>
+                  <dd>
+                    <time datetime={publication.publicationDate}>
+                      {formatPublicationDate(publication.publicationDate)}
+                    </time>
+                  </dd>
+                </div>
+                {'version' in publication && publication.version && (
+                  <div><dt>Version</dt><dd>{publication.version}</dd></div>
+                )}
+                <div><dt>Status</dt><dd>{publication.status}</dd></div>
+                <div><dt>License</dt><dd><a href={publication.license.url}>{publication.license.name}</a></dd></div>
+                <div><dt>DOI</dt><dd><a href={publication.doiUrl}>{publication.doi}</a></dd></div>
+              </dl>
+              <nav class="publication-card__links" aria-label={`Links for ${publication.title}`}>
+                <a class="text-link" href={publication.landingPath}>Landing page</a>
+                <a class="text-link" href={publication.pdf.url}>PDF</a>
+                <a class="text-link" href={publication.zenodoRecordUrl}>Zenodo</a>
+              </nav>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .publications-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .publication-card h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .publication-card__details dd {
+    overflow-wrap: anywhere;
+  }
+
+  .publication-card__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 1rem;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 760px) {
+    .publications-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>

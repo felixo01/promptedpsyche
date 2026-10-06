@@ -15,23 +15,30 @@ const alternateLinks = {
   xDefault: beyondAiShareRecord.paths.en
 };
 const structuredData = getBeyondAiShareStructuredData('en', pageTitle, pageDescription);
+const scholarMetadata = {
+  title: beyondAiShareRecord.preprint.title,
+  author: beyondAiShareRecord.preprint.author,
+  publicationDate: beyondAiShareRecord.preprint.publicationDate.replaceAll('-', '/'),
+  language: 'en' as const,
+  doi: beyondAiShareRecord.preprint.doi,
+  pdfUrl: beyondAiShareRecord.preprint.pdfUrl
+};
 const preregistrationStatus =
   beyondAiShareRecord.preregistration.registrationStatus === 'accepted'
     ? 'Accepted'
     : beyondAiShareRecord.preregistration.registrationStatus;
+const publicationDateLabel = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC'
+}).format(new Date(`${beyondAiShareRecord.preprint.publicationDate}T00:00:00Z`));
 ---
 
 <BaseLayout
   title={pageTitle}
   appendSiteName={false}
   type="article"
-  scholarMetadata={{
-    title: beyondAiShareRecord.preprint.title,
-    author: beyondAiShareRecord.preprint.author,
-    publicationDate: beyondAiShareRecord.preprint.publicationDate,
-    language: 'en',
-    doi: beyondAiShareRecord.preprint.doi
-  }}
   description={pageDescription}
   image={beyondAiShareRecord.socialImage}
   imageWidth={1200}
@@ -41,6 +48,7 @@ const preregistrationStatus =
   alternateLinks={alternateLinks}
   robots="index, follow"
   structuredData={structuredData}
+  scholarMetadata={scholarMetadata}
 >
   <article class="lovable-page about-page research-project-page">
     <nav class="lovable-container research-breadcrumb" aria-label="Breadcrumb">
@@ -68,8 +76,8 @@ const preregistrationStatus =
           <div class="consulting-actions research-project-actions">
             <a
               class="hero-button hero-button-primary"
-              href={beyondAiShareRecord.preprint.url}
-            ><span aria-hidden="true"></span>Read the preprint</a>
+              href={beyondAiShareRecord.preprint.pdfUrl}
+            ><span aria-hidden="true"></span>Download preprint PDF</a>
             <a
               class="hero-button hero-button-secondary"
               href={beyondAiShareRecord.preregistration.url}
@@ -97,6 +105,17 @@ const preregistrationStatus =
     </header>
 
     <div class="lovable-container about-section-list research-section-list">
+      <section class="about-section" aria-labelledby="preprint-abstract-title">
+        <div class="about-section__meta"><span>A</span><p>Preprint</p></div>
+        <div class="about-section__body">
+          <h2 id="preprint-abstract-title">Abstract</h2>
+          <div class="editorial-copy">
+            <p>{beyondAiShareRecord.preprint.abstract}</p>
+            <p class="research-boundary">This is a preprint and has not undergone formal peer review.</p>
+          </div>
+        </div>
+      </section>
+
       <section class="about-section" aria-labelledby="research-question-title">
         <div class="about-section__meta"><span>01</span><p>Question</p></div>
         <div class="about-section__body">
@@ -253,13 +272,20 @@ const preregistrationStatus =
               <p class="small-label">Zenodo preprint</p>
               <h3>{beyondAiShareRecord.preprint.title}</h3>
               <dl>
-                <div><dt>Author</dt><dd>Feliks Mamczur</dd></div>
-                <div><dt>Published</dt><dd><time datetime="2026-07-30">30 July 2026</time></dd></div>
-                <div><dt>Version</dt><dd>1.0</dd></div>
-                <div><dt>Status</dt><dd>Preprint; not peer-reviewed</dd></div>
-                <div><dt>License</dt><dd>CC BY 4.0</dd></div>
+                <div><dt>Author</dt><dd>{beyondAiShareRecord.preprint.author}</dd></div>
+                <div><dt>Published</dt><dd><time datetime={beyondAiShareRecord.preprint.publicationDate}>{publicationDateLabel}</time></dd></div>
+                <div><dt>Version</dt><dd>{beyondAiShareRecord.preprint.version}</dd></div>
+                <div><dt>Status</dt><dd>{beyondAiShareRecord.preprint.status}</dd></div>
+                <div><dt>License</dt><dd><a href={beyondAiShareRecord.preprint.licenseUrl}>{beyondAiShareRecord.preprint.licenseName}</a></dd></div>
                 <div><dt>DOI</dt><dd><a href={beyondAiShareRecord.preprint.url}>{beyondAiShareRecord.preprint.doi}</a></dd></div>
               </dl>
+              <div class="research-project-actions">
+                <a class="text-link" href={beyondAiShareRecord.preprint.pdfUrl}>Download preprint PDF</a>
+                {beyondAiShareRecord.preprint.appendixUrl && (
+                  <a class="text-link" href={beyondAiShareRecord.preprint.appendixUrl}>Download Appendix A</a>
+                )}
+                <a class="text-link" href={beyondAiShareRecord.preprint.recordUrl}>View Zenodo record</a>
+              </div>
             </article>
 
             <article class="research-record-card">

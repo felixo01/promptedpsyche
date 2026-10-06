@@ -30,6 +30,9 @@ const aiAuthorshipPolishArticleTitle =
   'Kto miał ostatnie słowo? O autorstwie w twórczości wspieranej przez AI';
 const aiAuthorshipEnglishArticleTitle =
   'Who Had the Final Say? Authorship in AI-Assisted Creative Work';
+const youthPolishArticleTitle =
+  'Chatbot zamiast człowieka? Dlaczego nastolatkowie zwierzają się AI';
+const youthEnglishArticleTitle = 'Chatbot or Human? Why Teenagers Confide in AI';
 const generativeSearchPolishArticleTitle = 'Gdy odpowiada wyszukiwarka. Jak zmienia się proces uczenia się?';
 const generativeSearchEnglishArticleTitle =
   'When Search Becomes an Answer: What Generative AI Changes About Learning';
@@ -177,7 +180,7 @@ test.describe('published articles', () => {
   test('shows the English article on the English articles index', async ({ page }) => {
     await page.goto('/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(9);
+    await expect(page.locator('.entry-list article')).toHaveCount(10);
     await expect(page.locator('.entry-list')).toContainText('It is not just about the prompt');
     await expect(page.locator('.entry-list')).not.toContainText(
       'The model does not remember. It works with context.'
@@ -193,9 +196,10 @@ test.describe('published articles', () => {
       'AI does not read people. It helps read context.'
     );
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(9);
-    expect(titles[0]).toBe(aiAuthorshipEnglishArticleTitle);
+    expect(titles).toHaveLength(10);
+    expect(titles[0]).toBe(youthEnglishArticleTitle);
     expect(titles).toEqual(expect.arrayContaining([
+      youthEnglishArticleTitle,
       generativeSearchEnglishArticleTitle,
       aiAuthorshipEnglishArticleTitle,
       aiThinkingEnglishArticleTitle,
@@ -289,7 +293,7 @@ test.describe('published articles', () => {
   test('shows the Polish article on the Polish articles index', async ({ page }) => {
     await page.goto('/pl/articles/');
 
-    await expect(page.locator('.entry-list article')).toHaveCount(9);
+    await expect(page.locator('.entry-list article')).toHaveCount(10);
     await expect(page.locator('.entry-list')).toContainText('Nie chodzi tylko o prompt');
     await expect(page.locator('.entry-list')).toContainText(mirrorPolishArticleTitle);
     await expect(page.locator('.entry-list')).toContainText(aiPathPolishArticleTitle);
@@ -366,9 +370,10 @@ test.describe('published articles', () => {
     await page.goto('/pl/articles/');
 
     const titles = await page.locator('.entry-title-link').allTextContents();
-    expect(titles).toHaveLength(9);
-    expect(titles[0]).toBe(aiAuthorshipPolishArticleTitle);
+    expect(titles).toHaveLength(10);
+    expect(titles[0]).toBe(youthPolishArticleTitle);
     expect(titles).toEqual(expect.arrayContaining([
+      youthPolishArticleTitle,
       generativeSearchPolishArticleTitle,
       aiAuthorshipPolishArticleTitle,
       aiThinkingPolishArticleTitle,
@@ -1130,7 +1135,9 @@ test.describe('published articles', () => {
     expect(structuredDataText).toContain('"dateModified":"2026-07-10T');
     expect(structuredDataText).toContain('"propertyID":"DOI"');
     expect(structuredDataText).toContain('"value":"10.5281/zenodo.21301650"');
-    expect(structuredDataText).toContain('"sameAs":"https://doi.org/10.5281/zenodo.21301650"');
+    expect(structuredDataText).toContain(
+      '"sameAs":["https://doi.org/10.5281/zenodo.21301650","https://zenodo.org/records/21301650"]'
+    );
     expect(structuredDataText).toContain('"license":"https://creativecommons.org/licenses/by/4.0/"');
     expect(structuredDataText).toContain('"version":"1.0"');
     await expect(page.locator('body')).not.toContainText('June 18, 2026');
@@ -1490,7 +1497,18 @@ test.describe('published articles', () => {
       'href',
       'https://creativecommons.org/licenses/by/4.0/'
     );
-    await expect(page.locator('meta[name^="citation_"]')).toHaveCount(0);
+    await expect(page.locator('meta[name="citation_title"]')).toHaveAttribute(
+      'content',
+      embodiedEnglishArticleTitle
+    );
+    await expect(page.locator('meta[name="citation_doi"]')).toHaveAttribute(
+      'content',
+      '10.5281/zenodo.21296384'
+    );
+    await expect(page.locator('meta[name="citation_pdf_url"]')).toHaveAttribute(
+      'content',
+      'https://zenodo.org/records/21296384/files/feliks-mamczur-what-changes-when-ai-has-a-body-v1.0-CC-BY.pdf'
+    );
 
     const structuredDataText = await page
       .locator('script[type="application/ld+json"]')
@@ -1498,7 +1516,9 @@ test.describe('published articles', () => {
 
     expect(structuredDataText).toContain('"propertyID":"DOI"');
     expect(structuredDataText).toContain('"value":"10.5281/zenodo.21296384"');
-    expect(structuredDataText).toContain('"sameAs":"https://doi.org/10.5281/zenodo.21296384"');
+    expect(structuredDataText).toContain(
+      '"sameAs":["https://doi.org/10.5281/zenodo.21296384","https://zenodo.org/records/21296384"]'
+    );
     expect(structuredDataText).toContain('"license":"https://creativecommons.org/licenses/by/4.0/"');
     expect(structuredDataText).toContain('"version":"1.0"');
 
@@ -1707,7 +1727,9 @@ test.describe('published articles', () => {
           generativeSearchEnglishDoi
         );
         expect(structuredDataText).toContain(`"value":"${generativeSearchEnglishDoi}"`);
-        expect(structuredDataText).toContain(`"sameAs":"${generativeSearchEnglishDoiUrl}"`);
+        expect(structuredDataText).toContain(
+          `"sameAs":["${generativeSearchEnglishDoiUrl}","https://zenodo.org/records/21491639"]`
+        );
         expect(structuredDataText).toContain('"version":"1.7"');
       } else {
         await expect(page.locator('meta[name="citation_doi"]')).toHaveCount(0);

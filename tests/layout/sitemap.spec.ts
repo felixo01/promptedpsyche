@@ -24,6 +24,15 @@ function escapeRegExp(value: string) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+function readSitemapEntry(sitemap: string, url: string) {
+  const entry = sitemap.match(
+    new RegExp(`<url><loc>${escapeRegExp(url)}</loc>[\\s\\S]*?</url>`, 'u')
+  )?.[0];
+
+  expect(entry, `${url} should have one sitemap entry`).toBeDefined();
+  return entry ?? '';
+}
+
 function countRssItemsByLink(rss: string, url: string) {
   const escapedUrl = escapeRegExp(url);
   return (
@@ -47,7 +56,7 @@ test.describe('built sitemap and RSS policy', () => {
     expect(robots).not.toContain('Disallow: /pl/practice');
   });
 
-  test('excludes tag archives and follows Practice launch visibility in sitemap', () => {
+  test('excludes noindex archives and search pages while retaining public discovery routes', () => {
     const sitemap = readBuiltSitemap();
 
     expect(sitemap).not.toContain('/tags/');
@@ -73,8 +82,10 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).toContain('/pl/about/');
     expect(sitemap).not.toContain('/author/');
     expect(sitemap).not.toContain('/pl/author/');
-    expect(sitemap).toContain('/search/');
-    expect(sitemap).toContain('/pl/search/');
+    expect(sitemap).not.toContain('<loc>https://promptedpsyche.com/search/</loc>');
+    expect(sitemap).not.toContain('<loc>https://promptedpsyche.com/pl/search/</loc>');
+    expect(sitemap).toContain('<loc>https://promptedpsyche.com/publications/</loc>');
+    expect(sitemap).toContain('<loc>https://promptedpsyche.com/pl/publications/</loc>');
     expect(sitemap).toContain('/projects/humanai-lab/');
     expect(sitemap).toContain('/pl/projects/humanai-lab/');
     expect(sitemap).toContain('/projects/beyond-ai-share/');
@@ -108,6 +119,40 @@ test.describe('built sitemap and RSS policy', () => {
     expect(sitemap).toContain('/concepts/llm/');
     expect(sitemap).toContain('/pl/concepts/llm/');
     expect(sitemap.match(/\/articles\/are-we-afraid-of-ai-or-of-ourselves\//g) ?? []).toHaveLength(1);
+  });
+
+  test('adds lastmod only where a real content date is available', () => {
+    const sitemap = readBuiltSitemap();
+
+    expect(
+      readSitemapEntry(
+        sitemap,
+        'https://promptedpsyche.com/articles/trust-in-the-age-of-ready-made-answers/'
+      )
+    ).toContain('<lastmod>2026-07-10T00:00:00.000Z</lastmod>');
+    expect(
+      readSitemapEntry(
+        sitemap,
+        'https://promptedpsyche.com/articles/what-changes-when-ai-has-a-body/'
+      )
+    ).toContain('<lastmod>2026-07-10T00:00:00.000Z</lastmod>');
+    expect(
+      readSitemapEntry(
+        sitemap,
+        'https://promptedpsyche.com/notes/openai-chatgpt-gpt-llm-difference/'
+      )
+    ).toContain('<lastmod>2026-07-22T00:00:00.000Z</lastmod>');
+    expect(
+      readSitemapEntry(sitemap, 'https://promptedpsyche.com/projects/beyond-ai-share/')
+    ).toContain('<lastmod>2026-08-04T00:00:00.000Z</lastmod>');
+    expect(
+      readSitemapEntry(sitemap, 'https://promptedpsyche.com/pl/projects/beyond-ai-share/')
+    ).toContain('<lastmod>2026-08-04T00:00:00.000Z</lastmod>');
+
+    expect(readSitemapEntry(sitemap, 'https://promptedpsyche.com/')).not.toContain('<lastmod>');
+    expect(
+      readSitemapEntry(sitemap, 'https://promptedpsyche.com/publications/')
+    ).not.toContain('<lastmod>');
   });
 
   test('keeps Practice out of RSS', () => {
@@ -243,6 +288,17 @@ test.describe('built sitemap and RSS policy', () => {
     const config = readVercelConfig();
 
     expect(config.redirects).toEqual([
+      {
+        source: '/articles/bridge-or-substitute-teen-chatbot/',
+        destination: '/articles/chatbot-or-human-why-teenagers-confide-in-ai/',
+        permanent: true
+      },
+      {
+        source: '/pl/articles/most-czy-zastepstwo-nastolatek-chatbot/',
+        destination:
+          '/pl/articles/chatbot-zamiast-czlowieka-dlaczego-nastolatkowie-zwierzaja-sie-ai/',
+        permanent: true
+      },
       {
         source: '/articles/openai-chatgpt-gpt-llm-difference/',
         destination: '/notes/openai-chatgpt-gpt-llm-difference/',

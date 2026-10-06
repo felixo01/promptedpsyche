@@ -13,6 +13,10 @@ tags:
   - zarządzanie AI
 author: "Feliks Mamczur"
 readingTime: "27 min czytania"
+relatedDoi: "10.5281/zenodo.21340181"
+relatedDoiUrl: "https://doi.org/10.5281/zenodo.21340181"
+relatedVersion: "2.1"
+relatedDoiLabel: "DOI wersji angielskiej"
 inBrief:
   - "Opowieść o samodzielnie działającej, złej AI może zasłaniać ciąg ludzkich celów, interesów i decyzji o wdrożeniu oraz zatwierdzaniu wyników."
   - "AI może zwiększać skalę realizacji celu, oddalać ludzi od konsekwencji i stawać się alibi, które pozwala człowiekowi albo instytucji przedstawić własny wybór jako decyzję systemu."

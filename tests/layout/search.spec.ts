@@ -38,7 +38,7 @@ async function readSearchIndex(request: APIRequestContext, path: string) {
 }
 
 test.describe('local search', () => {
-  test('builds search pages with language alternates and indexable robots state', async ({ page }) => {
+  test('builds noindex search pages with language alternates', async ({ page }) => {
     await page.goto('/search/');
 
     await expect(page.getByRole('heading', { name: 'Search', level: 1 })).toBeVisible();
@@ -51,7 +51,8 @@ test.describe('local search', () => {
       'aria-current',
       'page'
     );
-    await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
+    await expect(page.locator('meta[name="googlebot"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.getByText(showPractice ? 'Search projects, topics, articles, notes, concepts and practice exercises on Prompted Psyche.' : 'Search projects, topics, articles, notes and concepts on Prompted Psyche.')).toBeVisible();
     await expect(page.locator('link[rel="alternate"][hreflang="pl"]')).toHaveAttribute(
       'href',
@@ -70,7 +71,8 @@ test.describe('local search', () => {
       'aria-current',
       'page'
     );
-    await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, follow');
+    await expect(page.locator('meta[name="googlebot"]')).toHaveAttribute('content', 'noindex, follow');
     await expect(page.getByText(showPractice ? 'Szukaj w projektach, obszarach, artykułach, notatkach, pojęciach i ćwiczeniach Prompted Psyche.' : 'Szukaj w projektach, obszarach, artykułach, notatkach i pojęciach Prompted Psyche.')).toBeVisible();
     await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute(
       'href',
@@ -83,8 +85,8 @@ test.describe('local search', () => {
     const plIndex = await readSearchIndex(request, '/search-index.pl.json');
     const allText = JSON.stringify([...enIndex, ...plIndex]);
 
-    expect(countByType(enIndex, 'article')).toBe(9);
-    expect(countByType(plIndex, 'article')).toBe(9);
+    expect(countByType(enIndex, 'article')).toBe(10);
+    expect(countByType(plIndex, 'article')).toBe(10);
     expect(countByType(enIndex, 'note')).toBe(7);
     expect(countByType(plIndex, 'note')).toBe(7);
     expect(countByType(enIndex, 'concept')).toBe(27);

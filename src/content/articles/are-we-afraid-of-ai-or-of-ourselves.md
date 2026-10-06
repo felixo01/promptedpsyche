@@ -14,6 +14,11 @@ tags:
   - AI governance
 author: "Feliks Mamczur"
 readingTime: "25 min read"
+doi: "10.5281/zenodo.21340181"
+doiUrl: "https://doi.org/10.5281/zenodo.21340181"
+version: "2.1"
+licenseName: "CC BY 4.0"
+licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 inBrief:
   - "The story of an independently evil AI can make the human chain of goals, incentives, deployment and approval harder to see."
   - "AI can amplify a goal, increase moral distance and become an alibi through which a person or institution presents its own choice as the system's decision."

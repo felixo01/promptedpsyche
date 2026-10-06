@@ -1,4 +1,6 @@
 ---
+import { getPublicationByDoi } from '../lib/publications';
+
 type Locale = 'en' | 'pl';
 
 interface Props {
@@ -7,19 +9,21 @@ interface Props {
 
 const { lang } = Astro.props;
 
-const preprintTitle =
-  'Beyond AI Share: A Preregistered Survey and Vignette Study of Perceived Control, Authorship, and Authenticity in AI-Assisted Creative Practice';
-const doiUrl = 'https://doi.org/10.5281/zenodo.21705721';
-const preprintUrl =
-  'https://zenodo.org/api/records/21705721/files/Beyond_AI_Share_Preprint_v1.0.pdf/content';
-const appendixUrl =
-  'https://zenodo.org/api/records/21705721/files/Beyond_AI_Share_Appendix_A_v1.0.pdf/content';
+const publication = getPublicationByDoi('10.5281/zenodo.21705721');
+if (!publication || !publication.appendix) {
+  throw new Error('Beyond AI Share publication files are missing from the registry.');
+}
+const preprintTitle = publication.title;
+const doiUrl = publication.doiUrl;
+const preprintUrl = publication.pdf.url;
+const appendixUrl = publication.appendix.url;
 const osfUrl = 'https://doi.org/10.17605/OSF.IO/GSWN3';
 
 const copy = {
   en: {
     title: 'Research materials',
     preprintMeta: ['29 pages', 'Not formally peer reviewed'],
+    projectLabel: 'View Beyond AI Share publication page',
     doiLabel: 'Open DOI record',
     preprintLabel: 'Open preprint PDF',
     appendixDescription:
@@ -33,6 +37,7 @@ const copy = {
   pl: {
     title: 'Materiały badania',
     preprintMeta: ['29 stron', 'Preprint bez formalnej recenzji naukowej'],
+    projectLabel: 'Zobacz stronę publikacji Beyond AI Share',
     doiLabel: 'Otwórz rekord DOI',
     preprintLabel: 'Pobierz preprint PDF',
     appendixDescription:
@@ -60,6 +65,7 @@ const titleId = `research-materials-title-${lang}`;
         {t.preprintMeta.map((item) => <li>{item}</li>)}
       </ul>
       <div class="research-materials__links">
+        <a href={lang === 'pl' ? '/pl/projects/beyond-ai-share/' : '/projects/beyond-ai-share/'}>{t.projectLabel}</a>
         <a href={doiUrl}>{t.doiLabel}</a>
         <a href={preprintUrl}>{t.preprintLabel}</a>
       </div>

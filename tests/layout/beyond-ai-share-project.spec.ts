@@ -7,11 +7,17 @@ const projectId = `${siteUrl}/projects/beyond-ai-share/#research-project`;
 const authorId = `${siteUrl}/#feliks-mamczur`;
 const doi = '10.5281/zenodo.21705721';
 const doiUrl = `https://doi.org/${doi}`;
+const zenodoUrl = 'https://zenodo.org/records/21705721';
+const pdfUrl = `${zenodoUrl}/files/Beyond_AI_Share_Preprint_v1.0.pdf`;
+const appendixUrl = `${zenodoUrl}/files/Beyond_AI_Share_Appendix_A_v1.0.pdf`;
+const preprintId = `${siteUrl}/projects/beyond-ai-share/#preprint`;
 const osfUrl = 'https://doi.org/10.17605/OSF.IO/GSWN3';
 const osfTitle =
   'Is It Still My Work? Authorship, Authenticity and Control in AI-Assisted Creative Practice';
 const preprintTitle =
   'Beyond AI Share: A Preregistered Survey and Vignette Study of Perceived Control, Authorship, and Authenticity in AI-Assisted Creative Practice';
+const preprintAbstract =
+  'AI involvement in creative work can be described by quantity, but quantity alone does not reveal how decisions are organized or whether human input remains consequential. This preregistered cross-sectional online survey with two within-person vignettes examined perceived authorship, authenticity, and control in AI-assisted creative practice. The full sample comprised 429 adults, including 164 creators who used AI. Among these creators, declared AI share was not negatively associated with perceived authorship (r = .141, p = .071), contrary to H1. Perceived control was positively associated with authorship (r = .234, p = .003), supporting H2. Control did not moderate the association between AI share and authenticity (interaction b = .043, p = .559), so H3 was not supported. In the full sample, expressive orientation toward art was associated with creative identity threat (r = .341, p < .001), cautiously supporting H4. The strongest result was the vignette contrast: a human-directed process involving idea formation, selection, and substantial revision was evaluated more favorably than acceptance of a near-final AI output (mean difference = .836, t = 13.628, p < .001, dz = .659). Several short indicators had low reliability, limiting strong inference. Meaningful human control is therefore used only as an interpretive lens, not as a validated model. The findings suggest that digital creative practice and tool design should attend to process structure and consequential human control rather than relying on AI-share estimates alone.';
 const socialImage = `${siteUrl}/images/social/beyond-ai-share-project-social-1200x630.png`;
 
 const projectPages = [
@@ -29,7 +35,10 @@ const projectPages = [
     limitationsHeading: 'Limitations and research integrity',
     citationHeading: 'How to cite the preprint',
     authorHeading: 'About the author',
-    preprintLabel: 'Read the preprint',
+    preprintLabel: 'Download preprint PDF',
+    preprintHref: pdfUrl,
+    doiLinkCount: 1,
+    scholar: true,
     preregistrationLabel: 'View preregistration',
     registrationStatusLabel: 'Registration status',
     registrationStatusValue: 'Accepted',
@@ -54,6 +63,9 @@ const projectPages = [
     citationHeading: 'Jak cytować preprint',
     authorHeading: 'O autorze',
     preprintLabel: 'Przeczytaj preprint',
+    preprintHref: doiUrl,
+    doiLinkCount: 2,
+    scholar: false,
     preregistrationLabel: 'Zobacz prerejestrację',
     registrationStatusLabel: 'Status rejestracji',
     registrationStatusValue: 'Zaakceptowana',
@@ -126,13 +138,26 @@ test.describe('Beyond AI Share research project pages', () => {
       await expect(accessRow.locator('time')).toHaveText(project.accessDateText);
       await expect(page.getByText(project.legacyRegistrationStatus, { exact: true })).toHaveCount(0);
 
-      await expect(page.getByRole('link', { name: project.preprintLabel })).toHaveAttribute('href', doiUrl);
+      await expect(page.getByRole('link', { name: project.preprintLabel }).first()).toHaveAttribute(
+        'href',
+        project.preprintHref
+      );
       await expect(page.getByRole('link', { name: project.preregistrationLabel })).toHaveAttribute('href', osfUrl);
-      await expect(page.locator(`a[href="${doiUrl}"]`)).toHaveCount(2);
+      await expect(page.locator(`a[href="${doiUrl}"]`)).toHaveCount(project.doiLinkCount);
       await expect(page.locator(`a[href="${osfUrl}"]`)).toHaveCount(2);
       await expect(page.getByText(preprintTitle, { exact: true })).toHaveCount(1);
       await expect(page.locator('.research-citation')).toContainText(preprintTitle);
       await expect(page.locator('form')).toHaveCount(0);
+
+      if (project.lang === 'en') {
+        await expect(page.getByRole('heading', { name: 'Abstract', level: 2 })).toBeVisible();
+        await expect(page.locator('#preprint-abstract-title + .editorial-copy > p').first()).toHaveText(
+          preprintAbstract
+        );
+        await expect(page.locator(`a[href="${pdfUrl}"]`)).toHaveCount(2);
+        await expect(page.locator(`a[href="${appendixUrl}"]`)).toHaveCount(1);
+        await expect(page.locator(`a[href="${zenodoUrl}"]`)).toHaveCount(1);
+      }
     });
 
     test(`publishes canonical, hreflang and social metadata on ${project.route}`, async ({ page }) => {
@@ -156,7 +181,10 @@ test.describe('Beyond AI Share research project pages', () => {
       );
       await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'index, follow');
       await expect(page.locator('meta[name="googlebot"]')).toHaveAttribute('content', 'index, follow');
-      await expect(page.locator('meta[property="og:type"]')).toHaveAttribute('content', 'website');
+      await expect(page.locator('meta[property="og:type"]')).toHaveAttribute(
+        'content',
+        project.lang === 'en' ? 'article' : 'website'
+      );
       await expect(page.locator('meta[property="og:url"]')).toHaveAttribute('content', canonical);
       await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', socialImage);
       await expect(page.locator('meta[property="og:image:width"]')).toHaveAttribute('content', '1200');
@@ -202,7 +230,7 @@ test.describe('Beyond AI Share research project pages', () => {
         '@id': projectId,
         name: 'Beyond AI Share',
         founder: { '@id': authorId },
-        subjectOf: { '@id': doiUrl }
+        subjectOf: { '@id': preprintId }
       });
       expect(researchProject).not.toHaveProperty('funder');
       expect(researchProject).not.toHaveProperty('sponsor');
@@ -210,16 +238,25 @@ test.describe('Beyond AI Share research project pages', () => {
 
       const preprint = nodesOfType(graph, 'ScholarlyArticle')[0];
       expect(preprint).toMatchObject({
-        '@id': doiUrl,
+        '@id': preprintId,
         name: preprintTitle,
         headline: preprintTitle,
+        url: `${siteUrl}/projects/beyond-ai-share/`,
+        mainEntityOfPage: `${siteUrl}/projects/beyond-ai-share/`,
+        sameAs: [doiUrl, zenodoUrl],
         datePublished: '2026-07-30',
         version: '1.0',
         creativeWorkStatus: 'Preprint - not peer-reviewed',
         license: 'https://creativecommons.org/licenses/by/4.0/',
         identifier: { propertyID: 'DOI', value: doi },
         author: { '@id': authorId },
-        publisher: { name: 'Zenodo', url: 'https://zenodo.org/' },
+        abstract: preprintAbstract,
+        encoding: {
+          '@type': 'MediaObject',
+          contentUrl: pdfUrl,
+          encodingFormat: 'application/pdf',
+          name: 'Beyond_AI_Share_Preprint_v1.0.pdf'
+        },
         about: { '@id': projectId }
       });
 
@@ -232,12 +269,25 @@ test.describe('Beyond AI Share research project pages', () => {
       ]);
       expect(breadcrumb.itemListElement[2].item).toBe(canonical);
 
-      await expect(page.locator('meta[name^="citation_"]')).toHaveCount(0);
+      const citationMetadata = {
+        citation_title: preprintTitle,
+        citation_author: 'Feliks Mamczur',
+        citation_publication_date: '2026/07/30',
+        citation_language: 'en',
+        citation_doi: doi,
+        citation_pdf_url: pdfUrl
+      } as const;
+      if (project.scholar) {
+        for (const [name, value] of Object.entries(citationMetadata)) {
+          await expect(page.locator(`meta[name="${name}"]`)).toHaveAttribute('content', value);
+        }
+        await expect(page.locator('meta[name^="citation_"]')).toHaveCount(6);
+      } else {
+        await expect(page.locator('meta[name^="citation_"]')).toHaveCount(0);
+      }
       const publicContent = `${await page.locator('main').innerText()}\n${JSON.stringify(graph)}`;
       expect(publicContent).not.toMatch(/Varsovia|ResearchOrganization|CollegeOrUniversity|clinical psychologist|professor/iu);
       expect(publicContent).not.toMatch(/[A-Z]:\\|ART_AI|badanie_art_ai|AI SPECIALIST|submission\/ijhci_reframing_phase0/iu);
-      expect(publicContent).not.toContain('citation_title');
-      expect(publicContent).not.toContain('citation_doi');
     });
   }
 
