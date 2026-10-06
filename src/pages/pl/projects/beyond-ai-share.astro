@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Icon from '../../../components/Icon.astro';
 import {
   beyondAiShareCitation,
   beyondAiShareRecord,
@@ -244,6 +245,35 @@ const preregistrationStatus =
         <div class="about-section__meta"><span>06</span><p>Rekordy</p></div>
         <div class="about-section__body">
           <h2 id="public-record-title">Publiczny zapis i materiały</h2>
+          <div class="research-downloads" aria-labelledby="download-files-title">
+            <h3 id="download-files-title" class="research-downloads__title">Pobierz pliki</h3>
+            <div class="research-downloads__grid">
+              <a
+                class="research-download-card"
+                href={beyondAiShareRecord.preprint.pdfUrl}
+                rel="noopener"
+              >
+                <span class="research-download-card__icon"><Icon name="pdf" /></span>
+                <span class="research-download-card__copy">
+                  <span class="research-download-card__label">Pobierz preprint PDF</span>
+                  <span class="research-download-card__meta">Beyond AI Share, wersja 1.0</span>
+                </span>
+                <span class="research-download-card__type">PDF</span>
+              </a>
+              <a
+                class="research-download-card"
+                href={beyondAiShareRecord.preprint.appendixUrl}
+                rel="noopener"
+              >
+                <span class="research-download-card__icon"><Icon name="pdf" /></span>
+                <span class="research-download-card__copy">
+                  <span class="research-download-card__label">Pobierz Aneks A</span>
+                  <span class="research-download-card__meta">Pełny opis metod i materiałów</span>
+                </span>
+                <span class="research-download-card__type">PDF</span>
+              </a>
+            </div>
+          </div>
           <div class="research-record-grid">
             <article class="research-record-card">
               <p class="small-label">Preprint na Zenodo</p>
