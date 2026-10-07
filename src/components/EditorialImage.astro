@@ -1,18 +1,24 @@
 ---
 import { Image } from 'astro:assets';
 import type { Locale } from '../lib/i18n';
-import trustImage from '../assets/editorial/c2-trust-hidden-sources.png';
-import authorshipImage from '../assets/editorial/c2-authorship-final-decision.png';
-import learningImage from '../assets/editorial/c2-learning-active-reasoning.png';
+import trustImage from '../assets/editorial/c2-trust-mediated-knowledge.png';
+import authorshipImage from '../assets/editorial/c2-authorship-selected-frame.png';
+import learningImage from '../assets/editorial/c2-learning-work-in-progress.png';
 interface Props { kind: 'trust' | 'authorship' | 'learning'; lang: Locale; priority?: boolean; wide?: boolean; }
 const { kind, lang, priority = false, wide = false } = Astro.props;
 const source = { trust: trustImage, authorship: authorshipImage, learning: learningImage }[kind];
 const alt = {
-  trust: { pl: 'Ilustracja: spod uporządkowanej odpowiedzi wyłaniają się warstwy źródeł i prowadząca do nich nić.', en: 'Illustration: layers of sources and a thread tracing their origin emerge beneath a tidy answer.' },
-  authorship: { pl: 'Ilustracja: ludzka ręka redaguje i wybiera ostateczną wersję spośród kilku propozycji.', en: 'Illustration: a human hand edits and selects the final version from several alternatives.' },
-  learning: { pl: 'Ilustracja: gotowe rozwiązanie obok dłoni samodzielnie składającej elementy układanki.', en: 'Illustration: a completed solution beside a hand working through the puzzle independently.' }
+  trust: { pl: 'Śliwkowa, półprzezroczysta tafla przesłania arkusze źródłowe w jasnej przestrzeni; czerwony klin wskazuje jej krawędź.', en: 'A translucent plum panel partially obscures source sheets in a light-filled space; a red wedge marks its edge.' },
+  authorship: { pl: 'Kilka odbitek tego samego kadru; jedna wybrana wersja zaznaczona czerwonym owalem i śladem korekty kadrowania.', en: 'Several prints of the same scene; one selected version is marked with a red oval and a crop correction.' },
+  learning: { pl: 'Warstwy kalek z niedokończonymi próbami rozwiązania, śladami poprawek i drobnym czerwonym zaznaczeniem.', en: 'Layers of tracing paper with unfinished attempts at a solution, revision marks and a small red annotation.' }
 }[kind][lang];
-const sizes = wide ? '(max-width: 1128px) calc(100vw - 40px), 1088px' : '(max-width: 1000px) calc(100vw - 40px), (max-width: 1256px) calc((100vw - 80px) / 2), 588px';
+// Cover cropping needs enough pixels for the visible height of the 3:1 source.
+const sizes = wide
+  ? '(max-width: 568px) 528px, (max-width: 968px) calc(100vw - 40px), 928px'
+  : kind === 'trust'
+    ? '(max-width: 700px) 630px, (max-width: 1000px) 960px, (max-width: 1120px) 1080px, (max-width: 1256px) calc(100vw - 40px), 1216px'
+    : '(max-width: 840px) calc(100vw - 40px), (max-width: 1256px) calc((100vw - 104px) / 2), 576px';
+const widths = [...new Set([400, 800, 1200, 1600, Math.min(2400, source.width)])].filter(width => width <= source.width).sort((a, b) => a - b);
 ---
-<Image src={source} alt={alt} width={source.width} widths={[400, 800, 1200, 1536]} format="webp" quality={82}
+<Image src={source} alt={alt} width={source.width} widths={widths} format="webp" quality={82}
   sizes={sizes} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} decoding="async" />

@@ -36,13 +36,25 @@ async function expectNoOverflow(page: Page) {
   expect(sizes.body, JSON.stringify(sizes)).toBeLessThanOrEqual(sizes.viewport + 1);
 }
 
-async function expectNoRejectedStockImages(page: Page) {
-  await expect(page.locator([
-    'main img[src*="c2-redesign-"]',
-    'main img[srcset*="c2-redesign-"]',
-    'main source[srcset*="c2-redesign-"]',
-    'link[rel="preload"][as="image"][href*="c2-redesign-"]'
-  ].join(', '))).toHaveCount(0);
+async function expectNoRejectedEditorialImages(page: Page) {
+  const retiredAssets = [
+    'c2-redesign-',
+    'c2-trust-hidden-sources',
+    'c2-authorship-final-decision',
+    'c2-learning-active-reasoning'
+  ];
+  await expect(page.locator(retiredAssets.flatMap((asset) => [
+    `main img[src*="${asset}"]`,
+    `main img[srcset*="${asset}"]`,
+    `main source[srcset*="${asset}"]`,
+    `link[rel="preload"][as="image"][href*="${asset}"]`,
+    `link[rel="preload"][as="image"][imagesrcset*="${asset}"]`
+  ]).join(', '))).toHaveCount(0);
+}
+
+async function expectWebPImage(image: Locator) {
+  // Astro serves optimized files in builds and a format query in development.
+  await expect(image).toHaveAttribute('src', /(?:\.webp(?:$|\?)|[?&]f=webp(?:&|$))/);
 }
 
 async function expectCompleteHeading(locator: Locator, title: string) {
@@ -87,49 +99,83 @@ test.describe('C2 required viewport matrix', () => {
           expect(await recommendations.nth(index).evaluate((element) => getComputedStyle(element).boxShadow)).toBe('none');
         }
 
-        await expectNoRejectedStockImages(page);
+        await expectNoRejectedEditorialImages(page);
         const heroImage = page.locator('.c2-cover-image img');
-        await expect(heroImage).toHaveAttribute('src', /c2-trust-hidden-sources/);
+        await expect(heroImage).toHaveAttribute('src', /c2-trust-mediated-knowledge/);
+        await expectWebPImage(heroImage);
         await expect(heroImage).toHaveAttribute('fetchpriority', 'high');
         await expect(heroImage).toHaveAttribute('loading', 'eager');
-        await expect(heroImage).toHaveAttribute('srcset', /400w.*800w.*1200w.*1536w/);
-        await expect(heroImage).toHaveAttribute('width', '1536');
-        await expect(heroImage).toHaveAttribute('height', '1024');
+        await expect(heroImage).toHaveAttribute('srcset', /400w.*800w.*1200w.*1600w.*2172w/);
+        await expect(heroImage).toHaveAttribute('width', '2172');
+        await expect(heroImage).toHaveAttribute('height', '724');
         await expect(heroImage).toHaveAttribute('alt', /\S+/);
-        await expect(recommendations.locator('img').first()).toHaveAttribute('src', /c2-authorship-final-decision/);
-        await expect(recommendations.locator('img').last()).toHaveAttribute('src', /c2-learning-active-reasoning/);
-        for (const illustration of await recommendations.locator('img').all()) {
-          await expect(illustration).toHaveAttribute('loading', 'lazy');
-          await expect(illustration).toHaveAttribute('alt', /\S+/);
+        await expect(page.locator('main img[loading="eager"], main img[fetchpriority="high"]')).toHaveCount(1);
+        await expect(recommendations.locator('img')).toHaveCount(2);
+        await expect(recommendations.locator('img').first()).toHaveAttribute('src', /c2-authorship-selected-frame/);
+        await expect(recommendations.locator('img').last()).toHaveAttribute('src', /c2-learning-work-in-progress/);
+        for (const photograph of await recommendations.locator('img').all()) {
+          await expectWebPImage(photograph);
+          await expect(photograph).toHaveAttribute('loading', 'lazy');
+          await expect(photograph).toHaveAttribute('fetchpriority', 'auto');
+          await expect(photograph).toHaveAttribute('srcset', /400w.*800w.*1200w.*1536w/);
+          await expect(photograph).toHaveAttribute('width', '1536');
+          await expect(photograph).toHaveAttribute('height', '1024');
+          await expect(photograph).toHaveAttribute('alt', /\S+/);
         }
 
         const boxes = await page.evaluate(() => {
           const box = (selector: string) => {
             const element = document.querySelector(selector);
             if (!element) throw new Error(`Missing required element: ${selector}`);
-            const { top, bottom, left, right, height } = element.getBoundingClientRect();
-            return { top, bottom, left, right, height };
+            const { top, bottom, left, right, width, height } = element.getBoundingClientRect();
+            return { top, bottom, left, right, width, height };
           };
           return {
-            image: box('.c2-cover-image'), copy: box('.c2-cover-copy'),
+            cover: box('.c2-cover'), image: box('.c2-cover-image'), copy: box('.c2-cover-copy'),
+            photograph: box('.c2-cover-image img'),
             kicker: box('.c2-cover .c2-kicker'), title: box('[data-qa="hero-title"]'),
             lead: box('.c2-cover .c2-lead'), meta: box('.c2-cover .c2-meta'),
             cta: box('[data-qa="home-reading-cta"]'), reading: box('.c2-reading'),
             research: box('.c2-research')
           };
         });
-        if (width >= 768) {
-          expect(boxes.image.height).toBeGreaterThanOrEqual(320);
-          expect(boxes.image.height).toBeLessThanOrEqual(450);
+        expect(Math.abs(boxes.image.left - boxes.cover.left)).toBeLessThanOrEqual(1);
+        expect(Math.abs(boxes.image.right - boxes.cover.right)).toBeLessThanOrEqual(1);
+        expect(Math.abs(boxes.photograph.width - boxes.image.width)).toBeLessThanOrEqual(1);
+        expect(Math.abs(boxes.copy.left - boxes.image.left)).toBeLessThanOrEqual(1);
+        if (width > 1000) {
+          expect(boxes.image.height).toBeGreaterThanOrEqual(360);
+          expect(boxes.image.height).toBeLessThanOrEqual(440);
+          expect(boxes.copy.width / boxes.image.width).toBeGreaterThanOrEqual(0.5);
+          expect(boxes.copy.width / boxes.image.width).toBeLessThanOrEqual(0.61);
+          const overlapDepth = boxes.image.bottom - boxes.copy.top;
+          expect(overlapDepth).toBeGreaterThan(0);
+          expect(overlapDepth).toBeLessThanOrEqual(boxes.image.height / 3);
+          expect(boxes.copy.bottom).toBeGreaterThan(boxes.image.bottom);
+          expect(boxes.image.right - boxes.copy.right).toBeGreaterThanOrEqual(boxes.image.width * 0.39);
+          const coveredArea = overlapDepth * boxes.copy.width;
+          expect(coveredArea / (boxes.image.width * boxes.image.height)).toBeLessThanOrEqual(0.21);
+          const panel = await page.locator('.c2-cover-copy').evaluate((element) => {
+            const style = getComputedStyle(element);
+            const channels = style.backgroundColor.match(/[\d.]+/g)?.map(Number) ?? [];
+            return { channels, opacity: Number(style.opacity) };
+          });
+          expect(panel.channels.length).toBeGreaterThanOrEqual(3);
+          expect(panel.channels.slice(0, 3).every((channel) => channel >= 240)).toBe(true);
+          expect(panel.channels[3] ?? 1).toBe(1);
+          expect(panel.opacity).toBe(1);
         } else {
-          expect(boxes.image.height).toBeLessThanOrEqual(280);
+          expect(boxes.image.height).toBeCloseTo(width <= 700 ? 210 : 320, 0);
           expect(boxes.copy.top).toBeGreaterThanOrEqual(boxes.image.bottom);
+          expect(Math.abs(boxes.copy.width - boxes.image.width)).toBeLessThanOrEqual(1);
           expect(boxes.copy.left).toBeGreaterThanOrEqual(19);
           expect(width - boxes.copy.right).toBeGreaterThanOrEqual(19);
-          for (const [first, second] of [
-            [boxes.kicker, boxes.title], [boxes.title, boxes.lead], [boxes.lead, boxes.meta],
-            [boxes.meta, boxes.cta], [boxes.cta, boxes.reading], [boxes.reading, boxes.research]
-          ]) expect(second.top).toBeGreaterThanOrEqual(first.bottom - 1);
+        }
+        for (const [first, second] of [
+          [boxes.kicker, boxes.title], [boxes.title, boxes.lead], [boxes.lead, boxes.meta],
+          [boxes.meta, boxes.cta], [boxes.cta, boxes.reading], [boxes.reading, boxes.research]
+        ]) expect(second.top).toBeGreaterThanOrEqual(first.bottom - 1);
+        if (width < 768) {
           const wordmarkSize = await page.locator('.c2-header .brand-name').evaluate((element) => parseFloat(getComputedStyle(element).fontSize));
           expect(wordmarkSize).toBeGreaterThanOrEqual(24);
           expect(wordmarkSize).toBeLessThanOrEqual(26);
@@ -183,10 +229,22 @@ test.describe('C2 required viewport matrix', () => {
           expect(reading.fontSize).toBeLessThanOrEqual(19);
         }
         await expect(page.locator('.article-grid > aside')).toHaveCount(0);
-        await expectNoRejectedStockImages(page);
-        const editorialIllustration = page.locator('[data-qa="article-editorial-figure"] img');
-        await expect(editorialIllustration).toBeVisible();
-        await expect(editorialIllustration).toHaveAttribute('src', /c2-trust-hidden-sources/);
+        await expectNoRejectedEditorialImages(page);
+        const editorialPhotograph = page.locator('[data-qa="article-editorial-figure"] img');
+        await expect(editorialPhotograph).toBeVisible();
+        await expect(editorialPhotograph).toHaveAttribute('src', /c2-trust-mediated-knowledge/);
+        await expectWebPImage(editorialPhotograph);
+        await expect(editorialPhotograph).toHaveAttribute('srcset', /400w.*800w.*1200w.*1600w.*2172w/);
+        await expect(editorialPhotograph).toHaveAttribute('width', '2172');
+        await expect(editorialPhotograph).toHaveAttribute('height', '724');
+        await expect(editorialPhotograph).toHaveAttribute('alt', /\S+/);
+        await expect(editorialPhotograph).toHaveAttribute('loading', 'lazy');
+        await expect(editorialPhotograph).toHaveAttribute('fetchpriority', 'auto');
+        await expect(page.locator('main img[loading="eager"], main img[fetchpriority="high"]')).toHaveCount(0);
+        const photographHeight = await editorialPhotograph.evaluate((element) => element.getBoundingClientRect().height);
+        expect(photographHeight).toBeGreaterThanOrEqual(160);
+        expect(photographHeight).toBeLessThanOrEqual(288);
+        expect(photographHeight).toBeLessThan(width > 1000 ? 360 : width <= 700 ? 210 : 320);
         const originalDiagram = prose.locator('[data-qa="article-hero-image"]');
         await expect(originalDiagram).toHaveCount(1);
         await expect(originalDiagram).toHaveAttribute('src', '/images/articles/ai-path-to-knowledge.svg');

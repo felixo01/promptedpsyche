@@ -1,15 +1,14 @@
 .c2-container { width: min(calc(100% - 40px), var(--container)); margin-inline: auto; }
-.c2-home { padding-top: 48px; }
-.c2-cover { display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(0, 1fr); gap: 40px; align-items: center; }
-.c2-cover-image { grid-column: 2; grid-row: 1; height: clamp(320px, 31vw, 420px); }
-.c2-cover-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.c2-cover-copy { grid-column: 1; grid-row: 1; }
-.c2-cover-copy { width: 100%; background: var(--paper); }
+.c2-home { padding-top: 24px; }
+.c2-cover { display: block; }
+.c2-cover-image { height: clamp(360px, 31vw, 440px); overflow: hidden; }
+.c2-cover-image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 72% center; }
+.c2-cover-copy { position: relative; width: 60%; margin-top: -112px; padding: 26px 32px 0 0; background: var(--paper); }
 .c2-kicker { color: var(--plum); font: 600 12px/1.4 var(--font-sans); letter-spacing: .1em; }
-.c2-cover h1 { max-width: 23ch; margin-top: 20px; font: 450 clamp(44px, 4vw, 56px)/1.05 var(--font-serif); letter-spacing: -.03em; text-wrap: pretty; }
+.c2-cover h1 { max-width: 23ch; margin-top: 12px; font: 450 clamp(42px, 3.5vw, 50px)/1.08 var(--font-serif); letter-spacing: -.025em; text-wrap: pretty; }
 .c2-cover h1 a, .c2-recommendation h3 a, .c2-research h3 a { color: inherit; text-decoration: none; }
 .c2-cover h1 a:hover, .c2-recommendation h3 a:hover, .c2-research h3 a:hover { color: var(--accent); }
-.c2-lead { max-width: 58ch; margin-top: 24px; font: 400 21px/1.5 var(--font-serif); color: var(--ink); }
+.c2-lead { max-width: 58ch; margin-top: 16px; font: 400 20px/1.5 var(--font-serif); color: var(--ink); }
 .c2-meta { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 20px; color: var(--muted); font: 400 14px/1.6 var(--font-sans); }
 .c2-meta a { text-decoration: none; color: var(--ink); }
 .c2-read-link { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-top: 12px; color: var(--accent); font: 500 16px/1.4 var(--font-sans); text-decoration: none; }
@@ -21,8 +20,8 @@
 .c2-section-heading > a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14px; color: var(--accent); text-decoration: none; }
 .c2-reading-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; }
 .c2-recommendation { min-width: 0; }
-.c2-recommendation-image { height: 260px; margin-bottom: 28px; }
-.c2-recommendation-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.c2-recommendation-image { height: 260px; margin-bottom: 28px; overflow: hidden; }
+.c2-recommendation-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .c2-recommendation h3 { margin-top: 12px; font: 450 32px/1.15 var(--font-serif); letter-spacing: -.015em; text-wrap: pretty; }
 .c2-recommendation-lead { margin-top: 15px; font: 19px/1.5 var(--font-serif); color: var(--muted); }
 .c2-recommendation .c2-meta { margin-top: 16px; }
@@ -40,10 +39,8 @@
 .c2-about h2 { margin-top: 12px; }
 .c2-about > div > p:not(.c2-kicker) { max-width: 54ch; font: 21px/1.5 var(--font-serif); }
 @media (max-width: 1000px) {
-  .c2-home { padding-top: 40px; }
-  .c2-cover { grid-template-columns: 1fr; gap: 28px; }
-  .c2-cover-image { grid-column: 1; grid-row: 1; height: 320px; }
-  .c2-cover-copy { grid-column: 1; grid-row: 2; }
+  .c2-cover-image { height: 320px; }
+  .c2-cover-copy { width: 100%; margin-top: 0; padding: 28px 0 0; }
   .c2-research-inner { grid-template-columns: 1fr; gap: 24px; }
   .c2-recommendation h3 { font-size: 28px; }
 }
@@ -52,9 +49,9 @@
   .c2-recommendation { max-width: 660px; }
 }
 @media (max-width: 700px) {
-  .c2-home { padding-top: 32px; }
-  .c2-cover { gap: 24px; }
+  .c2-home { padding-top: 16px; }
   .c2-cover-image { height: 210px; }
+  .c2-cover-copy { padding-top: 24px; }
   .c2-cover h1 { font-size: 36px; line-height: 1.08; margin-top: 16px; }
   .c2-lead { font-size: 19px; line-height: 1.55; margin-top: 16px; }
   .c2-meta { margin-top: 17px; }
